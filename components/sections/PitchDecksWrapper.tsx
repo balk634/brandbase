@@ -1,10 +1,4 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-
-const PitchDecksClient = dynamic(() => import('./PitchDecksClient'), {
-    ssr: false,
-});
+import PitchDecksClient from "./PitchDecksClient";
 
 export default function PitchDecksWrapper() {
     return <PitchDecksClient />;

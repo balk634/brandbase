@@ -218,7 +218,20 @@ export default function AboutPage() {
             </h2>
             <div className="mt-10">
               <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
-                <Link href="/contact">Book a call</Link>
+                {(() => {
+                  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
+                  const isExternal = /^https?:\/\//i.test(calendlyUrl);
+                  const href = calendlyUrl || "/contact";
+                  return (
+                    <Link 
+                      href={href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noreferrer" : undefined}
+                    >
+                      Book a call
+                    </Link>
+                  );
+                })()}
               </Button>
             </div>
           </div>

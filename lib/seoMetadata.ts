@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { masterConfig } from "@/config/master";
 
+export const NON_INDEXABLE_ROUTES = ["/privacy", "/terms", "/impressum", "/cookies"] as const;
+const nonIndexablePathSet = new Set<string>(NON_INDEXABLE_ROUTES);
+
 type PageMetadataInput = {
   title: string;
   description: string;
@@ -30,15 +33,23 @@ export function buildPageMetadata({
   noIndex = false,
 }: PageMetadataInput): Metadata {
   const canonicalPath = normalizePath(path);
+  const shouldNoIndex = noIndex || nonIndexablePathSet.has(canonicalPath);
   const openGraphImages = masterConfig.metadata.openGraph.images?.map((image) => ({
     ...image,
     url: toAbsoluteUrl(image.url),
   }));
+  const mergedKeywords = Array.from(
+    new Set(
+      (keywords ?? masterConfig.metadata.keywords)
+        .map((keyword) => keyword.trim())
+        .filter(Boolean)
+    )
+  );
 
   return {
     title,
     description,
-    keywords: keywords ?? masterConfig.metadata.keywords,
+    keywords: mergedKeywords,
     alternates: {
       canonical: canonicalPath,
     },
@@ -55,11 +66,25 @@ export function buildPageMetadata({
       description,
       images: openGraphImages?.[0]?.url,
     },
-    robots: noIndex
+    robots: shouldNoIndex
       ? {
           index: false,
-          follow: false,
+          follow: true,
+          googleBot: {
+            index: false,
+            follow: true,
+          },
         }
-      : undefined,
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large",
+            "max-video-preview": -1,
+          },
+        }
   };
 }

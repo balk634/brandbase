@@ -123,9 +123,16 @@ export default function PremiumStaticPage() {
                                     Stop paying thousands upfront. Get a high-performing, beautifully designed static website with a simple monthly or yearly plan.
                                 </motion.p>
                                 <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
-                                    <Button asChild variant="primary" size="lg">
-                                        <Link href="/contact">Book a call</Link>
-                                    </Button>
+                                    {(() => {
+                                        const calendlyUrl = masterConfig.contact.calendlyUrl;
+                                        const isExternal = calendlyUrl?.startsWith('http');
+                                        const href = calendlyUrl || "/contact";
+                                        return (
+                                            <Button asChild variant="primary" size="lg">
+                                                <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
+                                            </Button>
+                                        );
+                                    })()}
                                     <Button asChild variant="outline" size="lg">
                                         <Link href="#deliverables">See Deliverables</Link>
                                     </Button>
@@ -332,9 +339,16 @@ export default function PremiumStaticPage() {
                                             Tell us about your business. We&apos;ll send you a clear monthly quote within 24 hours.
                                         </p>
                                         <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-                                            <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                                                <Link href="/contact">Book a call</Link>
-                                            </Button>
+                                            {(() => {
+                                                const calendlyUrl = masterConfig.contact.calendlyUrl;
+                                                const isExternal = calendlyUrl?.startsWith('http');
+                                                const href = calendlyUrl || "/contact";
+                                                return (
+                                                    <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                                                        <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
+                                                    </Button>
+                                                );
+                                            })()}
                                             <Button asChild variant="outline" size="lg">
                                                 <Link href="/website-solutions">View All Services</Link>
                                             </Button>

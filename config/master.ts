@@ -12,18 +12,18 @@ export const masterConfig = {
       "Nodecraft builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.",
     baseUrl: "https://nodecraft.tech",
     keywords: [
-      "Conversion-First Websites",
-      "Web Design & Development",
-      "Next.js Agency",
-      "Performance Marketing",
-      "Meta Ads",
-      "Google Ads",
-      "Responsive Websites",
-      "Website Agency",
-      "Conversion Rate Optimization",
-      "Shopping & E-commerce website",
-      "Pay Monthly Website",
-      "Digital Marketing Agency",
+      "web design agency india",
+      "next.js development agency",
+      "conversion-first websites",
+      "performance marketing agency india",
+      "meta ads management india",
+      "google ads management india",
+      "local seo services india",
+      "ecommerce website development india",
+      "website redesign services",
+      "conversion rate optimization agency",
+      "pay monthly website plans",
+      "digital marketing agency india",
     ],
     authors: [{ name: "Nodecraft", url: "https://nodecraft.tech" }],
     creator: "Nodecraft",
@@ -66,7 +66,7 @@ export const masterConfig = {
     phone: "+91 9113702669",
     // Used on the Contact page "Book a call" button.
     // Example: "https://calendly.com/<your-handle>/<event>"
-    calendlyUrl: "",
+    calendlyUrl: "https://calendly.com/nodecraft-tech/new-meeting",
     address: {
       street: "Pluto B 504, Suncity Complex,",
       locality: "Powai",
@@ -467,4 +467,3 @@ export const masterConfig = {
 
   },
 };
-

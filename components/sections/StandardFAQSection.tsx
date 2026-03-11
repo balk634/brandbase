@@ -23,6 +23,22 @@ export function StandardFAQSection({
   className,
   withBottomBorder = false,
 }: StandardFAQSectionProps) {
+  const faqSchema =
+    items.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: items.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a,
+            },
+          })),
+        }
+      : null;
+
   return (
     <Section
       className={cn(
@@ -31,6 +47,12 @@ export function StandardFAQSection({
         className
       )}
     >
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+        />
+      ) : null}
       <Container>
         <div className="border border-grid/15 bg-white">
           <div className="p-5 sm:p-6 md:p-8 border-b border-grid/15">

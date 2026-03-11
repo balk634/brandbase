@@ -1,9 +1,15 @@
 import { MetadataRoute } from "next";
 import { masterConfig } from "@/config/master";
 import { blogPosts } from "@/lib/blogPosts";
+import { NON_INDEXABLE_ROUTES } from "@/lib/seoMetadata";
+
+function toSitemapImageUrl(rawUrl: string) {
+  return rawUrl.split("?")[0];
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = masterConfig.metadata.baseUrl;
+  const nonIndexablePathSet = new Set<string>(NON_INDEXABLE_ROUTES);
 
   const datedPosts = blogPosts
     .map((post) => Date.parse(post.date))
@@ -42,13 +48,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority,
     };
-  });
+  }).filter((route) => !nonIndexablePathSet.has(new URL(route.url).pathname));
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+    images: post.heroImage ? [toSitemapImageUrl(post.heroImage)] : undefined,
   }));
 
   return [...staticRoutes, ...blogRoutes];

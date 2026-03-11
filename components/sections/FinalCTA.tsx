@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import Link from "next/link";
 import { IconArrowRight, IconClock, IconSparkles } from "@tabler/icons-react";
+import { masterConfig } from "@/config/master";
 
 export function FinalCTA() {
     return (
@@ -21,10 +22,21 @@ export function FinalCTA() {
 
                         <div className="mt-8 w-full max-w-2xl flex flex-col sm:flex-row gap-4 justify-center">
                             <Button asChild variant="primary" size="lg" className="gap-2 w-full sm:w-auto">
-                                <Link href="/contact">
-                                    Book a call
-                                    <IconArrowRight className="h-4 w-4" />
-                                </Link>
+                                {(() => {
+                                    const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
+                                    const isExternal = /^https?:\/\//i.test(calendlyUrl);
+                                    const href = calendlyUrl || "/contact";
+                                    return (
+                                        <Link 
+                                            href={href}
+                                            target={isExternal ? "_blank" : undefined}
+                                            rel={isExternal ? "noreferrer" : undefined}
+                                        >
+                                            Book a call
+                                            <IconArrowRight className="h-4 w-4" />
+                                        </Link>
+                                    );
+                                })()}
                             </Button>
                         </div>
 

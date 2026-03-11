@@ -6,6 +6,7 @@ import { blogPosts } from "@/lib/blogPosts";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seoMetadata";
+import { masterConfig } from "@/config/master";
 
 export const metadata = buildPageMetadata({
   title: "Nodecraft Blog | Website & Growth Playbooks",
@@ -15,9 +16,59 @@ export const metadata = buildPageMetadata({
 });
 
 export default function BlogPage() {
+  const baseUrl = masterConfig.metadata.baseUrl.replace(/\/+$/, "");
+  const blogUrl = `${baseUrl}/blog`;
+  const toAbsoluteUrl = (url: string) =>
+    /^https?:\/\//i.test(url) ? url : `${baseUrl}${url.startsWith("/") ? url : `/${url}`}`;
+
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${blogUrl}#blog`,
+    url: blogUrl,
+    name: "Nodecraft Blog",
+    description: "Practical guides on websites, local SEO, paid ads, and conversion systems.",
+    inLanguage: "en-IN",
+    publisher: {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
+      name: "Nodecraft",
+      url: baseUrl,
+    },
+    blogPost: blogPosts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description,
+      datePublished: post.date,
+      dateModified: post.date,
+      url: `${baseUrl}/blog/${post.slug}`,
+      image: toAbsoluteUrl(post.heroImage),
+      author: {
+        "@type": "Organization",
+        name: "Nodecraft",
+      },
+    })),
+  };
+
+  const blogItemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: blogPosts.map((post, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${baseUrl}/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
 
   return (
     <main className="relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([blogSchema, blogItemListSchema]).replace(/</g, "\\u003c"),
+        }}
+      />
       <Section className="bg-transparent">
         <Container>
           <div className="border border-grid/15 bg-white overflow-hidden">
@@ -91,5 +142,4 @@ export default function BlogPage() {
     </main>
   );
 }
-
 

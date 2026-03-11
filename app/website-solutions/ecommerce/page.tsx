@@ -121,11 +121,18 @@ export default function EcommercePage() {
                                 <motion.p variants={fadeInLeft} className="mt-6 text-base md:text-lg text-ink-muted leading-relaxed max-w-lg">
                                     Custom-built e-commerce experiences designed for conversions, not just looks. From product pages to checkout, every detail optimized.
                                 </motion.p>
-                                <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
-                                    <Button asChild variant="primary" size="lg">
-                                        <Link href="/contact">Book a call</Link>
-                                    </Button>
-                                    <Button asChild variant="outline" size="lg">
+                                <motion.div variants={fadeInLeft} className="NC-Hero-CTA-Group mt-10 flex flex-wrap gap-4">
+                                    {(() => {
+                                        const calendlyUrl = masterConfig.contact.calendlyUrl;
+                                        const isExternal = calendlyUrl?.startsWith('http');
+                                        const href = calendlyUrl || "/contact";
+                                        return (
+                                            <Button asChild variant="primary" size="lg" className="NC-Hero-CTA-Primary">
+                                                <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
+                                            </Button>
+                                        );
+                                    })()}
+                                    <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
                                         <Link href="#deliverables">See Deliverables</Link>
                                     </Button>
                                 </motion.div>
@@ -310,9 +317,21 @@ export default function EcommercePage() {
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">NEXT STEP</div>
                                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tighter mb-6">Ready to start selling online?</h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your products and goals. We&apos;ll send you a detailed proposal within 24 hours.</p>
-                                        <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-                                            <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]"><Link href="/contact">Book a call</Link></Button>
-                                            <Button asChild variant="outline" size="lg"><Link href="/website-solutions">View All Services</Link></Button>
+
+                                        <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
+                                            {(() => {
+                                                const calendlyUrl = masterConfig.contact.calendlyUrl;
+                                                const isExternal = calendlyUrl?.startsWith('http');
+                                                const href = calendlyUrl || "/contact";
+                                                return (
+                                                    <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
+                                                        <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
+                                                    </Button>
+                                                );
+                                            })()}
+                                            <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
+                                                <Link href="/website-solutions">View All Services</Link>
+                                            </Button>
                                         </motion.div>
                                     </motion.div>
                                 </div>

@@ -138,11 +138,18 @@ export default function RedesignRescuePage() {
                                 <motion.p variants={fadeInLeft} className="mt-6 text-base md:text-lg text-ink-muted leading-relaxed max-w-lg">
                                     An outdated website doesn&apos;t just look bad, it actively drives away potential customers. We&apos;ll rebuild it into a fast, modern site that earns trust and generates leads.
                                 </motion.p>
-                                <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
-                                    <Button asChild variant="primary" size="lg">
-                                        <Link href="/contact">Book a call</Link>
-                                    </Button>
-                                    <Button asChild variant="outline" size="lg">
+                                <motion.div variants={fadeInLeft} className="NC-Hero-CTA-Group mt-10 flex flex-wrap gap-4">
+                                    {(() => {
+                                        const calendlyUrl = masterConfig.contact.calendlyUrl;
+                                        const isExternal = calendlyUrl?.startsWith('http');
+                                        const href = calendlyUrl || "/contact";
+                                        return (
+                                            <Button asChild variant="primary" size="lg" className="NC-Hero-CTA-Primary">
+                                                <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
+                                            </Button>
+                                        );
+                                    })()}
+                                    <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
                                         <Link href="#choose-service">Choose Your Path</Link>
                                     </Button>
                                 </motion.div>
@@ -305,11 +312,18 @@ export default function RedesignRescuePage() {
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
                                             Book a call. We&apos;ll review what&apos;s broken, what it&apos;s costing you, and the fastest path to fix it.
                                         </p>
-                                        <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-                                            <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                                                <Link href="/contact">Book a call</Link>
-                                            </Button>
-                                            <Button asChild variant="outline" size="lg">
+                                        <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
+                                            {(() => {
+                                                const calendlyUrl = masterConfig.contact.calendlyUrl;
+                                                const isExternal = calendlyUrl?.startsWith('http');
+                                                const href = calendlyUrl || "/contact";
+                                                return (
+                                                    <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
+                                                        <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
+                                                    </Button>
+                                                );
+                                            })()}
+                                            <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
                                                 <Link href="/website-solutions">View All Services</Link>
                                             </Button>
                                         </motion.div>

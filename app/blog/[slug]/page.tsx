@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { masterConfig } from "@/config/master";
 import { blogPosts, getBlogPost } from "@/lib/blogPosts";
 import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seoMetadata";
@@ -28,11 +29,45 @@ export async function generateMetadata({
     });
   }
 
-  return buildPageMetadata({
+  const pageMetadata = buildPageMetadata({
     title: `${post.title} | Nodecraft`,
     description: post.description,
     path: `/blog/${post.slug}`,
   });
+  const baseUrl = masterConfig.metadata.baseUrl.replace(/\/+$/, "");
+  const heroImageUrl = /^https?:\/\//i.test(post.heroImage)
+    ? post.heroImage
+    : `${baseUrl}${post.heroImage.startsWith("/") ? post.heroImage : `/${post.heroImage}`}`;
+
+  return {
+    ...pageMetadata,
+    openGraph: {
+      type: "article",
+      url: `${baseUrl}/blog/${post.slug}`,
+      siteName: masterConfig.metadata.openGraph.siteName,
+      locale: masterConfig.metadata.openGraph.locale,
+      title: `${post.title} | Nodecraft`,
+      description: post.description,
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      section: post.category,
+      tags: [post.category],
+      images: [
+        {
+          url: heroImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      ...masterConfig.metadata.twitter,
+      title: `${post.title} | Nodecraft`,
+      description: post.description,
+      images: heroImageUrl,
+    },
+  };
 }
 
 export default async function BlogPostPage({
@@ -43,9 +78,78 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) notFound();
+  const baseUrl = masterConfig.metadata.baseUrl.replace(/\/+$/, "");
+  const articleUrl = `${baseUrl}/blog/${post.slug}`;
+  const heroImageUrl = /^https?:\/\//i.test(post.heroImage)
+    ? post.heroImage
+    : `${baseUrl}${post.heroImage.startsWith("/") ? post.heroImage : `/${post.heroImage}`}`;
+  const articleWordCount = post.contentHtml
+    .replace(/<[^>]+>/g, " ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${articleUrl}#article`,
+    mainEntityOfPage: articleUrl,
+    headline: post.title,
+    description: post.description,
+    image: [heroImageUrl],
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: "en-IN",
+    articleSection: post.category,
+    wordCount: articleWordCount,
+    author: {
+      "@type": "Organization",
+      name: "Nodecraft",
+      url: baseUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
+      name: "Nodecraft",
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/brand/logo.svg`,
+      },
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${baseUrl}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: articleUrl,
+      },
+    ],
+  };
 
   return (
     <main className="relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([blogPostingSchema, breadcrumbSchema]).replace(/</g, "\\u003c"),
+        }}
+      />
       <Section className="bg-transparent">
         <Container>
           <div className="border border-grid/15 bg-white overflow-hidden">
@@ -121,7 +225,20 @@ export default async function BlogPostPage({
 
             <div className="mt-10 flex justify-end">
               <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
-                <Link href="/contact">Book a call</Link>
+                {(() => {
+                  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
+                  const isExternal = /^https?:\/\//i.test(calendlyUrl);
+                  const href = calendlyUrl || "/contact";
+                  return (
+                    <Link 
+                      href={href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noreferrer" : undefined}
+                    >
+                      Book a call
+                    </Link>
+                  );
+                })()}
               </Button>
             </div>
           </div>
@@ -130,6 +247,5 @@ export default async function BlogPostPage({
     </main>
   );
 }
-
 
 

@@ -1,95 +1,13 @@
 import { Section } from "@/components/ui/Section";
 import { masterConfig } from "@/config/master";
-import type { ComponentType, SVGProps } from "react";
 import { cn } from "@/lib/utils";
-import {
-    AwsIcon,
-    NextjsIcon,
-    ReactIcon,
-    ShopifyIcon,
-    TypescriptIcon,
-    ViteIcon,
-    VercelIcon,
-    FigmaIcon,
-    GoogleAdsIcon,
-    MetaAdsIcon,
-    HubspotIcon,
-    ZohoIcon,
-    AdobeIllustratorIcon,
-    AdobePhotoshopIcon,
-    AdobeIndesignIcon,
-    AfterEffectsIcon,
-    SplineIcon,
-    TailwindCssIcon,
-    FramerMotionIcon,
-    NodeJsIcon,
-    PostgresqlIcon,
-    AppwriteIcon,
-    SanityCmsIcon,
-    SupabaseIcon,
-    CloudflareIcon,
-    DockerIcon,
-    NetlifyIcon,
-    RazorpayIcon,
-    ResendIcon,
-    GithubActionsIcon,
-    GoogleAnalyticsIcon,
-    UmamiIcon,
-    HotjarIcon,
-    PowerBiIcon,
-    MailchimpIcon,
-    SendgridIcon,
-    MixpanelIcon,
-    PaytmIcon,
-    MicrosoftIcon
-} from "@/components/icons/BrandIcons";
+import type { CSSProperties } from "react";
+import { TrustStripIconSlot } from "@/components/sections/TrustStripIconSlot";
 
 const TECHNOLOGIES = masterConfig.sections.techStackStrip;
 
 const MARQUEE_TECHNOLOGIES =
     TECHNOLOGIES.length < 12 ? [...TECHNOLOGIES, ...TECHNOLOGIES] : TECHNOLOGIES;
-
-const TECH_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
-    "NEXT.JS": NextjsIcon,
-    "VITE": ViteIcon,
-    REACT: ReactIcon,
-    VERCEL: VercelIcon,
-    AWS: AwsIcon,
-    SHOPIFY: ShopifyIcon,
-    TYPESCRIPT: TypescriptIcon,
-    FIGMA: FigmaIcon,
-    "GOOGLE ADS": GoogleAdsIcon,
-    "META ADS": MetaAdsIcon,
-    HUBSPOT: HubspotIcon,
-    ZOHO: ZohoIcon,
-    "ADOBE ILLUSTRATOR": AdobeIllustratorIcon,
-    "ADOBE PHOTOSHOP": AdobePhotoshopIcon,
-    "ADOBE INDESIGN": AdobeIndesignIcon,
-    "AFTER EFFECTS": AfterEffectsIcon,
-    "SPLINE": SplineIcon,
-    "TAILWIND CSS": TailwindCssIcon,
-    "FRAMER MOTION": FramerMotionIcon,
-    "NODE.JS": NodeJsIcon,
-    "POSTGRESQL": PostgresqlIcon,
-    "APPWRITE": AppwriteIcon,
-    "SANITY CMS": SanityCmsIcon,
-    "SUPABASE": SupabaseIcon,
-    "CLOUDFLARE": CloudflareIcon,
-    "DOCKER": DockerIcon,
-    "NETLIFY": NetlifyIcon,
-    "RAZORPAY": RazorpayIcon,
-    "RESEND": ResendIcon,
-    "GITHUB ACTIONS": GithubActionsIcon,
-    "GOOGLE ANALYTICS": GoogleAnalyticsIcon,
-    "MICROSOFT CLARITY": MicrosoftIcon,
-    "UMAMI": UmamiIcon,
-    "HOTJAR": HotjarIcon,
-    "POWER BI": PowerBiIcon,
-    "MAILCHIMP": MailchimpIcon,
-    "SENDGRID": SendgridIcon,
-    "MIXPANEL": MixpanelIcon,
-    "PAYTM": PaytmIcon
-};
 
 function getTechAbbreviation(tech: string) {
     const tokens = tech.split(/[\s./_-]+/).filter(Boolean);
@@ -98,18 +16,16 @@ function getTechAbbreviation(tech: string) {
 }
 
 function TechIcon({ tech }: { tech: string }) {
-    const Icon = TECH_ICONS[tech];
-    if (!Icon) {
-        return (
-            <span className="h-6 w-6 border border-grid/20 bg-white/90 grid place-items-center font-mono text-[8px] leading-none text-ink-muted">
+    return (
+        <span className="relative h-6 w-6 grid place-items-center overflow-hidden">
+            <span className="font-mono text-[8px] leading-none text-ink-muted">
                 {getTechAbbreviation(tech)}
             </span>
-        );
-    }
-
-    return (
-        <span className="h-6 w-6 grid place-items-center text-ink">
-            <Icon className="h-5 w-5" />
+            <TrustStripIconSlot
+                tech={tech}
+                className="absolute inset-0 grid place-items-center text-ink"
+                iconClassName="h-5 w-5"
+            />
         </span>
     );
 }
@@ -126,7 +42,7 @@ export function TrustStrip() {
                 <div className="w-full overflow-hidden">
                     <div
                         className={cn("flex w-max whitespace-nowrap", autoScroll && "trust-strip-track")}
-                        style={{ "--truststrip-duration": `${durationSeconds}s` } as React.CSSProperties}
+                        style={{ "--truststrip-duration": `${durationSeconds}s` } as CSSProperties}
                     >
                         {[0, 1].map((i) => (
                             <div key={i} className="flex shrink-0 items-center" aria-hidden={i > 0}>

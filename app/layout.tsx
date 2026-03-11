@@ -4,6 +4,7 @@ import { Space_Grotesk, JetBrains_Mono, Raleway } from "next/font/google"; // Us
 import "./globals.css";
 import { masterConfig } from "@/config/master";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
@@ -77,8 +78,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${raleway.variable} font-body antialiased bg-paper text-ink overflow-x-hidden w-full`}
         style={
           {
@@ -118,6 +120,7 @@ export default function RootLayout({
         }
       >
         <JsonLd />
+        <BreadcrumbJsonLd />
         {masterConfig.analytics?.googleAnalyticsId && (
           <>
             <Script

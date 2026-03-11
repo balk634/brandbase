@@ -1,7 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
-import { IconQuote, IconStarFilled } from "@tabler/icons-react";
 import { AutoScrollScroller } from "@/components/ui/AutoScrollScroller";
 import { masterConfig } from "@/config/master";
 
@@ -42,55 +41,59 @@ export function Testimonials() {
           pauseOnHover
         >
           <div className="flex w-max items-stretch">
-            {[0, 1].map((dup) => (
-              <div key={dup} className="flex items-stretch gap-8 pr-8" aria-hidden={dup > 0}>
-                {testimonials.map((t: TestimonialItem, idx: number) => {
-                  const initials = t.author.charAt(0).toUpperCase();
-                  const accent = ACCENTS[idx % ACCENTS.length];
+            <div className="flex items-stretch gap-8 pr-8">
+              {testimonials.map((t: TestimonialItem, idx: number) => {
+                const initials = t.author.charAt(0).toUpperCase();
+                const accent = ACCENTS[idx % ACCENTS.length];
 
-                  return (
-                    <figure
-                      key={dup + "-" + idx}
-                      className="w-[85vw] max-w-[340px] sm:w-[420px] sm:max-w-none shrink-0 border border-grid/15 bg-white p-7 flex flex-col whitespace-normal h-full"
-                    >
-                      <div className="flex items-start justify-between gap-6">
-                        <IconQuote className="h-6 w-6 text-primary shrink-0 opacity-50 mb-4" strokeWidth={1.5} aria-hidden="true" />
-                        <div className="flex items-center gap-1 text-primary/60">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <IconStarFilled
-                              key={i}
-                              className="h-3.5 w-3.5 fill-transparent"
-                              strokeWidth={1.5}
-                              aria-hidden="true"
-                            />
-                          ))}
-                          <span className="sr-only">5 out of 5</span>
+                return (
+                  <figure
+                    key={idx}
+                    className="w-[85vw] max-w-[340px] sm:w-[420px] sm:max-w-none shrink-0 border border-grid/15 bg-white p-7 flex flex-col whitespace-normal h-full"
+                  >
+                    <div className="flex items-start justify-between gap-6">
+                      <span
+                        className="h-6 w-6 text-primary shrink-0 opacity-50 mb-4 font-serif text-2xl leading-none"
+                        aria-hidden="true"
+                      >
+                        &ldquo;
+                      </span>
+                      <div className="flex items-center gap-1 text-primary/60">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <span
+                            key={i}
+                            className="font-sans text-sm leading-none"
+                            aria-hidden="true"
+                          >
+                            ★
+                          </span>
+                        ))}
+                        <span className="sr-only">5 out of 5</span>
+                      </div>
+                    </div>
+
+                    <blockquote className="mt-6 font-mono text-[13px] leading-relaxed text-ink/90 whitespace-normal break-words flex-1">
+                      &ldquo;{t.quote}&rdquo;
+                    </blockquote>
+
+                    <div className="mt-auto pt-6 border-t border-grid/15 flex items-center gap-4">
+                      <div className={"h-10 w-10 shrink-0 grid place-items-center " + accent} aria-hidden="true">
+                        <span className="font-mono font-bold text-sm">{initials}</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <div className="font-sans font-semibold text-sm text-ink">{t.author}</div>
+                        <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
+                          {t.role}
+                        </div>
+                        <div className="mt-0.5 text-[10px] text-ink-muted/80">
+                          {t.location}
                         </div>
                       </div>
-
-                      <blockquote className="mt-6 font-mono text-[13px] leading-relaxed text-ink/90 whitespace-normal break-words flex-1">
-                        &ldquo;{t.quote}&rdquo;
-                      </blockquote>
-
-                      <div className="mt-auto pt-6 border-t border-grid/15 flex items-center gap-4">
-                        <div className={"h-10 w-10 shrink-0 grid place-items-center " + accent} aria-hidden="true">
-                          <span className="font-mono font-bold text-sm">{initials}</span>
-                        </div>
-                        <div className="flex flex-col">
-                          <div className="font-sans font-semibold text-sm text-ink">{t.author}</div>
-                          <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
-                            {t.role}
-                          </div>
-                          <div className="mt-0.5 text-[10px] text-ink-muted/80">
-                            {t.location}
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  );
-                })}
-              </div>
-            ))}
+                    </div>
+                  </figure>
+                );
+              })}
+            </div>
           </div>
         </AutoScrollScroller>
       </Container>

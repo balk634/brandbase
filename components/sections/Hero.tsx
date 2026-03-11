@@ -63,10 +63,22 @@ export function Hero() {
                         className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                     >
                         <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[180px]">
-                            <Link href="/contact" className="gap-2">
-                                Book a call
-                                <IconArrowRight className="h-4 w-4" />
-                            </Link>
+                            {(() => {
+                                const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
+                                const isExternal = /^https?:\/\//i.test(calendlyUrl);
+                                const href = calendlyUrl || "/contact";
+                                return (
+                                    <Link 
+                                        href={href} 
+                                        className="gap-2"
+                                        target={isExternal ? "_blank" : undefined}
+                                        rel={isExternal ? "noreferrer" : undefined}
+                                    >
+                                        Book a call
+                                        <IconArrowRight className="h-4 w-4" />
+                                    </Link>
+                                );
+                            })()}
                         </Button>
                         <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[180px]">
                             <Link href="#services" className="gap-2">

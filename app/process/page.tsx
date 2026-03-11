@@ -1,5 +1,9 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { OurProcess } from "@/components/sections/OurProcess";
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
@@ -10,17 +14,57 @@ export const metadata = buildPageMetadata({
 });
 
 export default function ProcessPage() {
+  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
+  const bookingHref = calendlyUrl || "/contact";
+  const bookingIsExternal = /^https?:\/\//i.test(bookingHref);
+
   return (
     <main className="relative">
-      <Section className="py-16 md:py-24 bg-paper">
+      <Section className="py-16 md:py-24 bg-paper border-b border-grid/10">
         <Container>
-          <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter">
-            Process
+          <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter max-w-3xl">
+            A clear delivery process from first call to measurable growth.
           </h1>
+          <p className="mt-6 max-w-2xl text-base md:text-lg text-ink-muted leading-relaxed">
+            Every project follows the same accountable framework: discovery,
+            design and build, launch, then optimization. You always know what
+            happens next and what outcome each phase is responsible for.
+          </p>
+        </Container>
+      </Section>
+
+      <OurProcess />
+
+      <Section className="py-14 md:py-20 border-t border-grid/10">
+        <Container>
+          <div className="border border-grid/15 bg-white p-8 md:p-12 flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
+            <div>
+              <h2 className="text-2xl md:text-4xl font-sans font-bold tracking-tight text-ink">
+                Want your project mapped to this process?
+              </h2>
+              <p className="mt-3 text-sm md:text-base text-ink-muted max-w-2xl">
+                Share your goals and timeline. We will recommend scope,
+                milestones, and expected delivery windows in one call.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                <Link
+                  href={bookingHref}
+                  target={bookingIsExternal ? "_blank" : undefined}
+                  rel={bookingIsExternal ? "noreferrer" : undefined}
+                >
+                  Book a call
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                <Link href="/contact">Contact us</Link>
+              </Button>
+            </div>
+          </div>
         </Container>
       </Section>
     </main>
   );
 }
-
 

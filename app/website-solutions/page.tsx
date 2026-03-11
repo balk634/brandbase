@@ -5,29 +5,16 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
-import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
+import { WebsiteSolutionsDeferredLoader } from "@/components/sections/WebsiteSolutionsDeferredLoader";
 import {
-  IconArrowsSplit,
-  IconBolt,
-  IconBrandFigma,
   IconChartBar,
-  IconClock,
-  IconCheck,
   IconCode,
-  IconDatabase,
   IconDeviceDesktop,
-  IconHeadset,
-  IconRocket,
   IconRefresh,
-  IconShield,
-  IconTargetArrow,
-  IconUsers,
-  IconX,
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 
 export const metadata = buildPageMetadata({
   title: "Website Solutions | Nodecraft",
@@ -36,14 +23,6 @@ export const metadata = buildPageMetadata({
   path: "/website-solutions",
 });
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" as const },
-  },
-};
 const fadeInLeft = {
   hidden: { opacity: 0, x: -20 },
   visible: {
@@ -52,6 +31,7 @@ const fadeInLeft = {
     transition: { duration: 0.5, ease: "easeOut" as const },
   },
 };
+
 const fadeInRight = {
   hidden: { opacity: 0, x: 20 },
   visible: {
@@ -60,6 +40,7 @@ const fadeInRight = {
     transition: { duration: 0.5, ease: "easeOut" as const },
   },
 };
+
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.92 },
   visible: {
@@ -68,6 +49,7 @@ const scaleIn = {
     transition: { duration: 0.5, ease: "easeOut" as const },
   },
 };
+
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
@@ -79,19 +61,6 @@ type SolutionPath = {
   summary: string;
   outcome: string;
   href: string;
-  Icon: ComponentType<{ className?: string }>;
-};
-
-type ImpactPlay = {
-  title: string;
-  copy: string;
-  Icon: ComponentType<{ className?: string }>;
-};
-
-type SprintStep = {
-  step: string;
-  title: string;
-  copy: string;
   Icon: ComponentType<{ className?: string }>;
 };
 
@@ -134,147 +103,6 @@ const solutionPaths: SolutionPath[] = [
   },
 ];
 
-const impactPlays: ImpactPlay[] = [
-  {
-    title: "Speed to first lead",
-    copy: "Launch-ready architecture and conversion hierarchy reduce time lost between build and measurable lead flow.",
-    Icon: IconBolt,
-  },
-  {
-    title: "Higher buyer trust",
-    copy: "Sharper UX, cleaner messaging, and stronger technical reliability improve confidence at key decision points.",
-    Icon: IconShield,
-  },
-  {
-    title: "Lower conversion leakage",
-    copy: "Mobile QA, performance optimization, and intent-led page structure protect every traffic dollar.",
-    Icon: IconTargetArrow,
-  },
-  {
-    title: "Compounding iteration loop",
-    copy: "Structured tracking and sprint-level improvements let your site improve month over month instead of stalling.",
-    Icon: IconArrowsSplit,
-  },
-];
-
-const sprintSteps: SprintStep[] = [
-  {
-    step: "01",
-    title: "Commercial Discovery",
-    copy: "Goals, offers, audience behavior, and conversion priorities are mapped before visual work begins.",
-    Icon: IconTargetArrow,
-  },
-  {
-    step: "02",
-    title: "Design + Content Architecture",
-    copy: "Page hierarchy, messaging, and interaction structure are built to reduce friction and increase action.",
-    Icon: IconBrandFigma,
-  },
-  {
-    step: "03",
-    title: "Build + Integration",
-    copy: "Development includes CMS setup, tracking, forms, and technical QA across key breakpoints.",
-    Icon: IconDatabase,
-  },
-  {
-    step: "04",
-    title: "Launch + Optimization",
-    copy: "Post-launch performance is monitored and improved through structured iteration cycles.",
-    Icon: IconArrowsSplit,
-  },
-];
-
-const ownershipWins: { text: string; Icon: ComponentType<{ className?: string }> }[] = [
-  {
-    text: "Direct communication with strategists, designers, and developers.",
-    Icon: IconHeadset,
-  },
-  {
-    text: "Clear scope boundaries and milestone-based delivery updates.",
-    Icon: IconTargetArrow,
-  },
-  {
-    text: "Maintainable code and documented handover readiness.",
-    Icon: IconCode,
-  },
-  {
-    text: "Support options for updates, experiments, and future expansion.",
-    Icon: IconRefresh,
-  },
-];
-
-const ownershipRisks: { text: string; Icon: ComponentType<{ className?: string }> }[] = [
-  {
-    text: "Fragmented freelancer stacks with unclear accountability.",
-    Icon: IconUsers,
-  },
-  {
-    text: "Template-heavy builds that block future customization.",
-    Icon: IconDeviceDesktop,
-  },
-  {
-    text: "Slow pages that leak conversion intent on mobile.",
-    Icon: IconBolt,
-  },
-  {
-    text: "Launches without tracking and measurable performance visibility.",
-    Icon: IconChartBar,
-  },
-];
-
-const revenueLeakChecks: { title: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
-  {
-    title: "Traffic arrives, conversions stay flat",
-    copy: "Visitors are not moving clearly from interest to inquiry.",
-    Icon: IconTargetArrow,
-  },
-  {
-    title: "Sales team gets low-quality leads",
-    copy: "Messaging and form flow are attracting the wrong intent.",
-    Icon: IconUsers,
-  },
-  {
-    title: "Site updates are slow and risky",
-    copy: "Each change takes too long, so growth experiments stall.",
-    Icon: IconClock,
-  },
-  {
-    title: "No clear decision data",
-    copy: "Without clean tracking, budget and UX decisions become guesswork.",
-    Icon: IconChartBar,
-  },
-];
-
-const contactNowSignals = [
-  "You are actively running ads and need better lead quality.",
-  "You have growth targets for the next 90 days.",
-  "Your team wants one accountable execution partner.",
-  "You need a practical roadmap, not another generic redesign.",
-];
-
-const faqItems = [
-  {
-    q: "Which website path should we start with?",
-    a: "We recommend the lowest-complexity option that still supports your real growth goal. Most teams start with Premium Static or Custom, then expand based on results.",
-  },
-  {
-    q: "Can we add eCommerce after launching a service site?",
-    a: "Yes. We can phase the roadmap so you launch quickly first, then add product catalog and checkout systems in a second stage.",
-  },
-  {
-    q: "Do you only work on new builds?",
-    a: "No. We also handle redesign and rescue engagements when existing websites are technically weak or conversion-poor.",
-  },
-  {
-    q: "Will the site be fully responsive?",
-    a: "Yes. Every component and page is tested across mobile, tablet, and desktop before launch.",
-  },
-  {
-    q: "Do you provide support after go-live?",
-    a: "Yes. Ongoing support and optimization retainers are available for updates, fixes, and performance growth work.",
-  },
-];
-
 export default function WebsiteSolutionsPage() {
   return (
     <main className="relative text-ink pb-20">
@@ -284,29 +112,60 @@ export default function WebsiteSolutionsPage() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <motion.div variants={fadeInLeft}>
-                  <Kicker className="text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> WEBSITE SOLUTIONS </Kicker>
+                  <Kicker className="text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary">
+                    WEBSITE SOLUTIONS
+                  </Kicker>
                 </motion.div>
                 <motion.h1
                   variants={fadeInLeft}
                   className="mt-8 text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink max-w-2xl"
                 >
-                  Build the right website system for your <span className="text-primary">current growth stage.</span>
+                  Build the right website system for your{" "}
+                  <span className="text-primary">current growth stage.</span>
                 </motion.h1>
                 <motion.p
                   variants={fadeInLeft}
                   className="mt-6 text-base md:text-lg text-ink-muted leading-relaxed max-w-lg"
                 >
-                  Instead of forcing one package for everyone, choose a focused track and execute with one accountable team from strategy to launch.
+                  Instead of forcing one package for everyone, choose a focused
+                  track and execute with one accountable team from strategy to
+                  launch.
                 </motion.p>
                 <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-3">
-                  <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                  <Button
+                    asChild
+                    variant="primary"
+                    size="lg"
+                    className="w-full sm:w-auto sm:min-w-[220px]"
+                  >
                     <Link href="#solution-paths">See Solution Paths</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                    <Link href="/contact">Book a call</Link>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto sm:min-w-[220px]"
+                  >
+                    {(() => {
+                      const calendlyUrl = masterConfig.contact.calendlyUrl;
+                      const isExternal = calendlyUrl?.startsWith("http");
+                      const href = calendlyUrl || "/contact";
+                      return (
+                        <Link
+                          href={href}
+                          target={isExternal ? "_blank" : undefined}
+                          rel={isExternal ? "noreferrer" : undefined}
+                        >
+                          Book a call
+                        </Link>
+                      );
+                    })()}
                   </Button>
                 </motion.div>
-                <motion.div variants={fadeInLeft} className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.2em] text-ink-muted">
+                <motion.div
+                  variants={fadeInLeft}
+                  className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.2em] text-ink-muted"
+                >
                   <span>Fast launch options</span>
                   <span>Conversion-first structure</span>
                   <span>Scalable architecture</span>
@@ -327,13 +186,24 @@ export default function WebsiteSolutionsPage() {
         </Container>
       </Section>
 
-      <Section id="solution-paths" className="scroll-mt-24 bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
+      <Section
+        id="solution-paths"
+        className="scroll-mt-24 bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10"
+      >
         <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
             <div className="mb-14 md:mb-16">
-              <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">SOLUTION PATHS</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                SOLUTION PATHS
+              </div>
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">
-                Choose your path based on business model, urgency, and technical depth.
+                Choose your path based on business model, urgency, and technical
+                depth.
               </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-5">
@@ -346,16 +216,24 @@ export default function WebsiteSolutionsPage() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">{path.label}</div>
-                      <h3 className="mt-3 text-xl font-sans font-semibold tracking-tight text-ink">{path.title}</h3>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
+                        {path.label}
+                      </div>
+                      <h3 className="mt-3 text-xl font-sans font-semibold tracking-tight text-ink">
+                        {path.title}
+                      </h3>
                     </div>
                     <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0">
                       <path.Icon className="h-5 w-5" />
                     </div>
                   </div>
-                  <p className="mt-4 text-sm text-ink-muted leading-relaxed flex-1">{path.summary}</p>
+                  <p className="mt-4 text-sm text-ink-muted leading-relaxed flex-1">
+                    {path.summary}
+                  </p>
                   <div className="mt-6 pt-4 border-t border-grid/10">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">Primary outcome</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
+                      Primary outcome
+                    </div>
                     <div className="mt-2 text-sm text-ink">{path.outcome}</div>
                   </div>
                   <Button asChild variant="outline" size="sm" className="mt-6 w-full">
@@ -368,319 +246,7 @@ export default function WebsiteSolutionsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <div className="border border-grid/15 bg-white overflow-hidden">
-              <div className="grid lg:grid-cols-[1.05fr_1fr]">
-                <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15">
-                  <div className="flex items-center gap-2.5 text-ink-muted">
-                    <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                      <IconBolt className="h-4 w-4" />
-                    </div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.35em]">BUSINESS IMPACT</div>
-                  </div>
-                  <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-sans font-bold tracking-tight text-ink max-w-2xl">
-                    The difference between having a website and having a revenue asset.
-                  </h2>
-                  <p className="mt-4 text-sm md:text-base text-ink-muted leading-relaxed max-w-xl">
-                    The right website system does not just look better. It improves lead quality, shortens sales friction, and gives your team confidence in every growth decision.
-                  </p>
-
-                  <div className="mt-8 divide-y divide-grid/10">
-                    {[
-                      { label: "Faster market response", value: "ship updates quickly and test offers without technical delays", Icon: IconClock },
-                      { label: "Cleaner sales signals", value: "track form intent, page behavior, and funnel quality with precision", Icon: IconChartBar },
-                      { label: "Execution confidence", value: "one accountable team from strategy to post-launch optimization", Icon: IconHeadset },
-                    ].map((item) => (
-                      <div key={item.label} className="mi-row flex items-start gap-3 py-4 first:pt-0 last:pb-0">
-                        <div className="mt-0.5 h-8 w-8 border border-primary/25 bg-primary/5 grid place-items-center text-primary shrink-0">
-                          <item.Icon className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-ink">{item.label}</p>
-                          <p className="text-sm text-ink-muted leading-relaxed">{item.value}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-8">
-                    <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                      <Link href="/contact">Book a call</Link>
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="p-7 md:p-10 bg-paper/30">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">WHAT IMPROVES</div>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {impactPlays.map((item) => (
-                      <article key={item.title} className="mi-card border border-grid/15 bg-white p-5 md:p-6">
-                        <div className="h-9 w-9 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                          <item.Icon className="h-4.5 w-4.5" />
-                        </div>
-                        <h3 className="mt-4 text-sm font-semibold text-ink">{item.title}</h3>
-                        <p className="mt-2 text-sm text-ink-muted leading-relaxed">{item.copy}</p>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </Section>
-
-      <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <div className="border border-grid/15 bg-white overflow-hidden">
-              <div className="grid lg:grid-cols-[1.1fr_1fr]">
-                <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15">
-                  <div className="flex items-center gap-2.5 text-ink-muted">
-                    <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                      <IconRocket className="h-4 w-4" />
-                    </div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.35em]">REVENUE LEAK CHECK</div>
-                  </div>
-                  <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-sans font-bold tracking-tight text-ink max-w-2xl">
-                    If these signs are showing up, your website is already costing you growth.
-                  </h2>
-                  <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                    {revenueLeakChecks.map((item) => (
-                      <article key={item.title} className="mi-card border border-grid/15 bg-paper/40 p-4 md:p-5">
-                        <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                          <item.Icon className="h-4 w-4" />
-                        </div>
-                        <h3 className="mt-3 text-sm font-semibold text-ink">{item.title}</h3>
-                        <p className="mt-1.5 text-sm text-ink-muted leading-relaxed">{item.copy}</p>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-                <div className="p-7 md:p-10 bg-paper/30 flex flex-col gap-6 h-full justify-center">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">WHEN TO CONTACT NOW</div>
-                  <div className="divide-y divide-grid/10">
-                    {contactNowSignals.map((signal) => (
-                      <div key={signal} className="mi-row flex items-center gap-3 py-4 first:pt-0 last:pb-0">
-                        <div className="mt-0.5 h-8 w-8 border border-green-800/20 bg-green-800/5 text-green-800 grid place-items-center shrink-0">
-                          <IconCheck className="h-4 w-4" />
-                        </div>
-                        <p className="text-sm text-ink leading-relaxed">{signal}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-8">
-                    <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                      <Link href="/contact">Book a call</Link>
-                    </Button>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-3 pt-1">
-                    <div className="border border-grid/15 bg-white/80 p-3.5 md:p-4">
-                      <div className="flex items-center gap-2 text-ink">
-                        <IconClock className="h-4 w-4 text-primary" />
-                        <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">Response</span>
-                      </div>
-                      <p className="mt-2 text-sm font-semibold text-ink">Within 24 hours</p>
-                    </div>
-                    <div className="border border-grid/15 bg-white/80 p-3.5 md:p-4">
-                      <div className="flex items-center gap-2 text-ink">
-                        <IconHeadset className="h-4 w-4 text-primary" />
-                        <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">Deliverable</span>
-                      </div>
-                      <p className="mt-2 text-sm font-semibold text-ink">Practical action roadmap</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </Section>
-
-      <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <div className="mb-14">
-              <div className="flex items-center gap-2.5 text-ink-muted">
-                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                  <IconArrowsSplit className="h-4 w-4" />
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">DELIVERY MODEL</div>
-              </div>
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">
-                Four sprint layers that keep execution fast and accountable.
-              </h2>
-            </div>
-            <div
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-0 md:gap-y-8 lg:gap-y-0 relative"
-              style={{ columnGap: "3rem" }}
-            >
-              {sprintSteps.map((step, i) => (
-                <div
-                  key={step.step}
-                  className={`relative flex flex-col items-stretch ${i < sprintSteps.length - 1 ? "pb-0" : ""
-                    }`}
-                >
-                  <motion.article
-                    variants={scaleIn}
-                    whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                    className="relative mi-card border border-grid/15 bg-white p-6 md:p-8 h-full"
-                  >
-                    <BoxPattern />
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="font-mono text-4xl md:text-5xl font-bold tracking-tight text-ink">{step.step}</div>
-                      <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0">
-                        <step.Icon className="h-5 w-5" />
-                      </div>
-                    </div>
-                    <h3 className="mt-6 font-sans font-semibold text-lg tracking-tight text-ink">{step.title}</h3>
-                    <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{step.copy}</p>
-                  </motion.article>
-                  {i < sprintSteps.length - 1 && (
-                    <>
-                      <div
-                        aria-hidden="true"
-                        className="flex md:hidden absolute left-1/2 -bottom-4 -translate-x-1/2 z-20 nc-process-connector nc-process-connector--vertical"
-                      >
-                        <span />
-                        <span />
-                        <span />
-                      </div>
-
-                      <div
-                        aria-hidden="true"
-                        className="hidden lg:flex absolute top-1/2 -right-12 -translate-y-1/2 z-20 nc-process-connector"
-                      >
-                        <span />
-                        <span />
-                        <span />
-                      </div>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </Container>
-      </Section>
-
-      <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <div className="mb-14">
-              <div className="flex items-center gap-2.5 text-ink-muted">
-                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                  <IconShield className="h-4 w-4" />
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">EXECUTION DISCIPLINE</div>
-              </div>
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">
-                What your team gains with structure and what it avoids with the right partner.
-              </h2>
-            </div>
-            <div className="border border-grid/15 bg-white">
-              <div className="grid lg:grid-cols-2">
-                <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15">
-                  <div className="flex items-center gap-2.5 text-ink-muted mb-6">
-                    <div className="h-10 w-10 border border-green-800/20 bg-green-800/5 text-green-800 grid place-items-center">
-                      <IconCheck className="h-4 w-4" />
-                    </div>
-                    <h3 className="font-sans text-xl md:text-2xl font-bold tracking-tight text-ink">YOU GET</h3>
-                  </div>
-                  <div className="divide-y divide-grid/10">
-                    {ownershipWins.map((item) => (
-                      <div key={item.text} className="mi-row flex items-center gap-3 py-4 first:pt-0 last:pb-0">
-                        <div className="mt-0.5 h-8 w-8 border border-green-800/20 bg-paper/60 text-green-800 grid place-items-center shrink-0">
-                          <item.Icon className="h-4 w-4" />
-                        </div>
-                        <p className="text-sm text-ink leading-relaxed">{item.text}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="p-7 md:p-10">
-                  <div className="flex items-center gap-2.5 text-ink-muted mb-6">
-                    <div className="h-10 w-10 border border-red-500/25 bg-red-500/10 text-red-600 grid place-items-center">
-                      <IconX className="h-4 w-4" />
-                    </div>
-                    <h3 className="font-sans text-xl md:text-2xl font-bold tracking-tight text-ink">YOU AVOID</h3>
-                  </div>
-                  <div className="divide-y divide-grid/10">
-                    {ownershipRisks.map((item) => (
-                      <div key={item.text} className="mi-row flex items-center gap-3 py-4 first:pt-0 last:pb-0">
-                        <div className="mt-0.5 h-8 w-8 border border-red-500/25 bg-paper/60 text-red-600 grid place-items-center shrink-0">
-                          <item.Icon className="h-4 w-4" />
-                        </div>
-                        <p className="text-sm text-ink leading-relaxed">{item.text}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </Section>
-
-      <StandardFAQSection items={faqItems} withBottomBorder />
-
-      <Section className="bg-transparent py-16 md:py-24 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <div className="border border-grid/15 bg-white overflow-hidden">
-              <div className="grid lg:grid-cols-2">
-                <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
-                  <motion.div variants={fadeInUp}>
-                    <div className="flex items-center gap-2.5 text-ink-muted mb-6">
-                      <div className="h-8 w-8 border border-primary/25 bg-primary/5 grid place-items-center text-primary">
-                        <IconTargetArrow className="h-4 w-4" />
-                      </div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.35em]">NEXT STEP</div>
-                    </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tighter mb-6">
-                      Want us to map your exact website track?
-                    </h2>
-                    <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
-                      Share your stage, revenue model, and timeline. We will recommend the right scope with no overbuild.
-                    </p>
-                    <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-                      <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                        <Link href="/contact">Book a call</Link>
-                      </Button>
-                      <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                        <Link href="/pricing">View Pricing Models</Link>
-                      </Button>
-                    </motion.div>
-                  </motion.div>
-                </div>
-                <motion.div variants={scaleIn} className="p-8 md:p-12 lg:p-16 bg-paper/30 flex flex-col justify-center">
-                  <div className="divide-y divide-grid/10">
-                    {[
-                      { label: "Response Time", value: "Within 24 hours" },
-                      { label: "Planning Call", value: "15-30 minutes" },
-                      { label: "Proposal", value: "Clear scope + timeline" },
-                      { label: "Team Access", value: "Direct with builders" },
-                    ].map((stat) => (
-                      <div
-                        key={stat.label}
-                        className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 py-4 sm:py-5 first:pt-0 last:pb-0"
-                      >
-                        <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{stat.label}</span>
-                        <span className="font-sans font-semibold text-ink">{stat.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </Section>
+      <WebsiteSolutionsDeferredLoader />
     </main>
   );
 }
-
-

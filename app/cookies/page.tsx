@@ -7,6 +7,7 @@ export const metadata = buildPageMetadata({
   title: "Cookie Policy | Nodecraft",
   description: "Read how Nodecraft uses cookies and preference storage on this website.",
   path: "/cookies",
+  noIndex: true,
 });
 
 export default function CookieSettingsPage() {
@@ -66,5 +67,4 @@ export default function CookieSettingsPage() {
     </main>
   );
 }
-
 

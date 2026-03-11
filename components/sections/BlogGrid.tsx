@@ -3,11 +3,11 @@ import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { blogPosts } from "@/lib/blogPosts";
+import { featuredBlogPost } from "@/lib/blogFeatured";
 import Image from "next/image";
 
 export function BlogGrid() {
-  const featured = blogPosts[0];
+  const featured = featuredBlogPost;
 
   return (
     <Section id="blog" className="bg-transparent">
@@ -99,4 +99,3 @@ export function BlogGrid() {
     </Section>
   );
 }
-

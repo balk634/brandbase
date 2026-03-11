@@ -4,6 +4,34 @@ export function JsonLd() {
     const { metadata, contact } = masterConfig;
     const baseUrl = metadata.baseUrl.replace(/\/+$/, "");
     const sameAs = [contact.social.linkedin, contact.social.instagram].filter(Boolean);
+    const toAbsoluteUrl = (path: string) => `${baseUrl}${path.startsWith("/") ? path : `/${path}`}`;
+
+    const navigationLinks = masterConfig.navigation.flatMap((item) => [
+        { name: item.name, href: item.href },
+        ...(item.subItems ?? []).map((subItem) => ({ name: subItem.name, href: subItem.href })),
+    ]);
+
+    const offerCatalog = {
+        "@type": "OfferCatalog",
+        "name": "Nodecraft Services",
+        "itemListElement": masterConfig.navigation.map((item) => {
+            const sectionServices =
+                item.subItems && item.subItems.length > 0
+                    ? item.subItems
+                    : [{ name: item.name, href: item.href }];
+
+            return {
+                "@type": "OfferCatalog",
+                "name": item.name,
+                "url": toAbsoluteUrl(item.href),
+                "itemListElement": sectionServices.map((service) => ({
+                    "@type": "Service",
+                    "name": service.name,
+                    "url": toAbsoluteUrl(service.href),
+                })),
+            };
+        }),
+    };
 
     const schema = {
         "@context": "https://schema.org",
@@ -17,10 +45,26 @@ export function JsonLd() {
                 "inLanguage": "en-IN",
                 "publisher": {
                     "@id": `${baseUrl}/#organization`
+                },
+                "hasPart": navigationLinks.map((link, index) => ({
+                    "@id": `${baseUrl}/#nav-${index + 1}`,
+                })),
+            },
+            {
+                "@type": "WebPage",
+                "@id": `${baseUrl}/#webpage`,
+                "url": baseUrl,
+                "name": metadata.title,
+                "description": metadata.description,
+                "isPartOf": {
+                    "@id": `${baseUrl}/#website`,
+                },
+                "about": {
+                    "@id": `${baseUrl}/#organization`,
                 }
             },
             {
-                "@type": "ProfessionalService",
+                "@type": ["Organization", "ProfessionalService"],
                 "@id": `${baseUrl}/#organization`,
                 "name": "Nodecraft",
                 "url": baseUrl,
@@ -28,6 +72,8 @@ export function JsonLd() {
                 "image": `${baseUrl}${metadata.openGraph.images?.[0]?.url || "/og-image.png"}`,
                 "description": metadata.description,
                 "areaServed": "Worldwide",
+                "knowsAbout": metadata.keywords,
+                "hasOfferCatalog": offerCatalog,
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": `${contact.address.street}${contact.address.locality ? ` ${contact.address.locality}` : ''}`,
@@ -49,7 +95,13 @@ export function JsonLd() {
                 "email": contact.email,
                 "priceRange": "₹₹",
                 "sameAs": sameAs
-            }
+            },
+            ...navigationLinks.map((link, index) => ({
+                "@type": "SiteNavigationElement",
+                "@id": `${baseUrl}/#nav-${index + 1}`,
+                "name": link.name,
+                "url": toAbsoluteUrl(link.href),
+            })),
         ]
     };
 

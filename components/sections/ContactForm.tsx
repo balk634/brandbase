@@ -23,6 +23,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
   const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
   const bookingHref = calendlyUrl || "#contact-form";
   const bookingIsExternal = /^https?:\/\//i.test(bookingHref);
+  const [formStartedAt] = useState(() => Date.now().toString());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -151,6 +152,15 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                     </div>
                   ) : (
                     <form id="contact-form" className="flex-1 flex flex-col" action={handleAction}>
+                      <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
+                      <input
+                        aria-hidden="true"
+                        autoComplete="off"
+                        className="absolute -left-[9999px] opacity-0 pointer-events-none"
+                        name="website"
+                        tabIndex={-1}
+                        type="text"
+                      />
                       {status === "error" && (
                         <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-600 text-sm">
                           {errorMessage}
@@ -163,13 +173,14 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                             htmlFor="contact-page-name"
                             className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                           >
-                            Name
+                            Name <span className="text-primary">*</span>
                           </label>
                           <input
                             className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                             id="contact-page-name"
                             name="name"
                             autoComplete="name"
+                            required
                           />
                         </div>
                         <div className="space-y-2">
@@ -177,7 +188,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                             htmlFor="contact-page-email"
                             className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                           >
-                            Email
+                            Email <span className="text-primary">*</span>
                           </label>
                           <input
                             className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
@@ -185,21 +196,38 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                             name="email"
                             type="email"
                             autoComplete="email"
+                            required
                           />
                         </div>
                       </div>
 
                       <div className="mt-6 space-y-2">
                         <label
-                          htmlFor="contact-page-project"
+                          htmlFor="contact-page-phone"
                           className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                         >
-                          Project
+                          Phone Number
                         </label>
                         <input
                           className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                          id="contact-page-project"
-                          name="project"
+                          id="contact-page-phone"
+                          name="phone"
+                          type="tel"
+                          autoComplete="tel"
+                        />
+                      </div>
+
+                      <div className="mt-6 space-y-2">
+                        <label
+                          htmlFor="contact-page-subject"
+                          className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                        >
+                          Subject
+                        </label>
+                        <input
+                          className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                          id="contact-page-subject"
+                          name="subject"
                         />
                       </div>
 
@@ -208,13 +236,14 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                           htmlFor="contact-page-message"
                           className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                         >
-                          Message
+                          Message <span className="text-primary">*</span>
                         </label>
                         <textarea
                           className="w-full flex-1 min-h-[160px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
                           id="contact-page-message"
                           name="message"
                           placeholder={HELPFUL_DETAILS.map((line) => `- ${line}`).join("\n")}
+                          required
                         />
                       </div>
 
@@ -271,6 +300,15 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
               className="border border-grid/15 bg-white p-6 sm:p-8"
               action={handleAction}
             >
+              <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
+              <input
+                aria-hidden="true"
+                autoComplete="off"
+                className="absolute -left-[9999px] opacity-0 pointer-events-none"
+                name="website"
+                tabIndex={-1}
+                type="text"
+              />
               {status === "error" && (
                 <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-600 text-sm">
                   {errorMessage}
@@ -283,7 +321,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                     htmlFor="contact-name"
                     className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                   >
-                    Name
+                    Name <span className="text-primary">*</span>
                   </label>
                   <input
                     className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
@@ -298,7 +336,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                     htmlFor="contact-email"
                     className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                   >
-                    Email
+                    Email <span className="text-primary">*</span>
                   </label>
                   <input
                     className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
@@ -313,15 +351,31 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
 
               <div className="mt-6 space-y-2">
                 <label
-                  htmlFor="contact-project"
+                  htmlFor="contact-phone"
                   className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                 >
-                  Project
+                  Phone Number
                 </label>
                 <input
                   className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                  id="contact-project"
-                  name="project"
+                  id="contact-phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                />
+              </div>
+
+              <div className="mt-6 space-y-2">
+                <label
+                  htmlFor="contact-subject"
+                  className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                >
+                  Subject
+                </label>
+                <input
+                  className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  id="contact-subject"
+                  name="subject"
                   placeholder="e.g. Full rebrand + web launch, Performance marketing for e-commerce"
                 />
               </div>
@@ -331,7 +385,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                   htmlFor="contact-message"
                   className="font-mono text-xs uppercase tracking-widest text-ink-muted"
                 >
-                  Message
+                  Message <span className="text-primary">*</span>
                 </label>
                 <textarea
                   className="w-full min-h-[140px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y"
@@ -353,4 +407,3 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
     </Section>
   );
 }
-

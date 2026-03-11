@@ -6,6 +6,8 @@ import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { sendEmail } from "@/app/actions";
+import { masterConfig } from "@/config/master";
 
 type SelectionKey =
   | "website_root"
@@ -168,10 +170,12 @@ export default function PricingPage() {
     message: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const [formError, setFormError] = useState<string | null>(null);
 
   const scope = useMemo(() => getScope(selections), [selections]);
+  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
+  const calendlyIsExternal = /^https?:\/\//i.test(calendlyUrl ?? "");
 
   function setSelection(key: SelectionKey, next: boolean) {
     setSelections((prev) => {
@@ -459,7 +463,7 @@ export default function PricingPage() {
                         </div>
                         <h3 className="font-sans font-bold text-2xl tracking-tight mb-2">Request captured</h3>
                         <p className="text-ink-muted leading-relaxed max-w-sm">
-                          Frontend only for now. Your selections are saved in this session.
+                          We&apos;ve received your estimate request and will send your tailored quote shortly.
                         </p>
                         <Button variant="outline" className="mt-8" onClick={reset}>
                           Build another estimate
@@ -468,11 +472,13 @@ export default function PricingPage() {
                     ) : (
                       <form
                         className="flex flex-col gap-6"
-                        onSubmit={(e) => {
+                        onSubmit={async (e) => {
                           e.preventDefault();
                           setFormError(null);
                           const name = form.name.trim();
                           const email = form.email.trim();
+                          const phone = form.phone.trim();
+                          const userMessage = form.message.trim();
 
                           if (!name || !email) {
                             setFormError("Please enter your name and email.");
@@ -484,7 +490,49 @@ export default function PricingPage() {
                             return;
                           }
 
-                          setStatus("success");
+                          const selectedSummary = scope.summary
+                            .map((line) =>
+                              line.kind === "group"
+                                ? `${line.label}:`
+                                : `${" ".repeat(line.indent * 2)}- ${line.label}`
+                            )
+                            .join("\n");
+
+                          const payload = new FormData();
+                          payload.append("name", name);
+                          payload.append("email", email);
+                          payload.append("leadType", "quote_request");
+                          payload.append("project", `Pricing Estimate (${scope.level})`);
+                          payload.append(
+                            "message",
+                            [
+                              `Phone: ${phone || "N/A"}`,
+                              `Scope Level: ${scope.level}`,
+                              `Scope Points: ${scope.points}`,
+                              `Recommended Next: ${scope.recommendedNext}`,
+                              "",
+                              "Selected Items:",
+                              selectedSummary,
+                              "",
+                              "Visitor Message:",
+                              userMessage || "N/A",
+                            ].join("\n")
+                          );
+
+                          setStatus("loading");
+                          try {
+                            const result = await sendEmail(payload);
+                            if (result.success) {
+                              setStatus("success");
+                              return;
+                            }
+
+                            setStatus("idle");
+                            setFormError(result.error || "Failed to send request. Please try again.");
+                          } catch {
+                            setStatus("idle");
+                            setFormError("Failed to send request. Please try again.");
+                          }
                         }}
                       >
                         <div className="border border-grid/15 bg-white p-5">
@@ -599,9 +647,26 @@ export default function PricingPage() {
                         </div>
 
                         <div className="pt-2">
-                          <Button type="submit" variant="primary" size="lg" className="w-full">
-                            Book a call
+                          <Button
+                            type="submit"
+                            variant="primary"
+                            size="lg"
+                            className="w-full"
+                            disabled={status === "loading"}
+                          >
+                            {status === "loading" ? "Sending..." : "Get pricing estimate"}
                           </Button>
+                          {calendlyUrl ? (
+                            <Button asChild variant="outline" size="lg" className="w-full mt-3">
+                              <a
+                                href={calendlyUrl}
+                                target={calendlyIsExternal ? "_blank" : undefined}
+                                rel={calendlyIsExternal ? "noreferrer" : undefined}
+                              >
+                                Book a call instead
+                              </a>
+                            </Button>
+                          ) : null}
                           {formError ? (
                             <p className="mt-3 text-xs text-red-600 leading-relaxed">{formError}</p>
                           ) : null}
@@ -621,4 +686,3 @@ export default function PricingPage() {
     </main>
   );
 }
-
