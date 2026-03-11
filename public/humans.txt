@@ -1,0 +1,12 @@
+/* TEAM */
+  Agency: Nodecraft
+  Website: https://nodecraft.tech
+  Contact: info@nodecraft.tech
+  Services: Conversion-First Websites, Local SEO, Performance Marketing, Analytics & Tracking
+
+/* SITE */
+  Last Update: 2026/03/08
+  Standards: HTML5, CSS3, WCAG 2.1
+  Components: Next.js 16, React 19, Tailwind CSS, Framer Motion
+  Typography: Space Grotesk, JetBrains Mono, Raleway
+  Hosting: Vercel (Green Energy)

@@ -1,0 +1,22 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Interlocking rectangular mosaic hairlines -->
+  <g stroke="#3A3A38" stroke-width="0.5" stroke-opacity="0.3" fill="none" vector-effect="non-scaling-stroke">
+    <!-- Primary splits -->
+    <path d="M96 0V320 M224 0V320 M0 80H320 M0 208H320" />
+
+    <!-- Secondary splits (varying panels) -->
+    <path d="M0 144H96" />
+    <path d="M224 144H320" />
+    <path d="M96 272H224" />
+
+    <!-- Vertical blocks / strips -->
+    <path d="M160 80V320" />
+    <path d="M272 0V208" />
+
+    <!-- Small interlocks -->
+    <path d="M96 120H160" />
+    <path d="M160 176H224" />
+    <path d="M224 252H320" />
+    <path d="M48 208V320" />
+  </g>
+</svg>

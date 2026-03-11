@@ -1,0 +1,356 @@
+"use client";
+
+import { Section } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
+import { masterConfig } from "@/config/master";
+import { Kicker } from "@/components/ui/Kicker";
+import { IconMail, IconPhone, IconMapPin, IconClock } from "@tabler/icons-react";
+import { useState } from "react";
+import { sendEmail } from "@/app/actions";
+
+type ContactFormVariant = "section" | "page";
+
+const HELPFUL_DETAILS = [
+  "Your business + industry",
+  "What you need (brand, web, marketing, or all three)",
+  "Your goals and timeline",
+  "Current challenges or pain points",
+] as const;
+
+export function ContactForm({ variant = "section" }: { variant?: ContactFormVariant }) {
+  const isPage = variant === "page";
+  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
+  const bookingHref = calendlyUrl || "#contact-form";
+  const bookingIsExternal = /^https?:\/\//i.test(bookingHref);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleAction(formData: FormData) {
+    setStatus("loading");
+    setErrorMessage("");
+    const result = await sendEmail(formData);
+
+    if (result.success) {
+      setStatus("success");
+    } else {
+      setStatus("error");
+      setErrorMessage(result.error || "Failed to send message. Please try again.");
+    }
+  }
+
+  if (isPage) {
+    return (
+      <>
+        <Section className="bg-transparent py-10 md:py-12 lg:py-14">
+          <Container>
+            <div className="border border-grid/15 bg-white overflow-hidden">
+              <div className="p-6 sm:p-8 md:p-12">
+                <div className="text-center">
+                  <Kicker className="mx-auto text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary">
+                    CONTACT
+                  </Kicker>
+                </div>
+
+                <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink">
+                  Book a instant call for consultation.
+                </h1>
+                <p className="mt-6 max-w-3xl mx-auto text-center text-ink-muted leading-relaxed text-lg md:text-xl">
+                  We&apos;ll review your website (or idea), identify the biggest conversion opportunities, and outline what to build first. Then we&apos;ll map the right marketing moves to scale what works.
+                </p>
+
+                <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                    <a
+                      href={bookingHref}
+                      target={bookingIsExternal ? "_blank" : undefined}
+                      rel={bookingIsExternal ? "noreferrer" : undefined}
+                    >
+                      Book a call
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="border-t border-grid/15 grid md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-grid/15">
+                <div className="md:col-span-5 p-6 sm:p-7 md:p-8 flex flex-col">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                    Details
+                  </div>
+
+                  <div className="mt-6 border border-grid/15 bg-paper/40 divide-y divide-grid/15">
+                    <div className="p-5 flex items-start gap-4">
+                      <IconMail className="h-5 w-5 text-primary shrink-0" strokeWidth={1.5} />
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                          Email
+                        </div>
+                        <a
+                          href={`mailto:${masterConfig.contact.email}`}
+                          className="mt-2 inline-flex text-sm text-ink hover:text-primary transition-colors"
+                        >
+                          {masterConfig.contact.email}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="p-5 flex items-start gap-4">
+                      <IconPhone className="h-5 w-5 text-primary shrink-0" strokeWidth={1.5} />
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                          Phone
+                        </div>
+                        <a
+                          href={`tel:${masterConfig.contact.phone}`}
+                          className="mt-2 inline-flex text-sm text-ink hover:text-primary transition-colors"
+                        >
+                          {masterConfig.contact.phone}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="p-5 flex items-start gap-4">
+                      <IconMapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                          Office
+                        </div>
+                        <p className="mt-2 text-sm text-ink-muted leading-relaxed">
+                          {masterConfig.contact.address.street}
+                          <br />
+                          {masterConfig.contact.address.city}, {masterConfig.contact.address.state}, {masterConfig.contact.address.country}
+                          <br />
+                          {masterConfig.contact.address.postalCode}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="p-5 flex items-start gap-4">
+                      <IconClock className="h-5 w-5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                          Response Time
+                        </div>
+                        <div className="mt-2 text-sm text-ink-muted">
+                          Typically within 24 hours (business days).
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-7 p-6 sm:p-7 md:p-8 flex flex-col">
+                  {status === "success" ? (
+                    <div className="flex-1 flex flex-col items-center justify-center min-h-[400px] text-center">
+                      <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                      </div>
+                      <h3 className="font-sans font-bold text-2xl tracking-tight mb-2">Message Sent</h3>
+                      <p className="text-ink-muted leading-relaxed">We&apos;ve received your inquiry and will match you with a senior strategist shortly.</p>
+                      <Button variant="outline" className="mt-8" onClick={() => setStatus("idle")}>Send another message</Button>
+                    </div>
+                  ) : (
+                    <form id="contact-form" className="flex-1 flex flex-col" action={handleAction}>
+                      {status === "error" && (
+                        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-600 text-sm">
+                          {errorMessage}
+                        </div>
+                      )}
+
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label
+                            htmlFor="contact-page-name"
+                            className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                          >
+                            Name
+                          </label>
+                          <input
+                            className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                            id="contact-page-name"
+                            name="name"
+                            autoComplete="name"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label
+                            htmlFor="contact-page-email"
+                            className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                          >
+                            Email
+                          </label>
+                          <input
+                            className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                            id="contact-page-email"
+                            name="email"
+                            type="email"
+                            autoComplete="email"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-6 space-y-2">
+                        <label
+                          htmlFor="contact-page-project"
+                          className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                        >
+                          Project
+                        </label>
+                        <input
+                          className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                          id="contact-page-project"
+                          name="project"
+                        />
+                      </div>
+
+                      <div className="mt-6 space-y-2 flex-1 flex flex-col">
+                        <label
+                          htmlFor="contact-page-message"
+                          className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                        >
+                          Message
+                        </label>
+                        <textarea
+                          className="w-full flex-1 min-h-[160px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
+                          id="contact-page-message"
+                          name="message"
+                          placeholder={HELPFUL_DETAILS.map((line) => `- ${line}`).join("\n")}
+                        />
+                      </div>
+
+                      <div className="mt-8 flex justify-center sm:justify-end">
+                        <Button type="submit" variant="primary" className="w-full sm:w-auto sm:min-w-[220px]" disabled={status === "loading"}>
+                          {status === "loading" ? "Sending..." : "Send message"}
+                        </Button>
+                      </div>
+                    </form>
+                  )}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      </>
+    );
+  }
+
+  return (
+    <Section className="bg-transparent">
+      <Container className="grid md:grid-cols-12 gap-10 items-start">
+        <div className="md:col-span-5">
+          <Kicker>Let&apos;s talk.</Kicker>
+          <h2 className="mt-6 text-3xl md:text-5xl font-sans font-bold tracking-tight mb-4">
+            Book a call and get clarity.
+          </h2>
+          <p className="text-ink-muted font-mono text-sm max-w-md">
+            Share what you&apos;re building and what results you want. We&apos;ll reply with clear next steps.
+          </p>
+
+          <div className="mt-8 text-sm">
+            <div className="font-mono text-xs uppercase tracking-widest text-ink-muted">
+              Direct
+            </div>
+            <a href={`mailto:${masterConfig.contact.email}`} className="mt-2 inline-block text-ink hover:text-primary transition-colors">
+              {masterConfig.contact.email}
+            </a>
+          </div>
+        </div>
+
+        <div className="md:col-span-7">
+          {status === "success" ? (
+            <div className="border border-grid/15 bg-white p-6 sm:p-8 md:p-12 text-center h-full flex flex-col items-center justify-center">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <h3 className="font-sans font-bold text-xl tracking-tight mb-2">Message Sent Successfully</h3>
+              <p className="text-ink-muted text-sm leading-relaxed mb-6">Our team will review your project and get back to you within 24 hours (business days).</p>
+              <Button variant="outline" onClick={() => setStatus("idle")}>Send another message</Button>
+            </div>
+          ) : (
+            <form
+              className="border border-grid/15 bg-white p-6 sm:p-8"
+              action={handleAction}
+            >
+              {status === "error" && (
+                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-600 text-sm">
+                  {errorMessage}
+                </div>
+              )}
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="contact-name"
+                    className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                  >
+                    Name
+                  </label>
+                  <input
+                    className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    id="contact-name"
+                    name="name"
+                    autoComplete="name"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label
+                    htmlFor="contact-email"
+                    className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                  >
+                    Email
+                  </label>
+                  <input
+                    className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="mt-6 space-y-2">
+                <label
+                  htmlFor="contact-project"
+                  className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                >
+                  Project
+                </label>
+                <input
+                  className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  id="contact-project"
+                  name="project"
+                  placeholder="e.g. Full rebrand + web launch, Performance marketing for e-commerce"
+                />
+              </div>
+
+              <div className="mt-6 space-y-2">
+                <label
+                  htmlFor="contact-message"
+                  className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                >
+                  Message
+                </label>
+                <textarea
+                  className="w-full min-h-[140px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y"
+                  id="contact-message"
+                  name="message"
+                  required
+                />
+              </div>
+
+              <div className="mt-8 flex justify-center sm:justify-end">
+                <Button type="submit" variant="primary" className="w-full sm:w-auto sm:min-w-[220px]" disabled={status === "loading"}>
+                  {status === "loading" ? "Sending..." : "Send message"}
+                </Button>
+              </div>
+            </form>
+          )}
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
