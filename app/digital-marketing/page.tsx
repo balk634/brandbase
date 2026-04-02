@@ -106,20 +106,20 @@ export default function DigitalMarketingPage() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <motion.div variants={fadeInLeft}>
-                  <Kicker className="text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary">
+                  <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary">
                     DIGITAL MARKETING
                   </Kicker>
                 </motion.div>
                 <motion.h1
                   variants={fadeInLeft}
-                  className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink max-w-2xl"
+ className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink max-w-2xl"
                 >
                   Replace channel chaos with one{" "}
                   <span className="text-primary">coordinated growth engine.</span>
                 </motion.h1>
                 <motion.p
                   variants={fadeInLeft}
-                  className="mt-6 text-base md:text-lg text-ink-muted leading-relaxed max-w-lg"
+                  className="mt-6 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg"
                 >
                   Paid media, social execution, and local visibility are run as
                   one system so your pipeline grows with less waste.
@@ -211,7 +211,7 @@ export default function DigitalMarketingPage() {
                       <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
                         {lane.label}
                       </div>
-                      <h3 className="mt-3 text-xl font-serif tracking-tight text-ink">
+ <h3 className="h3 mt-3 text-xl font-serif tracking-tight text-ink">
                         {lane.title}
                       </h3>
                     </div>

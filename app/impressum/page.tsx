@@ -15,7 +15,7 @@ export default function ImpressumPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper">
         <Container>
-          <h1 className="text-4xl md:text-5xl font-newsreader tracking-tighter mb-8">
+ <h1 className="text-4xl md:text-5xl font-serif-20 tracking-tighter mb-8">
             Impressum
           </h1>
           <div className="prose prose-sm md:prose-base font-sans text-ink-muted">
@@ -23,7 +23,7 @@ export default function ImpressumPage() {
               Legal Disclosure according to international requirements.
             </p>
 
-            <h3 className="font-newsreader">Information required under Section 5 of the German Telemedia Act (TMG):</h3>
+ <h3 className="font-serif">Information required under Section 5 of the German Telemedia Act (TMG):</h3>
             <p>
               BrandBase<br />
               {masterConfig.contact.address.street} {masterConfig.contact.address.locality}<br />

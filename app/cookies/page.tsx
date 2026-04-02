@@ -15,7 +15,7 @@ export default function CookieSettingsPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper">
         <Container className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-newsreader tracking-tighter mb-8">
+ <h1 className="text-4xl md:text-5xl font-serif-20 tracking-tighter mb-8">
             Cookie Policy
           </h1>
           <div className="prose prose-sm md:prose-base font-sans text-ink-muted">
@@ -23,7 +23,7 @@ export default function CookieSettingsPage() {
               Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
 
-            <h3 className="font-newsreader">1. What Are Cookies?</h3>
+ <h3 className="font-serif">1. What Are Cookies?</h3>
             <p>
               Cookies are simple text files that are stored on your computer or mobile device by a website&apos;s server. Each cookie is unique to your web browser. It will contain some anonymous information such as a unique identifier, the website&apos;s site name, and some digits and numbers.
             </p>

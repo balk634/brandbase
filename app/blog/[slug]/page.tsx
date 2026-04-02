@@ -162,7 +162,7 @@ export default async function BlogPostPage({
 
               <div className="mt-10 grid lg:grid-cols-12 gap-10 items-end">
                 <div className="lg:col-span-8 min-w-0">
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+ <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink">
                     {post.title}
                   </h1>
                   <p className="mt-6 text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl">
@@ -175,7 +175,7 @@ export default async function BlogPostPage({
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                       Topic
                     </div>
-                    <div className="mt-4 font-serif tracking-tight text-ink text-xl">
+ <div className="mt-4 font-serif-10 tracking-tight text-ink text-xl">
                       {post.category}
                     </div>
                     <div className="mt-6 border-t border-grid/15 pt-5">

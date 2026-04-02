@@ -74,10 +74,10 @@ export default function BlogPage() {
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-8 md:p-12">
               <div className="text-center">
-                <Kicker className="mx-auto text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> BLOG </Kicker>
+                <Kicker className="mx-auto text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> BLOG </Kicker>
               </div>
 
-              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+ <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink">
                 Guides that help you grow.
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
@@ -95,7 +95,7 @@ export default function BlogPage() {
                         <div className="inline-flex items-center px-3 py-1 rounded-full border border-grid/25 bg-paper/40 text-[10px] font-mono uppercase tracking-[0.35em] text-ink-muted">
                           {post.category}
                         </div>
-                        <h2 className="mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
+ <h2 className="mt-4 font-serif-10 text-2xl md:text-3xl tracking-tight text-ink">
                           <Link
                             href={`/blog/${post.slug}`}
                             className="text-ink hover:text-ink underline-offset-4 hover:underline decoration-ink/30"

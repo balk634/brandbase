@@ -87,10 +87,10 @@ export default function AboutPage() {
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
               <div className="text-center">
-                <Kicker className="mx-auto text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> ABOUT BRANDBASE </Kicker>
+                <Kicker className="mx-auto text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> ABOUT BRANDBASE </Kicker>
               </div>
 
-              <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
+ <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink break-words">
                 We build websites that convert, then help you scale what works.
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
@@ -110,7 +110,7 @@ export default function AboutPage() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] text-ink-muted">
                     ORIGIN
                   </div>
-                  <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight text-ink break-words">
+ <h2 className="mt-4 font-serif-10 text-2xl sm:text-3xl md:text-4xl tracking-tight text-ink break-words">
                     The &quot;Goldilocks&quot; Problem.
                   </h2>
                   <p className="mt-5 text-base sm:text-lg text-ink-muted leading-relaxed break-words">
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] text-ink-muted">
                   {"// LEADERSHIP & EXPERTISE"}
                 </div>
-                <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
+ <h2 className="mt-4 font-serif-10 text-3xl md:text-4xl tracking-tight text-ink">
                   Built by practitioners.
                 </h2>
                 <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
@@ -192,7 +192,7 @@ export default function AboutPage() {
                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-2">
                           {member.role}
                         </div>
-                        <h3 className="font-serif text-xl tracking-tight text-ink">
+ <h3 className="font-serif text-xl tracking-tight text-ink">
                           {member.name}
                         </h3>
                       </div>
@@ -213,7 +213,7 @@ export default function AboutPage() {
       <Section className="bg-transparent border-b-0 py-8 md:py-10 lg:py-12">
         <Container>
           <div className="max-w-4xl mx-auto border border-grid/15 bg-white p-10 md:p-12 text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter text-ink">
+ <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif-10 tracking-tighter text-ink">
               Ready to build your website engine?
             </h2>
             <div className="mt-10">

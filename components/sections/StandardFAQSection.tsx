@@ -18,7 +18,7 @@ type StandardFAQSectionProps = {
 
 export function StandardFAQSection({
   items,
-  title = "Common\nQuestions.",
+  title = "Common Questions.",
   kicker = "FAQ",
   className,
   withBottomBorder = false,
@@ -57,7 +57,7 @@ export function StandardFAQSection({
         <div className="border border-grid/15 bg-white">
           <div className="p-5 sm:p-6 md:p-8 border-b border-grid/15">
             <Kicker>{kicker}</Kicker>
-            <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-serif tracking-tight">
+ <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-serif-10 tracking-tight">
               {title.split("\n").map((line, index) => (
                 <span key={`${line}-${index}`}>
                   {index > 0 ? <br /> : null}

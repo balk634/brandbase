@@ -159,7 +159,7 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
               </div>
               <span className="h-1.5 w-1.5 bg-primary/70" aria-hidden="true" />
             </div>
-            <h3 className="mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
+ <h3 className="h3 mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
               {item.title}
             </h3>
             <p className="mt-3 text-[13px] text-ink-muted leading-relaxed max-w-3xl">
@@ -283,7 +283,7 @@ export function ServicesUpgrades() {
           <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
             BUSINESS UPGRADES
           </div>
-          <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
+ <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight">
             Three upgrades. Three outcomes.
           </h2>
           <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">

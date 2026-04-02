@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Newsreader, DM_Sans } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { masterConfig } from "@/config/master";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -10,16 +10,14 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["400"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -74,7 +72,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${newsreader.variable} ${dmSans.variable} font-sans antialiased bg-paper text-ink overflow-x-hidden w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-paper text-ink overflow-x-hidden w-full`}
         style={
           {
             "--pattern-opacity": String(masterConfig.ui.pattern.opacity),

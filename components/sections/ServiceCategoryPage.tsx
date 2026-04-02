@@ -108,10 +108,10 @@ export function ServiceCategoryPage({
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <motion.div variants={fadeUp}>
                   <Kicker className="bg-primary/5 border-primary/30 text-primary">{kicker}</Kicker>
-                  <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight text-ink">
+ <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif-20 tracking-tight text-ink">
                     {headline}
                   </h1>
-                  <p className="mt-5 text-sm sm:text-base md:text-lg text-ink-muted leading-relaxed max-w-2xl">
+                  <p className="mt-5 text-sm sm:text-sm md:text-base text-ink-muted leading-relaxed max-w-2xl">
                     {subheadline}
                   </p>
 
@@ -154,7 +154,7 @@ export function ServiceCategoryPage({
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <div className="mb-8 md:mb-10">
               <Kicker>SERVICE TRACKS</Kicker>
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+ <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
                 Pick the execution lane that matches your growth stage.
               </h2>
             </div>
@@ -164,7 +164,7 @@ export function ServiceCategoryPage({
                 <div key={service.name} className="mi-card border border-grid/15 bg-paper/25 p-5 md:p-6 flex flex-col">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="font-serif text-xl font-semibold tracking-tight text-ink">{service.name}</h3>
+ <h3 className="font-serif text-xl tracking-tight text-ink">{service.name}</h3>
                       <p className="mt-3 text-sm text-ink-muted leading-relaxed">{service.summary}</p>
                     </div>
                     <div data-mi-icon className="mi-card-icon h-10 w-10 shrink-0 border border-primary/25 bg-primary/5 text-primary grid place-items-center">
@@ -227,7 +227,7 @@ export function ServiceCategoryPage({
         <Container>
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <Kicker>DELIVERY FRAMEWORK</Kicker>
-            <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+ <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
               A structured system from strategy to consistent execution.
             </h2>
 
@@ -236,7 +236,7 @@ export function ServiceCategoryPage({
                 <div key={item.step} className="relative mi-card border border-grid/15 bg-paper/25 p-5 md:p-6">
                   <BoxPattern />
                   <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{item.step}</div>
-                  <h3 className="mt-3 text-lg font-serif text-ink">{item.title}</h3>
+ <h3 className="h3 mt-3 text-lg font-serif text-ink">{item.title}</h3>
                   <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{item.copy}</p>
                 </div>
               ))}
@@ -250,7 +250,7 @@ export function ServiceCategoryPage({
         <Container>
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <Kicker>SCOPE MATRIX</Kicker>
-            <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+ <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
               {comparisonTitle}
             </h2>
 
@@ -286,7 +286,7 @@ export function ServiceCategoryPage({
         <Container>
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <Kicker>FIT CHECK</Kicker>
-            <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+ <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
               {fitTitle}
             </h2>
 
@@ -340,8 +340,8 @@ export function ServiceCategoryPage({
       <Section className="bg-transparent pt-8 pb-16 md:pb-24 border-b-0">
         <Container>
           <div className="border border-grid/15 bg-ink text-paper p-6 md:p-10 lg:p-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter">{ctaTitle}</h2>
-            <p className="mt-5 max-w-3xl text-paper/75 text-sm sm:text-base md:text-lg leading-relaxed">{ctaCopy}</p>
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tighter">{ctaTitle}</h2>
+            <p className="mt-5 max-w-3xl text-paper/75 text-sm sm:text-sm md:text-base leading-relaxed">{ctaCopy}</p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="w-full sm:w-auto sm:min-w-[220px] bg-paper text-ink hover:bg-paper/90">

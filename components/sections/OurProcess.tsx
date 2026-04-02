@@ -68,7 +68,7 @@ export function OurProcess() {
                 >
                     <motion.div variants={fadeInUp} className="mb-14 max-w-3xl mx-auto text-center">
                         <Kicker>OUR PROCESS</Kicker>
-                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
+ <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight text-ink">
                             From Brief to Revenue in Four Steps.
                         </h2>
                         <p className="mt-4 text-ink-muted text-sm max-w-2xl mx-auto leading-relaxed">
@@ -97,7 +97,7 @@ export function OurProcess() {
                                             <step.Icon className="h-5 w-5" strokeWidth={1.5} />
                                         </div>
 
-                                        <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
+ <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
                                             {step.title}
                                         </h3>
 

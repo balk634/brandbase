@@ -66,18 +66,27 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [
-					'var(--font-dm-sans)',
+					'var(--font-geist-sans)',
 					'sans-serif'
 				],
 				serif: [
-					'var(--font-newsreader)',
+					'redaction',
+					'serif'
+				],
+				'serif-10': [
+					'redaction-10',
+					'serif'
+				],
+				'serif-20': [
+					'redaction-20',
 					'serif'
 				],
 				body: [
-					'var(--font-dm-sans)',
+					'var(--font-geist-sans)',
 					'sans-serif'
 				],
 				mono: [
+					'var(--font-geist-mono)',
 					'monospace'
 				]
 			},

@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper">
         <Container className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-newsreader tracking-tighter mb-8">
+ <h1 className="text-4xl md:text-5xl font-serif-20 tracking-tighter mb-8">
             Privacy Policy
           </h1>
           <div className="prose prose-sm md:prose-base font-sans text-ink-muted">
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
               Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
 
-            <h3 className="font-newsreader">1. Introduction</h3>
+ <h3 className="font-serif">1. Introduction</h3>
             <p>
               BrandBase (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you visit our website or use our services. We are committed to processing data in accordance with the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), the Digital Personal Data Protection (DPDP) Act of India, and other applicable privacy laws.
             </p>

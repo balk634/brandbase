@@ -89,7 +89,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
                     </div>
                     <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                            <h4 className="font-serif text-[15px] tracking-tight text-ink group-hover:text-primary transition-colors">
+ <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink group-hover:text-primary transition-colors">
                                 {item.title}
                             </h4>
                             <IconArrowUpRight className="h-3.5 w-3.5 text-ink-muted opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
@@ -124,7 +124,7 @@ export function CorePillars() {
                 >
                     <motion.div variants={fadeInUp} className="max-w-3xl">
                         <Kicker>THE BRANDBASE SOLUTION</Kicker>
-                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif font-bold tracking-tight text-ink">
+ <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight text-ink">
                             Two Pillars. One Outcome: Outsized Growth.
                         </h2>
                         <p className="mt-4 text-ink-muted text-sm max-w-2xl leading-relaxed">
@@ -146,7 +146,7 @@ export function CorePillars() {
                                     <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted block">
                                         Pillar 01 — Digital Real Estate
                                     </span>
-                                    <h3 className="font-serif text-2xl tracking-tight text-ink mt-1">
+ <h3 className="font-serif text-2xl tracking-tight text-ink mt-1">
                                         Website Solutions
                                     </h3>
                                 </div>
@@ -191,7 +191,7 @@ export function CorePillars() {
                                     <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted block">
                                         Pillar 02 — The Traffic Engine
                                     </span>
-                                    <h3 className="font-serif text-2xl tracking-tight text-ink mt-1">
+ <h3 className="font-serif text-2xl tracking-tight text-ink mt-1">
                                         Digital Marketing
                                     </h3>
                                 </div>

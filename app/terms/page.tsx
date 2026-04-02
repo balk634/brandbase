@@ -15,15 +15,15 @@ export default function TermsPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper">
         <Container className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-newsreader tracking-tighter mb-8">
+ <h1 className="text-4xl md:text-5xl font-serif-20 tracking-tighter mb-8">
             Terms of Service
           </h1>
-          <div className="prose prose-sm md:prose-base font-newsreader text-ink-muted">
+ <div className="prose prose-sm md:prose-base font-serif text-ink-muted">
             <p className="text-lg text-ink font-medium mb-8">
               Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
 
-            <h3 className="font-newsreader">1. Agreement to Terms</h3>
+ <h3 className="font-serif">1. Agreement to Terms</h3>
             <p>
               These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement made between you, whether personally or on behalf of an entity (&quot;you&quot;) and BrandBase (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), concerning your access to and use of our website and services. By accessing our website, you agree that you have read, understood, and agreed to be bound by all of these Terms.
             </p>

@@ -73,7 +73,7 @@ export function ProblemSolution() {
                 >
                     <motion.div variants={fadeInUp} className="mb-14 max-w-3xl mx-auto text-center">
                         <Kicker>THE OLD WAY VS. THE BRANDBASE WAY</Kicker>
-                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink mb-4">
+ <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight text-ink mb-4">
                             Why Your Current Growth Strategy is Leaking Money.
                         </h2>
                         <p className="text-ink-muted font-mono text-sm max-w-2xl mx-auto">
@@ -106,7 +106,7 @@ export function ProblemSolution() {
                                                 The Problem
                                             </span>
                                         </div>
-                                        <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
+ <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
                                             {row.problemTitle}
                                         </h3>
                                         <p className="text-sm text-ink-muted leading-relaxed">
@@ -124,7 +124,7 @@ export function ProblemSolution() {
                                                 The BrandBase Way
                                             </span>
                                         </div>
-                                        <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
+ <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
                                             {row.solutionTitle}
                                         </h3>
                                         <p className="text-sm text-ink-muted leading-relaxed">

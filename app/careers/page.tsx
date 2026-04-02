@@ -20,10 +20,10 @@ export default function CareersPage() {
                 <Container>
                     <div className="max-w-4xl">
                         <Kicker>JOIN THE CRAFT</Kicker>
-                        <h1 className="mt-6 font-serif text-4xl md:text-6xl tracking-tight leading-tight text-ink mb-8">
+ <h1 className="mt-6 font-serif-20 text-4xl md:text-6xl tracking-tight leading-tight text-ink mb-8">
                             We&apos;re building the new standard for digital experiences.
                         </h1>
-                        <p className="font-mono text-base md:text-lg text-ink-muted leading-relaxed max-w-2xl">
+                        <p className="font-mono text-sm md:text-base text-ink-muted leading-relaxed max-w-2xl">
                             BrandBase is a fast-moving, design-led technology firm. We look for high-agency individuals who treat their work as a craft and thrive at the intersection of brand, product, and strategy.
                         </p>
                     </div>
@@ -35,7 +35,7 @@ export default function CareersPage() {
                     <div className="flex flex-col md:flex-row gap-12 lg:gap-24">
                         <div className="w-full md:w-1/3">
                             <Kicker className="mb-4">OPEN ROLES</Kicker>
-                            <h2 className="font-serif text-2xl md:text-3xl tracking-tight text-ink">
+ <h2 className="font-serif-10 text-2xl md:text-3xl tracking-tight text-ink">
                                 Currently hiring
                             </h2>
                             <p className="mt-4 font-mono text-sm text-ink-muted">
@@ -51,7 +51,7 @@ export default function CareersPage() {
                                             <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-2">
                                                 {job.department}
                                             </div>
-                                            <h3 className="font-serif text-xl md:text-2xl text-ink group-hover:text-primary transition-colors">
+ <h3 className="font-serif text-xl md:text-2xl text-ink group-hover:text-primary transition-colors">
                                                 {job.title}
                                             </h3>
                                             <div className="mt-2 flex flex-wrap items-center gap-3 font-mono text-sm text-ink-muted">

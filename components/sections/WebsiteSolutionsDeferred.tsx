@@ -218,7 +218,7 @@ export function WebsiteSolutionsDeferred() {
                     </div>
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em]">BUSINESS IMPACT</div>
                   </div>
-                  <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink max-w-2xl">
+ <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink max-w-2xl">
                     The difference between having a website and having a revenue asset.
                   </h2>
                   <p className="mt-4 text-sm md:text-base text-ink-muted leading-relaxed max-w-xl">
@@ -289,7 +289,7 @@ export function WebsiteSolutionsDeferred() {
                     </div>
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em]">REVENUE LEAK CHECK</div>
                   </div>
-                  <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink max-w-2xl">
+ <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink max-w-2xl">
                     If these signs are showing up, your website is already costing you growth.
                   </h2>
                   <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -362,7 +362,7 @@ export function WebsiteSolutionsDeferred() {
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em]">DELIVERY MODEL</div>
               </div>
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+ <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tight text-ink max-w-3xl">
                 Four sprint layers that keep execution fast and accountable.
               </h2>
             </div>
@@ -382,12 +382,12 @@ export function WebsiteSolutionsDeferred() {
                   >
                     <BoxPattern />
                     <div className="flex items-start justify-between gap-4">
-                      <div className="font-serif text-4xl md:text-5xl tracking-tight text-ink">{step.step}</div>
+ <div className="font-serif-20 text-4xl md:text-5xl tracking-tight text-ink">{step.step}</div>
                       <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0">
                         <step.Icon className="h-5 w-5" />
                       </div>
                     </div>
-                    <h3 className="mt-6 font-serif text-lg tracking-tight text-ink">{step.title}</h3>
+ <h3 className="h3 mt-6 font-serif text-lg tracking-tight text-ink">{step.title}</h3>
                     <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{step.copy}</p>
                   </motion.article>
                   {i < sprintSteps.length - 1 && (
@@ -428,7 +428,7 @@ export function WebsiteSolutionsDeferred() {
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em]">EXECUTION DISCIPLINE</div>
               </div>
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+ <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tight text-ink max-w-3xl">
                 What your team gains with structure and what it avoids with the right partner.
               </h2>
             </div>
@@ -439,7 +439,7 @@ export function WebsiteSolutionsDeferred() {
                     <div className="h-10 w-10 border border-green-800/20 bg-green-800/5 text-green-800 grid place-items-center">
                       <IconCheck className="h-4 w-4" />
                     </div>
-                    <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">YOU GET</h3>
+ <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">YOU GET</h3>
                   </div>
                   <div className="divide-y divide-grid/10">
                     {ownershipWins.map((item) => (
@@ -457,7 +457,7 @@ export function WebsiteSolutionsDeferred() {
                     <div className="h-10 w-10 border border-red-500/25 bg-red-500/10 text-red-600 grid place-items-center">
                       <IconX className="h-4 w-4" />
                     </div>
-                    <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">YOU AVOID</h3>
+ <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">YOU AVOID</h3>
                   </div>
                   <div className="divide-y divide-grid/10">
                     {ownershipRisks.map((item) => (
@@ -491,7 +491,7 @@ export function WebsiteSolutionsDeferred() {
                       </div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.35em]">NEXT STEP</div>
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tighter mb-6">
                       Want us to map your exact website track?
                     </h2>
                     <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
@@ -527,7 +527,7 @@ export function WebsiteSolutionsDeferred() {
                         className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 py-4 sm:py-5 first:pt-0 last:pb-0"
                       >
                         <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{stat.label}</span>
-                        <span className="font-serif text-ink">{stat.value}</span>
+ <span className="font-serif text-ink">{stat.value}</span>
                       </div>
                     ))}
                   </div>

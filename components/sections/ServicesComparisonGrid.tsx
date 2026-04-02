@@ -55,7 +55,7 @@ export function ServicesComparisonGrid() {
     <Section className="bg-transparent">
       <Container>
         <div className="mb-12 max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
+ <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight">
             Why Business Owners choose BrandBase.
           </h2>
         </div>
