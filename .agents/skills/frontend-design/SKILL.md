@@ -152,7 +152,6 @@ This system actively prevents mediocrity. It is not optional. Run it continuousl
 - You reached for Inter, Roboto, Arial, Poppins, Nunito, or any system font → replace with something with genuine character
 - All text elements have similar visual weight → there is no hierarchy. Redesign the type scale.
 - The heading could be smaller with no loss of impact → it should be smaller. Precision matters.
-- The heading could be larger and command more presence → make it larger.
 
 **Color failures:**
 - The primary color is purple and the background is white → this is a default. Choose deliberately.
@@ -211,8 +210,8 @@ This is not a final list just a guide, you can add or remove according to requir
 fontDisplay         // display/heading typeface name
 fontBody            // body copy typeface name
 fontMono            // monospace (optional, for code/data contexts)
-fontSizeBase        // root size in px (typically 16)
-fontScaleRatio      // mathematical scale ratio (1.25 | 1.333 | 1.5)
+fontSizeBase        // root size in px
+fontScaleRatio      // mathematical scale ratio
 ```
 
 ### Layout & Spacing
@@ -327,7 +326,7 @@ Instruct the developer to define tokens for at minimum:
 
 **Always use:** Fonts with genuine character that serve the brand personality profile. Variable fonts for performance and optical control. Consider: display serifs for authority, condensed gothics for energy, geometric serifs for precision, humanist sans for warmth. Pair a distinctive display font with a refined, highly legible body font.
 
-**Type hierarchy must be unmistakable.** If someone squints at the page, they must still know what to read first. Scale contrast between heading levels should be dramatic, not incremental.
+**Type hierarchy must be unmistakable.** If someone squints at the page, they must still know what to read first. Scale contrast between heading levels should be be there.
 
 **Size with `clamp()`.** All display and section heading sizes use `clamp(minSize, viewportValue, maxSize)` for fluid scaling. No hardcoded pixel sizes for headings.
 
@@ -353,7 +352,6 @@ Instruct the developer to define tokens for at minimum:
 
 - Layouts that feel *inevitable* — not assembled from templates
 - Motion with *physical weight* — objects that accelerate, decelerate, feel like they have mass
-- Typography at *confident scale* — do not be afraid of large, dominant type
 - Surfaces with *atmosphere and material* — texture, depth, light behavior
 - Interactions that feel *crafted*, not implemented
 - Copy that *earns its presence* — every word justified

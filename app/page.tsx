@@ -1,7 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { CorePillars } from "@/components/sections/CorePillars";
-import { UnfairAdvantage } from "@/components/sections/UnfairAdvantage";
+
 import { OurProcess } from "@/components/sections/OurProcess";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { BlogGrid } from "@/components/sections/BlogGrid";
@@ -22,7 +22,7 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <CorePillars />
-      <UnfairAdvantage />
+
       <OurProcess />
       <Testimonials />
       <FAQ />
