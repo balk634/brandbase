@@ -8,9 +8,9 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "About Nodecraft | Team, Process & Principles",
+  title: "About BrandBase | Team, Process & Principles",
   description:
-    "Meet the Nodecraft team and see how we combine strategy, design, engineering, and performance marketing to build measurable growth systems.",
+    "Meet the BrandBase team and see how we combine strategy, design, engineering, and performance marketing to build measurable growth systems.",
   path: "/about",
 });
 
@@ -56,7 +56,7 @@ function GoldilocksVenn() {
         <g className="transform origin-[200px_150px] transition-transform duration-1000 ease-out md:hover:scale-[1.15]">
           <path d="M 200 66 A 90 90 0 0 0 200 234 A 90 90 0 0 0 200 66" fill="currentColor" className="text-green-800/20" />
           <path d="M 200 66 A 90 90 0 0 0 200 234 A 90 90 0 0 0 200 66" fill="transparent" stroke="currentColor" className="text-green-800" strokeWidth="2.5" />
-          <text x="200" y="154" fontFamily="sans-serif" fill="currentColor" className="text-green-900 font-bold" fontSize="13" textAnchor="middle" letterSpacing="2.5">NODECRAFT</text>
+          <text x="200" y="154" fontFamily="sans-serif" fill="currentColor" className="text-green-900 font-bold" fontSize="13" textAnchor="middle" letterSpacing="2.5">BRANDBASE</text>
         </g>
 
         <g className="opacity-60">
@@ -87,14 +87,14 @@ export default function AboutPage() {
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
               <div className="text-center">
-                <Kicker className="mx-auto text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> ABOUT NODECRAFT </Kicker>
+                <Kicker className="mx-auto text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> ABOUT BRANDBASE </Kicker>
               </div>
 
-              <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink break-words">
+              <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
                 We build websites that convert, then help you scale what works.
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
-                Nodecraft is a cross-disciplinary team for website strategy, design, engineering, and performance marketing. Website first. Marketing second. Always measured.
+                BrandBase is a cross-disciplinary team for website strategy, design, engineering, and performance marketing. Website first. Marketing second. Always measured.
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function AboutPage() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] text-ink-muted">
                     ORIGIN
                   </div>
-                  <h2 className="mt-4 font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-ink break-words">
+                  <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight text-ink break-words">
                     The &quot;Goldilocks&quot; Problem.
                   </h2>
                   <p className="mt-5 text-base sm:text-lg text-ink-muted leading-relaxed break-words">
@@ -138,7 +138,7 @@ export default function AboutPage() {
 
                     <div className="border border-green-800/25 bg-green-800/5 p-4 sm:p-5 min-w-0">
                       <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.14em] sm:tracking-[0.35em] text-green-800 break-words leading-relaxed">
-                        03. NODECRAFT
+                        03. BRANDBASE
                       </div>
                       <div className="mt-2 text-sm text-ink-muted leading-relaxed break-words">
                         Integrated. Talent across brand, product, and marketing - working as one team with the speed of a startup and the standards of a tier-one firm.
@@ -166,11 +166,11 @@ export default function AboutPage() {
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] text-ink-muted">
                   {"// LEADERSHIP & EXPERTISE"}
                 </div>
-                <h2 className="mt-4 font-sans text-3xl md:text-4xl font-bold tracking-tight text-ink">
+                <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
                   Built by practitioners.
                 </h2>
                 <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
-                  <p>Nodecraft is led by a cross-disciplinary team of strategists, engineers, and creatives who care about the fundamentals: clarity, speed, measurement, and conversion.</p>
+                  <p>BrandBase is led by a cross-disciplinary team of strategists, engineers, and creatives who care about the fundamentals: clarity, speed, measurement, and conversion.</p>
                   <p>We don&apos;t ship websites as a one-off deliverable. We build a system you can improve over time, then use marketing to scale what the data proves is working.</p>
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-2">
                           {member.role}
                         </div>
-                        <h3 className="font-sans font-bold text-xl tracking-tight text-ink">
+                        <h3 className="font-serif text-xl tracking-tight text-ink">
                           {member.name}
                         </h3>
                       </div>
@@ -213,7 +213,7 @@ export default function AboutPage() {
       <Section className="bg-transparent border-b-0 py-8 md:py-10 lg:py-12">
         <Container>
           <div className="max-w-4xl mx-auto border border-grid/15 bg-white p-10 md:p-12 text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-sans font-bold tracking-tighter text-ink">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter text-ink">
               Ready to build your website engine?
             </h2>
             <div className="mt-10">

@@ -13,7 +13,7 @@ export function JsonLd() {
 
     const offerCatalog = {
         "@type": "OfferCatalog",
-        "name": "Nodecraft Services",
+        "name": "BrandBase Services",
         "itemListElement": masterConfig.navigation.map((item) => {
             const sectionServices =
                 item.subItems && item.subItems.length > 0
@@ -40,7 +40,7 @@ export function JsonLd() {
                 "@type": "WebSite",
                 "@id": `${baseUrl}/#website`,
                 "url": baseUrl,
-                "name": "Nodecraft",
+                "name": "BrandBase",
                 "description": metadata.description,
                 "inLanguage": "en-IN",
                 "publisher": {
@@ -66,7 +66,7 @@ export function JsonLd() {
             {
                 "@type": ["Organization", "ProfessionalService"],
                 "@id": `${baseUrl}/#organization`,
-                "name": "Nodecraft",
+                "name": "BrandBase",
                 "url": baseUrl,
                 "logo": `${baseUrl}/brand/logo.svg`,
                 "image": `${baseUrl}${metadata.openGraph.images?.[0]?.url || "/og-image.png"}`,

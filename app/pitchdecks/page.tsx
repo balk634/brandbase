@@ -4,7 +4,7 @@ import PitchDecksWrapper from '@/components/sections/PitchDecksWrapper';
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-    title: "Investor Pitch Deck Design | Nodecraft",
+    title: "Investor Pitch Deck Design | BrandBase",
     description:
         "Narrative-driven pitch deck design services for startups and growth companies seeking institutional capital.",
     path: "/pitchdecks",
@@ -16,7 +16,7 @@ export default function PitchDecksPage() {
             <Container>
                 <div className="mb-16">
                     <Kicker>PRESENTATIONS</Kicker>
-                    <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-sans font-bold tracking-tight text-ink">
+                    <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-newsreader tracking-tight text-ink">
                         Investor Pitch Decks
                     </h1>
                     <p className="mt-6 text-lg text-ink-muted max-w-2xl leading-relaxed">

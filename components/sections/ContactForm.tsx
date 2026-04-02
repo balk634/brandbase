@@ -53,7 +53,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                   </Kicker>
                 </div>
 
-                <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink">
+                <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                   Book a instant call for consultation.
                 </h1>
                 <p className="mt-6 max-w-3xl mx-auto text-center text-ink-muted leading-relaxed text-lg md:text-xl">
@@ -146,7 +146,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                       <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                       </div>
-                      <h3 className="font-sans font-bold text-2xl tracking-tight mb-2">Message Sent</h3>
+                      <h3 className="font-serif text-2xl tracking-tight mb-2">Message Sent</h3>
                       <p className="text-ink-muted leading-relaxed">We&apos;ve received your inquiry and will match you with a senior strategist shortly.</p>
                       <Button variant="outline" className="mt-8" onClick={() => setStatus("idle")}>Send another message</Button>
                     </div>
@@ -268,7 +268,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
       <Container className="grid md:grid-cols-12 gap-10 items-start">
         <div className="md:col-span-5">
           <Kicker>Let&apos;s talk.</Kicker>
-          <h2 className="mt-6 text-3xl md:text-5xl font-sans font-bold tracking-tight mb-4">
+          <h2 className="mt-6 text-3xl md:text-5xl font-serif tracking-tight mb-4">
             Book a call and get clarity.
           </h2>
           <p className="text-ink-muted font-mono text-sm max-w-md">
@@ -291,7 +291,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
               <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
               </div>
-              <h3 className="font-sans font-bold text-xl tracking-tight mb-2">Message Sent Successfully</h3>
+              <h3 className="font-serif text-xl tracking-tight mb-2">Message Sent Successfully</h3>
               <p className="text-ink-muted text-sm leading-relaxed mb-6">Our team will review your project and get back to you within 24 hours (business days).</p>
               <Button variant="outline" onClick={() => setStatus("idle")}>Send another message</Button>
             </div>

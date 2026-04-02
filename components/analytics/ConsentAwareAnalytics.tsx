@@ -8,15 +8,15 @@ type ConsentAwareAnalyticsProps = {
 
 declare global {
   interface Window {
-    __nodecraftGaLoaded?: boolean;
+    __BrandBaseGaLoaded?: boolean;
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
   }
 }
 
 function loadGoogleAnalytics(measurementId: string) {
-  if (!measurementId || window.__nodecraftGaLoaded) return;
-  window.__nodecraftGaLoaded = true;
+  if (!measurementId || window.__BrandBaseGaLoaded) return;
+  window.__BrandBaseGaLoaded = true;
 
   const script = document.createElement("script");
   script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;

@@ -1,27 +1,27 @@
-# Nodecraft - AI Context
+# BrandBase - AI Context
 
-Nodecraft builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.
+BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.
 
 ## Core Documentation
-- [Website Solutions Overview](https://nodecraft.tech/website-solutions): comprehensive breakdown of our digital engineering capabilities.
-- [Premium Static Sites](https://nodecraft.tech/website-solutions/premium-static): high-performance marketing landing pages.
-- [Custom Enterprise Applications](https://nodecraft.tech/website-solutions/custom-enterprise): bespoke React and Next.js applications for scaling businesses.
-- [eCommerce Development](https://nodecraft.tech/website-solutions/ecommerce): conversion-first storefronts and scalable builds.
-- [Redesign Rescue](https://nodecraft.tech/website-solutions/redesign-rescue): transformative UX/UI overhauls for legacy platforms.
-- [Digital Marketing](https://nodecraft.tech/digital-marketing): paid media, social execution, and local visibility run as one system.
-- [Performance Marketing](https://nodecraft.tech/digital-marketing/performance-marketing): CAC-disciplined acquisition across Meta and Google.
-- [Social Media Management](https://nodecraft.tech/digital-marketing/management): strategy, content planning, execution, and community handling.
-- [Local SEO](https://nodecraft.tech/digital-marketing/local-seo): Google Maps and local search optimization for calls and bookings.
+- [Website Solutions Overview](https://brandbase.in/website-solutions): comprehensive breakdown of our digital engineering capabilities.
+- [Premium Static Sites](https://brandbase.in/website-solutions/premium-static): high-performance marketing landing pages.
+- [Custom Enterprise Applications](https://brandbase.in/website-solutions/custom-enterprise): bespoke React and Next.js applications for scaling businesses.
+- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce): conversion-first storefronts and scalable builds.
+- [Redesign Rescue](https://brandbase.in/website-solutions/redesign-rescue): transformative UX/UI overhauls for legacy platforms.
+- [Digital Marketing](https://brandbase.in/digital-marketing): paid media, social execution, and local visibility run as one system.
+- [Performance Marketing](https://brandbase.in/digital-marketing/performance-marketing): CAC-disciplined acquisition across Meta and Google.
+- [Social Media Management](https://brandbase.in/digital-marketing/management): strategy, content planning, execution, and community handling.
+- [Local SEO](https://brandbase.in/digital-marketing/local-seo): Google Maps and local search optimization for calls and bookings.
 
 ## Pricing & Philosophy
-- [Pricing Model](https://nodecraft.tech/pricing): choose Pay Monthly for low-risk launch, or custom projects for complex builds and growth programs.
+- [Pricing Model](https://brandbase.in/pricing): choose Pay Monthly for low-risk launch, or custom projects for complex builds and growth programs.
 
 ## Optional Resources
-- [Our Process](https://nodecraft.tech/process): transparent, phase-by-phase breakdown of our operational methodologies.
-- [Agency Blog](https://nodecraft.tech/blog): deep dives into engineering, design philosophy, and performance marketing strategies.
-- [About Us](https://nodecraft.tech/about): leadership, mission, and guiding principles.
+- [Our Process](https://brandbase.in/process): transparent, phase-by-phase breakdown of our operational methodologies.
+- [Agency Blog](https://brandbase.in/blog): deep dives into engineering, design philosophy, and performance marketing strategies.
+- [About Us](https://brandbase.in/about): leadership, mission, and guiding principles.
 
 ## Contact Information
-- Website: https://nodecraft.tech
-- Email: info@nodecraft.tech
-- New Business Inquiries: https://nodecraft.tech/contact
+- Website: https://brandbase.in
+- Email: info@brandbase.in
+- New Business Inquiries: https://brandbase.in/contact

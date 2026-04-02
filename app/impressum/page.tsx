@@ -4,8 +4,8 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Impressum | Nodecraft",
-  description: "Legal disclosure and company information for Nodecraft.",
+  title: "Impressum | BrandBase",
+  description: "Legal disclosure and company information for BrandBase.",
   path: "/impressum",
   noIndex: true,
 });
@@ -15,7 +15,7 @@ export default function ImpressumPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper">
         <Container>
-          <h1 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter mb-8">
+          <h1 className="text-4xl md:text-5xl font-newsreader tracking-tighter mb-8">
             Impressum
           </h1>
           <div className="prose prose-sm md:prose-base font-sans text-ink-muted">
@@ -23,9 +23,9 @@ export default function ImpressumPage() {
               Legal Disclosure according to international requirements.
             </p>
 
-            <h3>Information required under Section 5 of the German Telemedia Act (TMG):</h3>
+            <h3 className="font-newsreader">Information required under Section 5 of the German Telemedia Act (TMG):</h3>
             <p>
-              Nodecraft<br />
+              BrandBase<br />
               {masterConfig.contact.address.street} {masterConfig.contact.address.locality}<br />
               {masterConfig.contact.address.city}, {masterConfig.contact.address.state} {masterConfig.contact.address.postalCode}<br />
               {masterConfig.contact.address.country}

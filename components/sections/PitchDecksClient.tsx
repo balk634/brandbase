@@ -69,7 +69,7 @@ export default function PitchDecksClient() {
                             <div className="font-mono text-[10px] uppercase tracking-widest text-ink font-bold text-center">
                                 DECK {String(deck.id).padStart(2, '0')}
                             </div>
-                            <div className="mt-2 text-sm font-sans font-bold text-center text-primary transition-colors">
+                            <div className="mt-2 text-sm font-serif text-center text-primary transition-colors">
                                 View Presentation
                             </div>
                             <div className="absolute bottom-4 right-4">

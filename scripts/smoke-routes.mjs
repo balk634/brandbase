@@ -35,7 +35,7 @@ try {
   server = startNextServer(PORT);
   await waitForServer(`${BASE_URL}/`);
 
-  await assertResponse("/", 200, "Nodecraft");
+  await assertResponse("/", 200, "BrandBase");
   await assertResponse("/website-solutions", 200, "WEBSITE SOLUTIONS");
   await assertResponse("/digital-marketing", 200, "DIGITAL MARKETING");
   await assertResponse("/contact", 200, "Contact");

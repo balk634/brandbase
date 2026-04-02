@@ -28,7 +28,7 @@ export function Hero() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 border border-primary/20 bg-primary/5 text-primary"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 border border-ink/20 bg-ink/5 text-ink"
                     >
                         <IconStack2 className="h-3.5 w-3.5" strokeWidth={2} />
                         <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
@@ -41,7 +41,7 @@ export function Hero() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-sans font-bold leading-[0.9] tracking-tighter text-ink"
+                        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-[0.9] tracking-tighter text-ink"
                     >
                         {hero.headline}
                     </motion.h1>

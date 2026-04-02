@@ -7,10 +7,10 @@ export const masterConfig = {
   // ==========================================
   // Controls how the site appears in search engines and social media shares.
   metadata: {
-    title: "Nodecraft | Conversion-First Websites & Performance Marketing",
+    title: "BrandBase | Conversion-First Websites & Performance Marketing",
     description:
-      "Nodecraft builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.",
-    baseUrl: "https://nodecraft.tech",
+      "BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.",
+    baseUrl: "https://brandbase.in",
     keywords: [
       "web design agency india",
       "next.js development agency",
@@ -25,19 +25,19 @@ export const masterConfig = {
       "pay monthly website plans",
       "digital marketing agency india",
     ],
-    authors: [{ name: "Nodecraft", url: "https://nodecraft.tech" }],
-    creator: "Nodecraft",
+    authors: [{ name: "BrandBase", url: "https://brandbase.in" }],
+    creator: "BrandBase",
     openGraph: {
       type: "website",
       locale: "en_IN",
-      url: "https://nodecraft.tech",
-      siteName: "Nodecraft",
+      url: "https://brandbase.in",
+      siteName: "BrandBase",
       images: [
         {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Nodecraft — Conversion-first websites and performance marketing",
+          alt: "BrandBase — Conversion-first websites and performance marketing",
         },
       ],
     },
@@ -62,11 +62,11 @@ export const masterConfig = {
     socialMedia: {
       enabled: true,
     },
-    email: "info@nodecraft.tech",
+    email: "info@brandbase.in",
     phone: "+91 9113702669",
     // Used on the Contact page "Book a call" button.
     // Example: "https://calendly.com/<your-handle>/<event>"
-    calendlyUrl: "https://calendly.com/nodecraft-tech/new-meeting",
+    calendlyUrl: "https://calendly.com/brandbase-in/new-meeting",
     address: {
       street: "Pluto B 504, Suncity Complex,",
       locality: "Powai",
@@ -76,8 +76,8 @@ export const masterConfig = {
       country: "India",
     },
     social: {
-      linkedin: "https://www.linkedin.com/company/nodecraft-tech/",
-      instagram: "https://www.instagram.com/nodecraft.tech/",
+      linkedin: "https://www.linkedin.com/company/brandbase-in/",
+      instagram: "https://www.instagram.com/brandbase.in/",
     },
   },
 
@@ -87,7 +87,7 @@ export const masterConfig = {
   // Core theme variables mapped to Tailwind classes and components.
   colors: {
     background: "#F7F7F5",
-    primary: "#0f1963ff",
+    primary: "#3436c6",
     secondary: "#111827",
     muted: "#4B5563",
     grid: "#3A3A38",
@@ -99,6 +99,20 @@ export const masterConfig = {
         mint: "#9EFFBF",
         gold: "#F4D35E",
       },
+    },
+  },
+
+  // Logo sizing configuration
+  logo: {
+    header: {
+      // Height in pixels for the header logo (width auto)
+      height: 34,
+      // Optional: set explicit width (null for auto)
+      width: null as number | null,
+    },
+    footer: {
+      height: 32,
+      width: null as number | null,
     },
   },
 
@@ -199,7 +213,7 @@ export const masterConfig = {
     {
       title: "Company",
       links: [
-        { name: "About Nodecraft", href: "/about" },
+        { name: "About BrandBase", href: "/about" },
         { name: "Careers", href: "/careers" },
         { name: "Pricing", href: "/pricing" },
         { name: "Insights Blog", href: "/blog" },
@@ -393,7 +407,7 @@ export const masterConfig = {
         location: "Hyderabad, India",
       },
       {
-        quote: "We were juggling multiple vendors before Nodecraft. Now it\u2019s one team, one roadmap, and everything is aligned.",
+        quote: "We were juggling multiple vendors before BrandBase. Now it's one team, one roadmap, and everything is aligned.",
         author: "Co-Founder",
         role: "D2C Brand",
         location: "Bengaluru, India",

@@ -22,15 +22,15 @@ export async function generateMetadata({
   const post = getBlogPost(slug);
   if (!post) {
     return buildPageMetadata({
-      title: "Nodecraft Blog",
-      description: "Growth playbooks and practical website strategy guides from Nodecraft.",
+      title: "BrandBase Blog",
+      description: "Growth playbooks and practical website strategy guides from BrandBase.",
       path: "/blog",
       noIndex: true,
     });
   }
 
   const pageMetadata = buildPageMetadata({
-    title: `${post.title} | Nodecraft`,
+    title: `${post.title} | BrandBase`,
     description: post.description,
     path: `/blog/${post.slug}`,
   });
@@ -46,7 +46,7 @@ export async function generateMetadata({
       url: `${baseUrl}/blog/${post.slug}`,
       siteName: masterConfig.metadata.openGraph.siteName,
       locale: masterConfig.metadata.openGraph.locale,
-      title: `${post.title} | Nodecraft`,
+      title: `${post.title} | BrandBase`,
       description: post.description,
       publishedTime: post.date,
       modifiedTime: post.date,
@@ -63,7 +63,7 @@ export async function generateMetadata({
     },
     twitter: {
       ...masterConfig.metadata.twitter,
-      title: `${post.title} | Nodecraft`,
+      title: `${post.title} | BrandBase`,
       description: post.description,
       images: heroImageUrl,
     },
@@ -103,13 +103,13 @@ export default async function BlogPostPage({
     wordCount: articleWordCount,
     author: {
       "@type": "Organization",
-      name: "Nodecraft",
+      name: "BrandBase",
       url: baseUrl,
     },
     publisher: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
-      name: "Nodecraft",
+      name: "BrandBase",
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/brand/logo.svg`,
@@ -162,7 +162,7 @@ export default async function BlogPostPage({
 
               <div className="mt-10 grid lg:grid-cols-12 gap-10 items-end">
                 <div className="lg:col-span-8 min-w-0">
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink">
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                     {post.title}
                   </h1>
                   <p className="mt-6 text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl">
@@ -175,7 +175,7 @@ export default async function BlogPostPage({
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                       Topic
                     </div>
-                    <div className="mt-4 font-sans font-semibold tracking-tight text-ink text-xl">
+                    <div className="mt-4 font-serif tracking-tight text-ink text-xl">
                       {post.category}
                     </div>
                     <div className="mt-6 border-t border-grid/15 pt-5">

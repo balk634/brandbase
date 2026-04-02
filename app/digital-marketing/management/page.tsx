@@ -18,7 +18,7 @@ import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
 
 export const metadata = buildPageMetadata({
-    title: "Social Media Management | Nodecraft",
+    title: "Social Media Management | BrandBase",
     description:
         "Strategic social media management that aligns content, brand voice, and growth goals across platforms.",
     path: "/digital-marketing/management",
@@ -101,7 +101,7 @@ export default function SocialMediaManagementPage() {
                                 <motion.div variants={fadeInLeft}>
                                     <Kicker className="text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> SOCIAL MEDIA MANAGEMENT </Kicker>
                                 </motion.div>
-                                <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink">
+                                <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Stop Posting. <span className="text-primary">Start Building a Community.</span>
                                 </motion.h1>
                                 <motion.p variants={fadeInLeft} className="mt-6 text-base md:text-lg text-ink-muted leading-relaxed max-w-lg">
@@ -144,7 +144,7 @@ export default function SocialMediaManagementPage() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
                         <div className="mb-16 md:mb-20">
                             <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">DELIVERABLES</div>
-                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">Everything included in your social media package.</h2>
+                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">Everything included in your social media package.</h2>
                         </div>
                         <div className="border border-grid/15 bg-white">
                             {[0, 2].map((startIdx) => (
@@ -152,7 +152,7 @@ export default function SocialMediaManagementPage() {
                                     {deliverables.slice(startIdx, startIdx + 2).map((item) => (
                                         <motion.div key={item.title} variants={scaleIn} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="p-7 md:p-8 flex flex-col group cursor-default">
                                             <div className="flex items-center justify-between gap-4 mb-6">
-                                                <h4 className="font-sans font-semibold text-lg tracking-tight text-ink">{item.title}</h4>
+                                                <h4 className="font-serif text-lg tracking-tight text-ink">{item.title}</h4>
                                                 <div className="h-12 w-12 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0 group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300">
                                                     <item.Icon className="h-6 w-6" />
                                                 </div>
@@ -185,7 +185,7 @@ export default function SocialMediaManagementPage() {
                                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                                     <motion.div variants={fadeInUp}>
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">IS THIS FOR YOU?</div>
-                                        <h3 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-ink mb-8">The right fit.</h3>
+                                        <h3 className="text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right fit.</h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
                                         {fitItems.map((item) => (
@@ -209,8 +209,8 @@ export default function SocialMediaManagementPage() {
                                 </div>
                                 <div className="p-7 md:p-10 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">WHY NODECRAFT</div>
-                                        <h3 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-ink mb-8">Why brands trust us with their social.</h3>
+                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">WHY BRANDBASE</div>
+                                        <h3 className="text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why brands trust us with their social.</h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
                                         {whyUsItems.map((item) => (
@@ -236,7 +236,7 @@ export default function SocialMediaManagementPage() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
                         <div className="mb-16">
                             <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">OUR PROCESS</div>
-                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">From strategy to engagement.</h2>
+                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">From strategy to engagement.</h2>
                             <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">A repeatable monthly cycle that keeps your social presence consistent, professional, and growing.</p>
                         </div>
                         <div className="relative">
@@ -254,7 +254,7 @@ export default function SocialMediaManagementPage() {
                                             <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
                                                 <item.Icon className="h-5 w-5" />
                                             </div>
-                                            <h3 className="font-sans font-semibold text-lg tracking-tight text-ink mb-3">
+                                            <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
                                                 {item.title}
                                             </h3>
                                             <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
@@ -301,7 +301,7 @@ export default function SocialMediaManagementPage() {
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">NEXT STEP</div>
-                                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tighter mb-6">Ready to hand off your social media?</h2>
+                                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to hand off your social media?</h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your brand. We&apos;ll send you a tailored content strategy proposal within 24 hours.</p>
                                         <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
                                             {(() => {
@@ -330,7 +330,7 @@ export default function SocialMediaManagementPage() {
                                         ].map((stat) => (
                                             <div key={stat.label} className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 py-4 sm:py-5 first:pt-0 last:pb-0">
                                                 <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{stat.label}</span>
-                                                <span className="font-sans font-semibold text-ink">{stat.value}</span>
+                                                <span className="font-serif text-ink">{stat.value}</span>
                                             </div>
                                         ))}
                                     </div>

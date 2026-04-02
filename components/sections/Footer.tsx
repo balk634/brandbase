@@ -28,7 +28,7 @@ export function Footer() {
                     {/* Brand Col */}
                     <div className="w-full lg:w-1/3 flex flex-col justify-between items-start p-4 sm:p-6 md:p-8 lg:p-10 pt-16 sm:pt-20 md:pt-20 lg:pt-20">
                         <div>
-                            <Image src="/brand/logo.svg" alt="Nodecraft Logo" width={200} height={32} className="h-10 w-auto invert brightness-0 mb-8" />
+                            <Image src="/brand/logo-light.svg" alt="BrandBase Logo" width={200} height={32} className="h-10 w-auto mb-8" />
                             <p className="text-white/50 text-sm leading-relaxed max-w-sm">
                                 Conversion-first websites with clean tracking and SEO foundations, then performance marketing that scales. Clear plan. Measurable results.
                             </p>
@@ -105,7 +105,7 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="px-4 sm:px-6 md:px-8 lg:px-10 py-4 border-t border-white/5 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6">
                     <div className="text-[10px] sm:text-[11px] font-mono text-white/40 uppercase tracking-widest text-center md:text-left">
-                        <span>&copy; {year} NODECRAFT. All Rights Reserved.</span>
+                        <span>&copy; {year} BRANDBASE. All Rights Reserved.</span>
                     </div>
 
                     <div className="w-full lg:w-auto">

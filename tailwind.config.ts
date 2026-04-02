@@ -66,15 +66,18 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [
-					'var(--font-space-grotesk)',
+					'var(--font-dm-sans)',
 					'sans-serif'
 				],
+				serif: [
+					'var(--font-newsreader)',
+					'serif'
+				],
 				body: [
-					'var(--font-raleway)',
+					'var(--font-dm-sans)',
 					'sans-serif'
 				],
 				mono: [
-					'var(--font-jetbrains-mono)',
 					'monospace'
 				]
 			},

@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 import { masterConfig } from "@/config/master";
 
 export const metadata = buildPageMetadata({
-  title: "Nodecraft Blog | Website & Growth Playbooks",
+  title: "BrandBase Blog | Website & Growth Playbooks",
   description:
     "Practical guides on websites, local SEO, paid ads, and conversion systems for Indian SMBs and high-growth brands.",
   path: "/blog",
@@ -26,13 +26,13 @@ export default function BlogPage() {
     "@type": "Blog",
     "@id": `${blogUrl}#blog`,
     url: blogUrl,
-    name: "Nodecraft Blog",
+    name: "BrandBase Blog",
     description: "Practical guides on websites, local SEO, paid ads, and conversion systems.",
     inLanguage: "en-IN",
     publisher: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
-      name: "Nodecraft",
+      name: "BrandBase",
       url: baseUrl,
     },
     blogPost: blogPosts.map((post) => ({
@@ -45,7 +45,7 @@ export default function BlogPage() {
       image: toAbsoluteUrl(post.heroImage),
       author: {
         "@type": "Organization",
-        name: "Nodecraft",
+        name: "BrandBase",
       },
     })),
   };
@@ -77,7 +77,7 @@ export default function BlogPage() {
                 <Kicker className="mx-auto text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> BLOG </Kicker>
               </div>
 
-              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink">
+              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                 Guides that help you grow.
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
@@ -95,7 +95,7 @@ export default function BlogPage() {
                         <div className="inline-flex items-center px-3 py-1 rounded-full border border-grid/25 bg-paper/40 text-[10px] font-mono uppercase tracking-[0.35em] text-ink-muted">
                           {post.category}
                         </div>
-                        <h2 className="mt-4 font-sans text-2xl md:text-3xl font-semibold tracking-tight text-ink">
+                        <h2 className="mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
                           <Link
                             href={`/blog/${post.slug}`}
                             className="text-ink hover:text-ink underline-offset-4 hover:underline decoration-ink/30"

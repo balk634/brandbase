@@ -16,7 +16,7 @@ type Upgrade = {
   problem: string;
   upgrade: string;
   typical: string[];
-  nodecraft: string[];
+  brandbase: string[];
   deliverables: string[];
   Icon: ComponentType<IconProps>;
 };
@@ -37,7 +37,7 @@ const upgrades: Upgrade[] = [
       "DIY logo and colors.",
       "Inconsistent across channels.",
     ],
-    nodecraft: [
+    brandbase: [
       "Complete brand system.",
       "Investor-ready pitch materials.",
       "Strategic market positioning.",
@@ -67,7 +67,7 @@ const upgrades: Upgrade[] = [
       "Slow load times.",
       "No analytics or tracking.",
     ],
-    nodecraft: [
+    brandbase: [
       "Custom UI/UX research.",
       "Sub-second load times.",
       "Full analytics + event tracking.",
@@ -97,7 +97,7 @@ const upgrades: Upgrade[] = [
       "No landing page optimization.",
       "No attribution or tracking.",
     ],
-    nodecraft: [
+    brandbase: [
       "Full-funnel ad strategy.",
       "A/B tested landing pages.",
       "Multi-touch attribution.",
@@ -121,7 +121,7 @@ const compareStyles = {
     dot: "bg-grid/25",
     label: "text-ink-muted",
   },
-  nodecraft: {
+  brandbase: {
     border: "border-green-800/25",
     bg: "bg-green-800/5",
     dot: "bg-green-800/70",
@@ -159,7 +159,7 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
               </div>
               <span className="h-1.5 w-1.5 bg-primary/70" aria-hidden="true" />
             </div>
-            <h3 className="mt-4 font-sans text-2xl md:text-3xl font-semibold tracking-tight text-ink">
+            <h3 className="mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
               {item.title}
             </h3>
             <p className="mt-3 text-[13px] text-ink-muted leading-relaxed max-w-3xl">
@@ -211,16 +211,16 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
             </div>
 
             <div
-              className={cn("border p-5 flex-1", compareStyles.nodecraft.border, compareStyles.nodecraft.bg)}
+              className={cn("border p-5 flex-1", compareStyles.brandbase.border, compareStyles.brandbase.bg)}
             >
-              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.nodecraft.label)}>
-                Nodecraft
+              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.brandbase.label)}>
+                BrandBase
               </div>
               <ul className="mt-4 space-y-2 text-[12px] leading-relaxed text-ink/80">
-                {item.nodecraft.map((point) => (
+                {item.brandbase.map((point) => (
                   <li key={point} className="flex gap-3 leading-relaxed">
                     <span
-                      className={cn("mt-2 h-1.5 w-1.5 shrink-0", compareStyles.nodecraft.dot)}
+                      className={cn("mt-2 h-1.5 w-1.5 shrink-0", compareStyles.brandbase.dot)}
                       aria-hidden="true"
                     />
                     <span>{point}</span>
@@ -262,8 +262,8 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
               <p className="mt-3 text-[12px] text-ink-muted leading-relaxed">{item.problem}</p>
             </div>
 
-            <div className={cn("border p-5 flex-1", compareStyles.nodecraft.border, compareStyles.nodecraft.bg)}>
-              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.nodecraft.label)}>
+            <div className={cn("border p-5 flex-1", compareStyles.brandbase.border, compareStyles.brandbase.bg)}>
+              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.brandbase.label)}>
                 The Upgrade
               </div>
               <p className="mt-3 text-[12px] text-ink-muted leading-relaxed">{item.upgrade}</p>
@@ -283,7 +283,7 @@ export function ServicesUpgrades() {
           <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
             BUSINESS UPGRADES
           </div>
-          <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-sans font-bold tracking-tight">
+          <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
             Three upgrades. Three outcomes.
           </h2>
           <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">

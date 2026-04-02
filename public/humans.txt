@@ -1,7 +1,7 @@
 /* TEAM */
-  Agency: Nodecraft
-  Website: https://nodecraft.tech
-  Contact: info@nodecraft.tech
+  Agency: BrandBase
+  Website: https://brandbase.in
+  Contact: info@brandbase.in
   Services: Conversion-First Websites, Local SEO, Performance Marketing, Analytics & Tracking
 
 /* SITE */

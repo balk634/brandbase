@@ -103,7 +103,7 @@ export function FeaturesGrid() {
             <Container>
                 <div className="mb-12 max-w-3xl mx-auto text-center">
                     <Kicker>THE SILENT COST</Kicker>
-                    <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-sans font-bold leading-tight tracking-tight text-ink mb-4 scroll-mt-20">
+                    <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif leading-tight tracking-tight text-ink mb-4 scroll-mt-20">
                         Is your growth strategy working against you?
                     </h2>
                     <p className="mx-auto text-ink-muted font-mono text-sm max-w-2xl">
@@ -124,7 +124,7 @@ export function FeaturesGrid() {
                                 <div className="p-3 bg-primary/5 rounded-full mb-4 group-hover:scale-110 transition-transform duration-500">
                                     <pain.Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
                                 </div>
-                                <h3 className="font-sans font-semibold text-xl tracking-tight leading-snug">
+                                <h3 className="font-serif text-xl tracking-tight leading-snug">
                                     {pain.title}
                                 </h3>
                             </div>

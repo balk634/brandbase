@@ -17,7 +17,7 @@ import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
 
 export const metadata = buildPageMetadata({
-  title: "Website Solutions | Nodecraft",
+  title: "Website Solutions | BrandBase",
   description:
     "Conversion-first website strategy, design, and development services for startups, SMBs, and scaling brands.",
   path: "/website-solutions",
@@ -118,7 +118,7 @@ export default function WebsiteSolutionsPage() {
                 </motion.div>
                 <motion.h1
                   variants={fadeInLeft}
-                  className="mt-8 text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink max-w-2xl"
+                  className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink max-w-2xl"
                 >
                   Build the right website system for your{" "}
                   <span className="text-primary">current growth stage.</span>
@@ -219,7 +219,7 @@ export default function WebsiteSolutionsPage() {
                       <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
                         {path.label}
                       </div>
-                      <h3 className="mt-3 text-xl font-sans font-semibold tracking-tight text-ink">
+                      <h3 className="mt-3 text-xl font-serif tracking-tight text-ink">
                         {path.title}
                       </h3>
                     </div>

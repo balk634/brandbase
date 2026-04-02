@@ -7,9 +7,9 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Our Process | Nodecraft",
+  title: "Our Process | BrandBase",
   description:
-    "See Nodecraft’s delivery process from strategy and design to launch, measurement, and ongoing growth.",
+    "See BrandBase’s delivery process from strategy and design to launch, measurement, and ongoing growth.",
   path: "/process",
 });
 
@@ -22,7 +22,7 @@ export default function ProcessPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper border-b border-grid/10">
         <Container>
-          <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-newsreader tracking-tighter max-w-3xl">
             A clear delivery process from first call to measurable growth.
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-ink-muted leading-relaxed">
@@ -39,7 +39,7 @@ export default function ProcessPage() {
         <Container>
           <div className="border border-grid/15 bg-white p-8 md:p-12 flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
             <div>
-              <h2 className="text-2xl md:text-4xl font-sans font-bold tracking-tight text-ink">
+              <h2 className="text-2xl md:text-4xl font-serif tracking-tight text-ink">
                 Want your project mapped to this process?
               </h2>
               <p className="mt-3 text-sm md:text-base text-ink-muted max-w-2xl">

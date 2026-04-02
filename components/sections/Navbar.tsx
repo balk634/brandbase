@@ -88,7 +88,14 @@ export function Navbar() {
             <Container className="h-16 grid grid-cols-[auto,1fr,auto] items-center gap-3">
                 {/* Logo */}
                 <Link href="/" className="mi-nav-item flex items-center gap-2" aria-label="Home" onClick={closeAllMenus}>
-                    <Image src="/brand/logo.svg" alt="Logo" width={138} height={24} className="h-6 w-auto" />
+                    <Image 
+                        src="/brand/logo-dark.svg" 
+                        alt="Logo" 
+                        width={masterConfig.logo.header.width ?? 138} 
+                        height={masterConfig.logo.header.height} 
+                        className="w-auto"
+                        style={{ height: `${masterConfig.logo.header.height}px` }}
+                    />
                 </Link>
 
                 {/* Desktop Nav */}

@@ -77,7 +77,7 @@ export async function sendEmail(formData: FormData) {
         }
         const safeSubjectName = name.replace(/[\r\n]+/g, " ").slice(0, 120);
         const mailSubjectPrefix =
-            leadType === "quote_request" ? "Nodecraft Quote request" : "Nodecraft Form submission";
+            leadType === "quote_request" ? "BrandBase Quote request" : "BrandBase Form submission";
 
         const { data, error } = await resend.emails.send({
             from: fromAddress,

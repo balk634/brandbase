@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
-import type { ComponentType, ReactNode } from "react";
+import type { ComponentType, ReactBrandBase } from "react";
 import { IconStack2, IconRocket, IconTrendingUp, type IconProps } from "@tabler/icons-react";
 
 type ManifestKind = "build" | "launch" | "scale";
@@ -236,8 +236,8 @@ export function ServicesManifest() {
         <Section id="approach" className="bg-transparent">
             <Container>
                 <div className="mb-12 max-w-3xl">
-                    <Kicker>THE NODECRAFT METHOD</Kicker>
-                    <h2 className="mt-6 font-sans font-bold text-2xl sm:text-3xl md:text-5xl tracking-tight mb-4 scroll-mt-20">
+                    <Kicker>THE BRANDBASE METHOD</Kicker>
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl tracking-tight mb-4 scroll-mt-20">
                         Three phases. One outcome: growth.
                     </h2>
                     <p className="text-ink-muted font-mono text-sm max-w-2xl">
@@ -263,7 +263,7 @@ export function ServicesManifest() {
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                                             {service.label}
                                         </div>
-                                        <div className="mt-2 font-sans font-bold text-xl uppercase tracking-tight">
+                                        <div className="mt-2 font-serif text-xl uppercase tracking-tight">
                                             {service.category}
                                         </div>
                                     </div>

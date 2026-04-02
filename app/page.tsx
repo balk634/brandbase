@@ -10,9 +10,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Nodecraft | Conversion-First Websites & Performance Marketing",
+  title: "BrandBase | Conversion-First Websites & Performance Marketing",
   description:
-    "Nodecraft builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing.",
+    "BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing.",
   path: "/",
 });
 
@@ -25,7 +25,6 @@ export default function Home() {
       <UnfairAdvantage />
       <OurProcess />
       <Testimonials />
-      <BlogGrid />
       <FAQ />
       <FinalCTA />
     </main>

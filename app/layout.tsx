@@ -1,27 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, JetBrains_Mono, Raleway } from "next/font/google"; // Using Raleway as body font
+import { Newsreader, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { masterConfig } from "@/config/master";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsentAwareAnalytics } from "@/components/analytics/ConsentAwareAnalytics";
+import { Agentation } from "agentation";
 
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-});
-
-const raleway = Raleway({
-  variable: "--font-raleway",
-  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: "Nodecraft",
+    title: "BrandBase",
     statusBarStyle: "default",
   },
   openGraph: {
@@ -76,7 +74,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${raleway.variable} font-body antialiased bg-paper text-ink overflow-x-hidden w-full`}
+        className={`${newsreader.variable} ${dmSans.variable} font-sans antialiased bg-paper text-ink overflow-x-hidden w-full`}
         style={
           {
             "--pattern-opacity": String(masterConfig.ui.pattern.opacity),
@@ -132,6 +130,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
   );

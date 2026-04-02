@@ -19,7 +19,7 @@ import {
 import type { ComponentType } from "react";
 import { cn } from "@/lib/utils";
 
-type ItemTone = "neutral" | "danger" | "nodecraft";
+type ItemTone = "neutral" | "danger" | "brandbase";
 
 function ComparisonItem({
   Icon,
@@ -31,14 +31,14 @@ function ComparisonItem({
   tone?: ItemTone;
 }) {
   const iconWrap =
-    tone === "nodecraft"
+    tone === "brandbase"
       ? "border border-green-800/20 bg-green-800/5"
       : tone === "danger"
         ? "border border-red-500/25 bg-red-500/10"
         : "border border-grid/15 bg-paper/60";
 
   const iconColor =
-    tone === "nodecraft" ? "text-green-800" : tone === "danger" ? "text-red-700" : "text-ink";
+    tone === "brandbase" ? "text-green-800" : tone === "danger" ? "text-red-700" : "text-ink";
 
   return (
     <li className="flex items-center gap-3">
@@ -55,8 +55,8 @@ export function ServicesComparisonGrid() {
     <Section className="bg-transparent">
       <Container>
         <div className="mb-12 max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-bold tracking-tight">
-            Why Business Owners choose Nodecraft.
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
+            Why Business Owners choose BrandBase.
           </h2>
         </div>
 
@@ -121,20 +121,20 @@ export function ServicesComparisonGrid() {
             >
               <div className="flex items-center justify-between gap-4 mb-5">
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] opacity-85">
-                  Nodecraft
+                  BrandBase
                 </div>
                 <div className="h-9 w-9 border border-green-800/20 bg-green-800/5 grid place-items-center">
                   <SparkIcon className="h-5 w-5 text-green-800" />
                 </div>
               </div>
               <ul className="space-y-3 text-sm leading-relaxed opacity-95">
-                <ComparisonItem Icon={ChatLinesIcon} tone="nodecraft">
+                <ComparisonItem Icon={ChatLinesIcon} tone="brandbase">
                   Direct Partner Access.
                 </ComparisonItem>
-                <ComparisonItem Icon={BracketsIcon} tone="nodecraft">
+                <ComparisonItem Icon={BracketsIcon} tone="brandbase">
                   Full-Service Creative + Tech.
                 </ComparisonItem>
-                <ComparisonItem Icon={TagIcon} tone="nodecraft">
+                <ComparisonItem Icon={TagIcon} tone="brandbase">
                   Custom Strategic Pricing.
                 </ComparisonItem>
               </ul>

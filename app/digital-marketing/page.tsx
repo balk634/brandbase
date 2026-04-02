@@ -16,7 +16,7 @@ import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
 
 export const metadata = buildPageMetadata({
-  title: "Digital Marketing Services | Nodecraft",
+  title: "Digital Marketing Services | BrandBase",
   description:
     "Performance marketing, social media management, and local SEO services focused on measurable lead and revenue growth.",
   path: "/digital-marketing",
@@ -112,7 +112,7 @@ export default function DigitalMarketingPage() {
                 </motion.div>
                 <motion.h1
                   variants={fadeInLeft}
-                  className="mt-8 text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink max-w-2xl"
+                  className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink max-w-2xl"
                 >
                   Replace channel chaos with one{" "}
                   <span className="text-primary">coordinated growth engine.</span>
@@ -211,7 +211,7 @@ export default function DigitalMarketingPage() {
                       <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
                         {lane.label}
                       </div>
-                      <h3 className="mt-3 text-xl font-sans font-semibold tracking-tight text-ink">
+                      <h3 className="mt-3 text-xl font-serif tracking-tight text-ink">
                         {lane.title}
                       </h3>
                     </div>

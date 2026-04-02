@@ -4,8 +4,8 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Privacy Policy | Nodecraft",
-  description: "How Nodecraft collects, uses, and protects personal data across its website and services.",
+  title: "Privacy Policy | BrandBase",
+  description: "How BrandBase collects, uses, and protects personal data across its website and services.",
   path: "/privacy",
   noIndex: true,
 });
@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper">
         <Container className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter mb-8">
+          <h1 className="text-4xl md:text-5xl font-newsreader tracking-tighter mb-8">
             Privacy Policy
           </h1>
           <div className="prose prose-sm md:prose-base font-sans text-ink-muted">
@@ -23,9 +23,9 @@ export default function PrivacyPolicyPage() {
               Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
 
-            <h3>1. Introduction</h3>
+            <h3 className="font-newsreader">1. Introduction</h3>
             <p>
-              Nodecraft (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you visit our website or use our services. We are committed to processing data in accordance with the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), the Digital Personal Data Protection (DPDP) Act of India, and other applicable privacy laws.
+              BrandBase (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you visit our website or use our services. We are committed to processing data in accordance with the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), the Digital Personal Data Protection (DPDP) Act of India, and other applicable privacy laws.
             </p>
 
             <h3>2. Information We Collect</h3>

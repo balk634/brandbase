@@ -64,9 +64,9 @@ export function UnfairAdvantage() {
         >
           <motion.div variants={fadeInUp} className="mb-14 max-w-3xl">
             <Kicker>THE UNFAIR ADVANTAGE</Kicker>
-            <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-sans font-bold tracking-tight text-ink">
+            <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
               Built for Business Owners,
-              <br className="hidden sm:block" /> The Nodecraft Way.
+              <br className="hidden sm:block" /> The BrandBase Way.
             </h2>
             <p className="mt-5 text-sm md:text-base text-ink-muted leading-relaxed max-w-2xl">
               A standardized operating model designed to remove friction from execution, reporting, and growth.
@@ -95,7 +95,7 @@ export function UnfairAdvantage() {
                     </div>
                   </div>
 
-                  <h3 className="font-sans font-semibold text-xl tracking-tight text-ink mb-3">
+                  <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
                     {item.title}
                   </h3>
                   <p className="text-sm text-ink-muted leading-relaxed flex-1">{item.body}</p>

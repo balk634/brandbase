@@ -9,7 +9,7 @@ export function AiSearchHook() {
       <Container className="grid md:grid-cols-12 gap-8 md:gap-10 items-stretch">
         <div className="md:col-span-6 flex flex-col items-start">
           <Kicker className="self-start">AI SEARCH ERA</Kicker>
-          <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-sans font-bold tracking-tight">
+          <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
             Is your business ready for AI search?
           </h2>
           <p className="mt-4 text-ink-muted font-mono text-sm max-w-xl">
@@ -34,7 +34,7 @@ export function AiSearchHook() {
 {`{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Nodecraft Client",
+  "name": "BrandBase Client",
   "areaServed": ["US", "EU"],
   "sameAs": ["LinkedIn", "Google Business Profile"]
 }`}

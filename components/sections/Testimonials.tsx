@@ -26,7 +26,7 @@ export function Testimonials() {
       <Container>
         <div className="mb-10 max-w-3xl">
           <Kicker>SOCIAL PROOF</Kicker>
-          <h2 className="mt-6 text-3xl sm:text-4xl md:text-6xl font-sans font-bold tracking-tighter">
+          <h2 className="mt-6 text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter">
             Trusted by founders and marketing leaders worldwide.
           </h2>
           <p className="mt-4 text-ink-muted font-mono text-sm max-w-2xl">
@@ -78,10 +78,10 @@ export function Testimonials() {
 
                     <div className="mt-auto pt-6 border-t border-grid/15 flex items-center gap-4">
                       <div className={"h-10 w-10 shrink-0 grid place-items-center " + accent} aria-hidden="true">
-                        <span className="font-mono font-bold text-sm">{initials}</span>
+                        <span className="font-newsreader text-sm">{initials}</span>
                       </div>
                       <div className="flex flex-col">
-                        <div className="font-sans font-semibold text-sm text-ink">{t.author}</div>
+                        <div className="font-newsreader text-sm text-ink">{t.author}</div>
                         <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
                           {t.role}
                         </div>

@@ -311,7 +311,7 @@ export default function PricingPage() {
                 <Kicker className="mx-auto text-xs md:text-sm px-6 py-2.5 bg-primary/5 border-primary/30 text-primary"> PRICING </Kicker>
               </div>
 
-              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-sans font-bold leading-[0.95] tracking-tighter text-ink">
+              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                 Get Pricing Estimate
               </h1>
               <p className="mt-6 max-w-3xl mx-auto text-center text-ink-muted leading-relaxed text-lg md:text-xl">
@@ -461,7 +461,7 @@ export default function PricingPage() {
                             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <h3 className="font-sans font-bold text-2xl tracking-tight mb-2">Request captured</h3>
+                        <h3 className="font-serif text-2xl tracking-tight mb-2">Request captured</h3>
                         <p className="text-ink-muted leading-relaxed max-w-sm">
                           We&apos;ve received your estimate request and will send your tailored quote shortly.
                         </p>
@@ -541,7 +541,7 @@ export default function PricingPage() {
                           </div>
                           <div className="mt-3 flex items-end justify-between gap-4">
                             <div className="min-w-0">
-                              <div className="font-sans font-semibold text-xl tracking-tight text-ink">
+                              <div className="font-serif text-xl tracking-tight text-ink">
                                 {scope.level}
                               </div>
                               <div className="mt-1 text-sm text-ink-muted leading-relaxed">

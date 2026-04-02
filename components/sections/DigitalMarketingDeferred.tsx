@@ -152,7 +152,7 @@ export function DigitalMarketingDeferred() {
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                   90-DAY EXECUTION MAP
                 </div>
-                <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-sans font-bold tracking-tight text-ink max-w-3xl">
+                <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink max-w-3xl">
                   What we prioritize in the first 90 days to build predictable
                   momentum.
                 </h2>
@@ -171,7 +171,7 @@ export function DigitalMarketingDeferred() {
                     <div className="mt-4 h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
                       <step.Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 font-sans font-semibold text-lg tracking-tight text-ink">
+                    <h3 className="mt-5 font-serif text-lg tracking-tight text-ink">
                       {step.title}
                     </h3>
                     <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">
@@ -206,7 +206,7 @@ export function DigitalMarketingDeferred() {
                     CHANNEL COMPASS
                   </div>
                 </div>
-                <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-sans font-bold tracking-tight text-ink">
+                <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
                   How each channel contributes across demand, trust, and intent
                   capture.
                 </h2>
@@ -346,7 +346,7 @@ export function DigitalMarketingDeferred() {
                     <div className="h-10 w-10 border border-green-800/20 bg-green-800/5 text-green-800 grid place-items-center">
                       <IconCheck className="h-4 w-4" />
                     </div>
-                    <h3 className="font-sans text-xl md:text-2xl font-bold tracking-tight text-ink">
+                    <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">
                       RISK CONTROLS
                     </h3>
                   </div>
@@ -369,7 +369,7 @@ export function DigitalMarketingDeferred() {
                     <div className="h-10 w-10 border border-red-500/25 bg-red-500/10 text-red-600 grid place-items-center">
                       <IconX className="h-4 w-4" />
                     </div>
-                    <h3 className="font-sans text-xl md:text-2xl font-bold tracking-tight text-ink">
+                    <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">
                       COMMON FAILURE PATTERNS
                     </h3>
                   </div>
@@ -410,7 +410,7 @@ export function DigitalMarketingDeferred() {
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">
                       NEXT STEP
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tighter mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                       Want us to map your digital growth stack?
                     </h2>
                     <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
@@ -469,7 +469,7 @@ export function DigitalMarketingDeferred() {
                         <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                           {stat.label}
                         </span>
-                        <span className="font-sans font-semibold text-ink">
+                        <span className="font-serif text-ink">
                           {stat.value}
                         </span>
                       </div>

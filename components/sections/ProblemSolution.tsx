@@ -57,7 +57,7 @@ const rows: Row[] = [
             "You juggle a fragmented team of developers, ad guys, and social interns who never communicate. The result is a confused brand, delayed launches, and wasted money.",
         solutionTitle: "One Integrated Partner.",
         solutionBody:
-            "Nodecraft acts as your single, fully accountable growth partner. We align your website and marketing engine to lower your acquisition costs and scale revenue seamlessly.",
+            "BrandBase acts as your single, fully accountable growth partner. We align your website and marketing engine to lower your acquisition costs and scale revenue seamlessly.",
     },
 ];
 
@@ -72,8 +72,8 @@ export function ProblemSolution() {
                     variants={stagger}
                 >
                     <motion.div variants={fadeInUp} className="mb-14 max-w-3xl mx-auto text-center">
-                        <Kicker>THE OLD WAY VS. THE NODECRAFT WAY</Kicker>
-                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-sans font-bold tracking-tight text-ink mb-4">
+                        <Kicker>THE OLD WAY VS. THE BRANDBASE WAY</Kicker>
+                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink mb-4">
                             Why Your Current Growth Strategy is Leaking Money.
                         </h2>
                         <p className="text-ink-muted font-mono text-sm max-w-2xl mx-auto">
@@ -106,7 +106,7 @@ export function ProblemSolution() {
                                                 The Problem
                                             </span>
                                         </div>
-                                        <h3 className="font-sans font-semibold text-xl tracking-tight text-ink mb-3">
+                                        <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
                                             {row.problemTitle}
                                         </h3>
                                         <p className="text-sm text-ink-muted leading-relaxed">
@@ -121,10 +121,10 @@ export function ProblemSolution() {
                                                 <IconCheck className="h-4 w-4" strokeWidth={2.5} />
                                             </div>
                                             <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-green-800">
-                                                The Nodecraft Way
+                                                The BrandBase Way
                                             </span>
                                         </div>
-                                        <h3 className="font-sans font-semibold text-xl tracking-tight text-ink mb-3">
+                                        <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
                                             {row.solutionTitle}
                                         </h3>
                                         <p className="text-sm text-ink-muted leading-relaxed">
