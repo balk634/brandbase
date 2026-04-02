@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
-import type { ComponentType, ReactBrandBase } from "react";
+import type { ComponentType, ReactNode } from "react";
 import { IconStack2, IconRocket, IconTrendingUp, type IconProps } from "@tabler/icons-react";
 
 type ManifestKind = "build" | "launch" | "scale";
