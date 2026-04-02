@@ -130,7 +130,7 @@ export function ServiceCategoryPage({
                     <Button asChild size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
                       <Link href={ctaPrimaryHref} className="gap-2">
                         {ctaPrimaryLabel}
-                        <IconArrowRight className="h-4 w-4" />
+                        
                       </Link>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">

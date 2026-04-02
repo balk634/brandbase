@@ -217,7 +217,7 @@ export default function AboutPage() {
               Ready to build your website engine?
             </h2>
             <div className="mt-10">
-              <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
+              <Button asChild variant="primary" isExternal={isExternal} size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
                 {(() => {
                   const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
                   const isExternal = /^https?:\/\//i.test(calendlyUrl);

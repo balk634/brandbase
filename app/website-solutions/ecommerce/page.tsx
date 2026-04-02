@@ -127,7 +127,7 @@ export default function EcommercePage() {
                                         const isExternal = calendlyUrl?.startsWith('http');
                                         const href = calendlyUrl || "/contact";
                                         return (
-                                            <Button asChild variant="primary" size="lg" className="NC-Hero-CTA-Primary">
+                                            <Button asChild variant="primary" isExternal={isExternal} size="lg" className="NC-Hero-CTA-Primary">
                                                 <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
                                             </Button>
                                         );
@@ -324,7 +324,7 @@ export default function EcommercePage() {
                                                 const isExternal = calendlyUrl?.startsWith('http');
                                                 const href = calendlyUrl || "/contact";
                                                 return (
-                                                    <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
+                                                    <Button asChild variant="primary" isExternal={isExternal} size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
                                                         <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
                                                     </Button>
                                                 );

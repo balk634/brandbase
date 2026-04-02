@@ -172,7 +172,7 @@ export function CorePillars() {
                                 <Button asChild variant="primary" size="sm" className="gap-2">
                                     <Link href="/website-solutions">
                                         Explore Website Solutions
-                                        <IconArrowUpRight className="h-3.5 w-3.5" />
+                                        
                                     </Link>
                                 </Button>
                             </div>
@@ -217,7 +217,7 @@ export function CorePillars() {
                                 <Button asChild variant="primary" size="sm" className="gap-2">
                                     <Link href="/digital-marketing">
                                         Explore Growth Solutions
-                                        <IconArrowUpRight className="h-3.5 w-3.5" />
+                                        
                                     </Link>
                                 </Button>
                             </div>
