@@ -165,8 +165,12 @@ export default function CustomEnterprisePage() {
                                 <div key={startIdx} className={`grid md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15 ${startIdx > 0 ? "border-t border-grid/15" : ""}`}>
                                     {deliverables.slice(startIdx, startIdx + 3).map((item) => (
                                         <motion.div key={item.title} variants={scaleIn} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="p-7 md:p-8 flex flex-col group cursor-default">
+                                            {/* Image placeholder at top */}
+                                            <div className="w-full h-32 md:h-40 mb-6 border border-grid/15 bg-paper/40 flex items-center justify-center overflow-hidden">
+                                                <div className="text-ink/20 text-xs font-mono uppercase tracking-widest">Image</div>
+                                            </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
- <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
+                                                <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
                                                 <div className="h-12 w-12 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0 group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300">
                                                     <item.Icon className="h-6 w-6" />
                                                 </div>
