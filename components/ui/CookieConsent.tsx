@@ -44,7 +44,7 @@ export function CookieConsent() {
             }}
         >
             <div className="flex justify-between items-start mb-4">
-                <div className="font-mono text-xs uppercase tracking-widest text-ink font-bold">Cookie Settings</div>
+                <div className="font-mono text-xs uppercase tracking-widest text-ink font-bold">Cookie settings</div>
                 <button
                     type="button"
                     onClick={decline}

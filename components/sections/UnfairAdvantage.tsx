@@ -64,9 +64,9 @@ export function UnfairAdvantage() {
         >
           <motion.div variants={fadeInUp} className="mb-14 max-w-3xl">
             <Kicker>THE UNFAIR ADVANTAGE</Kicker>
- <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight text-ink">
+            <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
               Built for Business Owners,
-              <br className="hidden sm:block" /> The BrandBase Way.
+              <br className="hidden sm:block" /> The BrandBase <em className="font-serif-10 italic">Way.</em>
             </h2>
             <p className="mt-5 text-sm md:text-base text-ink-muted leading-relaxed max-w-2xl">
               A standardized operating model designed to remove friction from execution, reporting, and growth.
@@ -95,8 +95,10 @@ export function UnfairAdvantage() {
                     </div>
                   </div>
 
- <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
-                    {item.title}
+                  <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
+                    {item.title.split(' ').map((word, i, arr) => 
+                        i === arr.length - 1 ? <em key={i} className="font-serif italic">{word}</em> : <span key={i}>{word} </span>
+                    )}
                   </h3>
                   <p className="text-sm text-ink-muted leading-relaxed flex-1">{item.body}</p>
                 </div>

@@ -103,8 +103,8 @@ export function FeaturesGrid() {
             <Container>
                 <div className="mb-12 max-w-3xl mx-auto text-center">
                     <Kicker>THE SILENT COST</Kicker>
- <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 leading-tight tracking-tight text-ink mb-4 scroll-mt-20">
-                        Is your growth strategy working against you?
+                    <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif leading-tight tracking-tight text-ink mb-4 scroll-mt-20">
+                        Is your growth strategy working against <em className="font-serif-10 italic">you?</em>
                     </h2>
                     <p className="mx-auto text-ink-muted font-mono text-sm max-w-2xl">
                         Most businesses don&apos;t realize how much revenue they lose to fragmented vendors, weak branding, and unoptimized funnels until a competitor takes their market share.
@@ -124,9 +124,11 @@ export function FeaturesGrid() {
                                 <div className="p-3 bg-primary/5 rounded-full mb-4 group-hover:scale-110 transition-transform duration-500">
                                     <pain.Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
                                 </div>
- <h3 className="font-serif text-xl tracking-tight leading-snug">
-                                    {pain.title}
-                                </h3>
+                            <h3 className="font-serif text-xl tracking-tight leading-snug">
+                                {pain.title.split(' ').map((word, i, arr) => 
+                                    i === arr.length - 1 ? <em key={i} className="font-serif italic">{word}</em> : <span key={i}>{word} </span>
+                                )}
+                            </h3>
                             </div>
 
                             <p className="text-ink-muted text-sm leading-relaxed mb-6 flex-grow">

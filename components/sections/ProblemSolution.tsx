@@ -73,8 +73,8 @@ export function ProblemSolution() {
                 >
                     <motion.div variants={fadeInUp} className="mb-14 max-w-3xl mx-auto text-center">
                         <Kicker>THE OLD WAY VS. THE BRANDBASE WAY</Kicker>
- <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight text-ink mb-4">
-                            Why Your Current Growth Strategy is Leaking Money.
+                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink mb-4">
+                            Why Your Current Growth Strategy is Leaking <em className="font-serif-10 italic">Money.</em>
                         </h2>
                         <p className="text-ink-muted font-mono text-sm max-w-2xl mx-auto">
                             The standard agency model is broken. Here is how we fix the three biggest bottlenecks choking your business.
@@ -106,8 +106,10 @@ export function ProblemSolution() {
                                                 The Problem
                                             </span>
                                         </div>
- <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
-                                            {row.problemTitle}
+                                        <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
+                                            {row.problemTitle.split(' ').map((word, i, arr) => 
+                                                i === arr.length - 1 ? <em key={i} className="font-serif italic">{word}</em> : <span key={i}>{word} </span>
+                                            )}
                                         </h3>
                                         <p className="text-sm text-ink-muted leading-relaxed">
                                             {row.problemBody}
@@ -124,8 +126,10 @@ export function ProblemSolution() {
                                                 The BrandBase Way
                                             </span>
                                         </div>
- <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
-                                            {row.solutionTitle}
+                                        <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
+                                            {row.solutionTitle.split(' ').map((word, i, arr) => 
+                                                i === arr.length - 1 ? <em key={i} className="font-serif italic">{word}</em> : <span key={i}>{word} </span>
+                                            )}
                                         </h3>
                                         <p className="text-sm text-ink-muted leading-relaxed">
                                             {row.solutionBody}

@@ -17,10 +17,10 @@ export function BlogGrid() {
             <div className="col-span-12 lg:col-span-4 min-w-0 p-8 md:p-10 border-b border-grid/15 lg:border-b-0 lg:border-r">
               <Kicker>BLOG</Kicker>
               <h2
- className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight scroll-mt-20"
+ className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight scroll-mt-20"
                 id="blog-heading"
               >
-                Playbooks built for growth in India.
+                Playbooks built for growth in <em className="font-serif-10 italic">India.</em>
               </h2>
               <p className="mt-4 text-ink-muted leading-relaxed">
                 Deep, practical guides on websites, local search, paid ads, and

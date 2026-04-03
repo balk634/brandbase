@@ -108,8 +108,10 @@ export function ServiceCategoryPage({
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <motion.div variants={fadeUp}>
                   <Kicker className="bg-primary/5 border-primary/30 text-primary">{kicker}</Kicker>
- <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif-20 tracking-tight text-ink">
-                    {headline}
+                  <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight text-ink">
+                    {headline.split(' ').map((word, i, arr) => 
+                        i === arr.length - 1 ? <em key={i} className="font-serif-20 italic">{word}</em> : <span key={i}>{word} </span>
+                    )}
                   </h1>
                   <p className="mt-5 text-sm sm:text-sm md:text-base text-ink-muted leading-relaxed max-w-2xl">
                     {subheadline}
@@ -134,7 +136,7 @@ export function ServiceCategoryPage({
                       </Link>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                      <Link href="#service-tracks">View Service Tracks</Link>
+                      <Link href="#service-tracks">View service tracks</Link>
                     </Button>
                   </div>
                 </motion.div>
@@ -154,8 +156,8 @@ export function ServiceCategoryPage({
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <div className="mb-8 md:mb-10">
               <Kicker>SERVICE TRACKS</Kicker>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
-                Pick the execution lane that matches your growth stage.
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+                Pick the execution lane that matches your growth <em className="font-serif-10 italic">stage.</em>
               </h2>
             </div>
 
@@ -182,7 +184,7 @@ export function ServiceCategoryPage({
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-grid/15">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">Typical Timeline</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">Typical timeline</div>
                     <div className="mt-1.5 text-sm text-ink">{service.timeline}</div>
                     <div className="mt-3 text-xs text-ink-muted leading-relaxed">
                       <span className="text-ink">Best for: </span>
@@ -227,8 +229,8 @@ export function ServiceCategoryPage({
         <Container>
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <Kicker>DELIVERY FRAMEWORK</Kicker>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
-              A structured system from strategy to consistent execution.
+            <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+              A structured system from strategy to consistent <em className="font-serif-10 italic">execution.</em>
             </h2>
 
             <div className="mt-8 grid gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -250,8 +252,10 @@ export function ServiceCategoryPage({
         <Container>
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <Kicker>SCOPE MATRIX</Kicker>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
-              {comparisonTitle}
+            <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+              {comparisonTitle.split(' ').map((word, i, arr) => 
+                  i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+              )}
             </h2>
 
             <div className="mt-8 overflow-x-auto no-scrollbar">
@@ -286,13 +290,15 @@ export function ServiceCategoryPage({
         <Container>
           <div className="border border-grid/15 bg-white p-6 md:p-10">
             <Kicker>FIT CHECK</Kicker>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
-              {fitTitle}
+            <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
+              {fitTitle.split(' ').map((word, i, arr) => 
+                  i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+              )}
             </h2>
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               <div className="border border-green-800/20 bg-green-800/5 p-5 md:p-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-green-900/80">Great Fit</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-green-900/80">Great fit</div>
                 <div className="mt-4 grid gap-3">
                   {fitGood.map((item) => (
                     <div key={item} className="mi-row flex items-start gap-2.5 text-sm text-green-900/80">
@@ -304,7 +310,7 @@ export function ServiceCategoryPage({
               </div>
 
               <div className="border border-red-500/25 bg-red-500/5 p-5 md:p-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-red-700/90">Not Ideal</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-red-700/90">Not ideal</div>
                 <div className="mt-4 grid gap-3">
                   {fitNot.map((item) => (
                     <div key={item} className="mi-row flex items-start gap-2.5 text-sm text-red-700/85">
@@ -340,7 +346,11 @@ export function ServiceCategoryPage({
       <Section className="bg-transparent pt-8 pb-16 md:pb-24 border-b-0">
         <Container>
           <div className="border border-grid/15 bg-ink text-paper p-6 md:p-10 lg:p-12">
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tighter">{ctaTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter">
+                {ctaTitle.split(' ').map((word, i, arr) => 
+                    i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+                )}
+            </h2>
             <p className="mt-5 max-w-3xl text-paper/75 text-sm sm:text-sm md:text-base leading-relaxed">{ctaCopy}</p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">

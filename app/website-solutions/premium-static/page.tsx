@@ -134,7 +134,7 @@ export default function PremiumStaticPage() {
                                         );
                                     })()}
                                     <Button asChild variant="outline" size="lg">
-                                        <Link href="#deliverables">See Deliverables</Link>
+                                        <Link href="#deliverables">See deliverables</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -350,7 +350,7 @@ export default function PremiumStaticPage() {
                                                 );
                                             })()}
                                             <Button asChild variant="outline" size="lg">
-                                                <Link href="/website-solutions">View All Services</Link>
+                                                <Link href="/website-solutions">View all services</Link>
                                             </Button>
                                         </motion.div>
                                     </motion.div>

@@ -152,9 +152,9 @@ export function DigitalMarketingDeferred() {
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                   90-DAY EXECUTION MAP
                 </div>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink max-w-3xl">
+                <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink max-w-3xl">
                   What we prioritize in the first 90 days to build predictable
-                  momentum.
+                  <em className="font-serif-10 italic"> momentum.</em>
                 </h2>
               </div>
               <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15">
@@ -206,9 +206,9 @@ export function DigitalMarketingDeferred() {
                     CHANNEL COMPASS
                   </div>
                 </div>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink">
+                <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
                   How each channel contributes across demand, trust, and intent
-                  capture.
+                  <em className="font-serif-10 italic"> capture.</em>
                 </h2>
                 <div className="mt-8 divide-y divide-grid/10">
                   {[
@@ -410,8 +410,8 @@ export function DigitalMarketingDeferred() {
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">
                       NEXT STEP
                     </div>
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tighter mb-6">
-                      Want us to map your digital growth stack?
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
+                      Want us to map your digital growth <em className="font-serif-10 italic">stack?</em>
                     </h2>
                     <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
                       Share your current channels and goals. We will design a
@@ -446,7 +446,7 @@ export function DigitalMarketingDeferred() {
                         size="lg"
                         className="w-full sm:w-auto sm:min-w-[220px]"
                       >
-                        <Link href="/pricing">View Pricing Models</Link>
+                        <Link href="/pricing">View pricing models</Link>
                       </Button>
                     </motion.div>
                   </motion.div>

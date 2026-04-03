@@ -15,9 +15,9 @@ const config: Config = {
 				// Overriding theme specific base colors for the premium service pages
 				obsidian: '#020617', // Extremely dark slate
 				premium: {
-					900: '#0B1221', // Deep base background
-					800: '#141E33', // Elevated cards
-					700: '#1D2A45', // Borders/Hover states
+					900: '#13155eff', // Deeper base background for richer darkmode without black
+					800: '#0D1629', // Elevated cards
+					700: '#16233E', // Borders/Hover states
 					glow: '#3B82F6', // For blurred background gradient orbs
 				},
 				primary: {
@@ -92,9 +92,9 @@ const config: Config = {
 			},
 			borderRadius: {
 				DEFAULT: '0px',
-				sm: 'calc(var(--radius) - 4px)',
-				md: 'calc(var(--radius) - 2px)',
-				lg: 'var(--radius)',
+				sm: '0px',
+				md: '0px',
+				lg: '0px',
 				xl: '0px',
 				'2xl': '0px',
 				'3xl': '0px',

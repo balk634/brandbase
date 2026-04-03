@@ -68,8 +68,8 @@ export function OurProcess() {
                 >
                     <motion.div variants={fadeInUp} className="mb-14 max-w-3xl mx-auto text-center">
                         <Kicker>OUR PROCESS</Kicker>
- <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight text-ink">
-                            From Brief to Revenue in Four Steps.
+                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
+                            From Brief to Revenue in Four <em className="font-serif-10 italic">Steps.</em>
                         </h2>
                         <p className="mt-4 text-ink-muted text-sm max-w-2xl mx-auto leading-relaxed">
                             A proven, no-nonsense workflow that takes you from strategy to measurable growth — with zero guesswork in between.
@@ -97,8 +97,10 @@ export function OurProcess() {
                                             <step.Icon className="h-5 w-5" strokeWidth={1.5} />
                                         </div>
 
- <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                            {step.title}
+                                        <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
+                                            {step.title.split(' ').map((word, i, arr) => 
+                                                i === arr.length - 1 ? <em key={i} className="font-serif italic">{word}</em> : <span key={i}>{word} </span>
+                                            )}
                                         </h3>
 
                                         <p className="text-[13px] text-ink-muted leading-relaxed flex-1">

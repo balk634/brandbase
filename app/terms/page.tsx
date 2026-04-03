@@ -40,7 +40,7 @@ export default function TermsPage() {
 
             <h3>4. Data Privacy</h3>
             <p>
-              Your privacy is critically important to us. We process your information in accordance with global data protection standards, including the GDPR, CCPA, and India&apos;s Digital Personal Data Protection (DPDP) Act. For full details on how we handle your data, please refer to our <a href="/privacy" className="underline hover:text-ink">Privacy Policy</a>.
+              Your privacy is critically important to us. We process your information in accordance with global data protection standards, including the GDPR, CCPA, and India&apos;s Digital Personal Data Protection (DPDP) Act. For full details on how we handle your data, please refer to our <a href="/privacy" className="underline hover:text-ink">Privacy policy</a>.
             </p>
 
             <h3>5. Prohibited Activities</h3>
@@ -58,7 +58,7 @@ export default function TermsPage() {
               These Terms shall be governed by and defined following the laws of India. BrandBase and yourself irrevocably consent that the courts of Mumbai, Maharashtra, India shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
             </p>
 
-            <h3>8. Contact Us</h3>
+            <h3>8. Contact us</h3>
             <p>
               In order to resolve a complaint regarding the website or to receive further information regarding use of the website, please contact us at:
             </p>

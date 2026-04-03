@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
 
             <h3>7. Cookies</h3>
             <p>
-              Our website uses cookies to enhance your browsing experience. You can choose to disable cookies through your browser settings, but this may affect the functionality of our website. For more details, please view our <a href="/cookies" className="underline hover:text-ink">Cookie Policy</a>.
+              Our website uses cookies to enhance your browsing experience. You can choose to disable cookies through your browser settings, but this may affect the functionality of our website. For more details, please view our <a href="/cookies" className="underline hover:text-ink">Cookie policy</a>.
             </p>
 
             <h3>8. Changes to This Policy</h3>
@@ -75,7 +75,7 @@ export default function PrivacyPolicyPage() {
               We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
             </p>
 
-            <h3>9. Contact Us</h3>
+            <h3>9. Contact us</h3>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
             <p>
               <strong>Email:</strong> {masterConfig.contact.email}<br />

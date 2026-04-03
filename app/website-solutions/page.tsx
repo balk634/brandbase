@@ -138,7 +138,7 @@ export default function WebsiteSolutionsPage() {
                     size="lg"
                     className="w-full sm:w-auto sm:min-w-[220px]"
                   >
-                    <Link href="#solution-paths">See Solution Paths</Link>
+                    <Link href="#solution-paths">See solution paths</Link>
                   </Button>
                   <Button
                     asChild

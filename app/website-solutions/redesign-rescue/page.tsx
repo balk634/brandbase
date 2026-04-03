@@ -150,7 +150,7 @@ export default function RedesignRescuePage() {
                                         );
                                     })()}
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
-                                        <Link href="#choose-service">Choose Your Path</Link>
+                                        <Link href="#choose-service">Choose your path</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -324,7 +324,7 @@ export default function RedesignRescuePage() {
                                                 );
                                             })()}
                                             <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
-                                                <Link href="/website-solutions">View All Services</Link>
+                                                <Link href="/website-solutions">View all services</Link>
                                             </Button>
                                         </motion.div>
                                     </motion.div>

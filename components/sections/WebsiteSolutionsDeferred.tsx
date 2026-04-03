@@ -218,8 +218,8 @@ export function WebsiteSolutionsDeferred() {
                     </div>
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em]">BUSINESS IMPACT</div>
                   </div>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink max-w-2xl">
-                    The difference between having a website and having a revenue asset.
+                  <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink max-w-2xl">
+                    The difference between having a website and having a revenue <em className="font-serif-10 italic">asset.</em>
                   </h2>
                   <p className="mt-4 text-sm md:text-base text-ink-muted leading-relaxed max-w-xl">
                     The right website system does not just look better. It improves lead quality, shortens sales friction, and gives your team confidence in every growth decision.
@@ -289,8 +289,8 @@ export function WebsiteSolutionsDeferred() {
                     </div>
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em]">REVENUE LEAK CHECK</div>
                   </div>
- <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif-10 tracking-tight text-ink max-w-2xl">
-                    If these signs are showing up, your website is already costing you growth.
+                  <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink max-w-2xl">
+                    If these signs are showing up, your website is already costing you <em className="font-serif-10 italic">growth.</em>
                   </h2>
                   <div className="mt-8 grid sm:grid-cols-2 gap-4">
                     {revenueLeakChecks.map((item) => (
@@ -362,8 +362,8 @@ export function WebsiteSolutionsDeferred() {
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em]">DELIVERY MODEL</div>
               </div>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tight text-ink max-w-3xl">
-                Four sprint layers that keep execution fast and accountable.
+              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+                Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
               </h2>
             </div>
             <div
@@ -428,8 +428,8 @@ export function WebsiteSolutionsDeferred() {
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em]">EXECUTION DISCIPLINE</div>
               </div>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tight text-ink max-w-3xl">
-                What your team gains with structure and what it avoids with the right partner.
+              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+                What your team gains with structure and what it avoids with the right <em className="font-serif-10 italic">partner.</em>
               </h2>
             </div>
             <div className="border border-grid/15 bg-white">
@@ -491,8 +491,8 @@ export function WebsiteSolutionsDeferred() {
                       </div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.35em]">NEXT STEP</div>
                     </div>
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tighter mb-6">
-                      Want us to map your exact website track?
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
+                      Want us to map your exact website <em className="font-serif-10 italic">track?</em>
                     </h2>
                     <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
                       Share your stage, revenue model, and timeline. We will recommend the right scope with no overbuild.
@@ -509,7 +509,7 @@ export function WebsiteSolutionsDeferred() {
                         })()}
                       </Button>
                       <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                        <Link href="/pricing">View Pricing Models</Link>
+                        <Link href="/pricing">View pricing models</Link>
                       </Button>
                     </motion.div>
                   </motion.div>

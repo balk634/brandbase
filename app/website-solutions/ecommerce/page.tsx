@@ -133,7 +133,7 @@ export default function EcommercePage() {
                                         );
                                     })()}
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
-                                        <Link href="#deliverables">See Deliverables</Link>
+                                        <Link href="#deliverables">See deliverables</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -330,7 +330,7 @@ export default function EcommercePage() {
                                                 );
                                             })()}
                                             <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
-                                                <Link href="/website-solutions">View All Services</Link>
+                                                <Link href="/website-solutions">View all services</Link>
                                             </Button>
                                         </motion.div>
                                     </motion.div>

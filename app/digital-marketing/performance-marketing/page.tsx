@@ -131,7 +131,7 @@ export default function PerformanceMarketingPage() {
                                         );
                                     })()}
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
-                                        <Link href="#deliverables">See Deliverables</Link>
+                                        <Link href="#deliverables">See deliverables</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -327,7 +327,7 @@ export default function PerformanceMarketingPage() {
                                                 );
                                             })()}
                                             <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
-                                                <Link href="/digital-marketing">View All Services</Link>
+                                                <Link href="/digital-marketing">View all services</Link>
                                             </Button>
                                         </motion.div>
                                     </motion.div>

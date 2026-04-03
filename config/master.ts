@@ -86,7 +86,7 @@ export const masterConfig = {
   // ==========================================
   // Core theme variables mapped to Tailwind classes and components.
   colors: {
-    background: "#F7F7F5",
+    background: "#f8f8f0ff",
     primary: "#3436c6",
     secondary: "#111827",
     muted: "#4B5563",
@@ -217,7 +217,7 @@ export const masterConfig = {
         { name: "Careers", href: "/careers" },
         { name: "Pricing", href: "/pricing" },
         { name: "Insights Blog", href: "/blog" },
-        { name: "Contact Us", href: "/contact" },
+        { name: "Contact us", href: "/contact" },
       ]
     },
     {

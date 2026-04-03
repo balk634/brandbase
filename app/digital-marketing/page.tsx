@@ -131,7 +131,7 @@ export default function DigitalMarketingPage() {
                     size="lg"
                     className="w-full sm:w-auto sm:min-w-[220px]"
                   >
-                    <Link href="#growth-lanes">See Growth Lanes</Link>
+                    <Link href="#growth-lanes">See growth lanes</Link>
                   </Button>
                   {(() => {
                     const calendlyUrl = masterConfig.contact.calendlyUrl;

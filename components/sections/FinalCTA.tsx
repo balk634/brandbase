@@ -13,8 +13,8 @@ export function FinalCTA() {
                 <div className="border border-grid/15 bg-white overflow-hidden">
                     <div className="p-8 md:p-12 lg:p-14 flex flex-col items-center text-center">
                         <Kicker>READY TO START?</Kicker>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tighter text-ink">
-                            Book a call.<br />Get a clear website plan.
+                        <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter text-ink">
+                            Book a call.<br />Get a clear website <em className="font-serif-10 italic">plan.</em>
                         </h2>
                         <p className="mt-4 text-ink-muted leading-relaxed max-w-2xl">
                             We&apos;ll review your current setup, spot the biggest conversion wins, and outline the right website scope to build first, then scale with marketing.
