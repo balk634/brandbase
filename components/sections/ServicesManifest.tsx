@@ -237,8 +237,8 @@ export function ServicesManifest() {
             <Container>
                 <div className="mb-12 max-w-3xl">
                     <Kicker>THE BRANDBASE METHOD</Kicker>
- <h2 className="font-serif-10 text-2xl sm:text-3xl md:text-5xl tracking-tight mb-4 scroll-mt-20">
-                        Three phases. One outcome: growth.
+ <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl tracking-tight mb-4 scroll-mt-20">
+                        Three phases. One outcome: <em className="font-serif-10 italic">growth.</em>
                     </h2>
                     <p className="text-ink-muted font-mono text-sm max-w-2xl">
                         We don&apos;t sell isolated services. We build integrated systems where brand, product, and marketing work together to compound results.
@@ -263,8 +263,8 @@ export function ServicesManifest() {
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                                             {service.label}
                                         </div>
- <div className="mt-2 font-serif-10 text-xl uppercase tracking-tight">
-                                            {service.category}
+ <div className="mt-2 font-serif text-xl uppercase tracking-tight">
+                                            <em className="font-serif-10 italic">{service.category}</em>
                                         </div>
                                     </div>
                                 </div>

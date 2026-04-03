@@ -146,7 +146,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                       <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                       </div>
-                      <h3 className="font-serif text-2xl tracking-tight mb-2">Message <em className="font-serif italic">sent</em></h3>
+                      <h3 className="font-serif text-2xl tracking-tight mb-2">Message <em className="font-serif-10 italic">sent</em></h3>
                       <p className="text-ink-muted leading-relaxed">We&apos;ve received your inquiry and will match you with a senior strategist shortly.</p>
                       <Button variant="outline" className="mt-8" onClick={() => setStatus("idle")}>Send another message</Button>
                     </div>
@@ -291,7 +291,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
               <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
               </div>
-              <h3 className="font-serif text-xl tracking-tight mb-2">Message <em className="font-serif italic">sent successfully</em></h3>
+              <h3 className="font-serif text-xl tracking-tight mb-2">Message <em className="font-serif-10 italic">sent successfully</em></h3>
               <p className="text-ink-muted text-sm leading-relaxed mb-6">Our team will review your project and get back to you within 24 hours (business days).</p>
               <Button variant="outline" onClick={() => setStatus("idle")}>Send another message</Button>
             </div>

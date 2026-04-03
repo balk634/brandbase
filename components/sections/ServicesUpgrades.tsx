@@ -160,7 +160,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
               <span className="h-1.5 w-1.5 bg-primary/70" aria-hidden="true" />
             </div>
  <h3 className="h3 mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
-              {item.title}
+              {item.title.split(' ').map((word, i, arr) => 
+                  i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+              )}
             </h3>
             <p className="mt-3 text-[13px] text-ink-muted leading-relaxed max-w-3xl">
               <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mr-2">
@@ -283,8 +285,8 @@ export function ServicesUpgrades() {
           <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
             BUSINESS UPGRADES
           </div>
- <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif-10 tracking-tight">
-            Three upgrades. Three outcomes.
+ <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
+            Three upgrades. Three <em className="font-serif-10 italic">outcomes.</em>
           </h2>
           <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">
             We don&apos;t deliver tasks. We deliver strategic outcomes across Build, Launch, and

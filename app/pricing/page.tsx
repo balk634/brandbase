@@ -311,8 +311,8 @@ export default function PricingPage() {
                 <Kicker className="mx-auto text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> PRICING </Kicker>
               </div>
 
- <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink">
-                Get Pricing Estimate
+ <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+                Get Pricing <em className="font-serif-20 italic">Estimate</em>
               </h1>
               <p className="mt-6 max-w-3xl mx-auto text-center text-ink-muted leading-relaxed text-lg md:text-xl">
                 Select exactly what you need. We&apos;ll instantly calculate the scope and send you a custom strategy and quote.
@@ -541,8 +541,8 @@ export default function PricingPage() {
                           </div>
                           <div className="mt-3 flex items-end justify-between gap-4">
                             <div className="min-w-0">
- <div className="font-serif-10 text-xl tracking-tight text-ink">
-                                {scope.level}
+ <div className="font-serif text-xl tracking-tight text-ink">
+                                <em className="font-serif-10 italic">{scope.level}</em>
                               </div>
                               <div className="mt-1 text-sm text-ink-muted leading-relaxed">
                                 {scope.recommendedNext}

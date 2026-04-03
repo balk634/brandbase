@@ -82,7 +82,7 @@ const growthLanes: GrowthLane[] = [
       "Brand consistency and audience trust systems through strategic content planning, execution, and community handling.",
     channels: "Instagram, LinkedIn, short-form",
     timeline: "2 weeks onboarding",
-    href: "/digital-marketing/management",
+    href: "/digital-marketing/social-media-management",
     Icon: IconHeartbeat,
   },
   {
@@ -92,7 +92,7 @@ const growthLanes: GrowthLane[] = [
       "Local search visibility engine focused on calls, bookings, and nearby high-intent discovery.",
     channels: "Google Maps, GBP, local pages",
     timeline: "2-4 weeks setup",
-    href: "/digital-marketing/local-seo",
+    href: "/digital-marketing/local-seo-google-maps",
     Icon: IconRadar,
   },
 ];
@@ -112,10 +112,10 @@ export default function DigitalMarketingPage() {
                 </motion.div>
                 <motion.h1
                   variants={fadeInLeft}
- className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink max-w-2xl"
+ className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink max-w-2xl"
                 >
                   Replace channel chaos with one{" "}
-                  <span className="text-primary">coordinated growth engine.</span>
+                  <em className="font-serif-20 italic">coordinated growth engine.</em>
                 </motion.h1>
                 <motion.p
                   variants={fadeInLeft}
@@ -165,8 +165,14 @@ export default function DigitalMarketingPage() {
                 </motion.div>
               </div>
               <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
-                <div className="border border-grid/15 bg-white overflow-hidden">
-                  <div className="relative aspect-square bg-white">
+                <div className="relative overflow-hidden">
+                  <div
+                    className={`relative ${masterConfig.ui.heroImages.className}`}
+                    style={{
+                      maxWidth: masterConfig.ui.heroImages.maxWidth,
+                      aspectRatio: masterConfig.ui.heroImages.aspectRatio,
+                    }}
+                  >
                     <HeroImage
                       src={`/${masterConfig.ui.heroImages.socialMediaGrowth}`}
                       alt="Digital marketing services overview hero"
@@ -194,8 +200,8 @@ export default function DigitalMarketingPage() {
               <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                 GROWTH LANES
               </div>
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">
-                Three specialist services orchestrated as one integrated system.
+              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+                Three specialist services orchestrated as one integrated <em className="font-serif-10 italic">system.</em>
               </h2>
             </div>
             <div className="grid lg:grid-cols-3 gap-5">

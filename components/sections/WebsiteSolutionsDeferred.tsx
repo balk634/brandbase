@@ -387,7 +387,11 @@ export function WebsiteSolutionsDeferred() {
                         <step.Icon className="h-5 w-5" />
                       </div>
                     </div>
- <h3 className="h3 mt-6 font-serif text-lg tracking-tight text-ink">{step.title}</h3>
+ <h3 className="h3 mt-6 font-serif text-lg tracking-tight text-ink">
+                    {step.title.split(' ').map((word, i, arr) => 
+                        i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+                    )}
+                  </h3>
                     <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{step.copy}</p>
                   </motion.article>
                   {i < sprintSteps.length - 1 && (

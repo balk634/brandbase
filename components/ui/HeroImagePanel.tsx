@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { masterConfig } from "@/config/master";
 
 type HeroImagePanelProps = {
   src: string;
@@ -17,8 +18,14 @@ export function HeroImagePanel({ src, alt }: HeroImagePanelProps) {
   const normalizedSrc = normalizeHeroSrc(src);
 
   return (
-    <div className="border border-grid/15 bg-white overflow-hidden">
-      <div className="relative aspect-square bg-white">
+    <div className="relative overflow-hidden">
+      <div
+        className={`relative ${masterConfig.ui.heroImages.className}`}
+        style={{
+          maxWidth: masterConfig.ui.heroImages.maxWidth,
+          aspectRatio: masterConfig.ui.heroImages.aspectRatio,
+        }}
+      >
         <Image
           src={normalizedSrc}
           alt={alt}

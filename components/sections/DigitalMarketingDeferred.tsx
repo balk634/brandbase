@@ -172,7 +172,9 @@ export function DigitalMarketingDeferred() {
                       <step.Icon className="h-5 w-5" />
                     </div>
  <h3 className="h3 mt-5 font-serif text-lg tracking-tight text-ink">
-                      {step.title}
+                      {step.title.split(' ').map((word, i, arr) => 
+                          i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+                      )}
                     </h3>
                     <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">
                       {step.copy}
@@ -335,8 +337,8 @@ export function DigitalMarketingDeferred() {
                   EXECUTION DISCIPLINE
                 </div>
               </div>
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">
-                What keeps your growth system stable and what quietly breaks it.
+              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+                What keeps your growth system stable and what quietly breaks <em className="font-serif-10 italic">it.</em>
               </h2>
             </div>
             <div className="border border-grid/15 bg-white">

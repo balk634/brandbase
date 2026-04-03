@@ -22,8 +22,8 @@ export default function ProcessPage() {
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper border-b border-grid/10">
         <Container>
- <h1 className="text-4xl md:text-6xl font-serif-20 tracking-tighter max-w-3xl">
-            A clear delivery process from first call to measurable growth.
+ <h1 className="text-4xl md:text-6xl font-serif tracking-tighter max-w-3xl">
+            A clear delivery process from first call to measurable <em className="font-serif-20 italic">growth.</em>
           </h1>
           <p className="mt-6 max-w-2xl text-sm md:text-base text-ink-muted leading-relaxed">
             Every project follows the same accountable framework: discovery,
@@ -39,8 +39,8 @@ export default function ProcessPage() {
         <Container>
           <div className="border border-grid/15 bg-white p-8 md:p-12 flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
             <div>
- <h2 className="text-2xl md:text-4xl font-serif-10 tracking-tight text-ink">
-                Want your project mapped to this process?
+ <h2 className="text-2xl md:text-4xl font-serif tracking-tight text-ink">
+                Want your project mapped to this <em className="font-serif-10 italic">process?</em>
               </h2>
               <p className="mt-3 text-sm md:text-base text-ink-muted max-w-2xl">
                 Share your goals and timeline. We will recommend scope,

@@ -97,7 +97,7 @@ export function UnfairAdvantage() {
 
                   <h3 className="font-serif text-xl tracking-tight text-ink mb-3">
                     {item.title.split(' ').map((word, i, arr) => 
-                        i === arr.length - 1 ? <em key={i} className="font-serif italic">{word}</em> : <span key={i}>{word} </span>
+                        i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
                     )}
                   </h3>
                   <p className="text-sm text-ink-muted leading-relaxed flex-1">{item.body}</p>

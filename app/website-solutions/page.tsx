@@ -71,7 +71,7 @@ const solutionPaths: SolutionPath[] = [
     summary:
       "Launch fast with premium design, clean messaging hierarchy, and lead-ready architecture.",
     outcome: "Get live quickly and start collecting qualified leads.",
-    href: "/website-solutions/premium-static",
+    href: "/website-solutions/premium-static-websites",
     Icon: IconDeviceDesktop,
   },
   {
@@ -80,7 +80,7 @@ const solutionPaths: SolutionPath[] = [
     summary:
       "Bespoke user journeys, stronger brand control, and technical flexibility for scaling teams.",
     outcome: "Own custom flows and reduce operational bottlenecks.",
-    href: "/website-solutions/custom-enterprise",
+    href: "/website-solutions/custom-web-design",
     Icon: IconCode,
   },
   {
@@ -89,7 +89,7 @@ const solutionPaths: SolutionPath[] = [
     summary:
       "Commerce systems optimized for conversion rate, checkout completion, and repeat purchase behavior.",
     outcome: "Increase checkout completion and repeat customer revenue.",
-    href: "/website-solutions/ecommerce",
+    href: "/website-solutions/ecommerce-development",
     Icon: IconChartBar,
   },
   {
@@ -98,7 +98,7 @@ const solutionPaths: SolutionPath[] = [
     summary:
       "Repair speed, UX, and conversion performance on sites that already exist but underperform.",
     outcome: "Recover lost conversions without overbuilding from scratch.",
-    href: "/website-solutions/redesign-rescue",
+    href: "/website-solutions/website-redesign",
     Icon: IconRefresh,
   },
 ];
@@ -118,10 +118,10 @@ export default function WebsiteSolutionsPage() {
                 </motion.div>
                 <motion.h1
                   variants={fadeInLeft}
- className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink max-w-2xl"
+ className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink max-w-2xl"
                 >
                   Build the right website system for your{" "}
-                  <span className="text-primary">current growth stage.</span>
+                  <em className="font-serif-20 italic">current growth stage.</em>
                 </motion.h1>
                 <motion.p
                   variants={fadeInLeft}
@@ -172,8 +172,14 @@ export default function WebsiteSolutionsPage() {
                 </motion.div>
               </div>
               <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
-                <div className="border border-grid/15 bg-white overflow-hidden">
-                  <div className="relative aspect-square bg-white">
+                <div className="relative overflow-hidden">
+                  <div
+                    className={`relative ${masterConfig.ui.heroImages.className}`}
+                    style={{
+                      maxWidth: masterConfig.ui.heroImages.maxWidth,
+                      aspectRatio: masterConfig.ui.heroImages.aspectRatio,
+                    }}
+                  >
                     <HeroImage
                       src={`/${masterConfig.ui.heroImages.websiteSolutions}`}
                       alt="Website solutions overview hero"
@@ -201,9 +207,9 @@ export default function WebsiteSolutionsPage() {
               <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                 SOLUTION PATHS
               </div>
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-tight text-ink max-w-3xl">
+              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 Choose your path based on business model, urgency, and technical
-                depth.
+                <em className="font-serif-10 italic"> depth.</em>
               </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-5">

@@ -215,7 +215,11 @@ export function ServiceCategoryPage({
                   <div data-mi-icon className="mi-card-icon h-10 w-10 border border-primary/25 bg-primary/5 text-primary grid place-items-center">
                     <pillar.Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-4 font-sans text-xl font-semibold tracking-tight text-ink">{pillar.title}</h3>
+                  <h3 className="mt-4 font-serif text-xl tracking-tight text-ink">
+                    {pillar.title.split(' ').map((word, i, arr) => 
+                        i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+                    )}
+                  </h3>
                   <p className="mt-3 text-sm text-ink-muted leading-relaxed">{pillar.copy}</p>
                 </article>
               ))}
@@ -238,7 +242,11 @@ export function ServiceCategoryPage({
                 <div key={item.step} className="relative mi-card border border-grid/15 bg-paper/25 p-5 md:p-6">
                   <BoxPattern />
                   <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{item.step}</div>
- <h3 className="h3 mt-3 text-lg font-serif text-ink">{item.title}</h3>
+ <h3 className="h3 mt-3 text-lg font-serif text-ink">
+                    {item.title.split(' ').map((word, i, arr) => 
+                        i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+                    )}
+                  </h3>
                   <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{item.copy}</p>
                 </div>
               ))}
@@ -333,7 +341,11 @@ export function ServiceCategoryPage({
             <div className="mt-6 grid md:grid-cols-2 gap-4 md:gap-6">
               {faq.map((item) => (
                 <article key={item.q} className="mi-card border border-grid/15 bg-paper/25 p-5 md:p-6">
-                  <h3 className="font-sans text-lg font-semibold tracking-tight text-ink">{item.q}</h3>
+                  <h3 className="font-serif text-lg tracking-tight text-ink">
+                    {item.q.split(' ').map((word, i, arr) => 
+                        i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
+                    )}
+                  </h3>
                   <p className="mt-3 text-sm text-ink-muted leading-relaxed">{item.a}</p>
                 </article>
               ))}

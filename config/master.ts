@@ -171,10 +171,10 @@ export const masterConfig = {
       name: "Website Solutions",
       href: "/website-solutions",
       subItems: [
-        { name: "Premium Static Websites", href: "/website-solutions/premium-static" },
-        { name: "Custom Web Design", href: "/website-solutions/custom-enterprise" },
-        { name: "eCommerce Development", href: "/website-solutions/ecommerce" },
-        { name: "Website Redesign", href: "/website-solutions/redesign-rescue" }
+        { name: "Premium Static Websites", href: "/website-solutions/premium-static-websites" },
+        { name: "Custom Web Design", href: "/website-solutions/custom-web-design" },
+        { name: "eCommerce Development", href: "/website-solutions/ecommerce-development" },
+        { name: "Website Redesign", href: "/website-solutions/website-redesign" }
       ]
     },
     {
@@ -182,8 +182,8 @@ export const masterConfig = {
       href: "/digital-marketing",
       subItems: [
         { name: "Performance Marketing", href: "/digital-marketing/performance-marketing" },
-        { name: "Social Media Management", href: "/digital-marketing/management" },
-        { name: "Local SEO & Google Maps", href: "/digital-marketing/local-seo" }
+        { name: "Social Media Management", href: "/digital-marketing/social-media-management" },
+        { name: "Local SEO & Google Maps", href: "/digital-marketing/local-seo-google-maps" }
       ]
     },
     { name: "Pricing", href: "/pricing" },
@@ -195,10 +195,10 @@ export const masterConfig = {
       title: "Website Solutions",
       links: [
         { name: "Website Solutions", href: "/website-solutions" },
-        { name: "Premium Static", href: "/website-solutions/premium-static" },
-        { name: "Custom Web Design", href: "/website-solutions/custom-enterprise" },
-        { name: "eCommerce Services", href: "/website-solutions/ecommerce" },
-        { name: "Website Redesign", href: "/website-solutions/redesign-rescue" },
+        { name: "Premium Static", href: "/website-solutions/premium-static-websites" },
+        { name: "Custom Web Design", href: "/website-solutions/custom-web-design" },
+        { name: "eCommerce Services", href: "/website-solutions/ecommerce-development" },
+        { name: "Website Redesign", href: "/website-solutions/website-redesign" },
       ]
     },
     {
@@ -206,8 +206,8 @@ export const masterConfig = {
       links: [
         { name: "Digital Marketing", href: "/digital-marketing" },
         { name: "Performance Marketing", href: "/digital-marketing/performance-marketing" },
-        { name: "Social Media Management", href: "/digital-marketing/management" },
-        { name: "Local SEO Solutions", href: "/digital-marketing/local-seo" },
+        { name: "Social Media Management", href: "/digital-marketing/social-media-management" },
+        { name: "Local SEO Solutions", href: "/digital-marketing/local-seo-google-maps" },
       ]
     },
     {
@@ -258,16 +258,19 @@ export const masterConfig = {
     },
     // Hero image control:
     heroImages: {
-      home: "hero1.jpg?v=20260307-2",
-      websiteSolutions: "website.jpg",
-      websiteSolutionsPremiumStatic: "static.jpg",
-      websiteSolutionsCustomEnterprise: "enterprise.jpg",
-      websiteSolutionsEcommerce: "ecommerce.jpg",
-      websiteSolutionsRedesignRescue: "redesign.jpg",
-      socialMediaGrowth: "digital.jpg",
-      socialMediaGrowthPerformanceMarketing: "performance.jpg",
-      socialMediaGrowthManagement: "management.jpg",
-      socialMediaGrowthLocalSeo: "local.jpg",
+      maxWidth: "440px",
+      aspectRatio: "4/5",
+      className: "relative mx-auto",
+      home: "hero/home-hero.webp",
+      websiteSolutions: "hero/website-solutions-hero.webp",
+      websiteSolutionsPremiumStatic: "hero/premium-static-hero.webp",
+      websiteSolutionsCustomEnterprise: "hero/custom-enterprise-hero.webp",
+      websiteSolutionsEcommerce: "hero/ecommerce-hero.webp",
+      websiteSolutionsRedesignRescue: "hero/redesign-rescue-hero.webp",
+      socialMediaGrowth: "hero/digital-marketing-hero.webp",
+      socialMediaGrowthPerformanceMarketing: "hero/performance-marketing-hero.webp",
+      socialMediaGrowthManagement: "hero/social-management-hero.webp",
+      socialMediaGrowthLocalSeo: "hero/local-seo-hero.webp",
     },
     cursor: {
       color: "#16A34A",
@@ -364,10 +367,6 @@ export const masterConfig = {
         "We build fast, conversion-first websites with clean tracking and SEO foundations, then scale results with performance marketing. Clear plan. Measurable results.",
       imageSrc: "hero1.jpg?v=20260307-2",
       grayscale: false,
-      visualDimensions: {
-        maxWidth: 500,
-        aspectRatio: "1/1.1",
-      },
       stats: [
         { label: "CLIENTS SERVED", value: "40+" },
         { label: "INDUSTRIES", value: "12" },

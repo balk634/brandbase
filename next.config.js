@@ -25,7 +25,8 @@ const nextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: process.env.NODE_ENV === "development" ? 0 : 31536000,
+    qualities: [68, 75],
+    minimumCacheTTL: 31536000,
     localPatterns: [
       {
         pathname: "/**",
@@ -67,9 +68,7 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: process.env.NODE_ENV === "development" 
-              ? "no-cache, no-store, must-revalidate" 
-              : "public, max-age=31536000, immutable",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HeroImage } from "@/components/ui/HeroImage";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
@@ -33,39 +34,39 @@ const staggerContainer = { hidden: { opacity: 0 }, visible: { opacity: 1, transi
 const staggerSlow = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15 } } };
 
 /* ── Data ── */
-const deliverables: { title: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
+const deliverables: { title: string; image: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
     {
-        title: "Campaign Strategy & Setup", Icon: IconTargetArrow, bullets: [
+        title: "Campaign Strategy & Setup", image: "/deliver/ads-strategy.webp", Icon: IconTargetArrow, bullets: [
             { text: "Complete architecture for Google Search, Display, Linkedin Ads and Meta Ads.", Icon: IconBrandGoogle },
             { text: "Flawless installation of tracking pixels and conversion APIs.", Icon: IconBolt },
         ]
     },
     {
-        title: "Ad Creative & Copywriting", Icon: IconPencil, bullets: [
+        title: "Ad Creative & Copywriting", image: "/deliver/ads-creative.webp", Icon: IconPencil, bullets: [
             { text: "Scroll-stopping graphic design and video ad creatives.", Icon: IconAd },
             { text: "Direct-response copywriting engineered to drive immediate clicks.", Icon: IconPencil },
         ]
     },
     {
-        title: "A/B Testing & Scaling", Icon: IconArrowsSplit, bullets: [
+        title: "A/B Testing & Scaling", image: "/deliver/ads-testing.webp", Icon: IconArrowsSplit, bullets: [
             { text: "Continuous testing of audiences, headlines, and visuals to find winning combinations.", Icon: IconArrowsSplit },
             { text: "Ruthless budget reallocation to lower your Cost Per Click (CPC) and maximize ROI.", Icon: IconChartBar },
         ]
     },
     {
-        title: "Retargeting Systems", Icon: IconRefresh, bullets: [
+        title: "Retargeting Systems", image: "/deliver/ads-retargeting.webp", Icon: IconRefresh, bullets: [
             { text: "Automated campaigns to recapture website visitors who didn't convert.", Icon: IconRefresh },
             { text: "Specific cart-abandonment ads for eCommerce and retail clients.", Icon: IconTargetArrow },
         ]
     },
     {
-        title: "Analytics & Transparency", Icon: IconReportAnalytics, bullets: [
+        title: "Analytics & Transparency", image: "/deliver/ads-analytics.webp", Icon: IconReportAnalytics, bullets: [
             { text: "Custom live dashboards so you can see exactly where your money is going.", Icon: IconReportAnalytics },
             { text: "Weekly and monthly performance breakdowns delivered directly to you.", Icon: IconChartBar },
         ]
     },
     {
-        title: "Platform Diversification", Icon: IconBrandMeta, bullets: [
+        title: "Platform Diversification", image: "/deliver/ads-platforms.webp", Icon: IconBrandMeta, bullets: [
             { text: "Strategic spend allocation across Meta, Google, YouTube, and emerging platforms.", Icon: IconBrandMeta },
             { text: "Cross-platform attribution modelling so you know which channel truly drives results.", Icon: IconBrandGoogle },
         ]
@@ -113,8 +114,8 @@ export default function PerformanceMarketingPage() {
                                 <motion.div variants={fadeInLeft}>
                                     <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> PERFORMANCE MARKETING </Kicker>
                                 </motion.div>
- <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink">
-                                    Turn Ad Spend Into <span className="text-primary">Predictable Revenue.</span>
+ <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+                                    Turn Ad Spend Into <em className="font-serif-20 italic">Predictable Revenue.</em>
                                 </motion.h1>
                                 <motion.p variants={fadeInLeft} className="mt-6 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg">
                                     Data-driven Meta and Google Ads campaigns designed to lower your Customer Acquisition Cost (CAC) and scale your leads.
@@ -136,8 +137,14 @@ export default function PerformanceMarketingPage() {
                                 </motion.div>
                             </div>
                             <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
-                                <div className="border border-grid/15 bg-white overflow-hidden">
-                                    <div className="relative aspect-square bg-white">
+                                <div className="relative overflow-hidden">
+                                    <div
+                                      className={`relative ${masterConfig.ui.heroImages.className}`}
+                                      style={{
+                                        maxWidth: masterConfig.ui.heroImages.maxWidth,
+                                        aspectRatio: masterConfig.ui.heroImages.aspectRatio,
+                                      }}
+                                    >
                                         <HeroImage
                                             src={`/${masterConfig.ui.heroImages.socialMediaGrowthPerformanceMarketing}`}
                                             alt="Performance marketing hero"
@@ -156,13 +163,23 @@ export default function PerformanceMarketingPage() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
                         <div className="mb-16 md:mb-20">
                             <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">DELIVERABLES</div>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tight text-ink max-w-3xl">Everything included in your ad campaigns.</h2>
+ <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">Everything included in your ad <em className="font-serif-10 italic">campaigns.</em></h2>
                         </div>
                         <div className="border border-grid/15 bg-white">
                             {[0, 3].map((startIdx) => (
                                 <div key={startIdx} className={`grid md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15 ${startIdx > 0 ? "border-t border-grid/15" : ""}`}>
                                     {deliverables.slice(startIdx, startIdx + 3).map((item) => (
                                         <motion.div key={item.title} variants={scaleIn} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="p-7 md:p-8 flex flex-col group cursor-default">
+                                            {/* Image at top */}
+                                            <div className="w-full aspect-video mb-6 border border-grid/15 bg-paper/40 flex items-center justify-center overflow-hidden relative">
+                                                <Image 
+                                                    src={item.image} 
+                                                    alt={item.title}
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                />
+                                            </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
  <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
                                                 <div className="h-12 w-12 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0 group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300">
@@ -197,7 +214,7 @@ export default function PerformanceMarketingPage() {
                                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                                     <motion.div variants={fadeInUp}>
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">IS THIS FOR YOU?</div>
- <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right fit.</h3>
+ <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
                                         {fitItems.map((item) => (
@@ -222,7 +239,7 @@ export default function PerformanceMarketingPage() {
                                 <div className="p-7 md:p-10 flex flex-col">
                                     <motion.div variants={fadeInUp}>
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">WHY BRANDBASE</div>
- <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why growth teams choose us.</h3>
+ <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why growth teams choose <em className="font-serif-10 italic">us.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
                                         {whyUsItems.map((item) => (
@@ -248,7 +265,7 @@ export default function PerformanceMarketingPage() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
                         <div className="mb-16">
                             <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">OUR PROCESS</div>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tight text-ink max-w-3xl">From audit to scaling.</h2>
+ <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">From audit to <em className="font-serif-10 italic">scaling.</em></h2>
                             <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">A structured, transparent process that turns ad budgets into predictable revenue streams.</p>
                         </div>
                         <div className="relative">
@@ -313,7 +330,7 @@ export default function PerformanceMarketingPage() {
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
                                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">NEXT STEP</div>
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-10 tracking-tighter mb-6">Ready to stop guessing and start scaling?</h2>
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to stop guessing and start <em className="font-serif-10 italic">scaling?</em></h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Book a free strategy call. We&apos;ll audit your current setup and show you exactly where you&apos;re leaving money on the table.</p>
                                         <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
                                             {(() => {

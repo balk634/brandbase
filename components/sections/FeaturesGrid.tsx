@@ -126,7 +126,7 @@ export function FeaturesGrid() {
                                 </div>
                             <h3 className="font-serif text-xl tracking-tight leading-snug">
                                 {pain.title.split(' ').map((word, i, arr) => 
-                                    i === arr.length - 1 ? <em key={i} className="font-serif italic">{word}</em> : <span key={i}>{word} </span>
+                                    i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
                                 )}
                             </h3>
                             </div>

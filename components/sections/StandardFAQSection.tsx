@@ -57,13 +57,30 @@ export function StandardFAQSection({
         <div className="border border-grid/15 bg-white">
           <div className="p-5 sm:p-6 md:p-8 border-b border-grid/15">
             <Kicker>{kicker}</Kicker>
- <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-serif-10 tracking-tight">
-              {title.split("\n").map((line, index) => (
-                <span key={`${line}-${index}`}>
-                  {index > 0 ? <br /> : null}
-                  {line}
-                </span>
-              ))}
+ <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-serif tracking-tight">
+              {(() => {
+                const lines = title.split("\n");
+                return lines.map((line, lineIndex) => {
+                  const isLastLine = lineIndex === lines.length - 1;
+                  if (!isLastLine) {
+                    return (
+                      <span key={`${line}-${lineIndex}`}>
+                        {lineIndex > 0 ? <br /> : null}
+                        {line}
+                      </span>
+                    );
+                  }
+                  const words = line.split(' ');
+                  const lastWord = words.pop();
+                  const restLine = words.join(' ');
+                  return (
+                    <span key={`${line}-${lineIndex}`}>
+                      {lineIndex > 0 ? <br /> : null}
+                      {restLine}{restLine ? ' ' : ''}<em className="font-serif-10 italic">{lastWord}</em>
+                    </span>
+                  );
+                });
+              })()}
             </h2>
           </div>
           <div className="grid md:grid-cols-2">
