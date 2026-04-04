@@ -9,6 +9,7 @@ import { Agentation } from "agentation";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
+import { NotificationContainer } from "@/components/ui/Notification";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -128,6 +129,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <NotificationContainer />
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>

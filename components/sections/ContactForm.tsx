@@ -3,11 +3,13 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { LoadingButton } from "@/components/ui/LoadingButton";
+import { NotificationContainer } from "@/components/ui/Notification";
 import { masterConfig } from "@/config/master";
 import { Kicker } from "@/components/ui/Kicker";
 import { CalButton } from "@/components/ui/CalBooking";
 import { IconMail, IconPhone, IconMapPin, IconClock } from "@tabler/icons-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sendEmail } from "@/app/actions";
 
 type ContactFormVariant = "section" | "page";
@@ -25,16 +27,25 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Notification function
+  const showNotification = (type: "success" | "error", message: string) => {
+    const event = new CustomEvent('showNotification', { detail: { type, message } });
+    window.dispatchEvent(event);
+  };
+
   async function handleAction(formData: FormData) {
     setStatus("loading");
     setErrorMessage("");
+
     const result = await sendEmail(formData);
 
     if (result.success) {
       setStatus("success");
+      showNotification("success", "Message submitted successfully! We'll respond within 24 hours.");
     } else {
       setStatus("error");
       setErrorMessage(result.error || "Failed to send message. Please try again.");
+      showNotification("error", "Failed to send message. Please contact us directly or try again.");
     }
   }
 
@@ -240,9 +251,15 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                       </div>
 
                       <div className="mt-8 flex justify-center sm:justify-end">
-                        <Button type="submit" variant="primary" className="w-full sm:w-auto sm:min-w-[220px]" disabled={status === "loading"}>
-                          {status === "loading" ? "Sending..." : "Send message"}
-                        </Button>
+                        <LoadingButton
+                          type="submit"
+                          variant="primary"
+                          className="w-full sm:w-auto sm:min-w-[220px]"
+                          isLoading={status === "loading"}
+                          loadingText="Sending..."
+                        >
+                          Send message
+                        </LoadingButton>
                       </div>
                     </form>
                   )}
@@ -388,9 +405,15 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
               </div>
 
               <div className="mt-8 flex justify-center sm:justify-end">
-                <Button type="submit" variant="primary" className="w-full sm:w-auto sm:min-w-[220px]" disabled={status === "loading"}>
-                  {status === "loading" ? "Sending..." : "Send message"}
-                </Button>
+                <LoadingButton
+                  type="submit"
+                  variant="primary"
+                  className="w-full sm:w-auto sm:min-w-[220px]"
+                  isLoading={status === "loading"}
+                  loadingText="Sending..."
+                >
+                  Send message
+                </LoadingButton>
               </div>
             </form>
           )}

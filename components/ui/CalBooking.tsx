@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import { masterConfig } from "@/config/master";
+import { Button } from "@/components/ui/Button";
 
 export function useCalBooking() {
+  const [isReady, setIsReady] = useState(false);
+
   useEffect(() => {
     (async function init() {
       const cal = await getCalApi({ namespace: masterConfig.contact.calcomNamespace });
@@ -18,6 +21,7 @@ export function useCalBooking() {
         hideEventTypeDetails: false,
         layout: "month_view",
       });
+      setIsReady(true);
     })();
   }, []);
 
@@ -27,15 +31,13 @@ export function useCalBooking() {
       calLink: eventSlug || masterConfig.contact.calcomSlug,
       config: {
         origin: masterConfig.contact.calcomUrl,
+        theme: "light",
       },
     });
   };
 
-  return { openBooking };
+  return { openBooking, isReady };
 }
-
-import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 
 export function CalButton({ 
   children, 
@@ -51,13 +53,19 @@ export function CalButton({
   eventSlug?: string;
 }) {
   const { openBooking } = useCalBooking();
+  const fullUrl = `${masterConfig.contact.calcomUrl}/${eventSlug || masterConfig.contact.calcomSlug}`;
 
   return (
     <Button 
       variant={variant}
       size={size}
       className={className}
-      onClick={() => openBooking(eventSlug)}
+      href={fullUrl}
+      target="_blank"
+      onClick={(e) => {
+        e.preventDefault();
+        openBooking(eventSlug);
+      }}
     >
       {children}
     </Button>
