@@ -130,7 +130,7 @@ export default function WebsiteSolutionsPage() {
                     asChild
                     variant="primary"
                     size="lg"
-                    className="w-full sm:w-auto sm:min-w-[220px]"
+                    className="sm:min-w-[220px]"
                   >
                     <Link href="#solution-paths">See solution paths</Link>
                   </Button>
@@ -138,7 +138,7 @@ export default function WebsiteSolutionsPage() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="w-full sm:w-auto sm:min-w-[220px]"
+                    className="sm:min-w-[220px]"
                   >
                     {(() => {
                       const calendlyUrl = masterConfig.contact.calendlyUrl;
@@ -245,7 +245,7 @@ export default function WebsiteSolutionsPage() {
                           {path.outcome}
                         </div>
                         
-                        <Button asChild variant="outline" size="sm" className="mt-5 w-full text-[11px] uppercase tracking-wider font-bold">
+                        <Button asChild variant="outline" size="sm" className="mt-5 text-[11px] uppercase tracking-wider font-bold">
                           <Link href={path.href}>Explore Path</Link>
                         </Button>
                       </div>

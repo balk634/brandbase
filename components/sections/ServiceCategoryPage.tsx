@@ -134,13 +134,12 @@ export function ServiceCategoryPage({
                   </div>
 
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                    <Button asChild size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                      <Link href={ctaPrimaryHref} className="gap-2">
+                    <Button asChild size="lg" className="sm:min-w-[220px]">
+                      <Link href={ctaPrimaryHref}>
                         {ctaPrimaryLabel}
-                        
                       </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                    <Button asChild variant="outline" size="lg" className="sm:min-w-[220px]">
                       <Link href="#service-tracks">View service tracks</Link>
                     </Button>
                   </div>
@@ -198,7 +197,7 @@ export function ServiceCategoryPage({
                   </div>
 
                   <div className="mt-6">
-                    <Button asChild variant="outline" size="sm" className="w-full">
+                    <Button asChild variant="outline" size="sm">
                       <Link href={service.href}>Explore {service.name}</Link>
                     </Button>
                   </div>
@@ -371,10 +370,10 @@ export function ServiceCategoryPage({
             <p className="mt-5 max-w-3xl text-paper/75 text-sm sm:text-sm md:text-base leading-relaxed">{ctaCopy}</p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button asChild size="lg" className="w-full sm:w-auto sm:min-w-[220px] bg-paper text-ink hover:bg-paper/90">
+              <Button asChild size="lg" className="sm:min-w-[220px] bg-paper text-ink hover:bg-paper/90">
                 <Link href={ctaPrimaryHref}>{ctaPrimaryLabel}</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px] border-paper/30 text-paper hover:bg-paper/10">
+              <Button asChild variant="outline" size="lg" className="sm:min-w-[220px] border-paper/30 text-paper hover:bg-paper/10">
                 <Link href={ctaSecondaryHref}>{ctaSecondaryLabel}</Link>
               </Button>
             </div>

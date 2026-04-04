@@ -224,10 +224,9 @@ export default function RedesignRescuePage() {
                                             </div>
                                         ))}
                                     </div>
-                                    <Link href={option.href} className="inline-flex items-center text-sm font-bold text-ink hover:text-primary transition-colors uppercase tracking-wider group-hover:text-primary">
-                                        Explore This Option
-                                        <IconArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
-                                    </Link>
+                                    <Button asChild variant="ghost" className="text-sm font-bold text-ink hover:text-primary transition-colors uppercase tracking-wider group-hover:text-primary p-0 h-auto min-h-0 w-auto">
+                                        <Link href={option.href}>Explore This Option</Link>
+                                    </Button>
                                 </motion.div>
                             ))}
                         </div>
@@ -339,7 +338,7 @@ export default function RedesignRescuePage() {
                                                 const isExternal = calendlyUrl?.startsWith('http');
                                                 const href = calendlyUrl || "/contact";
                                                 return (
-                                                    <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
+                                                    <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary sm:min-w-[220px]">
                                                         <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
                                                     </Button>
                                                 );

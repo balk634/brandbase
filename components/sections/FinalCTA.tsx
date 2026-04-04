@@ -21,7 +21,7 @@ export function FinalCTA() {
                         </p>
 
                         <div className="mt-8 w-full max-w-2xl flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button asChild variant="primary" size="lg" className="gap-2 w-full sm:w-auto">
+                            <Button asChild variant="primary" size="lg">
                                 {(() => {
                                     const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
                                     const isExternal = /^https?:\/\//i.test(calendlyUrl);
@@ -33,7 +33,6 @@ export function FinalCTA() {
                                             rel={isExternal ? "noreferrer" : undefined}
                                         >
                                             Book a call
-                                            <IconArrowRight className="h-4 w-4" />
                                         </Link>
                                     );
                                 })()}

@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import Link from "next/link";
 import { motion } from "@/components/ui/motion-lite";
@@ -163,17 +164,17 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
 
                     {/* Right Column: CTA (Vertically Centered & Responsive) */}
                     <div className="flex items-center justify-center md:justify-end mt-8 md:mt-0 w-full md:w-auto">
-                        <Link
-                            href={item.href}
-                            className={`w-full md:w-auto text-[10px] font-mono font-medium tracking-[0.2em] uppercase px-5 py-4 border transition-all flex items-center justify-center gap-2 group/link whitespace-nowrap
+                        <Button
+                            asChild
+                            variant="ghost"
+                            className={`text-[10px] font-mono font-medium tracking-[0.2em] uppercase px-5 py-4 border transition-all h-auto min-h-0
                                 ${isDark
                                     ? "border-white/10 text-white/60 hover:border-white/30 hover:text-white"
                                     : "border-ink/10 text-ink-muted hover:border-primary hover:text-primary hover:bg-primary/5"
                                 }`}
                         >
-                            Explore more
-                            <IconArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                        </Link>
+                            <Link href={item.href}>Explore more</Link>
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -250,13 +251,13 @@ function PillarCard({
                                     <em className="font-serif-20 italic text-ink">{titleLine2}</em>
                                 </h3>
 
-                                <Link
-                                    href={ctaHref}
-                                    className="text-[11px] md:text-[12px] font-mono font-medium tracking-[0.2em] uppercase text-primary hover:text-primary/80 transition-colors flex items-center gap-2 group/cta"
+                                <Button
+                                    asChild
+                                    variant="ghost"
+                                    className="text-[11px] md:text-[12px] font-mono font-medium tracking-[0.2em] uppercase text-primary hover:text-primary/80 transition-colors p-0 h-auto min-h-0 w-auto"
                                 >
-                                    {ctaLabel}
-                                    <IconArrowUpRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" strokeWidth={1.5} />
-                                </Link>
+                                    <Link href={ctaHref}>{ctaLabel}</Link>
+                                </Button>
                             </motion.div>
                         );
                     })()}

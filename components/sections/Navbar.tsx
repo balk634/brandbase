@@ -347,7 +347,7 @@ export function Navbar() {
                         </nav>
 
                         <div className="p-4 border-t border-grid/10 bg-paper">
-                            <Button asChild variant="primary" size="lg" className="w-full">
+                            <Button asChild variant="primary" size="lg">
                                 <Link href="/contact" onClick={closeMobileMenu}>Contact us</Link>
                             </Button>
                         </div>

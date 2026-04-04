@@ -129,7 +129,7 @@ export default function DigitalMarketingPage() {
                     asChild
                     variant="primary"
                     size="lg"
-                    className="w-full sm:w-auto sm:min-w-[220px]"
+                    className="sm:min-w-[220px]"
                   >
                     <Link href="#growth-lanes">See growth lanes</Link>
                   </Button>
@@ -142,7 +142,7 @@ export default function DigitalMarketingPage() {
                         asChild
                         variant="outline"
                         size="lg"
-                        className="w-full sm:w-auto sm:min-w-[220px]"
+                        className="sm:min-w-[220px]"
                       >
                         <Link
                           href={href}
@@ -238,7 +238,7 @@ export default function DigitalMarketingPage() {
                       {lane.timeline}
                     </p>
                   </div>
-                  <Button asChild variant="outline" size="sm" className="mt-6 w-full">
+                  <Button asChild variant="outline" size="sm" className="mt-6">
                     <Link href={lane.href}>Explore {lane.title}</Link>
                   </Button>
                 </motion.article>

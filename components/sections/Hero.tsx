@@ -60,21 +60,18 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                     >
-                        <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[180px]">
+                        <Button asChild variant="primary" size="lg" className="sm:min-w-[180px]">
                             <Link 
                                 href={calendlyHref} 
-                                className="gap-2"
                                 target={isCalendlyExternal ? "_blank" : undefined}
                                 rel={isCalendlyExternal ? "noreferrer" : undefined}
                             >
                                 Book a call
-                                <IconArrowRight className="h-4 w-4" />
                             </Link>
                         </Button>
-                        <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[180px]">
-                            <Link href="#services" className="gap-2">
+                        <Button asChild variant="outline" size="lg" className="sm:min-w-[180px]">
+                            <Link href="#services">
                                 Explore services
-                                <IconArrowDown className="h-4 w-4" />
                             </Link>
                         </Button>
                     </motion.div>
