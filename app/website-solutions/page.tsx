@@ -7,12 +7,6 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { WebsiteSolutionsDeferredLoader } from "@/components/sections/WebsiteSolutionsDeferredLoader";
-import {
-  IconChartBar,
-  IconCode,
-  IconDeviceDesktop,
-  IconRefresh,
-} from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
 
@@ -61,7 +55,7 @@ type SolutionPath = {
   summary: string;
   outcome: string;
   href: string;
-  Icon: ComponentType<{ className?: string }>;
+  image: string;
 };
 
 const solutionPaths: SolutionPath[] = [
@@ -72,7 +66,7 @@ const solutionPaths: SolutionPath[] = [
       "Launch fast with premium design, clean messaging hierarchy, and lead-ready architecture.",
     outcome: "Get live quickly and start collecting qualified leads.",
     href: "/website-solutions/premium-static-websites",
-    Icon: IconDeviceDesktop,
+    image: masterConfig.ui.heroImages.websiteSolutionsPremiumStatic,
   },
   {
     label: "CORE TRACK 02",
@@ -81,7 +75,7 @@ const solutionPaths: SolutionPath[] = [
       "Bespoke user journeys, stronger brand control, and technical flexibility for scaling teams.",
     outcome: "Own custom flows and reduce operational bottlenecks.",
     href: "/website-solutions/custom-web-design",
-    Icon: IconCode,
+    image: masterConfig.ui.heroImages.websiteSolutionsCustomEnterprise,
   },
   {
     label: "CORE TRACK 03",
@@ -90,7 +84,7 @@ const solutionPaths: SolutionPath[] = [
       "Commerce systems optimized for conversion rate, checkout completion, and repeat purchase behavior.",
     outcome: "Increase checkout completion and repeat customer revenue.",
     href: "/website-solutions/ecommerce-development",
-    Icon: IconChartBar,
+    image: masterConfig.ui.heroImages.websiteSolutionsEcommerce,
   },
   {
     label: "SPECIALIZED TRACK",
@@ -99,7 +93,7 @@ const solutionPaths: SolutionPath[] = [
       "Repair speed, UX, and conversion performance on sites that already exist but underperform.",
     outcome: "Recover lost conversions without overbuilding from scratch.",
     href: "/website-solutions/website-redesign",
-    Icon: IconRefresh,
+    image: masterConfig.ui.heroImages.websiteSolutionsRedesignRescue,
   },
 ];
 
@@ -212,39 +206,51 @@ export default function WebsiteSolutionsPage() {
                 <em className="font-serif-10 italic"> depth.</em>
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-5">
-              {solutionPaths.map((path) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {solutionPaths.map((path, idx) => (
                 <motion.article
                   key={path.title}
-                  variants={scaleIn}
+                  variants={fadeInLeft}
                   whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                  className="mi-card border border-grid/15 bg-white p-6 md:p-8 flex flex-col"
+                  className="mi-card border border-grid/15 bg-white overflow-hidden p-5 sm:p-6"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
-                        {path.label}
+                  <div className="grid grid-cols-[1fr_1.3fr] gap-5 h-full items-start">
+                    {/* Left: Image (4:5) */}
+                    <div className="relative aspect-[4/5] bg-paper/40 overflow-hidden border border-grid/10">
+                      <HeroImage
+                        src={`/${path.image}`}
+                        alt={path.title}
+                      />
+                    </div>
+
+                    {/* Right: Content */}
+                    <div className="flex flex-col h-full justify-between">
+                      <div>
+                        <div className="font-mono text-[9px] uppercase tracking-[0.3em] text-ink-muted">
+                          {path.label}
+                        </div>
+                        <h3 className="mt-2 text-lg sm:text-xl font-serif tracking-tight text-ink leading-tight">
+                          {path.title}
+                        </h3>
+                        <p className="mt-3 text-[13px] text-ink-muted leading-relaxed line-clamp-3">
+                          {path.summary}
+                        </p>
                       </div>
- <h3 className="h3 mt-3 text-xl font-serif tracking-tight text-ink">
-                        {path.title}
-                      </h3>
-                    </div>
-                    <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0">
-                      <path.Icon className="h-5 w-5" />
+
+                      <div className="mt-4 pt-4 border-t border-grid/10">
+                        <div className="font-mono text-[9px] uppercase tracking-[0.35em] text-ink-muted mb-2">
+                          PRIMARY OUTCOME
+                        </div>
+                        <div className="text-[13px] text-ink font-medium leading-snug">
+                          {path.outcome}
+                        </div>
+                        
+                        <Button asChild variant="outline" size="sm" className="mt-5 w-full text-[11px] uppercase tracking-wider font-bold">
+                          <Link href={path.href}>Explore Path</Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                  <p className="mt-4 text-sm text-ink-muted leading-relaxed flex-1">
-                    {path.summary}
-                  </p>
-                  <div className="mt-6 pt-4 border-t border-grid/10">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
-                      Primary outcome
-                    </div>
-                    <div className="mt-2 text-sm text-ink">{path.outcome}</div>
-                  </div>
-                  <Button asChild variant="outline" size="sm" className="mt-6 w-full">
-                    <Link href={path.href}>Explore {path.title}</Link>
-                  </Button>
                 </motion.article>
               ))}
             </div>

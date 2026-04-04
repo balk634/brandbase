@@ -149,8 +149,17 @@ export default function AboutPage() {
 
                 </div>
 
-                <div className="lg:col-span-5 min-w-0">
-                  <GoldilocksVenn />
+                <div className="lg:col-span-5 min-w-0 flex justify-center">
+                  {/* Image for Goldilocks problem (4:5) */}
+                  <div className="w-full max-w-[380px] aspect-[4/5] bg-paper/40 flex items-center justify-center overflow-hidden relative">
+                      <Image
+                        src="/deliver/goldilocks.webp"
+                        alt="The Goldilocks Problem"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 40vw"
+                      />
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HeroImage } from "@/components/ui/HeroImage";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
@@ -38,6 +39,7 @@ const serviceOptions: {
     bestFor: string;
     copy: string;
     href: string;
+    image: string;
     highlights: string[];
 }[] = [
         {
@@ -46,6 +48,7 @@ const serviceOptions: {
             bestFor: "Startups, Local Businesses, Solo Founders",
             copy: "A clean, lightning-fast website built on a modern static framework. Ideal if you want a polished presence without the complexity.",
             href: "/website-solutions/premium-static",
+            image: "/deliver/redesign-static.jpg",
             highlights: ["Launch in 14 days", "Monthly subscription", "Zero upfront cost"],
         },
         {
@@ -54,6 +57,7 @@ const serviceOptions: {
             bestFor: "Agencies, Clinics, Growing Brands",
             copy: "Fully custom design with CMS, booking integrations, and lead capture. Built from scratch around your specific business goals.",
             href: "/website-solutions/custom-enterprise",
+            image: "/deliver/redesign-custom.jpg",
             highlights: ["Strategy-led design", "CMS & booking built-in", "Ongoing partnership"],
         },
         {
@@ -62,6 +66,7 @@ const serviceOptions: {
             bestFor: "Product Brands, DTC, Online Stores",
             copy: "A conversion-optimized storefront with payment gateways, inventory management, and everything your store needs to scale.",
             href: "/website-solutions/ecommerce",
+            image: "/deliver/redesign-ecommerce.jpg",
             highlights: ["Checkout optimization", "Inventory & shipping", "Multi-gateway payments"],
         },
     ];
@@ -192,6 +197,16 @@ export default function RedesignRescuePage() {
                         <div className="grid md:grid-cols-3 gap-6">
                             {serviceOptions.map((option) => (
                                 <motion.div key={option.title} variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="border border-grid/15 bg-white p-7 md:p-8 flex flex-col group cursor-default hover:border-primary/30 transition-all duration-300">
+                                    {/* Service Image */}
+                                    <div className="w-full aspect-video mb-6 bg-paper/40 flex items-center justify-center overflow-hidden relative">
+                                        <Image
+                                            src={option.image}
+                                            alt={option.title}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                        />
+                                    </div>
                                     <div className="flex items-center justify-between gap-3 mb-4">
                                         <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary/60">{option.tag}</span>
                                     </div>
