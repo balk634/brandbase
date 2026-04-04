@@ -276,7 +276,7 @@ function PillarCard({
                             fill={true}
                             className={isImageLeft ? "object-left" : isImageRight ? "object-right" : ""}
                             objectFit="contain"
-                            sizes="(max-width: 768px) 100vw, 50vw"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 400px"
                         />
                     </motion.div>
                 </div>

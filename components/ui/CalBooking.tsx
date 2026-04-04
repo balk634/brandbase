@@ -1,94 +1,92 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getCalApi } from "@calcom/embed-react";
+import { useRef } from "react";
 import { masterConfig } from "@/config/master";
 import { Button } from "@/components/ui/Button";
 
-export function useCalBooking() {
-  const [isReady, setIsReady] = useState(false);
+// The Cal API callable type — a function that accepts a method name + options.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type CalApi = (method: string, options?: Record<string, unknown>) => void;
 
-  useEffect(() => {
-    (async function init() {
+// Lazily loaded Cal.com API — only imported on first user interaction.
+// This removes ~84KB of the @calcom/embed-react SDK from the initial JS bundle.
+let calApiPromise: Promise<CalApi> | null = null;
+
+async function getCalLazy(): Promise<CalApi> {
+  if (!calApiPromise) {
+    calApiPromise = import("@calcom/embed-react").then(async ({ getCalApi }) => {
       const cal = await getCalApi({ namespace: masterConfig.contact.calcomNamespace });
-      cal("ui", {
-        theme: "light",
-        styles: {
-          branding: {
-            brandColor: masterConfig.colors.primary,
-          },
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-      setIsReady(true);
-    })();
-  }, []);
-
-  const openBooking = async (eventSlug?: string) => {
-    const cal = await getCalApi({ namespace: masterConfig.contact.calcomNamespace });
-    // Split slug and query params if present
-    const slug = eventSlug || masterConfig.contact.calcomSlug;
-    const [path, query] = slug.split('?');
-    
-    cal("modal", {
-      calLink: path,
-      config: {
-        origin: masterConfig.contact.calcomUrl,
-        theme: "light",
-      },
+      // cal() can be called as a function — cast to our simplified type
+      return cal as unknown as CalApi;
     });
-  };
-
-  return { openBooking, isReady };
+  }
+  return calApiPromise;
 }
 
-export function CalButton({ 
-  children, 
-  className, 
-  variant = "primary", 
+async function initAndOpenCal(slug: string) {
+  const cal = await getCalLazy();
+  cal("ui", {
+    theme: "light",
+    styles: { branding: { brandColor: masterConfig.colors.primary } },
+    hideEventTypeDetails: false,
+    layout: "month_view",
+  });
+  const [pathWithSlash] = slug.split("?");
+  const path = pathWithSlash.replace(/\/$/, "");
+  cal("modal", {
+    calLink: path,
+    config: { origin: masterConfig.contact.calcomUrl, theme: "light" },
+  });
+}
+
+export function CalButton({
+  children,
+  className,
+  variant = "primary",
   size = "lg",
-  eventSlug
-}: { 
-  children: React.ReactNode; 
-  className?: string; 
+  eventSlug,
+}: {
+  children: React.ReactNode;
+  className?: string;
   variant?: "primary" | "destructive" | "outline" | "secondary" | "ghost" | "link";
   size?: "default" | "sm" | "lg" | "icon";
   eventSlug?: string;
 }) {
-  const [isMounted, setIsMounted] = useState(false);
-  const { openBooking } = useCalBooking();
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
+  const isOpeningRef = useRef(false);
   const calcomSlug = eventSlug || masterConfig.contact.calcomSlug;
-  // If not mounted yet, we MUST use the value that the server used
-  // to avoid hydration mismatch.
   const fullUrl = `${masterConfig.contact.calcomUrl}/${calcomSlug}`;
 
   return (
-    <Button 
-      asChild
-      variant={variant}
-      size={size}
-      className={className}
-    >
-      <a 
+    <Button asChild variant={variant} size={size} className={className}>
+      <a
         href={fullUrl}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={(e) => {
+        onClick={async (e) => {
           e.preventDefault();
-          // We pass the full slug (including sub-paths and params) 
-          // but calcom-embed usually handles the slug portion.
-          // If it fails, we might need to split it.
-          openBooking(calcomSlug);
+          if (isOpeningRef.current) return;
+          isOpeningRef.current = true;
+          try {
+            await initAndOpenCal(calcomSlug);
+          } catch {
+            // Fallback: open in new tab if Cal.com fails to load
+            window.open(fullUrl, "_blank", "noopener,noreferrer");
+          } finally {
+            isOpeningRef.current = false;
+          }
         }}
       >
         {children}
       </a>
     </Button>
   );
+}
+
+/** @deprecated Use CalButton directly. Kept for backward compatibility. */
+export function useCalBooking() {
+  const openBooking = async (eventSlug?: string) => {
+    const slug = eventSlug || masterConfig.contact.calcomSlug;
+    await initAndOpenCal(slug);
+  };
+  return { openBooking, isReady: true };
 }

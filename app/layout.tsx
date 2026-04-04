@@ -111,7 +111,11 @@ export default function RootLayout({
           } as React.CSSProperties
         }
       >
-        <JsonLd />
+        {/* Preload critical fonts to break the CSS→font discovery chain */}
+      <link rel="preload" href="/fonts/Redaction-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <link rel="preload" href="/fonts/Redaction_10-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <link rel="preload" href="/fonts/Redaction_20-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <JsonLd />
         <ConsentAwareAnalytics measurementId={masterConfig.analytics?.googleAnalyticsId} />
         <PerformanceEnhancements
           enableSmoothScroll={masterConfig.ui.motion.smoothScroll}

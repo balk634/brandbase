@@ -95,6 +95,7 @@ export function Navbar() {
                         height={masterConfig.logo.header.height} 
                         className="w-auto"
                         style={{ height: `${masterConfig.logo.header.height}px` }}
+                        priority
                     />
                 </Link>
 

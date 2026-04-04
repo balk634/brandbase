@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useState } from "react";
 import Image from "next/image";
 
 interface HeroImageProps {
@@ -19,34 +16,6 @@ function normalizeHeroSrc(value: string) {
 
 export function HeroImage({ src, alt, priority = false }: HeroImageProps) {
     const normalizedSrc = normalizeHeroSrc(src);
-    const [hasError, setHasError] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
-
-    React.useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    if (!isMounted) {
-        return (
-            <div
-                className="absolute inset-0 bg-gray-100 animate-pulse"
-                aria-hidden="true"
-            />
-        );
-    }
-
-    if (hasError) {
-        return (
-            <div
-                className="absolute inset-0 bg-gray-100 flex items-center justify-center"
-                aria-label={alt}
-            >
-                <span className="text-gray-400 text-xs font-mono uppercase tracking-wider">
-                    Image unavailable
-                </span>
-            </div>
-        );
-    }
 
     return (
         <Image
@@ -55,8 +24,8 @@ export function HeroImage({ src, alt, priority = false }: HeroImageProps) {
             fill
             className="object-cover"
             priority={priority}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 45vw"
-            onError={() => setHasError(true)}
+            // fetchpriority="high" is set automatically by Next.js when priority={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 440px"
         />
     );
 }
