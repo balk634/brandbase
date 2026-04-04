@@ -27,8 +27,12 @@ export function useCalBooking() {
 
   const openBooking = async (eventSlug?: string) => {
     const cal = await getCalApi({ namespace: masterConfig.contact.calcomNamespace });
+    // Split slug and query params if present
+    const slug = eventSlug || masterConfig.contact.calcomSlug;
+    const [path, query] = slug.split('?');
+    
     cal("modal", {
-      calLink: eventSlug || masterConfig.contact.calcomSlug,
+      calLink: path,
       config: {
         origin: masterConfig.contact.calcomUrl,
         theme: "light",
@@ -52,22 +56,39 @@ export function CalButton({
   size?: "default" | "sm" | "lg" | "icon";
   eventSlug?: string;
 }) {
+  const [isMounted, setIsMounted] = useState(false);
   const { openBooking } = useCalBooking();
-  const fullUrl = `${masterConfig.contact.calcomUrl}/${eventSlug || masterConfig.contact.calcomSlug}`;
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const calcomSlug = eventSlug || masterConfig.contact.calcomSlug;
+  // If not mounted yet, we MUST use the value that the server used
+  // to avoid hydration mismatch.
+  const fullUrl = `${masterConfig.contact.calcomUrl}/${calcomSlug}`;
 
   return (
     <Button 
+      asChild
       variant={variant}
       size={size}
       className={className}
-      href={fullUrl}
-      target="_blank"
-      onClick={(e) => {
-        e.preventDefault();
-        openBooking(eventSlug);
-      }}
     >
-      {children}
+      <a 
+        href={fullUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => {
+          e.preventDefault();
+          // We pass the full slug (including sub-paths and params) 
+          // but calcom-embed usually handles the slug portion.
+          // If it fails, we might need to split it.
+          openBooking(calcomSlug);
+        }}
+      >
+        {children}
+      </a>
     </Button>
   );
 }

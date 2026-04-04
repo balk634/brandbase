@@ -20,6 +20,20 @@ function normalizeHeroSrc(value: string) {
 export function HeroImage({ src, alt, priority = false }: HeroImageProps) {
     const normalizedSrc = normalizeHeroSrc(src);
     const [hasError, setHasError] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return (
+            <div
+                className="absolute inset-0 bg-gray-100 animate-pulse"
+                aria-hidden="true"
+            />
+        );
+    }
 
     if (hasError) {
         return (

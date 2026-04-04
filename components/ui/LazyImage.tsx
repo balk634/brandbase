@@ -14,6 +14,7 @@ interface LazyImageProps {
     fill?: boolean;
     width?: number;
     height?: number;
+    objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
 }
 
 export function LazyImage({
@@ -27,11 +28,17 @@ export function LazyImage({
     fill = false,
     width,
     height,
+    objectFit = 'cover',
 }: LazyImageProps) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isInView, setIsInView] = useState(priority);
     const containerRef = useRef<HTMLDivElement>(null);
     const [hasError, setHasError] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     useEffect(() => {
         if (priority || isInView) return;
@@ -60,7 +67,7 @@ export function LazyImage({
     // explicit dimensions. We must NOT add any wrapper div of our own — doing so
     // creates a new stacking context that breaks fill positioning altogether.
     if (fill) {
-        if (!isInView && !priority) {
+        if (!isMounted || (!isInView && !priority)) {
             return (
                 <div
                     ref={containerRef}
@@ -84,7 +91,7 @@ export function LazyImage({
                     src={src}
                     alt={alt}
                     fill
-                    className={`object-cover transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+                    className={`object-${objectFit} transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`}
                     sizes={sizes}
                     quality={quality}
                     priority={priority}
@@ -101,7 +108,7 @@ export function LazyImage({
     }
 
     // --- Sized mode (width + height provided, no fill) ---
-    if (!isInView && !priority) {
+    if (!isMounted || (!isInView && !priority)) {
         return (
             <div
                 ref={containerRef}
@@ -130,7 +137,7 @@ export function LazyImage({
                 alt={alt}
                 width={width}
                 height={height}
-                className={`object-cover transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+                className={`object-${objectFit} transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`}
                 sizes={sizes}
                 quality={quality}
                 priority={priority}

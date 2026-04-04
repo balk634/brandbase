@@ -44,11 +44,12 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+        const { href: propsHref, target: propsTarget, ...buttonProps } = props
         const Comp = asChild ? Slot : "button"
         
         // Determine arrow type
-        const href = props.href || (asChild ? (children as any)?.props?.href : undefined);
-        const target = props.target || (asChild ? (children as any)?.props?.target : undefined);
+        const href = propsHref || (asChild ? (children as any)?.props?.href : undefined);
+        const target = propsTarget || (asChild ? (children as any)?.props?.target : undefined);
         const isIconSize = size === "icon";
         
         let ArrowIcon = null;
@@ -77,7 +78,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <Comp
                 className={cn(buttonVariants({ variant, size, className }), ArrowIcon && "gap-2 group/btn")}
                 ref={ref}
-                {...props}
+                {...(asChild ? props : buttonProps)}
             >
                 {asChild ? (
                     React.isValidElement(children) ? (
