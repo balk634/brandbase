@@ -105,28 +105,44 @@ export default function WebsiteSolutionsPage() {
         <Container>
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <motion.div variants={fadeInLeft} className="relative">
+                <div className="relative overflow-hidden">
+                  <div
+                    className={`relative ${masterConfig.ui.heroImages.className}`}
+                    style={{
+                      maxWidth: masterConfig.ui.heroImages.maxWidth,
+                      aspectRatio: masterConfig.ui.heroImages.aspectRatio,
+                    }}
+                  >
+                    <HeroImage
+                      src={`/${masterConfig.ui.heroImages.websiteSolutions}`}
+                      alt="Website solutions overview hero"
+                    />
+                  </div>
+                </div>
+              </motion.div>
               <div>
-                <motion.div variants={fadeInLeft}>
+                <motion.div variants={fadeInRight}>
                   <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary">
                     WEBSITE SOLUTIONS
                   </Kicker>
                 </motion.div>
                 <motion.h1
-                  variants={fadeInLeft}
- className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink max-w-2xl"
+                  variants={fadeInRight}
+                  className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink max-w-2xl"
                 >
                   Build the right website system for your{" "}
                   <em className="font-serif-20 italic">current growth stage.</em>
                 </motion.h1>
                 <motion.p
-                  variants={fadeInLeft}
+                  variants={fadeInRight}
                   className="mt-6 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg"
                 >
                   Instead of forcing one package for everyone, choose a focused
                   track and execute with one accountable team from strategy to
                   launch.
                 </motion.p>
-                <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-3">
+                <motion.div variants={fadeInRight} className="mt-10 flex flex-wrap gap-3">
                   <Button
                     asChild
                     variant="primary"
@@ -144,7 +160,7 @@ export default function WebsiteSolutionsPage() {
                   </CalButton>
                 </motion.div>
                 <motion.div
-                  variants={fadeInLeft}
+                  variants={fadeInRight}
                   className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.2em] text-ink-muted"
                 >
                   <span>Fast launch options</span>
@@ -152,22 +168,6 @@ export default function WebsiteSolutionsPage() {
                   <span>Scalable architecture</span>
                 </motion.div>
               </div>
-              <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
-                <div className="relative overflow-hidden">
-                  <div
-                    className={`relative ${masterConfig.ui.heroImages.className}`}
-                    style={{
-                      maxWidth: masterConfig.ui.heroImages.maxWidth,
-                      aspectRatio: masterConfig.ui.heroImages.aspectRatio,
-                    }}
-                  >
-                    <HeroImage
-                      src={`/${masterConfig.ui.heroImages.websiteSolutions}`}
-                      alt="Website solutions overview hero"
-                    />
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </Container>
