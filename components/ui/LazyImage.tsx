@@ -10,7 +10,6 @@ interface LazyImageProps {
     priority?: boolean;
     sizes?: string;
     quality?: number;
-    placeholder?: "blur" | "empty";
     blurDataURL?: string;
     fill?: boolean;
     width?: number;
@@ -24,7 +23,6 @@ export function LazyImage({
     priority = false,
     sizes = "(max-width: 768px) 100vw, 50vw",
     quality = 75,
-    placeholder = "blur",
     blurDataURL,
     fill = false,
     width,
@@ -32,7 +30,7 @@ export function LazyImage({
 }: LazyImageProps) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isInView, setIsInView] = useState(priority);
-    const imgRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
@@ -45,34 +43,70 @@ export function LazyImage({
                     observer.disconnect();
                 }
             },
-            {
-                rootMargin: "50px", // Start loading 50px before image comes into view
-            }
+            { rootMargin: "50px" }
         );
 
-        if (imgRef.current) {
-            observer.observe(imgRef.current);
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
         }
 
         return () => observer.disconnect();
     }, [priority]);
 
-    const handleLoad = () => {
-        setIsLoaded(true);
-    };
+    const handleLoad = () => setIsLoaded(true);
+    const handleError = () => setHasError(true);
 
-    const handleError = () => {
-        setHasError(true);
-    };
+    // In fill mode the PARENT div already defines the frame via position:relative +
+    // explicit dimensions. We must NOT add any wrapper div of our own — doing so
+    // creates a new stacking context that breaks fill positioning altogether.
+    if (fill) {
+        if (!isInView && !priority) {
+            return (
+                <div
+                    ref={containerRef}
+                    className={`absolute inset-0 bg-gray-100 animate-pulse ${className}`}
+                    aria-hidden="true"
+                />
+            );
+        }
 
-    const defaultBlurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/8A8A";
+        if (hasError) {
+            return (
+                <div className={`absolute inset-0 bg-gray-100 flex items-center justify-center text-gray-400 text-sm ${className}`}>
+                    <span>Image unavailable</span>
+                </div>
+            );
+        }
 
+        return (
+            <>
+                <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    className={`object-cover transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+                    sizes={sizes}
+                    quality={quality}
+                    priority={priority}
+                    placeholder={blurDataURL ? "blur" : "empty"}
+                    blurDataURL={blurDataURL}
+                    onLoad={handleLoad}
+                    onError={handleError}
+                />
+                {!isLoaded && (
+                    <div className="absolute inset-0 bg-gray-100 animate-pulse" aria-hidden="true" />
+                )}
+            </>
+        );
+    }
+
+    // --- Sized mode (width + height provided, no fill) ---
     if (!isInView && !priority) {
         return (
             <div
-                ref={imgRef}
+                ref={containerRef}
                 className={`bg-gray-100 animate-pulse ${className}`}
-                style={{ aspectRatio: "16/10" }}
+                style={width && height ? { width, height } : { aspectRatio: "16/10" }}
                 aria-hidden="true"
             />
         );
@@ -82,7 +116,7 @@ export function LazyImage({
         return (
             <div
                 className={`bg-gray-100 flex items-center justify-center text-gray-400 text-sm ${className}`}
-                style={{ aspectRatio: "16/10" }}
+                style={width && height ? { width, height } : { aspectRatio: "16/10" }}
             >
                 <span>Image unavailable</span>
             </div>
@@ -94,25 +128,19 @@ export function LazyImage({
             <Image
                 src={src}
                 alt={alt}
-                fill={fill}
                 width={width}
                 height={height}
-                className={`object-cover transition-opacity duration-300 ${
-                    isLoaded ? "opacity-100" : "opacity-0"
-                }`}
+                className={`object-cover transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`}
                 sizes={sizes}
                 quality={quality}
                 priority={priority}
-                placeholder={placeholder}
-                blurDataURL={blurDataURL || defaultBlurDataURL}
+                placeholder={blurDataURL ? "blur" : "empty"}
+                blurDataURL={blurDataURL}
                 onLoad={handleLoad}
                 onError={handleError}
             />
             {!isLoaded && (
-                <div
-                    className="absolute inset-0 bg-gray-100 animate-pulse"
-                    aria-hidden="true"
-                />
+                <div className="absolute inset-0 bg-gray-100 animate-pulse" aria-hidden="true" />
             )}
         </div>
     );
