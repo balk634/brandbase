@@ -63,6 +63,7 @@ type ServiceCategoryPageProps = {
   ctaPrimaryHref: string;
   ctaSecondaryLabel: string;
   ctaSecondaryHref: string;
+  imagePosition?: "left" | "right";
 };
 
 const fadeUp = {
@@ -97,6 +98,7 @@ export function ServiceCategoryPage({
   ctaPrimaryHref,
   ctaSecondaryLabel,
   ctaSecondaryHref,
+  imagePosition = "right",
 }: ServiceCategoryPageProps) {
   return (
     <main className="relative">
@@ -106,7 +108,10 @@ export function ServiceCategoryPage({
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <div className="border border-grid/15 bg-white p-6 md:p-10 lg:p-12">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                <motion.div variants={fadeUp}>
+                <motion.div 
+                  variants={fadeUp}
+                  className={imagePosition === "left" ? "lg:order-last items-start text-left lg:items-end lg:text-right" : ""}
+                >
                   <Kicker className="bg-primary/5 border-primary/30 text-primary">{kicker}</Kicker>
                   <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight text-ink">
                     {headline.split(' ').map((word, i, arr) => 
@@ -141,7 +146,7 @@ export function ServiceCategoryPage({
                   </div>
                 </motion.div>
 
-                <motion.div variants={fadeUp} className="order-first lg:order-none">
+                <motion.div variants={fadeUp} className={imagePosition === "left" ? "lg:order-first" : "lg:order-last"}>
                   <HeroImagePanel src={`/${heroImage}`} alt={heroAlt} />
                 </motion.div>
               </div>

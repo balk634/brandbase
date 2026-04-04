@@ -203,15 +203,15 @@ const faqItems = [
   },
 ];
 
-export function WebsiteSolutionsDeferred() {
+export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePosition?: "left" | "right" }) {
   return (
     <>
       <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="border border-grid/15 bg-white overflow-hidden">
-              <div className="grid lg:grid-cols-[1.05fr_1fr]">
-                <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15">
+              <div className={`grid lg:grid-cols-[1.05fr_1fr] ${imagePosition === "left" ? "lg:grid-cols-[1fr_1.05fr]" : ""}`}>
+                <div className={`p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
                   <div className="flex items-center gap-2.5 text-ink-muted">
                     <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
                       <IconBolt className="h-4 w-4" />
@@ -281,8 +281,8 @@ export function WebsiteSolutionsDeferred() {
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="border border-grid/15 bg-white overflow-hidden">
-              <div className="grid lg:grid-cols-[1.1fr_1fr]">
-                <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15">
+              <div className={`grid lg:grid-cols-[1.1fr_1fr] ${imagePosition === "left" ? "lg:grid-cols-[1fr_1.1fr]" : ""}`}>
+                <div className={`p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
                   <div className="flex items-center gap-2.5 text-ink-muted">
                     <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
                       <IconRocket className="h-4 w-4" />
@@ -304,7 +304,7 @@ export function WebsiteSolutionsDeferred() {
                     ))}
                   </div>
                 </div>
-                <div className="p-7 md:p-10 bg-paper/30 flex flex-col gap-6 h-full justify-center">
+                <div className={`p-7 md:p-10 bg-paper/30 flex flex-col gap-6 h-full justify-center ${imagePosition === "left" ? "lg:order-first" : ""}`}>
                   <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">WHEN TO CONTACT NOW</div>
                   <div className="divide-y divide-grid/10">
                     {contactNowSignals.map((signal) => (
@@ -487,7 +487,7 @@ export function WebsiteSolutionsDeferred() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="border border-grid/15 bg-white overflow-hidden">
               <div className="grid lg:grid-cols-2">
-                <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
+                <div className={`p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
                   <motion.div variants={fadeInUp}>
                     <div className="flex items-center gap-2.5 text-ink-muted mb-6">
                       <div className="h-8 w-8 border border-primary/25 bg-primary/5 grid place-items-center text-primary">
@@ -518,7 +518,7 @@ export function WebsiteSolutionsDeferred() {
                     </motion.div>
                   </motion.div>
                 </div>
-                <motion.div variants={scaleIn} className="p-8 md:p-12 lg:p-16 bg-paper/30 flex flex-col justify-center">
+                <motion.div variants={scaleIn} className={`p-8 md:p-12 lg:p-16 bg-paper/30 flex flex-col justify-center ${imagePosition === "left" ? "lg:order-first" : ""}`}>
                   <div className="divide-y divide-grid/10">
                     {[
                       { label: "Response Time", value: "Within 24 hours" },

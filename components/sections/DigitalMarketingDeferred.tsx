@@ -136,7 +136,7 @@ const faqItems = [
   },
 ];
 
-export function DigitalMarketingDeferred() {
+export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePosition?: "left" | "right" }) {
   return (
     <>
       <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
@@ -171,7 +171,7 @@ export function DigitalMarketingDeferred() {
                     <div className="mt-4 h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
                       <step.Icon className="h-5 w-5" />
                     </div>
- <h3 className="h3 mt-5 font-serif text-lg tracking-tight text-ink">
+                    <h3 className="h3 mt-5 font-serif text-lg tracking-tight text-ink">
                       {step.title.split(' ').map((word, i, arr) => 
                           i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
                       )}
@@ -198,7 +198,7 @@ export function DigitalMarketingDeferred() {
             <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6">
               <motion.div
                 variants={fadeInUp}
-                className="border border-grid/15 bg-white p-7 md:p-10"
+                className={`border border-grid/15 bg-white p-7 md:p-10 ${imagePosition === "left" ? "lg:order-last" : ""}`}
               >
                 <div className="flex items-center gap-2.5 text-ink-muted">
                   <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
@@ -253,7 +253,7 @@ export function DigitalMarketingDeferred() {
                   ))}
                 </div>
               </motion.div>
-              <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 gap-4">
+              <motion.div variants={fadeInUp} className={`grid sm:grid-cols-2 gap-4 ${imagePosition === "left" ? "lg:order-first" : ""}`}>
                 {[
                   {
                     label: "Optimization cadence",
@@ -407,7 +407,7 @@ export function DigitalMarketingDeferred() {
           >
             <div className="border border-grid/15 bg-white overflow-hidden">
               <div className="grid lg:grid-cols-2">
-                <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
+                <div className={`p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
                   <motion.div variants={fadeInUp}>
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">
                       NEXT STEP
@@ -455,7 +455,7 @@ export function DigitalMarketingDeferred() {
                 </div>
                 <motion.div
                   variants={scaleIn}
-                  className="p-8 md:p-12 lg:p-16 bg-paper/30 flex flex-col justify-center"
+                  className={`p-8 md:p-12 lg:p-16 bg-paper/30 flex flex-col justify-center ${imagePosition === "left" ? "lg:order-first" : ""}`}
                 >
                   <div className="divide-y divide-grid/10">
                     {[

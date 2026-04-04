@@ -188,7 +188,7 @@ type PillarCardProps = {
     ctaHref: string;
     imageSrc: string;
     imageAlt: string;
-    imagePosition: "left" | "right";
+    imagePosition: "left" | "right" | "center";
     services: ServiceItem[];
     startIndex: number;
 };
@@ -206,6 +206,9 @@ function PillarCard({
     startIndex,
 }: PillarCardProps) {
     const isImageLeft = imagePosition === "left";
+    const isImageRight = imagePosition === "right";
+    const isImageCenter = imagePosition === "center";
+
 
     return (
         <motion.div
@@ -217,47 +220,60 @@ function PillarCard({
         >
             <div className="pt-6 md:pt-8 lg:pt-10 pb-12 md:pb-16 px-8 md:px-12 lg:px-16">
                 {/* Hero: two-column grid, text before image on mobile */}
-                <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center mb-8 md:mb-12">
+                <div className={`grid gap-12 md:gap-24 items-center mb-8 md:mb-12 ${
+                    isImageCenter ? "grid-cols-1 max-w-4xl mx-auto" : "grid-cols-1 md:grid-cols-2"
+                }`}>
                     {/* Text Column */}
-                    <motion.div
-                        variants={fadeInUp}
-                        className={`flex flex-col gap-10 md:gap-12 items-start text-left ${
-                            isImageLeft
-                                ? "md:order-last md:items-end md:text-right"
-                                : "md:order-first md:items-start md:text-left"
-                        }`}
-                    >
-                        <span className="inline-block border border-ink/15 px-3 py-1.5 text-[9px] md:text-[10px] uppercase font-mono tracking-[0.2em] font-medium text-ink-muted">
-                            {kicker}
-                        </span>
+                    {(() => {
+                        let alignmentClasses = "";
+                        if (isImageLeft) {
+                            alignmentClasses = "items-start text-left md:items-end md:text-right";
+                        } else if (isImageRight) {
+                            alignmentClasses = "items-start text-left md:items-start md:text-left";
+                        } else if (isImageCenter) {
+                            alignmentClasses = "items-center text-center max-w-2xl mx-auto";
+                        }
 
-                        <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-ink/90">
-                            {titleLine1}<br />
-                            <em className="font-serif-20 italic text-ink">{titleLine2}</em>
-                        </h3>
+                        return (
+                            <motion.div
+                                variants={fadeInUp}
+                                className={`flex flex-col gap-10 md:gap-12 ${alignmentClasses} ${
+                                    isImageLeft ? "md:order-last" : isImageRight ? "md:order-first" : ""
+                                }`}
+                            >
+                                <span className="inline-block border border-ink/15 px-3 py-1.5 text-[9px] md:text-[10px] uppercase font-mono tracking-[0.2em] font-medium text-ink-muted">
+                                    {kicker}
+                                </span>
 
-                        <Link
-                            href={ctaHref}
-                            className="text-[11px] md:text-[12px] font-mono font-medium tracking-[0.2em] uppercase text-primary hover:text-primary/80 transition-colors flex items-center gap-2 group/cta"
-                        >
-                            {ctaLabel}
-                            <IconArrowUpRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" strokeWidth={1.5} />
-                        </Link>
-                    </motion.div>
+                                <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-ink/90">
+                                    {titleLine1}<br />
+                                    <em className="font-serif-20 italic text-ink">{titleLine2}</em>
+                                </h3>
+
+                                <Link
+                                    href={ctaHref}
+                                    className="text-[11px] md:text-[12px] font-mono font-medium tracking-[0.2em] uppercase text-primary hover:text-primary/80 transition-colors flex items-center gap-2 group/cta"
+                                >
+                                    {ctaLabel}
+                                    <IconArrowUpRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" strokeWidth={1.5} />
+                                </Link>
+                            </motion.div>
+                        );
+                    })()}
 
                     {/* Image Column (Below text on mobile) */}
                     <motion.div
                         variants={fadeInUp}
                         className={`relative aspect-[16/10] w-full overflow-hidden order-last ${
-                            isImageLeft ? "md:order-first" : "md:order-last"
+                            isImageLeft ? "md:order-first" : isImageRight ? "md:order-last" : "mx-auto max-w-3xl"
                         }`}
                     >
                         <Image
                             src={imageSrc}
                             alt={imageAlt}
                             fill
-                            className={`object-contain object-left ${
-                                isImageLeft ? "md:object-left" : "md:object-right"
+                            className={`object-contain ${
+                                isImageLeft ? "object-left" : isImageRight ? "object-right" : "object-center"
                             }`}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />

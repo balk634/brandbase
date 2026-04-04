@@ -8,7 +8,7 @@ import { motion } from "@/components/ui/motion-lite";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IconArrowRight, IconStack2, IconArrowDown } from "@tabler/icons-react";
 
-export function Hero() {
+export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "right" }) {
     const { hero } = masterConfig.sections;
     const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
     const isCalendlyExternal = /^https?:\/\//i.test(calendlyUrl);
@@ -20,8 +20,8 @@ export function Hero() {
             style={{ contentVisibility: 'visible' }}
         >
             <Container className="relative z-20 grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left: Text */}
-                <div className="space-y-8 order-2 lg:order-1">
+                {/* Text Column */}
+                <div className={`space-y-8 order-2 ${imagePosition === "left" ? "lg:order-2" : "lg:order-1"}`}>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -80,12 +80,12 @@ export function Hero() {
                     </motion.div>
                 </div>
 
-                {/* Right: Hero Image */}
+                {/* Hero Image Column */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="relative order-first lg:order-2"
+                    className={`relative order-first ${imagePosition === "left" ? "lg:order-1" : "lg:order-2"}`}
                 >
                     <div className="relative overflow-hidden">
                         <div
