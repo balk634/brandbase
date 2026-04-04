@@ -314,7 +314,7 @@ export const masterConfig = {
       // Connector between process step cards (desktop only).
       // Use a CSS color string. You can reference other CSS vars, e.g. "var(--color-primary)".
       dotColor: "var(--color-ink-muted)",
-      dotSizePx: 2,
+      dotSizePx: 5,
       dotOpacityMin: 0.05,
       dotOpacityMax: 0.8,
       durationMs: 1400,

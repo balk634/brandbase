@@ -7,6 +7,7 @@ import {
     IconSearch, IconPalette, IconRocket, IconTrendingUp, type IconProps
 } from "@tabler/icons-react";
 import { BoxPatternServer } from "@/components/ui/BoxPatternServer";
+import Image from "next/image";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -23,6 +24,7 @@ type Step = {
     Icon: ComponentType<IconProps>;
     title: string;
     description: string;
+    image: string;
 };
 
 const steps: Step[] = [
@@ -32,6 +34,7 @@ const steps: Step[] = [
         title: "Discovery & Strategy",
         description:
             "We audit your current setup, study your market, and define clear KPIs. You walk away with a custom growth roadmap — not a generic pitch deck.",
+        image: "/01.jpg"
     },
     {
         number: "02",
@@ -39,6 +42,7 @@ const steps: Step[] = [
         title: "Design & Build",
         description:
             "Our team designs pixel-perfect interfaces and builds production-grade code. Every page is optimized for speed, SEO, and conversions from day one.",
+        image: "/02.jpg"
     },
     {
         number: "03",
@@ -46,13 +50,15 @@ const steps: Step[] = [
         title: "Launch & Activate",
         description:
             "We deploy your website to enterprise-grade infrastructure and activate your marketing campaigns. Tracking pixels, conversion APIs, and A/B tests go live simultaneously.",
+        image: "/03.jpg"
     },
     {
         number: "04",
         Icon: IconTrendingUp,
         title: "Optimize & Scale",
         description:
-            "Weekly performance reviews, ongoing SEO improvements, and campaign optimization. We kill underperformers, scale winners, and send you clear reports on what\u2019s working.",
+            "Weekly performance reviews, ongoing SEO improvements, and campaign optimization. We kill underperformers, scale winners, and send you clear reports on what’s working.",
+        image: "/04.jpg"
     },
 ];
 
@@ -66,12 +72,12 @@ export function OurProcess() {
                     viewport={{ once: true, margin: "-60px" }}
                     variants={stagger}
                 >
-                    <motion.div variants={fadeInUp} className="mb-14 max-w-3xl mx-auto text-center">
+                    <motion.div variants={fadeInUp} className="mb-14 max-w-3xl">
                         <Kicker>OUR PROCESS</Kicker>
                         <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
                             From Brief to Revenue in Four <em className="font-serif-10 italic">Steps.</em>
                         </h2>
-                        <p className="mt-4 text-ink-muted text-sm max-w-2xl mx-auto leading-relaxed">
+                        <p className="mt-4 text-ink-muted text-sm max-w-2xl leading-relaxed">
                             A proven, no-nonsense workflow that takes you from strategy to measurable growth — with zero guesswork in between.
                         </p>
                     </motion.div>
@@ -86,15 +92,18 @@ export function OurProcess() {
                                     <motion.div
                                         variants={fadeInUp}
                                         whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                                        className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300"
+                                        className="relative border border-grid/15 bg-white p-4 md:p-5 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300"
                                     >
                                         <BoxPatternServer />
-                                        <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
-                                            {step.number}
-                                        </div>
-
-                                        <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
-                                            <step.Icon className="h-5 w-5" strokeWidth={1.5} />
+                                        
+                                        {/* Process Step Image */}
+                                        <div className="w-full aspect-video mb-6 bg-paper/40 flex items-center justify-center overflow-hidden relative">
+                                            <Image 
+                                              src={step.image} 
+                                              alt={step.title} 
+                                              fill 
+                                              className="object-cover"
+                                            />
                                         </div>
 
                                         <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
@@ -138,6 +147,3 @@ export function OurProcess() {
         </Section>
     );
 }
-
-
-
