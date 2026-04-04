@@ -21,7 +21,7 @@ const nextConfig = {
     optimizePackageImports: ["@tabler/icons-react"],
   },
   turbopack: {
-    root: __dirname,
+    root: process.cwd(),
   },
   images: {
     formats: ["image/avif", "image/webp"],

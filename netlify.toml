@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Using standard build for stability on Netlify for now
+  NEXT_USE_NETLIFY_EDGE = "false"
+  # Next.js 16 might have Turbopack on by default
+  NEXT_TURBO = "0"
+  NETLIFY_NEXTJS_RUNTIME_V5 = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  node_version = "22"
+  included_files = ["public/**"]
