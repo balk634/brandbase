@@ -8,10 +8,10 @@
   # Next.js 16 might have Turbopack on by default
   NEXT_TURBO = "0"
   NETLIFY_NEXTJS_RUNTIME_V5 = "true"
+  NODE_VERSION = "22"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [functions]
-  node_version = "22"
   included_files = ["public/**"]
