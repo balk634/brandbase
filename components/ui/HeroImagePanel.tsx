@@ -32,7 +32,9 @@ export function HeroImagePanel({ src, alt }: HeroImagePanelProps) {
           fill
           className="object-cover"
           style={{ filter: "none", mixBlendMode: "normal" }}
-          sizes="(max-width: 1024px) 100vw, 50vw"
+          priority={true}
+          fetchPriority="high"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 440px"
         />
       </div>
     </div>

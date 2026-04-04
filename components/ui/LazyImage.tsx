@@ -21,7 +21,7 @@ export function LazyImage({
     src,
     alt,
     className = "",
-    priority = true,
+    priority = false,
     sizes = "(max-width: 768px) 100vw, 50vw",
     quality = 75,
     blurDataURL,
@@ -82,6 +82,7 @@ export function LazyImage({
             sizes={sizes}
             quality={quality}
             priority={priority}
+            fetchPriority={priority ? "high" : "auto"}
             placeholder={blurDataURL ? "blur" : "empty"}
             blurDataURL={blurDataURL}
             onError={handleError}

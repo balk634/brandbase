@@ -14,7 +14,7 @@ function normalizeHeroSrc(value: string) {
     return `/${withoutPrefixedSlash}`;
 }
 
-export function HeroImage({ src, alt, priority = false }: HeroImageProps) {
+export function HeroImage({ src, alt, priority = true }: HeroImageProps) {
     const normalizedSrc = normalizeHeroSrc(src);
 
     return (
@@ -24,7 +24,7 @@ export function HeroImage({ src, alt, priority = false }: HeroImageProps) {
             fill
             className="object-cover"
             priority={priority}
-            // fetchpriority="high" is set automatically by Next.js when priority={true}
+            fetchPriority={priority ? "high" : "auto"}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 440px"
         />
     );
