@@ -266,15 +266,19 @@ function PillarCard({
                     {/* Image Column (Below text on mobile) */}
                     <motion.div
                         variants={fadeInUp}
-                        className={`relative aspect-[16/10] w-full overflow-hidden order-last ${
-                            isImageLeft ? "md:order-first" : isImageRight ? "md:order-last" : "mx-auto max-w-3xl"
+                        className={`relative aspect-[16/10] overflow-hidden order-last ${
+                            isImageLeft 
+                                ? "md:order-first -ml-8 md:-ml-12 lg:-ml-16 w-[calc(100%+2rem)] md:w-[calc(100%+3rem)] lg:w-[calc(100%+4rem)]" 
+                                : isImageRight 
+                                    ? "md:order-last -mr-8 md:-mr-12 lg:-mr-16 w-[calc(100%+2rem)] md:w-[calc(100%+3rem)] lg:w-[calc(100%+4rem)]" 
+                                    : "mx-auto max-w-3xl w-full"
                         }`}
                     >
                         <LazyImage
                             src={imageSrc}
                             alt={imageAlt}
                             fill={true}
-                            className="w-full h-full"
+                            className={isImageLeft ? "object-left" : isImageRight ? "object-right" : ""}
                             objectFit="contain"
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
