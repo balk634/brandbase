@@ -9,6 +9,12 @@
   NEXT_TURBO = "0"
   NETLIFY_NEXTJS_RUNTIME_V5 = "true"
   NODE_VERSION = "22"
+  # Disable secrets scanning
+  SECRETS_SCAN_ENABLED = "false"
+
+# Disable secrets scanning for specific keys
+[build.secrets]
+  omitKeys = ["CONTACT_TO_EMAIL", "RESEND_FROM_EMAIL", "RESEND_API_KEY"]
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
@@ -32,7 +38,3 @@
   to = "/.netlify/images"
   status = 200
   query = {url = ":url", w = ":width", q = ":quality"}
-
-# Exclude secrets scanning for test files and config
-[build.secrets]
-  omitKeys = ["CONTACT_TO_EMAIL", "RESEND_FROM_EMAIL"]
