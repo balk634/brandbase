@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 interface HeroImageProps {
@@ -18,38 +18,31 @@ function normalizeHeroSrc(value: string) {
 }
 
 export function HeroImage({ src, alt, priority = false }: HeroImageProps) {
-    const [imgSrc, setImgSrc] = useState(() => normalizeHeroSrc(src));
+    const normalizedSrc = normalizeHeroSrc(src);
     const [hasError, setHasError] = useState(false);
 
-    // Memoize the normalized source to prevent unnecessary recalculations
-    const normalizedSrc = useMemo(() => normalizeHeroSrc(src), [src]);
-
-    // Update imgSrc only if the normalized source changes
-    React.useEffect(() => {
-        if (normalizedSrc !== imgSrc) {
-            setImgSrc(normalizedSrc);
-            setHasError(false);
-        }
-    }, [normalizedSrc, imgSrc]);
-
-    const handleError = () => {
-        if (!hasError && imgSrc !== "/placeholder.jpg") {
-            setImgSrc("/placeholder.jpg");
-            setHasError(true);
-        }
-    };
+    if (hasError) {
+        return (
+            <div
+                className="absolute inset-0 bg-gray-100 flex items-center justify-center"
+                aria-label={alt}
+            >
+                <span className="text-gray-400 text-xs font-mono uppercase tracking-wider">
+                    Image unavailable
+                </span>
+            </div>
+        );
+    }
 
     return (
         <Image
-            src={imgSrc}
+            src={normalizedSrc}
             alt={alt}
             fill
             className="object-cover"
             priority={priority}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 45vw"
-            onError={handleError}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/8A8A"
+            onError={() => setHasError(true)}
         />
     );
 }
