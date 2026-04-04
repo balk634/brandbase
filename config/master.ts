@@ -62,7 +62,7 @@ export const masterConfig = {
     socialMedia: {
       enabled: true,
     },
-    email: "info@brandbase.in",
+    email: process.env.CONTACT_TO_EMAIL || "info@brandbase.in",
     phone: "+91 9113702669",
     // Used for the self-hosted Cal.com booking system.
     calcomUrl: "https://booking.brandbase.in",

@@ -15,3 +15,24 @@
 
 [functions]
   included_files = ["public/**"]
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/_next/image"
+  to = "/.netlify/images"
+  status = 200
+  query = {url = ":url", w = ":width", q = ":quality"}
+
+[[redirects]]
+  from = "/_ipx/*"
+  to = "/.netlify/images"
+  status = 200
+  query = {url = ":url", w = ":width", q = ":quality"}
+
+# Exclude secrets scanning for test files and config
+[build.secrets]
+  omitKeys = ["CONTACT_TO_EMAIL", "RESEND_FROM_EMAIL"]

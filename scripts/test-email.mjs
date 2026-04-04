@@ -12,7 +12,7 @@ async function testEmail() {
         
         const { data, error } = await resend.emails.send({
             from: process.env.RESEND_FROM_EMAIL || "contact@brandbase.in",
-            to: "info@brandbase.in",
+            to: process.env.CONTACT_TO_EMAIL || "info@brandbase.in",
             replyTo: "test@example.com", // Simulate user email
             subject: "🧪 Test: Simple Email Notification/Test User",
             text: `
