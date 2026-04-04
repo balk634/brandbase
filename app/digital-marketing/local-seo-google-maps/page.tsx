@@ -18,6 +18,7 @@ import {
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
+import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
     title: "Local SEO & Google Maps Growth | BrandBase",
@@ -110,16 +111,9 @@ export default function LocalSEOPage() {
                                     Hyper-local SEO strategies and Google Maps optimization to ensure your local business ranks #1 when customers in your city are ready to buy.
                                 </motion.p>
                                 <motion.div variants={fadeInLeft} className="NC-Hero-CTA-Group mt-10 flex flex-wrap gap-4">
-                                    {(() => {
-                                        const calendlyUrl = masterConfig.contact.calendlyUrl;
-                                        const isExternal = calendlyUrl?.startsWith('http');
-                                        const href = calendlyUrl || "/contact";
-                                        return (
-                                            <Button asChild variant="primary" size="lg" className="NC-Hero-CTA-Primary">
-                                                <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
-                                            </Button>
-                                        );
-                                    })()}
+                                    <CalButton variant="primary" size="lg" className="NC-Hero-CTA-Primary">
+                                        Book a call
+                                    </CalButton>
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
                                         <Link href="#deliverables">See deliverables</Link>
                                     </Button>
@@ -322,16 +316,9 @@ export default function LocalSEOPage() {
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to own your local search <em className="font-serif-10 italic">results?</em></h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Book a free local audit. We&apos;ll show you exactly where you rank, who&apos;s beating you, and how to take the top spot.</p>
                                         <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
-                                            {(() => {
-                                                const calendlyUrl = masterConfig.contact.calendlyUrl;
-                                                const isExternal = calendlyUrl?.startsWith('http');
-                                                const href = calendlyUrl || "/contact";
-                                                return (
-                                                    <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
-                                                        <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
-                                                    </Button>
-                                                );
-                                            })()}
+                                            <CalButton variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
+                                                Book a call
+                                            </CalButton>
                                             <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
                                                 <Link href="/digital-marketing">View all services</Link>
                                             </Button>

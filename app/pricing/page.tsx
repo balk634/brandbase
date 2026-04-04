@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { sendEmail } from "@/app/actions";
 import { masterConfig } from "@/config/master";
+import { CalButton } from "@/components/ui/CalBooking";
 
 type SelectionKey =
   | "website_root"
@@ -174,8 +175,6 @@ export default function PricingPage() {
   const [formError, setFormError] = useState<string | null>(null);
 
   const scope = useMemo(() => getScope(selections), [selections]);
-  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
-  const calendlyIsExternal = /^https?:\/\//i.test(calendlyUrl ?? "");
 
   function setSelection(key: SelectionKey, next: boolean) {
     setSelections((prev) => {
@@ -656,17 +655,9 @@ export default function PricingPage() {
                           >
                             {status === "loading" ? "Sending..." : "Get pricing estimate"}
                           </Button>
-                          {calendlyUrl ? (
-                            <Button asChild variant="outline" size="lg" className="w-full mt-3">
-                              <a
-                                href={calendlyUrl}
-                                target={calendlyIsExternal ? "_blank" : undefined}
-                                rel={calendlyIsExternal ? "noreferrer" : undefined}
-                              >
-                                Book a call instead
-                              </a>
-                            </Button>
-                          ) : null}
+                          <CalButton variant="outline" size="lg" className="w-full mt-3">
+                            Book a call instead
+                          </CalButton>
                           {formError ? (
                             <p className="mt-3 text-xs text-red-600 leading-relaxed">{formError}</p>
                           ) : null}

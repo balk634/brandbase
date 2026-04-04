@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:16-alpine
+    container_name: calcom-db
+    restart: always
+    environment:
+      POSTGRES_USER: calcom
+      POSTGRES_PASSWORD: calcom-password-change-me
+      POSTGRES_DB: calcom
+    volumes:
+      - calcom-db-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: calcom-redis
+    restart: always
+
+  calcom:
+    image: calcom/cal.com:latest
+    container_name: calcom-web
+    restart: always
+    depends_on:
+      - database
+      - redis
+    ports:
+      - "3001:3000"
+    environment:
+      - DATABASE_URL=postgresql://calcom:calcom-password-change-me@database:5432/calcom
+      - NEXT_PUBLIC_WEBAPP_URL=https://booking.brandbase.in
+      - NEXTAUTH_SECRET=replacewithrandomsecret
+      - CALENDSO_ENCRYPTION_KEY=replacewithrandomkey
+      - PGSSLMODE=disable
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: calcom-tunnel
+    restart: always
+    command: tunnel --no-autoupdate run --token eyJhIjoiZmU2YmYxMGY5YWI2YjZjNGUyNTc4ZmY4YjE3Y2ExZDAiLCJ0IjoiNTVhOWQ0MGMtOGZlYS00ZGU0LTljMTQtNjYxOTI3NTFjMDFhIiwicyI6IllqWTVObVUzWTJRdE1UTTJaaTAwWmpjNExUazVaak10TVRkbE1UTXlNVFkzWkRkayJ9
+    depends_on:
+      - calcom
+
+volumes:
+  calcom-db-data:

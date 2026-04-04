@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
+import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
   title: "Our Process | BrandBase",
@@ -14,9 +15,6 @@ export const metadata = buildPageMetadata({
 });
 
 export default function ProcessPage() {
-  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
-  const bookingHref = calendlyUrl || "/contact";
-  const bookingIsExternal = /^https?:\/\//i.test(bookingHref);
 
   return (
     <main className="relative">
@@ -48,15 +46,9 @@ export default function ProcessPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                <Link
-                  href={bookingHref}
-                  target={bookingIsExternal ? "_blank" : undefined}
-                  rel={bookingIsExternal ? "noreferrer" : undefined}
-                >
-                  Book a call
-                </Link>
-              </Button>
+              <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                Book a call
+              </CalButton>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
                 <Link href="/contact">Contact us</Link>
               </Button>

@@ -2,9 +2,10 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
-import Link from "next/link";
-import { IconArrowRight, IconClock, IconSparkles } from "@tabler/icons-react";
 import { masterConfig } from "@/config/master";
+import { CalButton } from "@/components/ui/CalBooking";
+import { IconArrowRight, IconClock, IconSparkles } from "@tabler/icons-react";
+import Link from "next/link";
 
 export function FinalCTA() {
     return (
@@ -21,22 +22,9 @@ export function FinalCTA() {
                         </p>
 
                         <div className="mt-8 w-full max-w-2xl flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button asChild variant="primary" size="lg">
-                                {(() => {
-                                    const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
-                                    const isExternal = /^https?:\/\//i.test(calendlyUrl);
-                                    const href = calendlyUrl || "/contact";
-                                    return (
-                                        <Link 
-                                            href={href}
-                                            target={isExternal ? "_blank" : undefined}
-                                            rel={isExternal ? "noreferrer" : undefined}
-                                        >
-                                            Book a call
-                                        </Link>
-                                    );
-                                })()}
-                            </Button>
+                            <CalButton variant="primary" size="lg" className="sm:min-w-[200px]">
+                                Book a call
+                            </CalButton>
                         </div>
 
                         <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-ink-muted">

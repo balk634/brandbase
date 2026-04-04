@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import Link from "next/link";
 import { motion } from "@/components/ui/motion-lite";
-import Image from "next/image";
+import React from "react";
+import { LazyImage } from "@/components/ui/LazyImage";
 import type { ComponentType } from "react";
 import {
     IconArrowUpRight,
@@ -269,12 +270,12 @@ function PillarCard({
                             isImageLeft ? "md:order-first" : isImageRight ? "md:order-last" : "mx-auto max-w-3xl"
                         }`}
                     >
-                        <Image
+                        <LazyImage
                             src={imageSrc}
                             alt={imageAlt}
-                            fill
-                            className={`object-contain ${
-                                isImageLeft ? "object-left" : isImageRight ? "object-right" : "object-center"
+                            fill={true}
+                            className={`w-full h-full ${
+                                isImageLeft ? "object-left md:object-left" : isImageRight ? "object-left md:object-right" : "object-center"
                             }`}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />

@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { masterConfig } from "@/config/master";
 import { Kicker } from "@/components/ui/Kicker";
+import { CalButton } from "@/components/ui/CalBooking";
 import { IconMail, IconPhone, IconMapPin, IconClock } from "@tabler/icons-react";
 import { useState } from "react";
 import { sendEmail } from "@/app/actions";
@@ -20,9 +21,6 @@ const HELPFUL_DETAILS = [
 
 export function ContactForm({ variant = "section" }: { variant?: ContactFormVariant }) {
   const isPage = variant === "page";
-  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
-  const bookingHref = calendlyUrl || "#contact-form";
-  const bookingIsExternal = /^https?:\/\//i.test(bookingHref);
   const [formStartedAt] = useState(() => Date.now().toString());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -61,15 +59,9 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                 </p>
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                    <a
-                      href={bookingHref}
-                      target={bookingIsExternal ? "_blank" : undefined}
-                      rel={bookingIsExternal ? "noreferrer" : undefined}
-                    >
-                      Book a call
-                    </a>
-                  </Button>
+                  <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                    Book a call
+                  </CalButton>
                 </div>
               </div>
 

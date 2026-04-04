@@ -21,6 +21,7 @@ import {
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
+import { CalButton } from "@/components/ui/CalBooking";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
@@ -421,27 +422,13 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                       visibility.
                     </p>
                     <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-                      <Button
-                        asChild
+                      <CalButton
                         variant="primary"
                         size="lg"
                         className="w-full sm:w-auto sm:min-w-[220px]"
                       >
-                        {(() => {
-                          const calendlyUrl = masterConfig.contact.calendlyUrl;
-                          const isExternal = calendlyUrl?.startsWith("http");
-                          const href = calendlyUrl || "/contact";
-                          return (
-                            <Link
-                              href={href}
-                              target={isExternal ? "_blank" : undefined}
-                              rel={isExternal ? "noreferrer" : undefined}
-                            >
-                              Book a call
-                            </Link>
-                          );
-                        })()}
-                      </Button>
+                        Book a call
+                      </CalButton>
                       <Button
                         asChild
                         variant="outline"

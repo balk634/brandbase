@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
+import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
   title: "About BrandBase | Team, Process & Principles",
@@ -226,22 +227,9 @@ export default function AboutPage() {
               Ready to build your website <em className="font-serif-10 italic">engine?</em>
             </h2>
             <div className="mt-10">
-              <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
-                {(() => {
-                  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
-                  const isExternal = /^https?:\/\//i.test(calendlyUrl);
-                  const href = calendlyUrl || "/contact";
-                  return (
-                    <Link 
-                      href={href}
-                      target={isExternal ? "_blank" : undefined}
-                      rel={isExternal ? "noreferrer" : undefined}
-                    >
-                      Book a call
-                    </Link>
-                  );
-                })()}
-              </Button>
+              <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
+                Book a call
+              </CalButton>
             </div>
           </div>
         </Container>

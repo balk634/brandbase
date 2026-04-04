@@ -27,6 +27,7 @@ import {
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
+import { CalButton } from "@/components/ui/CalBooking";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
@@ -244,16 +245,9 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                   </div>
 
                   <div className="mt-8">
-                    <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                      {(() => {
-                        const calendlyUrl = masterConfig.contact.calendlyUrl;
-                        const isExternal = calendlyUrl?.startsWith("http");
-                        const href = calendlyUrl || "/contact";
-                        return (
-                          <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
-                        );
-                      })()}
-                    </Button>
+                    <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                      Book a call
+                    </CalButton>
                   </div>
                 </div>
 
@@ -317,16 +311,9 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                     ))}
                   </div>
                   <div className="mt-8">
-                    <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                      {(() => {
-                        const calendlyUrl = masterConfig.contact.calendlyUrl;
-                        const isExternal = calendlyUrl?.startsWith("http");
-                        const href = calendlyUrl || "/contact";
-                        return (
-                          <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
-                        );
-                      })()}
-                    </Button>
+                    <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                      Book a call
+                    </CalButton>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-3 pt-1">
@@ -502,16 +489,9 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                       Share your stage, revenue model, and timeline. We will recommend the right scope with no overbuild.
                     </p>
                     <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-                      <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                        {(() => {
-                          const calendlyUrl = masterConfig.contact.calendlyUrl;
-                          const isExternal = calendlyUrl?.startsWith("http");
-                          const href = calendlyUrl || "/contact";
-                          return (
-                            <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
-                          );
-                        })()}
-                      </Button>
+                      <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
+                        Book a call
+                      </CalButton>
                       <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
                         <Link href="/pricing">View pricing models</Link>
                       </Button>

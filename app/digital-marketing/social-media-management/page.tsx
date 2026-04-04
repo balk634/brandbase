@@ -17,6 +17,7 @@ import {
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
+import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
     title: "Social Media Management | BrandBase",
@@ -109,16 +110,9 @@ export default function SocialMediaManagementPage() {
                                     End-to-end social media management. We handle the strategy, the design, uploads, and the daily engagement so you can run your business.
                                 </motion.p>
                                 <motion.div variants={fadeInLeft} className="NC-Hero-CTA-Group mt-10 flex flex-wrap gap-4">
-                                    {(() => {
-                                        const calendlyUrl = masterConfig.contact.calendlyUrl;
-                                        const isExternal = calendlyUrl?.startsWith('http');
-                                        const href = calendlyUrl || "/contact";
-                                        return (
-                                            <Button asChild variant="primary" size="lg" className="NC-Hero-CTA-Primary">
-                                                <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
-                                            </Button>
-                                        );
-                                    })()}
+                                    <CalButton variant="primary" size="lg" className="NC-Hero-CTA-Primary">
+                                        Book a call
+                                    </CalButton>
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
                                         <Link href="#deliverables">See deliverables</Link>
                                     </Button>
@@ -321,16 +315,9 @@ export default function SocialMediaManagementPage() {
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to hand off your social <em className="font-serif-10 italic">media?</em></h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your brand. We&apos;ll send you a tailored content strategy proposal within 24 hours.</p>
                                         <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
-                                            {(() => {
-                                                const calendlyUrl = masterConfig.contact.calendlyUrl;
-                                                const isExternal = calendlyUrl?.startsWith('http');
-                                                const href = calendlyUrl || "/contact";
-                                                return (
-                                                    <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
-                                                        <Link href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>Book a call</Link>
-                                                    </Button>
-                                                );
-                                            })()}
+                                            <CalButton variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
+                                                Book a call
+                                            </CalButton>
                                             <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
                                                 <Link href="/digital-marketing">View all services</Link>
                                             </Button>

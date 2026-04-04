@@ -7,6 +7,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { DigitalMarketingDeferredLoader } from "@/components/sections/DigitalMarketingDeferredLoader";
+import { CalButton } from "@/components/ui/CalBooking";
 import {
   IconHeartbeat,
   IconRadar,
@@ -134,24 +135,14 @@ export default function DigitalMarketingPage() {
                     <Link href="#growth-lanes">See growth lanes</Link>
                   </Button>
                   {(() => {
-                    const calendlyUrl = masterConfig.contact.calendlyUrl;
-                    const isExternal = calendlyUrl?.startsWith("http");
-                    const href = calendlyUrl || "/contact";
                     return (
-                      <Button
-                        asChild
+                      <CalButton
                         variant="outline"
                         size="lg"
                         className="sm:min-w-[220px]"
                       >
-                        <Link
-                          href={href}
-                          target={isExternal ? "_blank" : undefined}
-                          rel={isExternal ? "noreferrer" : undefined}
-                        >
-                          Book a call
-                        </Link>
-                      </Button>
+                        Book a call
+                      </CalButton>
                     );
                   })()}
                 </motion.div>

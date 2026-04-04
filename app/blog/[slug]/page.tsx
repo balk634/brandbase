@@ -8,6 +8,7 @@ import { masterConfig } from "@/config/master";
 import { blogPosts, getBlogPost } from "@/lib/blogPosts";
 import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seoMetadata";
+import { CalButton } from "@/components/ui/CalBooking";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -224,22 +225,9 @@ export default async function BlogPostPage({
             />
 
             <div className="mt-10 flex justify-end">
-              <Button asChild variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
-                {(() => {
-                  const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
-                  const isExternal = /^https?:\/\//i.test(calendlyUrl);
-                  const href = calendlyUrl || "/contact";
-                  return (
-                    <Link 
-                      href={href}
-                      target={isExternal ? "_blank" : undefined}
-                      rel={isExternal ? "noreferrer" : undefined}
-                    >
-                      Book a call
-                    </Link>
-                  );
-                })()}
-              </Button>
+              <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">
+                Book a call
+              </CalButton>
             </div>
           </div>
         </Container>

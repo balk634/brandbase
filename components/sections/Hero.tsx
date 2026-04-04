@@ -1,3 +1,4 @@
+import React from "react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -5,14 +6,19 @@ import { HeroImage } from "@/components/ui/HeroImage";
 import { masterConfig } from "@/config/master";
 import Link from "next/link";
 import { motion } from "@/components/ui/motion-lite";
+import { CalButton } from "@/components/ui/CalBooking";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IconArrowRight, IconStack2, IconArrowDown } from "@tabler/icons-react";
 
 export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "right" }) {
     const { hero } = masterConfig.sections;
-    const calendlyUrl = masterConfig.contact.calendlyUrl?.trim();
-    const isCalendlyExternal = /^https?:\/\//i.test(calendlyUrl);
-    const calendlyHref = calendlyUrl || "/contact";
+
+    // Memoize headline processing to prevent unnecessary recalculations
+    const headlineContent = React.useMemo(() => {
+        return hero.headline.split(' ').map((word, i, arr) => 
+            i === arr.length - 1 ? <em key={i} className="font-serif-20 italic">{word}</em> : <span key={i}>{word} </span>
+        );
+    }, [hero.headline]);
 
     return (
         <Section 
@@ -25,7 +31,7 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="inline-flex items-center gap-2 px-3 py-1.5 border border-ink/20 bg-ink/5 text-ink"
                     >
                         <IconStack2 className="h-3.5 w-3.5" strokeWidth={2} />
@@ -37,18 +43,16 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        transition={{ duration: 0.4, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
                         className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif leading-[0.9] tracking-tighter text-ink"
                     >
-                        {hero.headline.split(' ').map((word, i, arr) => 
-                            i === arr.length - 1 ? <em key={i} className="font-serif-20 italic">{word}</em> : <span key={i}>{word} </span>
-                        )}
+                        {headlineContent}
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 0.4, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
                         className="text-sm sm:text-base md:text-base text-ink-muted leading-relaxed max-w-xl pl-6 border-l border-primary/20"
                     >
                         {hero.subheadline}
@@ -57,18 +61,12 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
+                        transition={{ duration: 0.4, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
                         className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                     >
-                        <Button asChild variant="primary" size="lg" className="sm:min-w-[180px]">
-                            <Link 
-                                href={calendlyHref} 
-                                target={isCalendlyExternal ? "_blank" : undefined}
-                                rel={isCalendlyExternal ? "noreferrer" : undefined}
-                            >
-                                Book a call
-                            </Link>
-                        </Button>
+                        <CalButton variant="primary" size="lg" className="sm:min-w-[180px]">
+                            Book a call
+                        </CalButton>
                         <Button asChild variant="outline" size="lg" className="sm:min-w-[180px]">
                             <Link href="#services">
                                 Explore services
@@ -81,7 +79,7 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 0.6, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
                     className={`relative order-first ${imagePosition === "left" ? "lg:order-1" : "lg:order-2"}`}
                 >
                     <div className="relative overflow-hidden">
@@ -95,6 +93,7 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                             <HeroImage
                                 src={`/${masterConfig.ui.heroImages.home}`}
                                 alt="BrandBase — Conversion-first websites and performance marketing"
+                                priority={true}
                             />
                         </div>
                     </div>

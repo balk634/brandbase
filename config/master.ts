@@ -64,9 +64,10 @@ export const masterConfig = {
     },
     email: "info@brandbase.in",
     phone: "+91 9113702669",
-    // Used on the Contact page "Book a call" button.
-    // Example: "https://calendly.com/<your-handle>/<event>"
-    calendlyUrl: "https://calendly.com/brandbase-in/new-meeting",
+    // Used for the self-hosted Cal.com booking system.
+    calcomUrl: "https://booking.brandbase.in",
+    calcomSlug: "brandbase-in/meeting",
+    calcomNamespace: "booking",
     address: {
       street: "Pluto B 504, Suncity Complex,",
       locality: "Powai",

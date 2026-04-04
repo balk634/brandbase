@@ -7,6 +7,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { WebsiteSolutionsDeferredLoader } from "@/components/sections/WebsiteSolutionsDeferredLoader";
+import { CalButton } from "@/components/ui/CalBooking";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
 
@@ -134,27 +135,13 @@ export default function WebsiteSolutionsPage() {
                   >
                     <Link href="#solution-paths">See solution paths</Link>
                   </Button>
-                  <Button
-                    asChild
+                  <CalButton
                     variant="outline"
                     size="lg"
                     className="sm:min-w-[220px]"
                   >
-                    {(() => {
-                      const calendlyUrl = masterConfig.contact.calendlyUrl;
-                      const isExternal = calendlyUrl?.startsWith("http");
-                      const href = calendlyUrl || "/contact";
-                      return (
-                        <Link
-                          href={href}
-                          target={isExternal ? "_blank" : undefined}
-                          rel={isExternal ? "noreferrer" : undefined}
-                        >
-                          Book a call
-                        </Link>
-                      );
-                    })()}
-                  </Button>
+                    Book a call
+                  </CalButton>
                 </motion.div>
                 <motion.div
                   variants={fadeInLeft}
