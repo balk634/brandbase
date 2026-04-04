@@ -9,7 +9,7 @@ export function useCalBooking() {
     (async function init() {
       const cal = await getCalApi({ namespace: masterConfig.contact.calcomNamespace });
       cal("ui", {
-        theme: "dark", // or "light" based on your preference
+        theme: "light",
         styles: {
           branding: {
             brandColor: masterConfig.colors.primary,
@@ -50,18 +50,16 @@ export function CalButton({
   size?: "default" | "sm" | "lg" | "icon";
   eventSlug?: string;
 }) {
-  const fullUrl = `${masterConfig.contact.calcomUrl}/${eventSlug || masterConfig.contact.calcomSlug}`;
+  const { openBooking } = useCalBooking();
 
   return (
     <Button 
-      asChild
       variant={variant}
       size={size}
       className={className}
+      onClick={() => openBooking(eventSlug)}
     >
-      <Link href={fullUrl} target="_blank" rel="noopener noreferrer">
-        {children}
-      </Link>
+      {children}
     </Button>
   );
 }

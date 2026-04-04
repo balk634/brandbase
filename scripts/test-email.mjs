@@ -4,17 +4,17 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function testEmail() {
-    console.log("🧪 Testing email configuration...");
+    console.log("🧪 Testing simple email configuration...");
     
     try {
-        // Test 1: Send notification to you
+        // Test: Send notification to you
         console.log("📧 Sending test notification to info@brandbase.in...");
         
         const { data, error } = await resend.emails.send({
             from: process.env.RESEND_FROM_EMAIL || "contact@brandbase.in",
             to: "info@brandbase.in",
             replyTo: "test@example.com", // Simulate user email
-            subject: "🧪 Test: BrandBase Form Notification/Test User",
+            subject: "🧪 Test: Simple Email Notification/Test User",
             text: `
 📋 Test Contact Form Submission
 
@@ -25,12 +25,11 @@ async function testEmail() {
    Subject: Test inquiry
 
 💬 Message:
-This is a test message to verify your email setup is working correctly.
+This is a test message to verify your simple email setup is working correctly.
 
 ---
 🔧 Reply Information:
-• This is a test email from your BrandBase website
-• Reply to this email to test reply-to functionality
+• Reply to this email to contact user directly
 • User's email: test@example.com
 • Form submitted: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             `.trim(),
@@ -42,45 +41,13 @@ This is a test message to verify your email setup is working correctly.
         }
 
         console.log("✅ Notification email sent successfully!");
-        console.log("📬 Check your inbox for the test email");
-        console.log("🔄 Try replying to test the reply-to functionality");
-
-        // Test 2: Send auto-reply to test user
-        console.log("\n📧 Sending test auto-reply to test@example.com...");
-        
-        const autoReplyResult = await resend.emails.send({
-            from: process.env.RESEND_FROM_EMAIL || "contact@brandbase.in",
-            to: "test@example.com",
-            subject: "Re: Test: BrandBase Form Notification/Test User - We've received your message!",
-            text: `
-Hi Test User,
-
-Thank you for reaching out to BrandBase! 
-
-We've received your inquiry and will be in touch within 24 hours.
-
-Our team will review your requirements and get back to you with a detailed response.
-
-Best regards,
-Team BrandBase
-🌐 https://brandbase.in
-📱 +91 9113702669
-            `.trim(),
-            replyTo: "info@brandbase.in", // User can reply back to you
-        });
-
-        if (autoReplyResult.error) {
-            console.error("❌ Auto-reply test failed:", autoReplyResult.error);
-        } else {
-            console.log("✅ Auto-reply sent successfully!");
-        }
-
-        console.log("\n🎉 Email setup test completed!");
+        console.log("📬 Check your inbox for test email");
+        console.log("🔄 Try replying to test reply-to functionality");
+        console.log("\n🎉 Simple email setup test completed!");
         console.log("📋 Checklist:");
-        console.log("  ☐ Check you received the notification email");
-        console.log("  ☐ Reply to the notification email");
+        console.log("  ☐ Check you received notification email");
+        console.log("  ☐ Reply to notification email");
         console.log("  ☐ Verify reply goes to test@example.com");
-        console.log("  ☐ Check auto-reply was delivered");
 
     } catch (err) {
         console.error("❌ Test failed:", err.message);

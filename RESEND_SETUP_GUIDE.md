@@ -44,11 +44,10 @@ Value: dkim.resend.com
 TTL: 3600
 ```
 
-### 3. Create Verified Sender
-Once domain is verified, create a sender email:
-- `noreply@brandbase.in` (recommended)
-- `contact@brandbase.in`
-- `team@brandbase.in`
+### 3. Create Verified Senders
+Once domain is verified, create TWO sender emails:
+- `contact@brandbase.in` (for notifications to you)
+- `noreply@brandbase.in` (for auto-replies to users)
 
 ### 4. Environment Variables
 Add these to your hosting environment:
@@ -98,7 +97,7 @@ Hi, I need a website for my business...
 
 ### Auto-Reply Email (to user)
 ```
-From: contact@brandbase.in
+From: noreply@brandbase.in
 To: user@example.com
 Reply-To: info@brandbase.in
 Subject: Re: BrandBase Form submission - We've received your message!

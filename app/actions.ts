@@ -113,35 +113,6 @@ ${message}
             return { success: false, error: error.message };
         }
 
-        // Send auto-reply to user
-        try {
-            const autoReplyContent = `
-Hi ${name},
-
-Thank you for reaching out to BrandBase! 
-
-We've received your ${leadType === "quote_request" ? "quote request" : "inquiry"} and will be in touch within 24 hours.
-
-Our team will review your requirements and get back to you with a detailed response.
-
-Best regards,
-Team BrandBase
-🌐 https://brandbase.in
-📱 +91 9113702669
-            `.trim();
-
-            await resend.emails.send({
-                from: fromAddress,
-                to: email,
-                subject: `Re: ${mailSubjectPrefix} - We've received your message!`,
-                text: autoReplyContent,
-                replyTo: toAddress, // User can reply back to you
-            });
-        } catch (autoReplyError) {
-            // Log auto-reply error but don't fail the main submission
-            console.warn("Auto-reply failed:", autoReplyError);
-        }
-
         return { success: true, data };
     } catch (err) {
         console.error(err);
