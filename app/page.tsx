@@ -19,9 +19,9 @@ const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA").then(mod
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "BrandBase | Conversion-First Websites & Performance Marketing",
+  title: "BrandBase | Conversion-First Websites & Marketing",
   description:
-    "BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with data-driven performance marketing for brands.",
+    "High-performance, conversion-first websites and data-driven marketing results for growth-focused brands.",
   path: "/",
 });
 

@@ -28,14 +28,14 @@ export function StandardFAQSection({
       ? {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: items.map((item) => ({
+          "mainEntity": items.map((item) => ({
             "@type": "Question",
-            name: item.q,
-            acceptedAnswer: {
+            "name": item.q,
+            "acceptedAnswer": {
               "@type": "Answer",
-              text: item.a,
-            },
-          })),
+              "text": item.a
+            }
+          }))
         }
       : null;
 

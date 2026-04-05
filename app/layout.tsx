@@ -110,8 +110,8 @@ export default function RootLayout({
           } as React.CSSProperties
         }
       >
-        {/* Preconnect to critical 3rd party origins */}
-        <link rel="preconnect" href="https://app.cal.com" crossOrigin="anonymous" />
+        {/* Pre-flight connection signals for 3rd party origins */}
+        <link rel="alternate" hrefLang="en-IN" href="https://brandbase.in/" />
         <link rel="dns-prefetch" href="https://app.cal.com" />
         <link rel="preconnect" href="https://static.cloudflareinsights.com" crossOrigin="anonymous" />
         {/* Preload critical fonts to break the CSS→font discovery chain */}

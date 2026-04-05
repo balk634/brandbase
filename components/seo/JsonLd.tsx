@@ -46,6 +46,9 @@ export function JsonLd() {
                 "publisher": {
                     "@id": `${baseUrl}/#organization`
                 },
+                "copyrightHolder": {
+                    "@id": `${baseUrl}/#organization`
+                },
                 "hasPart": navigationLinks.map((link, index) => ({
                     "@id": `${baseUrl}/#nav-${index + 1}`,
                 })),
@@ -61,6 +64,9 @@ export function JsonLd() {
                 },
                 "about": {
                     "@id": `${baseUrl}/#organization`,
+                },
+                "primaryImageOfPage": {
+                    "@id": `${baseUrl}/#logo`
                 }
             },
             {
@@ -68,7 +74,13 @@ export function JsonLd() {
                 "@id": `${baseUrl}/#organization`,
                 "name": "BrandBase",
                 "url": baseUrl,
-                "logo": `${baseUrl}/brand/logo.svg`,
+                "logo": {
+                    "@type": "ImageObject",
+                    "@id": `${baseUrl}/#logo`,
+                    "url": `${baseUrl}/brand/logo.svg`,
+                    "contentUrl": `${baseUrl}/brand/logo.svg`,
+                    "caption": "BrandBase Logo"
+                },
                 "image": `${baseUrl}${metadata.openGraph.images?.[0]?.url || "/og-image.png"}`,
                 "description": metadata.description,
                 "areaServed": "Worldwide",
