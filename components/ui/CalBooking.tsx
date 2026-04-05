@@ -20,15 +20,7 @@ async function getCalLazy(): Promise<CalApi> {
       // Initialize UI global settings once the API is loaded
       cal("ui", {
         theme: "light",
-        styles: { 
-          branding: { brandColor: masterConfig.colors.primary },
-          // The CSS overrides below target the branding and the overlay toggle
-          // using the native Cal.com configuration format.
-          elements: {
-            "poweredByCal": { display: "none" },
-            "overlayCalendar": { display: "none" }
-          }
-        },
+        styles: { branding: { brandColor: masterConfig.colors.primary } },
         hideEventTypeDetails: false,
         layout: "month_view",
       });
@@ -74,14 +66,6 @@ export function CalButton({
         data-cal-config={JSON.stringify({ 
           origin: masterConfig.contact.calcomUrl,
           theme: "light",
-          hideBranding: true,
-          styles: { 
-            branding: { brandColor: masterConfig.colors.primary },
-            elements: {
-              "poweredByCal": { display: "none" },
-              "overlayCalendar": { display: "none" }
-            }
-          }
         })}
         onPointerEnter={() => getCalLazy()}
       >
