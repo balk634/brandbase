@@ -98,7 +98,7 @@ export default function WebsiteSolutionsPage() {
         <Container>
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div>
+              <div className="order-2 lg:order-1">
                 <motion.div variants={fadeInLeft}>
                   <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary">
                     WEBSITE SOLUTIONS
@@ -136,17 +136,9 @@ export default function WebsiteSolutionsPage() {
                     <Link href="#solution-paths">See solution paths</Link>
                   </Button>
                 </motion.div>
-                <motion.div
-                  variants={fadeInLeft}
-                  className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.2em] text-ink-muted"
-                >
-                  <span>Fast launch options</span>
-                  <span>Conversion-first structure</span>
-                  <span>Scalable architecture</span>
-                </motion.div>
               </div>
 
-              <motion.div variants={fadeInRight} className="relative">
+              <motion.div variants={fadeInRight} className="relative order-1 lg:order-2">
                 <div className="relative overflow-hidden">
                   <div
                     className={`relative ${masterConfig.ui.heroImages.className}`}

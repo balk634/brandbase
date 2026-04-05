@@ -239,14 +239,14 @@ export default function DigitalMarketingPage() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-5 items-stretch">
-              {/* Left Column: Social Presence */}
+              {/* Left Column: Social Presence (Wider) */}
               <motion.article
                 variants={scaleIn}
                 whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                className="lg:col-span-2 mi-card border border-grid/15 bg-white overflow-hidden flex flex-col h-full"
+                className="lg:col-span-3 mi-card border border-grid/15 bg-white overflow-hidden flex flex-col h-full"
               >
                 {/* Image Section */}
-                <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[400px] bg-primary/5 p-4 sm:p-6 flex items-center justify-center border-b border-grid/10">
+                <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[400px] bg-primary/5 p-4 sm:p-6 flex items-center justify-center">
                   <div className="relative w-full h-full">
                     <HeroImage src={`/${growthLanes[1].image}`} alt={growthLanes[1].title} className="object-contain object-center" />
                   </div>
@@ -257,8 +257,8 @@ export default function DigitalMarketingPage() {
                 </div>
               </motion.article>
 
-              {/* Right Column: Paid Ads & Google Map */}
-              <div className="lg:col-span-3 flex flex-col gap-4 lg:gap-5">
+              {/* Right Column: Paid Ads & Google Map (Narrower) */}
+              <div className="lg:col-span-2 flex flex-col gap-4 lg:gap-5">
                 {/* Top Card: Paid Advertising */}
                 <motion.article
                   variants={scaleIn}
@@ -270,7 +270,7 @@ export default function DigitalMarketingPage() {
                     <LaneContent lane={growthLanes[0]} />
                   </div>
                   {/* Image Section (Right on Desktop) */}
-                  <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 border-b sm:border-b-0 sm:border-l border-grid/10 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
+                  <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
                      <div className="relative w-full h-full">
                        <HeroImage src={`/${growthLanes[0].image}`} alt={growthLanes[0].title} className="object-contain object-center" />
                      </div>
@@ -288,7 +288,7 @@ export default function DigitalMarketingPage() {
                     <LaneContent lane={growthLanes[2]} />
                   </div>
                   {/* Image Section (Right on Desktop) */}
-                  <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 border-b sm:border-b-0 sm:border-l border-grid/10 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
+                  <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
                      <div className="relative w-full h-full">
                        <HeroImage src={`/${growthLanes[2].image}`} alt={growthLanes[2].title} className="object-contain object-center" />
                      </div>
