@@ -830,16 +830,4 @@ a.card-hover {
   }
 }
 
-/* -- Enhanced Notification Animations -- */
-@keyframes notification-progress {
-  from { width: 100%; }
-  to { width: 0%; }
-}
 
-@keyframes notification-slide-out {
-  0% { transform: translateX(0); opacity: 1; }
-  100% { transform: translateX(100%); opacity: 0; }
-}
-.animate-notification-out {
-  animation: notification-slide-out 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
