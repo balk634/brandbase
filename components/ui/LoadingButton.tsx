@@ -1,13 +1,15 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/Button";
+import { Button, buttonVariants } from "@/components/ui/Button";
+import { type VariantProps } from "class-variance-authority";
 import { IconLoader2 } from "@tabler/icons-react";
 
-interface LoadingButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'> {
+interface LoadingButtonProps 
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
+    VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
   loadingText?: string;
-  variant?: "primary" | "outline" | "secondary";
   children: React.ReactNode;
 }
 
@@ -16,12 +18,14 @@ export function LoadingButton({
   loadingText = "Sending...",
   children,
   variant = "primary",
+  size = "default",
   className,
   ...props
 }: LoadingButtonProps) {
   return (
     <Button
       variant={variant}
+      size={size}
       disabled={isLoading}
       className={`relative ${className}`}
       {...props}

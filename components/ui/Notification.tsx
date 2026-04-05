@@ -20,54 +20,75 @@ interface NotificationProps {
 
 function NotificationComponent({ notification, onClose }: NotificationProps) {
   const [isVisible, setIsVisible] = useState(true);
+  const duration = notification.duration || 5000;
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(() => onClose(notification.id), 300);
-    }, notification.duration || 5000);
+      setTimeout(() => onClose(notification.id), 400);
+    }, duration);
 
     return () => clearTimeout(timer);
-  }, [notification.id, notification.duration, onClose]);
+  }, [notification.id, duration, onClose]);
 
-  const icons = {
-    success: <IconCheck className="w-5 h-5" />,
-    error: <IconAlertCircle className="w-5 h-5" />,
+  const variants = {
+    success: {
+      border: "border-l-[#10B981]",
+      icon: <IconCheck className="w-5 h-5 text-[#10B981]" />,
+      label: "Success",
+      progress: "bg-[#10B981]",
+    },
+    error: {
+      border: "border-l-[#EF4444]",
+      icon: <IconAlertCircle className="w-5 h-5 text-[#EF4444]" />,
+      label: "Error",
+      progress: "bg-[#EF4444]",
+    },
   };
 
-  const colors = {
-    success: "bg-green-50 text-green-800 border-green-200",
-    error: "bg-red-50 text-red-800 border-red-200",
-  };
+  const v = variants[notification.type];
 
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.95 }}
-          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className={`fixed bottom-4 right-4 z-[9999] flex items-start gap-3 p-4 rounded-lg border shadow-lg max-w-sm ${colors[notification.type]}`}
+        <div
+          className={`relative w-[340px] bg-white border border-grid/10 shadow-[0_12px_40px_rgba(0,0,0,0.08)] overflow-hidden rounded-none border-l-4 ${v.border} pointer-events-auto ${isVisible ? 'animate-notification-in' : 'animate-notification-out'}`}
         >
-          <div className="flex-shrink-0 mt-0.5">
-            {icons[notification.type]}
+          <div className="p-4 flex items-start gap-4">
+            <div className="flex-shrink-0 mt-0.5">
+              {v.icon}
+            </div>
+            
+            <div className="flex-1 min-w-0 pr-2">
+              <div className="font-mono text-[9.5px] uppercase tracking-[0.25em] text-ink/40 mb-1.5 antialiased">
+                {v.label}
+              </div>
+              <p className="text-[13.5px] font-medium leading-relaxed text-ink selection:bg-primary/10 tracking-tight">
+                {notification.message}
+              </p>
+            </div>
+
+            <button
+              onClick={() => {
+                setIsVisible(false);
+                setTimeout(() => onClose(notification.id), 400);
+              }}
+              className="flex-shrink-0 p-1.5 rounded-none hover:bg-black/5 transition-colors group"
+            >
+              <IconX className="w-4 h-4 text-ink/30 group-hover:text-ink transition-colors" />
+            </button>
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium leading-5">
-              {notification.message}
-            </p>
+
+          {/* Progress Bar */}
+          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-grid/10">
+            <div
+              style={{ 
+                animation: `notification-progress ${duration}ms linear forwards` 
+              }}
+              className={`h-full ${v.progress}`}
+            />
           </div>
-          <button
-            onClick={() => {
-              setIsVisible(false);
-              setTimeout(() => onClose(notification.id), 300);
-            }}
-            className="flex-shrink-0 p-1 rounded-md hover:bg-black/5 transition-colors"
-          >
-            <IconX className="w-4 h-4" />
-          </button>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );
@@ -101,14 +122,16 @@ export function NotificationContainer() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 right-0 z-[9999] p-4 space-y-2 pointer-events-none">
-      {notifications.map(notification => (
-        <NotificationComponent
-          key={notification.id}
-          notification={notification}
-          onClose={removeNotification}
-        />
-      ))}
+    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-3 pointer-events-none items-end">
+      <AnimatePresence mode="popLayout" initial={false}>
+        {notifications.map(notification => (
+          <NotificationComponent
+            key={notification.id}
+            notification={notification}
+            onClose={removeNotification}
+          />
+        ))}
+      </AnimatePresence>
     </div>
   );
 }
