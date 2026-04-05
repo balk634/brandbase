@@ -6,25 +6,31 @@ import { IconX } from "@tabler/icons-react";
 
 export function CookieConsent() {
     const [show, setShow] = useState(false);
+    const [isExiting, setIsExiting] = useState(false);
     const timerRef = useRef<number | null>(null);
 
     const notifyConsentChange = () => {
         window.dispatchEvent(new Event("cookie-consent-updated"));
     };
 
-    const accept = () => {
+    const handleAction = (type: "accepted" | "declined") => {
         if (timerRef.current) window.clearTimeout(timerRef.current);
-        localStorage.setItem("cookie-consent", "accepted");
+        
+        // Save choice immediately for analytics
+        localStorage.setItem("cookie-consent", type);
         notifyConsentChange();
-        setShow(false);
+
+        // Start exit animation
+        setIsExiting(true);
+        
+        // Remove from DOM after animation
+        setTimeout(() => {
+            setShow(false);
+        }, 500); // Matches transition duration
     };
 
-    const decline = () => {
-        if (timerRef.current) window.clearTimeout(timerRef.current);
-        localStorage.setItem("cookie-consent", "declined");
-        notifyConsentChange();
-        setShow(false);
-    };
+    const accept = () => handleAction("accepted");
+    const decline = () => handleAction("declined");
 
     useEffect(() => {
         const consent = localStorage.getItem("cookie-consent");
@@ -46,7 +52,9 @@ export function CookieConsent() {
 
     return (
         <div
-            className="fixed z-[60] bg-white border border-primary/20 p-4 sm:p-6"
+            className={`fixed z-[60] bg-white border border-primary/20 p-4 sm:p-6 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                isExiting ? "translate-y-[150%] opacity-0" : "translate-y-0 opacity-100"
+            }`}
             style={{
                 bottom: "max(1rem, env(safe-area-inset-bottom))",
                 right: "max(1rem, env(safe-area-inset-right))",
