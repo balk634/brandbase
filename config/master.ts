@@ -50,7 +50,7 @@ export const masterConfig = {
   // X. ANALYTICS & TRACKING
   // ==========================================
   analytics: {
-    googleAnalyticsId: "G-5VC32KK0J6",
+    googleAnalyticsId: "G-3F7BQR32LK",
   },
 
 

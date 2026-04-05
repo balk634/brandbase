@@ -167,35 +167,33 @@ export default function DigitalMarketingPage() {
                   We run your ads, social, and local search as one simple system
                   designed to grow your revenue, not just your social following.
                 </motion.p>
-                <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-3">
-                  <Button
-                    asChild
-                    variant="primary"
-                    size="lg"
-                    className="sm:min-w-[220px]"
+                <div className="flex flex-col">
+                  <motion.div
+                    variants={fadeInLeft}
+                    className="mt-10 flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-[0.1em] text-ink-muted order-1 sm:order-2"
                   >
-                    <Link href="#growth-lanes">See growth lanes</Link>
-                  </Button>
-                  {(() => {
-                    return (
-                      <CalButton
-                        variant="outline"
-                        size="lg"
-                        className="sm:min-w-[220px]"
-                      >
-                        Book a call
-                      </CalButton>
-                    );
-                  })()}
-                </motion.div>
-                <motion.div
-                  variants={fadeInLeft}
-                  className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.2em] text-ink-muted"
-                >
-                  <span>Paid + organic alignment</span>
-                  <span>Weekly optimization loops</span>
-                  <span>Attribution clarity</span>
-                </motion.div>
+                    <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Paid + organic alignment</span>
+                    <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Weekly optimization loops</span>
+                    <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Attribution clarity</span>
+                  </motion.div>
+                  <motion.div variants={fadeInLeft} className="mt-8 flex flex-wrap gap-3 order-2 sm:order-1">
+                    <Button
+                      asChild
+                      variant="primary"
+                      size="lg"
+                      className="sm:min-w-[220px]"
+                    >
+                      <Link href="#growth-lanes">See growth lanes</Link>
+                    </Button>
+                    <CalButton
+                      variant="outline"
+                      size="lg"
+                      className="sm:min-w-[220px]"
+                    >
+                      Book a call
+                    </CalButton>
+                  </motion.div>
+                </div>
               </div>
               <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
                 <div className="relative overflow-hidden">

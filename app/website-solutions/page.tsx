@@ -116,23 +116,33 @@ export default function WebsiteSolutionsPage() {
                   track and execute with one accountable team from strategy to
                   launch.
                 </motion.p>
-                <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
-                  <CalButton
-                    variant="primary"
-                    size="lg"
-                    className="sm:min-w-[220px]"
+                <div className="flex flex-col">
+                  <motion.div
+                    variants={fadeInLeft}
+                    className="mt-10 flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-[0.1em] text-ink-muted order-1 sm:order-2"
                   >
-                    Book a call
-                  </CalButton>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="sm:min-w-[220px]"
-                  >
-                    <Link href="#solution-paths">See solution paths</Link>
-                  </Button>
-                </motion.div>
+                    <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Strategy-first design</span>
+                    <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Speed-optimized code</span>
+                    <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Lead-focused architecture</span>
+                  </motion.div>
+                  <motion.div variants={fadeInLeft} className="mt-8 flex flex-wrap gap-4 order-2 sm:order-1">
+                    <CalButton
+                      variant="primary"
+                      size="lg"
+                      className="sm:min-w-[220px]"
+                    >
+                      Book a call
+                    </CalButton>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="sm:min-w-[220px]"
+                    >
+                      <Link href="#solution-paths">See solution paths</Link>
+                    </Button>
+                  </motion.div>
+                </div>
               </div>
 
               <motion.div variants={fadeInRight} className="relative order-1 lg:order-2">

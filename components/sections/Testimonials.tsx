@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
 import { AutoScrollScroller } from "@/components/ui/AutoScrollScroller";
 import { masterConfig } from "@/config/master";
+import { IconQuote } from "@tabler/icons-react";
 
 const ACCENTS = [
   "bg-primary text-white",
@@ -52,12 +53,12 @@ export function Testimonials() {
                     className="w-[85vw] max-w-[340px] sm:w-[420px] sm:max-w-none shrink-0 border border-grid/15 bg-white p-7 flex flex-col whitespace-normal h-full"
                   >
                     <div className="flex items-start justify-between gap-6">
-                      <span
- className="h-6 w-6 text-primary shrink-0 opacity-50 mb-4 font-serif-10 text-2xl leading-none"
+                      <div 
+                        className="h-10 w-10 border border-primary/25 bg-primary/5 flex items-center justify-center shrink-0 mb-4 text-primary"
                         aria-hidden="true"
                       >
-                        &ldquo;
-                      </span>
+                        <IconQuote className="h-5 w-5" strokeWidth={1.5} />
+                      </div>
                       <div className="flex items-center gap-1 text-primary/60">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <span
