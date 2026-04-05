@@ -8,10 +8,7 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { WebsiteSolutionsDeferredLoader } from "@/components/sections/WebsiteSolutionsDeferredLoader";
 import { CalButton } from "@/components/ui/CalBooking";
-import { IconTargetArrow, IconBrandFigma, IconDatabase, IconArrowsSplit } from "@tabler/icons-react";
-import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 
 export const metadata = buildPageMetadata({
   title: "Website Solutions | BrandBase",
@@ -180,7 +177,7 @@ export default function WebsiteSolutionsPage() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {solutionPaths.map((path, idx) => (
+              {solutionPaths.map((path) => (
                 <motion.article
                   key={path.title}
                   variants={fadeInLeft}

@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { OurProcess } from "@/components/sections/OurProcess";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { CalButton } from "@/components/ui/CalBooking";
 

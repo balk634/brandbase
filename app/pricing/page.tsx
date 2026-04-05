@@ -7,7 +7,6 @@ import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { sendEmail } from "@/app/actions";
-import { masterConfig } from "@/config/master";
 import { CalButton } from "@/components/ui/CalBooking";
 
 type SelectionKey =

@@ -4,10 +4,8 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { BoxPattern } from "@/components/ui/BoxPattern";
-import Image from "next/image";
 import {
   IconArrowsSplit,
   IconBolt,
@@ -17,7 +15,6 @@ import {
   IconTargetArrow,
   IconShieldCheck,
   IconChartDots,
-  IconMagnet,
   IconSitemap,
   IconRefresh,
   IconTrendingUp,

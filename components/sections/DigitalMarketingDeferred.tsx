@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 
 import {
@@ -13,7 +12,6 @@ import {
   IconClock,
   IconDeviceDesktop,
   IconHeartbeat,
-  IconPlant2,
   IconRadar,
   IconReportAnalytics,
   IconTargetArrow,

@@ -11,12 +11,12 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
     IconTargetArrow, IconBolt, IconMail, IconCloud, IconHeartHandshake, IconPalette,
-    IconClipboardList, IconBrush, IconRefresh, IconRocket,
+
     IconCurrencyDollar, IconShieldCheck, IconDeviceLaptop, IconHeadset,
     IconAward, IconBrandFigma, IconDeviceDesktop, IconChartDots, IconChartBar,
     IconMailForward, IconMailOpened, IconServer, IconCreditCard, IconBug, IconPaint,
     IconArrowsMaximize, IconColorSwatch, IconUsers, IconArrowsSplit, IconDatabase,
-    IconLayoutGrid, IconTypography, IconCode, IconCheck
+
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";

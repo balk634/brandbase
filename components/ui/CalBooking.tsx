@@ -5,7 +5,7 @@ import { masterConfig } from "@/config/master";
 import { Button } from "@/components/ui/Button";
 
 // The Cal API callable type — a function that accepts a method name + options.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+ 
 type CalApi = (method: string, options?: Record<string, unknown>) => void;
 
 // Lazily loaded Cal.com API — only imported on first user interaction.
