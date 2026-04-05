@@ -15,7 +15,8 @@ import {
     IconCurrencyDollar, IconShieldCheck, IconDeviceLaptop, IconHeadset,
     IconAward, IconBrandFigma, IconDeviceDesktop, IconChartDots, IconChartBar,
     IconMailForward, IconMailOpened, IconServer, IconCreditCard, IconBug, IconPaint,
-    IconArrowsMaximize, IconColorSwatch, IconUsers
+    IconArrowsMaximize, IconColorSwatch, IconUsers, IconArrowsSplit, IconDatabase,
+    IconLayoutGrid, IconTypography, IconCode, IconCheck
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
@@ -91,11 +92,35 @@ const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; 
     { Icon: IconUsers, title: "Dedicated Team, Not Outsourced", copy: "Your project stays in-house from start to finish. No freelancers, no hand-offs, no surprises." },
 ];
 
-const processSteps: { step: string; title: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
-    { step: "01", title: "Assets Collection", copy: "We send you an onboarding questionnaire. You provide your logo, images, text, and any brand preferences. Simple.", Icon: IconClipboardList },
-    { step: "02", title: "Design & Code", copy: "We design and build your site simultaneously using our premium component library. You get a live preview link to follow along.", Icon: IconBrush },
-    { step: "03", title: "Two Rounds of Revisions", copy: "You review the staging link and tell us what to change. We apply 2 included revision rounds until it's spot on.", Icon: IconRefresh },
-    { step: "04", title: "Live Deployment", copy: "We push the site live, configure your domain, set up analytics, and handle all the technical plumbing behind the scenes.", Icon: IconRocket },
+const processSteps: { step: string; title1: string; title2: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
+    {
+      step: "01",
+      title1: "Commercial",
+      title2: "Discovery",
+      copy: "Goals, offers, audience behavior, and conversion priorities are mapped before visual work begins.",
+      Icon: IconTargetArrow,
+    },
+    {
+      step: "02",
+      title1: "Design + Content",
+      title2: "Architecture",
+      copy: "Page hierarchy, messaging, and interaction structure are built to reduce friction and increase action.",
+      Icon: IconBrandFigma,
+    },
+    {
+      step: "03",
+      title1: "Build +",
+      title2: "Integration",
+      copy: "Development includes CMS setup, tracking, forms, and technical QA across key breakpoints.",
+      Icon: IconDatabase,
+    },
+    {
+      step: "04",
+      title1: "Launch +",
+      title2: "Optimization",
+      copy: "Post-launch performance is monitored and improved through structured iteration cycles.",
+      Icon: IconArrowsSplit,
+    },
 ];
 
 const faqItems = [
@@ -263,18 +288,19 @@ export default function PremiumStaticPage() {
                 </Container>
             </Section>
 
-            {/* ── 4. OUR PROCESS — Boxes with Animated Dashed Connectors ── */}
-            <Section className="bg-transparent border-b border-grid/10 py-16 md:py-24 relative z-10">
+            <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
-                        <div className="mb-16">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">OUR PROCESS</div>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
-                                From concept to live in 14 <em className="font-serif-10 italic">days.</em>
+                        <div className="mb-14">
+                            <div className="flex items-center gap-2.5 text-ink-muted">
+                                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
+                                    <IconArrowsSplit className="h-4 w-4" />
+                                </div>
+                                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">DELIVERY MODEL</div>
+                            </div>
+                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+                                Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
                             </h2>
-                            <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">
-                                A streamlined workflow designed to get you online fast without cutting corners on quality.
-                            </p>
                         </div>
                         <div className="relative">
                             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-0 md:gap-y-8 lg:gap-y-0 relative" style={{ columnGap: "3rem" }}>
@@ -283,11 +309,7 @@ export default function PremiumStaticPage() {
                                         key={item.step}
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
-                                        <motion.div
-                                            variants={fadeInUp}
-                                            whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                                            className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300"
-                                        >
+                                        <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
                                             <BoxPattern />
                                             <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
                                                 {item.step}
@@ -295,14 +317,14 @@ export default function PremiumStaticPage() {
                                             <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
                                                 <item.Icon className="h-5 w-5" />
                                             </div>
- <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                                {item.title}
+                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
                                             </h3>
                                             <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
                                                 {item.copy}
                                             </p>
                                         </motion.div>
-                                        {/* Subtle connector dots (mobile vertical + desktop horizontal) */}
                                         {i < processSteps.length - 1 && (
                                             <>
                                                 <div

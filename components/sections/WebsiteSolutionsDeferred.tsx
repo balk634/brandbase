@@ -59,7 +59,8 @@ type ImpactPlay = {
 
 type SprintStep = {
   step: string;
-  title: string;
+  title1: string;
+  title2: string;
   copy: string;
   Icon: ComponentType<{ className?: string }>;
 };
@@ -90,25 +91,29 @@ const impactPlays: ImpactPlay[] = [
 const sprintSteps: SprintStep[] = [
   {
     step: "01",
-    title: "Commercial Discovery",
+    title1: "Commercial",
+    title2: "Discovery",
     copy: "Goals, offers, audience behavior, and conversion priorities are mapped before visual work begins.",
     Icon: IconTargetArrow,
   },
   {
     step: "02",
-    title: "Design + Content Architecture",
+    title1: "Design + Content",
+    title2: "Architecture",
     copy: "Page hierarchy, messaging, and interaction structure are built to reduce friction and increase action.",
     Icon: IconBrandFigma,
   },
   {
     step: "03",
-    title: "Build + Integration",
+    title1: "Build +",
+    title2: "Integration",
     copy: "Development includes CMS setup, tracking, forms, and technical QA across key breakpoints.",
     Icon: IconDatabase,
   },
   {
     step: "04",
-    title: "Launch + Optimization",
+    title1: "Launch +",
+    title2: "Optimization",
     copy: "Post-launch performance is monitored and improved through structured iteration cycles.",
     Icon: IconArrowsSplit,
   },
@@ -363,30 +368,26 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                   className={`relative flex flex-col items-stretch ${i < sprintSteps.length - 1 ? "pb-0" : ""
                     }`}
                 >
-                  <motion.article
-                    variants={scaleIn}
-                    whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                    className="relative mi-card border border-grid/15 bg-white p-7 md:p-8 h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300"
-                  >
-                    <BoxPattern />
-                    
-                    <div className="flex items-center justify-between mb-8">
-                        <div className="font-mono text-xs tracking-[0.4em] text-primary/70">{step.step}</div>
-                        <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0 transition-colors group-hover:bg-primary group-hover:text-white">
-                            <step.Icon className="h-5 w-5" />
-                        </div>
-                    </div>
-
-                    <h3 className="h3 font-serif text-xl tracking-tight text-ink mb-4">
-                    {step.title.split(' ').map((word, i, arr) => 
-                        i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
-                    )}
-                  </h3>
-                    <p className="text-sm md:text-base text-ink-muted leading-relaxed">{step.copy}</p>
-
-                    {/* Simple Bottom Accent for Numbered Version */}
-                    <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-500 group-hover:w-full" />
-                  </motion.article>
+                                <motion.div
+                                    variants={fadeInUp}
+                                    whileHover={{ y: -2, transition: { duration: 0.18 } }}
+                                    className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300"
+                                >
+                                    <BoxPattern />
+                                    <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
+                                        {step.step}
+                                    </div>
+                                    <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
+                                        <step.Icon className="h-5 w-5" />
+                                    </div>
+                                    <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                        {step.title1} <br />
+                                        <em className="font-serif-20 italic">{step.title2}</em>
+                                    </h3>
+                                    <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
+                                        {step.copy}
+                                    </p>
+                                </motion.div>
                   {i < sprintSteps.length - 1 && (
                     <>
                       <div

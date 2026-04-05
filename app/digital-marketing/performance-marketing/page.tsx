@@ -90,11 +90,35 @@ const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; 
     { Icon: IconShieldCheck, title: "Full Transparency", copy: "You own your ad accounts, see every dollar spent, and get access to live dashboards. We have nothing to hide." },
 ];
 
-const processSteps: { step: string; title: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
-    { step: "01", title: "Audit & Tracking Setup", copy: "We audit your current campaigns (if any), install tracking pixels, set up conversion APIs, and define your key performance indicators.", Icon: IconUsers },
-    { step: "02", title: "Creative Production", copy: "We design scroll-stopping ad creatives, write direct-response copy, and build landing pages optimized for conversions.", Icon: IconAd },
-    { step: "03", title: "Campaign Launch", copy: "We launch your campaigns across Google, Meta, or both — with structured A/B tests running from day one.", Icon: IconRocket },
-    { step: "04", title: "Daily Optimization & Scaling", copy: "We monitor daily, kill underperformers, scale winners, and send you clear weekly reports on exactly what's working.", Icon: IconReportAnalytics },
+const processSteps: { step: string; title1: string; title2: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
+    {
+        step: "01",
+        title1: "Audit & Tracking",
+        title2: "Setup",
+        copy: "We audit your current campaigns (if any), install tracking pixels, set up conversion APIs, and define your key performance indicators.",
+        Icon: IconUsers
+    },
+    {
+        step: "02",
+        title1: "Creative",
+        title2: "Production",
+        copy: "We design scroll-stopping ad creatives, write direct-response copy, and build landing pages optimized for conversions.",
+        Icon: IconAd
+    },
+    {
+        step: "03",
+        title1: "Campaign",
+        title2: "Launch",
+        copy: "We launch your campaigns across Google, Meta, or both — with structured A/B tests running from day one.",
+        Icon: IconRocket
+    },
+    {
+        step: "04",
+        title1: "Scaling +",
+        title2: "Optimization",
+        copy: "We monitor daily, kill underperformers, scale winners, and send you clear weekly reports on exactly what's working.",
+        Icon: IconReportAnalytics
+    },
 ];
 
 const faqItems = [
@@ -277,8 +301,9 @@ export default function PerformanceMarketingPage() {
                                             <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
                                                 <item.Icon className="h-5 w-5" />
                                             </div>
- <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                                {item.title}
+                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
                                             </h3>
                                             <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
                                                 {item.copy}
