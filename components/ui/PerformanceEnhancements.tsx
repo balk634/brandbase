@@ -14,7 +14,6 @@ type LoadedEnhancements = {
   SmoothScroll?: ComponentType<{ enabled?: boolean }>;
   MicroInteractionEngine?: ComponentType<{ enabled?: boolean }>;
   ScrollProgress?: ComponentType;
-  CookieConsent?: ComponentType;
 };
 
 function scheduleIdleLoad(callback: () => void) {
@@ -56,19 +55,17 @@ export function PerformanceEnhancements({
         enableSmoothScroll ? import("./SmoothScroll") : Promise.resolve(null),
         enableMicroInteractions ? import("./MicroInteractionEngine") : Promise.resolve(null),
         enableScrollProgress ? import("./ScrollProgress") : Promise.resolve(null),
-        import("./CookieConsent"),
       ]);
 
       if (cancelled) return;
 
-      const [navigationModule, smoothScrollModule, microModule, scrollProgressModule, cookieConsentModule] = modules;
+      const [navigationModule, smoothScrollModule, microModule, scrollProgressModule] = modules;
 
       setLoaded({
         NavigationTransitionManager: navigationModule.NavigationTransitionManager,
         SmoothScroll: smoothScrollModule?.SmoothScroll,
         MicroInteractionEngine: microModule?.MicroInteractionEngine,
         ScrollProgress: scrollProgressModule?.ScrollProgress,
-        CookieConsent: cookieConsentModule.CookieConsent,
       });
     });
 
@@ -84,7 +81,6 @@ export function PerformanceEnhancements({
   const SmoothScroll = loaded.SmoothScroll;
   const MicroInteractionEngine = loaded.MicroInteractionEngine;
   const ScrollProgress = loaded.ScrollProgress;
-  const CookieConsent = loaded.CookieConsent;
 
   return (
     <>
@@ -92,7 +88,6 @@ export function PerformanceEnhancements({
       {SmoothScroll ? <SmoothScroll enabled={enableSmoothScroll} /> : null}
       {MicroInteractionEngine ? <MicroInteractionEngine enabled={enableMicroInteractions} /> : null}
       {ScrollProgress ? <ScrollProgress /> : null}
-      {CookieConsent ? <CookieConsent /> : null}
     </>
   );
 }
