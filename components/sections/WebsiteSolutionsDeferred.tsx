@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { BoxPattern } from "@/components/ui/BoxPattern";
+import Image from "next/image";
 import {
   IconArrowsSplit,
   IconBolt,
@@ -61,6 +62,7 @@ type SprintStep = {
   title: string;
   copy: string;
   Icon: ComponentType<{ className?: string }>;
+  image: string;
 };
 
 const impactPlays: ImpactPlay[] = [
@@ -92,24 +94,28 @@ const sprintSteps: SprintStep[] = [
     title: "Commercial Discovery",
     copy: "Goals, offers, audience behavior, and conversion priorities are mapped before visual work begins.",
     Icon: IconTargetArrow,
+    image: "/deliver/static-discovery.webp"
   },
   {
     step: "02",
     title: "Design + Content Architecture",
     copy: "Page hierarchy, messaging, and interaction structure are built to reduce friction and increase action.",
     Icon: IconBrandFigma,
+    image: "/deliver/static-design.webp"
   },
   {
     step: "03",
     title: "Build + Integration",
     copy: "Development includes CMS setup, tracking, forms, and technical QA across key breakpoints.",
     Icon: IconDatabase,
+    image: "/deliver/web-cms.webp"
   },
   {
     step: "04",
     title: "Launch + Optimization",
     copy: "Post-launch performance is monitored and improved through structured iteration cycles.",
     Icon: IconArrowsSplit,
+    image: "/deliver/static-performance.webp"
   },
 ];
 
@@ -365,21 +371,26 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                   <motion.article
                     variants={scaleIn}
                     whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                    className="relative mi-card border border-grid/15 bg-white p-6 md:p-8 h-full"
+                    className="relative mi-card border border-grid/15 bg-white p-4 md:p-5 h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300"
                   >
                     <BoxPattern />
-                    <div className="flex items-start justify-between gap-4">
- <div className="font-serif-20 text-4xl md:text-5xl tracking-tight text-ink">{step.step}</div>
-                      <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0">
-                        <step.Icon className="h-5 w-5" />
-                      </div>
+                    
+                    {/* Process Step Image */}
+                    <div className="w-full aspect-video mb-6 bg-paper/40 flex items-center justify-center overflow-hidden relative">
+                      <Image 
+                        src={step.image} 
+                        alt={step.title} 
+                        fill 
+                        className="object-cover"
+                      />
                     </div>
- <h3 className="h3 mt-6 font-serif text-lg tracking-tight text-ink">
+
+                    <h3 className="h3 font-serif text-lg tracking-tight text-ink">
                     {step.title.split(' ').map((word, i, arr) => 
                         i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
                     )}
                   </h3>
-                    <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{step.copy}</p>
+                    <p className="mt-2.5 text-[13px] text-ink-muted leading-relaxed">{step.copy}</p>
                   </motion.article>
                   {i < sprintSteps.length - 1 && (
                     <>
