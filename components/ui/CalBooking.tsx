@@ -23,6 +23,7 @@ async function getCalLazy(): Promise<CalApi> {
         styles: { branding: { brandColor: masterConfig.colors.primary } },
         hideEventTypeDetails: false,
         layout: "month_view",
+        hideBranding: true,
       });
       
       return cal as unknown as CalApi;
@@ -66,6 +67,7 @@ export function CalButton({
         data-cal-config={JSON.stringify({ 
           origin: masterConfig.contact.calcomUrl,
           theme: "light",
+          hideBranding: true,
         })}
         onPointerEnter={() => getCalLazy()}
       >

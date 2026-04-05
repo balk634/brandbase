@@ -54,6 +54,17 @@ const nextConfig = {
         destination: "/digital-marketing/:path*",
         permanent: true,
       },
+      {
+        source: "/",
+        has: [
+          {
+            type: "host",
+            value: "booking.brandbase.in",
+          },
+        ],
+        destination: "/new/",
+        permanent: true,
+      },
     ];
   },
   async headers() {
