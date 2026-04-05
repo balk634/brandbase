@@ -23,7 +23,6 @@ async function getCalLazy(): Promise<CalApi> {
         styles: { branding: { brandColor: masterConfig.colors.primary } },
         hideEventTypeDetails: false,
         layout: "month_view",
-        hideBranding: true,
       });
       
       return cal as unknown as CalApi;
@@ -84,7 +83,11 @@ export function useCalBooking() {
     const cal = await getCalLazy();
     cal("modal", {
       calLink: slug,
-      config: { origin: masterConfig.contact.calcomUrl, theme: "light" },
+      config: { 
+        origin: masterConfig.contact.calcomUrl, 
+        theme: "light",
+        hideBranding: true,
+      } as any,
     });
   };
   return { openBooking, isReady: true };
