@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
-import { BoxPattern } from "@/components/ui/BoxPattern";
+
 import {
   IconAd,
   IconCheck,
@@ -46,72 +46,23 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
-type RoadmapStep = {
-  phase: string;
-  title: string;
-  copy: string;
-  Icon: ComponentType<{ className?: string }>;
-};
-
 type RiskItem = {
   text: string;
   Icon: ComponentType<{ className?: string }>;
 };
 
-const roadmapSteps: RoadmapStep[] = [
-  {
-    phase: "DAY 01-14",
-    title: "Audit + Signal Setup",
-    copy: "Tracking validation, baseline diagnostics, and channel prioritization so early spend is controlled.",
-    Icon: IconReportAnalytics,
-  },
-  {
-    phase: "DAY 15-45",
-    title: "Launch + Controlled Testing",
-    copy: "Creative and audience experiments run with strict hypotheses to find repeatable performance patterns.",
-    Icon: IconAd,
-  },
-  {
-    phase: "DAY 46-90",
-    title: "Scale + Allocation",
-    copy: "Budget shifts toward winning channels while weaker segments are rebuilt or paused quickly.",
-    Icon: IconPlant2,
-  },
+const growthLevers: RiskItem[] = [
+  { text: "We update your ad's look and message every few days so people don't start ignoring you.", Icon: IconAd },
+  { text: "We show your ads to local customers exactly when they are ready to call or visit.", Icon: IconRadar },
+  { text: "We only increase your budget when the data proves you are making a clear profit.", Icon: IconReportAnalytics },
+  { text: "Every ad leads to a fast, simple page that gives customers exactly what they need.", Icon: IconTargetArrow },
 ];
 
-const riskControls: RiskItem[] = [
-  { text: "Budget pacing rules to avoid spend spikes.", Icon: IconTargetArrow },
-  {
-    text: "Structured creative testing before major scaling decisions.",
-    Icon: IconAd,
-  },
-  {
-    text: "Weekly channel reviews for underperforming segments.",
-    Icon: IconClock,
-  },
-  {
-    text: "Attribution checks to reduce false positive decisions.",
-    Icon: IconReportAnalytics,
-  },
-];
-
-const commonFailurePatterns: RiskItem[] = [
-  {
-    text: "Treating paid ads as a one-time setup with no optimization.",
-    Icon: IconPlant2,
-  },
-  {
-    text: "Publishing social content without clear intent or feedback loops.",
-    Icon: IconHeartbeat,
-  },
-  {
-    text: "Ignoring local ranking hygiene and review velocity.",
-    Icon: IconRadar,
-  },
-  {
-    text: "Scaling spend without landing page and funnel alignment.",
-    Icon: IconDeviceDesktop,
-  },
+const budgetDrains: RiskItem[] = [
+  { text: "Spending money on 'likes' or 'shares' that never turn into a real sale.", Icon: IconHeartbeat },
+  { text: "Paying the platform to show your ads to people who click by mistake or are just 'looking.'", Icon: IconX },
+  { text: "Running multiple ads without knowing which one is actually bringing in the money.", Icon: IconClock },
+  { text: "Bidding on expensive search words that bring visitors but zero new business.", Icon: IconDeviceDesktop },
 ];
 
 const faqItems = [
@@ -148,54 +99,6 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <div className="border border-grid/15 bg-white overflow-hidden">
-              <div className="p-7 md:p-10 border-b border-grid/15">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
-                  90-DAY EXECUTION MAP
-                </div>
-                <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink max-w-3xl">
-                  What we prioritize in the first 90 days to build predictable
-                  <em className="font-serif-10 italic"> momentum.</em>
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15">
-                {roadmapSteps.map((step) => (
-                  <motion.article
-                    key={step.phase}
-                    variants={scaleIn}
-                    className="relative mi-card p-6 md:p-8"
-                  >
-                    <BoxPattern />
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
-                      {step.phase}
-                    </div>
-                    <div className="mt-4 h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                      <step.Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="h3 mt-5 font-serif text-lg tracking-tight text-ink">
-                      {step.title.split(' ').map((word, i, arr) => 
-                          i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
-                      )}
-                    </h3>
-                    <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">
-                      {step.copy}
-                    </p>
-                  </motion.article>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </Section>
-
-      <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
             <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6">
               <motion.div
                 variants={fadeInUp}
@@ -210,27 +113,27 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                   </div>
                 </div>
                 <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
-                  How each channel contributes across demand, trust, and intent
-                  <em className="font-serif-10 italic"> capture.</em>
+                  How we use each channel to grow your
+                  <em className="font-serif-10 italic"> revenue.</em>
                 </h2>
                 <div className="mt-8 divide-y divide-grid/10">
                   {[
                     {
-                      lane: "Performance Marketing",
-                      role: "Demand capture",
-                      win: "Fast signal loops for acquisition",
+                      lane: "Paid Advertising",
+                      role: "Generating Leads",
+                      win: "Turn ad spend into new customers in days, not months.",
                       Icon: IconTargetArrow,
                     },
                     {
-                      lane: "Social Management",
-                      role: "Trust compounding",
-                      win: "Brand consistency between campaigns",
+                      lane: "Social Presence",
+                      role: "Building Trust",
+                      win: "Stay top-of-mind and look established when customers search for you.",
                       Icon: IconHeartbeat,
                     },
                     {
-                      lane: "Local SEO",
-                      role: "Intent capture",
-                      win: "High-intent discovery for nearby buyers",
+                      lane: "Local Search",
+                      role: "Capturing Intent",
+                      win: "Appear first when people are searching for someone they can hire right now.",
                       Icon: IconRadar,
                     },
                   ].map((item) => (
@@ -257,36 +160,36 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
               <motion.div variants={fadeInUp} className={`grid sm:grid-cols-2 gap-4 ${imagePosition === "left" ? "lg:order-first" : ""}`}>
                 {[
                   {
-                    label: "Optimization cadence",
+                    label: "Update Rhythm",
                     value: "Weekly",
                     Icon: IconClock,
-                    note: "7-day tuning loop",
+                    note: "Constant Tuning",
                     detail:
-                      "Creative, audience, and budget adjustments every week.",
+                      "We're in your account every week so you never overpay for clicks.",
                   },
                   {
-                    label: "Reporting layers",
-                    value: "Channel + funnel",
+                    label: "Simple Reporting",
+                    value: "Total Clarity",
                     Icon: IconReportAnalytics,
-                    note: "Decision-ready clarity",
+                    note: "The Full Picture",
                     detail:
-                      "Spend, lead quality, and conversion movement in one view.",
+                      "No more wondering if it's working. We show you the exact revenue your ads generated.",
                   },
                   {
-                    label: "Creative velocity",
-                    value: "Iterative",
+                    label: "Fresh Content",
+                    value: "Always Active",
                     Icon: IconAd,
-                    note: "Constant test cycles",
+                    note: "Zero Ad Fatigue",
                     detail:
-                      "New hooks, formats, and messaging tested continuously.",
+                      "We rotate images and headlines constantly so your ads never get stale.",
                   },
                   {
-                    label: "Budget governance",
-                    value: "Rule-based",
+                    label: "Spend Controls",
+                    value: "Total Safety",
                     Icon: IconTargetArrow,
-                    note: "Waste control",
+                    note: "No Wasted Money",
                     detail:
-                      "Scaling and pause rules keep spend aligned to performance.",
+                      "We set strict rules to pause expensive ads and scale the ones that are bringing in profit.",
                   },
                 ].map((stat) => (
                   <div
@@ -301,7 +204,7 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                         <stat.Icon className="h-3.5 w-3.5" />
                       </div>
                     </div>
-                    <div className="mt-3 font-sans text-xl md:text-2xl font-bold tracking-tight text-ink">
+                    <div className="mt-3 font-serif text-xl md:text-2xl tracking-tight text-ink">
                       {stat.value}
                     </div>
                     <div className="mt-5 pt-4 border-t border-grid/10">
@@ -335,11 +238,11 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                   <IconReportAnalytics className="h-4 w-4" />
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em]">
-                  EXECUTION DISCIPLINE
+                  SMART ACQUISITION
                 </div>
               </div>
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
-                What keeps your growth system stable and what quietly breaks <em className="font-serif-10 italic">it.</em>
+                How we grow your business and stop your budget from <em className="font-serif-10 italic">leaking.</em>
               </h2>
             </div>
             <div className="border border-grid/15 bg-white">
@@ -350,11 +253,11 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                       <IconCheck className="h-4 w-4" />
                     </div>
  <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">
-                      RISK CONTROLS
+                      WHAT GROWS REVENUE
                     </h3>
                   </div>
                   <div className="divide-y divide-grid/10">
-                    {riskControls.map((item) => (
+                    {growthLevers.map((item) => (
                       <div
                         key={item.text}
                         className="mi-row flex items-center gap-3 py-4 first:pt-0 last:pb-0"
@@ -373,11 +276,11 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                       <IconX className="h-4 w-4" />
                     </div>
  <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">
-                      COMMON FAILURE PATTERNS
+                      WHERE MONEY IS WASTED
                     </h3>
                   </div>
                   <div className="divide-y divide-grid/10">
-                    {commonFailurePatterns.map((item) => (
+                    {budgetDrains.map((item) => (
                       <div
                         key={item.text}
                         className="mi-row flex items-center gap-3 py-4 first:pt-0 last:pb-0"
@@ -414,12 +317,10 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                       NEXT STEP
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
-                      Want us to map your digital growth <em className="font-serif-10 italic">stack?</em>
+                      Ready for a marketing system that actually pays for <em className="font-serif-10 italic">itself?</em>
                     </h2>
                     <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
-                      Share your current channels and goals. We will design a
-                      focused execution plan across paid, social, and local
-                      visibility.
+                      Tell us about your business goals and we will show you exactly how we will get you there.
                     </p>
                     <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
                       <CalButton

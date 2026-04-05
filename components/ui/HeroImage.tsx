@@ -14,7 +14,7 @@ function normalizeHeroSrc(value: string) {
     return `/${withoutPrefixedSlash}`;
 }
 
-export function HeroImage({ src, alt, priority = true }: HeroImageProps) {
+export function HeroImage({ src, alt, priority = true, className }: HeroImageProps & { className?: string }) {
     const normalizedSrc = normalizeHeroSrc(src);
 
     return (
@@ -22,7 +22,7 @@ export function HeroImage({ src, alt, priority = true }: HeroImageProps) {
             src={normalizedSrc}
             alt={alt}
             fill
-            className="object-cover"
+            className={className || "object-cover"}
             priority={priority}
             fetchPriority={priority ? "high" : "auto"}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 440px"

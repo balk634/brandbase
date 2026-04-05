@@ -17,6 +17,11 @@ import {
   IconTargetArrow,
   IconShieldCheck,
   IconChartDots,
+  IconMagnet,
+  IconSitemap,
+  IconRefresh,
+  IconTrendingUp,
+  IconLayoutGrid,
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
@@ -111,21 +116,54 @@ const faqItems = [
   },
 ];
 
-const strategicPillars = [
+const bentoItems = [
   {
     title: "Trust is instantaneous",
     copy: "50ms is the window for a first impression. A weak site signals a weak product and immediately increases bounce rate.",
     Icon: IconShieldCheck,
+    statNumber: "50",
+    statUnit: "ms",
+    statLabel: "First impression window",
   },
   {
     title: "Performance is revenue",
-    copy: "Every fraction of a second in load time and every friction point in UX is a direct cost to your ad spend and conversion rate.",
+    copy: "Every fraction of a second in load time is a direct cost to your ad spend and conversion rate.",
     Icon: IconBolt,
   },
   {
     title: "Scalable sales asset",
     copy: "Your site is a 24/7 sales engine that qualifies leads, answers objections, and handles friction while your team sleeps.",
     Icon: IconChartDots,
+  },
+  {
+    title: "Frictionless decisions",
+    copy: "Based on Hick's Law, eliminating noise ensures your buyer only sees the next actionable step. Fewer choices, more conversions.",
+    Icon: IconMagnet,
+  },
+  {
+    title: "Conversion architecture",
+    copy: "Every page follows a deliberate hierarchy — attention, interest, desire, action — built into the layout from the start.",
+    Icon: IconSitemap,
+  },
+  {
+    title: "First-party data capture",
+    copy: "Every visit is a structured opportunity to capture intent signals and enrich your CRM with qualified lead data.",
+    Icon: IconDatabase,
+  },
+  {
+    title: "Built for iteration",
+    copy: "Modular systems let you launch fast and compound improvements over time — no full rebuild required when your strategy evolves.",
+    Icon: IconRefresh,
+  },
+  {
+    title: "SEO as a compounding asset",
+    copy: "Structured foundations turn search into a channel that pays back over time.",
+    Icon: IconTrendingUp,
+  },
+  {
+    title: "System over template",
+    copy: "Every component adapts as your product and team evolve.",
+    Icon: IconLayoutGrid,
   },
 ];
 
@@ -135,60 +173,70 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
       <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
-            <div className="border border-grid/15 bg-white overflow-hidden">
-              <div className="grid lg:grid-cols-[1.1fr_1fr]">
-                {/* Left Side: Statement */}
-                <div className="p-7 md:p-10 lg:p-14 border-b lg:border-b-0 lg:border-r border-grid/15 relative overflow-hidden flex flex-col justify-center">
-                  <BoxPattern />
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-2.5 text-ink-muted">
-                      <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                        <IconShield className="h-4 w-4" />
-                      </div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.35em]">STRATEGIC FOUNDATION</div>
-                    </div>
-                    <motion.h2 
-                       variants={fadeInUp}
-                       className="mt-8 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-xl leading-[1.05]"
-                    >
-                      Your website is either a revenue asset or a silent <em className="font-serif-10 italic">liability.</em>
-                    </motion.h2>
-                    <motion.p 
-                       variants={fadeInUp}
-                       className="mt-6 text-sm sm:text-base text-ink-muted leading-relaxed max-w-md"
-                    >
-                      A premium digital presence is not just about aesthetics. It is a calculated reduction of friction between your audience and their decision to act.
-                    </motion.p>
-                  </div>
+            <div className="mb-14">
+              <div className="flex items-center gap-2.5 text-ink-muted">
+                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
+                  <IconShield className="h-4 w-4" />
                 </div>
-
-                {/* Right Side: Pillars */}
-                <div className="bg-paper/30 flex flex-col justify-center">
-                  <div className="divide-y divide-grid/10">
-                    {strategicPillars.map((pillar) => (
-                      <motion.div 
-                        key={pillar.title}
-                        variants={fadeInUp}
-                        className="p-7 md:p-10 hover:bg-white transition-colors duration-300 group"
-                      >
-                        <div className="flex items-start gap-5">
-                           <div className="mt-1 h-10 w-10 border border-primary/25 bg-white grid place-items-center text-primary shrink-0 group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300">
-                             <pillar.Icon className="h-5 w-5" />
-                           </div>
-                           <div>
-                             <h3 className="font-serif text-lg sm:text-xl tracking-tight text-ink mb-2">
-                               {pillar.title}
-                             </h3>
-                             <p className="text-[13px] text-ink-muted leading-relaxed">
-                               {pillar.copy}
-                             </p>
-                           </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">STRATEGIC FOUNDATION</div>
               </div>
+              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+                Your website is either a revenue asset or a silent <em className="font-serif-10 italic">liability.</em>
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4 relative z-10">
+              {bentoItems.map((pillar, idx) => {
+                let layoutClass = "";
+                switch(idx) {
+                  case 0: layoutClass = "lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-2"; break;
+                  case 1: layoutClass = "lg:col-start-3 lg:col-span-2 lg:row-start-1 lg:row-span-1"; break;
+                  case 2: layoutClass = "lg:col-start-5 lg:col-span-2 lg:row-start-1 lg:row-span-1"; break;
+                  case 3: layoutClass = "lg:col-start-3 lg:col-span-2 lg:row-start-2 lg:row-span-1"; break;
+                  case 4: layoutClass = "lg:col-start-3 lg:col-span-2 lg:row-start-3 lg:row-span-1"; break;
+                  case 5: layoutClass = "lg:col-start-5 lg:col-span-2 lg:row-start-2 lg:row-span-1"; break;
+                  case 6: layoutClass = "lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-1"; break;
+                  case 7: layoutClass = "lg:col-start-5 lg:col-span-1 lg:row-start-3 lg:row-span-1"; break;
+                  case 8: layoutClass = "lg:col-start-6 lg:col-span-1 lg:row-start-3 lg:row-span-1"; break;
+                }
+
+                const isMini = idx === 7 || idx === 8;
+                const isLarge = idx === 0;
+
+                return (
+                  <motion.article
+                    key={pillar.title}
+                    variants={fadeInUp}
+                    className={`relative border border-grid/15 bg-white flex flex-col group hover:border-primary/30 hover:bg-paper/40 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md col-span-1 ${layoutClass} ${isMini ? "p-5 md:p-6" : "p-6 md:p-8"}`}
+                  >
+                  <BoxPattern />
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className={`border border-primary/25 bg-paper/60 grid place-items-center text-primary group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300 shadow-sm flex-shrink-0 ${isMini ? "h-8 w-8 rounded-md mb-4" : "h-10 w-10 mb-6"}`}>
+                      <pillar.Icon className={isMini ? "h-4 w-4" : "h-5 w-5"} />
+                    </div>
+                    <div className={isLarge ? "" : "mt-auto"}>
+                      <h3 className={`font-serif tracking-tight text-ink mb-2 md:mb-3 leading-tight ${isMini ? "text-lg md:text-xl" : "text-xl md:text-2xl"}`}>
+                        {pillar.title}
+                      </h3>
+                      <p className={`text-ink-muted leading-relaxed ${isMini ? "text-[12px] md:text-[13px]" : "text-[13px] md:text-sm"}`}>
+                        {pillar.copy}
+                      </p>
+                    </div>
+                    
+                    {isLarge && (
+                      <div className="mt-auto pt-8">
+                        <div className="font-serif text-[3.2rem] md:text-[3.8rem] tracking-tight leading-none text-ink mb-2">
+                          {pillar.statNumber}<span className="text-3xl md:text-[2.1rem] ml-1">{pillar.statUnit}</span>
+                        </div>
+                        <div className="text-[10px] tracking-[0.1em] uppercase text-ink-muted/80 font-medium">
+                          {pillar.statLabel}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </motion.article>
+                );
+              })}
             </div>
           </motion.div>
         </Container>
