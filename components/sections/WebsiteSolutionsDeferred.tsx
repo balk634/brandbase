@@ -214,8 +214,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
   return (
     <>
       <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="border border-grid/15 bg-white overflow-hidden">
               <div className={`grid lg:grid-cols-[1.05fr_1fr] ${imagePosition === "left" ? "lg:grid-cols-[1fr_1.05fr]" : ""}`}>
                 <div className={`p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
@@ -274,12 +273,10 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
               </div>
             </div>
           </motion.div>
-        </Container>
-      </Section>
+              </Section>
 
       <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="border border-grid/15 bg-white overflow-hidden">
               <div className={`grid lg:grid-cols-[1.1fr_1fr] ${imagePosition === "left" ? "lg:grid-cols-[1fr_1.1fr]" : ""}`}>
                 <div className={`p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
@@ -342,12 +339,10 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
               </div>
             </div>
           </motion.div>
-        </Container>
-      </Section>
+              </Section>
 
       <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="mb-14">
               <div className="flex items-center gap-2.5 text-ink-muted">
                 <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
@@ -413,12 +408,10 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
               ))}
             </div>
           </motion.div>
-        </Container>
-      </Section>
+              </Section>
 
       <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="mb-14">
               <div className="flex items-center gap-2.5 text-ink-muted">
                 <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
@@ -471,14 +464,12 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
               </div>
             </div>
           </motion.div>
-        </Container>
-      </Section>
+              </Section>
 
       <StandardFAQSection items={faqItems} withBottomBorder />
 
       <Section className="bg-transparent py-16 md:py-24 relative z-10">
-        <Container>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <div className="border border-grid/15 bg-white overflow-hidden">
               <div className="grid lg:grid-cols-2">
                 <div className={`p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
@@ -526,8 +517,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
               </div>
             </div>
           </motion.div>
-        </Container>
-      </Section>
+              </Section>
     </>
   );
 }
