@@ -142,7 +142,7 @@ export default function WebsiteSolutionsPage() {
         <Container>
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1">
+              <div>
                 <motion.div variants={fadeInLeft}>
                   <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary">
                     WEBSITE SOLUTIONS
@@ -190,7 +190,7 @@ export default function WebsiteSolutionsPage() {
                 </motion.div>
               </div>
 
-              <motion.div variants={fadeInRight} className="relative order-1 lg:order-2">
+              <motion.div variants={fadeInRight} className="relative">
                 <div className="relative overflow-hidden">
                   <div
                     className={`relative ${masterConfig.ui.heroImages.className}`}
