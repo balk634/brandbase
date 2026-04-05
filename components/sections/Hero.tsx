@@ -74,9 +74,9 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
 
                 {/* Hero Image Column */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     className={`relative order-first ${imagePosition === "left" ? "lg:order-1" : "lg:order-2"}`}
                 >
                     <div className="relative overflow-hidden">

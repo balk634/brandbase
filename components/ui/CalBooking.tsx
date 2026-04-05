@@ -49,7 +49,7 @@ export function CalButton({
 
   // Pre-load and initialize on mount / hover
   useEffect(() => {
-    getCalLazy();
+    // getCalLazy(); — REMOVED: Only load on interaction to save initial JS execution
   }, []);
 
   return (
