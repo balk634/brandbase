@@ -136,16 +136,6 @@ const bentoItems = [
     Icon: IconChartDots,
   },
   {
-    title: "Frictionless decisions",
-    copy: "Based on Hick's Law, eliminating noise ensures your buyer only sees the next actionable step. Fewer choices, more conversions.",
-    Icon: IconMagnet,
-  },
-  {
-    title: "Conversion architecture",
-    copy: "Every page follows a deliberate hierarchy — attention, interest, desire, action — built into the layout from the start.",
-    Icon: IconSitemap,
-  },
-  {
     title: "First-party data capture",
     copy: "Every visit is a structured opportunity to capture intent signals and enrich your CRM with qualified lead data.",
     Icon: IconDatabase,
@@ -155,6 +145,12 @@ const bentoItems = [
     copy: "Modular systems let you launch fast and compound improvements over time — no full rebuild required when your strategy evolves.",
     Icon: IconRefresh,
   },
+  {
+    title: "Conversion architecture",
+    copy: "Every page follows a deliberate hierarchy — attention, interest, desire, action — built into the layout from the start.",
+    Icon: IconSitemap,
+  },
+
   {
     title: "SEO as a compounding asset",
     copy: "Structured foundations turn search into a channel that pays back over time.",
@@ -192,26 +188,26 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                   case 0: layoutClass = "lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-2"; break;
                   case 1: layoutClass = "lg:col-start-3 lg:col-span-2 lg:row-start-1 lg:row-span-1"; break;
                   case 2: layoutClass = "lg:col-start-5 lg:col-span-2 lg:row-start-1 lg:row-span-1"; break;
-                  case 3: layoutClass = "lg:col-start-3 lg:col-span-2 lg:row-start-2 lg:row-span-1"; break;
-                  case 4: layoutClass = "lg:col-start-3 lg:col-span-2 lg:row-start-3 lg:row-span-1"; break;
-                  case 5: layoutClass = "lg:col-start-5 lg:col-span-2 lg:row-start-2 lg:row-span-1"; break;
-                  case 6: layoutClass = "lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-1"; break;
-                  case 7: layoutClass = "lg:col-start-5 lg:col-span-1 lg:row-start-3 lg:row-span-1"; break;
-                  case 8: layoutClass = "lg:col-start-6 lg:col-span-1 lg:row-start-3 lg:row-span-1"; break;
+                  case 3: layoutClass = "lg:col-start-3 lg:col-span-4 lg:row-start-2 lg:row-span-1"; break;
+                  case 4: layoutClass = "lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-1"; break;
+                  case 5: layoutClass = "lg:col-start-3 lg:col-span-2 lg:row-start-3 lg:row-span-1"; break;
+                  case 6: layoutClass = "lg:col-start-5 lg:col-span-1 lg:row-start-3 lg:row-span-1"; break;
+                  case 7: layoutClass = "lg:col-start-6 lg:col-span-1 lg:row-start-3 lg:row-span-1"; break;
                 }
 
-                const isMini = idx === 7 || idx === 8;
+                const isMini = idx === 6 || idx === 7;
                 const isLarge = idx === 0;
 
                 return (
                   <motion.article
                     key={pillar.title}
                     variants={fadeInUp}
-                    className={`relative border border-grid/15 bg-white flex flex-col group hover:border-primary/30 hover:bg-paper/40 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md col-span-1 ${layoutClass} ${isMini ? "p-5 md:p-6" : "p-6 md:p-8"}`}
+                    whileHover={{ y: -2, transition: { duration: 0.18 } }}
+                    className={`mi-card relative border border-grid/15 bg-white flex flex-col group overflow-hidden col-span-1 ${layoutClass} ${isMini ? "p-5 md:p-6" : "p-6 md:p-8"}`}
                   >
                   <BoxPattern />
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className={`border border-primary/25 bg-paper/60 grid place-items-center text-primary group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300 shadow-sm flex-shrink-0 ${isMini ? "h-8 w-8 rounded-md mb-4" : "h-10 w-10 mb-6"}`}>
+                    <div className={`border border-primary/20 bg-primary/5 grid place-items-center text-primary flex-shrink-0 ${isMini ? "h-8 w-8 rounded-md mb-4" : "h-10 w-10 mb-6"}`}>
                       <pillar.Icon className={isMini ? "h-4 w-4" : "h-5 w-5"} />
                     </div>
                     <div className={isLarge ? "" : "mt-auto"}>
