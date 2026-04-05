@@ -78,7 +78,7 @@ export default function BlogPage() {
               </div>
 
  <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink">
-                Guides that help you grow.
+                Guides that help you <em className="font-serif-10 italic">grow.</em>
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
                 Deep, practical articles on websites, local search, content, and

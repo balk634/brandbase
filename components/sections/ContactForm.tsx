@@ -142,7 +142,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                       <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
                         <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                       </div>
-                      <h3 className="font-serif text-3xl tracking-tight mb-2">Request <em className="font-serif-10 italic">captured</em></h3>
+                      <h3 className="font-serif text-3xl tracking-tight mb-2 text-ink">Message <em className="font-serif-10 italic text-blue-600">Sent</em></h3>
                       <p className="text-ink-muted leading-relaxed max-w-sm">We&apos;ve received your inquiry and will match you with a senior strategist within 24 hours.</p>
                       <Button variant="outline" className="mt-10 uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
                     </div>
@@ -304,7 +304,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
               <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
               </div>
-              <h3 className="font-serif text-3xl tracking-tight mb-2">Request <em className="font-serif-10 italic">captured</em></h3>
+              <h3 className="font-serif text-3xl tracking-tight mb-2 text-ink">Message <em className="font-serif-10 italic text-blue-600">Sent</em></h3>
               <p className="text-ink-muted text-sm leading-relaxed mb-8 max-w-sm mx-auto">Our team will review your project and get back to you within 24 hours (business days).</p>
               <Button variant="outline" className="uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
             </div>

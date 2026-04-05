@@ -206,8 +206,6 @@ export default function PricingPage() {
       [
         `Phone: ${phone || "N/A"}`,
         `Scope Level: ${scope.level}`,
-        `Scope Points: ${scope.points}`,
-        `Recommended Next: ${scope.recommendedNext}`,
         "",
         "Selected Items:",
         selectedSummary,
@@ -508,7 +506,7 @@ export default function PricingPage() {
                             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <h3 className="font-serif text-3xl tracking-tight mb-2">Request captured</h3>
+                        <h3 className="font-serif text-3xl tracking-tight mb-2 text-ink">Message <em className="font-serif-10 italic text-blue-600">Sent</em></h3>
                         <p className="text-ink-muted leading-relaxed max-w-sm">
                           We&apos;ve received your estimate request and will send your tailored quote shortly.
                         </p>

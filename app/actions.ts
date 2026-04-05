@@ -78,14 +78,15 @@ export async function sendEmail(formData: FormData) {
 New ${leadType === "quote_request" ? "Quote Request" : "Contact Form Submission"}
 Contact Details:
 ======
-   Name: ${name}
-   Email: ${email}
-   Phone: ${phone || "N/A"}
-   
-Message:
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "N/A"}
+
+Content:
 ======
 Subject: ${subject || "N/A"}
-${message}
+
+Message: ${message}
         `.trim();
 
         const { data, error } = await resend.emails.send({
