@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
+import { LoadingButton } from "@/components/ui/LoadingButton";
 import { cn } from "@/lib/utils";
 import { sendEmail } from "@/app/actions";
 import { CalButton } from "@/components/ui/CalBooking";
@@ -170,10 +171,81 @@ export default function PricingPage() {
     message: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
-  const [formError, setFormError] = useState<string | null>(null);
+  const [formStartedAt] = useState(() => Date.now().toString());
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const isEmailValid = form.email === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+  const isPhoneValid = form.phone === "" || /^\+?[\d\s-]{10,}$/.test(form.phone);
+
+  // Notification helper
+  const showNotification = (type: "success" | "error", message: string) => {
+    const event = new CustomEvent('showNotification', { detail: { type, message } });
+    window.dispatchEvent(event);
+  };
 
   const scope = useMemo(() => getScope(selections), [selections]);
+
+  const selectedSummary = useMemo(() => {
+    return scope.summary
+      .map((line) =>
+        line.kind === "group"
+          ? `${line.label}:`
+          : `${" ".repeat(line.indent * 2)}- ${line.label}`
+      )
+      .join("\n");
+  }, [scope]);
+
+  async function handleAction(formData: FormData) {
+    const name = String(formData.get("name")).trim();
+    const email = String(formData.get("email")).trim();
+    
+    if (!name || !email) {
+      showNotification("error", "Please enter your name and email.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showNotification("error", "Please provide a valid email address.");
+      return;
+    }
+
+    // Build the "playbook" message payload
+    const userMessage = String(formData.get("visitor_message") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    
+    formData.append("leadType", "quote_request");
+    formData.append("project", `Pricing Estimate (${scope.level})`);
+    formData.append(
+      "message",
+      [
+        `Phone: ${phone || "N/A"}`,
+        `Scope Level: ${scope.level}`,
+        `Scope Points: ${scope.points}`,
+        `Recommended Next: ${scope.recommendedNext}`,
+        "",
+        "Selected Items:",
+        selectedSummary,
+        "",
+        "Visitor Message:",
+        userMessage || "N/A",
+      ].join("\n")
+    );
+
+    setStatus("loading");
+    try {
+      const result = await sendEmail(formData);
+      if (result.success) {
+        setStatus("success");
+        showNotification("success", "Estimate request submitted! We'll send your quote shortly.");
+      } else {
+        setStatus("error");
+        showNotification("error", result.error || "Failed to send request. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      showNotification("error", "An unexpected error occurred. Please try again later.");
+    }
+  }
 
   function setSelection(key: SelectionKey, next: boolean) {
     setSelections((prev) => {
@@ -280,7 +352,6 @@ export default function PricingPage() {
 
   function reset() {
     setStatus("idle");
-    setFormError(null);
     setSelections({
       website_root: false,
       website_premium_static: false,
@@ -301,9 +372,10 @@ export default function PricingPage() {
 
   return (
     <main className="relative">
-      <Section className="bg-transparent">
+      <Section className="bg-transparent py-10 md:py-12 lg:py-14">
         <Container>
-            <div className="mb-12 text-center">
+          <div className="border border-grid/15 bg-white overflow-hidden">
+            <div className="p-6 sm:p-8 md:p-12 text-center border-b border-grid/15">
                 <Kicker className="mx-auto"> PRICING </Kicker>
                 <h1 className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                   Get Pricing <em className="font-serif-20 italic">Estimate</em>
@@ -313,8 +385,8 @@ export default function PricingPage() {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-6 lg:gap-10 items-start">
-                  <div className="md:col-span-7 border border-grid/15 bg-white p-6 sm:p-7 md:p-8">
+            <div className="grid md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-grid/15 items-start">
+                  <div className="md:col-span-7 p-6 sm:p-7 md:p-8">
                     <Kicker className="mb-4">
                       Build your package
                     </Kicker>
@@ -445,7 +517,7 @@ export default function PricingPage() {
                     </div>
                   </div>
 
-                  <div className="md:col-span-5 border border-grid/15 bg-white p-6 sm:p-7 md:p-8">
+                  <div className="md:col-span-5 p-6 sm:p-7 md:p-8">
                     {status === "success" ? (
                       <div className="flex flex-col items-center justify-center min-h-[520px] text-center">
                         <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
@@ -453,7 +525,7 @@ export default function PricingPage() {
                             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
- <h3 className="font-serif text-2xl tracking-tight mb-2">Request captured</h3>
+                        <h3 className="font-serif text-2xl tracking-tight mb-2">Request captured</h3>
                         <p className="text-ink-muted leading-relaxed max-w-sm">
                           We&apos;ve received your estimate request and will send your tailored quote shortly.
                         </p>
@@ -464,76 +536,24 @@ export default function PricingPage() {
                     ) : (
                       <form
                         className="flex flex-col gap-6"
-                        onSubmit={async (e) => {
-                          e.preventDefault();
-                          setFormError(null);
-                          const name = form.name.trim();
-                          const email = form.email.trim();
-                          const phone = form.phone.trim();
-                          const userMessage = form.message.trim();
-
-                          if (!name || !email) {
-                            setFormError("Please enter your name and email.");
-                            return;
-                          }
-
-                          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                            setFormError("Please provide a valid email address.");
-                            return;
-                          }
-
-                          const selectedSummary = scope.summary
-                            .map((line) =>
-                              line.kind === "group"
-                                ? `${line.label}:`
-                                : `${" ".repeat(line.indent * 2)}- ${line.label}`
-                            )
-                            .join("\n");
-
-                          const payload = new FormData();
-                          payload.append("name", name);
-                          payload.append("email", email);
-                          payload.append("leadType", "quote_request");
-                          payload.append("project", `Pricing Estimate (${scope.level})`);
-                          payload.append(
-                            "message",
-                            [
-                              `Phone: ${phone || "N/A"}`,
-                              `Scope Level: ${scope.level}`,
-                              `Scope Points: ${scope.points}`,
-                              `Recommended Next: ${scope.recommendedNext}`,
-                              "",
-                              "Selected Items:",
-                              selectedSummary,
-                              "",
-                              "Visitor Message:",
-                              userMessage || "N/A",
-                            ].join("\n")
-                          );
-
-                          setStatus("loading");
-                          try {
-                            const result = await sendEmail(payload);
-                            if (result.success) {
-                              setStatus("success");
-                              return;
-                            }
-
-                            setStatus("idle");
-                            setFormError(result.error || "Failed to send request. Please try again.");
-                          } catch {
-                            setStatus("idle");
-                            setFormError("Failed to send request. Please try again.");
-                          }
-                        }}
+                        action={handleAction}
                       >
+                        <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
+                        <input
+                          aria-hidden="true"
+                          autoComplete="off"
+                          className="absolute -left-[9999px] opacity-0 pointer-events-none"
+                          name="website"
+                          tabIndex={-1}
+                          type="text"
+                        />
                         <div className="border border-grid/15 bg-white p-5">
                           <Kicker className="mb-4">
                             Scope estimate
                           </Kicker>
                           <div className="mt-3 flex items-end justify-between gap-4">
                             <div className="min-w-0">
- <div className="font-serif text-xl tracking-tight text-ink">
+                              <div className="font-serif text-xl tracking-tight text-ink">
                                 <em className="font-serif-10 italic">{scope.level}</em>
                               </div>
                               <div className="mt-1 text-sm text-ink-muted leading-relaxed">
@@ -583,12 +603,10 @@ export default function PricingPage() {
                             </label>
                             <input
                               id="pricing-name"
+                              name="name"
                               className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                               value={form.name}
-                              onChange={(e) => {
-                                setFormError(null);
-                                setForm((p) => ({ ...p, name: e.target.value }));
-                              }}
+                              onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
                               autoComplete="name"
                               required
                             />
@@ -600,13 +618,16 @@ export default function PricingPage() {
                             </label>
                             <input
                               id="pricing-email"
+                              name="email"
                               type="email"
-                              className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                              className={cn(
+                                "w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors",
+                                !isEmailValid && form.email !== ""
+                                  ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
+                                  : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
+                              )}
                               value={form.email}
-                              onChange={(e) => {
-                                setFormError(null);
-                                setForm((p) => ({ ...p, email: e.target.value }));
-                              }}
+                              onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
                               autoComplete="email"
                               required
                             />
@@ -618,10 +639,19 @@ export default function PricingPage() {
                             </label>
                             <input
                               id="pricing-phone"
+                              name="phone"
                               type="tel"
-                              className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                              className={cn(
+                                "w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors",
+                                !isPhoneValid && form.phone !== ""
+                                  ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
+                                  : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
+                              )}
                               value={form.phone}
-                              onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
+                              onChange={(e) => {
+                                const val = e.target.value.replace(/[^\d+\s-]/g, "");
+                                setForm((p) => ({ ...p, phone: val }));
+                              }}
                               autoComplete="tel"
                             />
                           </div>
@@ -632,6 +662,7 @@ export default function PricingPage() {
                             </label>
                             <textarea
                               id="pricing-message"
+                              name="visitor_message"
                               className="w-full min-h-[140px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
                               value={form.message}
                               onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
@@ -641,21 +672,19 @@ export default function PricingPage() {
                         </div>
 
                         <div className="pt-2">
-                          <Button
+                          <LoadingButton
                             type="submit"
                             variant="primary"
                             size="lg"
                             className="w-full"
-                            disabled={status === "loading"}
+                            isLoading={status === "loading"}
+                            loadingText="Sending..."
                           >
-                            {status === "loading" ? "Sending..." : "Get pricing estimate"}
-                          </Button>
+                            Get pricing estimate
+                          </LoadingButton>
                           <CalButton variant="outline" size="lg" className="w-full mt-3">
                             Book a call instead
                           </CalButton>
-                          {formError ? (
-                            <p className="mt-3 text-xs text-red-600 leading-relaxed">{formError}</p>
-                          ) : null}
                           <p className="mt-3 text-xs text-ink-muted leading-relaxed">
                             No prices shown on purpose. This estimate calculates scope so we can reply with a tailored strategy and quote.
                           </p>
@@ -664,6 +693,7 @@ export default function PricingPage() {
                     )}
                   </div>
             </div>
+          </div>
         </Container>
       </Section>
     </main>
