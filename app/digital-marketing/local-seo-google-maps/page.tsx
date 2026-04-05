@@ -22,7 +22,7 @@ import { CalButton } from "@/components/ui/CalBooking";
 export const metadata = buildPageMetadata({
     title: "Local SEO Services & Google Maps Marketing | BrandBase India",
     description:
-        "Dominate your local market. Our expert SEO and Google Maps optimization drives 3x more calls and bookings from people searching in your area.",
+        "Dominate your local market and own the 'near me' search results. Our expert Google Maps optimization drives more calls and bookings for your local business.",
     path: "/digital-marketing/local-seo-google-maps",
 });
 
@@ -114,7 +114,7 @@ export default function LocalSEOPage() {
                                         Book a call
                                     </CalButton>
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
-                                        <Link href="#deliverables">See deliverables</Link>
+                                        <Link href="#deliverables">Explore Local SEO Deliverables</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -129,7 +129,7 @@ export default function LocalSEOPage() {
                                     >
                                         <HeroImage
                                             src={`/${masterConfig.ui.heroImages.socialMediaGrowthLocalSeo}`}
-                                            alt="Local SEO hero"
+                                            alt="Local SEO and Google Maps marketing for multi-location businesses"
                                         />
                                     </div>
                                 </div>
@@ -255,7 +255,7 @@ export default function LocalSEOPage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <div className="flex items-center justify-between mb-6">
+                                            <div className="flex flex-col items-start gap-5 mb-8">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}
                                                 </div>

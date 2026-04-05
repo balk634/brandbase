@@ -20,9 +20,9 @@ import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-    title: "Website Redesign & Rescue | Turn Underperforming Sites Into Assets",
+    title: "Website Redesign Services & Performance Rescue | BrandBase India",
     description:
-        "Professional website redesign and rescue services. We transform underperforming, dated, or slow websites into high-speed, conversion-focused business assets.",
+        "Transform your underperforming website into a high-speed business asset. We offer strategic redesigns focused on conversions, SEO, and long-term brand growth.",
     path: "/website-solutions/website-redesign",
 });
 
@@ -149,7 +149,7 @@ export default function RedesignRescuePage() {
                                         Book a call
                                     </CalButton>
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
-                                        <Link href="#choose-service">Choose your path</Link>
+                                        <Link href="#choose-service">Explore Redesign Options</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -165,7 +165,7 @@ export default function RedesignRescuePage() {
                                     >
                                         <HeroImage
                                             src={`/${masterConfig.ui.heroImages.websiteSolutionsRedesignRescue}`}
-                                            alt="Website redesign hero"
+                                            alt="Strategic website redesign and performance rescue for businesses"
                                         />
                                     </div>
                                 </div>
@@ -295,7 +295,7 @@ export default function RedesignRescuePage() {
                                             <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30 mb-6">
                                                 <item.Icon className="h-5 w-5" />
                                             </div>
-                                            <h4 className="font-serif text-lg tracking-tight text-ink mb-3">{item.title}</h4>
+                                            <h3 className="font-serif text-lg tracking-tight text-ink mb-3">{item.title}</h3>
                                             <p className="text-sm text-ink-muted leading-relaxed">{item.copy}</p>
                                     </motion.div>
                                 ))}

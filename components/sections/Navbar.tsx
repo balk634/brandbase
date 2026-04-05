@@ -161,10 +161,10 @@ export function Navbar() {
                                         <div
                                             className={[
                                                 "absolute left-0 top-full z-50 pt-2 perspective-[1000px]",
-                                                "transition-[opacity,transform] duration-300 ease-&lsqb;cubic-bezier(0.22,1,0.36,1)&rsqb;",
+                                                "transition-[opacity,transform,visibility] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
                                                 isDesktopOpen
-                                                    ? "opacity-100 translate-y-0 pointer-events-auto"
-                                                    : "opacity-0 -translate-y-2 pointer-events-none",
+                                                    ? "opacity-100 translate-y-0 pointer-events-auto visible"
+                                                    : "opacity-0 -translate-y-2 pointer-events-none invisible",
                                             ].join(" ")}
                                             aria-hidden={!isDesktopOpen}
                                         >

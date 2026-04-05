@@ -22,7 +22,7 @@ import { CalButton } from "@/components/ui/CalBooking";
 export const metadata = buildPageMetadata({
     title: "Performance Marketing & Ad Management Services | BrandBase India",
     description:
-        "Scale your revenue with expert Meta and Google Ads management. Our ROI-driven performance marketing includes conversion tracking, testing, and weekly reports.",
+        "ROI-driven performance marketing for high-growth brands. We manage Meta and Google Ads with a focus on conversion tracking, creative testing, and measurable revenue growth.",
     path: "/digital-marketing/performance-marketing",
 });
 
@@ -148,8 +148,8 @@ export default function PerformanceMarketingPage() {
                                     <CalButton variant="primary" size="lg" className="NC-Hero-CTA-Primary">
                                         Book a call
                                     </CalButton>
-                                    <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
-                                        <Link href="#deliverables">See deliverables</Link>
+                                    <Button asChild variant="outline" size="lg">
+                                        <Link href="#deliverables">Explore Performance Ads Deliverables</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -164,7 +164,7 @@ export default function PerformanceMarketingPage() {
                                     >
                                         <HeroImage
                                             src={`/${masterConfig.ui.heroImages.socialMediaGrowthPerformanceMarketing}`}
-                                            alt="Performance marketing hero"
+                                            alt="High-performance ad management and conversion marketing systems"
                                         />
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@ export default function PerformanceMarketingPage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <div className="flex items-center justify-between mb-6">
+                                            <div className="flex flex-col items-start gap-5 mb-8">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}
                                                 </div>

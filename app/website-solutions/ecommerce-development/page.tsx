@@ -126,7 +126,7 @@ export default function EcommercePage() {
                                         Book a call
                                     </CalButton>
                                     <Button asChild variant="outline" size="lg" className="NC-Hero-CTA-Secondary">
-                                        <Link href="#deliverables">See deliverables</Link>
+                                        <Link href="#deliverables">Explore Ecommerce Store Deliverables</Link>
                                     </Button>
                                 </motion.div>
                             </div>
@@ -141,7 +141,7 @@ export default function EcommercePage() {
                                     >
                                         <HeroImage
                                             src={`/${masterConfig.ui.heroImages.websiteSolutionsEcommerce}`}
-                                            alt="Ecommerce website hero"
+                                            alt="Conversion-focused ecommerce store development and technical retail systems"
                                         />
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@ export default function EcommercePage() {
                                                 />
                                             </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
-                                                <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
+                                                <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h3>
                                             </div>
                                             <div className="space-y-4 flex-1">
                                                 {item.bullets.map((b) => (
@@ -267,7 +267,7 @@ export default function EcommercePage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <div className="flex items-center justify-between mb-6">
+                                            <div className="flex flex-col items-start gap-5 mb-8">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}
                                                 </div>

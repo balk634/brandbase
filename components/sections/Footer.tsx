@@ -31,7 +31,7 @@ export function Footer() {
                             <Link href="/">
                                 <Image src="/brand/logo-light.svg" alt="BrandBase Logo" width={200} height={32} className="h-10 w-auto mb-8" />
                             </Link>
-                            <p className="text-white/50 text-sm leading-relaxed max-w-sm">
+                            <p className="text-white/70 text-sm leading-relaxed max-w-sm">
                                 Conversion-first websites with clean tracking and SEO foundations, then performance marketing that scales. Clear plan. Measurable results.
                             </p>
                         </div>
@@ -59,7 +59,7 @@ export function Footer() {
 
                             {masterConfig.contact.socialMedia.enabled && (
                                 <div className="w-full pt-6 mt-2 border-t border-white/5 flex flex-col gap-4">
-                                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">Connect with us</span>
+                                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">Connect with us</span>
                                     <div className="flex items-center gap-6">
                                         {socialEntries.map(([platform, url]) => {
                                             const Icon = socialIcons[platform];
@@ -70,7 +70,7 @@ export function Footer() {
                                                     href={url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="mi-nav-item text-white/40 hover:text-white transition-colors"
+                                                    className="mi-nav-item text-white/60 hover:text-white transition-colors"
                                                     aria-label={platform}
                                                 >
                                                     <Icon className="h-5 w-5" />
@@ -87,9 +87,9 @@ export function Footer() {
                     <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 sm:gap-y-10 p-4 sm:p-6 md:p-8 lg:p-10 pt-10 sm:pt-12 md:pt-16 lg:pt-16">
                         {masterConfig.footerColumns.map((col) => (
                             <div key={col.title}>
-                                <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/40 mb-8">
+                                <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/60 mb-8">
                                     {col.title}
-                                </h4>
+                                </h3>
                                 <ul className="space-y-4">
                                     {col.links.map((link) => (
                                         <li key={link.name}>
@@ -106,7 +106,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="px-4 sm:px-6 md:px-8 lg:px-10 py-4 border-t border-white/5 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6">
-                    <div className="text-[10px] sm:text-[11px] font-mono text-white/40 uppercase tracking-widest text-center md:text-left">
+                    <div className="text-[10px] sm:text-[11px] font-mono text-white/60 uppercase tracking-widest text-center md:text-left">
                         <span>&copy; {year} BRANDBASE. All Rights Reserved.</span>
                     </div>
 
