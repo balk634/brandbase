@@ -10,7 +10,6 @@ import { Agentation } from "agentation";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
-import { NotificationContainer } from "@/components/ui/Notification";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 
 const geistSans = Geist({
@@ -137,7 +136,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
-        <NotificationContainer />
         <CookieConsent />
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>

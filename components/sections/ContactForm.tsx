@@ -4,7 +4,6 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { LoadingButton } from "@/components/ui/LoadingButton";
-import { NotificationContainer } from "@/components/ui/Notification";
 import { masterConfig } from "@/config/master";
 import { Kicker } from "@/components/ui/Kicker";
 import { CalButton } from "@/components/ui/CalBooking";
@@ -32,11 +31,6 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
   const isEmailValid = email === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const isPhoneValid = phone === "" || /^\+?[\d\s-]{10,}$/.test(phone);
 
-  // Notification function
-  const showNotification = (type: "success" | "error", message: string) => {
-    const event = new CustomEvent('showNotification', { detail: { type, message } });
-    window.dispatchEvent(event);
-  };
 
   async function handleAction(formData: FormData) {
     setStatus("loading");
@@ -46,11 +40,9 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
 
     if (result.success) {
       setStatus("success");
-      showNotification("success", "Message submitted successfully! We'll respond within 24 hours.");
     } else {
       setStatus("error");
       setErrorMessage(result.error || "Failed to send message. Please try again.");
-      showNotification("error", "Failed to send message. Please contact us directly or try again.");
     }
   }
 
@@ -146,13 +138,13 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
 
                 <div className="md:col-span-7 p-6 sm:p-7 md:p-8 flex flex-col">
                   {status === "success" ? (
-                    <div className="flex-1 flex flex-col items-center justify-center min-h-[400px] text-center">
-                      <div className="h-14 w-14 border border-primary/20 bg-primary/5 flex items-center justify-center text-primary mb-6">
-                        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div className="flex-1 flex flex-col items-center justify-center min-h-[400px] text-center reveal-up">
+                      <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
+                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                       </div>
-                      <h3 className="font-serif text-2xl tracking-tight mb-2">Message <em className="font-serif-10 italic">sent</em></h3>
-                      <p className="text-ink-muted leading-relaxed">We&apos;ve received your inquiry and will match you with a senior strategist shortly.</p>
-                      <Button variant="outline" className="mt-8" onClick={() => setStatus("idle")}>Send another message</Button>
+                      <h3 className="font-serif text-3xl tracking-tight mb-2">Request <em className="font-serif-10 italic">captured</em></h3>
+                      <p className="text-ink-muted leading-relaxed max-w-sm">We&apos;ve received your inquiry and will match you with a senior strategist within 24 hours.</p>
+                      <Button variant="outline" className="mt-10 uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
                     </div>
                   ) : (
                     <form id="contact-form" className="flex-1 flex flex-col" action={handleAction}>
@@ -308,13 +300,13 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
 
         <div className="md:col-span-7">
           {status === "success" ? (
-            <div className="border border-grid/15 bg-white p-6 sm:p-8 md:p-12 text-center h-full flex flex-col items-center justify-center">
-              <div className="h-14 w-14 border border-primary/20 bg-primary/5 flex items-center justify-center text-primary mb-6">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+            <div className="border border-grid/15 bg-white p-6 sm:p-8 md:p-12 text-center h-full flex flex-col items-center justify-center min-h-[440px] reveal-up">
+              <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
               </div>
-              <h3 className="font-serif text-xl tracking-tight mb-2">Message <em className="font-serif-10 italic">sent successfully</em></h3>
-              <p className="text-ink-muted text-sm leading-relaxed mb-6">Our team will review your project and get back to you within 24 hours (business days).</p>
-              <Button variant="outline" onClick={() => setStatus("idle")}>Send another message</Button>
+              <h3 className="font-serif text-3xl tracking-tight mb-2">Request <em className="font-serif-10 italic">captured</em></h3>
+              <p className="text-ink-muted text-sm leading-relaxed mb-8 max-w-sm mx-auto">Our team will review your project and get back to you within 24 hours (business days).</p>
+              <Button variant="outline" className="uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
             </div>
           ) : (
             <form

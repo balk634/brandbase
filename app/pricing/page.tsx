@@ -177,11 +177,6 @@ export default function PricingPage() {
   const isEmailValid = form.email === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
   const isPhoneValid = form.phone === "" || /^\+?[\d\s-]{10,}$/.test(form.phone);
 
-  // Notification helper
-  const showNotification = (type: "success" | "error", message: string) => {
-    const event = new CustomEvent('showNotification', { detail: { type, message } });
-    window.dispatchEvent(event);
-  };
 
   const scope = useMemo(() => getScope(selections), [selections]);
 
@@ -199,15 +194,6 @@ export default function PricingPage() {
     const name = String(formData.get("name")).trim();
     const email = String(formData.get("email")).trim();
     
-    if (!name || !email) {
-      showNotification("error", "Please enter your name and email.");
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showNotification("error", "Please provide a valid email address.");
-      return;
-    }
 
     // Build the "playbook" message payload
     const userMessage = String(formData.get("visitor_message") || "").trim();
@@ -236,14 +222,11 @@ export default function PricingPage() {
       const result = await sendEmail(formData);
       if (result.success) {
         setStatus("success");
-        showNotification("success", "Estimate request submitted! We'll send your quote shortly.");
       } else {
         setStatus("error");
-        showNotification("error", result.error || "Failed to send request. Please try again.");
       }
     } catch {
       setStatus("error");
-      showNotification("error", "An unexpected error occurred. Please try again later.");
     }
   }
 
@@ -519,17 +502,17 @@ export default function PricingPage() {
 
                   <div className="md:col-span-5 p-6 sm:p-7 md:p-8">
                     {status === "success" ? (
-                      <div className="flex flex-col items-center justify-center min-h-[520px] text-center">
-                        <div className="h-14 w-14 border border-primary/20 bg-primary/5 flex items-center justify-center text-primary mb-6">
-                          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex flex-col items-center justify-center min-h-[520px] text-center reveal-up">
+                        <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
+                          <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <h3 className="font-serif text-2xl tracking-tight mb-2">Request captured</h3>
+                        <h3 className="font-serif text-3xl tracking-tight mb-2">Request captured</h3>
                         <p className="text-ink-muted leading-relaxed max-w-sm">
                           We&apos;ve received your estimate request and will send your tailored quote shortly.
                         </p>
-                        <Button variant="outline" className="mt-8" onClick={reset}>
+                        <Button variant="outline" className="mt-10 uppercase tracking-widest text-[10px]" onClick={reset}>
                           Build another estimate
                         </Button>
                       </div>
