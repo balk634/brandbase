@@ -180,7 +180,7 @@ export default function RedesignRescuePage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
                         <div className="mb-16">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">CHOOSE YOUR PATH</div>
+                            <Kicker>CHOOSE YOUR PATH</Kicker>
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                                 Three paths. One goal: a website that <em className="font-serif-10 italic">works.</em>
                             </h2>
@@ -233,7 +233,7 @@ export default function RedesignRescuePage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
                         <div className="mb-16">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">THE REAL COST</div>
+                            <Kicker>THE REAL COST</Kicker>
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-4xl">
                                 Your outdated website is costing you more than you <em className="font-serif-10 italic">think.</em>
                             </h2>
@@ -255,10 +255,7 @@ export default function RedesignRescuePage() {
                                         `}
                                     >
                                         <div className="flex items-center gap-4 mb-5">
-                                            <div className="h-10 w-10 border border-red-500/20 bg-red-500/5 grid place-items-center text-red-500 shrink-0 group-hover:border-red-500/40 group-hover:bg-red-500/10 transition-colors duration-300">
-                                                <reason.Icon className="h-5 w-5" />
-                                            </div>
- <h3 className="font-serif text-base tracking-tight text-ink leading-tight">{reason.title}</h3>
+                                            <h3 className="font-serif text-base tracking-tight text-ink leading-tight">{reason.title}</h3>
                                         </div>
                                         <p className="text-sm text-ink-muted leading-relaxed">{reason.copy}</p>
                                     </motion.div>
@@ -274,7 +271,7 @@ export default function RedesignRescuePage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
                         <div className="mb-16">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">WHAT YOU GET</div>
+                            <Kicker>WHAT YOU GET</Kicker>
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                                 Everything included. No hidden <em className="font-serif-10 italic">costs.</em>
                             </h2>
@@ -295,10 +292,7 @@ export default function RedesignRescuePage() {
                                         `}
                                     >
                                         <div className="flex items-center justify-between gap-4 mb-5">
- <h4 className="font-serif text-base tracking-tight text-ink">{item.title}</h4>
-                                            <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0 group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300">
-                                                <item.Icon className="h-5 w-5" />
-                                            </div>
+                                            <h4 className="font-serif text-base tracking-tight text-ink">{item.title}</h4>
                                         </div>
                                         <p className="text-sm text-ink-muted leading-relaxed">{item.copy}</p>
                                     </motion.div>
@@ -319,7 +313,7 @@ export default function RedesignRescuePage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">NEXT STEP</div>
+                                        <Kicker className="mb-6">NEXT STEP</Kicker>
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                                             Stop losing customers to a bad <em className="font-serif-10 italic">website.</em>
                                         </h2>

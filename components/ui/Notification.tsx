@@ -44,11 +44,11 @@ function NotificationComponent({ notification, onClose }: NotificationProps) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -20, scale: 0.95 }}
+          exit={{ opacity: 0, y: 20, scale: 0.95 }}
           transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className={`fixed top-4 right-4 z-50 flex items-start gap-3 p-4 rounded-lg border shadow-lg max-w-sm ${colors[notification.type]}`}
+          className={`fixed bottom-4 right-4 z-[9999] flex items-start gap-3 p-4 rounded-lg border shadow-lg max-w-sm ${colors[notification.type]}`}
         >
           <div className="flex-shrink-0 mt-0.5">
             {icons[notification.type]}
@@ -101,7 +101,7 @@ export function NotificationContainer() {
   }, []);
 
   return (
-    <div className="fixed top-0 right-0 z-50 p-4 space-y-2 pointer-events-none">
+    <div className="fixed bottom-0 right-0 z-[9999] p-4 space-y-2 pointer-events-none">
       {notifications.map(notification => (
         <NotificationComponent
           key={notification.id}

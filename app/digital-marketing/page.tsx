@@ -105,19 +105,14 @@ const growthLanes: GrowthLane[] = [
 const LaneContent = ({ lane }: { lane: GrowthLane }) => (
   <div className="flex flex-col h-full justify-between">
     <div>
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <Kicker className="mb-3">
-            {lane.label}
-          </Kicker>
-          <h3 className="h3 mt-3 text-xl font-serif tracking-tight text-ink">
-            {lane.title}
-          </h3>
-        </div>
-        <div className="h-10 w-10 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0">
-          <lane.Icon className="h-5 w-5" />
-        </div>
+    <div>
+      <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+        {lane.label}
       </div>
+      <h3 className="h3 mt-3 text-xl font-serif tracking-tight text-ink">
+        {lane.title}
+      </h3>
+    </div>
       <p className="mt-4 text-sm text-ink-muted leading-relaxed flex-1">
         {lane.summary}
       </p>

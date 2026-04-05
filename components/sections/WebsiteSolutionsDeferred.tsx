@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Kicker } from "@/components/ui/Kicker";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
@@ -167,12 +168,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
             <div className="mb-14">
-              <div className="flex items-center gap-2.5 text-ink-muted">
-                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                  <IconShield className="h-4 w-4" />
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">STRATEGIC FOUNDATION</div>
-              </div>
+              <Kicker>STRATEGIC FOUNDATION</Kicker>
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 Your website is either a revenue asset or a silent <em className="font-serif-10 italic">liability.</em>
               </h2>
@@ -204,9 +200,6 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                   >
                   <BoxPattern />
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className={`border border-primary/20 bg-primary/5 grid place-items-center text-primary flex-shrink-0 ${isMini ? "h-8 w-8 rounded-md mb-4" : "h-10 w-10 mb-6"}`}>
-                      <pillar.Icon className={isMini ? "h-4 w-4" : "h-5 w-5"} />
-                    </div>
                     <div className={isLarge ? "" : "mt-auto"}>
                       <h3 className={`font-serif tracking-tight text-ink mb-2 md:mb-3 leading-tight ${isMini ? "text-lg md:text-xl" : "text-xl md:text-2xl"}`}>
                         {pillar.title}
@@ -238,12 +231,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
             <div className="mb-14">
-              <div className="flex items-center gap-2.5 text-ink-muted">
-                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                  <IconArrowsSplit className="h-4 w-4" />
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">DELIVERY MODEL</div>
-              </div>
+              <Kicker>DELIVERY MODEL</Kicker>
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
               </h2>
@@ -259,9 +247,6 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                       <BoxPattern />
                       <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
                         {item.step}
-                      </div>
-                      <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
-                        <item.Icon className="h-5 w-5" />
                       </div>
                       <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
                         {item.title1} <br />
@@ -309,12 +294,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
               <div className="grid lg:grid-cols-2">
                 <div className={`p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
                   <motion.div variants={fadeInUp}>
-                    <div className="flex items-center gap-2.5 text-ink-muted mb-6">
-                      <div className="h-8 w-8 border border-primary/25 bg-primary/5 grid place-items-center text-primary">
-                        <IconTargetArrow className="h-4 w-4" />
-                      </div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.35em]">NEXT STEP</div>
-                    </div>
+                    <Kicker className="mb-6">NEXT STEP</Kicker>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                       Want us to map your exact website <em className="font-serif-10 italic">track?</em>
                     </h2>

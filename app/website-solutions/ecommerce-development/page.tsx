@@ -158,7 +158,7 @@ export default function EcommercePage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
                         <div className="mb-16 md:mb-20">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">DELIVERABLES</div>
+                            <Kicker>DELIVERABLES</Kicker>
  <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">Everything your store needs to launch and <em className="font-serif-10 italic">grow.</em></h2>
                         </div>
                         <div className="border border-grid/15 bg-white">
@@ -177,10 +177,7 @@ export default function EcommercePage() {
                                                 />
                                             </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
- <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
-                                                <div className="h-12 w-12 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0 group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300">
-                                                    <item.Icon className="h-6 w-6" />
-                                                </div>
+                                                <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
                                             </div>
                                             <div className="space-y-4 flex-1">
                                                 {item.bullets.map((b) => (
@@ -209,7 +206,7 @@ export default function EcommercePage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">IS THIS FOR YOU?</div>
+                                        <Kicker className="mb-6">IS THIS FOR YOU?</Kicker>
  <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -234,7 +231,7 @@ export default function EcommercePage() {
                                 </div>
                                 <div className="p-7 md:p-10 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">WHY BRANDBASE</div>
+                                        <Kicker className="mb-6">WHY BRANDBASE</Kicker>
  <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why brands trust us with their <em className="font-serif-10 italic">store.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -260,7 +257,7 @@ export default function EcommercePage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
                         <div className="mb-16">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">OUR PROCESS</div>
+                            <Kicker>OUR PROCESS</Kicker>
  <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">From idea to live <em className="font-serif-10 italic">store.</em></h2>
                             <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">A battle-tested workflow that takes your store from concept to revenue in weeks, not months.</p>
                         </div>
@@ -275,9 +272,6 @@ export default function EcommercePage() {
                                             <BoxPattern />
                                             <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
                                                 {item.step}
-                                            </div>
-                                            <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
-                                                <item.Icon className="h-5 w-5" />
                                             </div>
  <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
                                                 {item.title}
@@ -325,7 +319,7 @@ export default function EcommercePage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">NEXT STEP</div>
+                                        <Kicker className="mb-6">NEXT STEP</Kicker>
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to start selling <em className="font-serif-10 italic">online?</em></h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your products and goals. We&apos;ll send you a detailed proposal within 24 hours.</p>
 

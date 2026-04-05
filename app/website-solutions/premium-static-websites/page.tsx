@@ -184,8 +184,8 @@ export default function PremiumStaticPage() {
             <Section id="deliverables" className="bg-transparent relative z-10 py-16 md:py-24 border-b border-grid/10">
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
-                        <div className="mb-16 md:mb-20">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">DELIVERABLES</div>
+                        <div className="mb-16 md:mb-20 text-left">
+                            <Kicker>DELIVERABLES</Kicker>
  <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                                 Everything you get. No hidden <em className="font-serif-10 italic">extras.</em>
                             </h2>
@@ -206,10 +206,7 @@ export default function PremiumStaticPage() {
                                                 />
                                             </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
- <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
-                                                <div className="h-12 w-12 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0 group-hover:bg-primary/5 group-hover:border-primary/40 transition-colors duration-300">
-                                                    <item.Icon className="h-6 w-6" />
-                                                </div>
+                                                <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
                                             </div>
                                             <div className="space-y-4 flex-1">
                                                 {item.bullets.map((b) => (
@@ -238,7 +235,7 @@ export default function PremiumStaticPage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">IS THIS FOR YOU?</div>
+                                        <Kicker className="mb-6">IS THIS FOR YOU?</Kicker>
  <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -265,7 +262,7 @@ export default function PremiumStaticPage() {
                                 </div>
                                 <div className="p-7 md:p-10 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">WHY BRANDBASE</div>
+                                        <Kicker className="mb-6">WHY BRANDBASE</Kicker>
  <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why small businesses love this <em className="font-serif-10 italic">model.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -292,12 +289,7 @@ export default function PremiumStaticPage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
                         <div className="mb-14">
-                            <div className="flex items-center gap-2.5 text-ink-muted">
-                                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                                    <IconArrowsSplit className="h-4 w-4" />
-                                </div>
-                                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">DELIVERY MODEL</div>
-                            </div>
+                            <Kicker>DELIVERY MODEL</Kicker>
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                                 Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
                             </h2>
@@ -313,9 +305,6 @@ export default function PremiumStaticPage() {
                                             <BoxPattern />
                                             <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
                                                 {item.step}
-                                            </div>
-                                            <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
-                                                <item.Icon className="h-5 w-5" />
                                             </div>
                                             <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
                                                 {item.title1} <br />
@@ -364,7 +353,7 @@ export default function PremiumStaticPage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">NEXT STEP</div>
+                                        <Kicker className="mb-6">NEXT STEP</Kicker>
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                                             Get online without the upfront <em className="font-serif-10 italic">bill.</em>
                                         </h2>

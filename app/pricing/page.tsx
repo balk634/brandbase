@@ -303,24 +303,18 @@ export default function PricingPage() {
     <main className="relative">
       <Section className="bg-transparent">
         <Container>
-          <div className="border border-grid/15 bg-white overflow-hidden">
-            <div className="p-8 md:p-12">
-              <div className="text-center">
+            <div className="mb-12 text-center">
                 <Kicker className="mx-auto"> PRICING </Kicker>
-              </div>
-
- <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
-                Get Pricing <em className="font-serif-20 italic">Estimate</em>
-              </h1>
-              <p className="mt-6 max-w-3xl mx-auto text-center text-ink-muted leading-relaxed text-lg md:text-xl">
-                Select exactly what you need. We&apos;ll instantly calculate the scope and send you a custom strategy and quote.
-              </p>
+                <h1 className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+                  Get Pricing <em className="font-serif-20 italic">Estimate</em>
+                </h1>
+                <p className="mt-6 max-w-3xl mx-auto text-ink-muted leading-relaxed text-lg md:text-xl">
+                  Select exactly what you need. We&apos;ll instantly calculate the scope and send you a custom strategy and quote.
+                </p>
             </div>
 
-            <div className="border-t border-grid/15 p-7 md:p-8">
-              <div className="border border-grid/15 bg-paper/30">
-                <div className="grid md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-grid/15">
-                  <div className="md:col-span-7 p-6 sm:p-7 md:p-8">
+            <div className="grid md:grid-cols-12 gap-6 lg:gap-10 items-start">
+                  <div className="md:col-span-7 border border-grid/15 bg-white p-6 sm:p-7 md:p-8">
                     <Kicker className="mb-4">
                       Build your package
                     </Kicker>
@@ -451,7 +445,7 @@ export default function PricingPage() {
                     </div>
                   </div>
 
-                  <div className="md:col-span-5 p-6 sm:p-7 md:p-8">
+                  <div className="md:col-span-5 border border-grid/15 bg-white p-6 sm:p-7 md:p-8">
                     {status === "success" ? (
                       <div className="flex flex-col items-center justify-center min-h-[520px] text-center">
                         <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
@@ -565,8 +559,8 @@ export default function PricingPage() {
                                   }
                                 >
                                   {line.kind === "group" ? (
-                                    <div className="mb-2">
-                                      <Kicker>{line.label}</Kicker>
+                                    <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.35em] text-ink">
+                                      {line.label}
                                     </div>
                                   ) : (
                                     <>
@@ -669,10 +663,7 @@ export default function PricingPage() {
                       </form>
                     )}
                   </div>
-                </div>
-              </div>
             </div>
-          </div>
         </Container>
       </Section>
     </main>

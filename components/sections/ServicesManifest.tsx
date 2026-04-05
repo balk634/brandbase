@@ -255,18 +255,11 @@ export function ServicesManifest() {
                                 {service.id}.
                             </div>
                             <div className="md:col-span-4">
-                                <div className="flex items-start gap-4">
-                                    <div className="h-10 w-10 border border-grid/15 bg-white grid place-items-center text-primary">
-                                        <service.Icon className="h-5 w-5" strokeWidth={1.5} />
-                                    </div>
-                                    <div>
-                                        <Kicker className="mb-1">
-                                            {service.label}
-                                        </Kicker>
- <div className="mt-2 font-serif text-xl uppercase tracking-tight">
-                                            <em className="font-serif-10 italic">{service.category}</em>
-                                        </div>
-                                    </div>
+                                <Kicker className="mb-4">
+                                    {service.label}
+                                </Kicker>
+                                <div className="font-serif text-xl uppercase tracking-tight">
+                                    <em className="font-serif-10 italic">{service.category}</em>
                                 </div>
                             </div>
                             <div className="md:col-span-4 border-l border-dashed border-grid/15 pl-4 md:border-none md:pl-0 flex flex-col justify-between">

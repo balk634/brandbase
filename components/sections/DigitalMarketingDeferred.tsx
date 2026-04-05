@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Kicker } from "@/components/ui/Kicker";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 
 import {
@@ -102,14 +103,7 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                 variants={fadeInUp}
                 className={`border border-grid/15 bg-white p-7 md:p-10 ${imagePosition === "left" ? "lg:order-last" : ""}`}
               >
-                <div className="flex items-center gap-2.5 text-ink-muted">
-                  <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                    <IconTargetArrow className="h-4 w-4" />
-                  </div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.35em]">
-                    CHANNEL COMPASS
-                  </div>
-                </div>
+                <Kicker>CHANNEL COMPASS</Kicker>
                 <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink">
                   How we use each channel to grow your
                   <em className="font-serif-10 italic"> revenue.</em>
@@ -137,11 +131,8 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                   ].map((item) => (
                     <div
                       key={item.lane}
-                      className="mi-row flex items-start gap-3 py-4 first:pt-0 last:pb-0"
+                      className="mi-row py-4 first:pt-0 last:pb-0"
                     >
-                      <div className="mt-0.5 h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary shrink-0">
-                        <item.Icon className="h-4 w-4" />
-                      </div>
                       <div>
                         <p className="text-sm font-semibold text-ink">{item.lane}</p>
                         <p className="mt-1 text-sm text-ink-muted">
@@ -190,18 +181,13 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                       "We set strict rules to pause expensive ads and scale the ones that are bringing in profit.",
                   },
                 ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="mi-card border border-grid/15 bg-white p-5 md:p-6"
-                  >
-                    <div className="flex items-center justify-between gap-2">
+                    <div
+                      key={stat.label}
+                      className="mi-card border border-grid/15 bg-white p-5 md:p-6"
+                    >
                       <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
                         {stat.label}
                       </div>
-                      <div className="h-7 w-7 border border-primary/20 bg-primary/5 grid place-items-center text-primary shrink-0">
-                        <stat.Icon className="h-3.5 w-3.5" />
-                      </div>
-                    </div>
                     <div className="mt-3 font-serif text-xl md:text-2xl tracking-tight text-ink">
                       {stat.value}
                     </div>
@@ -231,14 +217,7 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
             variants={staggerContainer}
           >
             <div className="mb-14">
-              <div className="flex items-center gap-2.5 text-ink-muted">
-                <div className="h-8 w-8 border border-primary/25 bg-paper/60 grid place-items-center text-primary">
-                  <IconReportAnalytics className="h-4 w-4" />
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em]">
-                  SMART ACQUISITION
-                </div>
-              </div>
+              <Kicker>SMART ACQUISITION</Kicker>
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 How we grow your business and stop your budget from <em className="font-serif-10 italic">leaking.</em>
               </h2>
@@ -254,15 +233,12 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                       WHAT GROWS REVENUE
                     </h3>
                   </div>
-                  <div className="divide-y divide-grid/10">
-                    {growthLevers.map((item) => (
-                      <div
-                        key={item.text}
-                        className="mi-row flex items-center gap-3 py-4 first:pt-0 last:pb-0"
-                      >
-                        <div className="h-8 w-8 border border-green-800/20 bg-paper/60 text-green-800 grid place-items-center shrink-0">
-                          <item.Icon className="h-4 w-4" />
-                        </div>
+                      <div className="divide-y divide-grid/10">
+                        {growthLevers.map((item) => (
+                          <div
+                            key={item.text}
+                            className="mi-row py-4 first:pt-0 last:pb-0"
+                          >
                         <p className="text-sm text-ink leading-relaxed">{item.text}</p>
                       </div>
                     ))}
@@ -281,11 +257,8 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                     {budgetDrains.map((item) => (
                       <div
                         key={item.text}
-                        className="mi-row flex items-center gap-3 py-4 first:pt-0 last:pb-0"
+                        className="mi-row py-4 first:pt-0 last:pb-0"
                       >
-                        <div className="h-8 w-8 border border-red-500/25 bg-paper/60 text-red-600 grid place-items-center shrink-0">
-                          <item.Icon className="h-4 w-4" />
-                        </div>
                         <p className="text-sm text-ink leading-relaxed">{item.text}</p>
                       </div>
                     ))}
@@ -311,9 +284,7 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
               <div className="grid lg:grid-cols-2">
                 <div className={`p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
                   <motion.div variants={fadeInUp}>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-6">
-                      NEXT STEP
-                    </div>
+                    <Kicker className="mb-6">NEXT STEP</Kicker>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                       Ready for a marketing system that actually pays for <em className="font-serif-10 italic">itself?</em>
                     </h2>

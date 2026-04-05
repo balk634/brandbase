@@ -199,9 +199,9 @@ export default function AboutPage() {
                     </div>
                     <div className="flex flex-col">
                       <div>
-                        <Kicker className="mb-2">
+                        <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.35em] text-primary">
                           {member.role}
-                        </Kicker>
+                        </div>
  <h3 className="font-serif text-xl tracking-tight text-ink">
                           {member.name}
                         </h3>

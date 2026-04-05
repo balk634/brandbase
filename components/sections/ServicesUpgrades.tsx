@@ -155,9 +155,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
         <div className="flex items-start justify-between gap-6">
           <div className="min-w-0">
             <div className="flex items-center gap-3">
-              <Kicker className="mb-4">
+              <div className="mb-4 font-mono text-[11px] uppercase tracking-[0.32em] text-ink-muted">
                 {item.id}. {item.tag}
-              </Kicker>
+              </div>
               <span className="h-1.5 w-1.5 bg-primary/70" aria-hidden="true" />
             </div>
  <h3 className="h3 mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
@@ -166,29 +166,21 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
               )}
             </h3>
             <p className="mt-3 text-[13px] text-ink-muted leading-relaxed max-w-3xl">
-                <Kicker className="mr-2">
+                <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mr-2">
                   Best for:
-                </Kicker>
+                </span>
               {item.bestFor}
             </p>
           </div>
 
-          <div
-            className={cn(
-              "h-12 w-12 border border-primary/25 bg-paper/60 grid place-items-center text-ink shrink-0"
-            )}
-            aria-hidden="true"
-          >
-            <item.Icon className="h-6 w-6" />
-          </div>
         </div>
       </div>
 
       <div className="border-t border-grid/15 grid divide-y md:divide-y-0 md:grid-cols-3 md:divide-x divide-grid/15 items-stretch">
         <div className="p-7 md:p-8 flex flex-col">
-          <Kicker className="mb-4">
+          <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
             Compare
-          </Kicker>
+          </div>
           <div className="mt-4 flex flex-col gap-3 flex-1">
             <div
               className={cn(
@@ -197,9 +189,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
                 compareStyles.typical.bg
               )}
             >
-              <Kicker className={cn("mb-3", compareStyles.typical.label)}>
+              <div className={cn("mb-3 font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.typical.label)}>
                 Typical
-              </Kicker>
+              </div>
               <ul className="mt-4 space-y-2 text-[12px] leading-relaxed text-ink/75">
                 {item.typical.map((point) => (
                   <li key={point} className="flex gap-3 leading-relaxed">
@@ -216,9 +208,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
             <div
               className={cn("border p-5 flex-1", compareStyles.brandbase.border, compareStyles.brandbase.bg)}
             >
-              <Kicker className={cn("mb-3", compareStyles.brandbase.label)}>
+              <div className={cn("mb-3 font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.brandbase.label)}>
                 BrandBase
-              </Kicker>
+              </div>
               <ul className="mt-4 space-y-2 text-[12px] leading-relaxed text-ink/80">
                 {item.brandbase.map((point) => (
                   <li key={point} className="flex gap-3 leading-relaxed">
@@ -235,9 +227,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
         </div>
 
         <div className="p-7 md:p-8 flex flex-col">
-          <Kicker className="mb-4">
+          <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
             Deliverables
-          </Kicker>
+          </div>
           <div className="mt-4 border border-grid/15 bg-paper/40 p-5 flex-1">
             <ul className="space-y-7 md:space-y-8 text-[12px] text-ink/80">
               {item.deliverables.map((deliverable) => (
@@ -248,9 +240,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
         </div>
 
         <div className="p-7 md:p-8 flex flex-col">
-          <Kicker className="mb-4">
+          <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
             Why it matters
-          </Kicker>
+          </div>
           <div className="mt-4 flex flex-col gap-3 flex-1">
             <div
               className={cn(
@@ -259,16 +251,16 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
                 compareStyles.problem.bg
               )}
             >
-              <Kicker className={cn("mb-3", compareStyles.problem.label)}>
+              <div className={cn("mb-3 font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.problem.label)}>
                 The Risk
-              </Kicker>
+              </div>
               <p className="mt-3 text-[12px] text-ink-muted leading-relaxed">{item.problem}</p>
             </div>
 
             <div className={cn("border p-5 flex-1", compareStyles.brandbase.border, compareStyles.brandbase.bg)}>
-              <Kicker className={cn("mb-3", compareStyles.brandbase.label)}>
+              <div className={cn("mb-3 font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.brandbase.label)}>
                 The Upgrade
-              </Kicker>
+              </div>
               <p className="mt-3 text-[12px] text-ink-muted leading-relaxed">{item.upgrade}</p>
             </div>
           </div>

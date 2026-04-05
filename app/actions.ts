@@ -51,12 +51,7 @@ export async function sendEmail(formData: FormData) {
             return { success: false, error: "Submitted content is too long." };
         }
 
-        if (process.env.NODE_ENV === "production" && !hasRedisRateLimitConfig) {
-            return {
-                success: false,
-                error: "Contact form is temporarily unavailable. Please try again shortly.",
-            };
-        }
+        // Rate limiting is handled in isContactSubmissionRateLimited with a memory fallback if Redis is missing.
 
         if (await isContactSubmissionRateLimited(email)) {
             return { success: false, error: "Please wait a minute before sending another message." };

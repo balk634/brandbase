@@ -36,9 +36,6 @@ function isFallbackRateLimited(email: string, now: number) {
 export async function isContactSubmissionRateLimited(email: string) {
   const now = Date.now();
   if (!redisClient) {
-    if (isProduction) {
-      return true;
-    }
     return isFallbackRateLimited(email, now);
   }
 

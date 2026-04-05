@@ -115,28 +115,9 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                 ${isDark ? "hover:bg-premium-800/40" : "hover:bg-ink/[0.02]"}`}>
 
                 <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-8 items-center h-full">
-                    {/* Left Column: Icon Box */}
-                    <div className={`hidden md:flex h-16 w-16 items-center justify-center border transition-colors shrink-0
-                        ${isDark
-                            ? "border-white/10 bg-white/5 text-white/70 group-hover:bg-white/10 group-hover:text-white group-hover:border-white/30"
-                            : "border-ink/10 bg-ink/5 text-ink-muted group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/30"
-                        }`}
-                    >
-                        <item.Icon className="h-8 w-8" strokeWidth={1.2} />
-                    </div>
-
                     {/* Middle Column: Content stack */}
                     <div className="flex flex-col h-full justify-center">
                         <div className="flex items-center gap-4">
-                            {/* Mobile Icon */}
-                            <div className={`md:hidden h-14 w-14 flex items-center justify-center border transition-colors shrink-0
-                                ${isDark
-                                    ? "border-white/10 bg-white/5 text-white/70"
-                                    : "border-ink/10 bg-ink/5 text-ink-muted"
-                                }`}
-                            >
-                                <item.Icon className="h-7 w-7" strokeWidth={1.2} />
-                            </div>
                             <h3 className={`font-serif text-2xl md:text-3xl lg:text-4xl tracking-tight leading-[1.1] transition-colors
                                 ${isDark ? "text-white group-hover:text-white/80" : "text-ink group-hover:text-primary"}`}>
                                 {restTitle} <em className={`font-serif-10 italic ${isDark ? "text-white/80" : "text-ink/80"}`}>{lastWord}</em>
@@ -243,9 +224,9 @@ function PillarCard({
                                     isImageLeft ? "md:order-last" : isImageRight ? "md:order-first" : ""
                                 }`}
                             >
-                                <Kicker className="mb-8">
+                                <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                                     {kicker}
-                                </Kicker>
+                                </div>
 
                                 <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-ink/90">
                                     {titleLine1}<br />

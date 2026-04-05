@@ -26,6 +26,11 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
   const [formStartedAt] = useState(() => Date.now().toString());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const isEmailValid = email === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isPhoneValid = phone === "" || /^\+?[\d\s-]{10,}$/.test(phone);
 
   // Notification function
   const showNotification = (type: "success" | "error", message: string) => {
@@ -83,8 +88,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                   </div>
 
                   <div className="mt-6 border border-grid/15 bg-paper/40 divide-y divide-grid/15">
-                    <div className="p-5 flex items-start gap-4">
-                      <IconMail className="h-5 w-5 text-primary shrink-0" strokeWidth={1.5} />
+                    <div className="p-5">
                       <div>
                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                           Email
@@ -98,8 +102,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                       </div>
                     </div>
 
-                    <div className="p-5 flex items-start gap-4">
-                      <IconPhone className="h-5 w-5 text-primary shrink-0" strokeWidth={1.5} />
+                    <div className="p-5">
                       <div>
                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                           Phone
@@ -113,8 +116,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                       </div>
                     </div>
 
-                    <div className="p-5 flex items-start gap-4">
-                      <IconMapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
+                    <div className="p-5">
                       <div>
                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                           Office
@@ -129,8 +131,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                       </div>
                     </div>
 
-                    <div className="p-5 flex items-start gap-4">
-                      <IconClock className="h-5 w-5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
+                    <div className="p-5">
                       <div>
                         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                           Response Time
@@ -164,11 +165,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                         tabIndex={-1}
                         type="text"
                       />
-                      {status === "error" && (
-                        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-600 text-sm">
-                          {errorMessage}
-                        </div>
-                      )}
+                      {/* Inline error message removed for bottom-right notification feed */}
 
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
@@ -194,11 +191,17 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                             Email <span className="text-primary">*</span>
                           </label>
                           <input
-                            className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                            className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                              !isEmailValid && email !== ""
+                                ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
+                                : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
+                            }`}
                             id="contact-page-email"
                             name="email"
                             type="email"
                             autoComplete="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                           />
                         </div>
@@ -212,11 +215,20 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                           Phone Number
                         </label>
                         <input
-                          className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                          className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                            !isPhoneValid && phone !== ""
+                              ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
+                              : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
+                          }`}
                           id="contact-page-phone"
                           name="phone"
                           type="tel"
                           autoComplete="tel"
+                          value={phone}
+                          onChange={(e) => {
+                            const val = e.target.value.replace(/[^\d+\s-]/g, "");
+                            setPhone(val);
+                          }}
                         />
                       </div>
 
@@ -318,11 +330,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                 tabIndex={-1}
                 type="text"
               />
-              {status === "error" && (
-                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-600 text-sm">
-                  {errorMessage}
-                </div>
-              )}
+              {/* Inline error message removed for bottom-right notification feed */}
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -348,11 +356,17 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                     Email <span className="text-primary">*</span>
                   </label>
                   <input
-                    className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                      !isEmailValid && email !== ""
+                        ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
+                        : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
+                    }`}
                     id="contact-email"
                     name="email"
                     type="email"
                     autoComplete="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                   />
                 </div>
@@ -366,11 +380,20 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
                   Phone Number
                 </label>
                 <input
-                  className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                    !isPhoneValid && phone !== ""
+                      ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
+                      : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
+                  }`}
                   id="contact-phone"
                   name="phone"
                   type="tel"
                   autoComplete="tel"
+                  value={phone}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/[^\d+\s-]/g, "");
+                    setPhone(val);
+                  }}
                 />
               </div>
 

@@ -206,9 +206,9 @@ export default function WebsiteSolutionsPage() {
                     {/* Right: Content */}
                     <div className="flex flex-col h-full justify-between">
                       <div>
-                        <Kicker className="mb-3">
+                        <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                           {path.label}
-                        </Kicker>
+                        </div>
                         <h3 className="mt-2 text-lg sm:text-xl font-serif tracking-tight text-ink leading-tight">
                           {path.title}
                         </h3>

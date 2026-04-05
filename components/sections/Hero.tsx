@@ -7,6 +7,7 @@ import { masterConfig } from "@/config/master";
 import Link from "next/link";
 import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
+import { Kicker } from "@/components/ui/Kicker";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IconArrowRight, IconStack2, IconArrowDown } from "@tabler/icons-react";
 
@@ -32,12 +33,8 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 border border-ink/20 bg-ink/5 text-ink"
                     >
-                        <IconStack2 className="h-3.5 w-3.5" strokeWidth={2} />
-                        <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
-                            {hero.tag}
-                        </span>
+                        <Kicker>{hero.tag}</Kicker>
                     </motion.div>
 
                     <motion.h1
