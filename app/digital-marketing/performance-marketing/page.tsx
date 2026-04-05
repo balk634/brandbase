@@ -292,8 +292,13 @@ export default function PerformanceMarketingPage() {
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
                                             <BoxPattern />
-                                            <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
-                                                {item.step}
+                                            <div className="flex items-center justify-between mb-6">
+                                                <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
+                                                    {item.step}
+                                                </div>
+                                                <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary group-hover:border-primary/30 transition-colors duration-300">
+                                                    <item.Icon className="h-5 w-5" />
+                                                </div>
                                             </div>
                                             <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
                                                 {item.title1} <br />

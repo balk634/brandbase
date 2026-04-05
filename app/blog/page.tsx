@@ -9,9 +9,9 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 import { masterConfig } from "@/config/master";
 
 export const metadata = buildPageMetadata({
-  title: "BrandBase Blog | Website & Growth Playbooks",
+  title: "BrandBase Blog | Website Strategy & Growth Marketing Playbooks",
   description:
-    "Practical guides on websites, local SEO, paid ads, and conversion systems for Indian SMBs and high-growth brands.",
+    "Practical guides on website strategy, local SEO, paid ads, and conversion systems for high-growth brands and Indian SMBs. Learn how to scale your business today.",
   path: "/blog",
 });
 

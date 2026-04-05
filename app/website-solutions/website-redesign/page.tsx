@@ -20,9 +20,9 @@ import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-    title: "Website Redesign & Rescue | BrandBase",
+    title: "Website Redesign & Rescue | Turn Underperforming Sites Into Assets",
     description:
-        "Rescue underperforming websites with conversion-first redesign, technical cleanup, and measurable growth improvements.",
+        "Professional website redesign and rescue services. We transform underperforming, dated, or slow websites into high-speed, conversion-focused business assets.",
     path: "/website-solutions/website-redesign",
 });
 
@@ -255,6 +255,9 @@ export default function RedesignRescuePage() {
                                         `}
                                     >
                                         <div className="flex items-center gap-4 mb-5">
+                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30">
+                                                <reason.Icon className="h-5 w-5" />
+                                            </div>
                                             <h3 className="font-serif text-base tracking-tight text-ink leading-tight">{reason.title}</h3>
                                         </div>
                                         <p className="text-sm text-ink-muted leading-relaxed">{reason.copy}</p>
@@ -292,6 +295,9 @@ export default function RedesignRescuePage() {
                                         `}
                                     >
                                         <div className="flex items-center justify-between gap-4 mb-5">
+                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30">
+                                                <item.Icon className="h-5 w-5" />
+                                            </div>
                                             <h4 className="font-serif text-base tracking-tight text-ink">{item.title}</h4>
                                         </div>
                                         <p className="text-sm text-ink-muted leading-relaxed">{item.copy}</p>

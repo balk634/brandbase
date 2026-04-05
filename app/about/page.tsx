@@ -9,9 +9,9 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-  title: "About BrandBase | Team, Process & Principles",
+  title: "About BrandBase | Strategy, Design & Growth Marketing Team",
   description:
-    "Meet the BrandBase team and see how we combine strategy, design, engineering, and performance marketing to build measurable growth systems.",
+    "Meet the BrandBase team of strategists and engineers. Learn how we combine high-end design with growth marketing to build measurable systems for businesses.",
   path: "/about",
 });
 

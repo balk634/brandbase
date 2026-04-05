@@ -125,10 +125,10 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                                 }`}>
                                 <item.Icon className="h-5 w-5" />
                             </div>
-                            <h4 className={`font-serif text-2xl md:text-3xl lg:text-4xl tracking-tight leading-[1.1] transition-colors
+                            <h3 className={`font-serif text-2xl md:text-3xl lg:text-4xl tracking-tight leading-[1.1] transition-colors
                                 ${isDark ? "text-white group-hover:text-white/80" : "text-ink group-hover:text-primary"}`}>
                                 {restTitle} <em className={`font-serif-10 italic ${isDark ? "text-white/80" : "text-ink/80"}`}>{lastWord}</em>
-                            </h4>
+                            </h3>
                         </div>
 
                         <p className={`mt-4 text-[14px] leading-relaxed max-w-lg ${isDark ? "text-white/60" : "text-ink-muted"}`}>
@@ -162,7 +162,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                                     : "border-ink/10 text-ink-muted hover:border-primary hover:text-primary hover:bg-primary/5"
                                 }`}
                         >
-                            <Link href={item.href}>Explore more</Link>
+                            <Link href={item.href}>Explore {item.title}</Link>
                         </Button>
                     </div>
                 </div>

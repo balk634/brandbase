@@ -51,7 +51,7 @@ export function buildPageMetadata({
     description,
     keywords: mergedKeywords,
     alternates: {
-      canonical: canonicalPath,
+      canonical: toAbsoluteUrl(canonicalPath),
     },
     openGraph: {
       ...masterConfig.metadata.openGraph,

@@ -17,9 +17,9 @@ import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
 
 export const metadata = buildPageMetadata({
-  title: "Digital Marketing Services | BrandBase",
+  title: "Digital Marketing Services | Performance Ads & Local SEO",
   description:
-    "Performance marketing, social media management, and local SEO services focused on measurable lead and revenue growth.",
+    "BrandBase provides performance marketing, social media management, and local SEO services focused on measurable growth in leads and revenue for your business.",
   path: "/digital-marketing",
 });
 
@@ -105,14 +105,17 @@ const growthLanes: GrowthLane[] = [
 const LaneContent = ({ lane }: { lane: GrowthLane }) => (
   <div className="flex flex-col h-full justify-between">
     <div>
-    <div>
-      <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+    <div className="flex items-center justify-between mb-4">
+      <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
         {lane.label}
       </div>
-      <h3 className="h3 mt-3 text-xl font-serif tracking-tight text-ink">
-        {lane.title}
-      </h3>
+      <div className="h-8 w-8 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300">
+        <lane.Icon className="h-4 w-4" />
+      </div>
     </div>
+    <h3 className="h3 mt-3 text-xl font-serif tracking-tight text-ink">
+      {lane.title}
+    </h3>
       <p className="mt-4 text-sm text-ink-muted leading-relaxed flex-1">
         {lane.summary}
       </p>

@@ -22,9 +22,9 @@ import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-    title: "Custom Enterprise Websites | BrandBase",
+    title: "Custom Web Design & Enterprise Development | Strategy-Led Builds",
     description:
-        "Custom enterprise website design and development for complex requirements, integrations, and long-term growth.",
+        "Bespoke enterprise website design and custom development for complex business requirements. We build scalable, strategy-led systems focused on long-term growth.",
     path: "/website-solutions/custom-web-design",
 });
 
@@ -270,8 +270,13 @@ export default function CustomEnterprisePage() {
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
                                             <BoxPattern />
-                                            <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
-                                                {item.step}
+                                            <div className="flex items-center justify-between mb-6">
+                                                <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
+                                                    {item.step}
+                                                </div>
+                                                <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary group-hover:border-primary/30 transition-colors duration-300">
+                                                    <item.Icon className="h-5 w-5" />
+                                                </div>
                                             </div>
  <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
                                                 {item.title}

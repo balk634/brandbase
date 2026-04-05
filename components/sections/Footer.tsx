@@ -28,7 +28,9 @@ export function Footer() {
                     {/* Brand Col */}
                     <div className="w-full lg:w-1/3 flex flex-col justify-between items-start p-4 sm:p-6 md:p-8 lg:p-10 pt-16 sm:pt-20 md:pt-20 lg:pt-20">
                         <div>
-                            <Image src="/brand/logo-light.svg" alt="BrandBase Logo" width={200} height={32} className="h-10 w-auto mb-8" />
+                            <Link href="/">
+                                <Image src="/brand/logo-light.svg" alt="BrandBase Logo" width={200} height={32} className="h-10 w-auto mb-8" />
+                            </Link>
                             <p className="text-white/50 text-sm leading-relaxed max-w-sm">
                                 Conversion-first websites with clean tracking and SEO foundations, then performance marketing that scales. Clear plan. Measurable results.
                             </p>

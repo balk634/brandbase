@@ -90,7 +90,7 @@ export function Navbar() {
                 <Link href="/" className="mi-nav-item flex items-center gap-2" aria-label="Home" onClick={closeAllMenus}>
                     <Image 
                         src="/brand/logo-dark.svg" 
-                        alt="Logo" 
+                        alt="BrandBase — High-performance websites and marketing" 
                         width={masterConfig.logo.header.width ?? 138} 
                         height={masterConfig.logo.header.height} 
                         className="w-auto"

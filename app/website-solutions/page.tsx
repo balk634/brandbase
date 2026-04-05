@@ -9,11 +9,18 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 import { WebsiteSolutionsDeferredLoader } from "@/components/sections/WebsiteSolutionsDeferredLoader";
 import { CalButton } from "@/components/ui/CalBooking";
 import { motion } from "@/components/ui/motion-lite";
+import {
+  IconBolt,
+  IconBrandFigma,
+  IconShoppingCart,
+  IconRefresh,
+} from "@tabler/icons-react";
+import type { ComponentType } from "react";
 
 export const metadata = buildPageMetadata({
-  title: "Website Solutions | BrandBase",
+  title: "Website Solutions | Conversion-First Design & Development",
   description:
-    "Conversion-first website strategy, design, and development services for startups, SMBs, and scaling brands.",
+    "BrandBase provides conversion-first website strategy, design, and development services for startups and scaling brands. Choice of pay-monthly or custom tracks.",
   path: "/website-solutions",
 });
 
@@ -47,6 +54,7 @@ type SolutionPath = {
   outcome: string;
   href: string;
   image: string;
+  Icon: ComponentType<{ className?: string }>;
 };
 
 const solutionPaths: SolutionPath[] = [
@@ -58,6 +66,7 @@ const solutionPaths: SolutionPath[] = [
     outcome: "Get live quickly and start collecting qualified leads.",
     href: "/website-solutions/premium-static-websites",
     image: masterConfig.ui.heroImages.websiteSolutionsPremiumStatic,
+    Icon: IconBolt,
   },
   {
     label: "CORE TRACK 02",
@@ -67,6 +76,7 @@ const solutionPaths: SolutionPath[] = [
     outcome: "Own custom flows and reduce operational bottlenecks.",
     href: "/website-solutions/custom-web-design",
     image: masterConfig.ui.heroImages.websiteSolutionsCustomEnterprise,
+    Icon: IconBrandFigma,
   },
   {
     label: "CORE TRACK 03",
@@ -76,6 +86,7 @@ const solutionPaths: SolutionPath[] = [
     outcome: "Increase checkout completion and repeat customer revenue.",
     href: "/website-solutions/ecommerce-development",
     image: masterConfig.ui.heroImages.websiteSolutionsEcommerce,
+    Icon: IconShoppingCart,
   },
   {
     label: "SPECIALIZED TRACK",
@@ -85,6 +96,7 @@ const solutionPaths: SolutionPath[] = [
     outcome: "Recover lost conversions without overbuilding from scratch.",
     href: "/website-solutions/website-redesign",
     image: masterConfig.ui.heroImages.websiteSolutionsRedesignRescue,
+    Icon: IconRefresh,
   },
 ];
 
@@ -206,8 +218,13 @@ export default function WebsiteSolutionsPage() {
                     {/* Right: Content */}
                     <div className="flex flex-col h-full justify-between">
                       <div>
-                        <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
-                          {path.label}
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                            {path.label}
+                          </div>
+                          <div className="h-8 w-8 border border-grid/15 bg-paper/60 grid place-items-center text-primary group-hover:border-primary/30 transition-colors duration-300">
+                            <path.Icon className="h-4 w-4" />
+                          </div>
                         </div>
                         <h3 className="mt-2 text-lg sm:text-xl font-serif tracking-tight text-ink leading-tight">
                           {path.title}

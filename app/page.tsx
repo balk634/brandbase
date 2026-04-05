@@ -21,7 +21,7 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 export const metadata = buildPageMetadata({
   title: "BrandBase | Conversion-First Websites & Performance Marketing",
   description:
-    "BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing.",
+    "BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with data-driven performance marketing for brands.",
   path: "/",
 });
 

@@ -1,13 +1,16 @@
-import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
-export const metadata: Metadata = buildPageMetadata({
-  title: "Pricing Estimate | BrandBase",
+export const metadata = buildPageMetadata({
+  title: "Pricing Estimate | Strategy, Web & Marketing Quote",
   description:
-    "Build your custom website and marketing package, estimate project scope, and get a tailored strategy quote.",
+    "Build your custom website and marketing package. Get an instant scope estimate and tailored growth strategy from the BrandBase team today.",
   path: "/pricing",
 });
 
-export default function PricingLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default function PricingLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }
