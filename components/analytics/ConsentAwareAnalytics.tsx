@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Script from "next/script";
 
 type ConsentAwareAnalyticsProps = {
   measurementId?: string;
@@ -8,83 +9,54 @@ type ConsentAwareAnalyticsProps = {
 
 declare global {
   interface Window {
-    __BrandBaseGaLoaded?: boolean;
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
   }
 }
 
-function loadGoogleAnalytics(measurementId: string) {
-  if (!measurementId || window.__BrandBaseGaLoaded) return;
-  window.__BrandBaseGaLoaded = true;
-
-  const script = document.createElement("script");
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
-  script.async = true;
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer?.push(args);
-  };
-
-  window.gtag("js", new Date());
-  window.gtag("config", measurementId, { anonymize_ip: true });
-}
-
-function scheduleIdleLoad(callback: () => void) {
-  type RequestIdleCallback = (
-    cb: () => void,
-    opts?: { timeout?: number }
-  ) => number;
-  type CancelIdleCallback = (id: number) => void;
-
-  const requestIdle = (window as unknown as { requestIdleCallback?: RequestIdleCallback })
-    .requestIdleCallback;
-  const cancelIdle = (window as unknown as { cancelIdleCallback?: CancelIdleCallback })
-    .cancelIdleCallback;
-
-  if (typeof requestIdle === "function") {
-    const idleId = requestIdle(callback, { timeout: 3000 });
-    return () => {
-      if (typeof cancelIdle === "function") cancelIdle(idleId);
-    };
-  }
-
-  const timeoutId = window.setTimeout(callback, 1500);
-  return () => window.clearTimeout(timeoutId);
-}
-
 export function ConsentAwareAnalytics({ measurementId }: ConsentAwareAnalyticsProps) {
+  const [shouldLoad, setShouldLoad] = useState(false);
+
   useEffect(() => {
     if (!measurementId) return;
 
-    let clearIdleLoad: (() => void) | null = null;
-
-    const attemptLoad = () => {
+    const checkConsent = () => {
       let consent = "";
       try {
         consent = localStorage.getItem("cookie-consent") || "";
       } catch {
         consent = "";
       }
-
-      if (consent !== "accepted") return;
-
-      clearIdleLoad?.();
-      clearIdleLoad = scheduleIdleLoad(() => {
-        loadGoogleAnalytics(measurementId);
-      });
+      setShouldLoad(consent === "accepted");
     };
 
-    attemptLoad();
-    window.addEventListener("cookie-consent-updated", attemptLoad);
+    checkConsent();
+    window.addEventListener("cookie-consent-updated", checkConsent);
 
     return () => {
-      window.removeEventListener("cookie-consent-updated", attemptLoad);
-      clearIdleLoad?.();
+      window.removeEventListener("cookie-consent-updated", checkConsent);
     };
   }, [measurementId]);
 
-  return null;
+  if (!measurementId || !shouldLoad) return null;
+
+  return (
+    <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${measurementId}', {
+            anonymize_ip: true,
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+    </>
+  );
 }

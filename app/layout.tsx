@@ -7,9 +7,11 @@ import { ConsentAwareAnalytics } from "@/components/analytics/ConsentAwareAnalyt
 import { Agentation } from "agentation";
 
 import { Navbar } from "@/components/sections/Navbar";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 import { NotificationContainer } from "@/components/ui/Notification";
+import { CookieConsent } from "@/components/ui/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(masterConfig.metadata.baseUrl),
   title: masterConfig.metadata.title,
   description: masterConfig.metadata.description,
-  alternates: {
-    canonical: "/",
-  },
   keywords: masterConfig.metadata.keywords,
   authors: masterConfig.metadata.authors,
   creator: masterConfig.metadata.creator,
@@ -130,10 +129,12 @@ export default function RootLayout({
         ) : null}
         <div className="min-h-screen min-h-[100svh] flex flex-col relative z-10 w-full overflow-x-hidden">
           <Navbar />
+          <Breadcrumbs />
           {children}
           <Footer />
         </div>
         <NotificationContainer />
+        <CookieConsent />
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>

@@ -1,27 +1,29 @@
-# BrandBase - AI Context
+# BrandBase | Conversion-First Websites & Performance Marketing
 
-BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.
+BrandBase specializes in high-performance digital infrastructure for businesses. We build fast, conversion-optimized websites and scale them with data-driven marketing.
 
-## Core Documentation
-- [Website Solutions Overview](https://brandbase.in/website-solutions): comprehensive breakdown of our digital engineering capabilities.
-- [Premium Static Sites](https://brandbase.in/website-solutions/premium-static): high-performance marketing landing pages.
-- [Custom Enterprise Applications](https://brandbase.in/website-solutions/custom-enterprise): bespoke React and Next.js applications for scaling businesses.
-- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce): conversion-first storefronts and scalable builds.
-- [Redesign Rescue](https://brandbase.in/website-solutions/redesign-rescue): transformative UX/UI overhauls for legacy platforms.
-- [Digital Marketing](https://brandbase.in/digital-marketing): paid media, social execution, and local visibility run as one system.
-- [Performance Marketing](https://brandbase.in/digital-marketing/performance-marketing): CAC-disciplined acquisition across Meta and Google.
-- [Social Media Management](https://brandbase.in/digital-marketing/management): strategy, content planning, execution, and community handling.
-- [Local SEO](https://brandbase.in/digital-marketing/local-seo): Google Maps and local search optimization for calls and bookings.
+## Core Services
 
-## Pricing & Philosophy
-- [Pricing Model](https://brandbase.in/pricing): choose Pay Monthly for low-risk launch, or custom projects for complex builds and growth programs.
+### [Website Solutions](https://brandbase.in/website-solutions)
+- [Premium Static Websites](https://brandbase.in/website-solutions/premium-static-websites): Zero upfront cost, high-speed performance.
+- [Custom Web Design](https://brandbase.in/website-solutions/custom-web-design): Bespoke designs for established brands.
+- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce-development): High-converting Shopify and custom storefronts.
+- [Website Redesign](https://brandbase.in/website-solutions/website-redesign): Rescuing lost conversions and technical debt.
 
-## Optional Resources
-- [Our Process](https://brandbase.in/process): transparent, phase-by-phase breakdown of our operational methodologies.
-- [Agency Blog](https://brandbase.in/blog): deep dives into engineering, design philosophy, and performance marketing strategies.
-- [About Us](https://brandbase.in/about): leadership, mission, and guiding principles.
+### [Digital Marketing](https://brandbase.in/digital-marketing)
+- [Performance Marketing](https://brandbase.in/digital-marketing/performance-marketing): Surgical Meta and Google Ads management.
+- [Social Media Management](https://brandbase.in/digital-marketing/social-media-management): Brand-focused organic growth.
+- [Local SEO & Google Maps](https://brandbase.in/digital-marketing/local-seo-google-maps): Dominating local search intent.
 
-## Contact Information
-- Website: https://brandbase.in
+## Technical Foundation
+- **Stack**: Next.js 15+, React, Tailwind CSS, TypeScript.
+- **Hosting**: Netlify / Vercel.
+- **Analytics**: GA4, Google Tag Manager, custom conversion tracking.
+- **Performance**: Edge-cached, minimal JS footprint, optimized LCP.
+
+## Support & Contact
+- [Pricing](https://brandbase.in/pricing)
+- [About Us](https://brandbase.in/about)
+- [Contact](https://brandbase.in/contact)
 - Email: info@brandbase.in
-- New Business Inquiries: https://brandbase.in/contact
+- Phone: +91 9113702669

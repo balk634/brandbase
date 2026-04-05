@@ -118,10 +118,17 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                     {/* Middle Column: Content stack */}
                     <div className="flex flex-col h-full justify-center">
                         <div className="flex items-center gap-4">
-                            <h3 className={`font-serif text-2xl md:text-3xl lg:text-4xl tracking-tight leading-[1.1] transition-colors
+                            <div className={`h-10 w-10 border grid place-items-center shrink-0
+                                ${isDark 
+                                    ? "border-white/10 bg-white/5 text-white/90" 
+                                    : "border-primary/20 bg-primary/5 text-primary"
+                                }`}>
+                                <item.Icon className="h-5 w-5" />
+                            </div>
+                            <h4 className={`font-serif text-2xl md:text-3xl lg:text-4xl tracking-tight leading-[1.1] transition-colors
                                 ${isDark ? "text-white group-hover:text-white/80" : "text-ink group-hover:text-primary"}`}>
                                 {restTitle} <em className={`font-serif-10 italic ${isDark ? "text-white/80" : "text-ink/80"}`}>{lastWord}</em>
-                            </h3>
+                            </h4>
                         </div>
 
                         <p className={`mt-4 text-[14px] leading-relaxed max-w-lg ${isDark ? "text-white/60" : "text-ink-muted"}`}>

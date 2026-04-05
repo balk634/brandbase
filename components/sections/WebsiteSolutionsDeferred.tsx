@@ -150,7 +150,7 @@ const bentoItems = [
   },
 
   {
-    title: "SEO as a compounding asset",
+    title: "Compounding SEO",
     copy: "Structured foundations turn search into a channel that pays back over time.",
     Icon: IconTrendingUp,
   },
@@ -198,8 +198,10 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                     whileHover={{ y: -2, transition: { duration: 0.18 } }}
                     className={`mi-card relative border border-grid/15 bg-white flex flex-col group overflow-hidden col-span-1 ${layoutClass} ${isMini ? "p-5 md:p-6" : "p-6 md:p-8"}`}
                   >
-                  <BoxPattern />
                   <div className="relative z-10 flex flex-col h-full">
+                    <div className={`border border-primary/20 bg-primary/5 grid place-items-center text-primary flex-shrink-0 ${isMini ? "h-8 w-8 rounded-md mb-4" : "h-10 w-10 mb-6"}`}>
+                      <pillar.Icon className={isMini ? "h-4 w-4" : "h-5 w-5"} />
+                    </div>
                     <div className={isLarge ? "" : "mt-auto"}>
                       <h3 className={`font-serif tracking-tight text-ink mb-2 md:mb-3 leading-tight ${isMini ? "text-lg md:text-xl" : "text-xl md:text-2xl"}`}>
                         {pillar.title}
@@ -244,9 +246,11 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                     className={`relative flex flex-col items-stretch ${i < sprintSteps.length - 1 ? "pb-0" : ""}`}
                   >
                     <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                      <BoxPattern />
                       <div className="font-mono text-5xl font-bold tracking-tight text-ink mb-6">
                         {item.step}
+                      </div>
+                      <div className="h-11 w-11 border border-grid/15 bg-white grid place-items-center text-ink group-hover:text-primary group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors duration-300 mb-6">
+                        <item.Icon className="h-5 w-5" />
                       </div>
                       <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
                         {item.title1} <br />

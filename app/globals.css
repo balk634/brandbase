@@ -766,9 +766,9 @@ a.card-hover {
 }
 
 .nc-process-connector > span {
+  flex: none;
   width: var(--process-connector-dot-size, 3px);
   height: var(--process-connector-dot-size, 3px);
-  border-radius: 9999px;
   background: var(--process-connector-dot-color, var(--color-ink-muted));
   opacity: var(--process-connector-dot-opacity-min, 0.12);
   animation: ncProcessDotPulse var(--process-connector-duration, 1400ms) ease-in-out infinite;

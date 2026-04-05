@@ -17,7 +17,7 @@ function getTechAbbreviation(tech: string) {
 
 function TechIcon({ tech }: { tech: string }) {
     return (
-        <span className="relative h-6 w-6 grid place-items-center overflow-hidden">
+        <span className="relative h-6 w-6 grid place-items-center overflow-hidden" aria-label={tech}>
             <span className="font-mono text-[8px] leading-none text-ink-muted">
                 {getTechAbbreviation(tech)}
             </span>

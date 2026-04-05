@@ -226,7 +226,7 @@ export default function WebsiteSolutionsPage() {
                         </div>
                         
                         <Button asChild variant="outline" size="sm" className="mt-5 text-[11px] uppercase tracking-wider font-bold">
-                          <Link href={path.href}>Explore Path</Link>
+                          <Link href={path.href}>Explore {path.title}</Link>
                         </Button>
                       </div>
                     </div>

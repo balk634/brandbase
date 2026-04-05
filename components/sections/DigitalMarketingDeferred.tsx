@@ -131,8 +131,11 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                   ].map((item) => (
                     <div
                       key={item.lane}
-                      className="mi-row py-4 first:pt-0 last:pb-0"
+                      className="mi-row py-4 first:pt-0 last:pb-0 flex items-start gap-4"
                     >
+                      <div className="h-10 w-10 border border-primary/20 bg-primary/5 grid place-items-center text-primary shrink-0 mt-0.5">
+                        <item.Icon className="h-5 w-5" />
+                      </div>
                       <div>
                         <p className="text-sm font-semibold text-ink">{item.lane}</p>
                         <p className="mt-1 text-sm text-ink-muted">
@@ -185,8 +188,13 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                       key={stat.label}
                       className="mi-card border border-grid/15 bg-white p-5 md:p-6"
                     >
-                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
-                        {stat.label}
+                      <div className="flex items-center justify-between gap-4 mb-4">
+                        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
+                          {stat.label}
+                        </div>
+                        <div className="h-8 w-8 border border-primary/20 bg-primary/5 grid place-items-center text-primary shrink-0">
+                          <stat.Icon className="h-4 w-4" />
+                        </div>
                       </div>
                     <div className="mt-3 font-serif text-xl md:text-2xl tracking-tight text-ink">
                       {stat.value}
@@ -237,32 +245,34 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                         {growthLevers.map((item) => (
                           <div
                             key={item.text}
-                            className="mi-row py-4 first:pt-0 last:pb-0"
+                            className="mi-row py-4 first:pt-0 last:pb-0 flex items-start gap-3"
                           >
-                        <p className="text-sm text-ink leading-relaxed">{item.text}</p>
+                            <item.Icon className="h-4 w-4 text-green-800 shrink-0 mt-0.5" />
+                            <p className="text-sm text-ink leading-relaxed">{item.text}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="p-7 md:p-10">
-                  <div className="flex items-center gap-2.5 text-ink-muted mb-6">
-                    <div className="h-10 w-10 border border-red-500/25 bg-red-500/10 text-red-600 grid place-items-center">
-                      <IconX className="h-4 w-4" />
                     </div>
- <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">
-                      WHERE MONEY IS WASTED
-                    </h3>
-                  </div>
-                  <div className="divide-y divide-grid/10">
-                    {budgetDrains.map((item) => (
-                      <div
-                        key={item.text}
-                        className="mi-row py-4 first:pt-0 last:pb-0"
-                      >
-                        <p className="text-sm text-ink leading-relaxed">{item.text}</p>
+                    <div className="p-7 md:p-10">
+                      <div className="flex items-center gap-2.5 text-ink-muted mb-6">
+                        <div className="h-10 w-10 border border-red-500/25 bg-red-500/10 text-red-600 grid place-items-center">
+                          <IconX className="h-4 w-4" />
+                        </div>
+                        <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">
+                          WHERE MONEY IS WASTED
+                        </h3>
                       </div>
-                    ))}
-                  </div>
+                      <div className="divide-y divide-grid/10">
+                        {budgetDrains.map((item) => (
+                          <div
+                            key={item.text}
+                            className="mi-row py-4 first:pt-0 last:pb-0 flex items-start gap-3"
+                          >
+                            <item.Icon className="h-4 w-4 text-red-600 shrink-0 mt-0.5" />
+                            <p className="text-sm text-ink leading-relaxed">{item.text}</p>
+                          </div>
+                        ))}
+                      </div>
                 </div>
               </div>
             </div>
