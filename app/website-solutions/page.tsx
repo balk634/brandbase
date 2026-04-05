@@ -97,7 +97,7 @@ export default function WebsiteSolutionsPage() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="order-2 lg:order-1">
                 <motion.div variants={fadeInLeft}>
-                  <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary">
+                  <Kicker>
                     WEBSITE SOLUTIONS
                   </Kicker>
                 </motion.div>
@@ -178,9 +178,9 @@ export default function WebsiteSolutionsPage() {
             variants={staggerContainer}
           >
             <div className="mb-14 md:mb-16">
-              <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+              <Kicker className="mb-6">
                 SOLUTION PATHS
-              </div>
+              </Kicker>
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 Choose your path based on business model, urgency, and technical
                 <em className="font-serif-10 italic"> depth.</em>
@@ -206,9 +206,9 @@ export default function WebsiteSolutionsPage() {
                     {/* Right: Content */}
                     <div className="flex flex-col h-full justify-between">
                       <div>
-                        <div className="font-mono text-[9px] uppercase tracking-[0.3em] text-ink-muted">
+                        <Kicker className="mb-3">
                           {path.label}
-                        </div>
+                        </Kicker>
                         <h3 className="mt-2 text-lg sm:text-xl font-serif tracking-tight text-ink leading-tight">
                           {path.title}
                         </h3>

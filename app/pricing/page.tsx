@@ -306,7 +306,7 @@ export default function PricingPage() {
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-8 md:p-12">
               <div className="text-center">
-                <Kicker className="mx-auto text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> PRICING </Kicker>
+                <Kicker className="mx-auto"> PRICING </Kicker>
               </div>
 
  <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
@@ -321,9 +321,9 @@ export default function PricingPage() {
               <div className="border border-grid/15 bg-paper/30">
                 <div className="grid md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-grid/15">
                   <div className="md:col-span-7 p-6 sm:p-7 md:p-8">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                    <Kicker className="mb-4">
                       Build your package
-                    </div>
+                    </Kicker>
                     <p className="mt-3 text-sm text-ink-muted leading-relaxed max-w-xl">
                       Check a category to unlock its options. Nothing is collapsible, everything stays visible. When you uncheck a parent, its child options reset.
                     </p>
@@ -534,9 +534,9 @@ export default function PricingPage() {
                         }}
                       >
                         <div className="border border-grid/15 bg-white p-5">
-                          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                          <Kicker className="mb-4">
                             Scope estimate
-                          </div>
+                          </Kicker>
                           <div className="mt-3 flex items-end justify-between gap-4">
                             <div className="min-w-0">
  <div className="font-serif text-xl tracking-tight text-ink">
@@ -548,31 +548,33 @@ export default function PricingPage() {
                             </div>
                           </div>
                           <div className="mt-5 border-t border-grid/15 pt-5">
-                            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                            <Kicker className="mb-4">
                               Selected items
-                            </div>
+                            </Kicker>
                             <div className="mt-3 space-y-1">
                               {scope.summary.map((line) => (
                                 <div
                                   key={`${line.kind}:${line.indent}:${line.label}`}
                                   className={cn(
                                     line.kind === "group"
-                                      ? "pt-3 first:pt-0 font-mono text-[10px] uppercase tracking-[0.35em] text-ink"
+                                      ? "pt-3 first:pt-0"
                                       : "flex items-start gap-2 text-sm text-ink-muted leading-relaxed"
                                   )}
                                   style={
                                     line.kind === "item" ? { paddingLeft: line.indent * 12 } : undefined
                                   }
                                 >
-                                  {line.kind === "item" ? (
+                                  {line.kind === "group" ? (
+                                    <div className="mb-2">
+                                      <Kicker>{line.label}</Kicker>
+                                    </div>
+                                  ) : (
                                     <>
                                       <span aria-hidden className="mt-[3px] text-ink-muted/70">
                                         •
                                       </span>
                                       <span className="min-w-0">{line.label}</span>
                                     </>
-                                  ) : (
-                                    <span>{line.label}</span>
                                   )}
                                 </div>
                               ))}

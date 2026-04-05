@@ -114,7 +114,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
             <div className={`flex-1 p-6 md:p-8 lg:p-10 transition-colors
                 ${isDark ? "hover:bg-premium-800/40" : "hover:bg-ink/[0.02]"}`}>
 
-                <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-8 items-center h-full">
+                <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-8 items-center h-full">
                     {/* Left Column: Icon Box */}
                     <div className={`hidden md:flex h-16 w-16 items-center justify-center border transition-colors shrink-0
                         ${isDark
@@ -147,7 +147,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                             {item.description}
                         </p>
 
-                        <div className="mt-6 flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-2">
                             {item.pills.map((pill) => (
                                 <span
                                     key={pill}
@@ -164,7 +164,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                     </div>
 
                     {/* Right Column: CTA (Vertically Centered & Responsive) */}
-                    <div className="flex items-center justify-center md:justify-end mt-8 md:mt-0 w-full md:w-auto">
+                    <div className="flex items-center justify-center md:justify-end mt-0 md:mt-0 w-full md:w-auto">
                         <Button
                             asChild
                             variant="ghost"
@@ -243,9 +243,9 @@ function PillarCard({
                                     isImageLeft ? "md:order-last" : isImageRight ? "md:order-first" : ""
                                 }`}
                             >
-                                <span className="inline-block border border-ink/15 px-3 py-1.5 text-[9px] md:text-[10px] uppercase font-mono tracking-[0.2em] font-medium text-ink-muted">
+                                <Kicker className="mb-8">
                                     {kicker}
-                                </span>
+                                </Kicker>
 
                                 <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-ink/90">
                                     {titleLine1}<br />

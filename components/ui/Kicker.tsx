@@ -19,7 +19,7 @@ export function Kicker({ children, className }: KickerProps) {
   return (
     <div
       className={cn(
-        "inline-flex items-center px-3 py-1 border border-grid/15 bg-paper/70 text-[10px] font-mono uppercase tracking-[0.35em] text-ink-muted",
+        "inline-flex items-center px-3 py-1.5 border border-grid/15 bg-paper/50 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.4em] text-ink-muted/80",
         className
       )}
     >

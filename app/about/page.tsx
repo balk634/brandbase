@@ -88,7 +88,7 @@ export default function AboutPage() {
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
               <div className="text-center">
-                <Kicker className="mx-auto text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> ABOUT BRANDBASE </Kicker>
+                <Kicker className="mx-auto"> ABOUT BRANDBASE </Kicker>
               </div>
 
  <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
@@ -108,9 +108,9 @@ export default function AboutPage() {
             <div className="p-4 sm:p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start lg:items-center">
                 <div className="lg:col-span-7 min-w-0">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] text-ink-muted">
+                  <Kicker className="mb-4">
                     ORIGIN
-                  </div>
+                  </Kicker>
  <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight text-ink break-words">
                     The &quot;Goldilocks&quot; <em className="font-serif-10 italic">Problem.</em>
                   </h2>
@@ -173,9 +173,9 @@ export default function AboutPage() {
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-4 sm:p-8 md:p-12">
               <div className="max-w-3xl min-w-0">
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] text-ink-muted">
-                  {"// LEADERSHIP & EXPERTISE"}
-                </div>
+                <Kicker className="mb-4">
+                  LEADERSHIP & EXPERTISE
+                </Kicker>
  <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
                   Built by <em className="font-serif-10 italic">practitioners.</em>
                 </h2>
@@ -199,9 +199,9 @@ export default function AboutPage() {
                     </div>
                     <div className="flex flex-col">
                       <div>
-                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-2">
+                        <Kicker className="mb-2">
                           {member.role}
-                        </div>
+                        </Kicker>
  <h3 className="font-serif text-xl tracking-tight text-ink">
                           {member.name}
                         </h3>

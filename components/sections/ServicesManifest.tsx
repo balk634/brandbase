@@ -260,9 +260,9 @@ export function ServicesManifest() {
                                         <service.Icon className="h-5 w-5" strokeWidth={1.5} />
                                     </div>
                                     <div>
-                                        <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                                        <Kicker className="mb-1">
                                             {service.label}
-                                        </div>
+                                        </Kicker>
  <div className="mt-2 font-serif text-xl uppercase tracking-tight">
                                             <em className="font-serif-10 italic">{service.category}</em>
                                         </div>

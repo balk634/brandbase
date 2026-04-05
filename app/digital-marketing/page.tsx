@@ -68,7 +68,7 @@ type GrowthLane = {
 
 const growthLanes: GrowthLane[] = [
   {
-    label: "CORE LANE 01",
+    label: "CORE LANE 02",
     title: "Paid Advertising",
     summary:
       "We put your message in front of people ready to spend money, with a strict focus on getting you a return on every dollar.",
@@ -79,7 +79,7 @@ const growthLanes: GrowthLane[] = [
     image: masterConfig.ui.heroImages.socialMediaGrowthPerformanceMarketing,
   },
   {
-    label: "CORE LANE 02",
+    label: "CORE LANE 01",
     title: "Social Presence",
     summary:
       "We make your brand look active and professional so that when customers find you, they trust you immediately.",
@@ -107,9 +107,9 @@ const LaneContent = ({ lane }: { lane: GrowthLane }) => (
     <div>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">
+          <Kicker className="mb-3">
             {lane.label}
-          </div>
+          </Kicker>
           <h3 className="h3 mt-3 text-xl font-serif tracking-tight text-ink">
             {lane.title}
           </h3>
@@ -149,7 +149,7 @@ export default function DigitalMarketingPage() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <motion.div variants={fadeInLeft}>
-                  <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary">
+                  <Kicker>
                     DIGITAL MARKETING
                   </Kicker>
                 </motion.div>
@@ -228,23 +228,23 @@ export default function DigitalMarketingPage() {
             variants={staggerContainer}
           >
             <div className="mb-14 md:mb-16">
-              <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+              <Kicker className="mb-6">
                 GROWTH LANES
-              </div>
+              </Kicker>
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 Three specialist services orchestrated as one integrated <em className="font-serif-10 italic">system.</em>
               </h2>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-5 items-stretch">
-              {/* Left Column: Social Presence */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-stretch">
+              {/* Social Presence - CORE LANE 01 */}
               <motion.article
                 variants={scaleIn}
                 whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                className="lg:col-span-2 mi-card border border-grid/15 bg-white overflow-hidden flex flex-col h-full"
+                className="lg:col-span-2 lg:col-start-1 lg:row-span-2 mi-card border border-grid/15 bg-white overflow-hidden flex flex-col h-full"
               >
                 {/* Image Section */}
-                <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[400px] bg-primary/5 p-4 sm:p-6 flex items-center justify-center border-b border-grid/10">
+                <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[400px] bg-primary/5 p-4 sm:p-6 flex items-center justify-center">
                   <div className="relative w-full h-full">
                     <HeroImage src={`/${growthLanes[1].image}`} alt={growthLanes[1].title} className="object-contain object-center" />
                   </div>
@@ -255,44 +255,41 @@ export default function DigitalMarketingPage() {
                 </div>
               </motion.article>
 
-              {/* Right Column: Paid Ads & Google Map */}
-              <div className="lg:col-span-3 flex flex-col gap-4 lg:gap-5">
-                {/* Top Card: Paid Advertising */}
-                <motion.article
-                  variants={scaleIn}
-                  whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                  className="mi-card border border-grid/15 bg-white overflow-hidden flex flex-col sm:flex-row gap-0 h-full flex-1"
-                >
-                  {/* Text Section (Left on Desktop) */}
-                  <div className="flex-1 p-6 lg:p-8 flex flex-col order-2 sm:order-1 justify-center">
-                    <LaneContent lane={growthLanes[0]} />
-                  </div>
-                  {/* Image Section (Right on Desktop) */}
-                  <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 border-b sm:border-b-0 sm:border-l border-grid/10 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
-                     <div className="relative w-full h-full">
-                       <HeroImage src={`/${growthLanes[0].image}`} alt={growthLanes[0].title} className="object-contain object-center" />
-                     </div>
-                  </div>
-                </motion.article>
+              {/* Paid Advertising - CORE LANE 02 */}
+              <motion.article
+                variants={scaleIn}
+                whileHover={{ y: -2, transition: { duration: 0.18 } }}
+                className="lg:col-span-3 lg:col-start-3 lg:row-start-1 mi-card border border-grid/15 bg-white overflow-hidden flex flex-col sm:flex-row gap-0 h-full"
+              >
+                {/* Text Section (Left on Desktop) */}
+                <div className="flex-1 p-6 lg:p-8 flex flex-col order-2 sm:order-1 justify-center">
+                  <LaneContent lane={growthLanes[0]} />
+                </div>
+                {/* Image Section (Right on Desktop) */}
+                <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
+                   <div className="relative w-full h-full">
+                     <HeroImage src={`/${growthLanes[0].image}`} alt={growthLanes[0].title} className="object-contain object-center" />
+                   </div>
+                </div>
+              </motion.article>
 
-                {/* Bottom Card: The Google Map */}
-                <motion.article
-                  variants={scaleIn}
-                  whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                  className="mi-card border border-grid/15 bg-white overflow-hidden flex flex-col sm:flex-row gap-0 h-full flex-1"
-                >
-                  {/* Text Section (Left on Desktop) */}
-                  <div className="flex-1 p-6 lg:p-8 flex flex-col order-2 sm:order-1 justify-center">
-                    <LaneContent lane={growthLanes[2]} />
-                  </div>
-                  {/* Image Section (Right on Desktop) */}
-                  <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 border-b sm:border-b-0 sm:border-l border-grid/10 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
-                     <div className="relative w-full h-full">
-                       <HeroImage src={`/${growthLanes[2].image}`} alt={growthLanes[2].title} className="object-contain object-center" />
-                     </div>
-                  </div>
-                </motion.article>
-              </div>
+              {/* The Google Map - CORE LANE 03 */}
+              <motion.article
+                variants={scaleIn}
+                whileHover={{ y: -2, transition: { duration: 0.18 } }}
+                className="lg:col-span-3 lg:col-start-3 lg:row-start-2 mi-card border border-grid/15 bg-white overflow-hidden flex flex-col sm:flex-row gap-0 h-full"
+              >
+                {/* Text Section (Left on Desktop) */}
+                <div className="flex-1 p-6 lg:p-8 flex flex-col order-2 sm:order-1 justify-center">
+                  <LaneContent lane={growthLanes[2]} />
+                </div>
+                {/* Image Section (Right on Desktop) */}
+                <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
+                   <div className="relative w-full h-full">
+                     <HeroImage src={`/${growthLanes[2].image}`} alt={growthLanes[2].title} className="object-contain object-center" />
+                   </div>
+                </div>
+              </motion.article>
             </div>
 
           </motion.div>

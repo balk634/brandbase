@@ -112,7 +112,7 @@ export function ServiceCategoryPage({
                   variants={fadeUp}
                   className={imagePosition === "left" ? "lg:order-last items-start text-left lg:items-end lg:text-right" : ""}
                 >
-                  <Kicker className="bg-primary/5 border-primary/30 text-primary">{kicker}</Kicker>
+                  <Kicker>{kicker}</Kicker>
                   <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight text-ink">
                     {headline.split(' ').map((word, i, arr) => 
                         i === arr.length - 1 ? <em key={i} className="font-serif-20 italic">{word}</em> : <span key={i}>{word} </span>
@@ -188,7 +188,7 @@ export function ServiceCategoryPage({
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-grid/15">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink-muted">Typical timeline</div>
+                    <Kicker className="mb-2">Typical timeline</Kicker>
                     <div className="mt-1.5 text-sm text-ink">{service.timeline}</div>
                     <div className="mt-3 text-xs text-ink-muted leading-relaxed">
                       <span className="text-ink">Best for: </span>
@@ -245,7 +245,7 @@ export function ServiceCategoryPage({
               {process.map((item) => (
                 <div key={item.step} className="relative mi-card border border-grid/15 bg-paper/25 p-5 md:p-6">
                   <BoxPattern />
-                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{item.step}</div>
+                  <Kicker className="mb-3">{item.step}</Kicker>
  <h3 className="h3 mt-3 text-lg font-serif text-ink">
                     {item.title.split(' ').map((word, i, arr) => 
                         i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
@@ -310,7 +310,7 @@ export function ServiceCategoryPage({
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               <div className="border border-green-800/20 bg-green-800/5 p-5 md:p-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-green-900/80">Great fit</div>
+                <Kicker className="mb-4 text-green-900/80 border-green-800/20 bg-green-800/5">Great fit</Kicker>
                 <div className="mt-4 grid gap-3">
                   {fitGood.map((item) => (
                     <div key={item} className="mi-row flex items-start gap-2.5 text-sm text-green-900/80">
@@ -322,7 +322,7 @@ export function ServiceCategoryPage({
               </div>
 
               <div className="border border-red-500/25 bg-red-500/5 p-5 md:p-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-red-700/90">Not ideal</div>
+                <Kicker className="mb-4 text-red-700/90 border-red-500/25 bg-red-500/5">Not ideal</Kicker>
                 <div className="mt-4 grid gap-3">
                   {fitNot.map((item) => (
                     <div key={item} className="mi-row flex items-start gap-2.5 text-sm text-red-700/85">

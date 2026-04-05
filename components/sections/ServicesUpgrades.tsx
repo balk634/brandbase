@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { SquareTickIcon } from "@/components/icons/StatusIcons";
 import { cn } from "@/lib/utils";
+import { Kicker } from "@/components/ui/Kicker";
 import { IconStack2, IconRocket, IconTrendingUp, type IconProps } from "@tabler/icons-react";
 
 type UpgradeKind = "build" | "launch" | "scale";
@@ -154,9 +155,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
         <div className="flex items-start justify-between gap-6">
           <div className="min-w-0">
             <div className="flex items-center gap-3">
-              <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-ink-muted">
+              <Kicker className="mb-4">
                 {item.id}. {item.tag}
-              </div>
+              </Kicker>
               <span className="h-1.5 w-1.5 bg-primary/70" aria-hidden="true" />
             </div>
  <h3 className="h3 mt-4 font-serif text-2xl md:text-3xl tracking-tight text-ink">
@@ -165,9 +166,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
               )}
             </h3>
             <p className="mt-3 text-[13px] text-ink-muted leading-relaxed max-w-3xl">
-              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mr-2">
-                Best for:
-              </span>
+                <Kicker className="mr-2">
+                  Best for:
+                </Kicker>
               {item.bestFor}
             </p>
           </div>
@@ -185,9 +186,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
 
       <div className="border-t border-grid/15 grid divide-y md:divide-y-0 md:grid-cols-3 md:divide-x divide-grid/15 items-stretch">
         <div className="p-7 md:p-8 flex flex-col">
-          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+          <Kicker className="mb-4">
             Compare
-          </div>
+          </Kicker>
           <div className="mt-4 flex flex-col gap-3 flex-1">
             <div
               className={cn(
@@ -196,9 +197,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
                 compareStyles.typical.bg
               )}
             >
-              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.typical.label)}>
+              <Kicker className={cn("mb-3", compareStyles.typical.label)}>
                 Typical
-              </div>
+              </Kicker>
               <ul className="mt-4 space-y-2 text-[12px] leading-relaxed text-ink/75">
                 {item.typical.map((point) => (
                   <li key={point} className="flex gap-3 leading-relaxed">
@@ -215,9 +216,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
             <div
               className={cn("border p-5 flex-1", compareStyles.brandbase.border, compareStyles.brandbase.bg)}
             >
-              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.brandbase.label)}>
+              <Kicker className={cn("mb-3", compareStyles.brandbase.label)}>
                 BrandBase
-              </div>
+              </Kicker>
               <ul className="mt-4 space-y-2 text-[12px] leading-relaxed text-ink/80">
                 {item.brandbase.map((point) => (
                   <li key={point} className="flex gap-3 leading-relaxed">
@@ -234,9 +235,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
         </div>
 
         <div className="p-7 md:p-8 flex flex-col">
-          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+          <Kicker className="mb-4">
             Deliverables
-          </div>
+          </Kicker>
           <div className="mt-4 border border-grid/15 bg-paper/40 p-5 flex-1">
             <ul className="space-y-7 md:space-y-8 text-[12px] text-ink/80">
               {item.deliverables.map((deliverable) => (
@@ -247,9 +248,9 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
         </div>
 
         <div className="p-7 md:p-8 flex flex-col">
-          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+          <Kicker className="mb-4">
             Why it matters
-          </div>
+          </Kicker>
           <div className="mt-4 flex flex-col gap-3 flex-1">
             <div
               className={cn(
@@ -258,16 +259,16 @@ function UpgradeBlock({ item }: { item: Upgrade }) {
                 compareStyles.problem.bg
               )}
             >
-              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.problem.label)}>
+              <Kicker className={cn("mb-3", compareStyles.problem.label)}>
                 The Risk
-              </div>
+              </Kicker>
               <p className="mt-3 text-[12px] text-ink-muted leading-relaxed">{item.problem}</p>
             </div>
 
             <div className={cn("border p-5 flex-1", compareStyles.brandbase.border, compareStyles.brandbase.bg)}>
-              <div className={cn("font-mono text-[10px] uppercase tracking-[0.35em]", compareStyles.brandbase.label)}>
+              <Kicker className={cn("mb-3", compareStyles.brandbase.label)}>
                 The Upgrade
-              </div>
+              </Kicker>
               <p className="mt-3 text-[12px] text-ink-muted leading-relaxed">{item.upgrade}</p>
             </div>
           </div>
@@ -282,9 +283,9 @@ export function ServicesUpgrades() {
     <Section className="bg-transparent">
       <Container>
         <div className="mb-12 max-w-4xl">
-          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+          <Kicker className="mb-6">
             BUSINESS UPGRADES
-          </div>
+          </Kicker>
  <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
             Three upgrades. Three <em className="font-serif-10 italic">outcomes.</em>
           </h2>
