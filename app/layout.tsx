@@ -3,11 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { masterConfig } from "@/config/master";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ConsentAwareAnalytics } from "@/components/analytics/ConsentAwareAnalytics";
 import { Agentation } from "agentation";
 
 import { Navbar } from "@/components/sections/Navbar";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 import { NotificationContainer } from "@/components/ui/Notification";
@@ -115,6 +115,7 @@ export default function RootLayout({
       <link rel="preload" href="/fonts/Redaction_10-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <link rel="preload" href="/fonts/Redaction_20-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <JsonLd />
+      <BreadcrumbSchema />
         <ConsentAwareAnalytics measurementId={masterConfig.analytics?.googleAnalyticsId} />
         <PerformanceEnhancements
           enableSmoothScroll={masterConfig.ui.motion.smoothScroll}
@@ -129,7 +130,6 @@ export default function RootLayout({
         ) : null}
         <div className="min-h-screen min-h-[100svh] flex flex-col relative z-10 w-full overflow-x-hidden">
           <Navbar />
-          <Breadcrumbs />
           {children}
           <Footer />
         </div>
