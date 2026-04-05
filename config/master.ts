@@ -431,20 +431,12 @@ export const masterConfig = {
         a: "We offer flexible models. Choose our \u201cPay Monthly\u201d subscription for zero upfront cost, or our \u201cCustom Enterprise\u201d model for bespoke, complex builds. You only pay for what you need.",
       },
       {
-        q: "Do you only work with large companies?",
-        a: "Not at all. Our Pay-Monthly websites and Local SEO packages are specifically designed to help small, local Indian businesses\u2014clinics, salons, showrooms\u2014scale aggressively without breaking the bank.",
-      },
-      {
         q: "How fast can we launch?",
         a: "Standard static sites launch in under 14 days. Custom enterprise or e-commerce builds typically take 14 to 28 days depending on integration complexity.",
       },
       {
         q: "Do I own my website and data?",
         a: "100%. Once your custom project is paid, or your initial monthly contract matures, you own the domain, the code, and all ad accounts. No hostage situations.",
-      },
-      {
-        q: "What happens after launch?",
-        a: "We don\u2019t disappear. Every website comes with ongoing hosting, security monitoring, and support. All clients get weekly or monthly performance reports of website and marketing performance.",
       },
       {
         q: "Can I start small and scale up?",
