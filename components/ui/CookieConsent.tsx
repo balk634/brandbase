@@ -14,19 +14,25 @@ export function CookieConsent() {
     };
 
     const handleAction = (type: "accepted" | "declined") => {
-        if (timerRef.current) window.clearTimeout(timerRef.current);
+        if (isExiting) return; // Prevent double triggers
         
-        // Save choice immediately for analytics
+        if (timerRef.current) {
+            window.clearTimeout(timerRef.current);
+            timerRef.current = null;
+        }
+        
+        // Save choice immediately for the logic
         localStorage.setItem("cookie-consent", type);
-        notifyConsentChange();
 
         // Start exit animation
         setIsExiting(true);
         
-        // Remove from DOM after animation
+        // Remove from DOM AND trigger heavy analytics loading 
+        // only AFTER the animation is complete to prevent jank.
         setTimeout(() => {
             setShow(false);
-        }, 500); // Matches transition duration
+            notifyConsentChange();
+        }, 500); // Matches duration-500
     };
 
     const accept = () => handleAction("accepted");
