@@ -30,9 +30,6 @@ export function Testimonials() {
           <h2 className="mt-6 text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter">
             Trusted by founders and marketing leaders <em className="font-serif-10 italic">worldwide.</em>
           </h2>
-          <p className="mt-4 text-ink-muted font-mono text-sm max-w-2xl">
-            Always scrolling. Hover to pause. Drag to browse.
-          </p>
         </div>
 
         <AutoScrollScroller

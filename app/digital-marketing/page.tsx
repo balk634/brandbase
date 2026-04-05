@@ -175,21 +175,21 @@ export default function DigitalMarketingPage() {
                     <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Attribution clarity</span>
                   </motion.div>
                   <motion.div variants={fadeInLeft} className="mt-8 flex flex-wrap gap-3 order-2 sm:order-1">
-                    <Button
-                      asChild
-                      variant="primary"
-                      size="lg"
-                      className="sm:min-w-[220px]"
-                    >
-                      <Link href="#growth-lanes">See growth lanes</Link>
-                    </Button>
                     <CalButton
-                      variant="outline"
+                      variant="primary"
                       size="lg"
                       className="sm:min-w-[220px]"
                     >
                       Book a call
                     </CalButton>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="sm:min-w-[220px]"
+                    >
+                      <Link href="#growth-lanes">See growth lanes</Link>
+                    </Button>
                   </motion.div>
                 </div>
               </div>

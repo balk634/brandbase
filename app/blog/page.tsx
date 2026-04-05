@@ -91,7 +91,7 @@ export default function BlogPage() {
                 {blogPosts.map((post) => (
                   <div key={post.slug} className="border border-grid/15 bg-white p-7 md:p-8">
                     <div className="grid grid-cols-12 gap-6 items-center">
-                      <div className="col-span-12 lg:col-span-7 min-w-0">
+                      <div className="col-span-12 lg:col-span-7 min-w-0 flex flex-col items-center lg:items-start text-center lg:text-left">
                         <div className="inline-flex items-center px-3 py-1 rounded-full border border-grid/25 bg-paper/40 text-[10px] font-mono uppercase tracking-[0.35em] text-ink-muted">
                           {post.category}
                         </div>
@@ -107,7 +107,7 @@ export default function BlogPage() {
                           {post.description}
                         </p>
 
-                        <div className="mt-6 flex flex-wrap items-center gap-3">
+                        <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
                           <Button asChild variant="primary" size="sm">
                             <Link href={`/blog/${post.slug}`}>Read story</Link>
                           </Button>

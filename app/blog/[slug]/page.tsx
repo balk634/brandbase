@@ -9,6 +9,16 @@ import { blogPosts, getBlogPost } from "@/lib/blogPosts";
 import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { CalButton } from "@/components/ui/CalBooking";
+import { motion } from "@/components/ui/motion-lite";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
+};
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -155,11 +165,14 @@ export default async function BlogPostPage({
         <Container>
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-8 md:p-12">
-              <div className="flex flex-row-reverse sm:flex-row items-center justify-end sm:justify-start gap-4">
+              <motion.div 
+                variants={fadeInUp} 
+                className="flex items-center justify-center sm:justify-start gap-4"
+              >
                 <Button asChild variant="outline" size="sm">
                   <Link href="/blog">Back to Blog</Link>
                 </Button>
-              </div>
+              </motion.div>
 
               <div className="mt-10 grid lg:grid-cols-12 gap-10 items-end">
                 <div className="lg:col-span-8 min-w-0">

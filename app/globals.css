@@ -285,8 +285,13 @@ html {
   }
 
   .rich-content table {
-    @apply w-full text-left text-sm md:text-base;
+    width: 100%;
     border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    display: block;
   }
 
   .rich-content thead th {
@@ -759,8 +764,8 @@ a.card-hover {
     bottom: auto !important;
     transform: none !important;
     width: 100%;
-    height: 2rem;
-    margin-top: 0.75rem;
+    height: 3rem; /* Increased from 2rem to ensure proper spacing */
+    margin-top: 1.25rem; /* Increased from 0.75rem to prevent overlap with box top */
     justify-content: center;
   }
 }
