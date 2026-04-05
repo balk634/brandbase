@@ -1,35 +1,46 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { IconX } from "@tabler/icons-react";
 
 export function CookieConsent() {
     const [show, setShow] = useState(false);
+    const timerRef = useRef<number | null>(null);
 
     const notifyConsentChange = () => {
         window.dispatchEvent(new Event("cookie-consent-updated"));
     };
 
-    useEffect(() => {
-        const timeoutId = window.setTimeout(() => {
-            setShow(!localStorage.getItem("cookie-consent"));
-        }, 0);
-
-        return () => window.clearTimeout(timeoutId);
-    }, []);
-
     const accept = () => {
+        if (timerRef.current) window.clearTimeout(timerRef.current);
         localStorage.setItem("cookie-consent", "accepted");
         notifyConsentChange();
         setShow(false);
     };
 
     const decline = () => {
+        if (timerRef.current) window.clearTimeout(timerRef.current);
         localStorage.setItem("cookie-consent", "declined");
         notifyConsentChange();
         setShow(false);
     };
+
+    useEffect(() => {
+        const consent = localStorage.getItem("cookie-consent");
+        if (!consent) {
+            setShow(true);
+
+            // Auto-accept after 5 seconds
+            timerRef.current = window.setTimeout(() => {
+                accept();
+            }, 5000);
+
+            return () => {
+                if (timerRef.current) window.clearTimeout(timerRef.current);
+            };
+        }
+    }, []);
 
     if (!show) return null;
 
