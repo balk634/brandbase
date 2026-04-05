@@ -263,7 +263,7 @@ function PillarCard({
                             alt={imageAlt}
                             fill={true}
                             className={isImageLeft 
-                                ? "lg:object-left object-center" 
+                                ? "object-left" 
                                 : isImageRight 
                                     ? "object-left lg:object-right" 
                                     : "object-center"
