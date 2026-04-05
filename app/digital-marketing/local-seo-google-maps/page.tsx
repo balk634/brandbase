@@ -8,7 +8,6 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
     IconMapPin, IconSearch, IconStar, IconRobot,
     IconDeviceDesktop,
@@ -21,9 +20,9 @@ import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-    title: "Local SEO & Google Maps Growth | BrandBase",
+    title: "Local SEO Services & Google Maps Marketing | BrandBase India",
     description:
-        "Local SEO and Google Business Profile optimization to increase map visibility, calls, and high-intent local leads.",
+        "Dominate your local market. Our expert SEO and Google Maps optimization drives 3x more calls and bookings from people searching in your area.",
     path: "/digital-marketing/local-seo-google-maps",
 });
 
@@ -78,11 +77,11 @@ const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; 
     { Icon: IconUsers, title: "Hyper-Local Expertise", copy: "We understand neighborhood-level targeting. Whether it's one city or twenty locations, we scale local SEO methodically." },
 ];
 
-const processSteps: { step: string; title: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
-    { step: "01", title: "Competitor Geo-Audit", copy: "We analyze your local competitors, assess their Google rankings, review their profiles, and identify the gaps you can exploit.", Icon: IconSearch },
-    { step: "02", title: "Profile & On-Page Optimization", copy: "We optimize your Google Business Profile, fix your website's local SEO, add schema markup, and build citations across directories.", Icon: IconMapPin },
-    { step: "03", title: "Review Strategy Deployment", copy: "We set up automated review request systems, craft response templates, and train your team on review management best practices.", Icon: IconStar },
-    { step: "04", title: "Monthly Local Monitoring", copy: "We track your Local Pack rankings, review volume, website traffic from local searches, and send you a clear monthly report.", Icon: IconChartBar },
+const processSteps: { step: string; title1: string; title2: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
+    { step: "01", title1: "Competitor", title2: "Geo-Audit", copy: "We analyze your local competitors, assess their Google rankings, review their profiles, and identify the gaps you can exploit.", Icon: IconSearch },
+    { step: "02", title1: "Profile &", title2: "Optimization", copy: "We optimize your Google Business Profile, fix your website's local SEO, add schema markup, and build citations across directories.", Icon: IconMapPin },
+    { step: "03", title1: "Review", title2: "Strategy", copy: "We set up automated review request systems, craft response templates, and train your team on review management best practices.", Icon: IconStar },
+    { step: "04", title1: "Monthly", title2: "Monitoring", copy: "We track your Local Pack rankings, review volume, website traffic from local searches, and send you a clear monthly report.", Icon: IconChartBar },
 ];
 
 const faqItems = [
@@ -102,7 +101,7 @@ export default function LocalSEOPage() {
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                             <div>
                                 <motion.div variants={fadeInLeft}>
-                                    <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> LOCAL SEO & GOOGLE MAPS </Kicker>
+                                    <Kicker>LOCAL SEO & GOOGLE MAPS</Kicker>
                                 </motion.div>
  <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Own the &ldquo;Near Me&rdquo; <em className="font-serif-20 italic">Search Results.</em>
@@ -164,7 +163,7 @@ export default function LocalSEOPage() {
                                                 />
                                             </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
-                                                <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
+                                                <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h3>
                                             </div>
                                             <div className="space-y-4 flex-1">
                                                 {item.bullets.map((b) => (
@@ -256,7 +255,6 @@ export default function LocalSEOPage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <BoxPattern />
                                             <div className="flex items-center justify-between mb-6">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}
@@ -265,8 +263,9 @@ export default function LocalSEOPage() {
                                                     <item.Icon className="h-5 w-5" />
                                                 </div>
                                             </div>
-                                            <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                                {item.title}
+                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
                                             </h3>
                                             <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
                                                 {item.copy}

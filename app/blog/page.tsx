@@ -74,7 +74,7 @@ export default function BlogPage() {
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-8 md:p-12">
               <div className="text-center">
-                <Kicker className="mx-auto text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> BLOG </Kicker>
+                <Kicker className="mx-auto">BLOG</Kicker>
               </div>
 
  <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink">

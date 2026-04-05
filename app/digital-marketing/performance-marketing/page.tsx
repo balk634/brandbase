@@ -8,7 +8,6 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
     IconTargetArrow, IconPencil, IconArrowsSplit, IconRefresh, IconChartBar,
     IconDeviceDesktop,
@@ -21,9 +20,9 @@ import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-    title: "Performance Marketing Services | BrandBase",
+    title: "Performance Marketing & Ad Management Services | BrandBase India",
     description:
-        "ROI-driven Google Ads and Meta Ads management with conversion tracking, creative testing, and weekly optimization.",
+        "Scale your revenue with expert Meta and Google Ads management. Our ROI-driven performance marketing includes conversion tracking, testing, and weekly reports.",
     path: "/digital-marketing/performance-marketing",
 });
 
@@ -137,7 +136,7 @@ export default function PerformanceMarketingPage() {
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                             <div>
                                 <motion.div variants={fadeInLeft}>
-                                    <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> PERFORMANCE MARKETING </Kicker>
+                                    <Kicker>PERFORMANCE MARKETING</Kicker>
                                 </motion.div>
  <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Turn Ad Spend Into <em className="font-serif-20 italic">Predictable Revenue.</em>
@@ -199,7 +198,7 @@ export default function PerformanceMarketingPage() {
                                                 />
                                             </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
-                                                <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
+                                                <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h3>
                                             </div>
                                             <div className="space-y-4 flex-1">
                                                 {item.bullets.map((b) => (
@@ -291,7 +290,6 @@ export default function PerformanceMarketingPage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <BoxPattern />
                                             <div className="flex items-center justify-between mb-6">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}

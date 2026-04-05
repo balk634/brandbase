@@ -8,7 +8,6 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
     IconCalendarEvent, IconPalette, IconMessageCircle, IconTrendingUp,
     IconDeviceDesktop,
@@ -20,9 +19,9 @@ import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-    title: "Social Media Management | BrandBase",
+    title: "Organic Social Media Management & Brand Growth | BrandBase India",
     description:
-        "Strategic social media management that aligns content, brand voice, and growth goals across platforms.",
+        "Build a brand that people actually follow. Our social media management includes content strategy, design, and engagement for Instagram, LinkedIn, and Meta.",
     path: "/digital-marketing/social-media-management",
 });
 
@@ -77,11 +76,11 @@ const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; 
     { Icon: IconUsers, title: "Transparent Monthly Reporting", copy: "Clear reports showing what grew, what worked, and what we're changing next month. No vanity metrics." },
 ];
 
-const processSteps: { step: string; title: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
-    { step: "01", title: "Brand Voice & Strategy", copy: "We learn your brand, audience, and competitors. Then we build a documented content strategy with content pillars, posting cadence, and visual direction.", Icon: IconUsers },
-    { step: "02", title: "Content Creation", copy: "Our designers and writers produce a full month of content — graphics, Reels, carousels, and captions — all aligned with your brand guidelines.", Icon: IconPhoto },
-    { step: "03", title: "Approval & Scheduling", copy: "You review the content calendar, request any changes, and approve. We schedule everything for optimal posting times.", Icon: IconCalendarEvent },
-    { step: "04", title: "Publishing & Engagement", copy: "We publish on schedule, monitor performance, respond to DMs and comments, and proactively engage with your target audience daily.", Icon: IconRocket },
+const processSteps: { step: string; title1: string; title2: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
+    { step: "01", title1: "Brand Voice &", title2: "Strategy", copy: "We learn your brand, audience, and competitors. Then we build a documented content strategy with content pillars, posting cadence, and visual direction.", Icon: IconUsers },
+    { step: "02", title1: "Content", title2: "Creation", copy: "Our designers and writers produce a full month of content — graphics, Reels, carousels, and captions — all aligned with your brand guidelines.", Icon: IconPhoto },
+    { step: "03", title1: "Approval &", title2: "Scheduling", copy: "You review the content calendar, request any changes, and approve. We schedule everything for optimal posting times.", Icon: IconCalendarEvent },
+    { step: "04", title1: "Publishing &", title2: "Engagement", copy: "We publish on schedule, monitor performance, respond to DMs and comments, and proactively engage with your target audience daily.", Icon: IconRocket },
 ];
 
 const faqItems = [
@@ -101,7 +100,7 @@ export default function SocialMediaManagementPage() {
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                             <div>
                                 <motion.div variants={fadeInLeft}>
-                                    <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> SOCIAL MEDIA MANAGEMENT </Kicker>
+                                    <Kicker>SOCIAL MEDIA MANAGEMENT</Kicker>
                                 </motion.div>
  <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Stop Posting. <em className="font-serif-20 italic">Start Building a Community.</em>
@@ -163,7 +162,7 @@ export default function SocialMediaManagementPage() {
                                                 />
                                             </div>
                                             <div className="flex items-center justify-between gap-4 mb-6">
-                                                <h4 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h4>
+                                                <h3 className="font-serif text-xl md:text-2xl tracking-tight text-ink">{item.title}</h3>
                                             </div>
                                             <div className="space-y-4 flex-1">
                                                 {item.bullets.map((b) => (
@@ -255,7 +254,6 @@ export default function SocialMediaManagementPage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <BoxPattern />
                                             <div className="flex items-center justify-between mb-6">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}
@@ -264,8 +262,9 @@ export default function SocialMediaManagementPage() {
                                                     <item.Icon className="h-5 w-5" />
                                                 </div>
                                             </div>
- <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                                {item.title}
+                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
                                             </h3>
                                             <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
                                                 {item.copy}

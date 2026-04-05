@@ -136,7 +136,7 @@ export default function RedesignRescuePage() {
                             {/* Left: Copy */}
                             <div>
                                 <motion.div variants={fadeInLeft}>
-                                    <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> WEBSITE REVAMP </Kicker>
+                                    <Kicker>WEBSITE REVAMP</Kicker>
                                 </motion.div>
  <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Your Website Is Costing You <em className="font-serif-20 italic">Customers.</em>
@@ -254,13 +254,11 @@ export default function RedesignRescuePage() {
                                             ${i < 3 && i % 3 !== 0 ? "" : ""}
                                         `}
                                     >
-                                        <div className="flex items-center gap-4 mb-5">
-                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30">
+                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30 mb-6">
                                                 <reason.Icon className="h-5 w-5" />
                                             </div>
-                                            <h3 className="font-serif text-base tracking-tight text-ink leading-tight">{reason.title}</h3>
-                                        </div>
-                                        <p className="text-sm text-ink-muted leading-relaxed">{reason.copy}</p>
+                                            <h3 className="font-serif text-lg tracking-tight text-ink mb-3 leading-tight">{reason.title}</h3>
+                                            <p className="text-sm text-ink-muted leading-relaxed">{reason.copy}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -294,13 +292,11 @@ export default function RedesignRescuePage() {
                                             ${i % 3 !== 2 ? "md:border-r border-grid/15" : ""}
                                         `}
                                     >
-                                        <div className="flex items-center justify-between gap-4 mb-5">
-                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30">
+                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30 mb-6">
                                                 <item.Icon className="h-5 w-5" />
                                             </div>
-                                            <h4 className="font-serif text-base tracking-tight text-ink">{item.title}</h4>
-                                        </div>
-                                        <p className="text-sm text-ink-muted leading-relaxed">{item.copy}</p>
+                                            <h4 className="font-serif text-lg tracking-tight text-ink mb-3">{item.title}</h4>
+                                            <p className="text-sm text-ink-muted leading-relaxed">{item.copy}</p>
                                     </motion.div>
                                 ))}
                             </div>

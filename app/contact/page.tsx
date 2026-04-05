@@ -2,9 +2,9 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Contact BrandBase | Book a consultation Call",
+  title: "Contact BrandBase | Let's Build Your Next High-Performance Website",
   description:
-    "Tell us your goals and get a conversion-first website and marketing plan tailored to your business.",
+    "Ready to scale? Contact BrandBase in Mumbai for conversion-first web design and performance marketing services. Book a strategy call today.",
   path: "/contact",
 });
 

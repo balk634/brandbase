@@ -7,9 +7,9 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-    title: "Careers at BrandBase | Open Roles",
+    title: "Careers at BrandBase India | Join our High-Performance Agency",
     description:
-        "Explore open design, engineering, and growth roles at BrandBase. Join a team building conversion-first digital experiences.",
+        "Join BrandBase. We are currently hiring for design, engineering, and growth roles in Mumbai and globally. Join a team focused on conversion and craft.",
     path: "/careers",
 });
 

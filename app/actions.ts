@@ -74,25 +74,18 @@ export async function sendEmail(formData: FormData) {
         const mailSubjectPrefix =
             leadType === "quote_request" ? "BrandBase Quote request" : "BrandBase Form submission";
 
-        // Enhanced email content with better formatting
         const emailContent = `
-📋 New ${leadType === "quote_request" ? "Quote Request" : "Contact Form Submission"}
-
-👤 Contact Details:
+New ${leadType === "quote_request" ? "Quote Request" : "Contact Form Submission"}
+Contact Details:
+======
    Name: ${name}
    Email: ${email}
    Phone: ${phone || "N/A"}
-   ${subject ? `Subject: ${subject}` : ""}
-
-💬 Message:
+   
+Message:
+======
+Subject: ${subject || "N/A"}
 ${message}
-
----
-🔧 Reply Information:
-• This email was sent from your BrandBase website
-• Reply to this email to contact the user directly
-• User's email: ${email}
-• Form submitted: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
         `.trim();
 
         const { data, error } = await resend.emails.send({

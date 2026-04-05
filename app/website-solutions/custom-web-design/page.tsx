@@ -8,14 +8,14 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
-    IconCrown, IconFlame, IconTimeline, IconNetwork, IconShieldCheck, IconMailFast,
-    IconBuildingSkyscraper, IconLayoutGridAdd, IconCodeDots, IconRocket,
-    IconMap, IconTargetArrow, IconHeartHandshake, IconHourglassHigh,
-    IconAward, IconBrandFigma, IconDeviceDesktop, IconTrendingUp,
-    IconCalendarEvent, IconMailOpened, IconDatabase, IconMailForward,
-    IconHeartbeat, IconPaint, IconForms, IconAddressBook
+    IconCrown, IconFlame, IconTimeline, IconTargetArrow, IconBolt, IconSearch, IconChartBar,
+    IconDeviceDesktop, IconUsers, IconLayoutGridAdd, IconCodeDots, IconRocket,
+    IconBrandFigma, IconChartDots, IconHourglassHigh, IconShieldCheck, IconHeadset,
+    IconAward, IconPaint, IconPencil, IconCode, IconMap, IconHeartHandshake,
+    IconHeartbeat, IconMailFast, IconCalendarEvent, IconMailOpened, IconDatabase,
+    IconMailForward, IconForms, IconAddressBook, IconTrendingUp, IconBuildingSkyscraper,
+    IconNetwork
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
@@ -91,11 +91,11 @@ const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; 
     { Icon: IconHeartbeat, title: "Ongoing Partnership", copy: "We don't disappear after launch. Monthly maintenance, support, and growth consulting included." },
 ];
 
-const processSteps: { step: string; title: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
-    { step: "01", title: "Discovery & Branding", copy: "We learn your business inside out — competitors, audience, and goals. Then we build your logo, brand guidelines, and visual identity from scratch.", Icon: IconMap },
-    { step: "02", title: "Custom UI Design", copy: "High-fidelity mockups tailored to your brand. You review every screen before a single line of code is written.", Icon: IconLayoutGridAdd },
-    { step: "03", title: "Development & Integrations", copy: "We code the site, wire up the CMS, booking engine, analytics, and email marketing tools. Everything tested across devices.", Icon: IconCodeDots },
-    { step: "04", title: "Launch & Training", copy: "We deploy to production, set up hosting and email, then walk your team through how to manage the site independently.", Icon: IconRocket },
+const processSteps: { step: string; title1: string; title2: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
+    { step: "01", title1: "Deep", title2: "Discovery", copy: "Business logic, user flows, and technical requirements are mapped to ensure your site actually works for your goals.", Icon: IconUsers },
+    { step: "02", title1: "Signature", title2: "Design", copy: "High-end, original UI design that moves past templates to create a unique brand identity.", Icon: IconBrandFigma },
+    { step: "03", title1: "Custom", title2: "Build", copy: "Scalable, high-performance clean code using modern frameworks like Next.js or headless CMS options.", Icon: IconCode },
+    { step: "04", title1: "Launch &", title2: "Scale", copy: "Rigorous testing across all devices and a smooth rollout with analytics and search foundations in place.", Icon: IconRocket },
 ];
 
 const faqItems = [
@@ -115,7 +115,7 @@ export default function CustomEnterprisePage() {
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                             <div>
                                 <motion.div variants={fadeInLeft}>
-                                    <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> CUSTOM WEBSITES </Kicker>
+                                    <Kicker>CUSTOM WEBSITES</Kicker>
                                 </motion.div>
  <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Custom Websites <em className="font-serif-20 italic">Built to Scale.</em>
@@ -269,7 +269,6 @@ export default function CustomEnterprisePage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <BoxPattern />
                                             <div className="flex items-center justify-between mb-6">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}
@@ -278,8 +277,9 @@ export default function CustomEnterprisePage() {
                                                     <item.Icon className="h-5 w-5" />
                                                 </div>
                                             </div>
- <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                                {item.title}
+ <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
                                             </h3>
                                             <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
                                                 {item.copy}

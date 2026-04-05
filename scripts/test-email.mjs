@@ -16,22 +16,17 @@ async function testEmail() {
             replyTo: "test@example.com", // Simulate user email
             subject: "🧪 Test: Simple Email Notification/Test User",
             text: `
-📋 Test Contact Form Submission
-
-👤 Contact Details:
+Test Contact Form Submission
+Contact Details:
+======
    Name: Test User
    Email: test@example.com
    Phone: +91 9876543210
-   Subject: Test inquiry
-
-💬 Message:
+   
+Message:
+======
+Subject: Test inquiry
 This is a test message to verify your simple email setup is working correctly.
-
----
-🔧 Reply Information:
-• Reply to this email to contact user directly
-• User's email: test@example.com
-• Form submitted: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             `.trim(),
         });
 

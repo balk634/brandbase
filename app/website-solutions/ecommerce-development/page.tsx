@@ -8,14 +8,12 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
-    IconBuildingStore, IconReceipt2, IconFlame, IconMap,
-    IconLayoutGridAdd, IconCodeDots, IconRocket,
+    IconBuildingStore, IconReceipt2, IconShoppingCart, IconLayoutDashboard, IconDatabase, IconBolt,
+    IconFlame, IconMap, IconLayoutGridAdd, IconCodeDots, IconRocket,
     IconTargetArrow, IconHeartHandshake, IconHourglassHigh, IconShieldCheck,
     IconAward, IconBrandFigma, IconDeviceDesktop, IconTrendingUp,
-    IconBoxSeam, IconDiscount, IconDatabase,
-    IconHeartbeat, IconPaint, IconNetwork
+    IconBoxSeam, IconDiscount, IconHeartbeat, IconPaint, IconNetwork
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
@@ -91,11 +89,11 @@ const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; 
     { Icon: IconHeartbeat, title: "Post-Launch Growth Support", copy: "We don't just build stores — we help you grow revenue month over month." },
 ];
 
-const processSteps: { step: string; title: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
-    { step: "01", title: "Discovery & Strategy", copy: "We analyze your market, competitors, and product catalog. Then we define your store's architecture, payment flow, and growth roadmap.", Icon: IconMap },
-    { step: "02", title: "Design & Prototyping", copy: "High-fidelity mockups of your storefront, product pages, cart, and checkout. Every screen reviewed and approved before development.", Icon: IconLayoutGridAdd },
-    { step: "03", title: "Build & Integrate", copy: "We code the store, connect payment gateways, shipping providers, inventory systems, and email marketing tools.", Icon: IconCodeDots },
-    { step: "04", title: "Launch & Optimize", copy: "We deploy to production, run QA across devices, set up analytics, and begin post-launch conversion optimization.", Icon: IconRocket },
+const processSteps: { step: string; title1: string; title2: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
+    { step: "01", title1: "Commercial", title2: "Discovery", copy: "We map your inventory, margins, and customer journeys before a single line of code is written.", Icon: IconShoppingCart },
+    { step: "02", title1: "Design +", title2: "Prototype", copy: "High-fidelity commerce designs focused on mobile-first checkout and brand storytelling.", Icon: IconLayoutDashboard },
+    { step: "03", title1: "Platform", title2: "Build", copy: "Clean, lightning-fast development on Shopify, WooCommerce, or custom headless stacks.", Icon: IconDatabase },
+    { step: "04", title1: "Growth &", title2: "Handover", copy: "Launch with full training, analytics integration, and a clear roadmap for scaling your sales.", Icon: IconBolt },
 ];
 
 const faqItems = [
@@ -115,7 +113,7 @@ export default function EcommercePage() {
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                             <div>
                                 <motion.div variants={fadeInLeft}>
-                                    <Kicker className="text-[10px] md:text-xs px-4 py-2 bg-primary/5 border-primary/30 text-primary"> E-COMMERCE </Kicker>
+                                    <Kicker>E-COMMERCE</Kicker>
                                 </motion.div>
  <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Online Stores <em className="font-serif-20 italic">That Actually Sell.</em>
@@ -224,7 +222,7 @@ export default function EcommercePage() {
                                     </div>
                                     <motion.div variants={fadeInUp} className="mt-8 pt-6 border-t border-grid/10">
                                         <div className="flex items-center gap-3 text-sm text-ink-muted">
-                                            <div className="h-8 w-8 border border-primary/25 bg-primary/5 grid place-items-center text-primary shrink-0"><IconDeviceDesktop className="h-4 w-4" /></div>
+                                            <div className="h-8 w-8 border border-grid/15 bg-paper/60 grid place-items-center text-ink shrink-0"><IconDeviceDesktop className="h-4 w-4" /></div>
                                             <span className="italic">Not sure? Book a free 15-minute consultation and we&apos;ll tell you honestly.</span>
                                         </div>
                                     </motion.div>
@@ -269,7 +267,6 @@ export default function EcommercePage() {
                                         className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
                                     >
                                         <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <BoxPattern />
                                             <div className="flex items-center justify-between mb-6">
                                                 <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                                     {item.step}
@@ -278,8 +275,9 @@ export default function EcommercePage() {
                                                     <item.Icon className="h-5 w-5" />
                                                 </div>
                                             </div>
- <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                                {item.title}
+                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
                                             </h3>
                                             <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
                                                 {item.copy}
