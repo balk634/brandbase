@@ -66,8 +66,8 @@ export const masterConfig = {
     phone: "+91 9113702669",
     // Used for the self-hosted Cal.com booking system.
     calcomUrl: "https://booking.brandbase.in",
-    calcomSlug: "new/",
-    calcomNamespace: "booking",
+    calcomSlug: "brandbase/30min",
+    calcomNamespace: "30min",
     address: {
       street: "Pluto B 504, Suncity Complex,",
       locality: "Powai",

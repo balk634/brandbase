@@ -15,12 +15,18 @@ let calApiPromise: Promise<CalApi> | null = null;
 async function getCalLazy(): Promise<CalApi> {
   if (!calApiPromise) {
     calApiPromise = import("@calcom/embed-react").then(async ({ getCalApi }) => {
-      const cal = await getCalApi({ namespace: masterConfig.contact.calcomNamespace });
+      const cal = await getCalApi({ 
+        namespace: masterConfig.contact.calcomNamespace,
+        origin: masterConfig.contact.calcomUrl 
+      });
       
       // Initialize UI global settings once the API is loaded
       cal("ui", {
         theme: "light",
-        styles: { branding: { brandColor: masterConfig.colors.primary } },
+        cssVarsPerTheme: { 
+          light: { "cal-brand": "#0d29be" }, 
+          dark: { "cal-brand": "#fafafa" } 
+        },
         hideEventTypeDetails: false,
         layout: "month_view",
       });
@@ -37,12 +43,14 @@ export function CalButton({
   variant = "primary",
   size = "lg",
   eventSlug,
+  onClick,
 }: {
   children: React.ReactNode;
   className?: string;
   variant?: "primary" | "destructive" | "outline" | "secondary" | "ghost" | "link";
   size?: "default" | "sm" | "lg" | "icon";
   eventSlug?: string;
+  onClick?: () => void;
 }) {
   const calcomSlug = eventSlug || masterConfig.contact.calcomSlug;
   const fullUrl = `${masterConfig.contact.calcomUrl}/${calcomSlug}`;
@@ -53,7 +61,7 @@ export function CalButton({
   }, []);
 
   return (
-    <Button asChild variant={variant} size={size} className={className}>
+    <Button asChild variant={variant} size={size} className={className} onClick={onClick}>
       <a
         href={fullUrl}
         target="_blank"
@@ -66,7 +74,8 @@ export function CalButton({
         data-cal-config={JSON.stringify({ 
           origin: masterConfig.contact.calcomUrl,
           theme: "light",
-          hideBranding: true,
+          layout: "month_view",
+          useSlotsViewOnSmallScreen: "true",
         })}
         onPointerEnter={() => getCalLazy()}
       >
