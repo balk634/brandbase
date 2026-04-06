@@ -15,21 +15,26 @@ let calApiPromise: Promise<CalApi> | null = null;
 async function getCalLazy(): Promise<CalApi> {
   if (!calApiPromise) {
     calApiPromise = import("@calcom/embed-react").then(async ({ getCalApi }) => {
-      const cal = await getCalApi({ 
-        namespace: masterConfig.contact.calcomNamespace,
+      const cal = await getCalApi(`${masterConfig.contact.calcomUrl}/embed/embed.js`);
+      
+      // Initialize namespace and origin
+      cal("init", masterConfig.contact.calcomNamespace, { 
         origin: masterConfig.contact.calcomUrl 
       });
-      
-      // Initialize UI global settings once the API is loaded
-      cal("ui", {
-        theme: "light",
-        cssVarsPerTheme: { 
-          light: { "cal-brand": "#0d29be" }, 
-          dark: { "cal-brand": "#fafafa" } 
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
+
+      // Initialize UI global settings for the namespace
+      const nsCal = (cal as any).ns[masterConfig.contact.calcomNamespace];
+      if (nsCal) {
+        nsCal("ui", {
+          theme: "light",
+          cssVarsPerTheme: { 
+            light: { "cal-brand": "#0d29be" }, 
+            dark: { "cal-brand": "#fafafa" } 
+          },
+          hideEventTypeDetails: false,
+          layout: "month_view",
+        });
+      }
       
       return cal as unknown as CalApi;
     });
