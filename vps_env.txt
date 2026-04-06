@@ -1,0 +1,30 @@
+# =============================================================
+# BrandBase Booking - Environment Configuration
+# NEVER COMMIT THIS FILE TO GIT
+# =============================================================
+
+# Database
+DATABASE_URL=postgresql://basebrand_user:Bb!Cal2024Secure@basebrand-db:5432/basebrand_cal
+
+# Auth
+NEXTAUTH_SECRET=RLAMrPHZ9w3jeeHXgxjVhpy+BPLT43/Dv+A1nlFKiXo=
+NEXTAUTH_URL=https://booking.brandbase.in
+CALENDSO_ENCRYPTION_KEY=1fa376b7d155fb214ffa86d2d6f34375
+
+# Public URLs
+NEXT_PUBLIC_WEBAPP_URL=https://booking.brandbase.in
+NEXT_PUBLIC_WEBSITE_URL=https://booking.brandbase.in
+
+# Branding
+NEXT_PUBLIC_APP_NAME="Basebrand Booking"
+CALCOM_TELEMETRY_DISABLED=1
+
+# Email via Resend SMTP
+EMAIL_FROM=booking@brandbase.in
+EMAIL_FROM_NAME=Basebrand Booking
+EMAIL_SERVER_HOST=smtp.resend.com
+EMAIL_SERVER_PORT=465
+EMAIL_SERVER_USER=resend
+EMAIL_SERVER_PASSWORD=re_hVTpxpHA_J317arerg8haJXxachPnm54D
+
+DATABASE_DIRECT_URL=postgresql://basebrand_user:Bb!Cal2024Secure@basebrand-db:5432/basebrand_cal
