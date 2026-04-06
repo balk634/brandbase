@@ -20,7 +20,7 @@ export function Footer() {
     return (
         <footer className="bg-primary text-white border-t border-white/5 relative overflow-hidden">
             {/* Background Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] h-[320px] sm:w-[1000px] sm:h-[500px] bg-white/[0.03] blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] h-[320px] sm:w-[1000px] sm:h-[500px] bg-white/3 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px] relative z-10">
                 {/* Main Footer Links */}

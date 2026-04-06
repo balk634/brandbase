@@ -199,7 +199,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                     className={`mi-card relative border border-grid/15 bg-white flex flex-col group overflow-hidden col-span-1 ${layoutClass} ${isMini ? "p-5 md:p-6" : "p-6 md:p-8"}`}
                   >
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className={`border border-primary/20 bg-primary/5 grid place-items-center text-primary flex-shrink-0 ${isMini ? "h-8 w-8 rounded-md mb-4" : "h-10 w-10 mb-6"}`}>
+                    <div className={`border border-primary/20 bg-primary/5 grid place-items-center text-primary shrink-0 ${isMini ? "h-8 w-8 rounded-md mb-4" : "h-10 w-10 mb-6"}`}>
                       <pillar.Icon className={isMini ? "h-4 w-4" : "h-5 w-5"} />
                     </div>
                     <div className={isLarge ? "" : "mt-auto"}>
@@ -216,7 +216,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                         <div className="font-serif text-[3.2rem] md:text-[3.8rem] tracking-tight leading-none text-ink mb-2">
                           {pillar.statNumber}<span className="text-3xl md:text-[2.1rem] ml-1">{pillar.statUnit}</span>
                         </div>
-                        <div className="text-[10px] tracking-[0.1em] uppercase text-ink-muted/80 font-medium">
+                        <div className="text-[10px] tracking-widest uppercase text-ink-muted/80 font-medium">
                           {pillar.statLabel}
                         </div>
                       </div>

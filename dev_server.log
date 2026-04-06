@@ -1,0 +1,17 @@
+
+> brandbase@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Experiments (use with caution):
+  ✓ optimizeCss
+  · optimizePackageImports
+  ✓ scrollRestoration
+
+✓ Starting...
+✓ Ready in 997ms
+○ Compiling / ...
+ GET / 200 in 18.4s (compile: 10.9s, render: 7.5s)
+✓ Compiled in 289ms

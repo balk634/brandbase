@@ -131,7 +131,7 @@ export function FeaturesGrid() {
                             </h3>
                             </div>
 
-                            <p className="text-ink-muted text-sm leading-relaxed mb-6 flex-grow">
+                            <p className="text-ink-muted text-sm leading-relaxed mb-6 grow">
                                 {pain.copy}
                             </p>
 

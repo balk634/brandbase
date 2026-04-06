@@ -17,8 +17,8 @@ export const metadata = buildPageMetadata({
 
 function GoldilocksVenn() {
   return (
-    <div className="group border border-grid/15 bg-paper/40 aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[4/3] w-full flex items-center justify-center p-4 sm:p-8 lg:p-12 overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out pointer-events-none" />
+    <div className="group border border-grid/15 bg-paper/40 aspect-square sm:aspect-4/3 md:aspect-3/2 lg:aspect-4/3 w-full flex items-center justify-center p-4 sm:p-8 lg:p-12 overflow-hidden relative">
+      <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out pointer-events-none" />
 
       <svg viewBox="0 0 400 300" className="w-full h-full max-w-[320px] sm:max-w-sm relative z-10" aria-hidden="true">
         <defs>
@@ -152,7 +152,7 @@ export default function AboutPage() {
 
                 <div className="lg:col-span-5 min-w-0 flex justify-center">
                   {/* Image for Goldilocks problem (4:5) */}
-                  <div className="w-full max-w-[380px] aspect-[4/5] bg-paper/40 flex items-center justify-center overflow-hidden relative">
+                  <div className="w-full max-w-[380px] aspect-4/5 bg-paper/40 flex items-center justify-center overflow-hidden relative">
                       <Image
                         src="/deliver/goldilocks.webp"
                         alt="The Goldilocks Problem"

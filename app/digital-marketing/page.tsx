@@ -168,7 +168,7 @@ export default function DigitalMarketingPage() {
                 <div className="flex flex-col">
                   <motion.div
                     variants={fadeInLeft}
-                    className="mt-10 flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-[0.1em] text-ink-muted order-1 sm:order-2"
+                    className="mt-10 flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-ink-muted order-1 sm:order-2"
                   >
                     <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Paid + organic alignment</span>
                     <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Weekly optimization loops</span>
@@ -193,7 +193,7 @@ export default function DigitalMarketingPage() {
                   </motion.div>
                 </div>
               </div>
-              <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
+              <motion.div variants={fadeInRight} className="relative order-first lg:order-0">
                 <div className="relative overflow-hidden">
                   <div
                     className={`relative ${masterConfig.ui.heroImages.className}`}

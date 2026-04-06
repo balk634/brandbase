@@ -41,7 +41,7 @@ export function CookieConsent() {
     useEffect(() => {
         const consent = localStorage.getItem("cookie-consent");
         if (!consent) {
-            setShow(true);
+            setTimeout(() => setShow(true), 0);
 
             // Auto-accept after 5 seconds
             timerRef.current = window.setTimeout(() => {
@@ -58,7 +58,7 @@ export function CookieConsent() {
 
     return (
         <div
-            className={`fixed z-[60] bg-white border border-primary/20 p-4 sm:p-6 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+            className={`fixed z-60 bg-white border border-primary/20 p-4 sm:p-6 transition-all duration-500 ease-in-out ${
                 isExiting ? "translate-y-[150%] opacity-0" : "translate-y-0 opacity-100"
             }`}
             style={{

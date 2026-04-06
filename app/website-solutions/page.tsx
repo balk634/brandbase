@@ -131,7 +131,7 @@ export default function WebsiteSolutionsPage() {
                 <div className="flex flex-col">
                   <motion.div
                     variants={fadeInLeft}
-                    className="mt-10 flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-[0.1em] text-ink-muted order-1 sm:order-2"
+                    className="mt-10 flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-ink-muted order-1 sm:order-2"
                   >
                     <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Strategy-first design</span>
                     <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Speed-optimized code</span>
@@ -208,7 +208,7 @@ export default function WebsiteSolutionsPage() {
                 >
                   <div className="grid grid-cols-[1fr_1.3fr] gap-5 h-full items-start">
                     {/* Left: Image (4:5) */}
-                    <div className="relative aspect-[4/5] bg-paper/40 overflow-hidden border border-grid/10">
+                    <div className="relative aspect-4/5 bg-paper/40 overflow-hidden border border-grid/10">
                       <HeroImage
                         src={`/${path.image}`}
                         alt={path.title}

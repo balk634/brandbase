@@ -85,7 +85,7 @@ export function Navbar() {
 
     return (
         <header ref={headerRef} className="sticky top-0 z-50 w-full border-b border-grid/15 bg-paper">
-            <Container className="h-16 grid grid-cols-[auto,1fr,auto] items-center gap-3">
+            <Container className="h-16 grid grid-cols-[auto_1fr_auto] items-center gap-3">
                 {/* Logo */}
                 <Link href="/" className="mi-nav-item flex items-center gap-2" aria-label="Home" onClick={closeAllMenus}>
                     <Image 
@@ -170,7 +170,7 @@ export function Navbar() {
                                         >
                                             <div className="bg-paper border border-grid/15 w-[min(320px,calc(100vw-2rem))] origin-top overflow-hidden relative">
                                                 {/* Top subtle highlight */}
-                                                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+                                                <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent" />
 
                                                 <div className="flex flex-col py-2">
                                                     {item.subItems?.map((sub) => (
@@ -179,8 +179,8 @@ export function Navbar() {
                                                             href={sub.href}
                                                             className={[
                                                                 "mi-nav-item group/sub flex items-center justify-between px-6 py-3.5 relative",
-                                                                "hover:bg-grid/[0.03] transition-colors duration-200",
-                                                                pathname === sub.href ? "bg-grid/[0.03]" : "",
+                                                                "hover:bg-grid/3 transition-colors duration-200",
+                                                                pathname === sub.href ? "bg-grid/3" : "",
                                                             ].join(" ")}
                                                             onClick={() => setOpenDesktopDropdown(null)}
                                                         >

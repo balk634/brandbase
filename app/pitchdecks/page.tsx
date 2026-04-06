@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
 
 export default function PitchDecksPage() {
     return (
-        <main className="min-h-screen min-h-[100svh] pt-16 md:pt-24 pb-20">
+        <main className="min-h-screen min-h-svh pt-16 md:pt-24 pb-20">
             <Container>
                 <div className="mb-16">
                     <Kicker>PRESENTATIONS</Kicker>

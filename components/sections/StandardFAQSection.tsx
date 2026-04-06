@@ -88,8 +88,8 @@ export function StandardFAQSection({
               <div
                 key={item.q}
                 className={cn(
-                  "mi-row mi-row-faq p-4 sm:p-5 md:p-6 cursor-default border-t border-grid/15 first:border-t-0 md:[&:nth-child(-n+2)]:border-t-0",
-                  "md:[&:nth-child(odd)]:border-r"
+                  "mi-row mi-row-faq p-4 sm:p-5 md:p-6 cursor-default border-t border-grid/15 first:border-t-0 md:nth-[-n+2]:border-t-0",
+                  "md:odd:border-r"
                 )}
               >
                 <h3 className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-1.5 break-words">

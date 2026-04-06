@@ -131,7 +131,7 @@ export default function RootLayout({
             className={masterConfig.ui.pattern.drift.enabled ? "pattern-overlay pattern-overlay--animated" : "pattern-overlay"}
           />
         ) : null}
-        <div className="min-h-screen min-h-[100svh] flex flex-col relative z-10 w-full overflow-x-hidden">
+        <div className="min-h-screen min-h-svh flex flex-col relative z-10 w-full overflow-x-hidden">
           <Navbar />
           {children}
           <Footer />

@@ -133,7 +133,7 @@ function CheckboxRow({
           id={id}
           type={inputType}
           name={inputType === "radio" ? radioName : undefined}
-          className="h-4 w-4 accent-[var(--color-primary)]"
+          className="h-4 w-4 accent-primary"
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
           disabled={disabled}

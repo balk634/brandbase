@@ -75,7 +75,7 @@ function VisualShell({
     children: ReactNode;
 }) {
     return (
-        <div className="w-full border border-grid/15 bg-white aspect-[5/4] p-4 overflow-hidden">
+        <div className="w-full border border-grid/15 bg-white aspect-5/4 p-4 overflow-hidden">
             <div className="flex items-center justify-between">
                 <div className="h-8 w-8 border border-grid/15 bg-paper/60 grid place-items-center text-primary">
                     <Icon className="h-4 w-4" strokeWidth={1.6} />

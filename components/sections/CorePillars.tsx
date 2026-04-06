@@ -112,7 +112,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
 
             {/* Content area: Three-column split layout */}
             <div className={`flex-1 p-6 md:p-8 lg:p-10 transition-colors
-                ${isDark ? "hover:bg-premium-800/40" : "hover:bg-ink/[0.02]"}`}>
+                ${isDark ? "hover:bg-premium-800/40" : "hover:bg-ink/2"}`}>
 
                 <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-8 items-center h-full">
                     {/* Middle Column: Content stack */}
@@ -142,7 +142,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                                     className={`text-[9px] font-mono tracking-[0.15em] uppercase px-2 py-0.5 transition-colors
                                         ${isDark
                                             ? "border border-white/10 text-white/50 bg-white/5"
-                                            : "border border-ink/5 text-ink-muted/70 bg-ink/[0.02]"
+                                            : "border border-ink/5 text-ink-muted/70 bg-ink/2"
                                         }`}
                                 >
                                     {pill}
@@ -254,7 +254,7 @@ function PillarCard({
                     {/* Image Column (Below text on mobile) */}
                     <motion.div
                         variants={fadeInUp}
-                        className={`relative aspect-[16/10] w-full overflow-hidden order-last ${
+                        className={`relative aspect-16/10 w-full overflow-hidden order-last ${
                             isImageLeft ? "md:order-first" : isImageRight ? "md:order-last" : "mx-auto max-w-3xl"
                         }`}
                     >

@@ -15,7 +15,7 @@ export const metadata = buildPageMetadata({
 
 export default function CareersPage() {
     return (
-        <main className="relative pt-16 md:pt-24 pb-16 min-h-screen min-h-[100svh] border-b border-grid/15">
+        <main className="relative pt-16 md:pt-24 pb-16 min-h-screen min-h-svh border-b border-grid/15">
             <Section className="pb-16 pt-12 md:pb-24 bg-transparent border-b border-grid/15">
                 <Container>
                     <div className="max-w-4xl">

@@ -153,7 +153,7 @@ export default function PerformanceMarketingPage() {
                                     </Button>
                                 </motion.div>
                             </div>
-                            <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
+                            <motion.div variants={fadeInRight} className="relative order-first lg:order-0">
                                 <div className="relative overflow-hidden">
                                     <div
                                       className={`relative ${masterConfig.ui.heroImages.className}`}

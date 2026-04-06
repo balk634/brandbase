@@ -118,7 +118,7 @@ export default function BlogPage() {
                         <Link
                           href={`/blog/${post.slug}`}
                           aria-label={`Open article: ${post.title}`}
-                          className="block relative border border-grid/15 bg-paper/40 aspect-[4/5] lg:aspect-square overflow-hidden"
+                          className="block relative border border-grid/15 bg-paper/40 aspect-4/5 lg:aspect-square overflow-hidden"
                         >
                           {post.heroImage ? (
                             <Image

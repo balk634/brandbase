@@ -87,7 +87,7 @@ export function useCalBooking() {
         origin: masterConfig.contact.calcomUrl, 
         theme: "light",
         hideBranding: true,
-      } as any,
+      } ,
     });
   };
   return { openBooking, isReady: true };

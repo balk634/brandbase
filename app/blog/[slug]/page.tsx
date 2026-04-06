@@ -213,7 +213,7 @@ export default async function BlogPostPage({
               <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                 Cover
               </div>
-              <div className="mt-4 relative border border-grid/15 bg-paper/40 aspect-[16/10] md:aspect-[21/9] overflow-hidden">
+              <div className="mt-4 relative border border-grid/15 bg-paper/40 aspect-16/10 md:aspect-21/9 overflow-hidden">
                 {post.heroImage ? (
                   <Image
                     src={post.heroImage}

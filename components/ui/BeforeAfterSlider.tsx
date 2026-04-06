@@ -107,7 +107,7 @@ export function BeforeAfterSlider({
   return (
     <div className={cn("w-full", className)}>
       <div className="relative overflow-hidden border border-grid/15 bg-white">
-        <div className="relative aspect-[4/3] md:aspect-[5/4]">
+        <div className="relative aspect-4/3 md:aspect-5/4">
           <NewSiteMock />
 
           <div className="absolute inset-0 overflow-hidden" style={{ width: `${value}%` }}>
