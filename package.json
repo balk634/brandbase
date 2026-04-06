@@ -15,7 +15,6 @@
     "test:smoke": "npm run lint && npm run build"
   },
   "dependencies": {
-    "@calcom/embed-react": "^1.5.3",
     "@radix-ui/react-slot": "^1.2.4",
     "@tabler/icons-react": "^3.38.0",
     "@upstash/redis": "^1.35.3",
