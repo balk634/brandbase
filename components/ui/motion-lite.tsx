@@ -63,6 +63,7 @@ function getMotionComponent(tag: IntrinsicTag) {
   const Component = React.forwardRef<HTMLElement, MotionShimProps & Record<string, unknown>>(
     (props, ref) => {
       const cleanProps = omitMotionProps(props);
+      // Ensure we don't block critical rendering
       return React.createElement(tag, { ...cleanProps, ref });
     }
   );

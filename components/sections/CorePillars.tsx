@@ -269,7 +269,8 @@ function PillarCard({
                                     : "object-center"
                             }
                             objectFit="contain"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 40vw, 400px"
+                            priority={false}
+                            sizes="(max-width: 640px) 256px, (max-width: 1024px) 384px, 400px"
                         />
                     </motion.div>
                 </div>

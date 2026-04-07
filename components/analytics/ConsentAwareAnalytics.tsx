@@ -1,6 +1,7 @@
 "use client";
 
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 type ConsentAwareAnalyticsProps = {
   googleAnalyticsId?: string;
@@ -23,28 +24,12 @@ export function ConsentAwareAnalytics({
     <>
       {/* Google Analytics - loads after hydration (won't block Speed Index) */}
       {googleAnalyticsId && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-            strategy="lazyOnload"
-          />
-          <Script id="google-analytics" strategy="lazyOnload">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${googleAnalyticsId}', {
-                anonymize_ip: true,
-                page_path: window.location.pathname,
-              });
-            `}
-          </Script>
-        </>
+        <GoogleAnalytics gaId={googleAnalyticsId} />
       )}
 
       {/* Microsoft Clarity - loads during idle time (no impact on Speed Index) */}
       {microsoftClarityId && (
-        <Script id="microsoft-clarity" strategy="lazyOnload">
+        <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

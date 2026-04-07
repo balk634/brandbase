@@ -21,8 +21,8 @@ export function LazyImage({
     src,
     alt,
     className = "",
-    priority = false,
-    sizes = "(max-width: 768px) 100vw, 50vw",
+    priority = false, // Reset back to false, only HeroImage needs it true
+    sizes = "(max-width: 768px) 90vw, 50vw",
     quality = 75,
     blurDataURL,
     fill = false,
@@ -53,6 +53,7 @@ export function LazyImage({
                 sizes={sizes}
                 quality={quality}
                 priority={priority}
+                loading={priority ? undefined : "lazy"}
                 placeholder={blurDataURL ? "blur" : "empty"}
                 blurDataURL={blurDataURL}
                 onError={handleError}
@@ -82,6 +83,7 @@ export function LazyImage({
             sizes={sizes}
             quality={quality}
             priority={priority}
+            loading={priority ? undefined : "lazy"}
             fetchPriority={priority ? "high" : "auto"}
             placeholder={blurDataURL ? "blur" : "empty"}
             blurDataURL={blurDataURL}

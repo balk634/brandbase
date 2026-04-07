@@ -49,7 +49,11 @@ export function PerformanceEnhancements({
   useEffect(() => {
     let cancelled = false;
 
-    const clearSchedule = scheduleIdleLoad(async () => {
+    const loadModules = async () => {
+      // Delay until after interaction to save Main thread parsing time
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      if (cancelled) return;
+
       const modules = await Promise.all([
         import("./NavigationTransitionManager"),
         enableSmoothScroll ? import("./SmoothScroll") : Promise.resolve(null),
@@ -67,7 +71,10 @@ export function PerformanceEnhancements({
         MicroInteractionEngine: microModule?.MicroInteractionEngine,
         ScrollProgress: scrollProgressModule?.ScrollProgress,
       });
-    });
+    };
+
+    // Attempt standard idle load logic
+    const clearSchedule = scheduleIdleLoad(loadModules);
 
     return () => {
       cancelled = true;
