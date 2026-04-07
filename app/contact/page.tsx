@@ -60,7 +60,7 @@ export default function ContactPage() {
             </div>
 
             {/* Split Section - Cal.com + Form */}
-            <div className="border-t border-grid/15 grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid/15">
+            <div className="mt-12 md:mt-16 border border-grid/15 bg-white grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid/15">
               {/* Left: Cal.com Embed */}
               <div className="p-6 sm:p-10 bg-paper/20">
                 <div className="mb-8">
