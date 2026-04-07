@@ -11,7 +11,8 @@
     "check:smoke": "node scripts/smoke-routes.mjs",
     "check:lighthouse": "node scripts/lighthouse-budget.mjs",
     "quality": "npm run lint && npm run build && npm run check:sitemap && npm run check:smoke && npm run check:lighthouse",
-    "test": "npm run test:smoke",
+    "test": "npm run test:unit && npm run test:smoke",
+    "test:unit": "tsx --test tests/**/*.test.ts",
     "test:smoke": "npm run lint && npm run build"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
     "lighthouse": "^13.1.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   },
   "optionalDependencies": {
