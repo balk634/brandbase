@@ -6,7 +6,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ConsentAwareAnalytics } from "@/components/analytics/ConsentAwareAnalytics";
 import { Agentation } from "agentation";
-import Script from "next/script";
 
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
@@ -137,13 +136,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
-        <Script id="calcom-init" strategy="lazyOnload">
-          {`
-            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://booking.brandbase.in/embed/embed.js", "init");
-            Cal("init", "30min", {origin:"https://booking.brandbase.in"});
-            Cal.ns["30min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#0d29be"},"dark":{"cal-brand":"#fafafa"}},"hideEventTypeDetails":false,"layout":"month_view"});
-          `}
-        </Script>
         <CookieConsent />
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>

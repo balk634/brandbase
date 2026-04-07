@@ -28,7 +28,8 @@ description: How to access and manage the BrandBase production VPS.
 - **Directory**: `/root/calcom/` (Note: not `/root/brandbase/calcom/`).
 - **Cloudflare Tunnel**: `brandbase-booking` routes `booking.brandbase.in` directly to `http://localhost:3001` on the VPS.
 - **Key Services**:
-  - `calcom-web`: The application container (Next.js) mapped to `127.0.0.1:3001`.
+  - `calcom-proxy`: (Nginx) Built-in reverse proxy mapped to `127.0.0.1:3001` that dynamically injects Custom CSS and edits the Cal.com Favicons.
+  - `calcom-web`: The main application container (Next.js) isolated on internal port `3000`.
   - `calcom-db`: PostgreSQL container.
 
 ### 2. File Persistence & Configuration
