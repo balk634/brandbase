@@ -68,7 +68,7 @@ export default function ContactPage() {
             {/* Left: Cal.com Embed */}
             <div className="p-6 sm:p-8 md:p-10 bg-paper/5 flex flex-col">
               <div className="mb-6">
-                <Kicker>Book a Strategic consultation</Kicker>
+                <Kicker className="mx-[5px]">Book a Strategic consultation</Kicker>
               </div>
               <div className="flex-1 min-h-[500px] lg:min-h-[580px] border border-grid/10 bg-white shadow-sm overflow-hidden ring-1 ring-grid/5">
                 <CalInline className="w-full h-full" />
@@ -78,7 +78,7 @@ export default function ContactPage() {
             {/* Right: Lead Form */}
             <div className="p-6 sm:p-8 md:p-10 flex flex-col">
               <div className="mb-6">
-                <Kicker>Send a Brief Message</Kicker>
+                <Kicker className="mx-[5px]">Send a Brief Message</Kicker>
               </div>
               <div className="flex-1 flex flex-col h-full">
                 <ContactForm variant="page" hideHeader={true} />

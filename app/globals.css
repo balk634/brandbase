@@ -63,6 +63,30 @@ html {
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    cursor: default;
+  }
+
+  * {
+    cursor: default;
+  }
+
+  a, 
+  button, 
+  input[type="submit"], 
+  input[type="button"],
+  [role="button"],
+  .mi-btn,
+  .mi-link-inline,
+  .mi-row,
+  .mi-surface[href],
+  a.mi-surface {
+    cursor: pointer !important;
+  }
+
+  input, 
+  textarea, 
+  [contenteditable="true"] {
+    cursor: text;
   }
 
   h1,

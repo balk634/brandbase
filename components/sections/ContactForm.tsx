@@ -59,7 +59,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
             <Button variant="outline" className="mt-10 uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
           </div>
         ) : (
-          <form id="contact-form" className="flex-1 flex flex-col gap-5 sm:gap-6" action={handleAction}>
+          <form id="contact-form" className="flex-1 flex flex-col gap-5 sm:gap-6 px-[5px]" action={handleAction}>
             <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
             <input
               aria-hidden="true"

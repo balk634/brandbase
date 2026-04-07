@@ -94,7 +94,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
     return (
         <motion.li
             variants={fadeInUp}
-            className={`flex flex-col md:flex-row md:items-stretch border-t last:border-b group transition-colors duration-300 overflow-hidden
+            className={`flex flex-col md:flex-row md:items-stretch border-t last:border-b group transition-colors duration-300 overflow-hidden mi-surface
                 ${isDark
                     ? "border-premium-600"
                     : "border-grid/15"
@@ -118,7 +118,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                     {/* Middle Column: Content stack */}
                     <div className="flex flex-col h-full justify-center">
                         <div className="flex items-center gap-4">
-                            <div className={`h-10 w-10 border grid place-items-center shrink-0
+                            <div className={`h-10 w-10 border grid place-items-center shrink-0 mi-card-icon
                                 ${isDark 
                                     ? "border-white/10 bg-white/5 text-white/90" 
                                     : "border-primary/20 bg-primary/5 text-primary"
