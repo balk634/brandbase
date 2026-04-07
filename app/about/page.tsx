@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { CalButton } from "@/components/ui/CalBooking";
@@ -153,12 +153,13 @@ export default function AboutPage() {
                 <div className="lg:col-span-5 min-w-0 flex justify-center">
                   {/* Image for Goldilocks problem (4:5) */}
                   <div className="w-full max-w-[380px] aspect-[4/5] bg-paper/40 flex items-center justify-center overflow-hidden relative">
-                      <Image
+                      <OptimizedImage
                         src="/deliver/goldilocks.webp"
                         alt="The Goldilocks Problem"
                         fill
+                        priority
                         className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 40vw"
+                        sizes="(max-width: 1024px) 100vw, 380px"
                       />
                   </div>
                 </div>
@@ -189,7 +190,7 @@ export default function AboutPage() {
                 {masterConfig.about.team.map((member, idx) => (
                   <div key={idx} className="group border border-grid/15 bg-white p-6 md:p-8">
                     <div className="w-24 h-24 aspect-square relative overflow-hidden mb-6 border border-grid/15 bg-paper/60">
-                      <Image
+                      <OptimizedImage
                         src={member.image}
                         alt={member.name}
                         fill

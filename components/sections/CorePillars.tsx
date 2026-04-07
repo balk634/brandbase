@@ -5,7 +5,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import Link from "next/link";
 import { motion } from "@/components/ui/motion-lite";
 import React from "react";
-import { LazyImage } from "@/components/ui/LazyImage";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import type { ComponentType } from "react";
 import {
     IconArrowUpRight,
@@ -259,7 +259,7 @@ function PillarCard({
                             isImageLeft ? "md:order-first" : isImageRight ? "md:order-last" : "mx-auto max-w-3xl"
                         }`}
                     >
-                        <LazyImage
+                        <OptimizedImage
                             src={imageSrc}
                             alt={imageAlt}
                             fill={true}

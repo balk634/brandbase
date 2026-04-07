@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
 import { blogPosts } from "@/lib/blogPosts";
 import { Button } from "@/components/ui/Button";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { masterConfig } from "@/config/master";
 import { Pagination } from "@/components/ui/Pagination";
@@ -110,12 +110,12 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                       className="relative aspect-[16/10] overflow-hidden border-b border-grid/10"
                     >
                       {post.heroImage ? (
-                        <Image
+                        <OptimizedImage
                           src={post.heroImage}
                           alt={post.title}
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                           priority={currentPosts.indexOf(post) < 3}
                         />
                       ) : (

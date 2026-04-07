@@ -244,7 +244,7 @@ export default function DigitalMarketingPage() {
                 {/* Image Section */}
                 <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[400px] bg-primary/5 p-4 sm:p-6 flex items-center justify-center">
                   <div className="relative w-full h-full">
-                    <HeroImage src={`/${growthLanes[1].image}`} alt={growthLanes[1].title} className="object-contain object-center" />
+                    <HeroImage src={`/${growthLanes[1].image}`} alt={growthLanes[1].title} className="object-contain object-center" sizes="(max-width: 1024px) 100vw, 512px" />
                   </div>
                 </div>
                 {/* Text Section */}
@@ -266,7 +266,7 @@ export default function DigitalMarketingPage() {
                 {/* Image Section (Right on Desktop) */}
                 <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
                    <div className="relative w-full h-full">
-                     <HeroImage src={`/${growthLanes[0].image}`} alt={growthLanes[0].title} className="object-contain object-center" />
+                     <HeroImage src={`/${growthLanes[0].image}`} alt={growthLanes[0].title} className="object-contain object-center" sizes="(max-width: 1024px) 100vw, 768px" />
                    </div>
                 </div>
               </motion.article>
@@ -284,7 +284,7 @@ export default function DigitalMarketingPage() {
                 {/* Image Section (Right on Desktop) */}
                 <div className="relative w-full sm:w-[45%] shrink-0 min-h-[260px] sm:min-h-0 bg-primary/5 order-1 sm:order-2 p-4 sm:p-6 flex items-center justify-center">
                    <div className="relative w-full h-full">
-                     <HeroImage src={`/${growthLanes[2].image}`} alt={growthLanes[2].title} className="object-contain object-center" />
+                     <HeroImage src={`/${growthLanes[2].image}`} alt={growthLanes[2].title} className="object-contain object-center" sizes="(max-width: 1024px) 100vw, 768px" />
                    </div>
                 </div>
               </motion.article>
