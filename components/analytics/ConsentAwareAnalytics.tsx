@@ -1,62 +1,59 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Script from "next/script";
 
 type ConsentAwareAnalyticsProps = {
-  measurementId?: string;
+  googleAnalyticsId?: string;
+  microsoftClarityId?: string;
 };
 
 declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    clarity?: (...args: unknown[]) => void;
   }
 }
 
-export function ConsentAwareAnalytics({ measurementId }: ConsentAwareAnalyticsProps) {
-  const [shouldLoad, setShouldLoad] = useState(false);
-
-  useEffect(() => {
-    if (!measurementId) return;
-
-    const checkConsent = () => {
-      let consent = "";
-      try {
-        consent = localStorage.getItem("cookie-consent") || "";
-      } catch {
-        consent = "";
-      }
-      setShouldLoad(consent === "accepted");
-    };
-
-    checkConsent();
-    window.addEventListener("cookie-consent-updated", checkConsent);
-
-    return () => {
-      window.removeEventListener("cookie-consent-updated", checkConsent);
-    };
-  }, [measurementId]);
-
-  if (!measurementId || !shouldLoad) return null;
-
+export function ConsentAwareAnalytics({
+  googleAnalyticsId,
+  microsoftClarityId,
+}: ConsentAwareAnalyticsProps) {
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${measurementId}', {
-            anonymize_ip: true,
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
+      {/* Google Analytics - loads after hydration (won't block Speed Index) */}
+      {googleAnalyticsId && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+            strategy="lazyOnload"
+          />
+          <Script id="google-analytics" strategy="lazyOnload">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${googleAnalyticsId}', {
+                anonymize_ip: true,
+                page_path: window.location.pathname,
+              });
+            `}
+          </Script>
+        </>
+      )}
+
+      {/* Microsoft Clarity - loads during idle time (no impact on Speed Index) */}
+      {microsoftClarityId && (
+        <Script id="microsoft-clarity" strategy="lazyOnload">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${microsoftClarityId}");
+          `}
+        </Script>
+      )}
     </>
   );
 }

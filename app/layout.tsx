@@ -113,13 +113,21 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en-IN" href="https://brandbase.in/" />
         <link rel="dns-prefetch" href="https://app.cal.com" />
         <link rel="preconnect" href="https://static.cloudflareinsights.com" crossOrigin="anonymous" />
+        {/* Analytics preconnect - establishes early connection without blocking */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
         {/* Preload critical fonts to break the CSS→font discovery chain */}
       <link rel="preload" href="/fonts/Redaction-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <link rel="preload" href="/fonts/Redaction_10-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <link rel="preload" href="/fonts/Redaction_20-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <JsonLd />
       <BreadcrumbSchema />
-        <ConsentAwareAnalytics measurementId={masterConfig.analytics?.googleAnalyticsId} />
+        <ConsentAwareAnalytics
+          googleAnalyticsId={masterConfig.analytics?.googleAnalyticsId}
+          microsoftClarityId={masterConfig.analytics?.microsoftClarityId}
+        />
         <PerformanceEnhancements
           enableSmoothScroll={masterConfig.ui.motion.smoothScroll}
           enableMicroInteractions={masterConfig.ui.microInteractions.enabled}

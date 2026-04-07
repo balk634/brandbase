@@ -51,6 +51,7 @@ export const masterConfig = {
   // ==========================================
   analytics: {
     googleAnalyticsId: "G-3F7BQR32LK",
+    microsoftClarityId: "w7u3ctuvjz",
   },
 
 
