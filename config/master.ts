@@ -69,7 +69,7 @@ export const masterConfig = {
     calcomSlug: "brandbase/30min",
     calcomNamespace: "30min",
     address: {
-      street: "Pluto B 504, Suncity Complex,",
+      street: "Pluto B 504, Suncity Complex",
       locality: "Powai",
       city: "Mumbai",
       state: "Maharashtra",
