@@ -83,7 +83,7 @@ function GoldilocksVenn() {
 export default function AboutPage() {
   return (
     <main className="relative">
-      <Section className="bg-transparent py-8 md:py-10 lg:py-12">
+      <Section className="bg-transparent py-4 md:py-6 lg:py-8">
         <Container>
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 <Kicker className="mx-auto"> ABOUT BRANDBASE </Kicker>
               </div>
 
- <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
+              <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
                 We build websites that convert, then help you scale what <em className="font-serif-20 italic">works.</em>
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
@@ -102,7 +102,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="bg-transparent py-8 md:py-10 lg:py-12">
+      <Section className="bg-transparent py-4 md:py-6 lg:py-8">
         <Container>
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
@@ -111,7 +111,7 @@ export default function AboutPage() {
                   <Kicker className="mb-4">
                     ORIGIN
                   </Kicker>
- <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight text-ink break-words">
+                  <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight text-ink break-words">
                     The &quot;Goldilocks&quot; <em className="font-serif-10 italic">Problem.</em>
                   </h2>
                   <p className="mt-5 text-base sm:text-lg text-ink-muted leading-relaxed break-words">
@@ -168,7 +168,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="bg-transparent py-8 md:py-10 lg:py-12">
+      <Section className="bg-transparent py-4 md:py-6 lg:py-8">
         <Container>
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-4 sm:p-8 md:p-12">
@@ -176,7 +176,7 @@ export default function AboutPage() {
                 <Kicker className="mb-4">
                   LEADERSHIP & EXPERTISE
                 </Kicker>
- <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
+                <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
                   Built by <em className="font-serif-10 italic">practitioners.</em>
                 </h2>
                 <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
@@ -220,7 +220,7 @@ export default function AboutPage() {
 
 
 
-      <Section className="bg-transparent border-b-0 py-8 md:py-10 lg:py-12">
+      <Section className="bg-transparent border-b-0 py-4 md:py-6 lg:py-8">
         <Container>
           <div className="max-w-4xl mx-auto border border-grid/15 bg-white p-10 md:p-12 text-center">
  <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter text-ink">

@@ -48,7 +48,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
 
   if (isPage) {
     return (
-      <div className="flex-1 flex flex-col h-full">
+      <div className="flex flex-col">
         {status === "success" ? (
           <div className="flex-1 flex flex-col items-center justify-center min-h-[400px] text-center reveal-up">
             <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
@@ -59,7 +59,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
             <Button variant="outline" className="mt-10 uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
           </div>
         ) : (
-          <form id="contact-form" className="flex-1 flex flex-col h-full" action={handleAction}>
+          <form id="contact-form" className="flex flex-col" action={handleAction}>
             <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
             <input
               aria-hidden="true"
@@ -137,12 +137,12 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               />
             </div>
 
-            <div className="mt-6 space-y-2 flex-1 flex flex-col">
+            <div className="mt-6 space-y-2 flex flex-col">
               <label htmlFor="contact-page-message" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
                 Message <span className="text-primary">*</span>
               </label>
               <textarea
-                className="w-full flex-1 min-h-[160px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
+                className="w-full min-h-[120px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
                 id="contact-page-message"
                 name="message"
                 placeholder={HELPFUL_DETAILS.map((line) => `- ${line}`).join("\n")}

@@ -17,7 +17,7 @@ export const metadata = buildPageMetadata({
 export default function ContactPage() {
   return (
     <main className="relative">
-      <Section className="bg-transparent py-8 md:py-10 lg:py-12">
+      <Section className="bg-transparent py-4 md:py-6 lg:py-8">
         <Container>
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
@@ -33,7 +33,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Info Grid - Docked with 0 gap to the bottom section */}
+            {/* Info Grid - Docked with 0 gap to the top section */}
             <div className="border-t border-grid/15 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15">
               <div className="p-10 md:p-12 lg:p-14 flex flex-col items-center text-center">
                 <IconMail className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
@@ -58,26 +58,29 @@ export default function ContactPage() {
                 </address>
               </div>
             </div>
+          </div>
+        </Container>
+      </Section>
 
-            {/* Split Section - Cal.com + Form */}
-            <div className="mt-12 md:mt-16 border border-grid/15 bg-white grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid/15">
-              {/* Left: Cal.com Embed */}
-              <div className="p-6 sm:p-10 bg-paper/20">
-                <div className="mb-8">
-                  <Kicker>Book a Call</Kicker>
-                </div>
-                <div className="border border-grid/10 bg-white shadow-sm overflow-hidden min-h-[650px]">
-                  <CalInline className="w-full h-full" />
-                </div>
+      <Section className="bg-transparent py-4 md:py-6 lg:py-8">
+        <Container>
+          <div className="border border-grid/15 bg-white grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid/15">
+            {/* Left: Cal.com Embed */}
+            <div className="p-6 sm:p-10 bg-paper/20">
+              <div className="mb-8">
+                <Kicker>Book a Call</Kicker>
               </div>
+              <div className="border border-grid/10 bg-white shadow-sm overflow-hidden min-h-[650px]">
+                <CalInline className="w-full h-full" />
+              </div>
+            </div>
 
-              {/* Right: Lead Form */}
-              <div className="p-6 sm:p-10">
-                <div className="mb-8">
-                  <Kicker>Send a Message</Kicker>
-                </div>
-                <ContactForm variant="page" hideHeader={true} />
+            {/* Right: Lead Form */}
+            <div className="p-6 sm:p-10">
+              <div className="mb-8">
+                <Kicker>Send a Message</Kicker>
               </div>
+              <ContactForm variant="page" hideHeader={true} />
             </div>
           </div>
         </Container>
