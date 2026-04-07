@@ -3,6 +3,19 @@
 import { usePathname } from "next/navigation";
 import { masterConfig } from "@/config/master";
 
+// Pre-compute navigation lookup map for O(1) access
+const navMap = new Map<string, string>();
+if (masterConfig.navigation) {
+  for (const item of masterConfig.navigation) {
+    if (item.href) navMap.set(item.href, item.name);
+    if (item.subItems) {
+      for (const sub of item.subItems) {
+        if (sub.href) navMap.set(sub.href, sub.name);
+      }
+    }
+  }
+}
+
 /**
  * Renders BreadcrumbList JSON-LD schema without any visual UI.
  * This satisfies SEO requirements for breadcrumb structured data
@@ -20,12 +33,7 @@ export function BreadcrumbSchema() {
   const breadcrumbs = pathSegments.map((segment, index) => {
     const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
     // Try to find a human-readable name from navigation or capitalize
-    const navItem = masterConfig.navigation.find(item => item.href === href);
-    const subNavItem = masterConfig.navigation
-      .flatMap(item => item.subItems ?? [])
-      .find(sub => sub.href === href);
-    
-    const name = navItem?.name || subNavItem?.name || segment
+    const name = navMap.get(href) || segment
       .split("-")
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
