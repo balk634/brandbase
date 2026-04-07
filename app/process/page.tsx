@@ -49,7 +49,7 @@ export default function ProcessPage() {
                 Book a call
               </CalButton>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                <Link href="/contact">Contact us</Link>
+                <Link href="/contact">Contact</Link>
               </Button>
             </div>
           </div>

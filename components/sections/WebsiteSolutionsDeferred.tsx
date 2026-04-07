@@ -309,7 +309,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                     </p>
                     <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
                       <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                        Book a call
+                        Get in Touch
                       </CalButton>
                       <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
                         <Link href="/pricing">View pricing models</Link>

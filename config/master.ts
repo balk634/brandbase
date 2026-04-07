@@ -215,10 +215,9 @@ export const masterConfig = {
       title: "Company",
       links: [
         { name: "About BrandBase", href: "/about" },
-        { name: "Careers", href: "/careers" },
         { name: "Pricing", href: "/pricing" },
         { name: "Insights Blog", href: "/blog" },
-        { name: "Contact us", href: "/contact" },
+        { name: "Contact", href: "/contact" },
       ]
     },
     {
@@ -320,40 +319,6 @@ export const masterConfig = {
       durationMs: 1400,
       staggerMs: 160,
     },
-  },
-
-  // ==========================================
-  // 7. CAREERS PAGE
-  // ==========================================
-  careers: {
-    // Open roles for the agency, categorized by department. 
-    // These roles are dynamically mapped and rendered on the /careers page.
-    openRoles: [
-      // --- Design Department ---
-      {
-        title: "Senior Product Designer",
-        location: "Global/Hybrid",
-        type: "Part-time",
-        department: "Design",
-        // Role Focus: Lead the UI/UX design for scalable web applications and premium brand identities.
-      },
-      // --- Engineering Department ---
-      {
-        title: "Frontend Engineer (Next.js)",
-        location: "Global/Hybrid",
-        type: "Part-time",
-        department: "Engineering",
-        // Role Focus: Build high-performance, responsive web interfaces using React and Next.js.
-      },
-      // --- Marketing Department ---
-      {
-        title: "Growth Strategist",
-        location: "Global / Hybrid",
-        type: "Part-time",
-        department: "Marketing",
-        // Role Focus: Develop and execute performance marketing campaigns across multiple channels to drive scale.
-      }
-    ]
   },
 
   // ==========================================

@@ -231,7 +231,7 @@ export function Navbar() {
                 {/* Right Side */}
                 <div className="flex items-center justify-end gap-2">
                     <CalButton variant="primary" size="sm" className="hidden sm:inline-flex">
-                        Book a call
+                        Get in Touch
                     </CalButton>
 
                     {/* Mobile Menu Toggle */}
@@ -349,9 +349,9 @@ export function Navbar() {
                         </nav>
 
                         <div className="p-4 border-t border-grid/10 bg-paper">
-                            <CalButton variant="primary" size="lg" className="w-full" onClick={closeMobileMenu}>
-                                Book a call
-                            </CalButton>
+                                <CalButton variant="primary" size="lg" className="w-full" onClick={closeMobileMenu}>
+                                    Get in Touch
+                                </CalButton>
                         </div>
                     </motion.div>
                 ) : null}

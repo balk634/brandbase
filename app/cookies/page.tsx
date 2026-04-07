@@ -52,7 +52,7 @@ export default function CookieSettingsPage() {
               You can control and/or delete cookies as you wish – for details, see <a href="https://www.aboutcookies.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-ink">aboutcookies.org</a>. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.
             </p>
 
-            <h3>5. Contact us</h3>
+            <h3>5. Contact</h3>
             <p>
               If you have any questions about our use of cookies, please contact us at:
             </p>

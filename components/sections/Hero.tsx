@@ -62,7 +62,7 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                         className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                     >
                         <CalButton variant="primary" size="lg" className="sm:min-w-[180px]">
-                            Book a call
+                            Get in Touch
                         </CalButton>
                         <Button asChild variant="outline" size="lg" className="sm:min-w-[180px]">
                             <Link href="#services">

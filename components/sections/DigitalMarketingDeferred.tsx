@@ -307,7 +307,7 @@ export function DigitalMarketingDeferred({ imagePosition = "right" }: { imagePos
                         size="lg"
                         className="w-full sm:w-auto sm:min-w-[220px]"
                       >
-                        Book a call
+                        Get in Touch
                       </CalButton>
                       <Button
                         asChild

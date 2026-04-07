@@ -68,7 +68,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
                   <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                    Book a call
+                    Get in Touch
                   </CalButton>
                 </div>
               </div>
@@ -282,7 +282,7 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
         <div className="md:col-span-5">
           <Kicker>Let&apos;s talk.</Kicker>
           <h2 className="mt-6 text-3xl md:text-5xl font-serif tracking-tight mb-4">
-            Book a call and get <em className="font-serif-10 italic">clarity.</em>
+            Get in Touch and get <em className="font-serif-10 italic">clarity.</em>
           </h2>
           <p className="text-ink-muted font-mono text-sm max-w-md">
             Share what you&apos;re building and what results you want. We&apos;ll reply with clear next steps.

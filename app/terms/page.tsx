@@ -58,7 +58,7 @@ export default function TermsPage() {
               These Terms shall be governed by and defined following the laws of India. BrandBase and yourself irrevocably consent that the courts of Mumbai, Maharashtra, India shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
             </p>
 
-            <h3>8. Contact us</h3>
+            <h3>8. Contact</h3>
             <p>
               In order to resolve a complaint regarding the website or to receive further information regarding use of the website, please contact us at:
             </p>
