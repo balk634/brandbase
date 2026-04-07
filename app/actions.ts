@@ -4,7 +4,7 @@ import { Resend } from "resend";
 import { masterConfig } from "@/config/master";
 import { isContactSubmissionRateLimited } from "@/lib/contactRateLimit";
 
-const resend = new Resend(process.env.RESEND_API_KEY || "re_hVTpxpHA_J317arerg8haJXxachPnm54D");
+const resend = new Resend(process.env.RESEND_API_KEY);
 const MIN_FORM_FILL_MS = 2_500;
 const MAX_FORM_AGE_MS = 24 * 60 * 60 * 1_000;
 const hasRedisRateLimitConfig =
