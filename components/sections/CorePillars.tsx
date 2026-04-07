@@ -94,8 +94,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
     return (
         <motion.li
             variants={fadeInUp}
-            className={`flex flex-col md:flex-row md:items-stretch border-t last:border-b group transition-colors duration-300 overflow-hidden mi-surface mi-row
-                [--mi-list-slide:0.8px] [--mi-card-icon-scale:1.015] [--mi-duration-base:420ms]
+            className={`flex flex-col md:flex-row md:items-stretch border-t last:border-b group transition-colors duration-300 overflow-hidden
                 ${isDark
                     ? "border-premium-600"
                     : "border-grid/15"
@@ -108,11 +107,14 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
                     : "bg-primary text-white"
                 }`}
             >
-                {formattedIndex}
+                <div className="mi-row [--mi-list-slide:0.6px]">
+                    {formattedIndex}
+                </div>
             </div>
 
             {/* Content area: Three-column split layout */}
-            <div className={`flex-1 p-6 md:p-8 lg:p-10 transition-colors
+            <div className={`flex-1 p-6 md:p-8 lg:p-10 transition-colors mi-surface mi-row
+                [--mi-list-slide:0.8px] [--mi-card-icon-scale:1.015] [--mi-duration-base:420ms]
                 ${isDark ? "hover:bg-premium-800/40" : "hover:bg-ink/[0.02]"}`}>
 
                 <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-8 items-center h-full">
