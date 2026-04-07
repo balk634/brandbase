@@ -50,6 +50,27 @@ description: How to access and manage the BrandBase production VPS.
 
 ---
 
+## User Management (DB Access)
+
+Manage accounts directly via the PostgreSQL container:
+
+**1. Show all users**
+```bash
+docker exec calcom-db psql -U calcom_user -d calcom -c 'SELECT id, email, username, role FROM users;'
+```
+
+**2. Delete a user by email**
+```bash
+docker exec calcom-db psql -U calcom_user -d calcom -c "DELETE FROM users WHERE email='user@example.com';"
+```
+
+**3. Promote a user to ADMIN**
+```bash
+docker exec calcom-db psql -U calcom_user -d calcom -c "UPDATE users SET role='ADMIN' WHERE email='user@example.com';"
+```
+
+---
+
 ## Troubleshooting Guide: Phantom Redirects & Next.js Cache
 
 > [!WARNING]

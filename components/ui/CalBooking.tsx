@@ -24,8 +24,6 @@ export function CalButton({
     <Button asChild variant={variant} size={size} className={className} onClick={onClick}>
       <a
         href={fullUrl}
-        target="_blank"
-        rel="noopener noreferrer"
         // Native attributes for the custom raw Cal.com script element click
         data-cal-link={eventSlug}
         data-cal-namespace={masterConfig.contact.calcomNamespace}
