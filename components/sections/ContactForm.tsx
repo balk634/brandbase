@@ -20,7 +20,7 @@ const HELPFUL_DETAILS = [
   "Current challenges or pain points",
 ] as const;
 
-export function ContactForm({ variant = "section" }: { variant?: ContactFormVariant }) {
+export function ContactForm({ variant = "section", hideHeader = false }: { variant?: ContactFormVariant, hideHeader?: boolean }) {
   const isPage = variant === "page";
   const [formStartedAt] = useState(() => Date.now().toString());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -279,26 +279,28 @@ export function ContactForm({ variant = "section" }: { variant?: ContactFormVari
   return (
     <Section className="bg-transparent">
       <Container className="grid md:grid-cols-12 gap-10 items-start">
-        <div className="md:col-span-5">
-          <Kicker>Let&apos;s talk.</Kicker>
-          <h2 className="mt-6 text-3xl md:text-5xl font-serif tracking-tight mb-4">
-            Get in Touch and get <em className="font-serif-10 italic">clarity.</em>
-          </h2>
-          <p className="text-ink-muted font-mono text-sm max-w-md">
-            Share what you&apos;re building and what results you want. We&apos;ll reply with clear next steps.
-          </p>
+        {!hideHeader && (
+          <div className="md:col-span-5">
+            <Kicker>Let&apos;s talk.</Kicker>
+            <h2 className="mt-6 text-3xl md:text-5xl font-serif tracking-tight mb-4">
+              Get in Touch and get <em className="font-serif-10 italic">clarity.</em>
+            </h2>
+            <p className="text-ink-muted font-mono text-sm max-w-md">
+              Share what you&apos;re building and what results you want. We&apos;ll reply with clear next steps.
+            </p>
 
-          <div className="mt-8 text-sm">
-            <div className="font-mono text-xs uppercase tracking-widest text-ink-muted">
-              Direct
+            <div className="mt-8 text-sm">
+              <div className="font-mono text-xs uppercase tracking-widest text-ink-muted">
+                Direct
+              </div>
+              <a href={`mailto:${masterConfig.contact.email}`} className="mt-2 inline-block text-ink hover:text-primary transition-colors">
+                {masterConfig.contact.email}
+              </a>
             </div>
-            <a href={`mailto:${masterConfig.contact.email}`} className="mt-2 inline-block text-ink hover:text-primary transition-colors">
-              {masterConfig.contact.email}
-            </a>
           </div>
-        </div>
+        )}
 
-        <div className="md:col-span-7">
+        <div className={hideHeader ? "md:col-span-12" : "md:col-span-7"}>
           {status === "success" ? (
             <div className="border border-grid/15 bg-white p-6 sm:p-8 md:p-12 text-center h-full flex flex-col items-center justify-center min-h-[440px] reveal-up">
               <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">

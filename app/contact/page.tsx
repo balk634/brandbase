@@ -14,85 +14,69 @@ export const metadata = buildPageMetadata({
   path: "/contact",
 });
 
-const CONTACT_INFO = [
-  {
-    icon: IconMail,
-    label: "Email",
-    value: masterConfig.contact.email,
-    href: `mailto:${masterConfig.contact.email}`,
-  },
-  {
-    icon: IconPhone,
-    label: "Phone",
-    value: masterConfig.contact.phone,
-    href: `tel:${masterConfig.contact.phone.replace(/\s+/g, "")}`,
-  },
-  {
-    icon: IconMapPin,
-    label: "Address",
-    value: `${masterConfig.contact.address.street} ${masterConfig.contact.address.locality}, ${masterConfig.contact.address.city}`,
-    href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${masterConfig.contact.address.street} ${masterConfig.contact.address.city}`)}`,
-  },
-];
-
 export default function ContactPage() {
   return (
     <main className="relative">
-      {/* Header Section */}
-      <Section className="bg-transparent pt-10 md:pt-12 lg:pt-14 pb-0 border-b-0">
+      <Section className="bg-transparent py-8 md:py-10 lg:py-12">
         <Container>
-          <div className="border border-grid/15 bg-white overflow-hidden p-6 sm:p-8 md:p-12 lg:p-14 text-center">
-            <Kicker>CONTACT</Kicker>
-            <h1 className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
-              Book a instant call for <em className="font-serif-20 italic">consultation.</em>
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-ink-muted leading-relaxed text-lg md:text-xl">
-              We&apos;ll review your website (or idea), identify the biggest conversion opportunities, and outline what to build first. Then we&apos;ll map the right marketing moves to scale what works.
-            </p>
-          </div>
-        </Container>
-      </Section>
+          <div className="border border-grid/15 bg-white">
+            <div className="p-4 sm:p-8 md:p-12">
+              <div className="text-center">
+                <Kicker className="mx-auto"> CONTACT </Kicker>
+              </div>
 
-      {/* Info Grid Section */}
-      <Section className="bg-transparent py-0 border-b-0">
-        <Container>
-          <div className="grid sm:grid-cols-3 gap-0 border-x border-grid/15">
-            {CONTACT_INFO.map((info) => (
-              <a
-                key={info.label}
-                href={info.href}
-                target={info.label === "Address" ? "_blank" : undefined}
-                rel={info.label === "Address" ? "noopener noreferrer" : undefined}
-                className="group p-8 md:p-10 border-y border-b-0 sm:border-b last:border-b sm:border-y-0 sm:border-r border-grid/15 bg-white flex flex-col items-center text-center hover:bg-paper/40 transition-colors"
-                style={{ borderRightWidth: info.label === "Address" ? 0 : undefined }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <info.icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted group-hover:text-primary transition-colors">
-                    {info.label}
-                  </span>
-                </div>
-                <div className="text-sm font-serif text-ink tracking-tight">
-                  {info.value}
-                </div>
-              </a>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Main Content Split Section */}
-      <Section className="bg-transparent pt-0">
-        <Container>
-          <div className="grid lg:grid-cols-12 border-x border-b border-grid/15 bg-white divide-y lg:divide-y-0 lg:divide-x divide-grid/15">
-            {/* Left: Cal.com Inline Booking */}
-            <div className="lg:col-span-7 p-0 overflow-hidden min-h-[600px] bg-paper/20">
-              <CalInline />
+              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+                Let&apos;s build your <em className="font-serif-20 italic">engine.</em>
+              </h1>
+              <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
+                Ready to scale? Book a consultation below or send us a message. We&apos;ll review your project and outline a path to growth.
+              </p>
             </div>
 
-            {/* Right: Contact Form */}
-            <div className="lg:col-span-5 p-6 sm:p-8 md:p-10">
-              <ContactForm variant="section" />
+            {/* Info Grid - Docked with 0 gap to the bottom section */}
+            <div className="border-t border-grid/15 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15">
+              <div className="p-8 flex flex-col items-center text-center">
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-4">Email</div>
+                <a href={`mailto:${masterConfig.contact.email}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
+                  {masterConfig.contact.email}
+                </a>
+              </div>
+              <div className="p-8 flex flex-col items-center text-center">
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-4">Phone</div>
+                <a href={`tel:${masterConfig.contact.phone.replace(/\s+/g, '')}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
+                  {masterConfig.contact.phone}
+                </a>
+              </div>
+              <div className="p-8 flex flex-col items-center text-center">
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-4">Address</div>
+                <address className="not-italic font-serif text-lg leading-snug text-ink px-4">
+                  {masterConfig.contact.address.street},<br />
+                  {masterConfig.contact.address.city}, {masterConfig.contact.address.state}
+                </address>
+              </div>
+            </div>
+
+            {/* Split Section - Cal.com + Form */}
+            <div className="border-t border-grid/15 grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid/15">
+              {/* Left: Cal.com Embed */}
+              <div className="p-6 sm:p-10 bg-paper/20">
+                <div className="mb-8">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-2">Schedule</div>
+                  <h2 className="font-serif text-2xl tracking-tight">Book a <em className="italic">Call</em></h2>
+                </div>
+                <div className="border border-grid/10 bg-white shadow-sm overflow-hidden min-h-[650px]">
+                  <CalInline className="w-full h-full" />
+                </div>
+              </div>
+
+              {/* Right: Lead Form */}
+              <div className="p-6 sm:p-10">
+                <div className="mb-8">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-2">Direct</div>
+                  <h2 className="font-serif text-2xl tracking-tight">Send a <em className="italic">Message</em></h2>
+                </div>
+                <ContactForm variant="page" hideHeader={true} />
+              </div>
             </div>
           </div>
         </Container>

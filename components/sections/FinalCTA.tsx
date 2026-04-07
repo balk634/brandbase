@@ -23,7 +23,7 @@ export function FinalCTA() {
 
                         <div className="mt-8 w-full max-w-2xl flex flex-col sm:flex-row gap-4 justify-center">
                             <CalButton variant="primary" size="lg" className="sm:min-w-[200px]">
-                                Get in Touch
+                                Start a Project
                             </CalButton>
                         </div>
 
