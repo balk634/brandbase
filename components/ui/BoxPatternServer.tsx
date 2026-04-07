@@ -58,19 +58,25 @@ export function BoxPatternServer({
       </defs>
 
       <g mask="url(#box-pattern-mask)">
-        {Array.from({ length: h }).map((_, rowIndex) =>
-          Array.from({ length: w }).map((_, colIndex) => (
-            <rect
-              key={`${rowIndex}-${colIndex}`}
-              x={colIndex * step}
-              y={rowIndex * step}
-              width={s}
-              height={s}
-              fill="currentColor"
-              className="text-ink"
-            />
-          ))
-        )}
+        {(() => {
+          const rects = [];
+          for (let rowIndex = 0; rowIndex < h; rowIndex++) {
+            for (let colIndex = 0; colIndex < w; colIndex++) {
+              rects.push(
+                <rect
+                  key={`${rowIndex}-${colIndex}`}
+                  x={colIndex * step}
+                  y={rowIndex * step}
+                  width={s}
+                  height={s}
+                  fill="currentColor"
+                  className="text-ink"
+                />
+              );
+            }
+          }
+          return rects;
+        })()}
       </g>
     </svg>
   );
