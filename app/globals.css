@@ -66,27 +66,42 @@ html {
     cursor: default;
   }
 
-  * {
+  /* Avoid the I-beam (editing cursor) on text throughout the site */
+  h1, h2, h3, h4, h5, h6, p, span, div, li, em, strong {
     cursor: default;
   }
 
+  /* Ensure all interactive elements and their children show the hand (pointer) */
   a, 
+  a *,
   button, 
+  button *,
   input[type="submit"], 
   input[type="button"],
   [role="button"],
+  [role="button"] *,
   .mi-btn,
+  .mi-btn *,
   .mi-link-inline,
+  .mi-link-inline *,
   .mi-row,
+  .mi-row *,
+  .mi-nav-item,
+  .mi-nav-item *,
+  .mi-nav-link,
+  .mi-nav-link *,
   .mi-surface[href],
-  a.mi-surface {
+  .mi-surface[href] *,
+  a.mi-surface,
+  a.mi-surface * {
     cursor: pointer !important;
   }
 
+  /* Specifically restore text cursor for forms and editable areas */
   input, 
   textarea, 
   [contenteditable="true"] {
-    cursor: text;
+    cursor: text !important;
   }
 
   h1,
@@ -142,15 +157,15 @@ html {
     --radius: 0.5rem;
     --mi-easing: cubic-bezier(0.22, 1, 0.36, 1);
     --mi-duration-fast: 220ms;
-    --mi-duration-base: 380ms;
-    --mi-duration-slow: 580ms;
-    --mi-card-hover-lift: 1.2px;
-    --mi-button-lift: 1px;
-    --mi-button-press-scale: 0.994;
-    --mi-link-slide: 1.5px;
-    --mi-faq-slide: 1.5px;
-    --mi-list-slide: 1.2px;
-    --mi-card-icon-scale: 1.035;
+    --mi-duration-base: 320ms;
+    --mi-duration-slow: 540ms;
+    --mi-card-hover-lift: 2px;
+    --mi-button-lift: 1.2px;
+    --mi-button-press-scale: 0.99;
+    --mi-link-slide: 2px;
+    --mi-faq-slide: 2px;
+    --mi-list-slide: 2px;
+    --mi-card-icon-scale: 1.06;
   }
 
   .dark {
