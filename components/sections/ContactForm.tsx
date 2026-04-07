@@ -48,18 +48,18 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
 
   if (isPage) {
     return (
-      <div className="flex-grow flex flex-col h-full bg-transparent overflow-hidden">
+      <div className="flex-grow flex flex-col bg-transparent overflow-hidden">
         {status === "success" ? (
-          <div className="flex-1 flex flex-col items-center justify-center min-h-[300px] text-center reveal-up">
+          <div className="flex-1 flex flex-col items-center justify-center min-h-[280px] text-center reveal-up">
             <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
             </div>
             <h3 className="font-serif text-3xl tracking-tight mb-2 text-ink">Message <em className="font-serif-10 italic text-blue-600">Sent</em></h3>
-            <p className="text-ink-muted leading-relaxed max-w-sm">We&apos;ve received your inquiry and will match you with a senior strategist within 24 hours.</p>
-            <Button variant="outline" className="mt-10 uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
+            <p className="text-ink-muted leading-relaxed max-w-sm text-sm">Inquiry received. Matching with senior strategist within 24h.</p>
+            <Button variant="outline" className="mt-8 uppercase tracking-widest text-[10px] rounded-none border-grid/15" onClick={() => setStatus("idle")}>Send another message</Button>
           </div>
         ) : (
-          <form id="contact-form" className="flex-1 flex flex-col gap-5 sm:gap-6" action={handleAction}>
+          <form id="contact-form" className="flex-1 flex flex-col gap-4 sm:gap-5" action={handleAction}>
             <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
             <input
               aria-hidden="true"
@@ -70,25 +70,25 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               type="text"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 shrink-0">
-              <div className="space-y-2">
-                <label htmlFor="contact-page-name" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 shrink-0">
+              <div className="space-y-1.5">
+                <label htmlFor="contact-page-name" className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
                   Name <span className="text-primary">*</span>
                 </label>
                 <input
-                  className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className="w-full h-10 px-4 bg-paper/30 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40 rounded-none transition-all placeholder:font-mono placeholder:text-[10px]"
                   id="contact-page-name"
                   name="name"
                   autoComplete="name"
                   required
                 />
               </div>
-              <div className="space-y-2">
-                <label htmlFor="contact-page-email" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
+              <div className="space-y-1.5">
+                <label htmlFor="contact-page-email" className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
                   Email <span className="text-primary">*</span>
                 </label>
                 <input
-                  className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                  className={`w-full h-10 px-4 bg-paper/30 border focus-visible:outline-none focus-visible:ring-1 transition-all rounded-none ${
                     !isEmailValid && email !== ""
                       ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
                       : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
@@ -104,12 +104,12 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               </div>
             </div>
 
-            <div className="space-y-2 shrink-0">
-              <label htmlFor="contact-page-phone" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
+            <div className="space-y-1.5 shrink-0">
+              <label htmlFor="contact-page-phone" className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
                 Phone Number
               </label>
               <input
-                className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                className={`w-full h-10 px-4 bg-paper/30 border focus-visible:outline-none focus-visible:ring-1 transition-all rounded-none ${
                   !isPhoneValid && phone !== ""
                     ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
                     : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
@@ -126,36 +126,37 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               />
             </div>
 
-            <div className="space-y-2 shrink-0">
-              <label htmlFor="contact-page-subject" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
+            <div className="space-y-1.5 shrink-0">
+              <label htmlFor="contact-page-subject" className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
                 Subject
               </label>
               <input
-                className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                className="w-full h-10 px-4 bg-paper/30 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40 rounded-none transition-all placeholder:font-mono placeholder:text-[10px]"
                 id="contact-page-subject"
                 name="subject"
                 placeholder="e.g. Performance Audit + Rebrand"
               />
             </div>
 
-            <div className="space-y-2 flex-grow flex flex-col min-h-0">
-              <label htmlFor="contact-page-message" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
+            <div className="space-y-1.5 flex flex-col shrink-0">
+              <label htmlFor="contact-page-message" className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
                 Message <span className="text-primary">*</span>
               </label>
               <textarea
-                className="w-full flex-grow min-h-[140px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
+                className="w-full p-4 bg-paper/30 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40 rounded-none transition-all resize-none text-[13px] leading-relaxed placeholder:font-mono placeholder:text-[10px] placeholder:tracking-[0.15em] placeholder:text-ink-muted/50"
                 id="contact-page-message"
                 name="message"
+                rows={4}
                 placeholder={HELPFUL_DETAILS.map((line) => `- ${line}`).join("\n")}
                 required
               />
             </div>
 
-            <div className="mt-2 flex justify-center sm:justify-end shrink-0">
+            <div className="mt-1 pb-2 flex justify-center sm:justify-start shrink-0">
               <LoadingButton
                 type="submit"
                 variant="primary"
-                className="w-full sm:w-auto sm:min-w-[220px]"
+                className="w-full sm:w-auto sm:min-w-[180px] h-10 rounded-none uppercase tracking-widest text-[10px]"
                 isLoading={status === "loading"}
                 loadingText="Sending..."
               >
@@ -194,17 +195,17 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
 
         <div className={hideHeader ? "md:col-span-12" : "md:col-span-7"}>
           {status === "success" ? (
-            <div className="border border-grid/15 bg-white p-6 sm:p-8 md:p-12 text-center h-full flex flex-col items-center justify-center min-h-[440px] reveal-up">
+            <div className="border border-grid/15 bg-white p-6 sm:p-8 md:p-12 text-center h-full flex flex-col items-center justify-center min-h-[400px] reveal-up">
               <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <h3 className="font-serif text-3xl tracking-tight mb-2 text-ink">Message <em className="font-serif-10 italic text-blue-600">Sent</em></h3>
-              <p className="text-ink-muted text-sm leading-relaxed mb-8 max-w-sm mx-auto">Our team will review your project and get back to you within 24 hours (business days).</p>
-              <Button variant="outline" className="uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
+              <p className="text-ink-muted text-sm leading-relaxed mb-8 max-w-sm mx-auto">Our team will review your project and get back to you within 24 hours.</p>
+              <Button variant="outline" className="uppercase tracking-widest text-[10px] rounded-none border-grid/15" onClick={() => setStatus("idle")}>Send another message</Button>
             </div>
           ) : (
             <form
-              className="border border-grid/15 bg-white p-6 sm:p-8"
+              className="border border-grid/15 bg-white p-6 sm:p-8 flex flex-col gap-5 shadow-none"
               action={handleAction}
             >
               <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
@@ -217,16 +218,16 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                 type="text"
               />
 
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-5 shadow-none">
                 <div className="space-y-2">
                   <label
                     htmlFor="contact-name"
-                    className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                    className="font-mono text-[10px] uppercase tracking-widest text-ink-muted"
                   >
                     Name <span className="text-primary">*</span>
                   </label>
                   <input
-                    className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="w-full h-11 px-4 bg-paper/30 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40 rounded-none shadow-none transition-all placeholder:font-mono placeholder:text-[10px]"
                     id="contact-name"
                     name="name"
                     autoComplete="name"
@@ -236,12 +237,12 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                 <div className="space-y-2">
                   <label
                     htmlFor="contact-email"
-                    className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                    className="font-mono text-[10px] uppercase tracking-widest text-ink-muted"
                   >
                     Email <span className="text-primary">*</span>
                   </label>
                   <input
-                    className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                    className={`w-full h-11 px-4 bg-paper/30 border focus-visible:outline-none focus-visible:ring-1 transition-all rounded-none shadow-none ${
                       !isEmailValid && email !== ""
                         ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
                         : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
@@ -257,15 +258,15 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                 </div>
               </div>
 
-              <div className="mt-6 space-y-2">
+              <div className="space-y-2 shadow-none">
                 <label
                   htmlFor="contact-phone"
-                  className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                  className="font-mono text-[10px] uppercase tracking-widest text-ink-muted"
                 >
                   Phone Number
                 </label>
                 <input
-                  className={`w-full h-11 px-4 bg-paper/60 border focus-visible:outline-none focus-visible:ring-2 transition-colors ${
+                  className={`w-full h-11 px-4 bg-paper/30 border focus-visible:outline-none focus-visible:ring-1 transition-all rounded-none shadow-none ${
                     !isPhoneValid && phone !== ""
                       ? "border-red-500 focus:border-red-500 focus-visible:ring-red-500/40"
                       : "border-grid/15 focus:border-primary focus-visible:ring-primary/40"
@@ -282,41 +283,42 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                 />
               </div>
 
-              <div className="mt-6 space-y-2">
+              <div className="space-y-2 shadow-none">
                 <label
                   htmlFor="contact-subject"
-                  className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                  className="font-mono text-[10px] uppercase tracking-widest text-ink-muted"
                 >
                   Subject
                 </label>
                 <input
-                  className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className="w-full h-11 px-4 bg-paper/30 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40 rounded-none shadow-none transition-all placeholder:font-mono placeholder:text-[10px]"
                   id="contact-subject"
                   name="subject"
-                  placeholder="e.g. Full rebrand + web launch, Performance marketing for e-commerce"
+                  placeholder="e.g. Performance Audit + Launch strategy"
                 />
               </div>
 
-              <div className="mt-6 space-y-2">
+              <div className="space-y-2 shadow-none">
                 <label
                   htmlFor="contact-message"
-                  className="font-mono text-xs uppercase tracking-widest text-ink-muted"
+                  className="font-mono text-[10px] uppercase tracking-widest text-ink-muted"
                 >
                   Message <span className="text-primary">*</span>
                 </label>
                 <textarea
-                  className="w-full min-h-[140px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y"
+                  className="w-full p-4 bg-paper/30 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40 rounded-none shadow-none transition-all resize-none"
                   id="contact-message"
                   name="message"
+                  rows={4}
                   required
                 />
               </div>
 
-              <div className="mt-8 flex justify-center sm:justify-end">
+              <div className="mt-4 flex justify-center sm:justify-start shadow-none">
                 <LoadingButton
                   type="submit"
                   variant="primary"
-                  className="w-full sm:w-auto sm:min-w-[220px]"
+                  className="w-full sm:w-auto sm:min-w-[180px] rounded-none shadow-none uppercase tracking-widest text-[10px]"
                   isLoading={status === "loading"}
                   loadingText="Sending..."
                 >
