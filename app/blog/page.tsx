@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { masterConfig } from "@/config/master";
+import { Pagination } from "@/components/ui/Pagination";
 
 export const metadata = buildPageMetadata({
   title: "BrandBase Blog | Website Strategy & Growth Marketing Playbooks",
@@ -15,7 +16,22 @@ export const metadata = buildPageMetadata({
   path: "/blog",
 });
 
-export default function BlogPage() {
+interface BlogPageProps {
+  searchParams: Promise<{ page?: string }>;
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const params = await searchParams;
+  const currentPage = Math.max(1, Number(params.page) || 1);
+  const postsPerPage = 9;
+  const totalPosts = blogPosts.length;
+  const totalPages = Math.max(1, Math.ceil(totalPosts / postsPerPage));
+  
+  const currentPosts = blogPosts.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
+
   const baseUrl = masterConfig.metadata.baseUrl.replace(/\/+$/, "");
   const blogUrl = `${baseUrl}/blog`;
   const toAbsoluteUrl = (url: string) =>
@@ -35,7 +51,7 @@ export default function BlogPage() {
       name: "BrandBase",
       url: baseUrl,
     },
-    blogPost: blogPosts.map((post) => ({
+    blogPost: currentPosts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.title,
       description: post.description,
@@ -53,9 +69,9 @@ export default function BlogPage() {
   const blogItemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    itemListElement: blogPosts.map((post, index) => ({
+    itemListElement: currentPosts.map((post, index) => ({
       "@type": "ListItem",
-      position: index + 1,
+      position: (currentPage - 1) * postsPerPage + index + 1,
       url: `${baseUrl}/blog/${post.slug}`,
       name: post.title,
     })),
@@ -71,70 +87,78 @@ export default function BlogPage() {
       />
       <Section className="bg-transparent">
         <Container>
-          <div className="border border-grid/15 bg-white overflow-hidden">
-            <div className="p-8 md:p-12">
+          <div className="border border-grid/15 bg-white overflow-hidden shadow-sm">
+            <div className="p-10 md:p-14 lg:p-16">
               <div className="text-center">
-                <Kicker className="mx-auto">BLOG</Kicker>
+                <Kicker className="mx-auto">NEWSROOM & INSIGHTS</Kicker>
               </div>
 
- <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif-20 leading-[0.95] tracking-tighter text-ink">
-                Guides that help you <em className="font-serif-10 italic">grow.</em>
+              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif-20 leading-[0.95] tracking-tighter text-ink max-w-4xl mx-auto">
+                Practical guides that <em className="font-serif-10 italic">scale brands.</em>
               </h1>
-              <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
-                Deep, practical articles on websites, local search, content, and
-                measurement. Written for Indian SMBs and serious brands.
+              <p className="mt-8 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl mx-auto font-medium">
+                Deep articles on conversion, local SEO, paid ads, and growth systems for serious Indian businesses.
               </p>
             </div>
 
-            <div className="border-t border-grid/15 p-7 md:p-8">
-              <div className="grid gap-4 md:grid-cols-2">
-                {blogPosts.map((post) => (
-                  <div key={post.slug} className="border border-grid/15 bg-white p-7 md:p-8">
-                    <div className="grid grid-cols-12 gap-6 items-center">
-                      <div className="col-span-12 lg:col-span-7 min-w-0 flex flex-col items-center lg:items-start text-center lg:text-left">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full border border-grid/25 bg-paper/40 text-[10px] font-mono uppercase tracking-[0.35em] text-ink-muted">
-                          {post.category}
-                        </div>
- <h2 className="mt-4 font-serif-10 text-2xl md:text-3xl tracking-tight text-ink">
-                          <Link
-                            href={`/blog/${post.slug}`}
-                            className="text-ink hover:text-ink underline-offset-4 hover:underline decoration-ink/30"
-                          >
-                            {post.title}
-                          </Link>
-                        </h2>
-                        <p className="mt-3 text-sm text-ink-muted leading-relaxed">
-                          {post.description}
-                        </p>
-
-                        <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                          <Button asChild variant="primary" size="sm">
-                            <Link href={`/blog/${post.slug}`}>Read story</Link>
-                          </Button>
-                        </div>
+            <div className="border-t border-grid/10 p-4 sm:p-6 md:p-8 lg:p-10 bg-paper/10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {currentPosts.map((post) => (
+                  <div key={post.slug} className="group flex flex-col border border-grid/10 bg-white overflow-hidden transition-all duration-500 hover:border-grid/30 hover:shadow-xl hover:-translate-y-1">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="relative aspect-[16/10] overflow-hidden border-b border-grid/10"
+                    >
+                      {post.heroImage ? (
+                        <Image
+                          src={post.heroImage}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={currentPosts.indexOf(post) < 3}
+                        />
+                      ) : (
+                          <div className="w-full h-full bg-paper/40 flex items-center justify-center">
+                              <span className="text-ink-muted text-xs font-mono tracking-widest uppercase opacity-40">BrandBase Blog</span>
+                          </div>
+                      )}
+                    </Link>
+                    <div className="p-6 md:p-8 flex flex-col flex-grow">
+                      <div className="inline-flex items-center px-2.5 py-1 rounded border border-grid/15 bg-paper/50 text-[10px] font-mono uppercase tracking-[0.2em] text-ink-muted/80 w-fit">
+                        {post.category}
                       </div>
-
-                      <div className="col-span-12 lg:col-span-5 min-w-0">
-                        <Link
-                          href={`/blog/${post.slug}`}
-                          aria-label={`Open article: ${post.title}`}
-                          className="block relative border border-grid/15 bg-paper/40 aspect-[4/5] lg:aspect-square overflow-hidden"
-                        >
-                          {post.heroImage ? (
-                            <Image
-                              src={post.heroImage}
-                              alt={post.title}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 1024px) 100vw, 420px"
-                            />
-                          ) : null}
+                      <h2 className="mt-5 font-serif-10 text-xl md:text-2xl leading-tight tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
+                        <Link href={`/blog/${post.slug}`} className="hover:underline underline-offset-4 decoration-primary/20">
+                          {post.title}
                         </Link>
+                      </h2>
+                      <p className="mt-4 text-sm text-ink-muted leading-relaxed line-clamp-3 font-normal opacity-85">
+                        {post.description}
+                      </p>
+                      
+                      <div className="mt-auto pt-8 flex items-center justify-between">
+                         <Button asChild variant="link" size="sm" className="px-0 h-auto text-[11px] font-bold text-ink hover:text-primary transition-colors">
+                             <Link href={`/blog/${post.slug}`}>READ POST</Link>
+                         </Button>
+                         <time className="text-[10px] font-mono text-ink-muted/50 uppercase tracking-tighter" dateTime={post.date}>
+                             {new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })}
+                         </time>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
+
+              {totalPages > 1 && (
+                <div className="mt-8 pt-8 border-t border-grid/5">
+                  <Pagination 
+                     currentPage={currentPage} 
+                     totalPages={totalPages} 
+                     baseUrl="/blog" 
+                  />
+                </div>
+              )}
             </div>
           </div>
         </Container>
@@ -142,4 +166,3 @@ export default function BlogPage() {
     </main>
   );
 }
-

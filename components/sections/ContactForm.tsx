@@ -48,9 +48,9 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
 
   if (isPage) {
     return (
-      <div className="flex-1 flex flex-col h-full">
+      <div className="flex-grow flex flex-col h-full bg-transparent overflow-hidden">
         {status === "success" ? (
-          <div className="flex-1 flex flex-col items-center justify-center min-h-[400px] text-center reveal-up">
+          <div className="flex-1 flex flex-col items-center justify-center min-h-[300px] text-center reveal-up">
             <div className="h-16 w-16 border border-grid/15 bg-white flex items-center justify-center mb-8">
               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
             </div>
@@ -59,7 +59,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
             <Button variant="outline" className="mt-10 uppercase tracking-widest text-[10px]" onClick={() => setStatus("idle")}>Send another message</Button>
           </div>
         ) : (
-          <form id="contact-form" className="flex-1 flex flex-col h-full" action={handleAction}>
+          <form id="contact-form" className="flex-1 flex flex-col gap-5 sm:gap-6" action={handleAction}>
             <input type="hidden" name="formStartedAt" value={formStartedAt} readOnly />
             <input
               aria-hidden="true"
@@ -70,7 +70,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               type="text"
             />
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 shrink-0">
               <div className="space-y-2">
                 <label htmlFor="contact-page-name" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
                   Name <span className="text-primary">*</span>
@@ -104,7 +104,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               </div>
             </div>
 
-            <div className="mt-6 space-y-2">
+            <div className="space-y-2 shrink-0">
               <label htmlFor="contact-page-phone" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
                 Phone Number
               </label>
@@ -126,7 +126,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               />
             </div>
 
-            <div className="mt-6 space-y-2">
+            <div className="space-y-2 shrink-0">
               <label htmlFor="contact-page-subject" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
                 Subject
               </label>
@@ -134,15 +134,16 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                 className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 id="contact-page-subject"
                 name="subject"
+                placeholder="e.g. Performance Audit + Rebrand"
               />
             </div>
 
-            <div className="mt-6 space-y-2 flex-1 flex flex-col">
+            <div className="space-y-2 flex-grow flex flex-col min-h-0">
               <label htmlFor="contact-page-message" className="font-mono text-xs uppercase tracking-widest text-ink-muted">
                 Message <span className="text-primary">*</span>
               </label>
               <textarea
-                className="w-full flex-1 min-h-[160px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
+                className="w-full flex-grow min-h-[140px] p-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 resize-y text-sm leading-relaxed placeholder:font-mono placeholder:text-[11px] placeholder:tracking-[0.22em] placeholder:text-ink-muted/70"
                 id="contact-page-message"
                 name="message"
                 placeholder={HELPFUL_DETAILS.map((line) => `- ${line}`).join("\n")}
@@ -150,7 +151,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
               />
             </div>
 
-            <div className="mt-8 flex justify-center sm:justify-end">
+            <div className="mt-2 flex justify-center sm:justify-end shrink-0">
               <LoadingButton
                 type="submit"
                 variant="primary"
@@ -215,7 +216,6 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                 tabIndex={-1}
                 type="text"
               />
-              {/* Inline error message removed for bottom-right notification feed */}
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">

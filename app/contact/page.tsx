@@ -28,28 +28,28 @@ export default function ContactPage() {
               <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                 Let&apos;s build your <em className="font-serif-20 italic">engine.</em>
               </h1>
-              <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
+              <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto font-medium">
                 Ready to scale? Book a consultation below or send us a message. We&apos;ll review your project and outline a path to growth.
               </p>
             </div>
 
             {/* Info Grid - Docked with 0 gap to the top section */}
             <div className="border-t border-grid/15 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15">
-              <div className="p-10 md:p-12 lg:p-14 flex flex-col items-center text-center">
+              <div className="p-10 md:p-12 flex flex-col items-center text-center">
                 <IconMail className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Email</div>
                 <a href={`mailto:${masterConfig.contact.email}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
                   {masterConfig.contact.email}
                 </a>
               </div>
-              <div className="p-10 md:p-12 lg:p-14 flex flex-col items-center text-center">
+              <div className="p-10 md:p-12 flex flex-col items-center text-center">
                 <IconPhone className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Phone</div>
                 <a href={`tel:${masterConfig.contact.phone.replace(/\s+/g, '')}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
                   {masterConfig.contact.phone}
                 </a>
               </div>
-              <div className="p-10 md:p-12 lg:p-14 flex flex-col items-center text-center">
+              <div className="p-10 md:p-12 flex flex-col items-center text-center">
                 <IconMapPin className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Address</div>
                 <address className="not-italic font-serif text-lg leading-snug text-ink px-4">
@@ -62,25 +62,27 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section className="bg-transparent py-4 md:py-6 lg:py-8">
+      <Section className="bg-transparent pb-12 pt-0 md:pb-16 lg:pb-20">
         <Container>
-          <div className="border border-grid/15 bg-white grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid/15">
+          <div className="border border-grid/15 bg-white grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid/15 overflow-hidden">
             {/* Left: Cal.com Embed */}
-            <div className="p-6 sm:p-10 bg-paper/20">
-              <div className="mb-8">
-                <Kicker>Book a Call</Kicker>
+            <div className="p-6 sm:p-8 md:p-10 bg-paper/5 flex flex-col">
+              <div className="mb-6">
+                <Kicker>Book a Strategic consultation</Kicker>
               </div>
-              <div className="border border-grid/10 bg-white shadow-sm overflow-hidden min-h-[650px]">
+              <div className="flex-1 min-h-[500px] lg:min-h-[580px] border border-grid/10 bg-white shadow-sm overflow-hidden ring-1 ring-grid/5">
                 <CalInline className="w-full h-full" />
               </div>
             </div>
 
             {/* Right: Lead Form */}
-            <div className="p-6 sm:p-10">
-              <div className="mb-8">
-                <Kicker>Send a Message</Kicker>
+            <div className="p-6 sm:p-8 md:p-10 flex flex-col">
+              <div className="mb-6">
+                <Kicker>Send a Brief Message</Kicker>
               </div>
-              <ContactForm variant="page" hideHeader={true} />
+              <div className="flex-1 flex flex-col h-full">
+                <ContactForm variant="page" hideHeader={true} />
+              </div>
             </div>
           </div>
         </Container>
