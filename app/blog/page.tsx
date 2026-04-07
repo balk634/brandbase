@@ -85,86 +85,84 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           __html: JSON.stringify([blogSchema, blogItemListSchema]).replace(/</g, "\\u003c"),
         }}
       />
-      <Section className="bg-transparent border-b border-grid/10">
+      <Section className="bg-transparent">
         <Container>
-          <div className="border-x border-grid/10 bg-white">
-            <div className="p-10 md:p-14 lg:p-20 text-center border-b border-grid/10">
-              <Kicker className="mx-auto">NEWSROOM & INSIGHTS</Kicker>
-              <h1 className="mt-10 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-serif-10 leading-[0.85] tracking-tighter text-ink italic">
-                Practical guides that <em className="font-serif-20 not-italic">scale.</em>
+          <div className="border border-grid/15 bg-white overflow-hidden shadow-sm">
+            <div className="p-10 md:p-14 lg:p-16">
+              <div className="text-center">
+                <Kicker className="mx-auto">NEWSROOM & INSIGHTS</Kicker>
+              </div>
+
+              <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif-20 leading-[0.95] tracking-tighter text-ink max-w-4xl mx-auto">
+                Practical guides that <em className="font-serif-10 italic">scale brands.</em>
               </h1>
-              <p className="mt-10 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl mx-auto font-medium">
+              <p className="mt-8 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl mx-auto font-medium">
                 Deep articles on conversion, local SEO, paid ads, and growth systems for serious Indian businesses.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 lg:divide-x divide-grid/10">
-              {currentPosts.map((post, index) => (
-                <article key={post.slug} className={cn(
-                  "group flex flex-col bg-white transition-colors duration-500 hover:bg-paper/10",
-                  index > 2 && "md:border-t lg:border-t-0", // Handle top border for subsequent rows
-                  index % 3 !== 0 && "lg:border-l-0", // Grid lines are handled by divide-x
-                  "border-grid/10"
-                )}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="relative aspect-[16/10] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border-b border-grid/10"
-                  >
-                    {post.heroImage ? (
-                      <Image
-                        src={post.heroImage}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        priority={currentPosts.indexOf(post) < 3}
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-paper/40 flex items-center justify-center">
-                        <span className="text-ink-muted text-[10px] font-mono tracking-widest uppercase opacity-40">BrandBase Blog</span>
+            <div className="border-t border-grid/10 p-4 sm:p-6 md:p-8 lg:p-10 bg-paper/10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {currentPosts.map((post) => (
+                  <div key={post.slug} className="group flex flex-col border border-grid/10 bg-white overflow-hidden transition-all duration-500 hover:border-grid/30 hover:shadow-xl hover:-translate-y-1">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="relative aspect-[16/10] overflow-hidden border-b border-grid/10"
+                    >
+                      {post.heroImage ? (
+                        <Image
+                          src={post.heroImage}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={currentPosts.indexOf(post) < 3}
+                        />
+                      ) : (
+                          <div className="w-full h-full bg-paper/40 flex items-center justify-center">
+                              <span className="text-ink-muted text-xs font-mono tracking-widest uppercase opacity-40">BrandBase Blog</span>
+                          </div>
+                      )}
+                    </Link>
+                    <div className="p-6 md:p-8 flex flex-col flex-grow">
+                      <div className="inline-flex items-center px-2.5 py-1 rounded border border-grid/15 bg-paper/50 text-[10px] font-mono uppercase tracking-[0.2em] text-ink-muted/80 w-fit">
+                        {post.category}
                       </div>
-                    )}
-                  </Link>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-ink-muted/60 mb-5">
-                      {post.category}
-                    </div>
-                    <h2 className="font-serif-10 text-2xl md:text-3xl leading-[1.1] tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
-                      <Link href={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
-                    </h2>
-                    <p className="mt-5 text-sm text-ink-muted/80 leading-relaxed line-clamp-3 font-normal">
-                      {post.description}
-                    </p>
-                    
-                    <div className="mt-auto pt-10 flex items-center justify-between">
-                       <Button asChild variant="link" size="sm" className="px-0 h-auto text-[10px] font-mono font-bold tracking-widest text-ink hover:text-primary transition-colors uppercase">
-                           <Link href={`/blog/${post.slug}`}>View Report</Link>
-                       </Button>
-                       <time className="text-[9px] font-mono text-ink-muted/40 uppercase tracking-widest" dateTime={post.date}>
-                           {new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short' })}
-                       </time>
+                      <h2 className="mt-5 font-serif-10 text-xl md:text-2xl leading-tight tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
+                        <Link href={`/blog/${post.slug}`} className="hover:underline underline-offset-4 decoration-primary/20">
+                          {post.title}
+                        </Link>
+                      </h2>
+                      <p className="mt-4 text-sm text-ink-muted leading-relaxed line-clamp-3 font-normal opacity-85">
+                        {post.description}
+                      </p>
+                      
+                      <div className="mt-auto pt-8 flex items-center justify-between">
+                         <Button asChild variant="link" size="sm" className="px-0 h-auto text-[11px] font-bold text-ink hover:text-primary transition-colors">
+                             <Link href={`/blog/${post.slug}`}>READ POST</Link>
+                         </Button>
+                         <time className="text-[10px] font-mono text-ink-muted/50 uppercase tracking-tighter" dateTime={post.date}>
+                             {new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })}
+                         </time>
+                      </div>
                     </div>
                   </div>
-                </article>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className="p-16 border-t border-grid/10 bg-paper/5">
-              <Pagination 
-                 currentPage={currentPage} 
-                 totalPages={totalPages} 
-                 baseUrl="/blog" 
-              />
+              {totalPages > 1 && (
+                <div className="mt-8 pt-8 border-t border-grid/5">
+                  <Pagination 
+                     currentPage={currentPage} 
+                     totalPages={totalPages} 
+                     baseUrl="/blog" 
+                  />
+                </div>
+              )}
             </div>
           </div>
         </Container>
       </Section>
     </main>
   );
-}
-
-function cn(...classes: any[]) {
-  return classes.filter(Boolean).join(" ");
 }

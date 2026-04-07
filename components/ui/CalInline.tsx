@@ -57,13 +57,13 @@ export function CalInline({ className }: CalInlineProps) {
         useSlotsViewOnSmallScreen: "true",
         theme: "light",
       },
-      calLink: masterConfig.contact.calcomSlug,
+      calLink: masterConfig.contact.calcomSlug, // Using the slug from masterConfig
     });
 
     Cal.ns[namespace]("ui", {
       theme: "light",
       cssVarsPerTheme: {
-        light: { "cal-brand": masterConfig.colors.primary },
+        light: { "cal-brand": masterConfig.colors.primary }, // Link to theme primary color
         dark: { "cal-brand": "#fafafa" },
       },
       hideEventTypeDetails: true,
@@ -77,7 +77,7 @@ export function CalInline({ className }: CalInlineProps) {
     <div
       ref={containerRef}
       className={className}
-      style={{ width: "100%", height: "100%", minHeight: "480px" }}
+      style={{ width: "100%", height: "100%", minHeight: "650px", overflow: "scroll" }}
       id="my-cal-inline-30min"
     />
   );
