@@ -36,19 +36,22 @@ export default function ContactPage() {
             {/* Info Grid - Docked with 0 gap to the bottom section */}
             <div className="border-t border-grid/15 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid/15">
               <div className="p-8 flex flex-col items-center text-center">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-4">Email</div>
+                <IconMail className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Email</div>
                 <a href={`mailto:${masterConfig.contact.email}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
                   {masterConfig.contact.email}
                 </a>
               </div>
               <div className="p-8 flex flex-col items-center text-center">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-4">Phone</div>
+                <IconPhone className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Phone</div>
                 <a href={`tel:${masterConfig.contact.phone.replace(/\s+/g, '')}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
                   {masterConfig.contact.phone}
                 </a>
               </div>
               <div className="p-8 flex flex-col items-center text-center">
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-4">Address</div>
+                <IconMapPin className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Address</div>
                 <address className="not-italic font-serif text-lg leading-snug text-ink px-4">
                   {masterConfig.contact.address.street},<br />
                   {masterConfig.contact.address.city}, {masterConfig.contact.address.state}
@@ -61,7 +64,6 @@ export default function ContactPage() {
               {/* Left: Cal.com Embed */}
               <div className="p-6 sm:p-10 bg-paper/20">
                 <div className="mb-8">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-2">Schedule</div>
                   <h2 className="font-serif text-2xl tracking-tight">Book a <em className="italic">Call</em></h2>
                 </div>
                 <div className="border border-grid/10 bg-white shadow-sm overflow-hidden min-h-[650px]">
@@ -72,7 +74,6 @@ export default function ContactPage() {
               {/* Right: Lead Form */}
               <div className="p-6 sm:p-10">
                 <div className="mb-8">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-2">Direct</div>
                   <h2 className="font-serif text-2xl tracking-tight">Send a <em className="italic">Message</em></h2>
                 </div>
                 <ContactForm variant="page" hideHeader={true} />
