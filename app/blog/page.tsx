@@ -87,7 +87,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       />
       <Section className="bg-transparent">
         <Container>
-          <div className="border border-grid/15 bg-white overflow-hidden shadow-sm">
+          <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-10 md:p-14 lg:p-16">
               <div className="text-center">
                 <Kicker className="mx-auto">NEWSROOM & INSIGHTS</Kicker>
@@ -104,7 +104,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             <div className="border-t border-grid/10 p-4 sm:p-6 md:p-8 lg:p-10 bg-paper/10">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {currentPosts.map((post) => (
-                  <div key={post.slug} className="group flex flex-col border border-grid/10 bg-white overflow-hidden transition-all duration-500 hover:border-grid/30 hover:shadow-xl hover:-translate-y-1">
+                  <div key={post.slug} className="group flex flex-col border border-grid/10 bg-white overflow-hidden transition-colors duration-300 hover:border-grid/25">
                     <Link
                       href={`/blog/${post.slug}`}
                       className="relative aspect-[16/10] overflow-hidden border-b border-grid/10"
