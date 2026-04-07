@@ -483,6 +483,10 @@ html {
     border-color: var(--mi-border-base) !important;
   }
 
+  .mi-surface.mi-row:hover {
+    transform: translate3d(var(--mi-list-slide), 0, 0);
+  }
+
   .mi-surface:hover .mi-card-icon,
   .mi-surface:hover .mi-card-icon > svg,
   .mi-card-icon:hover,

@@ -94,7 +94,7 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
     return (
         <motion.li
             variants={fadeInUp}
-            className={`flex flex-col md:flex-row md:items-stretch border-t last:border-b group transition-colors duration-300 overflow-hidden mi-surface
+            className={`flex flex-col md:flex-row md:items-stretch border-t last:border-b group transition-colors duration-300 overflow-hidden mi-surface mi-row
                 ${isDark
                     ? "border-premium-600"
                     : "border-grid/15"
