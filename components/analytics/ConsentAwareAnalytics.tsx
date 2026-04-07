@@ -10,7 +10,7 @@ type ConsentAwareAnalyticsProps = {
 
 declare global {
   interface Window {
-    dataLayer?: unknown[];
+    dataLayer?: Object[];
     gtag?: (...args: unknown[]) => void;
     clarity?: (...args: unknown[]) => void;
   }
