@@ -49,11 +49,20 @@ export function PerformanceEnhancements({
   useEffect(() => {
     let cancelled = false;
 
+    // Check if device is touch or prefers reduced motion (avoiding heavy chunks on mobile)
+    const isTouchDevice = typeof window !== "undefined" && 
+      (window.matchMedia("(hover: none) and (pointer: coarse)").matches || 
+       navigator.maxTouchPoints > 0 || 
+       "ontouchstart" in window);
+       
+    const prefersReducedMotion = typeof window !== "undefined" && 
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const clearSchedule = scheduleIdleLoad(async () => {
       const modules = await Promise.all([
         import("./NavigationTransitionManager"),
-        enableSmoothScroll ? import("./SmoothScroll") : Promise.resolve(null),
-        enableMicroInteractions ? import("./MicroInteractionEngine") : Promise.resolve(null),
+        enableSmoothScroll && !isTouchDevice && !prefersReducedMotion ? import("./SmoothScroll") : Promise.resolve(null),
+        enableMicroInteractions && !isTouchDevice && !prefersReducedMotion ? import("./MicroInteractionEngine") : Promise.resolve(null),
         enableScrollProgress ? import("./ScrollProgress") : Promise.resolve(null),
       ]);
 
