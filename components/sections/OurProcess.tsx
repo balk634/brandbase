@@ -7,7 +7,7 @@ import {
     IconSearch, IconPalette, IconRocket, IconTrendingUp, type IconProps
 } from "@tabler/icons-react";
 import { BoxPatternServer } from "@/components/ui/BoxPatternServer";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import Image from "next/image";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -98,12 +98,11 @@ export function OurProcess() {
                                         
                                         {/* Process Step Image */}
                                         <div className="w-full aspect-video mb-6 bg-paper/40 flex items-center justify-center overflow-hidden relative">
-                                            <OptimizedImage 
+                                            <Image 
                                               src={step.image} 
                                               alt={step.title} 
                                               fill 
                                               className="object-cover"
-                                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
                                             />
                                         </div>
 

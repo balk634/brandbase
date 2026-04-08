@@ -1,6 +1,7 @@
 "use client";
 
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 type ConsentAwareAnalyticsProps = {
   googleAnalyticsId?: string;
@@ -19,16 +20,36 @@ export function ConsentAwareAnalytics({
   googleAnalyticsId,
   microsoftClarityId,
 }: ConsentAwareAnalyticsProps) {
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    // Only load analytics after the main thread is completely free
+    // This ensures 0 impact on LCP, FCP, and Speed Index
+    const handleLoad = () => {
+      // Small delay after load to be absolutely sure we don't interfere with hydration
+      setTimeout(() => setShouldLoad(true), 2000);
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
+  }, []);
+
+  if (!shouldLoad) return null;
+
   return (
     <>
-      {/* Google Analytics - loads after hydration (won't block Speed Index) */}
+      {/* Google Analytics - loads during idle time */}
       {googleAnalyticsId && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
-          <Script id="google-analytics" strategy="lazyOnload">
+          <Script id="google-analytics" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -42,7 +63,7 @@ export function ConsentAwareAnalytics({
         </>
       )}
 
-      {/* Microsoft Clarity - loads during idle time (no impact on Speed Index) */}
+      {/* Microsoft Clarity - the ultimate 'load last' strategy */}
       {microsoftClarityId && (
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`

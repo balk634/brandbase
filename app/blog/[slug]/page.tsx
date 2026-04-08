@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { masterConfig } from "@/config/master";
 import { blogPosts, getBlogPost } from "@/lib/blogPosts";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { CalButton } from "@/components/ui/CalBooking";
 import { motion } from "@/components/ui/motion-lite";
@@ -215,13 +215,12 @@ export default async function BlogPostPage({
               </div>
               <div className="mt-4 relative border border-grid/15 bg-paper/40 aspect-[16/10] md:aspect-[21/9] overflow-hidden">
                 {post.heroImage ? (
-                  <OptimizedImage
+                  <Image
                     src={post.heroImage}
                     alt={post.title}
                     fill
-                    priority
                     className="object-cover"
-                    sizes="(max-width: 1280px) 100vw, 1280px"
+                    sizes="(max-width: 768px) 100vw, 90vw"
                   />
                 ) : null}
               </div>

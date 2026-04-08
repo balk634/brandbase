@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import Image from "next/image";
 import { HeroImage } from "@/components/ui/HeroImage";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
@@ -153,11 +153,11 @@ export default function SocialMediaManagementPage() {
                                         <motion.div key={item.title} variants={scaleIn} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="p-7 md:p-8 flex flex-col group cursor-default">
                                             {/* Image at top */}
                                             <div className="w-full aspect-video mb-6 border border-grid/15 bg-paper/40 flex items-center justify-center overflow-hidden relative">
-                                                <OptimizedImage 
+                                                <Image 
                                                     src={item.image} 
                                                     alt={item.title}
                                                     fill
-                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
+                                                    sizes="(max-width: 768px) 100vw, 50vw"
                                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                                                 />
                                             </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { IconX, IconExternalLink } from "@tabler/icons-react";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import Image from "next/image";
 
 const pitchDecks = [
     { id: 1, path: "/pitchdeck/1.pdf", thumb: "/pitchdeck/1_first_page.jpg" },
@@ -55,12 +55,12 @@ export default function PitchDecksClient() {
 
                         {/* Static JPEG Thumbnail */}
                         <div className="w-full h-full relative z-10 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 origin-top overflow-hidden bg-grid/5 grid place-items-center">
-                            <OptimizedImage
+                            <Image
                                 src={deck.thumb}
                                 alt={`Pitch Deck ${deck.id} Cover`}
                                 fill
                                 className="object-cover object-top"
-                                sizes="(max-width: 1024px) 50vw, 256px"
+                                sizes="(max-width: 1024px) 50vw, 20vw"
                             />
                         </div>
 
@@ -88,12 +88,12 @@ export default function PitchDecksClient() {
                                 className={`relative w-full h-full rounded-sm overflow-hidden border border-grid/10 cursor-default transition-[transform] hover:scale-105 hover:rotate-0 hover:z-10 ${idx === 0 ? '-rotate-3 translate-x-1 translate-y-1' : 'rotate-3 -translate-x-1 -translate-y-1'}`}
                                 onClick={() => setSelectedImage(src)}
                             >
-                                <OptimizedImage
+                                <Image
                                     src={src}
                                     alt={`More work ${idx + 1}`}
                                     fill
                                     className="object-cover object-top"
-                                    sizes="(max-width: 1024px) 50vw, 256px"
+                                    sizes="(max-width: 1024px) 50vw, 20vw"
                                 />
                             </div>
                         ))}
@@ -128,7 +128,7 @@ export default function PitchDecksClient() {
                         {/* Modal Content */}
                         <div className="flex-1 bg-gray-100 flex items-center justify-center p-4">
                             <div className="relative w-full h-full">
-                                <OptimizedImage
+                                <Image
                                     src={selectedImage}
                                     alt="Enlarged screenshot"
                                     fill

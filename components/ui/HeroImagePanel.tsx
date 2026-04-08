@@ -34,7 +34,7 @@ export function HeroImagePanel({ src, alt }: HeroImagePanelProps) {
           style={{ filter: "none", mixBlendMode: "normal" }}
           priority={true}
           fetchPriority="high"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 440px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 440px"
         />
       </div>
     </div>
