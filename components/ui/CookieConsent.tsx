@@ -69,17 +69,17 @@ export function CookieConsent() {
             }}
         >
             <div className="flex justify-between items-start mb-4">
-                <div className="font-mono text-xs uppercase tracking-widest text-ink font-bold">Cookie settings</div>
+                <div className="font-mono text-xs uppercase tracking-wider text-ink font-bold">Cookie settings</div>
                 <button
                     type="button"
                     onClick={decline}
-                    className="text-ink-muted hover:text-ink"
+                    className="text-ink hover:text-black transition-colors"
                     aria-label="Close cookie notice"
                 >
                     <IconX size={14} aria-hidden="true" />
                 </button>
             </div>
-            <p className="text-xs text-ink-muted mb-6 leading-relaxed">
+            <p className="text-xs text-ink mb-6 leading-relaxed">
                 We use cookies to improve your experience and analyze site traffic.
                 By clicking &quot;Accept&quot;, you agree to our use of cookies.
             </p>

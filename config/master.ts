@@ -64,7 +64,7 @@ export const masterConfig = {
       enabled: true,
     },
     email: process.env.CONTACT_TO_EMAIL || "info@brandbase.in",
-    phone: "+91 9113702669",
+    phone: "+91 9939146979",
     // Used for the self-hosted Cal.com booking system.
     calcomUrl: "https://booking.brandbase.in",
     calcomSlug: "brandbase/30min",
@@ -128,13 +128,13 @@ export const masterConfig = {
         name: "Balkrishna",
         role: "Technical Lead",
         image: "/photos/balkrishna.jpg",
-        description: "Focuses on client acquisition, high-level brand strategy, and overseeing the creative vision."
+        description: "Focuses on client acquisition, Brand strategy, and overseeing the creative vision."
       },
       {
         name: "Harshwardhan Pawar",
         role: "Head of Content",
         image: "/photos/harsh.jpg",
-        description: "Handles social media management, brand voice, and the narrative copy for the pitch decks."
+        description: "Handles social media management, brand voice, and the shaping narraative of the brand."
       },
       {
         name: "Shweta Dwivedi",
