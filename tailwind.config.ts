@@ -70,15 +70,15 @@ const config: Config = {
 					'sans-serif'
 				],
 				serif: [
-					'var(--font-redaction)',
+					'redaction',
 					'serif'
 				],
 				'serif-10': [
-					'var(--font-redaction-10)',
+					'redaction-10',
 					'serif'
 				],
 				'serif-20': [
-					'var(--font-redaction-20)',
+					'redaction-20',
 					'serif'
 				],
 				body: [

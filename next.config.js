@@ -20,6 +20,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@tabler/icons-react", "@calcom/embed-react"],
     scrollRestoration: true,
+    optimizeCss: true,
   },
   turbopack: {
     root: process.cwd(),
