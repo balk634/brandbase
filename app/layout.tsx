@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { masterConfig } from "@/config/master";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -20,6 +21,36 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const redaction = localFont({
+  src: [
+    { path: "../public/fonts/Redaction-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Redaction-Italic.woff2", weight: "400", style: "italic" },
+    { path: "../public/fonts/Redaction-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+  variable: "--font-redaction",
+});
+
+const redaction10 = localFont({
+  src: [
+    { path: "../public/fonts/Redaction_10-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Redaction_10-Italic.woff2", weight: "400", style: "italic" },
+    { path: "../public/fonts/Redaction_10-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+  variable: "--font-redaction-10",
+});
+
+const redaction20 = localFont({
+  src: [
+    { path: "../public/fonts/Redaction_20-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Redaction_20-Italic.woff2", weight: "400", style: "italic" },
+    { path: "../public/fonts/Redaction_20-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+  variable: "--font-redaction-20",
 });
 
 export const metadata: Metadata = {
@@ -71,7 +102,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-paper text-ink overflow-x-hidden w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} ${redaction.variable} ${redaction10.variable} ${redaction20.variable} font-sans antialiased bg-paper text-ink overflow-x-hidden w-full`}
         style={
           {
             "--pattern-opacity": String(masterConfig.ui.pattern.opacity),

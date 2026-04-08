@@ -23,19 +23,20 @@ export function ConsentAwareAnalytics({
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    // Only load analytics after the main thread is completely free
-    // This ensures 0 impact on LCP, FCP, and Speed Index
-    const handleLoad = () => {
-      // Small delay after load to be absolutely sure we don't interfere with hydration
-      setTimeout(() => setShouldLoad(true), 2000);
+    // Only load analytics on actual user interaction
+    // This perfectly shields LCP/TBT scores from heavy 3rd-party scripts on mobile
+    const interactions = ["scroll", "mousemove", "touchstart", "keydown", "click"];
+    
+    const handleInteraction = () => {
+      setShouldLoad(true);
+      interactions.forEach((event) => window.removeEventListener(event, handleInteraction));
     };
 
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
+    interactions.forEach((event) => window.addEventListener(event, handleInteraction, { once: true, passive: true }));
+
+    return () => {
+      interactions.forEach((event) => window.removeEventListener(event, handleInteraction));
+    };
   }, []);
 
   if (!shouldLoad) return null;
