@@ -41,18 +41,22 @@ export function CookieConsent() {
     useEffect(() => {
         const consent = localStorage.getItem("cookie-consent");
         if (!consent) {
-            setShow(true);
+            // Need a slight delay to avoid state updates during initial render cycle.
+            const initialShowTimer = window.setTimeout(() => {
+                setShow(true);
+            }, 500);
 
             // Auto-accept after 5 seconds
             timerRef.current = window.setTimeout(() => {
-                accept();
-            }, 5000);
+                handleAction("accepted");
+            }, 5500);
 
             return () => {
+                window.clearTimeout(initialShowTimer);
                 if (timerRef.current) window.clearTimeout(timerRef.current);
             };
         }
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     if (!show) return null;
 

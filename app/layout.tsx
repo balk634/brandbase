@@ -5,12 +5,11 @@ import { masterConfig } from "@/config/master";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ConsentAwareAnalytics } from "@/components/analytics/ConsentAwareAnalytics";
-import { Agentation } from "agentation";
-
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { Agentation } from "agentation";
+import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -143,7 +142,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <CookieConsent />
-        {process.env.NODE_ENV === "development" && <Agentation />}
+        {process.env.NODE_ENV === "development" ? <Agentation /> : null}
       </body>
     </html>
   );
