@@ -94,8 +94,7 @@ export function Navbar() {
                         alt="BrandBase — High-performance websites and marketing" 
                         width={masterConfig.logo.header.width ?? 138} 
                         height={masterConfig.logo.header.height} 
-                        className="w-auto"
-                        style={{ height: `${masterConfig.logo.header.height}px` }}
+                        className="w-auto h-auto"
                         priority
                     />
                 </Link>
@@ -162,7 +161,7 @@ export function Navbar() {
                                         <div
                                             className={[
                                                 "absolute left-0 top-full z-50 pt-2 perspective-[1000px]",
-                                                "transition-[opacity,transform,visibility] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                                                "transition-[opacity,transform,visibility] duration-300 ease-out",
                                                 isDesktopOpen
                                                     ? "opacity-100 translate-y-0 pointer-events-auto visible"
                                                     : "opacity-0 -translate-y-2 pointer-events-none invisible",

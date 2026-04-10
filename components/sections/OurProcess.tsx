@@ -103,6 +103,7 @@ export function OurProcess() {
                                               alt={step.title} 
                                               fill 
                                               className="object-cover"
+                                              sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                         </div>
 
