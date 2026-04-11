@@ -15,13 +15,13 @@ export function CalInline({ className }: CalInlineProps) {
     if (!containerRef.current || containerRef.current.dataset.loaded) return;
 
     (function (C, A, L) {
-      let p = function (a: any, ar: any) {
+      const p = function (a: any, ar: any) {
         a.q.push(ar);
       };
-      let d = C.document;
+      const d = C.document;
       (C as any).Cal = (C as any).Cal || function () {
-        let cal = (C as any).Cal;
-        let ar = arguments;
+        const cal = (C as any).Cal;
+        const ar = arguments;
         if (!cal.loaded) {
           cal.ns = {};
           cal.q = cal.q || [];
