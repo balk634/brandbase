@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 interface LazyImageProps {
@@ -30,20 +28,9 @@ export function LazyImage({
     height,
     objectFit = 'cover',
 }: LazyImageProps) {
-    const [hasError, setHasError] = useState(false);
-
-    const handleError = () => setHasError(true);
 
     // --- Fill mode ---
     if (fill) {
-        if (hasError) {
-            return (
-                <div className={`absolute inset-0 bg-gray-100 flex items-center justify-center text-gray-400 text-sm ${className}`}>
-                    <span>Image unavailable</span>
-                </div>
-            );
-        }
-
         return (
             <Image
                 src={src}
@@ -55,20 +42,7 @@ export function LazyImage({
                 priority={priority}
                 placeholder={blurDataURL ? "blur" : "empty"}
                 blurDataURL={blurDataURL}
-                onError={handleError}
             />
-        );
-    }
-
-    // --- Sized mode (width + height provided, no fill) ---
-    if (hasError) {
-        return (
-            <div
-                className={`bg-gray-100 flex items-center justify-center text-gray-400 text-sm ${className}`}
-                style={width && height ? { width, height } : { aspectRatio: "16/10" }}
-            >
-                <span>Image unavailable</span>
-            </div>
         );
     }
 
@@ -85,7 +59,6 @@ export function LazyImage({
             fetchPriority={priority ? "high" : "auto"}
             placeholder={blurDataURL ? "blur" : "empty"}
             blurDataURL={blurDataURL}
-            onError={handleError}
         />
     );
 }

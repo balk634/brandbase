@@ -8,8 +8,6 @@ import Link from "next/link";
 import { motion } from "@/components/ui/motion-lite";
 import { CalButton } from "@/components/ui/CalBooking";
 import { Kicker } from "@/components/ui/Kicker";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IconArrowRight, IconStack2, IconArrowDown } from "@tabler/icons-react";
 
 export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "right" }) {
     const { hero } = masterConfig.sections;
