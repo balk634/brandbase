@@ -58,12 +58,14 @@ export function PerformanceEnhancements({
     const prefersReducedMotion = typeof window !== "undefined" && 
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
     const clearSchedule = scheduleIdleLoad(async () => {
       const modules = await Promise.all([
         import("./NavigationTransitionManager"),
-        enableSmoothScroll && !isTouchDevice && !prefersReducedMotion ? import("./SmoothScroll") : Promise.resolve(null),
-        enableMicroInteractions && !isTouchDevice && !prefersReducedMotion ? import("./MicroInteractionEngine") : Promise.resolve(null),
-        enableScrollProgress ? import("./ScrollProgress") : Promise.resolve(null),
+        enableSmoothScroll && !isTouchDevice && !prefersReducedMotion && !isMobile ? import("./SmoothScroll") : Promise.resolve(null),
+        enableMicroInteractions && !isTouchDevice && !prefersReducedMotion && !isMobile ? import("./MicroInteractionEngine") : Promise.resolve(null),
+        enableScrollProgress && !isMobile ? import("./ScrollProgress") : Promise.resolve(null),
       ]);
 
       if (cancelled) return;
