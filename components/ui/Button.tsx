@@ -42,14 +42,25 @@ export interface ButtonProps
     target?: string
 }
 
+// Helper to safely access props of children when asChild is true
+function getChildProp(children: React.ReactNode, propName: string): string | undefined {
+    if (React.isValidElement(children) && typeof children.props === 'object' && children.props !== null) {
+        const props = children.props as Record<string, unknown>;
+        if (propName in props && typeof props[propName] === 'string') {
+            return props[propName] as string;
+        }
+    }
+    return undefined;
+}
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant, size, asChild = false, children, ...props }, ref) => {
         const { href: propsHref, target: propsTarget, ...buttonProps } = props
         const Comp = asChild ? Slot : "button"
         
         // Determine arrow type
-        const href = propsHref || (asChild ? (children as any)?.props?.href : undefined);
-        const target = propsTarget || (asChild ? (children as any)?.props?.target : undefined);
+        const href = propsHref || (asChild ? getChildProp(children, 'href') : undefined);
+        const target = propsTarget || (asChild ? getChildProp(children, 'target') : undefined);
         const isIconSize = size === "icon";
         
         let ArrowIcon = null;
@@ -81,11 +92,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 {...(asChild ? props : buttonProps)}
             >
                 {asChild ? (
-                    React.isValidElement(children) ? (
-                        React.cloneElement(children as React.ReactElement<any>, {
+                    React.isValidElement<{ children?: React.ReactNode }>(children) ? (
+                        React.cloneElement(children, {
                             children: (
                                 <>
-                                    {(children as React.ReactElement<any>).props.children}
+                                    {children.props.children}
                                     {arrowElement}
                                 </>
                             )
