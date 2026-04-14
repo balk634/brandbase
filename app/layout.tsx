@@ -11,7 +11,6 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 import { CookieConsent } from "@/components/ui/CookieConsent";
-import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -146,7 +145,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
-        <FloatingWhatsApp />
         <CookieConsent />
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
