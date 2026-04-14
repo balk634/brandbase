@@ -48,9 +48,21 @@ const nextConfig = {
       },
     ],
   },
+  trailingSlash: false,
   compress: true,
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.brandbase.in",
+          },
+        ],
+        destination: "https://brandbase.in/:path*",
+        permanent: true,
+      },
       {
         source: "/social-media-growth/:path*",
         destination: "/digital-marketing/:path*",

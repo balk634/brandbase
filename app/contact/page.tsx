@@ -3,14 +3,14 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Kicker } from "@/components/ui/Kicker";
 import { CalInline } from "@/components/ui/CalInline";
-import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
+import { IconMail, IconPhone, IconMapPin, IconBrandWhatsapp } from "@tabler/icons-react";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
   title: "Contact BrandBase | Let's Build Your Next High-Performance Website",
   description:
-    "Ready to scale? Contact BrandBase in Mumbai for conversion-first web design and performance marketing services. Book a strategy call today.",
+    "Ready to scale? Contact BrandBase in Patna for conversion-first web design and performance marketing services. Book a strategy call today.",
   path: "/contact",
 });
 
@@ -43,9 +43,13 @@ export default function ContactPage() {
                 </a>
               </div>
               <div className="p-10 md:p-12 flex flex-col items-center text-center">
-                <IconPhone className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
+                <div className="flex items-center gap-2 mb-4">
+                  <IconPhone className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                  <span className="text-ink-muted/30 font-light">/</span>
+                  <IconBrandWhatsapp className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                </div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Phone/Whatsapp</div>
-                <a href={`tel:${masterConfig.contact.phone.replace(/\s+/g, '')}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
+                <a href={`https://wa.me/${masterConfig.contact.phone.replace(/[+\s]/g, '')}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
                   {masterConfig.contact.phone}
                 </a>
               </div>

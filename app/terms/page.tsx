@@ -43,29 +43,47 @@ export default function TermsPage() {
               Your privacy is critically important to us. We process your information in accordance with global data protection standards, including the GDPR, CCPA, and India&apos;s Digital Personal Data Protection (DPDP) Act. For full details on how we handle your data, please refer to our <a href="/privacy" className="underline hover:text-ink">Privacy policy</a>.
             </p>
 
-            <h3>5. Prohibited Activities</h3>
+            <h3 className="font-serif">5. Payment Terms & Subscriptions</h3>
+            <p>
+              For &quot;Pay Monthly&quot; (WaaS) website plans, services are billed on a recurring monthly or annual basis. Failure to pay will result in the suspension of website hosting and services. For Custom Enterprise builds, a minimum 12-month contract is required, or standard milestone payments (e.g., 25% upfront, 75% on delivery) must be cleared before the website is deployed to the client&apos;s live server.
+            </p>
+
+            <h3>6. Intellectual Property & Ownership</h3>
+            <p>
+              <strong>For Custom Builds:</strong> Full ownership of the website&apos;s frontend code, design assets, and domain transfers to the client <em>only after</em> the final invoice is paid in full.
+            </p>
+            <p>
+              <strong>For Pay Monthly Plans:</strong> BrandBase retains ownership of the codebase and infrastructure. The client retains ownership of their brand assets, logos, and provided text.
+            </p>
+
+            <h3>7. Third-Party Infrastructure Liability</h3>
+            <p>
+              BrandBase utilizes enterprise-grade third-party infrastructure (e.g., Vercel, AWS, Shopify, Stripe, and other cloud organisations). We are not liable for downtime, loss of revenue, or data breaches caused by the failure of these third-party systems.
+            </p>
+
+            <h3>8. Prohibited Activities</h3>
             <p>
               You may not access or use the website for any purpose other than that for which we make the website available. The website may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.
             </p>
 
-            <h3>6. Limitation of Liability</h3>
+            <h3>9. Limitation of Liability</h3>
             <p>
               In no event will we or our directors, employees, or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, lost revenue, loss of data, or other damages arising from your use of the website, even if we have been advised of the possibility of such damages.
             </p>
 
-            <h3>7. Governing Law</h3>
+            <h3>10. Governing Law</h3>
             <p>
-              These Terms shall be governed by and defined following the laws of India. BrandBase and yourself irrevocably consent that the courts of Mumbai, Maharashtra, India shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
+              These Terms shall be governed by and defined following the laws of India. BrandBase and yourself irrevocably consent that the courts of Patna, Bihar, India shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
             </p>
 
-            <h3>8. Contact</h3>
+            <h3>11. Contact</h3>
             <p>
               In order to resolve a complaint regarding the website or to receive further information regarding use of the website, please contact us at:
             </p>
             <p>
               <strong>Email:</strong> {masterConfig.contact.email}<br />
               <strong>Phone:</strong> {masterConfig.contact.phone}<br />
-              <strong>Address:</strong>            {masterConfig.contact.address.street} {masterConfig.contact.address.locality}<br />{masterConfig.contact.address.city}, {masterConfig.contact.address.state}, {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
+              <strong>Address:</strong> {masterConfig.contact.address.street}, {masterConfig.contact.address.locality}, {masterConfig.contact.address.city}, {masterConfig.contact.address.state} - {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
             </p>
           </div>
         </Container>

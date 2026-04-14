@@ -23,9 +23,8 @@ export default function PrivacyPolicyPage() {
               Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
 
- <h3 className="font-serif">1. Introduction</h3>
             <p>
-              BrandBase (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you visit our website or use our services. We are committed to processing data in accordance with the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), the Digital Personal Data Protection (DPDP) Act of India, and other applicable privacy laws.
+              BrandBase (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you visit our website or use our services. We comply with the General Data Protection Regulation (GDPR) for our European clients, the CCPA for our US clients, and the DPDP Act for our Indian clients.
             </p>
 
             <h3>2. Information We Collect</h3>
@@ -65,22 +64,35 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p>To exercise these rights, please contact us using the information below.</p>
 
-            <h3>7. Cookies</h3>
+            <h3>8. Cookie Policy</h3>
             <p>
-              Our website uses cookies to enhance your browsing experience. You can choose to disable cookies through your browser settings, but this may affect the functionality of our website. For more details, please view our <a href="/cookies" className="underline hover:text-ink">Cookie policy</a>.
+              Cookies are simple text files that are stored on your computer or mobile device by a website&apos;s server. Each cookie is unique to your web browser. It will contain some anonymous information such as a unique identifier, the website&apos;s site name, and some digits and numbers.
+            </p>
+            <p className="mt-4">
+              We use cookies to improve your browsing experience by enabling certain functions of the website, providing analytics to help us understand how you use the site, and storing your preferences.
+            </p>
+            <p className="mt-4">
+              <strong>Types of Cookies We Use:</strong>
+            </p>
+            <ul>
+              <li><strong>Essential Cookies:</strong> Necessary for the website to function properly and remember your preferences.</li>
+              <li><strong>Analytics Cookies:</strong> Used to track information about website usage for improvements.</li>
+            </ul>
+            <p className="mt-4">
+              <strong>How to Control Cookies:</strong> You can control and/or delete cookies as you wish via your browser settings. For details, see <a href="https://www.aboutcookies.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-ink">aboutcookies.org</a>.
             </p>
 
-            <h3>8. Changes to This Policy</h3>
+            <h3>9. Changes to This Policy</h3>
             <p>
               We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
             </p>
 
-            <h3>9. Contact</h3>
+            <h3>10. Contact</h3>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
             <p>
               <strong>Email:</strong> {masterConfig.contact.email}<br />
               <strong>Phone:</strong> {masterConfig.contact.phone}<br />
-              <strong>Address:</strong> {masterConfig.contact.address.street} {masterConfig.contact.address.locality}<br />{masterConfig.contact.address.city}, {masterConfig.contact.address.state}, {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
+              <strong>Address:</strong> {masterConfig.contact.address.street}, {masterConfig.contact.address.locality}, {masterConfig.contact.address.city}, {masterConfig.contact.address.state} - {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
             </p>
           </div>
         </Container>

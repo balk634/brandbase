@@ -4,36 +4,38 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Impressum | BrandBase",
-  description: "Legal disclosure and company information for BrandBase.",
-  path: "/impressum",
+  title: "Legal Notice | BrandBase",
+  description: "Legal notice and company details for BrandBase.",
+  path: "/legal-notice",
   noIndex: true,
 });
 
-export default function ImpressumPage() {
+export default function LegalNoticePage() {
   return (
     <main className="relative">
       <Section className="py-16 md:py-24 bg-paper">
         <Container>
- <h1 className="text-4xl md:text-5xl font-serif-20 tracking-tighter mb-8">
-            Impressum
+          <h1 className="text-4xl md:text-5xl font-serif-20 tracking-tighter mb-8">
+            Legal Notice & Company Details
           </h1>
           <div className="prose prose-sm md:prose-base font-sans text-ink-muted">
             <p className="text-lg text-ink font-medium mb-8">
               Legal Disclosure according to international requirements.
             </p>
 
- <h3 className="font-serif">Information required under Section 5 of the German Telemedia Act (TMG):</h3>
+            <h3 className="font-serif">Registered Office:</h3>
             <p>
               BrandBase<br />
-              {masterConfig.contact.address.street} {masterConfig.contact.address.locality}<br />
-              {masterConfig.contact.address.city}, {masterConfig.contact.address.state} {masterConfig.contact.address.postalCode}<br />
+              {masterConfig.contact.address.street}, {masterConfig.contact.address.locality}<br />
+              {masterConfig.contact.address.city}, {masterConfig.contact.address.state} - {masterConfig.contact.address.postalCode}<br />
               {masterConfig.contact.address.country}
             </p>
 
-            <h3>Represented by:</h3>
+            <h3>Represented by & Legal Entity:</h3>
             <p>
-              Balkrishna &amp; Harshwardhan Pawar (Founders)
+              BrandBase is a registered Sole Proprietorship in India.<br />
+              Legal Owner & Authorized Signatory: Balkrishna<br />
+              GSTIN (Goods and Services Tax Identification Number): <strong>10DHEPB0541R1ZN</strong>
             </p>
 
             <h3>Contact Details:</h3>
@@ -44,7 +46,7 @@ export default function ImpressumPage() {
 
             <h3>Dispute Resolution:</h3>
             <p>
-              We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board. Any disputes will be handled within the jurisdiction of Mumbai, Maharashtra, India.
+              We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board. Any disputes will be handled within the jurisdiction of Patna, Bihar, India.
             </p>
 
             <h3>Liability for Content</h3>
@@ -67,5 +69,3 @@ export default function ImpressumPage() {
     </main>
   );
 }
-
-

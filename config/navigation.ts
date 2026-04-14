@@ -55,10 +55,9 @@ export const FOOTER_COLUMNS = [
     {
       title: "Legal Information",
       links: [
-        { name: "Impressum", href: "/impressum" },
+        { name: "Legal Notice", href: "/legal-notice" },
         { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms of Service", href: "/terms" },
-        { name: "Cookie Settings", href: "/cookies" },
       ]
     }
 ];

@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     images: masterConfig.metadata.openGraph.images?.[0]?.url,
   },
   alternates: {
-    canonical: "/",
+    canonical: masterConfig.metadata.baseUrl,
   },
 };
 

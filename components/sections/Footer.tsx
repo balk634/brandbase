@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { masterConfig } from "@/config/master";
 import Image from "next/image";
-import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
+import { IconMail, IconPhone, IconMapPin, IconBrandWhatsapp } from "@tabler/icons-react";
 import { LinkedInIcon, InstagramIcon } from "@/components/icons/BrandIcons";
 import type { ComponentType } from "react";
 import { WorldTimeBadgesLazy } from "@/components/ui/WorldTimeBadgesLazy";
@@ -49,8 +49,8 @@ export function Footer() {
                                         {masterConfig.contact.email}
                                     </a>
                                     <span className="w-px h-3 bg-white/20 hidden sm:block" />
-                                    <a href={`tel:${masterConfig.contact.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                                        <IconPhone className="h-4 w-4 shrink-0 text-white" strokeWidth={1.5} />
+                                    <a href={`https://wa.me/${masterConfig.contact.phone.replace(/[+\s]/g, '')}`} className="flex items-center gap-2 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                                        <IconBrandWhatsapp className="h-4 w-4 shrink-0 text-white" strokeWidth={1.5} />
                                         {masterConfig.contact.phone}
                                     </a>
                                 </div>

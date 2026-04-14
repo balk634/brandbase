@@ -70,11 +70,11 @@ export const masterConfig = {
     calcomSlug: "brandbase/30min",
     calcomNamespace: "30min",
     address: {
-      street: "Pluto B 504, Suncity Complex",
-      locality: "Powai",
-      city: "Mumbai",
-      state: "Maharashtra",
-      postalCode: "400076",
+      street: "05, Ashokpuri Colony, Lekhanagar",
+      locality: "Road No. 3, Danapur",
+      city: "Patna",
+      state: "Bihar",
+      postalCode: "801503",
       country: "India",
     },
     social: {
