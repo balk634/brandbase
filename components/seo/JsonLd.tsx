@@ -1,4 +1,5 @@
 import { masterConfig } from "@/config/master";
+import { NAVIGATION } from "@/config/navigation";
 
 export function JsonLd() {
     const { metadata, contact } = masterConfig;
@@ -6,7 +7,7 @@ export function JsonLd() {
     const sameAs = [contact.social.linkedin, contact.social.instagram].filter(Boolean);
     const toAbsoluteUrl = (path: string) => `${baseUrl}${path.startsWith("/") ? path : `/${path}`}`;
 
-    const navigationLinks = masterConfig.navigation.flatMap((item) => [
+    const navigationLinks = NAVIGATION.flatMap((item) => [
         { name: item.name, href: item.href },
         ...(item.subItems ?? []).map((subItem) => ({ name: subItem.name, href: subItem.href })),
     ]);
@@ -14,7 +15,7 @@ export function JsonLd() {
     const offerCatalog = {
         "@type": "OfferCatalog",
         "name": "BrandBase Services",
-        "itemListElement": masterConfig.navigation.map((item) => {
+        "itemListElement": NAVIGATION.map((item) => {
             const sectionServices =
                 item.subItems && item.subItems.length > 0
                     ? item.subItems

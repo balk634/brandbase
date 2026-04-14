@@ -12,6 +12,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { CalButton } from "@/components/ui/CalBooking";
 
 import Image from "next/image";
+import { NAVIGATION } from "@/config/navigation";
 
 export function Navbar() {
     const headerRef = useRef<HTMLElement | null>(null);
@@ -101,7 +102,7 @@ export function Navbar() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden lg:flex items-center justify-center gap-2 min-w-0">
-                    {masterConfig.navigation.map((item) => {
+                    {NAVIGATION.map((item) => {
                         const hasSubItems = item.subItems && item.subItems.length > 0;
                         const isMainActive = pathname === item.href || (hasSubItems && item.subItems?.some(sub => pathname === sub.href));
                         const isDesktopOpen = openDesktopDropdown === item.name;
@@ -276,7 +277,7 @@ export function Navbar() {
                         transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
                     >
                         <nav className="flex flex-col divide-y divide-grid/10">
-                            {masterConfig.navigation.map((item) => {
+                            {NAVIGATION.map((item) => {
                                 const hasSubItems = item.subItems && item.subItems.length > 0;
                                 const isOpen = openMobileDropdown === item.name;
 

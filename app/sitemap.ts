@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { masterConfig } from "@/config/master";
+import { NAVIGATION, FOOTER_COLUMNS } from "@/config/navigation";
 import { blogPosts } from "@/lib/blogPosts";
 import { NON_INDEXABLE_ROUTES } from "@/lib/seoMetadata";
 
@@ -29,12 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   addPath("/process");
   addPath("/pitchdecks");
 
-  for (const item of masterConfig.navigation) {
+  for (const item of NAVIGATION) {
     addPath(item.href);
     for (const sub of item.subItems ?? []) addPath(sub.href);
   }
 
-  for (const col of masterConfig.footerColumns) {
+  for (const col of FOOTER_COLUMNS) {
     for (const link of col.links) addPath(link.href);
   }
 

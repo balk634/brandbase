@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { masterConfig } from "@/config/master";
+import { NAVIGATION, FOOTER_COLUMNS } from "@/config/navigation";
 
 function titleCase(value: string) {
   return value
@@ -18,14 +19,14 @@ const labelByPath = (() => {
     ["/pitchdecks", "Pitch Decks"],
   ];
 
-  for (const item of masterConfig.navigation) {
+  for (const item of NAVIGATION) {
     entries.push([item.href, item.name]);
     for (const subItem of item.subItems ?? []) {
       entries.push([subItem.href, subItem.name]);
     }
   }
 
-  for (const column of masterConfig.footerColumns) {
+  for (const column of FOOTER_COLUMNS) {
     for (const link of column.links) {
       entries.push([link.href, link.name]);
     }

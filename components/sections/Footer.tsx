@@ -5,6 +5,7 @@ import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
 import { LinkedInIcon, InstagramIcon } from "@/components/icons/BrandIcons";
 import type { ComponentType } from "react";
 import { WorldTimeBadgesLazy } from "@/components/ui/WorldTimeBadgesLazy";
+import { FOOTER_COLUMNS } from "@/config/navigation";
 
 export function Footer() {
     const year = new Date().getFullYear();
@@ -102,7 +103,7 @@ export function Footer() {
                     {/* Links Grid & Time Badges */}
                     <div className="w-full lg:w-2/3 flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-12 gap-10 lg:gap-16">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-y-12 w-full">
-                            {masterConfig.footerColumns.map((col) => (
+                            {FOOTER_COLUMNS.map((col) => (
                                 <div key={col.title}>
                                     <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/85 mb-6">
                                         {col.title}
