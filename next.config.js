@@ -1,18 +1,20 @@
 /** @type {import("next").NextConfig} */
+const isDev = process.env.NODE_ENV === 'development';
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   "base-uri 'self'",
   "frame-ancestors 'none'",
   "object-src 'none'",
   "form-action 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://booking.brandbase.in https://static.cloudflareinsights.com https://*.clarity.ms",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://booking.brandbase.in https://static.cloudflareinsights.com https://*.clarity.ms`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://fonts.gstatic.com",
   "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://booking.brandbase.in https://static.cloudflareinsights.com https://*.clarity.ms https://*.bing.com",
   "frame-src 'self' https://app.cal.com https://booking.brandbase.in",
-  "upgrade-insecure-requests",
-].join("; ");
+  isDev ? "" : "upgrade-insecure-requests",
+].filter(Boolean).join("; ");
 
 const nextConfig = {
   reactCompiler: true,
