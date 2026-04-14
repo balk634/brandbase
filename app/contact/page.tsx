@@ -44,7 +44,7 @@ export default function ContactPage() {
               </div>
               <div className="p-10 md:p-12 flex flex-col items-center text-center">
                 <IconPhone className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
-                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Phone</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Phone/Whatsapp</div>
                 <a href={`tel:${masterConfig.contact.phone.replace(/\s+/g, '')}`} className="font-serif text-xl text-ink hover:text-primary transition-colors">
                   {masterConfig.contact.phone}
                 </a>

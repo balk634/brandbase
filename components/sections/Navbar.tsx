@@ -56,7 +56,13 @@ export function Navbar() {
         closeMobileMenu();
     }, [clearDesktopCloseTimer, closeMobileMenu]);
 
+    const mounted = useRef(false);
+
     useEffect(() => {
+        if (!mounted.current) {
+            mounted.current = true;
+            return;
+        }
         const frame = window.requestAnimationFrame(() => {
             closeAllMenus();
         });

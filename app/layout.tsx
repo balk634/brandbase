@@ -11,6 +11,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,6 +55,9 @@ export const metadata: Metadata = {
     title: masterConfig.metadata.title,
     description: masterConfig.metadata.description,
     images: masterConfig.metadata.openGraph.images?.[0]?.url,
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -142,6 +146,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <FloatingWhatsApp />
         <CookieConsent />
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>

@@ -15,6 +15,12 @@ BrandBase specializes in high-performance digital infrastructure for businesses.
 - [Social Media Management](https://brandbase.in/digital-marketing/social-media-management): Brand-focused organic growth.
 - [Local SEO & Google Maps](https://brandbase.in/digital-marketing/local-seo-google-maps): Dominating local search intent.
 
+## Key Experience & Claims
+- **Efficiency**: Standard static sites launch in under 14 days; complex builds in under 28 days.
+- **Authority**: 40+ clients served across 12+ industries with an average 94% retention rate.
+- **ROI**: Demonstrable 4.2x average ROI for performance marketing clients.
+- **Ownership**: 100% IP ownership for clients—no locked code or hostage ad accounts.
+
 ## Technical Foundation
 - **Stack**: Next.js 15+, React, Tailwind CSS, TypeScript.
 - **Hosting**: Netlify / Vercel.

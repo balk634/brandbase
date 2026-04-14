@@ -34,6 +34,30 @@ export function JsonLd() {
         }),
     };
 
+    const faqSchema = {
+        "@type": "FAQPage",
+        "@id": `${baseUrl}/#faq`,
+        "mainEntity": masterConfig.sections.faq.map((item) => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+            }
+        }))
+    };
+
+    const teamMembers = masterConfig.about.team.map((member) => ({
+        "@type": "Person",
+        "name": member.name,
+        "jobTitle": member.role,
+        "description": member.description,
+        "image": `${baseUrl}${member.image}`,
+        "worksFor": {
+            "@id": `${baseUrl}/#organization`
+        }
+    }));
+
     const schema = {
         "@context": "https://schema.org",
         "@graph": [
@@ -50,9 +74,12 @@ export function JsonLd() {
                 "copyrightHolder": {
                     "@id": `${baseUrl}/#organization`
                 },
-                "hasPart": navigationLinks.map((link, index) => ({
-                    "@id": `${baseUrl}/#nav-${index + 1}`,
-                })),
+                "hasPart": [
+                    ...navigationLinks.map((link, index) => ({
+                        "@id": `${baseUrl}/#nav-${index + 1}`,
+                    })),
+                    { "@id": `${baseUrl}/#faq` }
+                ],
             },
             {
                 "@type": "WebPage",
@@ -70,6 +97,7 @@ export function JsonLd() {
                     "@id": `${baseUrl}/#logo`
                 }
             },
+            faqSchema,
             {
                 "@type": ["Organization", "ProfessionalService"],
                 "@id": `${baseUrl}/#organization`,
@@ -87,6 +115,8 @@ export function JsonLd() {
                 "areaServed": "Worldwide",
                 "knowsAbout": metadata.keywords,
                 "hasOfferCatalog": offerCatalog,
+                "founder": teamMembers.filter(m => m.name === "Balkrishna"),
+                "employee": teamMembers.filter(m => m.name !== "Balkrishna"),
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": `${contact.address.street}${contact.address.locality ? ` ${contact.address.locality}` : ''}`,
@@ -106,7 +136,7 @@ export function JsonLd() {
                 ],
                 "telephone": contact.phone,
                 "email": contact.email,
-                "priceRange": "₹₹",
+                "priceRange": "₹",
                 "sameAs": sameAs
             },
             ...navigationLinks.map((link, index) => ({

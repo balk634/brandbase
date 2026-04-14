@@ -9,7 +9,7 @@ export const masterConfig = {
   metadata: {
     title: "BrandBase | Conversion-First Websites & Performance Marketing",
     description:
-      "BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.",
+      "BrandBase builds high-speed, conversion-focused websites with robust SEO. We scale results with performance marketing for ambitious, growth-oriented brands.",
     baseUrl: "https://brandbase.in",
     keywords: [
       "web design agency india",

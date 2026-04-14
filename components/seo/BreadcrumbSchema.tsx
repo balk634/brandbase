@@ -2,16 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import { masterConfig } from "@/config/master";
+import { NAVIGATION } from "@/config/navigation";
 
 // Pre-compute navigation lookup map for O(1) access
 const navMap = new Map<string, string>();
-if (masterConfig.navigation) {
-  for (const item of masterConfig.navigation) {
-    if (item.href) navMap.set(item.href, item.name);
-    if (item.subItems) {
-      for (const sub of item.subItems) {
-        if (sub.href) navMap.set(sub.href, sub.name);
-      }
+for (const item of NAVIGATION) {
+  if (item.href) navMap.set(item.href, item.name);
+  if (item.subItems) {
+    for (const sub of item.subItems) {
+      if (sub.href) navMap.set(sub.href, sub.name);
     }
   }
 }
