@@ -41,7 +41,7 @@ export function Pagination({ currentPage, totalPages, baseUrl }: PaginationProps
     >
       {/* Previous Button */}
       <PaginationLink
-        href={currentPage > 1 ? `${baseUrl}?page=${currentPage - 1}` : undefined}
+        href={currentPage > 1 ? (currentPage === 2 ? baseUrl : `${baseUrl}?page=${currentPage - 1}`) : undefined}
         disabled={currentPage === 1}
         aria-label="Go to previous page"
       >
@@ -123,7 +123,7 @@ function PageNumber({ page, currentPage, baseUrl }: PageNumberProps) {
   }
 
   const isCurrent = page === currentPage;
-  const href = `${baseUrl}?page=${page}`;
+  const href = page === 1 ? baseUrl : `${baseUrl}?page=${page}`;
 
   return (
     <Link

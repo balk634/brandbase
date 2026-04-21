@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
@@ -9,12 +10,18 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 import { masterConfig } from "@/config/master";
 import { Pagination } from "@/components/ui/Pagination";
 
-export const metadata = buildPageMetadata({
-  title: "BrandBase Blog | Website Strategy & Growth Marketing Playbooks",
-  description:
-    "Practical guides on website strategy, local SEO, paid ads, and conversion systems for high-growth brands and Indian SMBs. Learn how to scale your business today.",
-  path: "/blog",
-});
+export async function generateMetadata({ searchParams }: BlogPageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const currentPage = Math.max(1, Number(params.page) || 1);
+  const path = currentPage === 1 ? "/blog" : `/blog?page=${currentPage}`;
+  
+  return buildPageMetadata({
+    title: "BrandBase Blog | Website Strategy & Growth Marketing Playbooks",
+    description:
+      "Practical guides on website strategy, local SEO, paid ads, and conversion systems for high-growth brands and Indian SMBs. Learn how to scale your business today.",
+    path,
+  });
+}
 
 interface BlogPageProps {
   searchParams: Promise<{ page?: string }>;
