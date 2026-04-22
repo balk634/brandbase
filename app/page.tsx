@@ -4,6 +4,7 @@ import { CorePillars } from "@/components/sections/CorePillars";
 import { OurProcess } from "@/components/sections/OurProcess";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
+import { Purpose } from "@/components/sections/Purpose";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 import { buildPageMetadata } from "@/lib/seoMetadata";
@@ -25,6 +26,7 @@ export default function Home() {
       <OurProcess />
       <Testimonials />
       <FAQ />
+      <Purpose />
       <FinalCTA />
     </main>
   );

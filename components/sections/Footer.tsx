@@ -89,13 +89,22 @@ export function Footer() {
                             </div>
                         )}
 
-                        {/* Copyright & GSTIN */}
-                        <div className="w-full border-t border-white/10 pt-6 mt-8 flex flex-col gap-1.5">
-                            <div className="text-[10px] sm:text-[11px] font-mono text-white/60 uppercase tracking-widest">
-                                &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
+                        <div className="w-full border-t border-white/10 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div className="flex flex-col gap-1.5">
+                                <div className="text-[10px] sm:text-[11px] font-mono text-white/60 uppercase tracking-widest">
+                                    &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
+                                </div>
+                                <div className="text-[10px] sm:text-[11px] font-mono text-white/40 uppercase tracking-widest">
+                                    GSTIN: 10DHEPB0541R1ZN
+                                </div>
                             </div>
-                            <div className="text-[10px] sm:text-[11px] font-mono text-white/40 uppercase tracking-widest">
-                                GSTIN: 10DHEPB0541R1ZN
+                            <div className="flex items-center gap-6">
+                                <Link href="/privacy" className="text-[10px] sm:text-[11px] font-mono text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+                                    Privacy Policy
+                                </Link>
+                                <Link href="/terms" className="text-[10px] sm:text-[11px] font-mono text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+                                    Terms of Service
+                                </Link>
                             </div>
                         </div>
                     </div>

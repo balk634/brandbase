@@ -249,7 +249,7 @@ export const masterConfig = {
       tag: "WEBSITE + MARKETING",
       headline: "A website that converts. Marketing that compounds.",
       subheadline:
-        "We build fast, conversion-first websites with clean tracking and SEO foundations, then scale results with performance marketing. Clear plan. Measurable results.",
+        "BrandBase is a digital growth platform that builds fast, conversion-first websites with clean tracking and SEO foundations, then scales results with performance marketing. Clear plan. Measurable results.",
       imageSrc: "hero1.jpg?v=20260307-2",
       grayscale: false,
       stats: [

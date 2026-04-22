@@ -34,18 +34,6 @@ export function JsonLd() {
         }),
     };
 
-    const faqSchema = {
-        "@type": "FAQPage",
-        "@id": `${baseUrl}/#faq`,
-        "mainEntity": masterConfig.sections.faq.map((item) => ({
-            "@type": "Question",
-            "name": item.q,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": item.a
-            }
-        }))
-    };
 
     const teamMembers = masterConfig.about.team.map((member) => ({
         "@type": "Person",
@@ -78,7 +66,6 @@ export function JsonLd() {
                     ...navigationLinks.map((link, index) => ({
                         "@id": `${baseUrl}/#nav-${index + 1}`,
                     })),
-                    { "@id": `${baseUrl}/#faq` }
                 ],
             },
             {
@@ -97,7 +84,6 @@ export function JsonLd() {
                     "@id": `${baseUrl}/#logo`
                 }
             },
-            faqSchema,
             {
                 "@type": ["Organization", "ProfessionalService"],
                 "@id": `${baseUrl}/#organization`,
