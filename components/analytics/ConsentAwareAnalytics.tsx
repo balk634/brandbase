@@ -23,10 +23,8 @@ export function ConsentAwareAnalytics({
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    // Only load analytics after the main thread is completely free
-    // This ensures 0 impact on LCP, FCP, and Speed Index
+    // Load analytics 2 seconds after page load completes
     const handleLoad = () => {
-      // Small delay after load to be absolutely sure we don't interfere with hydration
       setTimeout(() => setShouldLoad(true), 2000);
     };
 
@@ -42,38 +40,46 @@ export function ConsentAwareAnalytics({
 
   return (
     <>
-      {/* Google Analytics - loads during idle time */}
+      {/* Google Analytics */}
       {googleAnalyticsId && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
-          <Script id="google-analytics" strategy="lazyOnload">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${googleAnalyticsId}', {
-                anonymize_ip: true,
-                page_path: window.location.pathname,
-              });
-            `}
-          </Script>
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleAnalyticsId}', {
+                  anonymize_ip: true,
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
         </>
       )}
 
-      {/* Microsoft Clarity - the ultimate 'load last' strategy */}
+      {/* Microsoft Clarity */}
       {microsoftClarityId && (
-        <Script id="microsoft-clarity" strategy="lazyOnload">
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "${microsoftClarityId}");
-          `}
-        </Script>
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${microsoftClarityId}");
+            `,
+          }}
+        />
       )}
     </>
   );
