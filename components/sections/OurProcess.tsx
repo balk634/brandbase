@@ -64,7 +64,7 @@ const steps: Step[] = [
 
 export function OurProcess() {
     return (
-        <Section className="bg-transparent">
+        <Section className="bg-ink">
             <Container>
                 <motion.div
                     initial="hidden"
@@ -73,11 +73,11 @@ export function OurProcess() {
                     variants={stagger}
                 >
                     <motion.div variants={fadeInUp} className="mb-14 max-w-3xl">
-                        <Kicker>OUR PROCESS</Kicker>
-                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
+                        <Kicker className="border-white/20 bg-white/10 text-white/90">OUR PROCESS</Kicker>
+                        <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-white">
                             From Brief to Revenue in Four <em className="font-serif-10 italic">Steps.</em>
                         </h2>
-                        <p className="mt-4 text-ink-muted text-sm max-w-2xl leading-relaxed">
+                        <p className="mt-4 text-white/70 text-sm max-w-2xl leading-relaxed">
                             A proven, no-nonsense workflow that takes you from strategy to measurable growth — with zero guesswork in between.
                         </p>
                     </motion.div>
@@ -92,28 +92,28 @@ export function OurProcess() {
                                     <motion.div
                                         variants={fadeInUp}
                                         whileHover={{ y: -2, transition: { duration: 0.18 } }}
-                                        className="relative border border-grid/15 bg-white p-4 md:p-5 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300"
+                                        className="relative border border-white/10 bg-white/5 p-4 md:p-5 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-white/10 transition-colors duration-300"
                                     >
                                         <BoxPatternServer />
-                                        
+
                                         {/* Process Step Image */}
-                                        <div className="w-full aspect-video mb-6 bg-paper/40 flex items-center justify-center overflow-hidden relative">
-                                            <Image 
-                                              src={step.image} 
-                                              alt={step.title} 
-                                              fill 
+                                        <div className="w-full aspect-video mb-6 bg-white/5 flex items-center justify-center overflow-hidden relative">
+                                            <Image
+                                              src={step.image}
+                                              alt={step.title}
+                                              fill
                                               className="object-cover"
                                               sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                         </div>
 
-                                        <h3 className="font-serif text-lg tracking-tight text-ink mb-3">
-                                            {step.title.split(' ').map((word, i, arr) => 
+                                        <h3 className="font-serif text-lg tracking-tight text-white mb-3">
+                                            {step.title.split(' ').map((word, i, arr) =>
                                                 i === arr.length - 1 ? <em key={i} className="font-serif-10 italic">{word}</em> : <span key={i}>{word} </span>
                                             )}
                                         </h3>
 
-                                        <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
+                                        <p className="text-[13px] text-white/70 leading-relaxed flex-1">
                                             {step.description}
                                         </p>
                                     </motion.div>
