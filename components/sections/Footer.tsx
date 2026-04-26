@@ -84,7 +84,7 @@ export function Footer() {
                             </div>
                         )}
 
-                        <div className="w-full border-t border-white/10 pt-6 mt-8 flex flex-col gap-4">
+                        <div className="w-full border-t border-white/10 pt-6 mt-8">
                             <div className="flex flex-col gap-1.5">
                                 <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
                                     &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
@@ -92,15 +92,6 @@ export function Footer() {
                                 <div className="text-[11px] font-mono text-white/50 uppercase tracking-widest">
                                     GSTIN: 10DHEPB0541R1ZN
                                 </div>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <Link href="/privacy-policy" className="text-[11px] font-medium text-white/80 hover:text-white underline underline-offset-2 transition-colors">
-                                    Privacy Policy
-                                </Link>
-                                <span className="text-white/30">|</span>
-                                <Link href="/terms" className="text-[11px] font-medium text-white/80 hover:text-white underline underline-offset-2 transition-colors">
-                                    Terms of Service
-                                </Link>
                             </div>
                         </div>
                     </div>
