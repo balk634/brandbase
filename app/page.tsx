@@ -5,6 +5,7 @@ import { OurProcess } from "@/components/sections/OurProcess";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { AppFeatures } from "@/components/sections/AppFeatures";
 
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
@@ -18,6 +19,7 @@ export const metadata = buildPageMetadata({
 export default function Home() {
   return (
     <main className="relative">
+      <AppFeatures />
       <Hero />
       <TrustStrip />
       <CorePillars />

@@ -40,7 +40,7 @@ export default function TermsPage() {
 
             <h3>4. Data Privacy</h3>
             <p>
-              Your privacy is critically important to us. We process your information in accordance with global data protection standards, including the GDPR, CCPA, and India&apos;s Digital Personal Data Protection (DPDP) Act. For full details on how we handle your data, please refer to our <a href="/privacy" className="underline hover:text-ink">Privacy policy</a>.
+              Your privacy is critically important to us. We process your information in accordance with global data protection standards, including the GDPR, CCPA, and India&apos;s Digital Personal Data Protection (DPDP) Act. For full details on how we handle your data, please refer to our <a href="/privacy-policy" className="underline hover:text-ink">Privacy policy</a>.
             </p>
 
             <h3 className="font-serif">5. Payment Terms & Subscriptions</h3>

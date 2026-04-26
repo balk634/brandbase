@@ -94,7 +94,7 @@ export function Footer() {
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
-                                <Link href="/privacy" className="text-[11px] font-medium text-white/80 hover:text-white underline underline-offset-2 transition-colors">
+                                <Link href="/privacy-policy" className="text-[11px] font-medium text-white/80 hover:text-white underline underline-offset-2 transition-colors">
                                     Privacy Policy
                                 </Link>
                                 <span className="text-white/30">|</span>
