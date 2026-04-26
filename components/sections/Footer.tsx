@@ -36,11 +36,6 @@ export function Footer() {
                     {/* Brand Col */}
                     <div className="w-full lg:w-1/3 flex flex-col p-4 sm:p-6 md:p-8 lg:p-12">
                         <div className="flex flex-col gap-6 sm:gap-8">
-                            {/* Tagline */}
-                            <p className="text-white/90 text-sm leading-relaxed max-w-sm">
-                                Conversion-first websites with clean tracking and SEO foundations, then performance marketing that scales. Clear plan. Measurable results.
-                            </p>
-
                             {/* Contact info */}
                             <div className="flex flex-col items-start gap-5">
                                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-white">
@@ -89,20 +84,21 @@ export function Footer() {
                             </div>
                         )}
 
-                        <div className="w-full border-t border-white/10 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div className="w-full border-t border-white/10 pt-6 mt-8 flex flex-col gap-4">
                             <div className="flex flex-col gap-1.5">
-                                <div className="text-[10px] sm:text-[11px] font-mono text-white/60 uppercase tracking-widest">
+                                <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
                                     &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
                                 </div>
-                                <div className="text-[10px] sm:text-[11px] font-mono text-white/40 uppercase tracking-widest">
+                                <div className="text-[11px] font-mono text-white/50 uppercase tracking-widest">
                                     GSTIN: 10DHEPB0541R1ZN
                                 </div>
                             </div>
-                            <div className="flex items-center gap-6">
-                                <Link href="/privacy" className="text-[10px] sm:text-[11px] font-mono text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+                            <div className="flex items-center gap-4">
+                                <Link href="/privacy" className="text-[11px] font-medium text-white/80 hover:text-white underline underline-offset-2 transition-colors">
                                     Privacy Policy
                                 </Link>
-                                <Link href="/terms" className="text-[10px] sm:text-[11px] font-mono text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+                                <span className="text-white/30">|</span>
+                                <Link href="/terms" className="text-[11px] font-medium text-white/80 hover:text-white underline underline-offset-2 transition-colors">
                                     Terms of Service
                                 </Link>
                             </div>

@@ -4,15 +4,14 @@ import { CorePillars } from "@/components/sections/CorePillars";
 import { OurProcess } from "@/components/sections/OurProcess";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
-import { Purpose } from "@/components/sections/Purpose";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "BrandBase | Conversion-First Websites & Marketing",
+  title: "BrandBase | Digital Growth Platform & Marketing Services",
   description:
-    "High-performance, conversion-first websites and data-driven marketing results for growth-focused brands.",
+    "BrandBase is a digital growth platform and web application that provides high-performance websites, SEO services, and data-driven marketing to help businesses scale. View our privacy policy and terms of service.",
   path: "/",
 });
 
@@ -22,11 +21,9 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <CorePillars />
-
       <OurProcess />
       <Testimonials />
       <FAQ />
-      <Purpose />
       <FinalCTA />
     </main>
   );

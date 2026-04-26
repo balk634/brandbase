@@ -9,7 +9,7 @@ export const masterConfig = {
   metadata: {
     title: "BrandBase | Conversion-First Websites & Performance Marketing",
     description:
-      "BrandBase builds high-speed, conversion-focused websites with robust SEO. We scale results with performance marketing for ambitious, growth-oriented brands.",
+      "BrandBase is a digital growth platform providing high-performance websites and data-driven marketing services. We help businesses scale through conversion-first design, SEO, and performance marketing.",
     baseUrl: "https://brandbase.in",
     keywords: [
       "web design agency india",
@@ -249,7 +249,7 @@ export const masterConfig = {
       tag: "WEBSITE + MARKETING",
       headline: "A website that converts. Marketing that compounds.",
       subheadline:
-        "BrandBase is a digital growth platform that builds fast, conversion-first websites with clean tracking and SEO foundations, then scales results with performance marketing. Clear plan. Measurable results.",
+        "BrandBase is a digital growth platform and web application providing high-performance websites, SEO services, and data-driven marketing to help businesses scale.",
       imageSrc: "hero1.jpg?v=20260307-2",
       grayscale: false,
       stats: [

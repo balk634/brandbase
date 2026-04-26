@@ -11,6 +11,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PerformanceEnhancements } from "@/components/ui/PerformanceEnhancements";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -146,6 +147,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <CookieConsent />
+        <WhatsAppButton phoneNumber="9939146979" />
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
