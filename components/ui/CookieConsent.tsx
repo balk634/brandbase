@@ -1,56 +1,49 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { Button } from "@/components/ui/Button";
-import { IconX } from "@tabler/icons-react";
+import Link from "next/link";
+import { Button } from "./Button";
+import { IconCookie, IconX } from "@tabler/icons-react";
 
 export function CookieConsent() {
     const [show, setShow] = useState(false);
-    const [isExiting, setIsExiting] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
     const timerRef = useRef<number | null>(null);
 
-    const notifyConsentChange = () => {
-        window.dispatchEvent(new Event("cookie-consent-updated"));
-    };
+    const accept = () => {
+        localStorage.setItem("cookie-consent", "accepted");
+        if (timerRef.current) window.clearTimeout(timerRef.current);
 
-    const handleAction = (type: "accepted" | "declined") => {
-        if (isExiting) return; // Prevent double triggers
-        
-        if (timerRef.current) {
-            window.clearTimeout(timerRef.current);
-            timerRef.current = null;
+        // Notify analytics that consent was granted
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("consent", "update", {
+                analytics_storage: "granted",
+                ad_storage: "granted",
+            });
         }
-        
-        // Save choice immediately for the logic
-        localStorage.setItem("cookie-consent", type);
 
-        // Start exit animation
-        setIsExiting(true);
-        
-        // Remove from DOM AND trigger heavy analytics loading 
-        // only AFTER the animation is complete to prevent jank.
-        setTimeout(() => {
-            setShow(false);
-            notifyConsentChange();
-        }, 500); // Matches duration-500
+        setIsVisible(false);
+        setTimeout(() => setShow(false), 300); // Wait for exit animation
     };
 
-    const accept = () => handleAction("accepted");
-    const decline = () => handleAction("declined");
+    const decline = () => {
+        localStorage.setItem("cookie-consent", "declined");
+        if (timerRef.current) window.clearTimeout(timerRef.current);
+        setIsVisible(false);
+        setTimeout(() => setShow(false), 300);
+    };
 
     useEffect(() => {
         const consent = localStorage.getItem("cookie-consent");
         if (!consent) {
-            setShow(true);
+            // Wait 1 second before showing to ensure page load completes first
+            const initialTimer = setTimeout(() => {
+                setShow(true);
+                // Slight delay for animation
+                setTimeout(() => setIsVisible(true), 50);
+            }, 1000);
 
-            // Auto-accept after 5 seconds
-            timerRef.current = window.setTimeout(() => {
-                accept();
-            }, 5000);
-
-            return () => {
-                if (timerRef.current) window.clearTimeout(timerRef.current);
-            };
+            return () => clearTimeout(initialTimer);
         }
     }, []);
 
@@ -58,35 +51,39 @@ export function CookieConsent() {
 
     return (
         <div
-            className={`fixed z-[60] bg-white border border-primary/20 p-4 sm:p-6 transition-all duration-500 ease-in-out ${
-                isExiting ? "translate-y-[150%] opacity-0" : "translate-y-0 opacity-100"
-            }`}
-            style={{
-                bottom: "max(1rem, env(safe-area-inset-bottom))",
-                right: "max(1rem, env(safe-area-inset-right))",
-                width:
-                    "min(24rem, calc(100vw - max(1rem, env(safe-area-inset-left)) - max(1rem, env(safe-area-inset-right))))",
-            }}
+            className={`fixed bottom-0 left-0 right-0 sm:bottom-6 sm:left-6 sm:right-auto z-50 p-4 transition-all duration-300 ease-out transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
         >
-            <div className="flex justify-between items-start mb-4">
-                <div className="font-mono text-xs uppercase tracking-wider text-ink font-bold">Cookie settings</div>
+            <div className="bg-paper border border-grid/15 shadow-xl max-w-sm w-full p-5 relative overflow-hidden">
                 <button
-                    type="button"
                     onClick={decline}
-                    className="text-ink hover:text-black transition-colors"
-                    aria-label="Close cookie notice"
+                    className="absolute top-3 right-3 text-ink-muted hover:text-ink transition-colors p-1"
+                    aria-label="Close"
                 >
-                    <IconX size={14} aria-hidden="true" />
+                    <IconX size={16} strokeWidth={1.5} />
                 </button>
-            </div>
-            <p className="text-xs text-ink mb-6 leading-relaxed">
-                We use cookies to improve your experience and analyze site traffic.
-                By clicking &quot;Accept&quot;, you agree to our use of cookies.
-            </p>
-            <div className="flex gap-2">
-                <Button variant="primary" size="sm" onClick={accept} className="w-full">
-                    Accept
-                </Button>
+
+                <div className="flex items-start gap-4 pr-6">
+                    <div className="bg-primary/5 p-2 shrink-0">
+                        <IconCookie className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                    </div>
+                    <div>
+                        <h3 className="font-serif text-base text-ink mb-2">
+                            Privacy & Cookies
+                        </h3>
+                        <p className="text-xs text-ink-muted leading-relaxed mb-4">
+                            We use cookies to improve your experience and measure performance. By clicking &quot;Accept All&quot;, you agree to our use of cookies.
+                            Read our <Link href="/privacy-policy" className="mi-link-inline text-ink">Privacy Policy</Link> to learn more.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                            <Button onClick={accept} size="sm" className="w-full sm:w-auto text-xs py-1.5 h-8">
+                                Accept All
+                            </Button>
+                            <Button onClick={decline} variant="outline" size="sm" className="w-full sm:w-auto text-xs py-1.5 h-8">
+                                Decline
+                            </Button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

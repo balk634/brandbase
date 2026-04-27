@@ -1,84 +1,95 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
+import { getCalApi } from "@calcom/embed-react";
 import { masterConfig } from "@/config/master";
+import { usePathname } from "next/navigation";
 
-interface CalInlineProps {
-  className?: string;
-}
-
-export function CalInline({ className }: CalInlineProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+export function CalInline({ className }: { className?: string }) {
+  const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Only run if not already loaded in this container to prevent double embeds
-    if (!containerRef.current || containerRef.current.dataset.loaded) return;
-
-    (function (C, A, L) {
-      const p = function (a: any, ar: any) {
-        a.q.push(ar);
-      };
-      const d = C.document;
-      (C as any).Cal = (C as any).Cal || function () {
-        const cal = (C as any).Cal;
-        const ar = arguments;
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
-          cal.loaded = true;
-        }
-        if (ar[0] === L) {
-          const api: any = function () {
-            p(api, arguments);
-          };
-          const namespace = ar[1];
-          api.q = api.q || [];
-          if (typeof namespace === "string") {
-            cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else p(cal, ar);
-          return;
-        }
-        p(cal, ar);
-      };
-    })(window, "https://booking.brandbase.in/embed/embed.js", "init");
-
-    const Cal = (window as any).Cal;
-    const namespace = "30min";
-
-    Cal("init", namespace, { origin: "https://booking.brandbase.in" });
-
-    Cal.ns[namespace]("inline", {
-      elementOrSelector: "#my-cal-inline-30min",
-      config: {
-        layout: "month_view",
-        useSlotsViewOnSmallScreen: "true",
-        theme: "light",
-      },
-      calLink: masterConfig.contact.calcomSlug, // Using the slug from masterConfig
-    });
-
-    Cal.ns[namespace]("ui", {
-      theme: "light",
-      cssVarsPerTheme: {
-        light: { "cal-brand": masterConfig.colors.primary }, // Link to theme primary color
-        dark: { "cal-brand": "#fafafa" },
-      },
-      hideEventTypeDetails: true,
-      layout: "month_view",
-    });
-
-    containerRef.current.dataset.loaded = "true";
+    // Avoid sync setState in effect
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (!mounted) return;
+
+    let api: unknown;
+    (async function () {
+      try {
+        const cal = await getCalApi();
+        api = cal;
+        // Basic configuration
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        cal("ui", {
+          styles: { branding: { brandColor: "#0A0A0A" } },
+          hideEventTypeDetails: false,
+          layout: "month_view"
+        });
+
+        // Add pathname context
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        cal("on", {
+          action: "bookingSuccessful",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          callback: (e) => {
+            if (typeof window !== 'undefined' && window.dataLayer) {
+              window.dataLayer.push({
+                event: 'cal_booking_success',
+                page_path: pathname,
+                booking_data: e.detail
+              });
+            }
+          }
+        });
+
+      } catch (e) {
+        console.error("Cal.com init error", e);
+      }
+    })();
+    return () => {
+      // attempt cleanup if needed
+      if (api && typeof (api as { destroy?: () => void }).destroy === "function") {
+          (api as { destroy?: () => void }).destroy?.();
+      }
+    };
+  }, [mounted, pathname]);
+
+  if (!mounted) {
+    return (
+      <div className={`flex items-center justify-center bg-grid/5 ${className}`}>
+        <div className="flex flex-col items-center gap-3 text-ink-muted">
+          <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          <span className="text-sm font-mono uppercase tracking-widest">Loading Calendar...</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Use raw Cal embed markup
   return (
     <div
-      ref={containerRef}
       className={className}
-      style={{ width: "100%", height: "100%", minHeight: "650px", overflow: "scroll" }}
-      id="my-cal-inline-30min"
-    />
+      data-cal-namespace=""
+      data-cal-inline={masterConfig.contact.calcomSlug}
+      data-cal-config='{"layout":"month_view"}'
+    >
+      {/* Fallback spinner while cal.com iframe loads */}
+      <div className="w-full h-full flex items-center justify-center absolute inset-0 -z-10 bg-grid/5">
+        <div className="flex flex-col items-center gap-3 text-ink-muted">
+          <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          <span className="text-sm font-mono uppercase tracking-widest">Loading Calendar...</span>
+        </div>
+      </div>
+    </div>
   );
 }

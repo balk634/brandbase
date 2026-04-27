@@ -1,94 +1,100 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { IconBrandWhatsapp, IconX } from "@tabler/icons-react";
 
-export function WhatsAppButton({ phoneNumber = "9939146979" }: { phoneNumber?: string }) {
+interface WhatsAppButtonProps {
+    phoneNumber: string;
+    message?: string;
+}
+
+export function WhatsAppButton({ phoneNumber, message = "Hi! I'd like to know more about your services." }: WhatsAppButtonProps) {
     const [mounted, setMounted] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
-    const [hoverTooltip, setHoverTooltip] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const timersRef = useRef<number[]>([]);
+    const [isVisible, setIsVisible] = useState(false);
+    const [isDismissed, setIsDismissed] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
-        setIsMobile(window.innerWidth < 768);
+        // Only set the initial states in a timeout to avoid sync setState in effect causing cascading renders immediately
+        const mountTimer = setTimeout(() => {
+            setMounted(true);
+            setIsMobile(window.innerWidth < 768);
+
+            // Check if previously dismissed
+            const dismissed = sessionStorage.getItem("wa-dismissed") === "true";
+            if (dismissed) {
+                setIsDismissed(true);
+            }
+        }, 0);
 
         // Slide in from bottom after 1 second (helps with initial page load)
-        const slideTimer = window.setTimeout(() => {
+        const timer = setTimeout(() => {
             setIsVisible(true);
         }, 1000);
-        timersRef.current.push(slideTimer);
 
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
         window.addEventListener('resize', handleResize);
 
         return () => {
-            timersRef.current.forEach(id => window.clearTimeout(id));
-            timersRef.current = [];
+            clearTimeout(mountTimer);
+            clearTimeout(timer);
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I was looking through the Brandbase website. I have a few questions.")}`;
+    const handleDismiss = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsVisible(false);
+        setIsDismissed(true);
+        sessionStorage.setItem("wa-dismissed", "true");
+    };
 
-    const positionStyle = {
-        bottom: "max(1.5rem, env(safe-area-inset-bottom) + 1rem)",
-        right: "max(1.5rem, env(safe-area-inset-right))",
-    } as const;
+    if (!mounted || isDismissed) return null;
 
-    // Tooltip is visible on hover only (desktop) or always visible on mobile
-    const showTooltip = isMobile ? true : hoverTooltip;
-
-    // During SSR and initial hydration, render hidden placeholder
-    if (!mounted) {
-        return (
-            <div
-                suppressHydrationWarning
-                className="fixed z-50 opacity-0 translate-y-4"
-                style={positionStyle}
-            />
-        );
-    }
+    // Format phone number (remove +, spaces, etc)
+    const cleanPhone = phoneNumber.replace(/[^\d]/g, '');
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://${isMobile ? 'api' : 'web'}.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMessage}`;
 
     return (
         <div
-            suppressHydrationWarning
-            className={`fixed z-50 transition-all duration-500 ease-out ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={positionStyle}
-            onMouseEnter={() => setHoverTooltip(true)}
-            onMouseLeave={() => setHoverTooltip(false)}
-        >
-            {/* Minimal tooltip on hover */}
-            <div
-                className={`absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-[#2da93d] text-white text-xs font-medium px-3 py-1.5 whitespace-nowrap transition-all duration-200 pointer-events-none border border-[#1e8a2e] shadow-lg ${
-                    showTooltip ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"
+            className={`fixed bottom-6 right-6 z-40 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
                 }`}
-                style={{ borderRadius: "6px" }}
-            >
-                DM us
-            </div>
+        >
+            <div className="relative group">
+                {/* Tooltip */}
+                <div className="absolute bottom-full right-0 mb-3 w-48 p-3 bg-white border border-grid/15 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none sm:block hidden">
+                    <p className="text-xs font-sans text-ink leading-relaxed">
+                        Have a question? Chat with us on WhatsApp.
+                    </p>
+                    {/* Triangle pointer */}
+                    <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-white border-b border-r border-grid/15 transform rotate-45" />
+                </div>
 
-            <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat on WhatsApp"
-                className={`${isMobile ? "w-16 h-16" : "w-14 h-14"} bg-[#2da93d] flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300`}
-                style={{ borderRadius: "50%" }}
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    className={`${isMobile ? "w-8 h-8" : "w-7 h-7"} text-white`}
-                    fill="currentColor"
+                {/* Main Button */}
+                <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20bd5a] hover:scale-105 active:scale-95 transition-all duration-200 group relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366]"
+                    aria-label="Chat with us on WhatsApp"
                 >
-                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
-                </svg>
-            </a>
+                    {/* Ripple Effect Background */}
+                    <div className="absolute inset-0 rounded-full border border-[#25D366] animate-ping opacity-20 group-hover:hidden" />
+
+                    <IconBrandWhatsapp size={28} strokeWidth={1.5} />
+                </a>
+
+                {/* Dismiss Button - Desktop Only */}
+                <button
+                    onClick={handleDismiss}
+                    className="absolute -top-2 -right-2 w-5 h-5 bg-paper border border-grid/15 rounded-full flex items-center justify-center text-ink-muted hover:text-ink hover:bg-grid/5 transition-colors opacity-0 group-hover:opacity-100 focus-visible:opacity-100 sm:flex hidden"
+                    aria-label="Dismiss WhatsApp button"
+                >
+                    <IconX size={12} strokeWidth={2} />
+                </button>
+            </div>
         </div>
     );
 }

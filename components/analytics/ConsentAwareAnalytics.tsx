@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 type ConsentAwareAnalyticsProps = {
   googleAnalyticsId?: string;
@@ -10,7 +11,6 @@ type ConsentAwareAnalyticsProps = {
 
 declare global {
   interface Window {
-    dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
     clarity?: (...args: unknown[]) => void;
   }
@@ -23,9 +23,9 @@ export function ConsentAwareAnalytics({
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    // Load analytics 2 seconds after page load completes
+    // Load analytics 3 seconds after page load completes to further defer JS execution
     const handleLoad = () => {
-      setTimeout(() => setShouldLoad(true), 2000);
+      setTimeout(() => setShouldLoad(true), 3000);
     };
 
     if (document.readyState === "complete") {
@@ -40,36 +40,16 @@ export function ConsentAwareAnalytics({
 
   return (
     <>
-      {/* Google Analytics */}
+      {/* Google Analytics via @next/third-parties */}
       {googleAnalyticsId && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-            strategy="afterInteractive"
-          />
-          <Script
-            id="google-analytics"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${googleAnalyticsId}', {
-                  anonymize_ip: true,
-                  page_path: window.location.pathname,
-                });
-              `,
-            }}
-          />
-        </>
+        <GoogleAnalytics gaId={googleAnalyticsId} />
       )}
 
       {/* Microsoft Clarity */}
       {microsoftClarityId && (
         <Script
           id="microsoft-clarity"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){

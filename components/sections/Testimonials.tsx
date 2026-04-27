@@ -38,7 +38,6 @@ export function Testimonials() {
           speedPxPerSecond={26}
           pauseOnHover
         >
-          <div className="flex w-max items-stretch">
             <div className="flex items-stretch gap-8 pr-8">
               {testimonials.map((t: TestimonialItem, idx: number) => {
                 const initials = t.author.charAt(0).toUpperCase();
@@ -92,7 +91,6 @@ export function Testimonials() {
                 );
               })}
             </div>
-          </div>
         </AutoScrollScroller>
       </Container>
     </Section>
