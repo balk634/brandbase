@@ -31,70 +31,124 @@ export function Testimonials() {
             Trusted by founders and marketing leaders <em className="font-serif-10 italic">worldwide.</em>
           </h2>
         </div>
-
-        <AutoScrollScroller
-          aria-label="Testimonials"
-          className="mt-10"
-          speedPxPerSecond={26}
-          pauseOnHover
-        >
-          <div className="flex w-max items-stretch">
-            <div className="flex items-stretch gap-8 pr-8">
-              {testimonials.map((t: TestimonialItem, idx: number) => {
-                const initials = t.author.charAt(0).toUpperCase();
-                const accent = ACCENTS[idx % ACCENTS.length];
-
-                return (
-                  <figure
-                    key={idx}
-                    className="w-[85vw] max-w-[340px] sm:w-[420px] sm:max-w-none shrink-0 border border-grid/15 bg-white p-7 flex flex-col whitespace-normal h-full"
-                  >
-                    <div className="flex items-start justify-between gap-6">
-                      <div 
-                        className="h-10 w-10 border border-primary/25 bg-primary/5 flex items-center justify-center shrink-0 mb-4 text-primary"
-                        aria-hidden="true"
-                      >
-                        <IconQuote className="h-5 w-5" strokeWidth={1.5} />
-                      </div>
-                      <div className="flex items-center gap-1 text-primary/60">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <span
-                            key={i}
-                            className="font-sans text-sm leading-none"
-                            aria-hidden="true"
-                          >
-                            ★
-                          </span>
-                        ))}
-                        <span className="sr-only">5 out of 5</span>
-                      </div>
-                    </div>
-
-                    <blockquote className="mt-6 font-mono text-[13px] leading-relaxed text-ink/90 whitespace-normal break-words flex-1">
-                      &ldquo;{t.quote}&rdquo;
-                    </blockquote>
-
-                    <div className="mt-auto pt-6 border-t border-grid/15 flex items-center gap-4">
-                      <div className={"h-10 w-10 shrink-0 grid place-items-center " + accent} aria-hidden="true">
- <span className="font-serif text-sm">{initials}</span>
-                      </div>
-                      <div className="flex flex-col">
- <div className="font-serif text-sm text-ink">{t.author}</div>
-                        <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
-                          {t.role}
-                        </div>
-                        <div className="mt-0.5 text-[10px] text-ink-muted/80">
-                          {t.location}
-                        </div>
-                      </div>
-                    </div>
-                  </figure>
-                );
-              })}
-            </div>
-          </div>
-        </AutoScrollScroller>
       </Container>
+
+      <AutoScrollScroller
+        aria-label="Testimonials"
+        className="mt-10"
+        speedPxPerSecond={40}
+        pauseOnHover
+      >
+        <div className="flex w-max items-stretch">
+          <div className="flex items-stretch gap-8 pr-8">
+            {testimonials.map((t: TestimonialItem, idx: number) => {
+              const initials = t.author.charAt(0).toUpperCase();
+              const accent = ACCENTS[idx % ACCENTS.length];
+
+              return (
+                <figure
+                  key={idx}
+                  className="w-[85vw] max-w-[340px] sm:w-[420px] sm:max-w-none shrink-0 border border-grid/15 bg-white p-7 flex flex-col whitespace-normal h-full"
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <div 
+                      className="h-10 w-10 border border-primary/25 bg-primary/5 flex items-center justify-center shrink-0 mb-4 text-primary"
+                      aria-hidden="true"
+                    >
+                      <IconQuote className="h-5 w-5" strokeWidth={1.5} />
+                    </div>
+                    <div className="flex items-center gap-1 text-primary/60">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <span
+                          key={i}
+                          className="font-sans text-sm leading-none"
+                          aria-hidden="true"
+                        >
+                          ★
+                        </span>
+                      ))}
+                      <span className="sr-only">5 out of 5</span>
+                    </div>
+                  </div>
+
+                  <blockquote className="mt-6 font-mono text-[13px] leading-relaxed text-ink/90 whitespace-normal break-words flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+
+                  <div className="mt-auto pt-6 border-t border-grid/15 flex items-center gap-4">
+                    <div className={"h-10 w-10 shrink-0 grid place-items-center " + accent} aria-hidden="true">
+                      <span className="font-serif text-sm">{initials}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="font-serif text-sm text-ink">{t.author}</div>
+                      <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
+                        {t.role}
+                      </div>
+                      <div className="mt-0.5 text-[10px] text-ink-muted/80">
+                        {t.location}
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              );
+            })}
+          </div>
+          {/* Duplicate set for seamless continuous auto-scrolling loop */}
+          <div className="flex items-stretch gap-8 pr-8" aria-hidden="true">
+            {testimonials.map((t: TestimonialItem, idx: number) => {
+              const initials = t.author.charAt(0).toUpperCase();
+              const accent = ACCENTS[idx % ACCENTS.length];
+
+              return (
+                <figure
+                  key={`dup-${idx}`}
+                  className="w-[85vw] max-w-[340px] sm:w-[420px] sm:max-w-none shrink-0 border border-grid/15 bg-white p-7 flex flex-col whitespace-normal h-full"
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <div 
+                      className="h-10 w-10 border border-primary/25 bg-primary/5 flex items-center justify-center shrink-0 mb-4 text-primary"
+                      aria-hidden="true"
+                    >
+                      <IconQuote className="h-5 w-5" strokeWidth={1.5} />
+                    </div>
+                    <div className="flex items-center gap-1 text-primary/60">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <span
+                          key={i}
+                          className="font-sans text-sm leading-none"
+                          aria-hidden="true"
+                        >
+                          ★
+                        </span>
+                      ))}
+                      <span className="sr-only">5 out of 5</span>
+                    </div>
+                  </div>
+
+                  <blockquote className="mt-6 font-mono text-[13px] leading-relaxed text-ink/90 whitespace-normal break-words flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+
+                  <div className="mt-auto pt-6 border-t border-grid/15 flex items-center gap-4">
+                    <div className={"h-10 w-10 shrink-0 grid place-items-center " + accent} aria-hidden="true">
+                      <span className="font-serif text-sm">{initials}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="font-serif text-sm text-ink">{t.author}</div>
+                      <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
+                        {t.role}
+                      </div>
+                      <div className="mt-0.5 text-[10px] text-ink-muted/80">
+                        {t.location}
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              );
+            })}
+          </div>
+        </div>
+      </AutoScrollScroller>
     </Section>
   );
 }

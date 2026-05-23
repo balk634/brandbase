@@ -53,8 +53,16 @@ export function Footer() {
                                 <div className="flex items-start gap-2 text-[13px] text-white/90 leading-relaxed">
                                     <IconMapPin className="h-4 w-4 shrink-0 text-white mt-1" strokeWidth={1.5} />
                                     <span>
-                                        {masterConfig.contact.address.street} {masterConfig.contact.address.locality}, {masterConfig.contact.address.city},<br />
-                                        {masterConfig.contact.address.state} {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
+                                        {masterConfig.contact.address.street ? (
+                                            <>
+                                                {masterConfig.contact.address.street} {masterConfig.contact.address.locality}, {masterConfig.contact.address.city},<br />
+                                                {masterConfig.contact.address.state} {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
+                                            </>
+                                        ) : (
+                                            <>
+                                                {masterConfig.contact.address.city}, {masterConfig.contact.address.country}
+                                            </>
+                                        )}
                                     </span>
                                 </div>
                             </div>

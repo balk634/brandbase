@@ -73,7 +73,7 @@ export default function TermsPage() {
 
             <h3>10. Governing Law</h3>
             <p>
-              These Terms shall be governed by and defined following the laws of India. BrandBase and yourself irrevocably consent that the courts of Patna, Bihar, India shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
+              These Terms shall be governed by and defined following the laws of India. BrandBase and yourself irrevocably consent that the courts of Mumbai, Maharashtra, India shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
             </p>
 
             <h3>11. Contact</h3>
@@ -83,7 +83,12 @@ export default function TermsPage() {
             <p>
               <strong>Email:</strong> {masterConfig.contact.email}<br />
               <strong>Phone:</strong> {masterConfig.contact.phone}<br />
-              <strong>Address:</strong> {masterConfig.contact.address.street}, {masterConfig.contact.address.locality}, {masterConfig.contact.address.city}, {masterConfig.contact.address.state} - {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
+              <strong>Address:</strong> {[
+                [masterConfig.contact.address.street, masterConfig.contact.address.locality].filter(Boolean).join(" "),
+                masterConfig.contact.address.city,
+                [masterConfig.contact.address.state, masterConfig.contact.address.postalCode].filter(Boolean).join(" - "),
+                masterConfig.contact.address.country
+              ].filter(Boolean).join(", ")}
             </p>
           </div>
         </Container>

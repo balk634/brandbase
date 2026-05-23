@@ -1,7 +1,7 @@
 "use client";
 
 import { Section } from "@/components/ui/Section";
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SERVICES = [
     "Email Marketing",
@@ -40,33 +40,10 @@ export function TrustStrip() {
     const rafId = useRef<number | undefined>(undefined);
     const [mounted, setMounted] = useState(false);
 
-    const animate = useCallback(() => {
-        if (!trackRef.current) return;
-
-        // Decay boost
-        boostRef.current *= 0.93;
-
-        // Calculate target speed with boost
-        const targetSpeed = BASE_SPEED + boostRef.current;
-
-        // Smooth lerp to target speed
-        speedRef.current += (targetSpeed - speedRef.current) * 0.055;
-
-        // Update offset
-        offsetRef.current += speedRef.current;
-
-        // Reset offset when one full set width is consumed (seamless loop)
-        if (itemSetWidth.current > 0 && offsetRef.current >= itemSetWidth.current) {
-            offsetRef.current = 0;
-        }
-
-        trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
-
-        rafId.current = requestAnimationFrame(animate);
-    }, []);
-
     useEffect(() => {
-        setMounted(true);
+        const timer = setTimeout(() => {
+            setMounted(true);
+        }, 0);
 
         // Calculate one set width after render
         if (trackRef.current) {
@@ -78,6 +55,31 @@ export function TrustStrip() {
                 const gap = 24;
                 itemSetWidth.current = (itemWidth + gap) * SERVICES.length;
             }
+        }
+
+        function animate() {
+            if (!trackRef.current) return;
+
+            // Decay boost
+            boostRef.current *= 0.93;
+
+            // Calculate target speed with boost
+            const targetSpeed = BASE_SPEED + boostRef.current;
+
+            // Smooth lerp to target speed
+            speedRef.current += (targetSpeed - speedRef.current) * 0.055;
+
+            // Update offset
+            offsetRef.current += speedRef.current;
+
+            // Reset offset when one full set width is consumed (seamless loop)
+            if (itemSetWidth.current > 0 && offsetRef.current >= itemSetWidth.current) {
+                offsetRef.current = 0;
+            }
+
+            trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
+
+            rafId.current = requestAnimationFrame(animate);
         }
 
         // Start animation
@@ -94,10 +96,11 @@ export function TrustStrip() {
         lastScrollY.current = window.scrollY;
 
         return () => {
+            clearTimeout(timer);
             if (rafId.current) cancelAnimationFrame(rafId.current);
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [animate]);
+    }, []);
 
     return (
         <Section className="py-5 md:py-7 lg:py-8 bg-ink overflow-hidden border-b border-grid/15 flex flex-col items-center cursor-default select-none">

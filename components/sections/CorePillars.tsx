@@ -182,6 +182,7 @@ type PillarCardProps = {
     imagePosition: "left" | "right" | "center";
     services: ServiceItem[];
     startIndex: number;
+    tiltClass?: string;
 };
 
 function PillarCard({
@@ -195,6 +196,7 @@ function PillarCard({
     imagePosition,
     services,
     startIndex,
+    tiltClass,
 }: PillarCardProps) {
     const isImageLeft = imagePosition === "left";
     const isImageRight = imagePosition === "right";
@@ -236,9 +238,11 @@ function PillarCard({
                                     {kicker}
                                 </div>
 
-                                <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-ink/90">
+                                <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-ink/90">
                                     {titleLine1}<br />
-                                    <em className="font-serif-20 italic text-ink">{titleLine2}</em>
+                                    <em className={`font-serif-20 italic bg-primary text-white px-5 py-2 mt-3 inline-block select-none transform ${tiltClass || ""}`}>
+                                        {titleLine2}
+                                    </em>
                                 </h3>
 
                                 <Button
@@ -323,6 +327,7 @@ export function CorePillars() {
                         imagePosition="right"
                         services={websiteServices}
                         startIndex={1}
+                        tiltClass="rotate-3"
                     />
 
                     {/* ── Pillar 2: Digital Marketing ── */}
@@ -337,6 +342,7 @@ export function CorePillars() {
                         imagePosition="left"
                         services={marketingServices}
                         startIndex={4}
+                        tiltClass="-rotate-4"
                     />
                 </div>
             </Container>

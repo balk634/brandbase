@@ -171,54 +171,101 @@ export default function AboutPage() {
       <Section className="bg-transparent py-4 md:py-6 lg:py-8">
         <Container>
           <div className="border border-grid/15 bg-white overflow-hidden">
-            <div className="p-4 sm:p-8 md:p-12">
-              <div className="max-w-3xl min-w-0">
-                <Kicker className="mb-4">
-                  LEADERSHIP & EXPERTISE
-                </Kicker>
-                <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
-                  Built by <em className="font-serif-10 italic">practitioners.</em>
-                </h2>
-                <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
-                  <p>BrandBase is led by a cross-disciplinary team of strategists, engineers, and creatives who care about the fundamentals: clarity, speed, measurement, and conversion.</p>
-                  <p>We don&apos;t ship websites as a one-off deliverable. We build a system you can improve over time, then use marketing to scale what the data proves is working.</p>
+            {/* Leadership Section */}
+            {masterConfig.about.showTeam && (
+              <div className="p-4 sm:p-8 md:p-12">
+                <div className="max-w-3xl min-w-0">
+                  <Kicker className="mb-4">
+                    LEADERSHIP & EXPERTISE
+                  </Kicker>
+                  <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
+                    Built by <em className="font-serif-10 italic">practitioners.</em>
+                  </h2>
+                  <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
+                    <p>BrandBase is led by a cross-disciplinary team of strategists, engineers, and creatives who care about the fundamentals: clarity, speed, measurement, and conversion.</p>
+                    <p>We don&apos;t ship websites as a one-off deliverable. We build a system you can improve over time, then use marketing to scale what the data proves is working.</p>
+                  </div>
+                </div>
+
+                <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                  {masterConfig.about.team.map((member, idx) => (
+                    <div key={idx} className="group border border-grid/15 bg-white p-6 md:p-8">
+                      <div className="w-24 h-24 aspect-square relative overflow-hidden mb-6 border border-grid/15 bg-paper/60">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover transition-all duration-500 group-hover:grayscale"
+                          sizes="96px"
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <div>
+                          <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.35em] text-primary">
+                            {member.role}
+                          </div>
+                          <h3 className="font-serif text-xl tracking-tight text-ink">
+                            {member.name}
+                          </h3>
+                        </div>
+                        <p className="mt-3 text-sm text-ink-muted leading-relaxed">
+                          {member.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+            )}
 
-              <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {masterConfig.about.team.map((member, idx) => (
-                  <div key={idx} className="group border border-grid/15 bg-white p-6 md:p-8">
-                    <div className="w-24 h-24 aspect-square relative overflow-hidden mb-6 border border-grid/15 bg-paper/60">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover transition-all duration-500 group-hover:grayscale"
-                        sizes="96px"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <div>
-                        <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.35em] text-primary">
-                          {member.role}
-                        </div>
- <h3 className="font-serif text-xl tracking-tight text-ink">
-                          {member.name}
-                        </h3>
-                      </div>
-                      <p className="mt-3 text-sm text-ink-muted leading-relaxed">
-                        {member.description}
-                      </p>
-                    </div>
+            {/* Philosophy Section */}
+            {masterConfig.about.showPhilosophy && (
+              <div className="p-4 sm:p-8 md:p-12 animate-fade-in">
+                <div className="max-w-3xl min-w-0">
+                  <Kicker className="mb-4">
+                    OUR PHILOSOPHY
+                  </Kicker>
+                  <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
+                    Built for <em className="font-serif-10 italic">performance.</em>
+                  </h2>
+                  <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
+                    <p>At BrandBase, we believe that websites should not just look beautiful, but drive real business outcomes. We focus on conversion rate optimization, page speed, and clean code to make sure your visitors become customers.</p>
+                    <p>We work as partners in growth. By combining custom high-performance web development with data-driven paid advertising and local SEO, we build a compounding growth engine for your brand.</p>
                   </div>
-                ))}
+                </div>
+
+                <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                  {[
+                    {
+                      number: "01",
+                      title: "Conversion-First Design",
+                      description: "Every element, form, and layout on your website is strategically designed to guide visitors toward actions—whether booking a call, signing up, or making a purchase."
+                    },
+                    {
+                      number: "02",
+                      title: "Modern Engineering",
+                      description: "We build on modern architectures like Next.js, ensuring lightning-fast load times, flawless security, and pristine SEO structure right out of the box."
+                    },
+                    {
+                      number: "03",
+                      title: "Data-Driven Marketing",
+                      description: "We don't guess. We deploy tracking pixels, run targeted Meta and Google campaigns, and focus only on the channels that generate high-quality leads."
+                    }
+                  ].map((pillar, idx) => (
+                    <div key={idx} className="group border border-grid/15 bg-white p-6 md:p-8 flex flex-col justify-between hover:border-primary/45 transition-colors duration-300">
+                      <div>
+                        <div className="font-mono text-2xl font-bold text-primary/30 mb-4">{pillar.number}</div>
+                        <h3 className="font-serif text-xl tracking-tight text-ink mb-3">{pillar.title}</h3>
+                        <p className="text-sm text-ink-muted leading-relaxed">{pillar.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </Container>
       </Section>
-
-
 
       <Section className="bg-transparent border-b-0 py-4 md:py-6 lg:py-8">
         <Container>

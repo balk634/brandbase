@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 export const metadata = buildPageMetadata({
   title: "Contact BrandBase | Let's Build Your Next High-Performance Website",
   description:
-    "Ready to scale? Contact BrandBase in Patna for conversion-first web design and performance marketing services. Book a strategy call today.",
+    "Ready to scale? Contact BrandBase in Mumbai for conversion-first web design and performance marketing services. Book a strategy call today.",
   path: "/contact",
 });
 
@@ -57,8 +57,16 @@ export default function ContactPage() {
                 <IconMapPin className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">Address</div>
                 <address className="not-italic font-serif text-lg leading-snug text-ink px-4">
-                  {masterConfig.contact.address.street},<br />
-                  {masterConfig.contact.address.city}, {masterConfig.contact.address.state}
+                  {masterConfig.contact.address.street ? (
+                    <>
+                      {masterConfig.contact.address.street},<br />
+                      {masterConfig.contact.address.city}, {masterConfig.contact.address.state}
+                    </>
+                  ) : (
+                    <>
+                      {masterConfig.contact.address.city}, {masterConfig.contact.address.country}
+                    </>
+                  )}
                 </address>
               </div>
             </div>

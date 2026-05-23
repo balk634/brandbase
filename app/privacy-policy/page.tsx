@@ -92,7 +92,12 @@ export default function PrivacyPolicyPage() {
             <p>
               <strong>Email:</strong> {masterConfig.contact.email}<br />
               <strong>Phone:</strong> {masterConfig.contact.phone}<br />
-              <strong>Address:</strong> {masterConfig.contact.address.street}, {masterConfig.contact.address.locality}, {masterConfig.contact.address.city}, {masterConfig.contact.address.state} - {masterConfig.contact.address.postalCode}, {masterConfig.contact.address.country}
+              <strong>Address:</strong> {[
+                [masterConfig.contact.address.street, masterConfig.contact.address.locality].filter(Boolean).join(" "),
+                masterConfig.contact.address.city,
+                [masterConfig.contact.address.state, masterConfig.contact.address.postalCode].filter(Boolean).join(" - "),
+                masterConfig.contact.address.country
+              ].filter(Boolean).join(", ")}
             </p>
           </div>
         </Container>

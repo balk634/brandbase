@@ -26,9 +26,17 @@ export default function LegalNoticePage() {
             <h3 className="font-serif">Registered Office:</h3>
             <p>
               BrandBase<br />
-              {masterConfig.contact.address.street}, {masterConfig.contact.address.locality}<br />
-              {masterConfig.contact.address.city}, {masterConfig.contact.address.state} - {masterConfig.contact.address.postalCode}<br />
-              {masterConfig.contact.address.country}
+              {masterConfig.contact.address.street ? (
+                <>
+                  {masterConfig.contact.address.street}, {masterConfig.contact.address.locality}<br />
+                  {masterConfig.contact.address.city}, {masterConfig.contact.address.state} - {masterConfig.contact.address.postalCode}<br />
+                  {masterConfig.contact.address.country}
+                </>
+              ) : (
+                <>
+                  {masterConfig.contact.address.city}, {masterConfig.contact.address.country}
+                </>
+              )}
             </p>
 
             <h3>Represented by & Legal Entity:</h3>
@@ -46,7 +54,7 @@ export default function LegalNoticePage() {
 
             <h3>Dispute Resolution:</h3>
             <p>
-              We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board. Any disputes will be handled within the jurisdiction of Patna, Bihar, India.
+              We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board. Any disputes will be handled within the jurisdiction of Mumbai, Maharashtra, India.
             </p>
 
             <h3>Liability for Content</h3>

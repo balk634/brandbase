@@ -35,16 +35,18 @@ export function JsonLd() {
     };
 
 
-    const teamMembers = masterConfig.about.team.map((member) => ({
-        "@type": "Person",
-        "name": member.name,
-        "jobTitle": member.role,
-        "description": member.description,
-        "image": `${baseUrl}${member.image}`,
-        "worksFor": {
-            "@id": `${baseUrl}/#organization`
-        }
-    }));
+    const teamMembers = masterConfig.about.showTeam
+        ? masterConfig.about.team.map((member) => ({
+            "@type": "Person",
+            "name": member.name,
+            "jobTitle": member.role,
+            "description": member.description,
+            "image": `${baseUrl}${member.image}`,
+            "worksFor": {
+                "@id": `${baseUrl}/#organization`
+            }
+        }))
+        : [];
 
     const schema = {
         "@context": "https://schema.org",
@@ -105,10 +107,10 @@ export function JsonLd() {
                 "employee": teamMembers.filter(m => m.name !== "Balkrishna"),
                 "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": `${contact.address.street}${contact.address.locality ? ` ${contact.address.locality}` : ''}`,
+                    ...(contact.address.street || contact.address.locality ? { "streetAddress": `${contact.address.street}${contact.address.locality ? ` ${contact.address.locality}` : ''}` } : {}),
                     "addressLocality": contact.address.city,
-                    "addressRegion": contact.address.state,
-                    "postalCode": contact.address.postalCode,
+                    ...(contact.address.state ? { "addressRegion": contact.address.state } : {}),
+                    ...(contact.address.postalCode ? { "postalCode": contact.address.postalCode } : {}),
                     "addressCountry": contact.address.country
                 },
                 "contactPoint": [

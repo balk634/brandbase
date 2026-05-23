@@ -707,6 +707,41 @@ a.card-hover {
   animation: trust-strip-marquee var(--testimonials-duration, 70s) linear infinite;
 }
 
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.tech-marquee-ltr {
+  will-change: transform;
+  animation: marquee-ltr 35s linear infinite;
+}
+
+.tech-marquee-rtl {
+  will-change: transform;
+  animation: marquee-rtl 35s linear infinite;
+}
+
+.tech-marquee-ltr:hover,
+.tech-marquee-ltr:focus-within,
+.tech-marquee-rtl:hover,
+.tech-marquee-rtl:focus-within {
+  animation-play-state: paused;
+}
+
 .testimonials-track:hover,
 .testimonials-track:focus-within {
   animation-play-state: paused;
