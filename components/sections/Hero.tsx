@@ -15,7 +15,12 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
     // Memoize headline processing to prevent unnecessary recalculations
     const headlineContent = React.useMemo(() => {
         return hero.headline.split(' ').map((word, i, arr) => 
-            i === arr.length - 1 ? <em key={i} className="font-serif-20 italic bg-ink text-white px-4 py-1.5 inline-block align-baseline select-none transform -rotate-2">{word}</em> : <span key={i}>{word} </span>
+            i === arr.length - 1 ? (
+                <em key={i} className="font-serif-20 italic bg-ink text-white px-4 py-1.5 inline-block align-baseline select-none transform animate-tilt-hero">
+                    {word.slice(0, -1)}
+                    <span className="animate-cursor-blink font-sans">.</span>
+                </em>
+            ) : <span key={i}>{word} </span>
         );
     }, [hero.headline]);
 

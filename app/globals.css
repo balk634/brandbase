@@ -892,4 +892,76 @@ a.card-hover {
   }
 }
 
+/* ── Dynamic tilt and typewriter blink animations ── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  display: inline-block;
+  animation: cursor-blink 1.2s step-end infinite;
+}
+
+@keyframes tilt-cycle-hero {
+  0%, 100% { transform: rotate(-4deg) translate(-3px, 2px) skewX(-2deg); }
+  8.33% { transform: rotate(3deg) translate(2px, -3px) skewX(2deg); }
+  16.66% { transform: rotate(-1deg) translate(-2px, -1px) skewX(-1deg); }
+  25% { transform: rotate(5deg) translate(4px, 3px) skewX(3deg); }
+  33.33% { transform: rotate(-3deg) translate(-4px, -2px) skewX(-2deg); }
+  41.66% { transform: rotate(1deg) translate(3px, 1px) skewX(1deg); }
+  50% { transform: rotate(-5deg) translate(-1px, 4px) skewX(-3deg); }
+  58.33% { transform: rotate(4deg) translate(2px, -4px) skewX(2deg); }
+  66.66% { transform: rotate(-2deg) translate(-3px, -3px) skewX(-1deg); }
+  75% { transform: rotate(2deg) translate(4px, 2px) skewX(1deg); }
+  83.33% { transform: rotate(-6deg) translate(-2px, -1px) skewX(-3deg); }
+  91.66% { transform: rotate(3deg) translate(1px, 3px) skewX(2deg); }
+}
+
+.animate-tilt-hero {
+  will-change: transform;
+  animation: tilt-cycle-hero 18s step-end infinite;
+}
+
+@keyframes tilt-cycle-p1 {
+  0%, 100% { transform: rotate(5deg) translate(3px, -2px) skewX(2deg); }
+  8.33% { transform: rotate(-3deg) translate(-2px, 3px) skewX(-2deg); }
+  16.66% { transform: rotate(2deg) translate(4px, 1px) skewX(1deg); }
+  25% { transform: rotate(-5deg) translate(-3px, -3px) skewX(-3deg); }
+  33.33% { transform: rotate(4deg) translate(1px, -4px) skewX(2deg); }
+  41.66% { transform: rotate(-2deg) translate(-4px, 2px) skewX(-1deg); }
+  50% { transform: rotate(6deg) translate(2px, 4px) skewX(3deg); }
+  58.33% { transform: rotate(-4deg) translate(-1px, -2px) skewX(-2deg); }
+  66.66% { transform: rotate(3deg) translate(3px, -3px) skewX(2deg); }
+  75% { transform: rotate(-1deg) translate(-3px, 1px) skewX(-1deg); }
+  83.33% { transform: rotate(5deg) translate(2px, 3px) skewX(2deg); }
+  91.66% { transform: rotate(-6deg) translate(-4px, -1px) skewX(-3deg); }
+}
+
+.animate-tilt-p1 {
+  will-change: transform;
+  animation: tilt-cycle-p1 18s step-end infinite;
+}
+
+@keyframes tilt-cycle-p2 {
+  0%, 100% { transform: rotate(-2deg) translate(-4px, -3px) skewX(-1deg); }
+  8.33% { transform: rotate(6deg) translate(3px, 2px) skewX(3deg); }
+  16.66% { transform: rotate(-5deg) translate(-2px, 4px) skewX(-3deg); }
+  25% { transform: rotate(3deg) translate(4px, -2px) skewX(2deg); }
+  33.33% { transform: rotate(-6deg) translate(-3px, -1px) skewX(-3deg); }
+  41.66% { transform: rotate(4deg) translate(2px, 3px) skewX(2deg); }
+  50% { transform: rotate(-3deg) translate(-4px, 1px) skewX(-2deg); }
+  58.33% { transform: rotate(5deg) translate(1px, -4px) skewX(2deg); }
+  66.66% { transform: rotate(-4deg) translate(-2px, -3px) skewX(-2deg); }
+  75% { transform: rotate(2deg) translate(3px, 4px) skewX(1deg); }
+  83.33% { transform: rotate(-1deg) translate(-3px, 2px) skewX(-1deg); }
+  91.66% { transform: rotate(5deg) translate(4px, -2px) skewX(3deg); }
+}
+
+.animate-tilt-p2 {
+  will-change: transform;
+  animation: tilt-cycle-p2 18s step-end infinite;
+}
+
+
 

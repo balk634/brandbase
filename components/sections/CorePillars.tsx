@@ -327,7 +327,7 @@ export function CorePillars() {
                         imagePosition="right"
                         services={websiteServices}
                         startIndex={1}
-                        tiltClass="rotate-3"
+                        tiltClass="animate-tilt-p1"
                     />
 
                     {/* ── Pillar 2: Digital Marketing ── */}
@@ -342,7 +342,7 @@ export function CorePillars() {
                         imagePosition="left"
                         services={marketingServices}
                         startIndex={4}
-                        tiltClass="-rotate-4"
+                        tiltClass="animate-tilt-p2"
                     />
                 </div>
             </Container>

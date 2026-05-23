@@ -39,7 +39,7 @@ const ALL_TECHS: TechItem[] = [
     { name: "Node.js", logo: "/brandstrip/nodejs.svg", scale: 1.0 },
     { name: "OpenAI", logo: "/brandstrip/openai.svg", scale: 1.0 },
     { name: "Paytm", logo: "/brandstrip/paytm.svg", scale: 0.6 },
-    { name: "PostgreSQL", logo: "/brandstrip/postgres.svg", scale: 1.35 },
+    { name: "PostgreSQL", logo: "/brandstrip/postgresql.svg", scale: 1 },
     { name: "Razorpay", logo: "/brandstrip/razorpay.svg", scale: 1.0 },
     { name: "React", logo: "/brandstrip/react.svg", scale: 0.8 },
     { name: "Semrush", logo: "/brandstrip/semrush.svg", scale: 1.2 },
