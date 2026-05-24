@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import {
@@ -129,6 +130,21 @@ const faqItems = [
 export default function PerformanceMarketingPage() {
     return (
         <main className="relative text-ink pb-20">
+            <ServiceSchema
+                name="Performance Marketing & Ad Management Services"
+                description="ROI-driven performance marketing for high-growth brands. We manage Meta and Google Ads with a focus on conversion tracking, creative testing, and measurable revenue growth."
+                path="/digital-marketing/performance-marketing"
+                offers={[
+                    {
+                        name: "Meta Ads Management",
+                        description: "Full-service Facebook and Instagram ads management including creative production, audience targeting, A/B testing, and retargeting systems.",
+                    },
+                    {
+                        name: "Google Ads Management",
+                        description: "Google Search, Display, and YouTube campaign management with conversion tracking, daily optimisation, and transparent weekly reporting.",
+                    }
+                ]}
+            />
             {/* ── 1. HERO — Split Two-Column ── */}
             <Section className="bg-transparent pt-4 md:pt-8 lg:pt-12 pb-16 md:pb-24 relative z-10 border-b border-grid/10">
                 <Container>

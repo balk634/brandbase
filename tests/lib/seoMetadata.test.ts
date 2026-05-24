@@ -20,7 +20,8 @@ test("buildPageMetadata - happy path", () => {
   assert.strictEqual(metadata.openGraph?.title, "Test Page");
   assert.strictEqual(metadata.openGraph?.description, "A description of the test page");
   assert.strictEqual(metadata.openGraph?.url, `${masterConfig.metadata.baseUrl}/test-path`);
-  assert.strictEqual(metadata.openGraph?.type, masterConfig.metadata.openGraph.type);
+  const og = metadata.openGraph as Record<string, unknown>;
+  assert.strictEqual(og?.type, masterConfig.metadata.openGraph.type);
 
   // Verify default robots for indexable page
   assert.deepStrictEqual(metadata.robots, {

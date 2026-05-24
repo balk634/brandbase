@@ -6,9 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { LoadingButton } from "@/components/ui/LoadingButton";
 import { masterConfig } from "@/config/master";
 import { Kicker } from "@/components/ui/Kicker";
-import { CalButton } from "@/components/ui/CalBooking";
-import { IconMail, IconPhone, IconMapPin, IconClock } from "@tabler/icons-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { sendEmail } from "@/app/actions";
 
 type ContactFormVariant = "section" | "page";
@@ -150,6 +148,11 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                 required
               />
             </div>
+            {errorMessage && (
+              <div className="mt-4 p-4 bg-red-50 border border-red-200 text-red-600 text-sm font-medium">
+                {errorMessage}
+              </div>
+            )}
 
             <div className="mt-2 flex justify-center sm:justify-end shrink-0">
               <LoadingButton
@@ -311,6 +314,11 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                   required
                 />
               </div>
+              {errorMessage && (
+                <div className="mt-4 p-4 bg-red-50 border border-red-200 text-red-600 text-sm font-medium">
+                  {errorMessage}
+                </div>
+              )}
 
               <div className="mt-8 flex justify-center sm:justify-end">
                 <LoadingButton

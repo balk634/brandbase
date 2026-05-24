@@ -389,15 +389,9 @@ html {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    color-mix(in srgb, #fff 18%, transparent) 45%,
-    transparent 100%
-  );
+  background: color-mix(in srgb, #fff 4%, transparent);
   opacity: 0;
-  transform: translateX(-35%);
-  transition: opacity var(--mi-duration-fast) var(--mi-easing), transform var(--mi-duration-slow) var(--mi-easing);
+  transition: opacity var(--mi-duration-fast) var(--mi-easing);
 }
 
 .mi-btn:hover {
@@ -406,7 +400,6 @@ html {
 
 .mi-btn:hover::before {
   opacity: 1;
-  transform: translateX(15%);
 }
 
 .mi-btn:active {

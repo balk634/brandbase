@@ -11,7 +11,7 @@ const redisClient =
         token: process.env.UPSTASH_REDIS_REST_TOKEN,
       })
     : null;
-const isProduction = process.env.NODE_ENV === "production";
+
 
 function cleanupFallback(now: number) {
   if (fallbackRecentSubmissions.size <= FALLBACK_MAX_KEYS) return;

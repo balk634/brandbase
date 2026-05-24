@@ -1,11 +1,8 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
-import { masterConfig } from "@/config/master";
 import { CalButton } from "@/components/ui/CalBooking";
-import { IconArrowRight, IconClock, IconSparkles } from "@tabler/icons-react";
-import Link from "next/link";
+import { IconClock } from "@tabler/icons-react";
 
 export function FinalCTA() {
     return (
@@ -31,10 +28,6 @@ export function FinalCTA() {
                             <div className="flex items-center gap-2">
                                 <IconClock className="h-4 w-4 text-primary" strokeWidth={1.5} />
                                 <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Response within 24h</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <IconSparkles className="h-4 w-4 text-primary" strokeWidth={1.5} />
-                                <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Website-first roadmap</span>
                             </div>
                         </div>
                     </div>

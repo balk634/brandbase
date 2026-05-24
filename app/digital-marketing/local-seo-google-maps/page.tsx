@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import {
@@ -94,6 +95,21 @@ const faqItems = [
 export default function LocalSEOPage() {
     return (
         <main className="relative text-ink pb-20">
+            <ServiceSchema
+                name="Local SEO Services & Google Maps Marketing"
+                description="Dominate your local market and own the 'near me' search results. Our expert Google Maps optimization drives more calls and bookings for your local business."
+                path="/digital-marketing/local-seo-google-maps"
+                offers={[
+                    {
+                        name: "Google Business Profile Optimisation",
+                        description: "Complete setup, verification, and ongoing optimisation of your Google Maps listing with weekly updates and Q&A management.",
+                    },
+                    {
+                        name: "Local SEO & Citation Building",
+                        description: "Hyper-local keyword targeting, on-page SEO, and directory citation network to rank in the Google Local Pack.",
+                    }
+                ]}
+            />
             {/* ── 1. HERO — Split Two-Column ── */}
             <Section className="bg-transparent pt-4 md:pt-8 lg:pt-12 pb-16 md:pb-24 relative z-10 border-b border-grid/10">
                 <Container>

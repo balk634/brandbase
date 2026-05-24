@@ -48,8 +48,19 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const Comp = asChild ? Slot : "button"
         
         // Determine arrow type
-        const href = propsHref || (asChild ? (children as any)?.props?.href : undefined);
-        const target = propsTarget || (asChild ? (children as any)?.props?.target : undefined);
+        let href = propsHref;
+        let target = propsTarget;
+
+        if (asChild && React.isValidElement(children)) {
+            const childProps = children.props as Record<string, unknown>;
+            if (typeof childProps.href === "string") {
+                href = childProps.href;
+            }
+            if (typeof childProps.target === "string") {
+                target = childProps.target;
+            }
+        }
+
         const isIconSize = size === "icon";
         
         let ArrowIcon = null;
@@ -82,10 +93,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             >
                 {asChild ? (
                     React.isValidElement(children) ? (
-                        React.cloneElement(children as React.ReactElement<any>, {
+                        React.cloneElement(children as React.ReactElement<{ children?: React.ReactNode }>, {
                             children: (
                                 <>
-                                    {(children as React.ReactElement<any>).props.children}
+                                    {(children as React.ReactElement<{ children?: React.ReactNode }>).props.children}
                                     {arrowElement}
                                 </>
                             )

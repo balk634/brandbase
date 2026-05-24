@@ -1,8 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import Image from "next/image";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
@@ -15,70 +13,6 @@ export const metadata = buildPageMetadata({
   path: "/about",
 });
 
-function GoldilocksVenn() {
-  return (
-    <div className="group border border-grid/15 bg-paper/40 aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[4/3] w-full flex items-center justify-center p-4 sm:p-8 lg:p-12 overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out pointer-events-none" />
-
-      <svg viewBox="0 0 400 300" className="w-full h-full max-w-[320px] sm:max-w-sm relative z-10" aria-hidden="true">
-        <defs>
-          <pattern id="dot-grid-venn" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" fill="currentColor" className="text-grid/20" />
-          </pattern>
-          <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="currentColor" className="text-primary" />
-            <stop offset="100%" stopColor="currentColor" className="text-primary/40" />
-          </linearGradient>
-        </defs>
-
-        <rect width="400" height="300" fill="url(#dot-grid-venn)" className="opacity-20 transition-opacity duration-1000" />
-
-        <g className="opacity-20 transition-opacity duration-1000">
-          <path d="M 0 150 L 400 150" stroke="currentColor" className="text-grid" strokeWidth="0.5" />
-          <path d="M 200 0 L 200 300" stroke="currentColor" className="text-grid" strokeWidth="0.5" />
-        </g>
-
-        <g className="transform origin-[165px_150px] transition-transform duration-1000 ease-out md:hover:scale-105">
-          <circle cx="165" cy="150" r="90" fill="currentColor" className="text-red-500/10" />
-          <circle cx="165" cy="150" r="90" fill="none" stroke="currentColor" className="text-red-500/60" strokeWidth="1.5" strokeDasharray="4 4">
-            <animate attributeName="stroke-dashoffset" from="0" to="-80" dur="20s" repeatCount="indefinite" />
-          </circle>
-          <text x="105" y="154" fontFamily="monospace" fontSize="9" fill="currentColor" className="text-red-600 font-bold tracking-widest uppercase" textAnchor="middle">Agency</text>
-        </g>
-
-        <g className="transform origin-[235px_150px] transition-transform duration-1000 ease-out md:hover:scale-105">
-          <circle cx="235" cy="150" r="90" fill="currentColor" className="text-orange-500/10" />
-          <circle cx="235" cy="150" r="90" fill="none" stroke="currentColor" className="text-orange-500/60" strokeWidth="1.5" strokeDasharray="4 4">
-            <animate attributeName="stroke-dashoffset" from="0" to="80" dur="20s" repeatCount="indefinite" />
-          </circle>
-          <text x="295" y="154" fontFamily="monospace" fontSize="9" fill="currentColor" className="text-orange-600 font-bold tracking-widest uppercase" textAnchor="middle">Freelancer</text>
-        </g>
-
-        <g className="transform origin-[200px_150px] transition-transform duration-1000 ease-out md:hover:scale-[1.15]">
-          <path d="M 200 66 A 90 90 0 0 0 200 234 A 90 90 0 0 0 200 66" fill="currentColor" className="text-green-800/20" />
-          <path d="M 200 66 A 90 90 0 0 0 200 234 A 90 90 0 0 0 200 66" fill="transparent" stroke="currentColor" className="text-green-800" strokeWidth="2.5" />
-          <text x="200" y="154" fontFamily="sans-serif" fill="currentColor" className="text-green-900 font-bold" fontSize="13" textAnchor="middle" letterSpacing="2.5">BRANDBASE</text>
-        </g>
-
-        <g className="opacity-60">
-          <path d="M 200 15 L 200 50" stroke="currentColor" className="text-green-800" strokeWidth="1" strokeDasharray="2 2" />
-          <circle cx="200" cy="15" r="3" fill="currentColor" className="text-green-800" />
-          <circle cx="200" cy="15" r="8" fill="none" stroke="currentColor" className="text-green-800/60" strokeDasharray="2 4" strokeWidth="1.5">
-            <animateTransform attributeName="transform" type="rotate" from="0 200 15" to="360 200 15" dur="6s" repeatCount="indefinite" />
-          </circle>
-        </g>
-
-        <g className="opacity-60">
-          <path d="M 200 285 L 200 250" stroke="currentColor" className="text-green-800" strokeWidth="1" strokeDasharray="2 2" />
-          <circle cx="200" cy="285" r="3" fill="currentColor" className="text-green-800" />
-          <circle cx="200" cy="285" r="8" fill="none" stroke="currentColor" className="text-green-800/60" strokeDasharray="2 4" strokeWidth="1.5">
-            <animateTransform attributeName="transform" type="rotate" from="360 200 285" to="0 200 285" dur="6s" repeatCount="indefinite" />
-          </circle>
-        </g>
-      </svg>
-    </div>
-  );
-}
 
 export default function AboutPage() {
   return (

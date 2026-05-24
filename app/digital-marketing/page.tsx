@@ -7,6 +7,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import { DigitalMarketingDeferredLoader } from "@/components/sections/DigitalMarketingDeferredLoader";
+import { AISearchBanner } from "@/components/sections/AISearchBanner";
 import { CalButton } from "@/components/ui/CalBooking";
 import {
   IconHeartbeat,
@@ -294,6 +295,7 @@ export default function DigitalMarketingPage() {
         </Container>
       </Section>
 
+      <AISearchBanner />
       <DigitalMarketingDeferredLoader />
     </main>
   );

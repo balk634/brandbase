@@ -19,6 +19,7 @@ export const NAVIGATION = [
       ]
     },
     { name: "Pricing", href: "/pricing" },
+    { name: "Our Work", href: "/our-work" },
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
 ];
@@ -47,6 +48,7 @@ export const FOOTER_COLUMNS = [
       title: "Company",
       links: [
         { name: "About BrandBase", href: "/about" },
+        { name: "Our Work", href: "/our-work" },
         { name: "Pricing", href: "/pricing" },
         { name: "Insights Blog", href: "/blog" },
         { name: "Contact", href: "/contact" },

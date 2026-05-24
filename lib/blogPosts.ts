@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Why "Pay Monthly" Websites Are the Smartest Choice for Indian SMBs in 2026',
     description:
       "A practical look at subscription websites in India: what you actually get, the math behind cash flow, and how to avoid lock-in.",
-    date: "2026-03-05",
+    date: "2026-05-15",
     category: "Web Strategy",
     readingTimeMinutes: 12,
     cardHeadline: 'Why "Pay Monthly" websites win in 2026',
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
     title: "The 5 Hidden Costs of Cheap Freelance Web Design",
     description:
       "Cheap websites often cost more later. Here are the hidden expenses Indian businesses pay in bugs, delays, rebuilds, and lost leads.",
-    date: "2026-03-05",
+    date: "2026-04-28",
     category: "Web Design",
     readingTimeMinutes: 10,
     cardHeadline: "Cheap web design is rarely cheap",
@@ -513,7 +513,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Turn Your Google Maps Profile into a Lead Generation Machine",
     description:
       "A step-by-step playbook for better local rankings and more calls, WhatsApp messages, and enquiries from Google Maps.",
-    date: "2026-03-05",
+    date: "2026-04-10",
     category: "Local SEO",
     readingTimeMinutes: 11,
     cardHeadline: "Turn Google Maps into leads",
@@ -764,7 +764,7 @@ export const blogPosts: BlogPost[] = [
     title: "Instagram Reels vs. Static Posts: What Drives Real Revenue?",
     description:
       "Reels get reach, carousels build trust. Here is how to choose the right mix and track what actually brings money in.",
-    date: "2026-03-05",
+    date: "2026-03-24",
     category: "Social Media",
     readingTimeMinutes: 10,
     cardHeadline: "Reels vs posts, for revenue",
@@ -1061,7 +1061,7 @@ export const blogPosts: BlogPost[] = [
       "The 12-Month Custom Enterprise Model: Why Serious Brands Invest Upfront",
     description:
       "Why enterprise teams pay upfront for custom design and development, and what to demand in the first 30 days so you do not waste budget.",
-    date: "2026-03-05",
+    date: "2026-03-08",
     category: "Enterprise",
     readingTimeMinutes: 12,
     cardHeadline: "Why enterprise pays upfront",
@@ -1354,7 +1354,7 @@ export const blogPosts: BlogPost[] = [
     title: "Why Your Current Website Traffic Isn't Converting (And How to Fix It)",
     description:
       "A clear diagnostic for conversion problems: messaging, speed, forms, trust, and how to fix the biggest leaks without a full rebuild.",
-    date: "2026-03-05",
+    date: "2026-02-17",
     category: "Conversion",
     readingTimeMinutes: 12,
     cardHeadline: "Fix your conversion leaks",
@@ -1647,7 +1647,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Ultimate Guide to E-Commerce Payment Gateways in India",
     description:
       "Fees, settlement, failure rates, UPI flows, and compliance basics. A no-nonsense guide to choosing gateways for Indian e-commerce.",
-    date: "2026-03-05",
+    date: "2026-01-29",
     category: "E-commerce",
     readingTimeMinutes: 14,
     cardHeadline: "Choose the right payment gateway",
@@ -1961,7 +1961,7 @@ export const blogPosts: BlogPost[] = [
     title: "Custom UI/UX vs. Templates: When Should You Upgrade?",
     description:
       "A decision guide for founders and marketing teams: when a template is enough, and when custom UI/UX starts paying back.",
-    date: "2026-03-05",
+    date: "2025-12-14",
     category: "UI/UX",
     readingTimeMinutes: 11,
     cardHeadline: "Template or custom, decide fast",
@@ -2194,7 +2194,7 @@ export const blogPosts: BlogPost[] = [
     title: "Creative Testing for Meta Ads: A Simple System to Find Winners Faster",
     description:
       "A practical playbook to generate hooks, angles, and offers, then scale what works using a weekly scorecard (without burning budget).",
-    date: "2026-03-05",
+    date: "2025-11-20",
     category: "Performance Marketing",
     readingTimeMinutes: 10,
     cardHeadline: "Creative testing that scales",
@@ -2373,7 +2373,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Measure Social Media ROI Beyond Vanity Metrics",
     description:
       "A practical measurement system that ties social content to leads, sales, and retention, without fooling yourself with likes.",
-    date: "2026-03-05",
+    date: "2025-11-05",
     category: "Analytics",
     readingTimeMinutes: 12,
     cardHeadline: "Measure social ROI properly",

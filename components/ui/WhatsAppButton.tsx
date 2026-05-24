@@ -10,8 +10,12 @@ export function WhatsAppButton({ phoneNumber = "9939146979" }: { phoneNumber?: s
     const timersRef = useRef<number[]>([]);
 
     useEffect(() => {
-        setMounted(true);
-        setIsMobile(window.innerWidth < 768);
+        // Defer mounting indicator to avoid synchronous cascading state updates in effect
+        const mountTimer = window.setTimeout(() => {
+            setMounted(true);
+            setIsMobile(window.innerWidth < 768);
+        }, 0);
+        timersRef.current.push(mountTimer);
 
         // Slide in from bottom after 1 second (helps with initial page load)
         const slideTimer = window.setTimeout(() => {
@@ -51,6 +55,9 @@ export function WhatsAppButton({ phoneNumber = "9939146979" }: { phoneNumber?: s
             />
         );
     }
+
+    // Hide on mobile — users can use the inline CTA buttons instead
+    if (isMobile) return null;
 
     return (
         <div

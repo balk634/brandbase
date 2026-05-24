@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { masterConfig } from "@/config/master";
 import Image from "next/image";
-import { IconMail, IconPhone, IconMapPin, IconBrandWhatsapp } from "@tabler/icons-react";
+import { IconMail, IconMapPin, IconBrandWhatsapp } from "@tabler/icons-react";
 import { LinkedInIcon, InstagramIcon } from "@/components/icons/BrandIcons";
 import type { ComponentType } from "react";
 import { WorldTimeBadgesLazy } from "@/components/ui/WorldTimeBadgesLazy";
@@ -27,7 +27,15 @@ export function Footer() {
                 {/* Top Logo Section */}
                 <div className="w-full flex items-center justify-center py-16 sm:py-24 border-b border-white/10">
                     <Link href="/" className="w-full block hover:opacity-90 transition-opacity">
-                        <img src="/brand/logo-light.svg" alt="BrandBase Logo" className="w-full h-auto" style={{ padding: '0px 30px' }} />
+                        <Image
+                            src="/brand/logo-light.svg"
+                            alt="BrandBase Logo"
+                            width={1200}
+                            height={300}
+                            className="w-full h-auto"
+                            style={{ padding: '0px 30px' }}
+                            priority
+                        />
                     </Link>
                 </div>
 

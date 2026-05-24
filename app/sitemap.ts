@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   addPath("/blog");
   addPath("/process");
   addPath("/pitchdecks");
+  addPath("/our-work");
 
   for (const item of NAVIGATION) {
     addPath(item.href);

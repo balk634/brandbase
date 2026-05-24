@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import {
@@ -93,6 +94,21 @@ const faqItems = [
 export default function SocialMediaManagementPage() {
     return (
         <main className="relative text-ink pb-20">
+            <ServiceSchema
+                name="Organic Social Media Management & Brand Growth"
+                description="Build a brand that people actually follow. Our social media management includes content strategy, design, and engagement for Instagram, LinkedIn, and Meta."
+                path="/digital-marketing/social-media-management"
+                offers={[
+                    {
+                        name: "Social Media Content Management",
+                        description: "End-to-end monthly content creation including graphic design, copywriting, Reels, carousels, and scheduling across Instagram, Facebook, and LinkedIn.",
+                    },
+                    {
+                        name: "Community Management & Engagement",
+                        description: "Active daily monitoring, DM replies, comment engagement, and monthly growth analytics reporting.",
+                    }
+                ]}
+            />
             {/* ── 1. HERO — Split Two-Column ── */}
             <Section className="bg-transparent pt-4 md:pt-8 lg:pt-12 pb-16 md:pb-24 relative z-10 border-b border-grid/10">
                 <Container>

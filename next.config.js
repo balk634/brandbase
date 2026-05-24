@@ -30,6 +30,8 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
+    // All quality values used across the codebase must be listed here.
+    qualities: [40, 55, 70, 75],
     deviceSizes: [384, 640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     localPatterns: [
@@ -82,7 +84,10 @@ const nextConfig = {
     ];
   },
   async headers() {
-    return [
+    // Cache-Control headers for static assets are only applied in production.
+    // In development, Next.js manages its own cache headers and will warn
+    // if you override them.
+    const staticAssetHeaders = isDev ? [] : [
       {
         source: "/_next/image(.*)",
         headers: [
@@ -123,6 +128,10 @@ const nextConfig = {
           },
         ],
       },
+    ];
+
+    return [
+      ...staticAssetHeaders,
       {
         source: "/(.*)",
         headers: [

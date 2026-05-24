@@ -6,13 +6,11 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
-import { BoxPattern } from "@/components/ui/BoxPattern";
 import {
   IconArrowsSplit,
   IconBolt,
   IconBrandFigma,
   IconDatabase,
-  IconShield,
   IconTargetArrow,
   IconShieldCheck,
   IconChartDots,

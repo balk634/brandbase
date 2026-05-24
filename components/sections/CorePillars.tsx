@@ -8,7 +8,6 @@ import React from "react";
 import { LazyImage } from "@/components/ui/LazyImage";
 import type { ComponentType } from "react";
 import {
-    IconArrowUpRight,
     IconSparkles,
     IconShoppingCart,
     IconReceipt2,

@@ -6,11 +6,12 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 import {
     IconAlertTriangle, IconTrendingDown, IconEyeOff, IconClockOff,
-    IconUserOff, IconCashOff, IconArrowRight,
+    IconUserOff, IconCashOff,
     IconCheck, IconBolt, IconShieldCheck, IconSearch, IconTarget,
     IconLayoutDashboard, IconActivity, IconDeviceDesktop, IconBrandGoogle,
     IconMailOpened
@@ -127,6 +128,21 @@ const faqItems = [
 export default function RedesignRescuePage() {
     return (
         <main className="relative text-ink pb-20">
+            <ServiceSchema
+                name="Website Redesign Services & Performance Rescue"
+                description="Transform your underperforming website into a high-speed business asset. We offer strategic redesigns focused on conversions, SEO, and long-term brand growth."
+                path="/website-solutions/website-redesign"
+                offers={[
+                    {
+                        name: "Full Website Redesign",
+                        description: "Complete strategic redesign from audit to launch — new design, fast performance, lead-generation wiring, and SEO foundations.",
+                    },
+                    {
+                        name: "Performance Rescue & Optimisation",
+                        description: "Speed tuning, SEO fixes, and conversion improvements for an existing website without a full rebuild.",
+                    }
+                ]}
+            />
 
             {/* ── 1. HERO — Split Two-Column ── */}
             <Section className="bg-transparent pt-4 md:pt-8 lg:pt-12 pb-16 md:pb-24 relative z-10 border-b border-grid/10">
@@ -302,6 +318,149 @@ export default function RedesignRescuePage() {
                             </div>
                         </div>
                     </motion.div>
+                </Container>
+            </Section>
+
+            {/* ── Strategic Foundation ── */}
+            <Section id="foundation" className="bg-ink py-16 md:py-24 border-b-0 text-white scroll-mt-24">
+                <Container>
+                    {/* Header Row */}
+                    <div className="mb-16 max-w-3xl">
+                        <Kicker className="border-white/15 bg-white/8 text-white/80">
+                            STRATEGIC FOUNDATION
+                        </Kicker>
+                        <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-white leading-[1.05]">
+                            Your website is either a revenue asset{" "}
+                            <em className="font-serif-10 italic text-white/50">or a silent liability.</em>
+                        </h2>
+                        <p className="mt-4 text-sm text-white/45 leading-relaxed">
+                            Every website we build includes two core features: a custom dashboard to manage your daily business easily, and high-performance SEO optimized for Google and new AI search tools.
+                        </p>
+                    </div>
+
+                    {/* Grid Layout of the two pillars */}
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                        {/* Pillar 1: Custom Admin Dashboard */}
+                        <div className="flex flex-col gap-6">
+                            <div className="inline-flex items-center gap-2 border border-white/10 px-3 py-1.5 w-fit bg-white/5">
+                                <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/50">PILLAR 01</span>
+                            </div>
+                            <h3 className="text-2xl font-serif text-white">
+                                Custom Admin Dashboard
+                            </h3>
+                            <p className="text-[13px] text-white/50 leading-relaxed">
+                                An easy-to-use admin panel built just for your business. Easily manage bookings, customer orders, and website menus without slow page builders or complicated settings.
+                            </p>
+
+                            {/* Dynamic Aspect Ratio 2.27:1 Mini Viewer */}
+                            <div className="relative w-full border border-white/10 overflow-hidden bg-white/5" style={{ aspectRatio: "1920 / 912" }}>
+                                <Image
+                                    src="/dashboard/table-order.jpg"
+                                    alt="Custom admin dashboard mockup"
+                                    fill
+                                    className="object-contain object-top"
+                                    sizes="(max-width: 768px) 100vw, 45vw"
+                                    quality={70}
+                                />
+                            </div>
+
+                            <ul className="flex flex-col gap-2.5">
+                                {[
+                                    "Syncs instantly with your live website",
+                                    "Custom access rights for your staff or managers",
+                                    "Fast database engine for instantaneous page loading",
+                                ].map((item) => (
+                                    <li key={item} className="flex items-start gap-2.5">
+                                        <span className="mt-0.5 h-4 w-4 shrink-0 bg-white/10 border border-white/20 grid place-items-center">
+                                            <IconCheck className="h-2.5 w-2.5 text-white" strokeWidth={2.5} />
+                                        </span>
+                                        <span className="text-[12px] text-white/60 leading-snug">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Pillar 2: Google & AI Search Optimization */}
+                        <div className="flex flex-col gap-6">
+                            <div className="inline-flex items-center gap-2 border border-white/10 px-3 py-1.5 w-fit bg-white/5">
+                                <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/50">PILLAR 02</span>
+                            </div>
+                            <h3 className="text-2xl font-serif text-white">
+                                Google & AI Search Optimization
+                            </h3>
+                            <p className="text-[13px] text-white/50 leading-relaxed">
+                                Custom schema and structured data so standard Google search and new AI models (like Google Overviews and ChatGPT) cite and recommend your brand.
+                            </p>
+
+                            {/* Editor Mockup: Syntax-highlighted schema viewer */}
+                            <div className="relative w-full border border-white/10 overflow-hidden bg-[#0d0d11] flex flex-col aspect-[4/3] sm:aspect-[1920/912]">
+                                {/* Editor title bar */}
+                                <div className="flex items-center gap-3 px-3 py-2 bg-[#07070a] border-b border-white/[0.06] shrink-0">
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="w-2 h-2 rounded-full bg-[#ef4444]/50" />
+                                        <span className="w-2 h-2 rounded-full bg-[#f59e0b]/50" />
+                                        <span className="w-2 h-2 rounded-full bg-[#10b981]/50" />
+                                    </div>
+                                    <div className="flex items-center gap-1 px-3 py-0.5 bg-white/[0.04] border border-white/[0.06] text-white/30 font-mono text-[9px]">
+                                        schema.json
+                                    </div>
+                                    {/* Pulsing validated dot */}
+                                    <div className="ml-auto flex items-center gap-1.5">
+                                        <span className="relative flex h-1.5 w-1.5">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+                                        </span>
+                                        <span className="font-mono text-[8px] text-emerald-400 uppercase tracking-wider">Validated</span>
+                                    </div>
+                                </div>
+
+                                {/* Code area with line numbers */}
+                                <div className="flex flex-1 overflow-hidden">
+                                    {/* Line numbers */}
+                                    <div className="flex flex-col px-3 py-2 text-white/15 font-mono text-[9px] leading-[1.7] select-none border-r border-white/[0.04] shrink-0 text-right min-w-[2rem]">
+                                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => <span key={n}>{n}</span>)}
+                                    </div>
+
+                                    {/* Syntax-highlighted code */}
+                                    <div className="py-2 px-4 font-mono text-[9px] leading-[1.7] overflow-hidden select-none">
+                                        <div><span className="text-white/40">{"{"}</span></div>
+                                        <div><span className="text-white/20 ml-2">{"  "}</span><span className="text-[#7dd3fc]">&quot;@context&quot;</span><span className="text-white/30">: </span><span className="text-[#86efac]">&quot;https://schema.org&quot;</span><span className="text-white/30">,</span></div>
+                                        <div><span className="text-white/20 ml-2">{"  "}</span><span className="text-[#7dd3fc]">&quot;@type&quot;</span><span className="text-white/30">: </span><span className="text-[#fcd34d]">&quot;LocalBusiness&quot;</span><span className="text-white/30">,</span></div>
+                                        <div><span className="text-white/20 ml-2">{"  "}</span><span className="text-[#7dd3fc]">&quot;name&quot;</span><span className="text-white/30">: </span><span className="text-[#86efac]">&quot;YourBrand&quot;</span><span className="text-white/30">,</span></div>
+                                        <div><span className="text-white/20 ml-2">{"  "}</span><span className="text-[#7dd3fc]">&quot;knowsAbout&quot;</span><span className="text-white/30">: [</span><span className="text-[#86efac]">&quot;E-E-A-T&quot;</span><span className="text-white/30">, </span><span className="text-[#86efac]">&quot;AI Citations&quot;</span><span className="text-white/30">],</span></div>
+                                        <div><span className="text-white/20 ml-2">{"  "}</span><span className="text-[#7dd3fc]">&quot;aggregateRating&quot;</span><span className="text-white/30">: {"{"}</span></div>
+                                        <div><span className="text-white/20 ml-2">{"    "}</span><span className="text-[#7dd3fc]">&quot;@type&quot;</span><span className="text-white/30">: </span><span className="text-[#fcd34d]">&quot;AggregateRating&quot;</span><span className="text-white/30">,</span></div>
+                                        <div><span className="text-white/20 ml-2">{"    "}</span><span className="text-[#7dd3fc]">&quot;ratingValue&quot;</span><span className="text-white/30">: </span><span className="text-[#67e8f9]">&quot;4.9&quot;</span><span className="text-white/30">,</span></div>
+                                        <div><span className="text-white/20 ml-2">{"    "}</span><span className="text-[#7dd3fc]">&quot;reviewCount&quot;</span><span className="text-white/30">: </span><span className="text-[#a78bfa]">87</span></div>
+                                        <div><span className="text-white/40">{"}"}</span></div>
+                                    </div>
+                                </div>
+
+                                {/* Bottom status bar */}
+                                <div className="flex items-center justify-between px-3 py-1.5 bg-[#07070a] border-t border-white/[0.04] shrink-0">
+                                    <span className="font-mono text-[8px] text-white/20 uppercase tracking-wider">JSON-LD · schema.org</span>
+                                    <div className="flex items-center gap-1.5 border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5">
+                                        <span className="font-mono text-[8px] text-emerald-400 uppercase tracking-wider">● Google Rich Results</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul className="flex flex-col gap-2.5">
+                                {[
+                                    "Rich schema validation baked directly into the code template",
+                                    "EEAT entity signals structured to trigger AI citations",
+                                    "Conversational search alignment matching long user query paths",
+                                ].map((item) => (
+                                    <li key={item} className="flex items-start gap-2.5">
+                                        <span className="mt-0.5 h-4 w-4 shrink-0 bg-white/10 border border-white/20 grid place-items-center">
+                                            <IconCheck className="h-2.5 w-2.5 text-white" strokeWidth={2.5} />
+                                        </span>
+                                        <span className="text-[12px] text-white/60 leading-snug">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </Container>
             </Section>
 

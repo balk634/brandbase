@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { masterConfig } from "@/config/master";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { AnimatePresence, motion } from "@/components/ui/motion-lite";
@@ -21,6 +20,14 @@ export function Navbar() {
     const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
     const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
     const pathname = usePathname();
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setIsScrolled(window.scrollY > 10);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll(); // run once on mount
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     const toggleMobileDropdown = (name: string) => {
         setOpenMobileDropdown(prev => prev === name ? null : name);
@@ -92,15 +99,24 @@ export function Navbar() {
     }, [closeAllMenus, clearDesktopCloseTimer]);
 
     return (
-        <header ref={headerRef} className="sticky top-0 z-50 w-full border-b border-grid/15 bg-paper">
+        <header
+            ref={headerRef}
+            className={[
+                "fixed top-0 left-0 right-0 z-50 w-full border-b transition-all duration-300",
+                isScrolled
+                    ? "bg-primary border-white/10 shadow-[0_4px_24px_0_rgba(52,54,198,0.25)]"
+                    : "bg-paper border-grid/10 shadow-none",
+            ].join(" ")}
+        >
             <Container className="h-16 grid grid-cols-[auto,1fr,auto] items-center gap-3">
                 {/* Logo */}
                 <Link href="/" className="mi-nav-item flex items-center gap-2" aria-label="Home" onClick={closeAllMenus}>
-                    <Image 
-                        src="/brand/logo-dark.svg" 
-                        alt="BrandBase" 
+                    <Image
+                        src={isScrolled ? "/brand/logo-light.svg" : "/brand/logo-dark.svg"}
+                        alt="BrandBase"
                         width={160}
                         height={40}
+                        style={{ height: "auto" }}
                         unoptimized
                         priority
                     />
@@ -131,18 +147,20 @@ export function Navbar() {
                                         <Link
                                             href={item.href}
                                             className={[
-                                                "mi-nav-link relative flex items-center gap-1.5 px-4 xl:px-5 py-2 text-xs font-mono uppercase whitespace-nowrap",
-                                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-                                                isMainActive || isDesktopOpen
-                                                    ? "text-ink"
-                                                    : "text-ink-muted hover:text-ink",
+                                                "mi-nav-link relative flex items-center gap-1.5 px-4 xl:px-5 py-2 text-xs font-mono uppercase whitespace-nowrap transition-colors duration-300",
+                                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                                                isScrolled
+                                                    ? (isMainActive || isDesktopOpen ? "text-white" : "text-white/90 hover:text-white")
+                                                    : (isMainActive || isDesktopOpen ? "text-ink" : "text-ink-muted hover:text-ink"),
                                             ].join(" ")}
                                             onClick={() => setOpenDesktopDropdown(null)}
                                         >
                                             <span
                                                 className={[
                                                     "relative inline-block",
-                                                    "after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-px after:bg-primary after:w-full after:origin-center after:scale-x-0 after:transition-transform after:duration-200",
+                                                    isScrolled
+                                                        ? "after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-px after:bg-white after:w-full after:origin-center after:scale-x-0 after:transition-transform after:duration-200"
+                                                        : "after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-px after:bg-primary after:w-full after:origin-center after:scale-x-0 after:transition-transform after:duration-200",
                                                     isMainActive || isDesktopOpen ? "after:scale-x-100" : "",
                                                 ].join(" ")}
                                             >
@@ -158,7 +176,7 @@ export function Navbar() {
                                                 strokeWidth="2"
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
-                                                className={`opacity-60 transition-transform duration-300 ${isDesktopOpen ? "rotate-180" : ""}`}
+                                                className={`transition-transform duration-300 ${isScrolled ? "opacity-90" : "opacity-60"} ${isDesktopOpen ? "rotate-180" : ""}`}
                                                 aria-hidden="true"
                                             >
                                                 <path d="m6 9 6 6 6-6" />
@@ -213,15 +231,19 @@ export function Navbar() {
                                     <Link
                                         href={item.href}
                                         className={[
-                                            "mi-nav-link relative flex items-center px-4 xl:px-5 py-2 text-xs font-mono uppercase whitespace-nowrap",
-                                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-                                            isMainActive ? "text-ink" : "text-ink-muted hover:text-ink",
+                                            "mi-nav-link relative flex items-center px-4 xl:px-5 py-2 text-xs font-mono uppercase whitespace-nowrap transition-colors duration-300",
+                                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                                            isScrolled
+                                                ? (isMainActive ? "text-white" : "text-white/90 hover:text-white")
+                                                : (isMainActive ? "text-ink" : "text-ink-muted hover:text-ink"),
                                         ].join(" ")}
                                     >
                                         <span
                                             className={[
                                                 "relative inline-block",
-                                                "after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-px after:bg-primary after:w-full after:origin-center after:scale-x-0 after:transition-transform after:duration-200",
+                                                isScrolled
+                                                    ? "after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-px after:bg-white after:w-full after:origin-center after:scale-x-0 after:transition-transform after:duration-200"
+                                                    : "after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-px after:bg-primary after:w-full after:origin-center after:scale-x-0 after:transition-transform after:duration-200",
                                                 isMainActive ? "after:scale-x-100" : "",
                                             ].join(" ")}
                                         >
@@ -236,7 +258,13 @@ export function Navbar() {
 
                 {/* Right Side */}
                 <div className="flex items-center justify-end gap-2">
-                    <CalButton variant="primary" size="sm" className="hidden sm:inline-flex">
+                    <CalButton
+                        variant={isScrolled ? "ghost" : "primary"}
+                        size="sm"
+                        className={`hidden sm:inline-flex transition-all duration-300 ${
+                            isScrolled ? "border border-white/40 text-white hover:!bg-white hover:!text-primary hover:!border-white" : ""
+                        }`}
+                    >
                         Get in Touch
                     </CalButton>
 
@@ -244,7 +272,7 @@ export function Navbar() {
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="lg:hidden"
+                        className={`lg:hidden transition-colors duration-300 ${isScrolled ? "text-white hover:bg-white/10" : ""}`}
                         onClick={() => {
                             setIsMenuOpen((prev) => {
                                 const next = !prev;
@@ -355,9 +383,9 @@ export function Navbar() {
                         </nav>
 
                         <div className="p-4 border-t border-grid/10 bg-paper">
-                                <CalButton variant="primary" size="lg" className="w-full" onClick={closeMobileMenu}>
-                                    Get in Touch
-                                </CalButton>
+                            <CalButton variant="primary" size="lg" className="w-full" onClick={closeMobileMenu}>
+                                Get in Touch
+                            </CalButton>
                         </div>
                     </motion.div>
                 ) : null}

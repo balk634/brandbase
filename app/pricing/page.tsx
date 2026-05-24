@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
@@ -191,10 +191,6 @@ export default function PricingPage() {
   }, [scope]);
 
   async function handleAction(formData: FormData) {
-    const name = String(formData.get("name")).trim();
-    const email = String(formData.get("email")).trim();
-    
-
     // Build the "playbook" message payload
     const userMessage = String(formData.get("visitor_message") || "").trim();
     const phone = String(formData.get("phone") || "").trim();

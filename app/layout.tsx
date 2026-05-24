@@ -75,7 +75,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-paper text-ink overflow-x-hidden w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-paper text-ink w-full`}
         style={
           {
             "--pattern-opacity": String(masterConfig.ui.pattern.opacity),
@@ -141,8 +141,10 @@ export default function RootLayout({
             className={masterConfig.ui.pattern.drift.enabled ? "pattern-overlay pattern-overlay--animated" : "pattern-overlay"}
           />
         ) : null}
-        <div className="min-h-screen min-h-[100svh] flex flex-col relative z-10 w-full overflow-x-hidden">
+        <div className="min-h-screen min-h-[100svh] flex flex-col relative z-10 w-full overflow-x-clip">
           <Navbar />
+          {/* Spacer to compensate for fixed navbar height (h-16 = 64px) */}
+          <div className="h-16 shrink-0" aria-hidden="true" />
           {children}
           <Footer />
         </div>

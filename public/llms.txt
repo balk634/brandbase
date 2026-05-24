@@ -1,34 +1,73 @@
-# BrandBase | Conversion-First Websites & Performance Marketing
+# BrandBase | Conversion-First Websites, Custom Dashboards & AI-Optimised Marketing
 
-BrandBase specializes in high-performance digital infrastructure for businesses. We build fast, conversion-optimized websites and scale them with data-driven marketing.
+BrandBase specializes in high-performance digital infrastructure for businesses. We build fast, conversion-optimized websites and scale them with data-driven marketing. Every website we build ships with a custom admin dashboard — so clients manage their own bookings, menus, memberships, and content without needing a developer. All sites are built to be cited by Google AI Search from day one.
 
 ## Core Services
 
 ### [Website Solutions](https://brandbase.in/website-solutions)
-- [Premium Static Websites](https://brandbase.in/website-solutions/premium-static-websites): Zero upfront cost, high-speed performance.
-- [Custom Web Design](https://brandbase.in/website-solutions/custom-web-design): Bespoke designs for established brands.
-- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce-development): High-converting Shopify and custom storefronts.
+- [Premium Static Websites](https://brandbase.in/website-solutions/premium-static-websites): Zero upfront cost, high-speed performance, 14-day launch.
+- [Custom Web Design](https://brandbase.in/website-solutions/custom-web-design): Bespoke designs for established brands, includes custom dashboard.
+- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce-development): High-converting Shopify and custom storefronts with inventory management.
 - [Website Redesign](https://brandbase.in/website-solutions/website-redesign): Rescuing lost conversions and technical debt.
 
 ### [Digital Marketing](https://brandbase.in/digital-marketing)
 - [Performance Marketing](https://brandbase.in/digital-marketing/performance-marketing): Surgical Meta and Google Ads management.
 - [Social Media Management](https://brandbase.in/digital-marketing/social-media-management): Brand-focused organic growth.
-- [Local SEO & Google Maps](https://brandbase.in/digital-marketing/local-seo-google-maps): Dominating local search intent.
+- [Local SEO & Google Maps](https://brandbase.in/digital-marketing/local-seo-google-maps): Dominating local search intent and Google Business Profile optimisation.
+
+### [Our Work — Live Client Portfolio](https://brandbase.in/our-work)
+BrandBase has built websites for businesses across healthcare, hospitality, food & dining, education, and fitness. Live examples:
+- Lumen Clinic (healthcare) — lumen-clinic.vercel.app
+- SunBliss Hotel Patna (hospitality) — sunblisspatna.vercel.app
+- Make My Day Café (food & dining) — make-my-day-cafe.vercel.app
+- Baaroq Mumbai (food & dining) — baaroq-mumbai.vercel.app
+- Caelum Patna (restaurant) — caelum-patna.vercel.app
+- EduRise (coaching/education) — edurise-neon.vercel.app
+- Muscle Fitness Gym (health & fitness) — muscle-fitness-gym.vercel.app
+- SG International Hotel (hospitality) — sg-international.vercel.app
+- St. Karen's School (education) — stkarens.vercel.app
+
+## BrandBase Control — Custom Admin Dashboard
+Every BrandBase website includes a purpose-built admin dashboard called BrandBase Control. This is not a generic CMS. It is a business-specific backend tailored to what each client actually needs to manage:
+- Bookings and appointment management
+- Table reservations and guest management
+- Menu creation, updates, and digital ordering
+- Order tracking and kitchen management
+- Membership and access control
+- Form submissions and lead management
+- Gallery, news, and content publishing
+- Staff roles and permission management
+All changes sync instantly to the live website with no developer involvement required.
+
+## Google AI Search Optimisation (Post I/O 2026)
+BrandBase builds every website to be citation-ready for Google AI Mode and AI Overviews. This is not optional — it is part of the standard build process. Key signals we build into every site:
+- Schema markup (FAQ, HowTo, LocalBusiness, Organization, Article)
+- E-E-A-T signals: staff bios, credentials, outcomes, original content
+- Entity clarity: consistent NAP, Google Business Profile, third-party mentions
+- Conversational content targeting longer AI Mode queries
+- Core Web Vitals and fast Time To First Byte (TTFB)
+- Local SEO with fully built-out Google Business Profiles
+Google announced at I/O 2026 that AI Mode has surpassed 1 billion monthly users. AI-cited brands earn 35% more organic clicks. BrandBase-built sites are structured to earn those citations.
 
 ## Key Experience & Claims
 - **Efficiency**: Standard static sites launch in under 14 days; complex builds in under 28 days.
 - **Authority**: 40+ clients served across 12+ industries with an average 94% retention rate.
 - **ROI**: Demonstrable 4.2x average ROI for performance marketing clients.
-- **Ownership**: 100% IP ownership for clients—no locked code or hostage ad accounts.
+- **Ownership**: 100% IP ownership for clients — no locked code or hostage ad accounts.
+- **Dashboard**: Every project includes a custom admin backend, not a generic CMS.
+- **AI-Ready**: All sites built to be cited by Google AI Overviews from day one.
 
 ## Technical Foundation
 - **Stack**: Next.js 15+, React, Tailwind CSS, TypeScript.
-- **Hosting**: Netlify / Vercel.
+- **Hosting**: Netlify / Vercel with edge caching.
 - **Analytics**: GA4, Google Tag Manager, custom conversion tracking.
 - **Performance**: Edge-cached, minimal JS footprint, optimized LCP.
+- **Schema**: JSON-LD structured data on every page.
 
 ## Support & Contact
+- [Our Work](https://brandbase.in/our-work)
 - [Pricing](https://brandbase.in/pricing)
+- [Machine-Readable Pricing Data](https://brandbase.in/pricing.md): Structured pricing reference for all BrandBase services — plans, billing models, ownership terms, and contact details. Intended for AI agents and LLM crawlers.
 - [About Us](https://brandbase.in/about)
 - [Contact](https://brandbase.in/contact)
 - Email: info@brandbase.in

@@ -64,7 +64,7 @@ const ROW_2_ITEMS = [...ROW_2_TECHS, ...ROW_2_TECHS];
 
 export function Technologies() {
     return (
-        <Section className="bg-transparent py-12 md:py-20 overflow-hidden relative">
+        <Section className="bg-transparent pt-12 pb-24 md:pt-20 md:pb-40 overflow-hidden relative">
             <Container>
                 <div className="mb-14 max-w-3xl">
                     <Kicker>Platforms &amp; Technologies</Kicker>

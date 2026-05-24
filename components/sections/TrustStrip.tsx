@@ -1,7 +1,7 @@
 "use client";
 
 import { Section } from "@/components/ui/Section";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const SERVICES = [
     "Email Marketing",
@@ -38,13 +38,7 @@ export function TrustStrip() {
     const lastScrollY = useRef(0);
     const itemSetWidth = useRef(0);
     const rafId = useRef<number | undefined>(undefined);
-    const [mounted, setMounted] = useState(false);
-
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setMounted(true);
-        }, 0);
-
         // Calculate one set width after render
         if (trackRef.current) {
             const track = trackRef.current;
@@ -96,7 +90,6 @@ export function TrustStrip() {
         lastScrollY.current = window.scrollY;
 
         return () => {
-            clearTimeout(timer);
             if (rafId.current) cancelAnimationFrame(rafId.current);
             window.removeEventListener("scroll", handleScroll);
         };
@@ -111,26 +104,18 @@ export function TrustStrip() {
                         className="flex w-max whitespace-nowrap will-change-transform"
                         style={{ gap: "1.5rem" }}
                     >
-                        {mounted ? (
-                            MARQUEE_ITEMS.map((service, idx) => (
-                                <div
-                                    key={`${service}-${idx}`}
-                                    data-marquee-item
-                                    className="flex shrink-0 items-center gap-6 md:gap-10 lg:gap-12 opacity-70 hover:opacity-100 transition-opacity cursor-default"
-                                >
-                                    <span className="font-mono font-semibold text-lg md:text-xl lg:text-2xl tracking-tight uppercase text-white whitespace-nowrap">
-                                        {service}
-                                    </span>
-                                    <span className="w-1.5 h-1.5 bg-white rounded-sm flex-shrink-0" aria-hidden="true" />
-                                </div>
-                            ))
-                        ) : (
-                            <div className="flex shrink-0 items-center gap-6 md:gap-10 lg:gap-12 opacity-70">
+                        {MARQUEE_ITEMS.map((service, idx) => (
+                            <div
+                                key={`${service}-${idx}`}
+                                data-marquee-item
+                                className="flex shrink-0 items-center gap-6 md:gap-10 lg:gap-12 opacity-70 hover:opacity-100 transition-opacity cursor-default"
+                            >
                                 <span className="font-mono font-semibold text-lg md:text-xl lg:text-2xl tracking-tight uppercase text-white whitespace-nowrap">
-                                    &nbsp;
+                                    {service}
                                 </span>
+                                <span className="w-1.5 h-1.5 bg-white rounded-sm flex-shrink-0" aria-hidden="true" />
                             </div>
-                        )}
+                        ))}
                     </div>
                 </div>
             </div>

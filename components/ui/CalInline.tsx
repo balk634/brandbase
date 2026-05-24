@@ -14,38 +14,50 @@ export function CalInline({ className }: CalInlineProps) {
     // Only run if not already loaded in this container to prevent double embeds
     if (!containerRef.current || containerRef.current.dataset.loaded) return;
 
-    (function (C, A, L) {
-      const p = function (a: any, ar: any) {
-        a.q.push(ar);
-      };
-      const d = C.document;
-      (C as any).Cal = (C as any).Cal || function () {
-        const cal = (C as any).Cal;
-        const ar = arguments;
+    interface CalApi {
+      (...args: unknown[]): void;
+      loaded?: boolean;
+      ns?: Record<string, CalApi>;
+      q: unknown[][];
+    }
+
+    const C = window as Window & { Cal?: CalApi };
+    const d = document;
+
+    if (!C.Cal) {
+      const cal: CalApi = function (...args: unknown[]) {
         if (!cal.loaded) {
           cal.ns = {};
           cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
+          const script = d.createElement("script");
+          script.src = "https://booking.brandbase.in/embed/embed.js";
+          d.head.appendChild(script);
           cal.loaded = true;
         }
-        if (ar[0] === L) {
-          const api: any = function () {
-            p(api, arguments);
-          };
-          const namespace = ar[1];
+
+        if (args[0] === "init") {
+          const api: CalApi = function (...subArgs: unknown[]) {
+            api.q.push(subArgs);
+          } as CalApi;
           api.q = api.q || [];
-          if (typeof namespace === "string") {
+          const namespace = args[1];
+          if (typeof namespace === "string" && cal.ns) {
             cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else p(cal, ar);
+            cal.ns[namespace](...args);
+            cal.q.push(["initNamespace", namespace]);
+          } else {
+            cal.q.push(args);
+          }
           return;
         }
-        p(cal, ar);
-      };
-    })(window, "https://booking.brandbase.in/embed/embed.js", "init");
+        cal.q.push(args);
+      } as CalApi;
 
-    const Cal = (window as any).Cal;
+      C.Cal = cal;
+    }
+
+    const Cal = C.Cal;
+    if (!Cal || !Cal.ns) return;
     const namespace = "30min";
 
     Cal("init", namespace, { origin: "https://booking.brandbase.in" });

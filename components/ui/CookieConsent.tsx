@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/Button";
 import { IconX } from "@tabler/icons-react";
 
@@ -13,7 +13,7 @@ export function CookieConsent() {
         window.dispatchEvent(new Event("cookie-consent-updated"));
     };
 
-    const handleAction = (type: "accepted" | "declined") => {
+    const handleAction = useCallback((type: "accepted" | "declined") => {
         if (isExiting) return; // Prevent double triggers
         
         if (timerRef.current) {
@@ -33,15 +33,18 @@ export function CookieConsent() {
             setShow(false);
             notifyConsentChange();
         }, 500); // Matches duration-500
-    };
+    }, [isExiting]);
 
-    const accept = () => handleAction("accepted");
-    const decline = () => handleAction("declined");
+    const accept = useCallback(() => handleAction("accepted"), [handleAction]);
+    const decline = useCallback(() => handleAction("declined"), [handleAction]);
 
     useEffect(() => {
         const consent = localStorage.getItem("cookie-consent");
         if (!consent) {
-            setShow(true);
+            // Defer showing to prevent synchronous cascading state updates in effect
+            const initTimer = window.setTimeout(() => {
+                setShow(true);
+            }, 0);
 
             // Auto-accept after 5 seconds
             timerRef.current = window.setTimeout(() => {
@@ -49,10 +52,11 @@ export function CookieConsent() {
             }, 5000);
 
             return () => {
+                window.clearTimeout(initTimer);
                 if (timerRef.current) window.clearTimeout(timerRef.current);
             };
         }
-    }, []);
+    }, [accept]);
 
     if (!show) return null;
 

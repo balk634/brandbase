@@ -7,8 +7,6 @@ import { isContactSubmissionRateLimited } from "@/lib/contactRateLimit";
 const resend = new Resend(process.env.RESEND_API_KEY);
 const MIN_FORM_FILL_MS = 2_500;
 const MAX_FORM_AGE_MS = 24 * 60 * 60 * 1_000;
-const hasRedisRateLimitConfig =
-    Boolean(process.env.UPSTASH_REDIS_REST_URL) && Boolean(process.env.UPSTASH_REDIS_REST_TOKEN);
 
 export async function sendEmail(formData: FormData) {
     try {

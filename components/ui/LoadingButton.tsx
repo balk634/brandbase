@@ -31,8 +31,9 @@ export function LoadingButton({
       {...props}
     >
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center gap-2">
           <IconLoader2 className="w-4 h-4 animate-spin" />
+          <span className="text-sm font-medium">{loadingText}</span>
         </div>
       )}
       <span className={isLoading ? "opacity-0" : "opacity-100"}>
