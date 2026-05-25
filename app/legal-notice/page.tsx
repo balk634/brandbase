@@ -42,7 +42,7 @@ export default function LegalNoticePage() {
             <h3>Represented by & Legal Entity:</h3>
             <p>
               BrandBase is a registered Sole Proprietorship in India.<br />
-              Legal Owner & Authorized Signatory: Balkrishna<br />
+              Legal Owner & Authorized Signatory: The Proprietor<br />
               GSTIN (Goods and Services Tax Identification Number): <strong>10DHEPB0541R1ZN</strong>
             </p>
 

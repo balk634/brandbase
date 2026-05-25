@@ -103,8 +103,8 @@ export function JsonLd() {
                 "areaServed": "Worldwide",
                 "knowsAbout": metadata.keywords,
                 "hasOfferCatalog": offerCatalog,
-                "founder": teamMembers.filter(m => m.name === "Balkrishna"),
-                "employee": teamMembers.filter(m => m.name !== "Balkrishna"),
+                "founder": teamMembers.length > 0 ? [teamMembers[0]] : [],
+                "employee": teamMembers.length > 1 ? teamMembers.slice(1) : [],
                 "address": {
                     "@type": "PostalAddress",
                     ...(contact.address.street || contact.address.locality ? { "streetAddress": `${contact.address.street}${contact.address.locality ? ` ${contact.address.locality}` : ''}` } : {}),
