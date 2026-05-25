@@ -34,7 +34,6 @@ export function Footer() {
                             height={300}
                             className="w-full h-auto"
                             style={{ padding: '0px 30px' }}
-                            priority
                         />
                     </Link>
                 </div>

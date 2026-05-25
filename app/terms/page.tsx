@@ -7,7 +7,6 @@ export const metadata = buildPageMetadata({
   title: "Terms of Service | BrandBase",
   description: "Terms and conditions governing the use of BrandBase website and services.",
   path: "/terms",
-  noIndex: true,
 });
 
 export default function TermsPage() {

@@ -26,6 +26,7 @@ export function HeroImage({ src, alt, priority = true, className }: HeroImagePro
             priority={priority}
             fetchPriority={priority ? "high" : "auto"}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+            quality={70}
         />
     );
 }

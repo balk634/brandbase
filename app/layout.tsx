@@ -122,8 +122,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
-        {/* Preload critical fonts to break the CSS→font discovery chain. Only loading the Hero font to preserve mobile network bandwidth for LCP image. */}
-      <link rel="preload" href="/fonts/Redaction_20-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* Preload critical fonts to break the CSS→font discovery chain. Preloading the main title font and the highlighted italic word font used in the above-the-fold hero. */}
+        <link rel="preload" href="/fonts/Redaction-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Redaction_20-Italic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <JsonLd />
       <BreadcrumbSchema />
         <ConsentAwareAnalytics

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
@@ -236,7 +235,6 @@ export function DashboardShowcase() {
                                         className="object-contain object-top"
                                         sizes="(max-width: 768px) 100vw, 55vw"
                                         quality={70}
-                                        priority
                                     />
                                 </motion.div>
                             </AnimatePresence>

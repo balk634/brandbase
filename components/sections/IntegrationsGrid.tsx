@@ -1,8 +1,6 @@
 "use client";
 
-import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { motion } from "@/components/ui/motion-lite";
 
 export function IntegrationsGrid() {
     return (
@@ -33,7 +31,7 @@ export function IntegrationsGrid() {
                                         <div key={item.name} className="p-4 sm:p-8 flex flex-col items-center justify-center text-center group hover:bg-neutral-50 transition-colors duration-300">
                                             <div className="h-8 w-20 sm:h-12 sm:w-32 relative flex items-center justify-center">
                                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" />
+                                                <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" width={128} height={48} />
                                             </div>
                                         </div>
                                     ))}
@@ -48,7 +46,7 @@ export function IntegrationsGrid() {
                                         <div key={item.name} className="p-3 sm:p-6 flex flex-col items-center justify-center text-center group hover:bg-neutral-50 transition-colors duration-300">
                                             <div className="h-6 w-16 sm:h-10 sm:w-24 relative flex items-center justify-center">
                                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" />
+                                                <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" width={96} height={40} />
                                             </div>
                                         </div>
                                     ))}

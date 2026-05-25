@@ -7,7 +7,6 @@ export const metadata = buildPageMetadata({
   title: "Privacy Policy | BrandBase",
   description: "How BrandBase collects, uses, and protects personal data across its website and services.",
   path: "/privacy-policy",
-  noIndex: true,
 });
 
 export default function PrivacyPolicyPage() {

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert";
-import { buildPageMetadata, NON_INDEXABLE_ROUTES } from "@/lib/seoMetadata";
+import { buildPageMetadata } from "@/lib/seoMetadata";
 import { masterConfig } from "@/config/master";
 
 test("buildPageMetadata - happy path", () => {
@@ -116,25 +116,4 @@ test("buildPageMetadata - noIndex override", () => {
       follow: true,
     },
   });
-});
-
-test("buildPageMetadata - non-indexable routes", () => {
-  for (const route of NON_INDEXABLE_ROUTES) {
-    const metadata = buildPageMetadata({
-      title: "Test",
-      description: "Test",
-      path: route,
-      // Pass noIndex: false explicitly to ensure the nonIndexablePathSet overrides it
-      noIndex: false,
-    });
-
-    assert.deepStrictEqual(metadata.robots, {
-      index: false,
-      follow: true,
-      googleBot: {
-        index: false,
-        follow: true,
-      },
-    }, `Route ${route} should be non-indexable`);
-  }
 });

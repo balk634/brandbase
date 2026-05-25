@@ -104,6 +104,8 @@ export function Technologies() {
                                         alt={tech.name}
                                         style={{ transform: `scale(${scale})` }}
                                         className="w-full h-full object-contain opacity-85 hover:opacity-100 transition-all duration-300 will-change-transform"
+                                        width={128}
+                                        height={44}
                                     />
                                 </div>
                             );
@@ -130,6 +132,8 @@ export function Technologies() {
                                         alt={tech.name}
                                         style={{ transform: `scale(${scale})` }}
                                         className="w-full h-full object-contain opacity-85 hover:opacity-100 transition-all duration-300 will-change-transform"
+                                        width={128}
+                                        height={44}
                                     />
                                 </div>
                             );

@@ -79,6 +79,8 @@ export function AISearchBanner() {
                                 alt="AI Search Visualisation"
                                 className="absolute inset-0 w-full h-full object-cover object-center"
                                 loading="lazy"
+                                width={640}
+                                height={360}
                             />
                         </div>
                     </div>

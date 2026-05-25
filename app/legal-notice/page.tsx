@@ -7,7 +7,6 @@ export const metadata = buildPageMetadata({
   title: "Legal Notice | BrandBase",
   description: "Legal notice and company details for BrandBase.",
   path: "/legal-notice",
-  noIndex: true,
 });
 
 export default function LegalNoticePage() {

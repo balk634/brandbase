@@ -14,11 +14,12 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
   const params = await searchParams;
   const currentPage = Math.max(1, Number(params.page) || 1);
   const path = currentPage === 1 ? "/blog" : `/blog?page=${currentPage}`;
+  const pageSuffix = currentPage > 1 ? ` - Page ${currentPage}` : "";
   
   return buildPageMetadata({
-    title: "BrandBase Blog | Website Strategy & Growth Marketing Playbooks",
+    title: `BrandBase Blog | Website Strategy & Growth Marketing Playbooks${pageSuffix}`,
     description:
-      "Practical guides on website strategy, local SEO, paid ads, and conversion systems for high-growth brands and Indian SMBs. Learn how to scale your business today.",
+      `Practical guides on website strategy, local SEO, paid ads, and conversion systems for high-growth brands and Indian SMBs. Learn how to scale your business today.${pageSuffix}`,
     path,
   });
 }

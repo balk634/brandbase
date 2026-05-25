@@ -45,11 +45,11 @@ export function ConsentAwareAnalytics({
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
           <Script
             id="google-analytics"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -69,7 +69,7 @@ export function ConsentAwareAnalytics({
       {microsoftClarityId && (
         <Script
           id="microsoft-clarity"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
