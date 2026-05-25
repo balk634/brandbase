@@ -15,7 +15,7 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 export const metadata = buildPageMetadata({
   title: "BrandBase | Digital Growth Platform & Marketing Services",
   description:
-    "BrandBase is a digital growth platform and web application that provides high-performance websites, SEO services, and data-driven marketing to help businesses scale. View our privacy policy and terms of service.",
+    "BrandBase is a digital growth platform providing high-performance websites, SEO, and data-driven marketing to help serious businesses scale their operations.",
   path: "/",
 });
 
