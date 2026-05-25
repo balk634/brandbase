@@ -88,7 +88,7 @@ const fitItems: { text: string; fit: boolean; Icon: ComponentType<{ className?: 
 const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
     { Icon: IconCurrencyDollar, title: "Zero Upfront Risk", copy: "No massive invoices before you see results. Pay a simple monthly fee and invest your capital elsewhere." },
     { Icon: IconShieldCheck, title: "We Handle Everything Technical", copy: "Hosting, SSL, DNS, security patches, speed optimisation, you never have to touch a dashboard." },
-    { Icon: IconDeviceLaptop, title: "Built Fast, Not Cheap", copy: "We use the same premium code and design standards as our custom builds — just scoped for speed." },
+    { Icon: IconDeviceLaptop, title: "Built Fast, Not Cheap", copy: "We use the same premium code and design standards as our custom builds, just scoped for speed." },
     { Icon: IconHeadset, title: "Real Support, Not a Ticket Queue", copy: "Need a text change or a new photo? Reach out directly, usually handled within 24 hours." },
     { Icon: IconUsers, title: "Dedicated Team, Not Outsourced", copy: "Your project stays in-house from start to finish. No freelancers, no hand-offs, no surprises." },
 ];
@@ -301,68 +301,6 @@ export default function PremiumStaticPage() {
                 </Container>
             </Section>
 
-            <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
-                <Container>
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
-                        <div className="mb-14">
-                            <Kicker>DELIVERY MODEL</Kicker>
-                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
-                                Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
-                            </h2>
-                        </div>
-                        <div className="relative">
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-0 md:gap-y-8 lg:gap-y-0 relative" style={{ columnGap: "3rem" }}>
-                                {processSteps.map((item, i) => (
-                                    <div
-                                        key={item.step}
-                                        className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
-                                    >
-                                        <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <div className="flex flex-col items-start gap-5 mb-8">
-                                                <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
-                                                    {item.step}
-                                                </div>
-                                                <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary group-hover:border-primary/30 transition-colors duration-300">
-                                                    <item.Icon className="h-5 w-5" />
-                                                </div>
-                                            </div>
-                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
-                                                {item.title1} <br />
-                                                <em className="font-serif-20 italic">{item.title2}</em>
-                                            </h3>
-                                            <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
-                                                {item.copy}
-                                            </p>
-                                        </motion.div>
-                                        {i < processSteps.length - 1 && (
-                                            <>
-                                                <div
-                                                    aria-hidden="true"
-                                                    className="flex md:hidden absolute left-1/2 -bottom-4 -translate-x-1/2 z-20 nc-process-connector nc-process-connector--vertical"
-                                                >
-                                                    <span />
-                                                    <span />
-                                                    <span />
-                                                </div>
-
-                                                <div
-                                                    aria-hidden="true"
-                                                    className="hidden lg:flex absolute top-1/2 -right-12 -translate-y-1/2 z-20 nc-process-connector"
-                                                >
-                                                    <span />
-                                                    <span />
-                                                    <span />
-                                                </div>
-                                            </>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-                </Container>
-            </Section>
-
             {/* ── Strategic Foundation ── */}
             <Section id="foundation" className="bg-ink py-16 md:py-24 border-b-0 text-white scroll-mt-24">
                 <Container>
@@ -503,6 +441,68 @@ export default function PremiumStaticPage() {
                             </ul>
                         </div>
                     </div>
+                </Container>
+            </Section>
+
+            <Section className="bg-transparent py-16 md:py-24 border-b border-grid/10 relative z-10">
+                <Container>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
+                        <div className="mb-14">
+                            <Kicker>DELIVERY MODEL</Kicker>
+                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
+                                Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
+                            </h2>
+                        </div>
+                        <div className="relative">
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-0 md:gap-y-8 lg:gap-y-0 relative" style={{ columnGap: "3rem" }}>
+                                {processSteps.map((item, i) => (
+                                    <div
+                                        key={item.step}
+                                        className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
+                                    >
+                                        <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
+                                            <div className="flex flex-col items-start gap-5 mb-8">
+                                                <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
+                                                    {item.step}
+                                                </div>
+                                                <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary group-hover:border-primary/30 transition-colors duration-300">
+                                                    <item.Icon className="h-5 w-5" />
+                                                </div>
+                                            </div>
+                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
+                                            </h3>
+                                            <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
+                                                {item.copy}
+                                            </p>
+                                        </motion.div>
+                                        {i < processSteps.length - 1 && (
+                                            <>
+                                                <div
+                                                    aria-hidden="true"
+                                                    className="flex md:hidden absolute left-1/2 -bottom-4 -translate-x-1/2 z-20 nc-process-connector nc-process-connector--vertical"
+                                                >
+                                                    <span />
+                                                    <span />
+                                                    <span />
+                                                </div>
+
+                                                <div
+                                                    aria-hidden="true"
+                                                    className="hidden lg:flex absolute top-1/2 -right-12 -translate-y-1/2 z-20 nc-process-connector"
+                                                >
+                                                    <span />
+                                                    <span />
+                                                    <span />
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
                 </Container>
             </Section>
 

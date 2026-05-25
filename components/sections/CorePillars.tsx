@@ -53,7 +53,7 @@ const websiteServices: ServiceItem[] = [
     {
         Icon: IconShoppingCart,
         title: "eCommerce Development",
-        description: "Scalable online storefronts on Shopify or custom stacks — optimized for conversions, fast checkout, and seamless inventory management.",
+        description: "Scalable online storefronts on Shopify or custom stacks, optimized for conversions, fast checkout, and seamless inventory management.",
         href: "/website-solutions/ecommerce-development",
         pills: ["Shopify & Custom", "Payment Gateways", "Inventory Sync"],
     },
@@ -316,7 +316,7 @@ export function CorePillars() {
 
                     {/* ── Pillar 1: Website Solutions ── */}
                     <PillarCard
-                        kicker="Pillar 01 — Digital Real Estate"
+                        kicker="Pillar 01: Digital Real Estate"
                         titleLine1="Website"
                         titleLine2="Solutions"
                         ctaLabel="Explore Solutions"
@@ -331,7 +331,7 @@ export function CorePillars() {
 
                     {/* ── Pillar 2: Digital Marketing ── */}
                     <PillarCard
-                        kicker="Pillar 02 — The Traffic Engine"
+                        kicker="Pillar 02: The Traffic Engine"
                         titleLine1="Digital"
                         titleLine2="Marketing"
                         ctaLabel="Explore Growth"

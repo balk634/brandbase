@@ -26,7 +26,7 @@ const DASHBOARD_TYPES = [
         label: "RESTAURANT",
         Icon: IconChefHat,
         heading: "RESTAURANT",
-        copy: "Live orders, table bookings & menu management — everything in one place.",
+        copy: "Live orders, table bookings & menu management all in one place.",
         activeBorder: "border-amber-500/50",
         activeBg: "bg-amber-500/10",
         activeText: "text-amber-400",
@@ -41,7 +41,7 @@ const DASHBOARD_TYPES = [
         label: "BOOKINGS",
         Icon: IconCalendar,
         heading: "BOOKINGS",
-        copy: "Appointments, Google Meet links & intake forms — all managed from one screen.",
+        copy: "Appointments, Google Meet links & intake forms managed from one screen.",
         activeBorder: "border-[#8284ff]/50",
         activeBg: "bg-[#8284ff]/10",
         activeText: "text-[#8284ff]",
@@ -56,7 +56,7 @@ const DASHBOARD_TYPES = [
         label: "SCHOOL MANAGEMENT",
         Icon: IconSchool,
         heading: "SCHOOL MANAGEMENT",
-        copy: "Gallery, notices, admissions & news — updated by staff, no tech needed.",
+        copy: "Gallery, notices, admissions & news updated by staff with no tech needed.",
         activeBorder: "border-emerald-500/50",
         activeBg: "bg-emerald-500/10",
         activeText: "text-emerald-400",
@@ -74,7 +74,7 @@ const FEATURES = [
     "No developer needed",
     "Works on any device",
     "Team access controls",
-    "100% custom — no generic CMS",
+    "100% custom, with no generic CMS",
 ];
 
 /* ────────────────────────────────────────────────────────────
@@ -99,7 +99,7 @@ export function DashboardShowcase() {
     };
 
     return (
-        <Section id="dashboard" className="bg-ink py-16 md:py-24 overflow-hidden scroll-mt-24 border-b-0">
+        <section id="dashboard" className="w-full bg-ink pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden scroll-mt-24 relative">
             <Container>
                 {/* ── Header row ── */}
                 <motion.div
@@ -117,7 +117,7 @@ export function DashboardShowcase() {
                         <em className="font-serif-10 italic text-white/50">suited for your business needs.</em>
                     </h2>
                     <p className="mt-4 text-sm text-white/45 leading-relaxed max-w-2xl">
-                        Not a generic CMS. A custom admin panel built around how your business actually runs — and synced live to your website.
+                        Not a generic CMS. A custom admin panel built around how your business actually runs, syncing live to your website.
                     </p>
                 </motion.div>
 
@@ -275,11 +275,11 @@ export function DashboardShowcase() {
                         </div>
 
                         <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/20">
-                            {current.heading} — {currentImage.label} · Live screenshot
+                            {current.heading} · {currentImage.label} · Live screenshot
                         </p>
                     </motion.div>
                 </div>
             </Container>
-        </Section>
+        </section>
     );
 }

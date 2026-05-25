@@ -92,7 +92,7 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
                         >
                             <HeroImage
                                 src={`/${masterConfig.ui.heroImages.home}`}
-                                alt="BrandBase — Conversion-first websites and performance marketing"
+                                alt="BrandBase: Conversion-first websites and performance marketing"
                                 priority={true}
                             />
                         </div>

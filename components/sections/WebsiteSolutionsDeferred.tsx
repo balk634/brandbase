@@ -138,12 +138,12 @@ const bentoItems = [
   },
   {
     title: "Built for iteration",
-    copy: "Modular systems let you launch fast and compound improvements over time — no full rebuild required when your strategy evolves.",
+    copy: "Modular systems let you launch fast and compound improvements over time, with no full rebuild required when your strategy evolves.",
     Icon: IconRefresh,
   },
   {
     title: "Conversion architecture",
-    copy: "Every page follows a deliberate hierarchy — attention, interest, desire, action — built into the layout from the start.",
+    copy: "Every page follows a deliberate hierarchy (attention, interest, desire, action) built into the layout from the start.",
     Icon: IconSitemap,
   },
 

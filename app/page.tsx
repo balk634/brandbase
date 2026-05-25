@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { CorePillars } from "@/components/sections/CorePillars";
 import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
+import { IntegrationsGrid } from "@/components/sections/IntegrationsGrid";
 import { OurProcess } from "@/components/sections/OurProcess";
 import { Technologies } from "@/components/sections/Technologies";
 import { AISearchBanner } from "@/components/sections/AISearchBanner";
@@ -25,6 +26,7 @@ export default function Home() {
       <TrustStrip />
       <CorePillars />
       <DashboardShowcase />
+      <IntegrationsGrid />
       <AISearchBanner />
       <Technologies />
       <OurProcess />

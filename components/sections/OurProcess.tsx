@@ -33,7 +33,7 @@ const steps: Step[] = [
         Icon: IconSearch,
         title: "Discovery & Strategy",
         description:
-            "We audit your current setup, study your market, and define clear KPIs. You walk away with a custom growth roadmap — not a generic pitch deck.",
+            "We audit your current setup, study your market, and define clear KPIs. You walk away with a custom growth roadmap, not a generic pitch deck.",
         image: "/01.jpg"
     },
     {
@@ -78,7 +78,7 @@ export function OurProcess() {
                             From Brief to Revenue in Four <em className="font-serif-10 italic">Steps.</em>
                         </h2>
                         <p className="mt-4 text-white/70 text-sm max-w-2xl leading-relaxed">
-                            A proven, no-nonsense workflow that takes you from strategy to measurable growth — with zero guesswork in between.
+                            A proven, no-nonsense workflow that takes you from strategy to measurable growth, with zero guesswork in between.
                         </p>
                     </motion.div>
 

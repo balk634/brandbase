@@ -133,7 +133,7 @@ export default function CustomEnterprisePage() {
                                 <motion.div variants={fadeInLeft}>
                                     <Kicker>CUSTOM WEBSITES</Kicker>
                                 </motion.div>
- <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+                                <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Custom Websites <em className="font-serif-20 italic">Built to Scale.</em>
                                 </motion.h1>
                                 <motion.p variants={fadeInLeft} className="mt-6 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg">
@@ -151,11 +151,11 @@ export default function CustomEnterprisePage() {
                             <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
                                 <div className="relative overflow-hidden">
                                     <div
-                                      className={`relative ${masterConfig.ui.heroImages.className}`}
-                                      style={{
-                                        maxWidth: masterConfig.ui.heroImages.maxWidth,
-                                        aspectRatio: masterConfig.ui.heroImages.aspectRatio,
-                                      }}
+                                        className={`relative ${masterConfig.ui.heroImages.className}`}
+                                        style={{
+                                            maxWidth: masterConfig.ui.heroImages.maxWidth,
+                                            aspectRatio: masterConfig.ui.heroImages.aspectRatio,
+                                        }}
                                     >
                                         <HeroImage
                                             src={`/${masterConfig.ui.heroImages.websiteSolutionsCustomEnterprise}`}
@@ -175,7 +175,7 @@ export default function CustomEnterprisePage() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
                         <div className="mb-16 md:mb-20">
                             <Kicker>DELIVERABLES</Kicker>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">Everything included in your custom <em className="font-serif-10 italic">build.</em></h2>
+                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">Everything included in your custom <em className="font-serif-10 italic">build.</em></h2>
                         </div>
                         <div className="border border-grid/15 bg-white">
                             {[0, 3].map((startIdx) => (
@@ -184,8 +184,8 @@ export default function CustomEnterprisePage() {
                                         <motion.div key={item.title} variants={scaleIn} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="p-7 md:p-8 flex flex-col group cursor-default">
                                             {/* Image at top */}
                                             <div className="w-full aspect-video mb-6 border border-grid/15 bg-paper/40 flex items-center justify-center overflow-hidden relative">
-                                                <Image 
-                                                    src={item.image} 
+                                                <Image
+                                                    src={item.image}
                                                     alt={item.title}
                                                     fill
                                                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -223,7 +223,7 @@ export default function CustomEnterprisePage() {
                                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                                     <motion.div variants={fadeInUp}>
                                         <Kicker className="mb-6">IS THIS FOR YOU?</Kicker>
- <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
+                                        <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
                                         {fitItems.map((item) => (
@@ -248,7 +248,7 @@ export default function CustomEnterprisePage() {
                                 <div className="p-7 md:p-10 flex flex-col">
                                     <motion.div variants={fadeInUp}>
                                         <Kicker className="mb-6">WHY BRANDBASE</Kicker>
- <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why growing businesses choose <em className="font-serif-10 italic">us.</em></h3>
+                                        <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why growing businesses choose <em className="font-serif-10 italic">us.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
                                         {whyUsItems.map((item) => (
@@ -262,68 +262,6 @@ export default function CustomEnterprisePage() {
                                         ))}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </Container>
-            </Section>
-
-            {/* ── 4. OUR PROCESS — Boxes with Animated Dashed Connectors ── */}
-            <Section className="bg-transparent border-b border-grid/10 py-16 md:py-24 relative z-10">
-                <Container>
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
-                        <div className="mb-16">
-                            <Kicker>OUR PROCESS</Kicker>
- <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">From brief to live <em className="font-serif-10 italic">website.</em></h2>
-                            <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">A transparent, 4-step workflow designed to eliminate surprises and deliver on time, every time.</p>
-                        </div>
-                        <div className="relative">
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-0 md:gap-y-8 lg:gap-y-0 relative" style={{ columnGap: "3rem" }}>
-                                {processSteps.map((item, i) => (
-                                    <div
-                                        key={item.step}
-                                        className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
-                                    >
-                                        <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
-                                            <div className="flex flex-col items-start gap-5 mb-8">
-                                                <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
-                                                    {item.step}
-                                                </div>
-                                                <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary group-hover:border-primary/30 transition-colors duration-300">
-                                                    <item.Icon className="h-5 w-5" />
-                                                </div>
-                                            </div>
- <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
-                                                {item.title1} <br />
-                                                <em className="font-serif-20 italic">{item.title2}</em>
-                                            </h3>
-                                            <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
-                                                {item.copy}
-                                            </p>
-                                        </motion.div>
-                                        {i < processSteps.length - 1 && (
-                                            <>
-                                                <div
-                                                    aria-hidden="true"
-                                                    className="flex md:hidden absolute left-1/2 -bottom-4 -translate-x-1/2 z-20 nc-process-connector nc-process-connector--vertical"
-                                                >
-                                                    <span />
-                                                    <span />
-                                                    <span />
-                                                </div>
-
-                                                <div
-                                                    aria-hidden="true"
-                                                    className="hidden lg:flex absolute top-1/2 -right-12 -translate-y-1/2 z-20 nc-process-connector"
-                                                >
-                                                    <span />
-                                                    <span />
-                                                    <span />
-                                                </div>
-                                            </>
-                                        )}
-                                    </div>
-                                ))}
                             </div>
                         </div>
                     </motion.div>
@@ -470,6 +408,119 @@ export default function CustomEnterprisePage() {
                             </ul>
                         </div>
                     </div>
+
+                    {/* CRM & Workspace Integrations Bento Grid */}
+                    <div className="mt-16 pt-12 border-t border-white/10">
+                        <div className="grid lg:grid-cols-12 gap-8 items-center">
+                            <div className="lg:col-span-5">
+                                <div className="inline-flex items-center gap-2 border border-white/10 px-3 py-1.5 w-fit bg-white/5 mb-4">
+                                    <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/50">INTEGRATIONS</span>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-serif text-white mb-3">
+                                    CRM, Data Management & Automations
+                                </h3>
+                                <p className="text-[13px] text-white/50 leading-relaxed">
+                                    We connect your website forms and lead flows directly into your customer databases, task trackers, and team workspaces. We configure native syncs for Zoho, HubSpot, Pipedrive, Notion, and ClickUp, with highly functional free tiers available to keep your monthly overhead at zero.
+                                </p>
+                            </div>
+                            <div className="lg:col-span-7">
+                                {/* Bento Outer Box */}
+                                <div className="border border-white/5 bg-white overflow-hidden rounded-none">
+                                    {/* Top Row: 2 Items */}
+                                    <div className="grid grid-cols-2 divide-x divide-neutral-200 border-b border-neutral-200 bg-white">
+                                        {[
+                                            { name: "Zoho", logo: "/brandstrip/zoho.svg" },
+                                            { name: "Notion", logo: "/brandstrip/notion.svg" },
+                                        ].map((item) => (
+                                            <div key={item.name} className="p-4 sm:p-8 flex flex-col items-center justify-center text-center group hover:bg-neutral-50 transition-colors duration-300">
+                                                <div className="h-8 w-20 sm:h-12 sm:w-32 relative flex items-center justify-center">
+                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                    <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {/* Bottom Row: 3 Items */}
+                                    <div className="grid grid-cols-3 divide-x divide-neutral-200 bg-white">
+                                        {[
+                                            { name: "HubSpot", logo: "/brandstrip/hubspot.svg" },
+                                            { name: "Pipedrive", logo: "/brandstrip/pipedrive.svg" },
+                                            { name: "ClickUp", logo: "/brandstrip/clickup.svg" },
+                                        ].map((item) => (
+                                            <div key={item.name} className="p-3 sm:p-6 flex flex-col items-center justify-center text-center group hover:bg-neutral-50 transition-colors duration-300">
+                                                <div className="h-6 w-16 sm:h-10 sm:w-24 relative flex items-center justify-center">
+                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                    <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Container>
+            </Section>
+
+            {/* ── 4. OUR PROCESS — Boxes with Animated Dashed Connectors ── */}
+            <Section className="bg-transparent border-b border-grid/10 py-16 md:py-24 relative z-10">
+                <Container>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
+                        <div className="mb-16">
+                            <Kicker>OUR PROCESS</Kicker>
+                            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">From brief to live <em className="font-serif-10 italic">website.</em></h2>
+                            <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">A transparent, 4-step workflow designed to eliminate surprises and deliver on time, every time.</p>
+                        </div>
+                        <div className="relative">
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-0 md:gap-y-8 lg:gap-y-0 relative" style={{ columnGap: "3rem" }}>
+                                {processSteps.map((item, i) => (
+                                    <div
+                                        key={item.step}
+                                        className={`relative flex flex-col items-stretch ${i < processSteps.length - 1 ? "pb-0" : ""}`}
+                                    >
+                                        <motion.div variants={fadeInUp} whileHover={{ y: -2, transition: { duration: 0.18 } }} className="relative border border-grid/15 bg-white p-7 md:p-8 flex flex-col h-full group cursor-default hover:border-primary/30 hover:bg-paper/40 transition-colors duration-300">
+                                            <div className="flex flex-col items-start gap-5 mb-8">
+                                                <div className="font-mono text-5xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
+                                                    {item.step}
+                                                </div>
+                                                <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary group-hover:border-primary/30 transition-colors duration-300">
+                                                    <item.Icon className="h-5 w-5" />
+                                                </div>
+                                            </div>
+                                            <h3 className="font-serif text-xl sm:text-2xl tracking-tight text-ink mb-3 leading-[1.1]">
+                                                {item.title1} <br />
+                                                <em className="font-serif-20 italic">{item.title2}</em>
+                                            </h3>
+                                            <p className="text-[13px] text-ink-muted leading-relaxed flex-1">
+                                                {item.copy}
+                                            </p>
+                                        </motion.div>
+                                        {i < processSteps.length - 1 && (
+                                            <>
+                                                <div
+                                                    aria-hidden="true"
+                                                    className="flex md:hidden absolute left-1/2 -bottom-4 -translate-x-1/2 z-20 nc-process-connector nc-process-connector--vertical"
+                                                >
+                                                    <span />
+                                                    <span />
+                                                    <span />
+                                                </div>
+
+                                                <div
+                                                    aria-hidden="true"
+                                                    className="hidden lg:flex absolute top-1/2 -right-12 -translate-y-1/2 z-20 nc-process-connector"
+                                                >
+                                                    <span />
+                                                    <span />
+                                                    <span />
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
                 </Container>
             </Section>
 
@@ -484,7 +535,7 @@ export default function CustomEnterprisePage() {
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
                                         <Kicker className="mb-6">NEXT STEP</Kicker>
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to build something that actually <em className="font-serif-10 italic">works?</em></h2>
+                                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to build something that actually <em className="font-serif-10 italic">works?</em></h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your project. We&apos;ll get back to you within 24 hours with a clear scope and honest quote.</p>
                                         <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
                                             <CalButton variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
@@ -506,7 +557,7 @@ export default function CustomEnterprisePage() {
                                         ].map((stat) => (
                                             <div key={stat.label} className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 py-4 sm:py-5 first:pt-0 last:pb-0">
                                                 <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{stat.label}</span>
- <span className="font-serif text-ink">{stat.value}</span>
+                                                <span className="font-serif text-ink">{stat.value}</span>
                                             </div>
                                         ))}
                                     </div>

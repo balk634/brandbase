@@ -274,7 +274,7 @@ export default function OurWorkPage() {
                         </h1>
 
                         <p className="mt-8 text-sm md:text-base text-ink-muted leading-relaxed max-w-xl pl-6 border-l border-primary/20">
-                            Every project here is a complete business system — designed for the
+                            Every project here is a complete business system, designed for the
                             industry, optimised for Google AI Search, and shipped with a custom
                             admin dashboard tailored to how that business actually operates.
                         </p>

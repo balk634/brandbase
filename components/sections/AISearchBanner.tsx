@@ -22,7 +22,7 @@ const pillars = [
     },
     {
         title: "E-E-A-T Signals",
-        desc: "Real staff bios, credentials, outcomes, and original content — the signals AI Overviews use to decide who gets cited.",
+        desc: "Real staff bios, credentials, outcomes, and original content: the signals AI Overviews use to decide who gets cited.",
         Icon: IconAward,
     },
     {
@@ -32,7 +32,7 @@ const pillars = [
     },
     {
         title: "Conversational Content",
-        desc: "Content structured to answer longer, specific questions that AI Mode users are now asking — not just 2-word keywords.",
+        desc: "Content structured to answer longer, specific questions that AI Mode users are now asking, not just 2-word keywords.",
         Icon: IconMessageChatbot,
     },
     {
@@ -42,7 +42,7 @@ const pillars = [
     },
     {
         title: "Local SEO & Google Maps",
-        desc: "Fully built-out Google Business Profiles and local citation networks — a key factor in AI-powered local search answers.",
+        desc: "Fully built-out Google Business Profiles and local citation networks, a key factor in AI-powered local search answers.",
         Icon: IconMapPin,
     },
 ];
@@ -67,7 +67,7 @@ export function AISearchBanner() {
                                 Is your business ready?
                             </h2>
                             <p className="mt-6 text-sm md:text-base text-ink-muted leading-relaxed">
-                                Google Search has transitioned into an AI-first ecosystem powered by AI Overviews and proactive search agents. They don&apos;t just index keywords — they cite and recommend authoritative sources. We build the exact schema, E-E-A-T signals, and entity frameworks required to guarantee your business gets cited.
+                                Google Search has transitioned into an AI-first ecosystem powered by AI Overviews and proactive search agents. They don&apos;t just index keywords; they cite and recommend authoritative sources. We build the exact schema, E-E-A-T signals, and entity frameworks required to guarantee your business gets cited.
                             </p>
                         </div>
 

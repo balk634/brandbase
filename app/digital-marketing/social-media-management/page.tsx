@@ -70,16 +70,16 @@ const fitItems: { text: string; fit: boolean; Icon: ComponentType<{ className?: 
 ];
 
 const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
-    { Icon: IconPalette, title: "Design-First Content", copy: "Every post is designed by real graphic designers — not templated Canva jobs. Your feed will look premium." },
+    { Icon: IconPalette, title: "Design-First Content", copy: "Every post is designed by real graphic designers, not templated Canva jobs. Your feed will look premium." },
     { Icon: IconBolt, title: "Strategy, Not Just Posting", copy: "We don't just fill a calendar. Every piece of content ties back to a documented strategy with clear business goals." },
     { Icon: IconHeadset, title: "Clear Ownership + Weekly Updates", copy: "A consistent delivery team with clear owners and weekly updates, so context never gets lost." },
-    { Icon: IconClock, title: "Engagement That Builds Trust", copy: "We actively engage with your audience daily — responding, commenting, and building genuine relationships on your behalf." },
+    { Icon: IconClock, title: "Engagement That Builds Trust", copy: "We actively engage with your audience daily by responding, commenting, and building genuine relationships on your behalf." },
     { Icon: IconUsers, title: "Transparent Monthly Reporting", copy: "Clear reports showing what grew, what worked, and what we're changing next month. No vanity metrics." },
 ];
 
 const processSteps: { step: string; title1: string; title2: string; copy: string; Icon: ComponentType<{ className?: string }> }[] = [
     { step: "01", title1: "Brand Voice &", title2: "Strategy", copy: "We learn your brand, audience, and competitors. Then we build a documented content strategy with content pillars, posting cadence, and visual direction.", Icon: IconUsers },
-    { step: "02", title1: "Content", title2: "Creation", copy: "Our designers and writers produce a full month of content — graphics, Reels, carousels, and captions — all aligned with your brand guidelines.", Icon: IconPhoto },
+    { step: "02", title1: "Content", title2: "Creation", copy: "Our designers and writers produce a full month of content (graphics, Reels, carousels, and captions) all aligned with your brand guidelines.", Icon: IconPhoto },
     { step: "03", title1: "Approval &", title2: "Scheduling", copy: "You review the content calendar, request any changes, and approve. We schedule everything for optimal posting times.", Icon: IconCalendarEvent },
     { step: "04", title1: "Publishing &", title2: "Engagement", copy: "We publish on schedule, monitor performance, respond to DMs and comments, and proactively engage with your target audience daily.", Icon: IconRocket },
 ];

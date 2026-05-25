@@ -83,7 +83,7 @@ const fitItems: { text: string; fit: boolean; Icon: ComponentType<{ className?: 
 ];
 
 const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
-    { Icon: IconChartBar, title: "Revenue, Not Vanity Metrics", copy: "We optimize for sales, leads, and booked calls — not impressions. Every dollar is tied to a measurable outcome." },
+    { Icon: IconChartBar, title: "Revenue, Not Vanity Metrics", copy: "We optimize for sales, leads, and booked calls, not impressions. Every dollar is tied to a measurable outcome." },
     { Icon: IconBolt, title: "Daily Optimization", copy: "We don't set campaigns and forget them. Our team monitors performance daily and adjusts bids, budgets, and creatives in real time." },
     { Icon: IconHeadset, title: "Direct Access, Zero Middlemen", copy: "You talk directly to the person managing your campaigns. No account managers relaying messages." },
     { Icon: IconClock, title: "Results Within Weeks, Not Months", copy: "Our launch framework gets campaigns live fast and iterating quickly. Most clients see meaningful data within 14 days." },
@@ -109,7 +109,7 @@ const processSteps: { step: string; title1: string; title2: string; copy: string
         step: "03",
         title1: "Campaign",
         title2: "Launch",
-        copy: "We launch your campaigns across Google, Meta, or both — with structured A/B tests running from day one.",
+        copy: "We launch your campaigns across Google, Meta, or both, with structured A/B tests running from day one.",
         Icon: IconRocket
     },
     {
@@ -125,7 +125,7 @@ const faqItems = [
     { q: "How quickly will I see results?", a: "You'll see meaningful data within the first 14 days. Real optimization happens over 30–60 days as we gather conversion data and refine targeting." },
     { q: "Do I own my ad accounts?", a: "Yes, always. We set up campaigns in your own Google Ads and Meta Business Manager accounts. If we part ways, you keep everything." },
     { q: "What platforms do you run ads on?", a: "Google Search, Google Display, YouTube, Meta (Facebook and Instagram), and Linkedin. We recommend the right mix based on your audience and goals." },
-    { q: "How is your pricing structured?", a: "We charge a flat monthly management fee — not a percentage of ad spend. This keeps our incentives aligned: we want to make your campaigns more efficient, not more expensive." },
+    { q: "How is your pricing structured?", a: "We charge a flat monthly management fee, not a percentage of ad spend. This keeps our incentives aligned: we want to make your campaigns more efficient, not more expensive." },
 ];
 export default function PerformanceMarketingPage() {
     return (

@@ -51,7 +51,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
     {
         title: "Review Generation Systems", image: "/deliver/seo-reviews.webp", Icon: IconStar, bullets: [
             { text: "Automated email and SMS systems to request reviews from happy customers.", Icon: IconMessageCircle },
-            { text: "Professional, timely responses to all reviews — both positive and negative.", Icon: IconStar },
+            { text: "Professional, timely responses to all reviews, both positive and negative.", Icon: IconStar },
         ]
     },
     {
@@ -71,7 +71,7 @@ const fitItems: { text: string; fit: boolean; Icon: ComponentType<{ className?: 
 ];
 
 const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
-    { Icon: IconMap, title: "46% of Searches Are Local", copy: "We don't just optimize your website — we optimize your geographic footprint so you capture high-intent local buyers." },
+    { Icon: IconMap, title: "46% of Searches Are Local", copy: "We don't just optimize your website; we optimize your geographic footprint so you capture high-intent local buyers." },
     { Icon: IconBolt, title: "Google Maps Is the New Homepage", copy: "Your Google Business Profile is often the first thing customers see. We make sure it's complete, active, and converting." },
     { Icon: IconHeadset, title: "Review Management Built-In", copy: "Reviews drive 93% of local purchase decisions. We build automated systems to generate and respond to reviews consistently." },
     { Icon: IconClock, title: "Results You Can See on the Map", copy: "We track your position in the Local Pack and show you exactly how your visibility is improving month over month." },
@@ -88,7 +88,7 @@ const processSteps: { step: string; title1: string; title2: string; copy: string
 const faqItems = [
     { q: "How long does it take to rank in the Google Local Pack?", a: "Most businesses see meaningful improvement within 60–90 days. Ranking speed depends on competition in your area, the state of your current profile, and how actively we can generate reviews." },
     { q: "Do I need a physical address to use Local SEO?", a: "Not necessarily. Service-area businesses (plumbers, cleaners, consultants) can use Google's service-area feature instead. We'll configure the right setup for your business type." },
-    { q: "How do you generate reviews without being spammy?", a: "We use timed, personalized email and SMS sequences triggered after a positive customer experience. It feels natural, not pushy — and it's fully compliant with Google's review policies." },
+    { q: "How do you generate reviews without being spammy?", a: "We use timed, personalized email and SMS sequences triggered after a positive customer experience. It feels natural, not pushy, and is fully compliant with Google's review policies." },
     { q: "Can you manage multiple locations?", a: "Yes. We've managed multi-location campaigns across cities and states. Each location gets its own optimized profile, localized content, and dedicated tracking." },
     { q: "What's the difference between Local SEO and regular SEO?", a: "Regular SEO targets organic search rankings globally. Local SEO focuses on Google Maps, the Local Pack, and location-specific queries. If your customers search with city names or \"near me,\" you need Local SEO." },
 ];

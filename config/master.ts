@@ -37,7 +37,7 @@ export const masterConfig = {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "BrandBase — Conversion-first websites and performance marketing",
+          alt: "BrandBase: Conversion-first websites and performance marketing",
         },
       ],
     },

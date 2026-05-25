@@ -77,7 +77,7 @@ const whyRedesignReasons: { Icon: ComponentType<{ className?: string }>; title: 
     {
         Icon: IconTrendingDown,
         title: "Your website is silently losing you customers",
-        copy: "Studies show 75% of people judge a company's credibility based on their website. An outdated site tells visitors you're not serious — and they leave before ever reading your offer.",
+        copy: "Studies show 75% of people judge a company's credibility based on their website. An outdated site tells visitors you're not serious, and they leave before ever reading your offer.",
     },
     {
         Icon: IconClockOff,
@@ -92,12 +92,12 @@ const whyRedesignReasons: { Icon: ComponentType<{ className?: string }>; title: 
     {
         Icon: IconUserOff,
         title: "First impressions happen in 0.05 seconds",
-        copy: "That's all the time a visitor needs to decide if they trust you. A dated design with clunky navigation sends people straight to your competitor — even if your product is better.",
+        copy: "That's all the time a visitor needs to decide if they trust you. A dated design with clunky navigation sends people straight to your competitor, even if your product is better.",
     },
     {
         Icon: IconCashOff,
         title: "You're spending money driving traffic to a broken funnel",
-        copy: "Ads, SEO, social media — they're all useless if your website can't convert visitors into leads. Fixing the site first multiplies the ROI of everything else you're doing.",
+        copy: "Ads, SEO, and social media are all useless if your website can't convert visitors into leads. Fixing the site first multiplies the ROI of everything else you're doing.",
     },
     {
         Icon: IconAlertTriangle,
@@ -108,14 +108,14 @@ const whyRedesignReasons: { Icon: ComponentType<{ className?: string }>; title: 
 
 const whatYouGet: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
     { Icon: IconLayoutDashboard, title: "Complete Design Overhaul", copy: "Modern, conversion-focused design that builds instant credibility and trust with your visitors." },
-    { Icon: IconBolt, title: "Blazing Fast Performance", copy: "Page loads under 2 seconds. No bloated plugins, no database lag — just fast, clean code." },
-    { Icon: IconSearch, title: "SEO Built From the Ground Up", copy: "Proper URL structure, meta tags, schema markup, and Core Web Vitals — so Google actually ranks you." },
+    { Icon: IconBolt, title: "Blazing Fast Performance", copy: "Page loads under 2 seconds. No bloated plugins, no database lag: just fast, clean code." },
+    { Icon: IconSearch, title: "SEO Built From the Ground Up", copy: "Proper URL structure, meta tags, schema markup, and Core Web Vitals, so Google actually ranks you." },
     { Icon: IconTarget, title: "Lead Generation Wired In", copy: "Contact forms, newsletter capture, booking calendars, and CTAs placed where they actually convert." },
     { Icon: IconShieldCheck, title: "Security & Maintenance", copy: "SSL, automated backups, and ongoing security patches. We handle the technical stuff so you can focus on your business." },
     { Icon: IconActivity, title: "Analytics & Monitoring", copy: "Real-time performance dashboards and monthly reports so you always know what's working." },
-    { Icon: IconDeviceDesktop, title: "Mobile-First, Responsive", copy: "Looks and works perfectly on every device — phone, tablet, and desktop." },
+    { Icon: IconDeviceDesktop, title: "Mobile-First, Responsive", copy: "Looks and works perfectly on every device, including phone, tablet, and desktop." },
     { Icon: IconBrandGoogle, title: "AI & Voice Search Ready", copy: "Structured data and semantic HTML that makes your business visible in AI-powered search results." },
-    { Icon: IconMailOpened, title: "Email & Marketing Setup", copy: "Newsletter capture, automated forwarding, and CRM integration — all wired from day one." },
+    { Icon: IconMailOpened, title: "Email & Marketing Setup", copy: "Newsletter capture, automated forwarding, and CRM integration, all wired from day one." },
 ];
 
 const faqItems = [
@@ -135,7 +135,7 @@ export default function RedesignRescuePage() {
                 offers={[
                     {
                         name: "Full Website Redesign",
-                        description: "Complete strategic redesign from audit to launch — new design, fast performance, lead-generation wiring, and SEO foundations.",
+                        description: "Complete strategic redesign from audit to launch, featuring new design, fast performance, lead-generation wiring, and SEO foundations.",
                     },
                     {
                         name: "Performance Rescue & Optimisation",
@@ -154,7 +154,7 @@ export default function RedesignRescuePage() {
                                 <motion.div variants={fadeInLeft}>
                                     <Kicker>WEBSITE REVAMP</Kicker>
                                 </motion.div>
- <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
+                                <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Your Website Is Costing You <em className="font-serif-20 italic">Customers.</em>
                                 </motion.h1>
                                 <motion.p variants={fadeInLeft} className="mt-6 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg">
@@ -173,11 +173,11 @@ export default function RedesignRescuePage() {
                             <motion.div variants={fadeInRight} className="relative order-first lg:order-none">
                                 <div className="relative overflow-hidden">
                                     <div
-                                      className={`relative ${masterConfig.ui.heroImages.className}`}
-                                      style={{
-                                        maxWidth: masterConfig.ui.heroImages.maxWidth,
-                                        aspectRatio: masterConfig.ui.heroImages.aspectRatio,
-                                      }}
+                                        className={`relative ${masterConfig.ui.heroImages.className}`}
+                                        style={{
+                                            maxWidth: masterConfig.ui.heroImages.maxWidth,
+                                            aspectRatio: masterConfig.ui.heroImages.aspectRatio,
+                                        }}
                                     >
                                         <HeroImage
                                             src={`/${masterConfig.ui.heroImages.websiteSolutionsRedesignRescue}`}
@@ -201,7 +201,7 @@ export default function RedesignRescuePage() {
                                 Three paths. One goal: a website that <em className="font-serif-10 italic">works.</em>
                             </h2>
                             <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">
-                                Every business is different. Pick the option that fits your stage, budget, and goals — we&apos;ll handle everything else.
+                                Every business is different. Pick the option that fits your stage, budget, and goals, and we&apos;ll handle everything else.
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
@@ -220,7 +220,7 @@ export default function RedesignRescuePage() {
                                     <div className="flex items-center justify-between gap-3 mb-4">
                                         <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary/60">{option.tag}</span>
                                     </div>
- <h3 className="font-serif text-2xl tracking-tight text-ink mb-3">{option.title}</h3>
+                                    <h3 className="font-serif text-2xl tracking-tight text-ink mb-3">{option.title}</h3>
                                     <p className="text-sm text-ink-muted leading-relaxed mb-4">{option.copy}</p>
                                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted mb-3">BEST FOR</div>
                                     <p className="text-sm font-medium text-ink mb-5">{option.bestFor}</p>
@@ -270,11 +270,11 @@ export default function RedesignRescuePage() {
                                             ${i < 3 && i % 3 !== 0 ? "" : ""}
                                         `}
                                     >
-                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30 mb-6">
-                                                <reason.Icon className="h-5 w-5" />
-                                            </div>
-                                            <h3 className="font-serif text-lg tracking-tight text-ink mb-3 leading-tight">{reason.title}</h3>
-                                            <p className="text-sm text-ink-muted leading-relaxed">{reason.copy}</p>
+                                        <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30 mb-6">
+                                            <reason.Icon className="h-5 w-5" />
+                                        </div>
+                                        <h3 className="font-serif text-lg tracking-tight text-ink mb-3 leading-tight">{reason.title}</h3>
+                                        <p className="text-sm text-ink-muted leading-relaxed">{reason.copy}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -308,11 +308,11 @@ export default function RedesignRescuePage() {
                                             ${i % 3 !== 2 ? "md:border-r border-grid/15" : ""}
                                         `}
                                     >
-                                            <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30 mb-6">
-                                                <item.Icon className="h-5 w-5" />
-                                            </div>
-                                            <h3 className="font-serif text-lg tracking-tight text-ink mb-3">{item.title}</h3>
-                                            <p className="text-sm text-ink-muted leading-relaxed">{item.copy}</p>
+                                        <div className="h-10 w-10 shrink-0 border border-grid/15 bg-paper/60 grid place-items-center text-primary transition-colors duration-300 group-hover:border-primary/30 mb-6">
+                                            <item.Icon className="h-5 w-5" />
+                                        </div>
+                                        <h3 className="font-serif text-lg tracking-tight text-ink mb-3">{item.title}</h3>
+                                        <p className="text-sm text-ink-muted leading-relaxed">{item.copy}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -461,6 +461,57 @@ export default function RedesignRescuePage() {
                             </ul>
                         </div>
                     </div>
+
+                    {/* CRM & Workspace Integrations Bento Grid */}
+                    <div className="mt-16 pt-12 border-t border-white/10">
+                        <div className="grid lg:grid-cols-12 gap-8 items-center">
+                            <div className="lg:col-span-5">
+                                <div className="inline-flex items-center gap-2 border border-white/10 px-3 py-1.5 w-fit bg-white/5 mb-4">
+                                    <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/50">INTEGRATIONS</span>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-serif text-white mb-3">
+                                    CRM, Data Management & Automations
+                                </h3>
+                                <p className="text-[13px] text-white/50 leading-relaxed">
+                                    We connect your website forms and lead flows directly into your customer databases, task trackers, and team workspaces. We configure native syncs for Zoho, HubSpot, Pipedrive, Notion, and ClickUp, with highly functional free tiers available to keep your monthly overhead at zero.
+                                </p>
+                            </div>
+                            <div className="lg:col-span-7">
+                                {/* Bento Outer Box */}
+                                <div className="border border-white/5 bg-white overflow-hidden rounded-none">
+                                    {/* Top Row: 2 Items */}
+                                    <div className="grid grid-cols-2 divide-x divide-neutral-200 border-b border-neutral-200 bg-white">
+                                        {[
+                                            { name: "Zoho", logo: "/brandstrip/zoho.svg" },
+                                            { name: "Notion", logo: "/brandstrip/notion.svg" },
+                                        ].map((item) => (
+                                            <div key={item.name} className="p-4 sm:p-8 flex flex-col items-center justify-center text-center group hover:bg-neutral-50 transition-colors duration-300">
+                                                <div className="h-8 w-20 sm:h-12 sm:w-32 relative flex items-center justify-center">
+                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                    <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {/* Bottom Row: 3 Items */}
+                                    <div className="grid grid-cols-3 divide-x divide-neutral-200 bg-white">
+                                        {[
+                                            { name: "HubSpot", logo: "/brandstrip/hubspot.svg" },
+                                            { name: "Pipedrive", logo: "/brandstrip/pipedrive.svg" },
+                                            { name: "ClickUp", logo: "/brandstrip/clickup.svg" },
+                                        ].map((item) => (
+                                            <div key={item.name} className="p-3 sm:p-6 flex flex-col items-center justify-center text-center group hover:bg-neutral-50 transition-colors duration-300">
+                                                <div className="h-6 w-16 sm:h-10 sm:w-24 relative flex items-center justify-center">
+                                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                    <img src={item.logo} alt={`${item.name} Integration`} className="max-h-full max-w-full object-contain" />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </Container>
             </Section>
 
@@ -475,7 +526,7 @@ export default function RedesignRescuePage() {
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
                                         <Kicker className="mb-6">NEXT STEP</Kicker>
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
+                                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                                             Stop losing customers to a bad <em className="font-serif-10 italic">website.</em>
                                         </h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">
@@ -501,7 +552,7 @@ export default function RedesignRescuePage() {
                                         ].map((stat) => (
                                             <div key={stat.label} className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 py-4 sm:py-5 first:pt-0 last:pb-0">
                                                 <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">{stat.label}</span>
- <span className="font-serif text-ink">{stat.value}</span>
+                                                <span className="font-serif text-ink">{stat.value}</span>
                                             </div>
                                         ))}
                                     </div>
