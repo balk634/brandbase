@@ -115,7 +115,7 @@ export function DashboardShowcase() {
                         Custom dashboard management{" "}
                         <em className="font-serif-10 italic text-white/50">suited for your business needs.</em>
                     </h2>
-                    <p className="mt-4 text-sm text-white/45 leading-relaxed max-w-2xl">
+                    <p className="mt-4 text-sm text-white/70 leading-relaxed max-w-2xl">
                         Not a generic CMS. A custom admin panel built around how your business actually runs, syncing live to your website.
                     </p>
                 </motion.div>
@@ -158,13 +158,13 @@ export function DashboardShowcase() {
                                         <div className="flex-1 min-w-0 pr-6">
                                             <span className={[
                                                 "block font-mono text-[10px] uppercase tracking-[0.25em] transition-colors duration-300",
-                                                isActive ? "text-white" : "text-white/40",
+                                                isActive ? "text-white" : "text-white/65",
                                             ].join(" ")}>
                                                 {type.heading}
                                             </span>
                                             <p className={[
                                                 "mt-1.5 text-[12px] leading-relaxed transition-all duration-300 line-clamp-2",
-                                                isActive ? "text-white/60" : "text-white/30 group-hover:text-white/45",
+                                                isActive ? "text-white/80" : "text-white/60 group-hover:text-white/75",
                                             ].join(" ")}>
                                                 {type.copy}
                                             </p>
@@ -272,7 +272,7 @@ export function DashboardShowcase() {
                             })}
                         </div>
 
-                        <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/20">
+                        <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/60">
                             {current.heading} · {currentImage.label} · Live screenshot
                         </p>
                     </motion.div>

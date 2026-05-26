@@ -77,7 +77,7 @@ export function Footer() {
 
                         {masterConfig.contact.socialMedia.enabled && (
                             <div className="w-full border-t border-white/10 pt-6 mt-8 flex flex-col gap-4">
-                                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">Connect with us</span>
+                                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/85">Connect with us</span>
                                 <div className="flex flex-wrap items-center gap-5">
                                     {socialEntries.map(([platform, url]) => {
                                         const Icon = socialIcons[platform];
@@ -104,7 +104,7 @@ export function Footer() {
                                 <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
                                     &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
                                 </div>
-                                <div className="text-[11px] font-mono text-white/50 uppercase tracking-widest">
+                                <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
                                     GSTIN: 10DHEPB0541R1ZN
                                 </div>
                             </div>

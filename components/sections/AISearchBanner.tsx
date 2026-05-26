@@ -113,9 +113,9 @@ export function AISearchBanner() {
 
                                 {/* Text */}
                                 <div>
-                                    <h4 className="font-serif text-lg tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
+                                    <h3 className="font-serif text-lg tracking-tight text-ink group-hover:text-primary transition-colors duration-300">
                                         {pillar.title}
-                                    </h4>
+                                    </h3>
                                     <p className="mt-2 text-[12px] text-ink-muted leading-relaxed">
                                         {pillar.desc}
                                     </p>
