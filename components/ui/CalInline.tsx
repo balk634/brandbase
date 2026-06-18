@@ -90,8 +90,8 @@ export function CalInline({ className }: CalInlineProps) {
   return (
     <div
       ref={containerRef}
-      className={className}
-      style={{ width: "100%", height: "100%", minHeight: "650px", overflow: "scroll" }}
+      className={`min-h-[450px] md:min-h-[650px] ${className || ""}`}
+      style={{ width: "100%", height: "100%", overflow: "scroll" }}
       id="my-cal-inline-30min"
     />
   );

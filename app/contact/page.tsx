@@ -82,7 +82,7 @@ export default function ContactPage() {
               <div className="mb-6">
                 <Kicker className="mx-[5px]">Book a Strategic consultation</Kicker>
               </div>
-              <div className="flex-1 min-h-[500px] lg:min-h-[580px] border border-grid/10 bg-white shadow-sm overflow-hidden ring-1 ring-grid/5">
+              <div className="flex-1 min-h-[450px] md:min-h-[500px] lg:min-h-[580px] border border-grid/10 bg-white shadow-sm overflow-hidden ring-1 ring-grid/5">
                 <CalInline className="w-full h-full" />
               </div>
             </div>
