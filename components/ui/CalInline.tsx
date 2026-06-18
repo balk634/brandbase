@@ -57,30 +57,32 @@ export function CalInline({ className }: CalInlineProps) {
     }
 
     const Cal = C.Cal;
-    if (!Cal || !Cal.ns) return;
+    if (!Cal) return;
     const namespace = "30min";
 
     Cal("init", namespace, { origin: "https://booking.brandbase.in" });
 
-    Cal.ns[namespace]("inline", {
-      elementOrSelector: "#my-cal-inline-30min",
-      config: {
-        layout: "month_view",
-        useSlotsViewOnSmallScreen: "true",
-        theme: "light",
-      },
-      calLink: masterConfig.contact.calcomSlug, // Using the slug from masterConfig
-    });
+    if (Cal.ns && Cal.ns[namespace]) {
+      Cal.ns[namespace]("inline", {
+        elementOrSelector: "#my-cal-inline-30min",
+        config: {
+          layout: "month_view",
+          useSlotsViewOnSmallScreen: "true",
+          theme: "light",
+        },
+        calLink: masterConfig.contact.calcomSlug, // Using the slug from masterConfig
+      });
 
-    Cal.ns[namespace]("ui", {
-      theme: "light",
-      cssVarsPerTheme: {
-        light: { "cal-brand": masterConfig.colors.primary }, // Link to theme primary color
-        dark: { "cal-brand": "#fafafa" },
-      },
-      hideEventTypeDetails: true,
-      layout: "month_view",
-    });
+      Cal.ns[namespace]("ui", {
+        theme: "light",
+        cssVarsPerTheme: {
+          light: { "cal-brand": masterConfig.colors.primary }, // Link to theme primary color
+          dark: { "cal-brand": "#fafafa" },
+        },
+        hideEventTypeDetails: true,
+        layout: "month_view",
+      });
+    }
 
     containerRef.current.dataset.loaded = "true";
   }, []);

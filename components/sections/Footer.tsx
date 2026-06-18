@@ -99,7 +99,7 @@ export function Footer() {
                             </div>
                         )}
 
-                        <div className="w-full border-t border-white/10 pt-6 mt-8">
+                        <div className="w-full border-t border-white/10 pt-6 mt-8 hidden lg:block">
                             <div className="flex flex-col gap-1.5">
                                 <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
                                     &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
@@ -132,9 +132,21 @@ export function Footer() {
                             ))}
                         </div>
                         
-                        {/* Time Badges */}
-                        <div className="w-full flex justify-start sm:justify-end">
-                            <WorldTimeBadgesLazy className="w-full sm:w-auto" />
+                        {/* Time Badges & Mobile Copyright/GST */}
+                        <div className="w-full flex flex-col gap-8">
+                            <div className="w-full flex justify-start sm:justify-end">
+                                <WorldTimeBadgesLazy className="w-full sm:w-auto" />
+                            </div>
+                            <div className="w-full border-t border-white/10 pt-6 lg:hidden">
+                                <div className="flex flex-col gap-1.5">
+                                    <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
+                                        &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
+                                    </div>
+                                    <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
+                                        GSTIN: 10DHEPB0541R1ZN
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
