@@ -11,9 +11,9 @@ import {
     IconSparkles,
     IconShoppingCart,
     IconReceipt2,
-    IconChartBar,
-    IconMapPin,
-    IconBrandInstagram,
+    IconHeartbeat,
+    IconSchool,
+    IconChefHat,
     type IconProps
 } from "@tabler/icons-react";
 
@@ -59,27 +59,27 @@ const websiteServices: ServiceItem[] = [
     },
 ];
 
-const marketingServices: ServiceItem[] = [
+const managementSolutionsServices: ServiceItem[] = [
     {
-        Icon: IconChartBar,
-        title: "Performance Marketing",
-        description: "Full-funnel Meta and Google ad campaigns built to generate leads, not likes. Every rupee tracked, every decision data-driven.",
-        href: "/digital-marketing/performance-marketing",
-        pills: ["Meta & Google Ads", "A/B Testing", "ROI Tracking"],
+        Icon: IconHeartbeat,
+        title: "Clinic Management System",
+        description: "For clinics and doctors. Patient record histories, dynamic intake forms, live queue status boards, WhatsApp patient recalls, and billing.",
+        href: "/management-solutions/health",
+        pills: ["Patient Database", "Live Queue Tracker", "WhatsApp Recalls"],
     },
     {
-        Icon: IconBrandInstagram,
-        title: "Social Media Management",
-        description: "End-to-end content strategy with caption writing, community management, premium content creation, and monthly growth reports.",
-        href: "/digital-marketing/social-media-management",
-        pills: ["Content Strategy", "Community Mgmt", "Monthly Reports"],
+        Icon: IconSchool,
+        title: "Education Base System",
+        description: "For coaching centers and tutors. Organize student batches, host video courses, track attendance, and automate fee payment reminders.",
+        href: "/management-solutions/education",
+        pills: ["Batch Management", "Video Hosting", "WhatsApp Reminders"],
     },
     {
-        Icon: IconMapPin,
-        title: "Local SEO & Google Maps",
-        description: "Dominate local search results. We optimize your Google Business Profile, build citations, and drive foot traffic to your door.",
-        href: "/digital-marketing/local-seo-google-maps",
-        pills: ["Google Maps", "Citation Building", "Review Strategy"],
+        Icon: IconChefHat,
+        title: "Food & Hospitality Base",
+        description: "For independent cafes and restaurants. Live order screens, table reservations, inventory tracking, and dynamic menu updates.",
+        href: "/management-solutions/food-hospitality",
+        pills: ["Kitchen Display", "Table Reservations", "Menu QR Sync"],
     },
 ];
 
@@ -308,40 +308,41 @@ export function CorePillars() {
                         variants={stagger}
                         className="text-center md:text-left flex flex-col items-center md:items-start"
                     >
-                        <Kicker>THE BRANDBASE SOLUTION</Kicker>
+                        <Kicker>WHAT WE BUILD</Kicker>
                         <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-2xl">
-                            Two Pillars. One Outcome: Outsized <em className="font-serif-10 italic">Growth.</em>
+                            Custom systems that run your business.{" "}
+                            <em className="font-serif-10 italic">Websites that bring in business.</em>
                         </h2>
                     </motion.div>
 
-                    {/* ── Pillar 1: Website Solutions ── */}
+                    {/* ── Pillar 1: Management Solutions ── */}
                     <PillarCard
-                        kicker="Pillar 01: Digital Real Estate"
+                        kicker="Pillar 01: The Operations Backbone"
+                        titleLine1="Management"
+                        titleLine2="Solutions"
+                        ctaLabel="Explore Custom Bases"
+                        ctaHref="/management-solutions/health"
+                        imageSrc="/home/jpg/BMS.jpg"
+                        imageAlt="Custom management solutions and dashboards"
+                        imagePosition="right"
+                        services={managementSolutionsServices}
+                        startIndex={1}
+                        tiltClass="animate-tilt-p2"
+                    />
+
+                    {/* ── Pillar 2: Website Solutions ── */}
+                    <PillarCard
+                        kicker="Pillar 02: Digital Real Estate"
                         titleLine1="Website"
                         titleLine2="Solutions"
                         ctaLabel="Explore Solutions"
-                        ctaHref="/website-solutions"
-                        imageSrc="/home-website.webp"
+                        ctaHref="/website-solutions/premium-static-websites"
+                        imageSrc="/home/jpg/Website build.jpg"
                         imageAlt="Website Solutions"
-                        imagePosition="right"
-                        services={websiteServices}
-                        startIndex={1}
-                        tiltClass="animate-tilt-p1"
-                    />
-
-                    {/* ── Pillar 2: Digital Marketing ── */}
-                    <PillarCard
-                        kicker="Pillar 02: The Traffic Engine"
-                        titleLine1="Digital"
-                        titleLine2="Marketing"
-                        ctaLabel="Explore Growth"
-                        ctaHref="/digital-marketing"
-                        imageSrc="/home-social.webp"
-                        imageAlt="Social media marketing"
                         imagePosition="left"
-                        services={marketingServices}
-                        startIndex={4}
-                        tiltClass="animate-tilt-p2"
+                        services={websiteServices}
+                        startIndex={5}
+                        tiltClass="animate-tilt-p1"
                     />
                 </div>
             </Container>

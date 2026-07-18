@@ -2,10 +2,10 @@
   Agency: BrandBase
   Website: https://brandbase.in
   Contact: info@brandbase.in
-  Services: Conversion-First Websites, Local SEO, Performance Marketing, Analytics & Tracking
+  Services: Custom Business Management Systems, Conversion-First Websites, Workflow Automation, Analytics & Tracking
 
 /* SITE */
-  Last Update: 2026/03/08
+  Last Update: 2026/07/19
   Standards: HTML5, CSS3, WCAG 2.1
   Components: Next.js 16, React 19, Tailwind CSS, Framer Motion
   Typography: Space Grotesk, JetBrains Mono, Raleway

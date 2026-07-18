@@ -3,6 +3,7 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Kicker } from "@/components/ui/Kicker";
+import { masterConfig } from "@/config/master";
 
 interface TechItem {
     name: string;
@@ -13,69 +14,66 @@ interface TechItem {
 const DEFAULT_SCALE = 1.0;
 
 const ALL_TECHS: TechItem[] = [
-    { name: "Ahrefs", logo: "/brandstrip/ahrefs.svg", scale: 1.0 },
     { name: "Appwrite", logo: "/brandstrip/appwrite.svg", scale: 1.0 },
     { name: "AWS", logo: "/brandstrip/aws.svg", scale: 0.7 },
-    { name: "Azure", logo: "/brandstrip/azure.svg", scale: 1.4 },
+    { name: "C++", logo: "/brandstrip/C++ (CPlusPlus).svg", scale: 0.9 },
     { name: "Claude", logo: "/brandstrip/claude.svg", scale: 1.0 },
-    { name: "ClickUp", logo: "/brandstrip/clickup.svg", scale: 1.0 },
     { name: "Cloudflare", logo: "/brandstrip/cloudflare.svg", scale: 0.8 },
     { name: "Docker", logo: "/brandstrip/docker.svg", scale: 1.0 },
     { name: "Figma", logo: "/brandstrip/figma.svg", scale: 0.82 },
     { name: "Firebase", logo: "/brandstrip/firebase.svg", scale: 1.0 },
-    { name: "Google Ads", logo: "/brandstrip/google-ads.svg", scale: 1.2 },
-    { name: "Google Analytics", logo: "/brandstrip/google-analytics.svg", scale: 0.8 },
-    { name: "Google Cloud", logo: "/brandstrip/google-cloud.svg", scale: 1.3 },
-    { name: "Google Tag Manager", logo: "/brandstrip/google-tag-manager.svg", scale: 1.4 },
-    { name: "Hostinger", logo: "/brandstrip/hostinger.svg", scale: 1.0 },
+    { name: "Google Analytics", logo: "/brandstrip/Google_Analytics.svg", scale: 0.8 },
     { name: "HubSpot", logo: "/brandstrip/hubspot.svg", scale: 0.8 },
-    { name: "Illustrator", logo: "/brandstrip/illustrator.svg", scale: 1.2 },
-    { name: "Instagram", logo: "/brandstrip/instagram.svg", scale: 0.9 },
-    { name: "LinkedIn Ads", logo: "/brandstrip/linkedin-ads.svg", scale: 1.3 },
-    { name: "Mailchimp", logo: "/brandstrip/mailchimp.svg", scale: 1.0 },
-    { name: "Meta", logo: "/brandstrip/meta.svg", scale: 0.8 },
+    { name: "MongoDB", logo: "/brandstrip/MongoDB_Logo.svg", scale: 1.0 },
     { name: "n8n", logo: "/brandstrip/n8n.svg", scale: 0.8 },
     { name: "Netlify", logo: "/brandstrip/netlify.svg", scale: 1.0 },
     { name: "Next.js", logo: "/brandstrip/nextjs.svg", scale: 0.8 },
     { name: "Node.js", logo: "/brandstrip/nodejs.svg", scale: 1.0 },
-    { name: "Notion", logo: "/brandstrip/notion.svg", scale: 0.8 },
     { name: "OpenAI", logo: "/brandstrip/openai.svg", scale: 1.0 },
+    { name: "Oracle", logo: "/brandstrip/Oracle.svg", scale: 0.85 },
     { name: "Paytm", logo: "/brandstrip/paytm.svg", scale: 0.6 },
-    { name: "Pipedrive", logo: "/brandstrip/pipedrive.svg", scale: 1.0 },
     { name: "PostgreSQL", logo: "/brandstrip/postgresql.svg", scale: 1 },
+    { name: "Python", logo: "/brandstrip/Python.svg", scale: 1.0 },
     { name: "Razorpay", logo: "/brandstrip/razorpay.svg", scale: 1.0 },
     { name: "React", logo: "/brandstrip/react.svg", scale: 0.8 },
-    { name: "Semrush", logo: "/brandstrip/semrush.svg", scale: 1.2 },
+    { name: "Resend", logo: "/brandstrip/resend.svg", scale: 0.95 },
     { name: "SQLite", logo: "/brandstrip/sqlite.svg", scale: 1.0 },
     { name: "Supabase", logo: "/brandstrip/supabase.svg", scale: 1.0 },
     { name: "Tailwind CSS", logo: "/brandstrip/tailwindcss.svg", scale: 1.1 },
+    { name: "Twilio", logo: "/brandstrip/Twilio-logo-red.svg", scale: 0.9 },
     { name: "Vercel", logo: "/brandstrip/vercel.svg", scale: 0.8 },
     { name: "Vite", logo: "/brandstrip/vite.svg", scale: 0.8 },
     { name: "WhatsApp", logo: "/brandstrip/whatsapp.svg", scale: 1.35 },
     { name: "Zapier", logo: "/brandstrip/zapier.svg", scale: 1.0 },
-    { name: "Zoho", logo: "/brandstrip/zoho.svg", scale: 0.8 },
 ];
 
-// Count the number divided by 2 to split them dynamically
-const mid = Math.ceil(ALL_TECHS.length / 2);
-const ROW_1_TECHS = ALL_TECHS.slice(0, mid);
-const ROW_2_TECHS = ALL_TECHS.slice(mid);
-
-// Clone each row exactly once for seamless infinite scrolling
-const ROW_1_ITEMS = [...ROW_1_TECHS, ...ROW_1_TECHS];
-const ROW_2_ITEMS = [...ROW_2_TECHS, ...ROW_2_TECHS];
-
 export function Technologies() {
+    const allowedTechs = (masterConfig.sections?.techStackStrip || []).map((t: string) => t.toLowerCase());
+    const filteredTechs = ALL_TECHS.filter(tech => allowedTechs.includes(tech.name.toLowerCase()));
+
+    // Count the number divided by 2 to split them dynamically
+    const mid = Math.ceil(filteredTechs.length / 2);
+    const ROW_1_TECHS = filteredTechs.slice(0, mid);
+    const ROW_2_TECHS = filteredTechs.slice(mid);
+
+    // Clone each row exactly once for seamless infinite scrolling
+    const ROW_1_ITEMS = [...ROW_1_TECHS, ...ROW_1_TECHS];
+    const ROW_2_ITEMS = [...ROW_2_TECHS, ...ROW_2_TECHS];
+
     return (
         <Section className="bg-transparent pt-12 pb-24 md:pt-20 md:pb-40 overflow-hidden relative">
             <Container>
                 <div className="mb-14 max-w-3xl">
-                    <Kicker>Platforms &amp; Technologies</Kicker>
+                    <Kicker>INFRASTRUCTURE</Kicker>
                     <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
-                        Powered by <em className="font-serif-10 italic">Industry Leading</em> Platforms
+                        Private databases. WhatsApp API.{" "}
+                        <em className="font-serif-10 italic">Payment gateways.</em>
                     </h2>
                     <p className="mt-5 text-sm md:text-base text-ink-muted leading-relaxed max-w-2xl">
-                        We use battle-tested platforms and slick technologies to power SEO, performance marketing, and website development with scalable execution and measurable growth wins.
+                        We don&apos;t hand you a login to someone else&apos;s platform. Your system runs on
+                        private, secured infrastructure — PostgreSQL databases, Appwrite backends,
+                        WhatsApp Business API, and Razorpay/Paytm billing — all fully managed with
+                        zero per-user licensing fees.
                     </p>
                 </div>
             </Container>

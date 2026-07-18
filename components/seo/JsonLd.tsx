@@ -10,7 +10,7 @@ export function JsonLd() {
     const navigationLinks = NAVIGATION.flatMap((item) => [
         { name: item.name, href: item.href },
         ...(item.subItems ?? []).map((subItem) => ({ name: subItem.name, href: subItem.href })),
-    ]);
+    ]).filter((link) => link.href && link.href !== "#");
 
     const offerCatalog = {
         "@type": "OfferCatalog",
@@ -24,7 +24,7 @@ export function JsonLd() {
             return {
                 "@type": "OfferCatalog",
                 "name": item.name,
-                "url": toAbsoluteUrl(item.href),
+                ...(item.href && item.href !== "#" ? { "url": toAbsoluteUrl(item.href) } : {}),
                 "itemListElement": sectionServices.map((service) => ({
                     "@type": "Service",
                     "name": service.name,

@@ -7,9 +7,9 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
-  title: "About BrandBase | Strategy, Design & Growth Marketing Team",
+  title: "About BrandBase | Custom Management Systems & Websites Team",
   description:
-    "Meet the BrandBase team of strategists and engineers. Learn how we combine high-end design with growth marketing to build measurable systems for businesses.",
+    "Meet the BrandBase team of builders and engineers. Learn how we build custom business management systems integrated with high-performance frontend websites.",
   path: "/about",
 });
 
@@ -26,10 +26,10 @@ export default function AboutPage() {
               </div>
 
               <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
-                We build websites that convert, then help you scale what <em className="font-serif-20 italic">works.</em>
+                We build systems that run your operations, and websites that <em className="font-serif-20 italic">convert.</em>
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
-                BrandBase is a cross-disciplinary team for website strategy, design, engineering, and performance marketing. Website first. Marketing second. Always measured.
+                BrandBase is a cross-disciplinary team of system architects, database engineers, and interface designers. Systems first. Websites second. Always custom.
               </p>
             </div>
           </div>
@@ -71,17 +71,15 @@ export default function AboutPage() {
                       </div>
                     </div>
 
-                    <div className="border border-green-800/25 bg-green-800/5 p-4 sm:p-5 min-w-0">
-                      <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.14em] sm:tracking-[0.35em] text-green-800 break-words leading-relaxed">
+                    <div className="border border-emerald-500/25 bg-emerald-500/5 p-4 sm:p-5 min-w-0">
+                      <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.14em] sm:tracking-[0.35em] text-emerald-600 break-words leading-relaxed">
                         03. BRANDBASE
                       </div>
                       <div className="mt-2 text-sm text-ink-muted leading-relaxed break-words">
-                        Integrated. Talent across brand, product, and marketing - working as one team with the speed of a startup and the standards of a tier-one firm.
+                        Integrated. Talent across backend engineering, database architecture, and user interface design - working as one team with the speed of a startup and the standards of a tier-one firm.
                       </div>
                     </div>
                   </div>
-
-
                 </div>
 
                 <div className="lg:col-span-5 min-w-0 flex justify-center">
@@ -116,8 +114,8 @@ export default function AboutPage() {
                     Built by <em className="font-serif-10 italic">practitioners.</em>
                   </h2>
                   <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
-                    <p>BrandBase is led by a cross-disciplinary team of strategists, engineers, and creatives who care about the fundamentals: clarity, speed, measurement, and conversion.</p>
-                    <p>We don&apos;t ship websites as a one-off deliverable. We build a system you can improve over time, then use marketing to scale what the data proves is working.</p>
+                    <p>BrandBase is led by a cross-disciplinary team of system builders, database engineers, and interface designers who care about the fundamentals: clarity, operations automation, and high-performance frontend web architectures.</p>
+                    <p>We don&apos;t ship generic template code. We build custom operational systems (Clinic, Coaching, Restaurant) and frontend websites that are tailored to how your business actually runs.</p>
                   </div>
                 </div>
 
@@ -160,11 +158,11 @@ export default function AboutPage() {
                     OUR PHILOSOPHY
                   </Kicker>
                   <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
-                    Built for <em className="font-serif-10 italic">performance.</em>
+                    Built for <em className="font-serif-10 italic">operations.</em>
                   </h2>
                   <div className="mt-5 space-y-4 text-ink-muted leading-relaxed">
-                    <p>At BrandBase, we believe that websites should not just look beautiful, but drive real business outcomes. We focus on conversion rate optimization, page speed, and clean code to make sure your visitors become customers.</p>
-                    <p>We work as partners in growth. By combining custom high-performance web development with data-driven paid advertising and local SEO, we build a compounding growth engine for your brand.</p>
+                    <p>At BrandBase, we believe that software should fit your business, not the other way around. We replace rigid spreadsheets, paper registers, and chaotic WhatsApp threads with clean, secure, custom management systems.</p>
+                    <p>We build for operations first, then design and engineer high-performance frontend websites that integrate directly with your databases to convert visitors and automate bookings.</p>
                   </div>
                 </div>
 
@@ -172,18 +170,18 @@ export default function AboutPage() {
                   {[
                     {
                       number: "01",
-                      title: "Conversion-First Design",
-                      description: "Every element, form, and layout on your website is strategically designed to guide visitors toward actions—whether booking a call, signing up, or making a purchase."
+                      title: "Custom Operational Logic",
+                      description: "We map your real-world workflows into clean database schemas, automated notifications, role-based staff levels, and live tracking dashboards."
                     },
                     {
                       number: "02",
-                      title: "Modern Engineering",
-                      description: "We build on modern architectures like Next.js, ensuring lightning-fast load times, flawless security, and pristine SEO structure right out of the box."
+                      title: "Modern System Engineering",
+                      description: "We build backend architectures on secure, private databases like PostgreSQL and Appwrite, integrated with fast Next.js frontends."
                     },
                     {
                       number: "03",
-                      title: "Data-Driven Marketing",
-                      description: "We don't guess. We deploy tracking pixels, run targeted Meta and Google campaigns, and focus only on the channels that generate high-quality leads."
+                      title: "Zero Licensing Hostage",
+                      description: "We believe you should own your code and your records. We host on your private servers with zero per-seat monthly license fees."
                     }
                   ].map((pillar, idx) => (
                     <div key={idx} className="group border border-grid/15 bg-white p-6 md:p-8 flex flex-col justify-between hover:border-primary/45 transition-colors duration-300">
@@ -204,8 +202,8 @@ export default function AboutPage() {
       <Section className="bg-transparent border-b-0 py-4 md:py-6 lg:py-8">
         <Container>
           <div className="max-w-4xl mx-auto border border-grid/15 bg-white p-10 md:p-12 text-center">
- <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter text-ink">
-              Ready to build your website <em className="font-serif-10 italic">engine?</em>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter text-ink">
+              Ready to build your custom business <em className="font-serif-10 italic">system?</em>
             </h2>
             <div className="mt-10">
               <CalButton variant="primary" size="lg" className="w-full sm:w-auto sm:min-w-[260px]">

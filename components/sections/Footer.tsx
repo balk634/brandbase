@@ -4,7 +4,6 @@ import Image from "next/image";
 import { IconMail, IconMapPin, IconBrandWhatsapp } from "@tabler/icons-react";
 import { LinkedInIcon, InstagramIcon } from "@/components/icons/BrandIcons";
 import type { ComponentType } from "react";
-import { WorldTimeBadgesLazy } from "@/components/ui/WorldTimeBadgesLazy";
 import { FOOTER_COLUMNS } from "@/config/navigation";
 
 export function Footer() {
@@ -131,20 +130,14 @@ export function Footer() {
                                 </div>
                             ))}
                         </div>
-                        
-                        {/* Time Badges & Mobile Copyright/GST */}
-                        <div className="w-full flex flex-col gap-8">
-                            <div className="w-full flex justify-start sm:justify-end">
-                                <WorldTimeBadgesLazy className="w-full sm:w-auto" />
-                            </div>
-                            <div className="w-full border-t border-white/10 pt-6 lg:hidden">
-                                <div className="flex flex-col gap-1.5">
-                                    <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
-                                        &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
-                                    </div>
-                                    <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
-                                        GSTIN: 10DHEPB0541R1ZN
-                                    </div>
+                        {/* Mobile Copyright/GST */}
+                        <div className="w-full border-t border-white/10 pt-6 lg:hidden">
+                            <div className="flex flex-col gap-1.5">
+                                <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
+                                    &copy; {year} BRANDBASE. ALL RIGHTS RESERVED.
+                                </div>
+                                <div className="text-[11px] font-mono text-white/80 uppercase tracking-widest">
+                                    GSTIN: 10DHEPB0541R1ZN
                                 </div>
                             </div>
                         </div>

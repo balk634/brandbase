@@ -123,10 +123,10 @@ const compareStyles = {
     label: "text-ink-muted",
   },
   brandbase: {
-    border: "border-green-800/25",
-    bg: "bg-green-800/5",
-    dot: "bg-green-800/70",
-    label: "text-green-800",
+    border: "border-emerald-500/25",
+    bg: "bg-emerald-500/5",
+    dot: "bg-emerald-500/70",
+    label: "text-emerald-600",
   },
   problem: {
     border: "border-red-500/25",

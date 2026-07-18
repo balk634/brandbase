@@ -67,7 +67,27 @@ const nextConfig = {
       },
       {
         source: "/social-media-growth/:path*",
-        destination: "/digital-marketing/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/digital-marketing/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/operating-systems/:slug*",
+        destination: "/management-solutions/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/website-solutions",
+        destination: "/website-solutions/custom-web-design",
+        permanent: true,
+      },
+      {
+        source: "/website-solutions/website-redesign",
+        destination: "/website-solutions/custom-web-design",
         permanent: true,
       },
       {

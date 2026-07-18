@@ -8,12 +8,12 @@ export type FeaturedBlogPost = {
 };
 
 export const featuredBlogPost: FeaturedBlogPost = {
-  slug: "pay-monthly-websites-indian-smbs-2026",
-  title: 'Why "Pay Monthly" Websites Are the Smartest Choice for Indian SMBs in 2026',
+  slug: "reduce-no-show-appointments-clinic",
+  title: "How to Reduce No-Show Appointments in a Clinic Without Hiring More Staff",
   description:
-    "A practical look at subscription websites in India: what you actually get, the math behind cash flow, and how to avoid lock-in.",
-  category: "Web Strategy",
-  cardHeadline: 'Why "Pay Monthly" websites win in 2026',
+    "Practical strategies for small Indian clinics to cut missed visits using smart reminders, queue discipline, and follow-up timing — no extra headcount needed.",
+  category: "Clinic Operations",
+  cardHeadline: "Cut no-shows without extra staff",
   heroImage:
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1800&q=80",
 };

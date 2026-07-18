@@ -296,7 +296,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
                   className="w-full h-11 px-4 bg-paper/60 border border-grid/15 focus:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   id="contact-subject"
                   name="subject"
-                  placeholder="e.g. Full rebrand + web launch, Performance marketing for e-commerce"
+                  placeholder="e.g. Custom Clinic System, eCommerce with backend sync"
                 />
               </div>
 

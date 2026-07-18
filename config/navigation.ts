@@ -1,21 +1,20 @@
 export const NAVIGATION = [
     {
       name: "Website Solutions",
-      href: "/website-solutions",
+      href: "#",
       subItems: [
         { name: "Premium Static Websites", href: "/website-solutions/premium-static-websites" },
         { name: "Custom Web Design", href: "/website-solutions/custom-web-design" },
-        { name: "eCommerce Development", href: "/website-solutions/ecommerce-development" },
-        { name: "Website Redesign", href: "/website-solutions/website-redesign" }
+        { name: "eCommerce Development", href: "/website-solutions/ecommerce-development" }
       ]
     },
     {
-      name: "Digital Marketing",
-      href: "/digital-marketing",
+      name: "Management Solutions",
+      href: "#",
       subItems: [
-        { name: "Performance Marketing", href: "/digital-marketing/performance-marketing" },
-        { name: "Social Media Management", href: "/digital-marketing/social-media-management" },
-        { name: "Local SEO & Google Maps", href: "/digital-marketing/local-seo-google-maps" }
+        { name: "Clinic Management System", href: "/management-solutions/health" },
+        { name: "Coaching Management System", href: "/management-solutions/education" },
+        { name: "Restaurant Management System", href: "/management-solutions/food-hospitality" }
       ]
     },
     { name: "Pricing", href: "/pricing" },
@@ -28,20 +27,17 @@ export const FOOTER_COLUMNS = [
     {
       title: "Website Solutions",
       links: [
-        { name: "Website Solutions", href: "/website-solutions" },
         { name: "Premium Static", href: "/website-solutions/premium-static-websites" },
         { name: "Custom Web Design", href: "/website-solutions/custom-web-design" },
         { name: "eCommerce Services", href: "/website-solutions/ecommerce-development" },
-        { name: "Website Redesign", href: "/website-solutions/website-redesign" },
       ]
     },
     {
-      title: "Digital Marketing",
+      title: "Management Solutions",
       links: [
-        { name: "Digital Marketing", href: "/digital-marketing" },
-        { name: "Performance Marketing", href: "/digital-marketing/performance-marketing" },
-        { name: "Social Media Management", href: "/digital-marketing/social-media-management" },
-        { name: "Local SEO Solutions", href: "/digital-marketing/local-seo-google-maps" },
+        { name: "Clinic Management System", href: "/management-solutions/health" },
+        { name: "Coaching Management System", href: "/management-solutions/education" },
+        { name: "Restaurant Management System", href: "/management-solutions/food-hospitality" },
       ]
     },
     {

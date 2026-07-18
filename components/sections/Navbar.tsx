@@ -144,16 +144,16 @@ export function Navbar() {
                                             }
                                         }}
                                     >
-                                        <Link
-                                            href={item.href}
+                                        <button
                                             className={[
                                                 "mi-nav-link relative flex items-center gap-1.5 px-4 xl:px-5 py-2 text-xs font-mono uppercase whitespace-nowrap transition-colors duration-300",
                                                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                                                "bg-transparent border-none cursor-pointer",
                                                 isScrolled
                                                     ? (isMainActive || isDesktopOpen ? "text-white" : "text-white/90 hover:text-white")
                                                     : (isMainActive || isDesktopOpen ? "text-ink" : "text-ink-muted hover:text-ink"),
                                             ].join(" ")}
-                                            onClick={() => setOpenDesktopDropdown(null)}
+                                            onClick={() => setOpenDesktopDropdown(prev => prev === item.name ? null : item.name)}
                                         >
                                             <span
                                                 className={[
@@ -181,7 +181,7 @@ export function Navbar() {
                                             >
                                                 <path d="m6 9 6 6 6-6" />
                                             </svg>
-                                        </Link>
+                                        </button>
 
                                         <div
                                             className={[
@@ -320,13 +320,12 @@ export function Navbar() {
                                         {hasSubItems ? (
                                             <>
                                                 <div className="flex items-center justify-between px-4 py-4">
-                                                    <Link
-                                                        href={item.href}
-                                                        className="mi-nav-item flex items-center gap-3 text-xs font-mono uppercase text-ink flex-1 min-w-0"
-                                                        onClick={closeMobileMenu}
+                                                    <button
+                                                        className="mi-nav-item flex items-center gap-3 text-xs font-mono uppercase text-ink flex-1 min-w-0 bg-transparent border-none cursor-pointer text-left"
+                                                        onClick={() => toggleMobileDropdown(item.name)}
                                                     >
                                                         <span className="truncate">{item.name}</span>
-                                                    </Link>
+                                                    </button>
                                                     <button
                                                         onClick={() => toggleMobileDropdown(item.name)}
                                                         className="mi-nav-item h-10 w-10 grid place-items-center text-ink border border-grid/15 hover:bg-grid/5 transition-colors"

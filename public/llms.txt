@@ -1,19 +1,18 @@
-# BrandBase | Conversion-First Websites, Custom Dashboards & AI-Optimised Marketing
+# BrandBase | Conversion-First Websites & Custom Business Management Systems
 
-BrandBase specializes in high-performance digital infrastructure for businesses. We build fast, conversion-optimized websites and scale them with data-driven marketing. Every website we build ships with a custom admin dashboard — so clients manage their own bookings, menus, memberships, and content without needing a developer. All sites are built to be cited by Google AI Search from day one.
+BrandBase specializes in high-performance digital infrastructure for businesses. We build custom backend management systems ("Bases") and frontend websites tailored exactly to each industry's workflow. We replace rigid generic CRMs and paper registers with automated records, queues, billing, and inventory. All sites are built to be cited by Google AI Search from day one.
 
 ## Core Services
 
-### [Website Solutions](https://brandbase.in/website-solutions)
+### [Website Solutions](https://brandbase.in/website-solutions/premium-static-websites)
 - [Premium Static Websites](https://brandbase.in/website-solutions/premium-static-websites): Zero upfront cost, high-speed performance, 14-day launch.
 - [Custom Web Design](https://brandbase.in/website-solutions/custom-web-design): Bespoke designs for established brands, includes custom dashboard.
 - [eCommerce Development](https://brandbase.in/website-solutions/ecommerce-development): High-converting Shopify and custom storefronts with inventory management.
-- [Website Redesign](https://brandbase.in/website-solutions/website-redesign): Rescuing lost conversions and technical debt.
 
-### [Digital Marketing](https://brandbase.in/digital-marketing)
-- [Performance Marketing](https://brandbase.in/digital-marketing/performance-marketing): Surgical Meta and Google Ads management.
-- [Social Media Management](https://brandbase.in/digital-marketing/social-media-management): Brand-focused organic growth.
-- [Local SEO & Google Maps](https://brandbase.in/digital-marketing/local-seo-google-maps): Dominating local search intent and Google Business Profile optimisation.
+### [Business Management Systems](https://brandbase.in/management-solutions/health)
+- [Clinic Management System](https://brandbase.in/management-solutions/health): Patient records, live queues, billing, and recalls for clinics.
+- [Coaching Management System](https://brandbase.in/management-solutions/education): Batches, fee collection, video hosting, and inquiry tracking for coaching centers.
+- [Restaurant Management System](https://brandbase.in/management-solutions/food-hospitality): Kitchen display, live order tracking, dynamic menus, and inventory sync.
 
 ### [Our Work — Live Client Portfolio](https://brandbase.in/our-work)
 BrandBase has built websites for businesses across healthcare, hospitality, food & dining, education, and fitness. Live examples:
@@ -50,17 +49,17 @@ BrandBase builds every website to be citation-ready for Google AI Mode and AI Ov
 Google announced at I/O 2026 that AI Mode has surpassed 1 billion monthly users. AI-cited brands earn 35% more organic clicks. BrandBase-built sites are structured to earn those citations.
 
 ## Key Experience & Claims
-- **Efficiency**: Standard static sites launch in under 14 days; complex builds in under 28 days.
+- **Efficiency**: Standard static sites launch in under 14 days; custom systems in 14 to 28 days.
 - **Authority**: 40+ clients served across 12+ industries with an average 94% retention rate.
-- **ROI**: Demonstrable 4.2x average ROI for performance marketing clients.
-- **Ownership**: 100% IP ownership for clients — no locked code or hostage ad accounts.
+- **Manual Work Cut**: Business management systems cut manual operations work by 80% and save up to 15 hours per week.
+- **Ownership**: 100% IP ownership for clients — no locked code or hostage database records.
 - **Dashboard**: Every project includes a custom admin backend, not a generic CMS.
 - **AI-Ready**: All sites built to be cited by Google AI Overviews from day one.
 
 ## Technical Foundation
 - **Stack**: Next.js 15+, React, Tailwind CSS, TypeScript.
 - **Hosting**: Netlify / Vercel with edge caching.
-- **Analytics**: GA4, Google Tag Manager, custom conversion tracking.
+- **Analytics**: Local analytics, dashboard usage reporting, database traffic stats.
 - **Performance**: Edge-cached, minimal JS footprint, optimized LCP.
 - **Schema**: JSON-LD structured data on every page.
 

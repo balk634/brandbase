@@ -1,37 +1,50 @@
 import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { WhatWeReplace } from "@/components/sections/WhatWeReplace";
 import { CorePillars } from "@/components/sections/CorePillars";
 import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
-import { IntegrationsGrid } from "@/components/sections/IntegrationsGrid";
-import { OurProcess } from "@/components/sections/OurProcess";
-import { Technologies } from "@/components/sections/Technologies";
-import { AISearchBanner } from "@/components/sections/AISearchBanner";
+import { WhyNotGenericCRM } from "@/components/sections/WhyNotGenericCRM";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
+import { Technologies } from "@/components/sections/Technologies";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "BrandBase | Digital Growth Platform & Marketing Services",
+  title: "BrandBase | Custom Business Management Systems & Websites",
   description:
-    "BrandBase is a digital growth platform providing high-performance websites, SEO, and data-driven marketing to help serious businesses scale their operations.",
+    "BrandBase builds custom management systems for clinics, coaching centers, and restaurants — replacing paper registers, WhatsApp chaos, and rigid generic CRMs. High-performance websites also available.",
   path: "/",
 });
 
 export default function Home() {
   return (
     <main className="relative">
+      {/* 1. Hero — Systems first, Websites second */}
       <Hero />
+
+      {/* 2. Trust strip — operational outcome facts */}
       <TrustStrip />
+
+      {/* 3. What we replace — before-state pain section (dark) */}
+      <WhatWeReplace />
+
+      {/* 4. Core Pillars — Management Solutions (01), Website Solutions (02) */}
       <CorePillars />
+
+      {/* 5. Dashboard Showcase — tabbed preview: Clinic / Coaching / Restaurant (dark) */}
       <DashboardShowcase />
-      <IntegrationsGrid />
-      <AISearchBanner />
-      <Technologies />
-      <OurProcess />
+
+      {/* 6. Why Not a Generic CRM — comparison table (light) */}
+      <WhyNotGenericCRM />
+
+      {/* 8. Testimonials */}
       <Testimonials />
-      <FAQ />
+
+      {/* 9. Infrastructure / Technologies — scrolling tech marquee */}
+      <Technologies />
+
+      {/* 10. Final CTA — scoping call framing */}
       <FinalCTA />
     </main>
   );

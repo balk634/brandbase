@@ -99,8 +99,8 @@ const faqItems = [
     a: "Yes. We can phase the roadmap so you launch quickly first, then add product catalog and checkout systems in a second stage.",
   },
   {
-    q: "Do you only work on new builds?",
-    a: "No. We also handle redesign and rescue engagements when existing websites are technically weak or conversion-poor.",
+    q: "Can we migrate our existing domain and content?",
+    a: "Yes. We handle all domain configuration, SSL setup, and URL redirection so that you preserve your existing authority and launch smoothly without downtime.",
   },
   {
     q: "Will the site be fully responsive?",

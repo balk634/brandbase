@@ -8,9 +8,9 @@ import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Contact BrandBase | Let's Build Your Next High-Performance Website",
+  title: "Contact BrandBase | Web Solutions & Custom Industry Bases",
   description:
-    "Ready to scale? Contact BrandBase in Mumbai for conversion-first web design and performance marketing services. Book a strategy call today.",
+    "Ready to scale? Contact BrandBase in Mumbai for custom-built web design and industry-specific operational backend systems. Book a strategy call today.",
   path: "/contact",
 });
 

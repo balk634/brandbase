@@ -1,9 +1,9 @@
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
 export const metadata = buildPageMetadata({
-  title: "Pricing Estimate | Strategy, Web & Marketing Quote",
+  title: "Pricing | Custom Business Management Systems from ₹15,000",
   description:
-    "Build your custom website and marketing package. Get an instant scope estimate and tailored growth strategy from the BrandBase team today.",
+    "Custom business management systems for clinics, coaching centers, and restaurants. See a realistic investment range for your business type and get a tailored quote.",
   path: "/pricing",
 });
 

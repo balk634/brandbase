@@ -32,13 +32,13 @@ function ComparisonItem({
 }) {
   const iconWrap =
     tone === "brandbase"
-      ? "border border-green-800/20 bg-green-800/5"
+      ? "border border-emerald-500/25 bg-emerald-500/5"
       : tone === "danger"
         ? "border border-red-500/25 bg-red-500/10"
         : "border border-grid/15 bg-paper/60";
 
   const iconColor =
-    tone === "brandbase" ? "text-green-800" : tone === "danger" ? "text-red-700" : "text-ink";
+    tone === "brandbase" ? "text-emerald-600" : tone === "danger" ? "text-red-700" : "text-ink";
 
   return (
     <li className="flex items-center gap-3">
@@ -113,8 +113,8 @@ export function ServicesComparisonGrid() {
             </div>
 
             <motion.div
-              initial={{ backgroundColor: "rgba(240, 253, 244, 0)", color: "#111827" }}
-              whileInView={{ backgroundColor: "#F0FDF4", color: "#166534" }}
+              initial={{ backgroundColor: "rgba(236, 253, 245, 0)", color: "#111827" }}
+              whileInView={{ backgroundColor: "#ECFDF5", color: "#047857" }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
               className="p-6 md:p-8"
@@ -123,8 +123,8 @@ export function ServicesComparisonGrid() {
                 <div className="font-mono text-[10px] uppercase tracking-[0.35em] opacity-85">
                   BrandBase
                 </div>
-                <div className="h-9 w-9 border border-green-800/20 bg-green-800/5 grid place-items-center">
-                  <SparkIcon className="h-5 w-5 text-green-800" />
+                <div className="h-9 w-9 border border-emerald-500/25 bg-emerald-500/5 grid place-items-center">
+                  <SparkIcon className="h-5 w-5 text-emerald-600" />
                 </div>
               </div>
               <ul className="space-y-3 text-sm leading-relaxed opacity-95">
@@ -138,7 +138,7 @@ export function ServicesComparisonGrid() {
                   Custom Strategic Pricing.
                 </ComparisonItem>
               </ul>
-              <div className="mt-8 pt-6 border-t border-green-800/15 font-mono text-xs italic tracking-wide opacity-95">
+              <div className="mt-8 pt-6 border-t border-emerald-500/15 font-mono text-xs italic tracking-wide opacity-95">
                 Result: High Impact.
               </div>
             </motion.div>

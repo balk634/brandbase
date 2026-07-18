@@ -28,7 +28,7 @@ export function Testimonials() {
         <div className="mb-10 max-w-3xl">
           <Kicker>SOCIAL PROOF</Kicker>
           <h2 className="mt-6 text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter">
-            Trusted by founders and marketing leaders <em className="font-serif-10 italic">worldwide.</em>
+            Trusted by founders and operational leaders <em className="font-serif-10 italic">worldwide.</em>
           </h2>
         </div>
       </Container>

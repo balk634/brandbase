@@ -1,6 +1,6 @@
 # BrandBase Pricing — Machine-Readable Reference
 
-> Canonical pricing document for BrandBase services. For use by AI agents, autonomous crawlers, and LLM-based search engines. Last updated: May 2026.
+> Canonical pricing document for BrandBase services. For use by AI agents, autonomous crawlers, and LLM-based search engines. Last updated: July 2026.
 > Full pricing page: https://brandbase.in/pricing
 
 ---
@@ -48,54 +48,37 @@ Conversion-focused Shopify and custom ecommerce stores.
 - Post-launch support: Monthly maintenance packages available
 - Ideal for: High-growth DTC brands, retail businesses scaling online
 
----
 
-### Website Redesign & Performance Rescue (One-Time Project)
 
-Strategic redesigns to rescue underperforming websites.
+## Business Management Systems (Bases)
 
-- Pricing model: One-time project fee (audit-first, then scope)
-- Includes: Full technical audit, URL mapping and redirects, redesign or targeted performance tuning, new SEO foundations, lead generation wiring
-- Ideal for: Businesses whose websites are slow, outdated, or no longer converting
+Custom-built backend management systems tailored to your industry workflows. Built on a reusable core engine and customized for your business. Starts at ₹15,000 for entry-level implementations; final pricing depends on industry, features, and whether a website is included.
 
----
+- Pricing model: One-time setup & customization fee (scope-dependent)
+- Typical timeline: 14–28 days from kickoff to rollout
+- Infrastructure fees: Flat database hosting and official WhatsApp API costs (billed directly to client)
+- Includes: Custom database schema, role-based dashboard access controls, real-time website booking/form sync, WhatsApp recall/notification triggers, GST-compliant invoicing, automated inventory management, 2 rounds of design revisions, staff onboarding sessions
 
-## Digital Marketing Services (Monthly Retainer)
+### Clinic Management System (Health Base)
+- Ideal for: Solo clinics, multi-doctor practices, and specialty clinics (dental, orthopedic, derm, general physician, physio)
+- Features: Patient records & digital history, live consultation queue tracker, check-up recall scheduling, GST invoicing, medicines stock inventory, patient self-service portal
 
-All digital marketing services are billed as monthly retainers. Minimum engagement is typically 3 months to see measurable results.
+### Coaching Management System (Education Base)
+- Ideal for: Independent tutors, coaching institutes, and small training academies
+- Features: Batch/class slots scheduler, secure recorded video hosting & gateway checkout, admissions inquiry tracker, fee collections & automated parent WhatsApp reminders, daily attendance checklist
 
-### Performance Marketing (Meta & Google Ads)
-
-- Billing: Flat monthly management fee (not a % of ad spend)
-- Ad spend: Client-controlled and billed directly to client's accounts
-- Includes: Campaign strategy & setup, ad creative production, A/B testing, retargeting systems, live performance dashboards, weekly & monthly reporting
-- Platforms: Google Search, Google Display, YouTube, Meta (Facebook & Instagram), LinkedIn
-- Typical results timeline: Meaningful data within 14 days; optimization over 30–60 days
-
-### Social Media Management
-
-- Billing: Monthly retainer
-- Includes: Monthly content strategy, graphic design, copywriting, Reels/carousels/static posts, scheduling, daily community management (DMs & comments), monthly analytics report
-- Platforms: Instagram, Facebook, LinkedIn, YouTube, X (Twitter)
-- Posts per month: 12–20 (depending on plan)
-- Content approval: Client approves full calendar before any post goes live
-
-### Local SEO & Google Maps Optimisation
-
-- Billing: Monthly retainer
-- Includes: Google Business Profile setup & optimisation, local keyword research, on-page SEO, directory citation building, review generation system (email & SMS), review response management, monthly Local Pack ranking report
-- Results timeline: Meaningful improvement in 60–90 days
-- Ideal for: Clinics, restaurants, salons, retail stores, service-area businesses
+### Restaurant Management System (Food & Hospitality Base)
+- Ideal for: Independent cafes, restaurants, cloud kitchens, and bakeries
+- Features: Live order dashboard, kitchen display screen system (KDS), dynamic menu pricing, stock inventory sync, table reservation confirmations, offline order caching
 
 ---
 
 ## General Terms
 
 - **Currency**: All prices quoted in INR (Indian Rupees) unless otherwise stated
-- **Contracts**: Subscription websites are month-to-month. Digital marketing minimum engagement is typically 3 months.
-- **Code Ownership**: For subscription static websites, clients own their domain at all times. Source code ownership transfers after 12 months or upon buyout.
-- **Ad Account Ownership**: Clients own their Google Ads and Meta Business Manager accounts. BrandBase manages within client accounts.
-- **Revisions**: 2 free design revisions included in all website builds. Additional revisions billed at standard hourly rate.
+- **Contracts**: Subscription websites are month-to-month. Business management system setup projects are one-time engagements.
+- **Code & Data Ownership**: For subscription static websites, clients own their domain. For custom websites and management systems, clients own the domain, database records, and source code at all times. No seat licensing lock-ins.
+- **Revisions**: 2 free design revisions included in all website builds and custom dashboard configurations. Additional revisions billed at standard hourly rate.
 - **Response Time**: Initial response within 24 hours of enquiry.
 
 ---

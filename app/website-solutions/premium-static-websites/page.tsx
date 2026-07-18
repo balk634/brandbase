@@ -257,7 +257,7 @@ export default function PremiumStaticPage() {
                                     <div className="flex-1 divide-y divide-grid/10">
                                         {fitItems.map((item) => (
                                             <motion.div key={item.text} variants={fadeInLeft} whileHover={{ x: 3, transition: { duration: 0.16 } }} className="mi-row flex items-center gap-4 py-4 first:pt-0 last:pb-0 cursor-default">
-                                                <div className={`h-8 w-8 grid place-items-center shrink-0 transition-transform duration-200 ${item.fit ? "border border-green-800/20 bg-green-800/5 text-green-800" : "border border-red-500/25 bg-red-500/10 text-red-600"}`}>
+                                                <div className={`h-8 w-8 grid place-items-center shrink-0 transition-transform duration-200 ${item.fit ? "border border-emerald-500/25 bg-emerald-500/5 text-emerald-600" : "border border-red-500/25 bg-red-500/10 text-red-600"}`}>
                                                     <item.Icon className="h-4 w-4" />
                                                 </div>
                                                 <div>
@@ -528,7 +528,7 @@ export default function PremiumStaticPage() {
                                                 Book a call
                                             </CalButton>
                                             <Button asChild variant="outline" size="lg">
-                                                <Link href="/website-solutions">View all services</Link>
+                                                <Link href="/pricing">View Pricing</Link>
                                             </Button>
                                         </motion.div>
                                     </motion.div>
