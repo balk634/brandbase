@@ -41,6 +41,13 @@ export function CookieConsent() {
     useEffect(() => {
         const consent = localStorage.getItem("cookie-consent");
         if (!consent) {
+            const isMobileOrTablet = typeof window !== "undefined" && window.innerWidth < 1024;
+            if (isMobileOrTablet) {
+                localStorage.setItem("cookie-consent", "accepted");
+                notifyConsentChange();
+                return;
+            }
+
             // Defer showing to prevent synchronous cascading state updates in effect
             const initTimer = window.setTimeout(() => {
                 setShow(true);
@@ -62,7 +69,7 @@ export function CookieConsent() {
 
     return (
         <div
-            className={`fixed z-[60] bg-white border border-primary/20 p-4 sm:p-6 transition-all duration-500 ease-in-out ${
+            className={`hidden lg:block fixed z-[60] bg-white border border-primary/20 p-4 sm:p-6 transition-all duration-500 ease-in-out ${
                 isExiting ? "translate-y-[150%] opacity-0" : "translate-y-0 opacity-100"
             }`}
             style={{
