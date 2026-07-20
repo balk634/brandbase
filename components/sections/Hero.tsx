@@ -139,16 +139,16 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-              className={`pt-8 border-t border-grid/10 grid grid-cols-2 ${
+              className={`pt-8 border-t border-grid/10 grid grid-cols-3 ${
                 hero.stats.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"
-              } gap-6`}
+              } gap-2 sm:gap-6`}
             >
               {hero.stats.map((stat, i) => (
                 <div key={i} className="space-y-1">
-                  <div className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+                  <div className="font-serif text-xl sm:text-3xl font-bold tracking-tight text-ink">
                     <AnimatedCounter value={stat.value} />
                   </div>
-                  <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-muted/80 leading-tight">
+                  <div className="font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.12em] sm:tracking-[0.18em] text-ink-muted/80 leading-tight">
                     {stat.label}
                   </div>
                 </div>

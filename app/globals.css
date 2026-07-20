@@ -728,11 +728,13 @@ a.card-hover {
   animation: marquee-rtl 35s linear infinite;
 }
 
-.tech-marquee-ltr:hover,
-.tech-marquee-ltr:focus-within,
-.tech-marquee-rtl:hover,
-.tech-marquee-rtl:focus-within {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .tech-marquee-ltr:hover,
+  .tech-marquee-ltr:focus-within,
+  .tech-marquee-rtl:hover,
+  .tech-marquee-rtl:focus-within {
+    animation-play-state: paused;
+  }
 }
 
 .testimonials-track:hover,

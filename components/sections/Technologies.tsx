@@ -56,9 +56,9 @@ export function Technologies() {
     const ROW_1_TECHS = filteredTechs.slice(0, mid);
     const ROW_2_TECHS = filteredTechs.slice(mid);
 
-    // Clone each row exactly once for seamless infinite scrolling
-    const ROW_1_ITEMS = [...ROW_1_TECHS, ...ROW_1_TECHS];
-    const ROW_2_ITEMS = [...ROW_2_TECHS, ...ROW_2_TECHS];
+    // Clone each row 4x for seamless infinite scrolling on all screen sizes
+    const ROW_1_ITEMS = [...ROW_1_TECHS, ...ROW_1_TECHS, ...ROW_1_TECHS, ...ROW_1_TECHS];
+    const ROW_2_ITEMS = [...ROW_2_TECHS, ...ROW_2_TECHS, ...ROW_2_TECHS, ...ROW_2_TECHS];
 
     return (
         <Section className="bg-transparent pt-12 pb-24 md:pt-20 md:pb-40 overflow-hidden relative">
@@ -81,20 +81,23 @@ export function Technologies() {
             {/* Marquee Tracks */}
             <div
                 className="flex flex-col relative w-full overflow-hidden mask-horizontal-faded"
-                style={{ gap: "4.5rem" }}
+                style={{ gap: "3.5rem" }}
             >
+                {/* Gradient masks for smooth fade on edges (only overlay marquee tracks) */}
+                <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-[#f8f8f0] to-transparent pointer-events-none z-10" />
+                <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#f8f8f0] to-transparent pointer-events-none z-10" />
+
                 {/* Row 1 - Left to Right */}
                 <div className="relative flex w-full overflow-hidden">
                     <div
-                        className="flex items-center w-max tech-marquee-ltr"
-                        style={{ gap: "6rem" }}
+                        className="flex items-center w-max tech-marquee-ltr gap-12 md:gap-24"
                     >
                         {ROW_1_ITEMS.map((tech, idx) => {
                             const scale = tech.scale !== undefined ? tech.scale : DEFAULT_SCALE;
                             return (
                                 <div
                                     key={`r1-${idx}`}
-                                    className="flex shrink-0 items-center justify-center w-28 h-10 md:w-32 md:h-11 overflow-visible"
+                                    className="flex shrink-0 items-center justify-center w-24 h-9 md:w-32 md:h-11 overflow-visible"
                                 >
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
@@ -114,15 +117,14 @@ export function Technologies() {
                 {/* Row 2 - Right to Left */}
                 <div className="relative flex w-full overflow-hidden">
                     <div
-                        className="flex items-center w-max tech-marquee-rtl"
-                        style={{ gap: "6rem" }}
+                        className="flex items-center w-max tech-marquee-rtl gap-12 md:gap-24"
                     >
                         {ROW_2_ITEMS.map((tech, idx) => {
                             const scale = tech.scale !== undefined ? tech.scale : DEFAULT_SCALE;
                             return (
                                 <div
                                     key={`r2-${idx}`}
-                                    className="flex shrink-0 items-center justify-center w-28 h-10 md:w-32 md:h-11 overflow-visible"
+                                    className="flex shrink-0 items-center justify-center w-24 h-9 md:w-32 md:h-11 overflow-visible"
                                 >
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
@@ -139,10 +141,6 @@ export function Technologies() {
                     </div>
                 </div>
             </div>
-
-            {/* Gradient masks for smooth fade on edges */}
-            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#f8f8f0ff] to-transparent pointer-events-none z-10" />
-            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#f8f8f0ff] to-transparent pointer-events-none z-10" />
         </Section>
     );
 }

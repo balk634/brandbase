@@ -107,7 +107,7 @@ const BEFORE_ITEMS = [
 
 const AFTER_STATS = [
   { value: "80%", label: "Reduction in overall manual admin time", Icon: IconClock },
-  { value: "3×", label: "More follow-ups sent automatically", Icon: IconSend },
+  { value: "3×", label: "follow-ups sent automatically through WhatsApp", Icon: IconSend },
   { value: "0", label: "Paper registers or spreadsheets in use", Icon: IconFileText },
   { value: "100%", label: "Records searchable in under 5 seconds", Icon: IconSearch },
 ];

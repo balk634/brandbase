@@ -30,7 +30,7 @@ export function FinalCTA() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-white/70">
               <div className="flex items-center gap-2">
                 <IconClock className="h-4 w-4 text-primary" strokeWidth={1.5} />
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Response within 24h · Starts at ₹15,000</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Response within 24h</span>
               </div>
             </div>
           </div>

@@ -170,12 +170,13 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
         </motion.li>
     );
 }
+
 type PillarCardProps = {
     kicker: string;
     titleLine1: string;
     titleLine2: string;
-    ctaLabel: string;
-    ctaHref: string;
+    ctaLabel?: string;
+    ctaHref?: string;
     imageSrc: string;
     imageAlt: string;
     imagePosition: "left" | "right" | "center";
@@ -200,7 +201,6 @@ function PillarCard({
     const isImageLeft = imagePosition === "left";
     const isImageRight = imagePosition === "right";
     const isImageCenter = imagePosition === "center";
-
 
     return (
         <motion.div
@@ -233,7 +233,7 @@ function PillarCard({
                                     isImageLeft ? "md:order-last" : isImageRight ? "md:order-first" : ""
                                 }`}
                             >
-                                <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.35em] text-ink-muted">
+                                <div className="mb-4 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.35em] text-ink-muted">
                                     {kicker}
                                 </div>
 
@@ -244,13 +244,15 @@ function PillarCard({
                                     </em>
                                 </h3>
 
-                                <Button
-                                    asChild
-                                    variant="ghost"
-                                    className="text-[11px] md:text-[12px] font-mono font-medium tracking-[0.2em] uppercase text-primary hover:text-primary/80 transition-colors p-0 h-auto min-h-0 w-auto"
-                                >
-                                    <Link href={ctaHref}>{ctaLabel}</Link>
-                                </Button>
+                                {ctaLabel && ctaHref && (
+                                    <Button
+                                        asChild
+                                        variant="ghost"
+                                        className="text-[11px] md:text-[12px] font-mono font-medium tracking-[0.2em] uppercase text-primary hover:text-primary/80 transition-colors p-0 h-auto min-h-0 w-auto"
+                                    >
+                                        <Link href={ctaHref}>{ctaLabel}</Link>
+                                    </Button>
+                                )}
                             </motion.div>
                         );
                     })()}
@@ -306,7 +308,7 @@ export function CorePillars() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
                         variants={stagger}
-                        className="text-center md:text-left flex flex-col items-center md:items-start"
+                        className="text-left flex flex-col items-start"
                     >
                         <Kicker>WHAT WE BUILD</Kicker>
                         <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-2xl">
@@ -320,8 +322,6 @@ export function CorePillars() {
                         kicker="Pillar 01: The Operations Backbone"
                         titleLine1="Management"
                         titleLine2="Solutions"
-                        ctaLabel="Explore Custom Bases"
-                        ctaHref="/management-solutions/health"
                         imageSrc="/home/jpg/BMS.jpg"
                         imageAlt="Custom management solutions and dashboards"
                         imagePosition="right"
@@ -335,8 +335,6 @@ export function CorePillars() {
                         kicker="Pillar 02: Digital Real Estate"
                         titleLine1="Website"
                         titleLine2="Solutions"
-                        ctaLabel="Explore Solutions"
-                        ctaHref="/website-solutions/premium-static-websites"
                         imageSrc="/home/jpg/Website build.jpg"
                         imageAlt="Website Solutions"
                         imagePosition="left"
