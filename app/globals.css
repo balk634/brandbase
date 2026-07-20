@@ -53,9 +53,8 @@
   line-gap-override: 0%;
   size-adjust: 107%;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.ts";
 
 html {
   overflow-x: hidden;
@@ -274,7 +273,7 @@ html {
   }
 
   .rich-content blockquote {
-    @apply mt-6 border-l-2 border-primary border-opacity-25 pl-5 text-ink-muted;
+    @apply mt-6 border-l-2 border-primary/25 pl-5 text-ink-muted;
   }
 
   .rich-content hr {
