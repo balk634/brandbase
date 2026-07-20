@@ -104,34 +104,9 @@ const nextConfig = {
     ];
   },
   async headers() {
-    // Cache-Control headers for static assets are only applied in production.
-    // In development, Next.js manages its own cache headers and will warn
-    // if you override them.
-    const staticAssetHeaders = isDev ? [] : [
+    const staticAssetHeaders = [
       {
-        source: "/_next/image(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-          {
-            key: "Vary",
-            value: "Accept",
-          },
-        ],
-      },
-      {
-        source: "/:path*\\.(jpg|jpeg|png|webp|avif|svg|ico|js|css)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        source: "/_next/static(.*)",
+        source: "/:path*\\.(jpg|jpeg|png|webp|avif|svg|ico|js|css|woff2|woff)",
         headers: [
           {
             key: "Cache-Control",

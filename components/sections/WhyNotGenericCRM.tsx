@@ -111,7 +111,7 @@ export function WhyNotGenericCRM() {
                 <div className="h-5 w-5 border border-red-500/25 bg-red-500/10 grid place-items-center flex-shrink-0">
                   <span className="w-1.5 h-1.5 bg-red-500 rounded-full" />
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-red-600/70">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-red-700 font-semibold">
                   Generic CRM (Zoho, HubSpot)
                 </span>
               </div>
@@ -119,7 +119,7 @@ export function WhyNotGenericCRM() {
                 <div className="h-5 w-5 border border-emerald-500/25 bg-emerald-500/5 grid place-items-center flex-shrink-0">
                   <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-emerald-600/70">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-emerald-700 font-semibold">
                   BrandBase Custom System
                 </span>
               </div>
@@ -174,7 +174,7 @@ export function WhyNotGenericCRM() {
                 <div className="h-5 w-5 border border-red-500/25 bg-red-500/10 grid place-items-center flex-shrink-0">
                   <span className="w-1.5 h-1.5 bg-red-500 rounded-full" />
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-red-600/70">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-red-700 font-semibold">
                   Generic CRM (Zoho, HubSpot)
                 </span>
               </div>
@@ -210,7 +210,7 @@ export function WhyNotGenericCRM() {
                 <div className="h-5 w-5 border border-emerald-500/25 bg-emerald-500/5 grid place-items-center flex-shrink-0">
                   <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-emerald-600/70">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-emerald-700 font-semibold">
                   BrandBase Custom System
                 </span>
               </div>

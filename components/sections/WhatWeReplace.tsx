@@ -197,7 +197,7 @@ export function WhatWeReplace() {
                   After — With a custom system
                 </span>
               </div>
-              <div className="relative w-full aspect-[2.5/1] border-b border-grid/15 overflow-hidden">
+              <div className="relative w-full aspect-[16/9] md:aspect-[2.5/1] border-b border-grid/15 overflow-hidden">
                 <Image
                   src="/home/jpg/what we replace green.jpg"
                   alt="Operations transformed with custom system"
@@ -220,7 +220,7 @@ export function WhatWeReplace() {
                     className="flex flex-col justify-between p-6 md:p-8 bg-white hover:bg-white hover:-translate-y-1 transition-all duration-300 ease-in-out group cursor-pointer"
                   >
                     <div className="flex items-start justify-between mb-4">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted/50">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted/80">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <div className="h-7 w-7 border border-emerald-500/25 bg-emerald-500/5 grid place-items-center rounded-none relative overflow-hidden">
