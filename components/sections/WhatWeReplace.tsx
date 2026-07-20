@@ -203,8 +203,7 @@ export function WhatWeReplace() {
                   alt="Operations transformed with custom system"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 600px"
-                  quality={55}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <motion.div

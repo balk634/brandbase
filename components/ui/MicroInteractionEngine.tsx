@@ -110,8 +110,9 @@ export function MicroInteractionEngine({ enabled = true }: MicroInteractionEngin
       };
 
       const getLocalPointer = (event: PointerEvent) => {
-        const x = Math.max(0, Math.min(event.clientX - surfaceRect.left, surfaceRect.width));
-        const y = Math.max(0, Math.min(event.clientY - surfaceRect.top, surfaceRect.height));
+        const bounds = refreshRect();
+        const x = Math.max(0, Math.min(event.clientX - bounds.left, bounds.width));
+        const y = Math.max(0, Math.min(event.clientY - bounds.top, bounds.height));
         return { x, y };
       };
 
@@ -145,7 +146,6 @@ export function MicroInteractionEngine({ enabled = true }: MicroInteractionEngin
       };
 
       const handlePointerEnter = (event: PointerEvent) => {
-        refreshRect();
         const pointer = getLocalPointer(event);
         currentX = pointer.x;
         currentY = pointer.y;

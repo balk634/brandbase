@@ -25,8 +25,8 @@ export function HeroImage({ src, alt, priority = true, className }: HeroImagePro
             className={className || "object-cover"}
             priority={priority}
             fetchPriority={priority ? "high" : "auto"}
-            sizes="(max-width: 640px) 90vw, (max-width: 768px) 50vw, (max-width: 1200px) 45vw, 640px"
-            quality={65}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+            quality={70}
         />
     );
 }
