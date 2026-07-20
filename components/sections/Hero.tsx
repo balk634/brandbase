@@ -144,7 +144,7 @@ export function Hero({ imagePosition = "right" }: { imagePosition?: "left" | "ri
               } gap-2 sm:gap-6`}
             >
               {hero.stats.map((stat, i) => (
-                <div key={i} className="space-y-1">
+                <div key={i} className="space-y-1 text-center sm:text-left">
                   <div className="font-serif text-xl sm:text-3xl font-bold tracking-tight text-ink">
                     <AnimatedCounter value={stat.value} />
                   </div>

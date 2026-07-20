@@ -237,9 +237,9 @@ function PillarCard({
                                     {kicker}
                                 </div>
 
-                                <h3 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-ink/90">
+                                <h3 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-ink/90">
                                     {titleLine1}<br />
-                                    <em className={`font-serif-20 italic bg-primary text-white px-3.5 py-1.5 mt-2 md:px-5 md:py-2 md:mt-3 inline-block select-none transform ${tiltClass || ""}`}>
+                                    <em className={`font-serif-20 italic bg-primary text-white px-4 py-1.5 mt-2 md:px-5 md:py-2 md:mt-3 inline-block select-none transform ${tiltClass || ""}`}>
                                         {titleLine2}
                                     </em>
                                 </h3>
