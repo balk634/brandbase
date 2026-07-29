@@ -23,6 +23,7 @@ const nextConfig = {
     optimizePackageImports: ["@tabler/icons-react", "@calcom/embed-react"],
     scrollRestoration: true,
     optimizeCss: true,
+    optimizeServerReact: true,
   },
   turbopack: {
     root: process.cwd(),
@@ -34,6 +35,7 @@ const nextConfig = {
     qualities: [40, 55, 70, 75],
     deviceSizes: [384, 640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: false,
     localPatterns: [
       {
         pathname: "/**",
