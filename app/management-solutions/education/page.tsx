@@ -47,7 +47,7 @@ const staggerSlow = { hidden: { opacity: 0 }, visible: { opacity: 1, transition:
 const deliverables: { title: string; image: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
   {
     title: "Batch & Class Management",
-    image: "/Education/jpg/classroom desk layout.jpg",
+    image: "/education/jpg/classroom desk layout.jpg",
     Icon: IconSchool,
     bullets: [
       { text: "Organize students into class batches and assign active schedules.", Icon: IconSchool },
@@ -56,7 +56,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Video Course Hosting & Sales",
-    image: "/Education/jpg/digital video tape.jpg",
+    image: "/education/jpg/digital video tape.jpg",
     Icon: IconVideo,
     bullets: [
       { text: "Host and secure recorded classes for repetitive student purchase.", Icon: IconShieldCheck },
@@ -65,7 +65,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Live Class Scheduling",
-    image: "/Education/jpg/scheduling calendars.jpg",
+    image: "/education/jpg/scheduling calendars.jpg",
     Icon: IconCalendarEvent,
     bullets: [
       { text: "Publish class agendas and share link buttons directly in-app.", Icon: IconCheck },
@@ -74,7 +74,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Admissions & Inquiry Tracking",
-    image: "/Education/jpg/admissions funnel.jpg",
+    image: "/education/jpg/admissions funnel.jpg",
     Icon: IconUserPlus,
     bullets: [
       { text: "Capture lead contact information from website forms in one log.", Icon: IconUsers },
@@ -83,7 +83,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Fee Collection & Reminders",
-    image: "/Education/jpg/pending fee registers.jpg",
+    image: "/education/jpg/pending fee registers.jpg",
     Icon: IconReceipt,
     bullets: [
       { text: "Automated logs tracking paid, pending, and overdue fee milestones.", Icon: IconCheck },
@@ -92,7 +92,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Simple Attendance marking",
-    image: "/Education/jpg/student attendance logs.jpg",
+    image: "/education/jpg/student attendance logs.jpg",
     Icon: IconClipboardCheck,
     bullets: [
       { text: "Assistants mark daily student attendance with a single click.", Icon: IconCircleCheck },
@@ -185,7 +185,7 @@ export default function EducationBasePage() {
                     }}
                   >
                     <HeroImage
-                      src="/Education/jpg/edu hero.jpg"
+                      src="/education/jpg/edu hero.jpg"
                       alt="Education Base: Custom Coaching Center management dashboard"
                     />
                   </div>

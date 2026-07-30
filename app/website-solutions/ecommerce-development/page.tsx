@@ -38,37 +38,37 @@ const staggerSlow = { hidden: { opacity: 0 }, visible: { opacity: 1, transition:
 /* ── Data ── */
 const deliverables: { title: string; image: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
     {
-        title: "Storefront & Branding", image: "/deliver/ecommerce-store.webp", Icon: IconBuildingStore, bullets: [
+        title: "Storefront & Branding", image: "/deliverables/ecommerce-store.webp", Icon: IconBuildingStore, bullets: [
             { text: "Complete Logo & Brand Guidelines built from scratch.", Icon: IconAward },
             { text: "Custom e-commerce UI designed for maximum conversions.", Icon: IconBrandFigma },
         ]
     },
     {
-        title: "Payment & Checkout", image: "/deliver/ecommerce-payment.webp", Icon: IconReceipt2, bullets: [
+        title: "Payment & Checkout", image: "/deliverables/ecommerce-payment.webp", Icon: IconReceipt2, bullets: [
             { text: "Stripe, PayPal, or your preferred payment gateway integrated.", Icon: IconReceipt2 },
             { text: "Promotional engine for discounts, coupons, and seasonal campaigns.", Icon: IconDiscount },
         ]
     },
     {
-        title: "Analytics & Growth", image: "/deliver/ecommerce-analytics.webp", Icon: IconFlame, bullets: [
+        title: "Analytics & Growth", image: "/deliverables/ecommerce-analytics.webp", Icon: IconFlame, bullets: [
             { text: "Full SEO optimization for Google Shopping and AI search.", Icon: IconTrendingUp },
             { text: "Conversion tracking, heatmaps, and monthly performance reports.", Icon: IconMap },
         ]
     },
     {
-        title: "Inventory & Shipping", image: "/deliver/ecommerce-inventory.webp", Icon: IconBoxSeam, bullets: [
+        title: "Inventory & Shipping", image: "/deliverables/ecommerce-inventory.webp", Icon: IconBoxSeam, bullets: [
             { text: "Real-time inventory management synced across all channels.", Icon: IconBoxSeam },
             { text: "Automated shipping calculations and label generation.", Icon: IconRocket },
         ]
     },
     {
-        title: "Support & Security", image: "/deliver/ecommerce-security.webp", Icon: IconShieldCheck, bullets: [
+        title: "Support & Security", image: "/deliverables/ecommerce-security.webp", Icon: IconShieldCheck, bullets: [
             { text: "PCI-compliant security, SSL, and automated backups.", Icon: IconHeartbeat },
             { text: "Ongoing maintenance and 2 free revision rounds included.", Icon: IconPaint },
         ]
     },
     {
-        title: "Infrastructure", image: "/deliver/ecommerce-host.webp", Icon: IconNetwork, bullets: [
+        title: "Infrastructure", image: "/deliverables/ecommerce-host.webp", Icon: IconNetwork, bullets: [
             { text: "Blazing-fast hosting optimized for e-commerce workloads.", Icon: IconNetwork },
             { text: "CMS for managing products, categories, and blog content.", Icon: IconDatabase },
         ]
@@ -301,7 +301,7 @@ export default function EcommercePage() {
                             {/* Dynamic Aspect Ratio 2.27:1 Mini Viewer */}
                             <div className="relative w-full border border-white/10 overflow-hidden bg-white/5" style={{ aspectRatio: "1920 / 912" }}>
                                 <Image
-                                    src="/dashboard/table-order.jpg"
+                                    src="/dashboard/table-reservation.jpg"
                                     alt="Custom admin dashboard mockup"
                                     fill
                                     className="object-contain object-top"

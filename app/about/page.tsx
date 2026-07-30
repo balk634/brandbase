@@ -86,7 +86,7 @@ export default function AboutPage() {
                   {/* Image for Goldilocks problem (4:5) */}
                   <div className="w-full max-w-[380px] aspect-[4/5] bg-paper/40 flex items-center justify-center overflow-hidden relative">
                       <Image
-                        src="/deliver/goldilocks.webp"
+                        src="/deliverables/goldilocks.webp"
                         alt="The Goldilocks Problem"
                         fill
                         className="object-cover"

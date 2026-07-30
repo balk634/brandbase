@@ -39,37 +39,37 @@ const staggerSlow = { hidden: { opacity: 0 }, visible: { opacity: 1, transition:
 /* ── Data ── */
 const deliverables: { title: string; image: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
     {
-        title: "Brand & Design", image: "/deliver/web-brand.webp", Icon: IconCrown, bullets: [
+        title: "Brand & Design", image: "/deliverables/web-brand.webp", Icon: IconCrown, bullets: [
             { text: "Complete Logo & Brand Guidelines created from scratch.", Icon: IconAward },
             { text: "Custom-made design tailored specifically to your business goals.", Icon: IconBrandFigma },
         ]
     },
     {
-        title: "Traffic & Analytics", image: "/deliver/web-traffic.webp", Icon: IconFlame, bullets: [
+        title: "Traffic & Analytics", image: "/deliverables/web-traffic.webp", Icon: IconFlame, bullets: [
             { text: "Fully optimized for Google SEO and emerging AI search engines.", Icon: IconTrendingUp },
             { text: "Weekly and monthly analytics reports delivered to your inbox.", Icon: IconMap },
         ]
     },
     {
-        title: "Leads & Bookings", image: "/deliver/web-leads.webp", Icon: IconTimeline, bullets: [
+        title: "Leads & Bookings", image: "/deliverables/web-leads.webp", Icon: IconTimeline, bullets: [
             { text: "Integrated booking engine for seamless client appointments.", Icon: IconCalendarEvent },
             { text: "Newsletter and email marketing setup to nurture your leads.", Icon: IconMailOpened },
         ]
     },
     {
-        title: "Infrastructure & CMS", image: "/deliver/web-cms.webp", Icon: IconNetwork, bullets: [
+        title: "Infrastructure & CMS", image: "/deliverables/web-cms.webp", Icon: IconNetwork, bullets: [
             { text: "Dynamic CMS allowing you to easily update text and images.", Icon: IconDatabase },
             { text: "Free hosting setup and branded business email (domain billed separately).", Icon: IconMailForward },
         ]
     },
     {
-        title: "Support & Guarantee", image: "/deliver/web-support.webp", Icon: IconShieldCheck, bullets: [
+        title: "Support & Guarantee", image: "/deliverables/web-support.webp", Icon: IconShieldCheck, bullets: [
             { text: "Ongoing website support and technical maintenance.", Icon: IconHeartbeat },
             { text: "2 free design revisions included to ensure perfect alignment.", Icon: IconPaint },
         ]
     },
     {
-        title: "Email & Marketing", image: "/deliver/web-marketing.webp", Icon: IconMailFast, bullets: [
+        title: "Email & Marketing", image: "/deliverables/web-marketing.webp", Icon: IconMailFast, bullets: [
             { text: "Automated email forwarding and contact forms wired from day one.", Icon: IconForms },
             { text: "CRM-ready lead capture to grow your pipeline on autopilot.", Icon: IconAddressBook },
         ]
@@ -302,7 +302,7 @@ export default function CustomEnterprisePage() {
                             {/* Dynamic Aspect Ratio 2.27:1 Mini Viewer */}
                             <div className="relative w-full border border-white/10 overflow-hidden bg-white/5" style={{ aspectRatio: "1920 / 912" }}>
                                 <Image
-                                    src="/dashboard/table-order.jpg"
+                                    src="/dashboard/table-reservation.jpg"
                                     alt="Custom admin dashboard mockup"
                                     fill
                                     className="object-contain object-top"

@@ -49,7 +49,7 @@ const staggerSlow = { hidden: { opacity: 0 }, visible: { opacity: 1, transition:
 const deliverables: { title: string; image: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
   {
     title: "Patient Records & Digital History",
-    image: "/clinic/jpg/cabinet transitioning.jpg",
+    image: "/health/jpg/cabinet transitioning.jpg",
     Icon: IconHeartbeat,
     bullets: [
       { text: "Complete searchable profiles for visit history, diagnoses, & prescriptions.", Icon: IconActivity },
@@ -58,7 +58,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Live Queue Management",
-    image: "/clinic/jpg/patient token.jpg",
+    image: "/health/jpg/patient token.jpg",
     Icon: IconUsers,
     bullets: [
       { text: "Real-time dashboard tracking patients currently in the clinic.", Icon: IconClock },
@@ -67,7 +67,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Automated Follow-Up Recalls",
-    image: "/clinic/jpg/automatic message logs.jpg",
+    image: "/health/jpg/automatic message logs.jpg",
     Icon: IconMessage2,
     bullets: [
       { text: "Native WhatsApp recall reminders sent automatically to patients due for check-ups.", Icon: IconPhoneCall },
@@ -76,7 +76,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "GST-Compliant Billing",
-    image: "/clinic/jpg/receipt tape.jpg",
+    image: "/health/jpg/receipt tape.jpg",
     Icon: IconReceipt,
     bullets: [
       { text: "Generate professional invoices automatically at the checkout screen.", Icon: IconCheck },
@@ -85,7 +85,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Inventory & Stock Management",
-    image: "/clinic/jpg/storage boxes.jpg",
+    image: "/health/jpg/storage boxes.jpg",
     Icon: IconDatabase,
     bullets: [
       { text: "Auto-deduction of medicines and consumables after every prescription.", Icon: IconCheck },
@@ -94,7 +94,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Patient Self-Service Portal",
-    image: "/clinic/jpg/patient accessing portals.jpg",
+    image: "/health/jpg/patient accessing portals.jpg",
     Icon: IconUserCheck,
     bullets: [
       { text: "Secure online logins for patients to access prescriptions and test files.", Icon: IconCloud },
@@ -187,7 +187,7 @@ export default function HealthBasePage() {
                     }}
                   >
                     <HeroImage
-                      src="/clinic/jpg/hero.jpg"
+                      src="/health/jpg/hero.jpg"
                       alt="Health Base: Custom Clinic Management System Dashboard"
                     />
                   </div>

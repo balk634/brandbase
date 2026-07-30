@@ -114,37 +114,37 @@ export const masterConfig = {
       {
         name: "Balkrishna",
         role: "Technical Lead",
-        image: "/photos/balkrishna.jpg",
+        image: "/team/balkrishna.jpg",
         description: "Focuses on client acquisition, Brand strategy, and overseeing the creative vision."
       },
       {
         name: "Harshwardhan Pawar",
         role: "Head of Content",
-        image: "/photos/harsh.jpg",
+        image: "/team/harsh.jpg",
         description: "Handles social media management, brand voice, and the shaping narraative of the brand."
       },
       {
         name: "Shweta Dwivedi",
         role: "Operations & Project Manager",
-        image: "/photos/shweta.jpg",
+        image: "/team/shweta.jpg",
         description: "Keeps the team on schedule, manages client communication, and ensures seamless delivery."
       },
       {
         name: "Vinit Sen",
         role: "Lead UI/UX Designer",
-        image: "/photos/vinit.jpg",
+        image: "/team/vinit.jpg",
         description: "Handles the visual identity, website interfaces, and pitch deck design."
       },
       {
         name: "Shivam Sawarn",
         role: "Strategy Consultant",
-        image: "/photos/shivam.jpg",
+        image: "/team/shivam.jpg",
         description: "Focuses on building the server infrastructure, applications, and digital products."
       },
       {
         name: "Shivalay Rathore",
         role: "Head of Growth",
-        image: "/photos/shivalay.jpg",
+        image: "/team/shivalay.jpg",
         description: "Focuses on running paid ads, performance marketing, and conversion rate optimization (CRO)."
       },
 
@@ -181,15 +181,15 @@ export const masterConfig = {
       maxWidth: "440px",
       aspectRatio: "4/5",
       className: "relative mx-auto",
-      home: "home/jpg/Home hero.jpg",
+      home: "home/JPG/Home hero.jpg",
       websiteSolutions: "hero/website-solutions-hero.webp",
       websiteSolutionsPremiumStatic: "hero/premium-static-hero.webp",
       websiteSolutionsCustomEnterprise: "hero/custom-enterprise-hero.webp",
       websiteSolutionsEcommerce: "hero/ecommerce-hero.webp",
-      operatingSystems: "hero/operating-systems-hero.webp",
-      operatingSystemsHealth: "clinic/jpg/hero.jpg",
-      operatingSystemsEducation: "Education/jpg/edu hero.jpg",
-      operatingSystemsFoodHospitality: "res/jpg/hero res.jpg",
+      operatingSystems: "hero/website-solutions-hero.webp",
+      operatingSystemsHealth: "health/jpg/hero.jpg",
+      operatingSystemsEducation: "education/jpg/edu hero.jpg",
+      operatingSystemsFoodHospitality: "food-hospitality/jpg/hero res.jpg",
     },
     cursor: {
       color: "#16A34A",

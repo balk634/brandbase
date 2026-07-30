@@ -40,37 +40,37 @@ const staggerSlow = { hidden: { opacity: 0 }, visible: { opacity: 1, transition:
 /* ── Data ── */
 const deliverables: { title: string; image: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
     {
-        title: "Identity & Discovery", image: "/deliver/static-discovery.webp", Icon: IconTargetArrow, bullets: [
+        title: "Identity & Discovery", image: "/deliverables/static-discovery.webp", Icon: IconTargetArrow, bullets: [
             { text: "Professional Logo & Brand Guidelines included.", Icon: IconAward },
             { text: "Modern, static website design tailored to your industry.", Icon: IconBrandFigma },
         ]
     },
     {
-        title: "Performance & SEO", image: "/deliver/static-performance.webp", Icon: IconBolt, bullets: [
+        title: "Performance & SEO", image: "/deliverables/static-performance.webp", Icon: IconBolt, bullets: [
             { text: "Lightning-fast load times optimized for Google and AI search.", Icon: IconChartDots },
             { text: "Monthly analytics updates so you know exactly who is visiting.", Icon: IconChartBar },
         ]
     },
     {
-        title: "Marketing & Engagement", image: "/deliver/static-marketing.webp", Icon: IconMail, bullets: [
+        title: "Marketing & Engagement", image: "/deliverables/static-marketing.webp", Icon: IconMail, bullets: [
             { text: "Integrated newsletter and email capture forms.", Icon: IconMailOpened },
             { text: "Automated email forwarding to connect with your clients.", Icon: IconMailForward },
         ]
     },
     {
-        title: "Tech & Hosting", image: "/deliver/static-hosting.webp", Icon: IconCloud, bullets: [
+        title: "Tech & Hosting", image: "/deliverables/static-hosting.webp", Icon: IconCloud, bullets: [
             { text: "Free hosting setup and professional business email (domain billed separately).", Icon: IconServer },
             { text: "Pay flexibly with simple monthly or yearly subscription options.", Icon: IconCreditCard },
         ]
     },
     {
-        title: "Peace of Mind", image: "/deliver/static-peace.webp", Icon: IconHeartHandshake, bullets: [
+        title: "Peace of Mind", image: "/deliverables/static-peace.webp", Icon: IconHeartHandshake, bullets: [
             { text: "Complete website support, security patches, and future maintenance.", Icon: IconBug },
             { text: "2 free revisions to get the look and feel exactly right before launch.", Icon: IconPaint },
         ]
     },
     {
-        title: "Design & Branding", image: "/deliver/static-design.webp", Icon: IconPalette, bullets: [
+        title: "Design & Branding", image: "/deliverables/static-design.webp", Icon: IconPalette, bullets: [
             { text: "Fully responsive design optimized for mobile, tablet, and desktop.", Icon: IconArrowsMaximize },
             { text: "On-brand color palette, typography, and visual system tuned to your audience.", Icon: IconColorSwatch },
         ]
@@ -335,7 +335,7 @@ export default function PremiumStaticPage() {
                             {/* Dynamic Aspect Ratio 2.27:1 Mini Viewer */}
                             <div className="relative w-full border border-white/10 overflow-hidden bg-white/5" style={{ aspectRatio: "1920 / 912" }}>
                                 <Image
-                                    src="/dashboard/table-order.jpg"
+                                    src="/dashboard/table-reservation.jpg"
                                     alt="Custom admin dashboard mockup"
                                     fill
                                     className="object-contain object-top"

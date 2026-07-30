@@ -45,7 +45,7 @@ const staggerSlow = { hidden: { opacity: 0 }, visible: { opacity: 1, transition:
 const deliverables: { title: string; image: string; bullets: { text: string; Icon: ComponentType<{ className?: string }> }[]; Icon: ComponentType<{ className?: string }> }[] = [
   {
     title: "Live Order Dashboard",
-    image: "/res/jpg/active kitchen order boards.jpg",
+    image: "/food-hospitality/jpg/active kitchen order boards.jpg",
     Icon: IconReceipt,
     bullets: [
       { text: "View incoming online, phone, or walk-in orders in real time.", Icon: IconClock },
@@ -54,7 +54,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Kitchen Display System (KDS)",
-    image: "/res/jpg/tablet display systems.jpg",
+    image: "/food-hospitality/jpg/tablet display systems.jpg",
     Icon: IconDeviceDesktop,
     bullets: [
       { text: "Orders appear directly on kitchen tablets, replacing paper tickets.", Icon: IconDeviceDesktop },
@@ -63,7 +63,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Dynamic Menu & Availability",
-    image: "/res/jpg/dynamic menu clipboards.jpg",
+    image: "/food-hospitality/jpg/dynamic menu clipboards.jpg",
     Icon: IconChefHat,
     bullets: [
       { text: "Instantly update menu prices or mark items 'Sold Out' in one tap.", Icon: IconSettings },
@@ -72,7 +72,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Real-Time Inventory Sync",
-    image: "/res/jpg/stock sync database.jpg",
+    image: "/food-hospitality/jpg/stock sync database.jpg",
     Icon: IconDatabase,
     bullets: [
       { text: "Automatically deduct stock ingredients as orders complete.", Icon: IconDatabase },
@@ -81,7 +81,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Table & Reservation Logs",
-    image: "/res/jpg/table reservation.jpg",
+    image: "/food-hospitality/jpg/table reservation.jpg",
     Icon: IconCalendarEvent,
     bullets: [
       { text: "Track booking timings, seat availability, and guest check-ins.", Icon: IconUsers },
@@ -90,7 +90,7 @@ const deliverables: { title: string; image: string; bullets: { text: string; Ico
   },
   {
     title: "Offline Order Support",
-    image: "/res/jpg/offline order sheets.jpg",
+    image: "/food-hospitality/jpg/offline order sheets.jpg",
     Icon: IconTools,
     bullets: [
       { text: "Log phone and take-away walk-in orders directly into your system.", Icon: IconTools },
@@ -183,7 +183,7 @@ export default function FoodHospitalityBasePage() {
                     }}
                   >
                     <HeroImage
-                      src="/res/jpg/hero res.jpg"
+                      src="/food-hospitality/jpg/hero res.jpg"
                       alt="Food & Hospitality Base: Custom Restaurant Management Dashboard"
                     />
                   </div>

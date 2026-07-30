@@ -52,7 +52,7 @@ const PROJECTS: Project[] = [
         url: "https://lumen-clinic.vercel.app/",
         category: "Healthcare & Wellness",
         services: ["Custom Web Design", "Booking System", "Patient Portal"],
-        screenshot: "/website-screenshot/clinic.jpg",
+        screenshot: "/portfolio/clinic.jpg",
     },
     {
         name: "SunBliss Hotel",
@@ -60,7 +60,7 @@ const PROJECTS: Project[] = [
         url: "https://sunblisspatna.vercel.app/",
         category: "Travel & Hospitality",
         services: ["Custom Web Design", "Room Booking", "Custom Dashboard"],
-        screenshot: "/website-screenshot/sunbliss.jpg",
+        screenshot: "/portfolio/sunbliss.jpg",
     },
     {
         name: "Make My Day Café",
@@ -68,7 +68,7 @@ const PROJECTS: Project[] = [
         url: "https://make-my-day-cafe.vercel.app/",
         category: "Food & Hospitality",
         services: ["Premium Static", "Menu Management", "Local SEO"],
-        screenshot: "/website-screenshot/cafe coffee.jpg",
+        screenshot: "/portfolio/cafe coffee.jpg",
     },
     {
         name: "Baaroq Mumbai",
@@ -76,7 +76,7 @@ const PROJECTS: Project[] = [
         url: "https://baaroq-mumbai.vercel.app/",
         category: "Food & Hospitality",
         services: ["Custom Web Design", "Table Reservations", "Custom Dashboard"],
-        screenshot: "/website-screenshot/barooq.jpg",
+        screenshot: "/portfolio/barooq.jpg",
     },
     {
         name: "Caelum Patna",
@@ -84,7 +84,7 @@ const PROJECTS: Project[] = [
         url: "https://caelum-patna.vercel.app/",
         category: "Food & Hospitality",
         services: ["Custom Web Design", "Order Management", "Custom Dashboard"],
-        screenshot: "/website-screenshot/caelum.jpg",
+        screenshot: "/portfolio/caelum.jpg",
     },
     {
         name: "EduRise",
@@ -92,7 +92,7 @@ const PROJECTS: Project[] = [
         url: "https://edurise-neon.vercel.app/",
         category: "Education & Coaching",
         services: ["Custom Web Design", "Admissions Portal", "Local SEO"],
-        screenshot: "/website-screenshot/edurise.jpg",
+        screenshot: "/portfolio/edurise.jpg",
     },
     {
         name: "Muscle Fitness Gym",
@@ -100,7 +100,7 @@ const PROJECTS: Project[] = [
         url: "https://muscle-fitness-gym.vercel.app/",
         category: "Sports & Fitness",
         services: ["Custom Web Design", "Membership System", "Class Bookings"],
-        screenshot: "/website-screenshot/gym.jpg",
+        screenshot: "/portfolio/gym.jpg",
     },
     {
         name: "SG International Hotel",
@@ -108,7 +108,7 @@ const PROJECTS: Project[] = [
         url: "https://sg-international.vercel.app/",
         category: "Travel & Hospitality",
         services: ["Custom Web Design", "Room Booking", "Custom Dashboard"],
-        screenshot: "/website-screenshot/sg inter.jpg",
+        screenshot: "/portfolio/sg inter.jpg",
     },
     {
         name: "St. Karen's School",
@@ -116,7 +116,7 @@ const PROJECTS: Project[] = [
         url: "https://stkarens.vercel.app/",
         category: "Education & Coaching",
         services: ["Custom Web Design", "Gallery & News", "School Dashboard"],
-        screenshot: "/website-screenshot/stkarens.jpg",
+        screenshot: "/portfolio/stkarens.jpg",
     },
 ];
 
