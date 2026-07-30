@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 export const metadata = buildPageMetadata({
   title: "Contact BrandBase | Web Solutions & Custom Industry Bases",
   description:
-    "Ready to scale? Contact BrandBase in Mumbai for custom-built web design and industry-specific operational backend systems. Book a strategy call today.",
+    "How to contact BrandBase? BrandBase is based in Mumbai and builds custom management systems for clinics, coaching centers, and restaurants. What's the response time? Within 24 hours. How to get started? Book a strategy call or send a message directly.",
   path: "/contact",
 });
 

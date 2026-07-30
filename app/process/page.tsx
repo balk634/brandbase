@@ -9,7 +9,7 @@ import { CalButton } from "@/components/ui/CalBooking";
 export const metadata = buildPageMetadata({
   title: "Our Process | BrandBase",
   description:
-    "See BrandBase’s delivery process from strategy and design to launch, measurement, and ongoing growth.",
+    "What is the BrandBase delivery process? Strategy → Design → Build → Launch → Optimization. Every project follows this accountable framework with clear milestones and outcomes.",
   path: "/process",
 });
 
@@ -20,7 +20,7 @@ export default function ProcessPage() {
       <Section className="py-16 md:py-24 bg-paper border-b border-grid/10">
         <Container>
  <h1 className="text-4xl md:text-6xl font-serif tracking-tighter max-w-3xl">
-            A clear delivery process from first call to measurable <em className="font-serif-20 italic">growth.</em>
+            How does BrandBase deliver projects? A clear delivery process from first call to measurable <em className="font-serif-20 italic">growth.</em>
           </h1>
           <p className="mt-6 max-w-2xl text-sm md:text-base text-ink-muted leading-relaxed">
             Every project follows the same accountable framework: discovery,

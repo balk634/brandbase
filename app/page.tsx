@@ -13,7 +13,7 @@ import { buildPageMetadata } from "@/lib/seoMetadata";
 export const metadata = buildPageMetadata({
   title: "BrandBase | Custom Business Management Systems & Websites",
   description:
-    "BrandBase builds custom management systems for clinics, coaching centers, and restaurants — replacing paper registers, WhatsApp chaos, and rigid generic CRMs. High-performance websites also available.",
+    "What is BrandBase? BrandBase builds custom management systems for clinics, coaching centers, and restaurants that replace paper registers and WhatsApp chaos with automated operations. How much does it cost? Systems start at ₹15,000. What's included? Custom backend, WhatsApp automation, staff training, and ongoing support.",
   path: "/",
 });
 

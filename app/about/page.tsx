@@ -26,10 +26,10 @@ export default function AboutPage() {
               </div>
 
               <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
-                We build systems that run your operations, and websites that <em className="font-serif-20 italic">convert.</em>
+                What does BrandBase do? We build systems that run your operations, and websites that <em className="font-serif-20 italic">convert.</em>
               </h1>
               <p className="mt-6 text-center text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">
-                BrandBase is a cross-disciplinary team of system architects, database engineers, and interface designers. Systems first. Websites second. Always custom.
+                Who is BrandBase? A cross-disciplinary team of system architects, database engineers, and interface designers. What makes us different? Systems first. Websites second. Always custom.
               </p>
             </div>
           </div>

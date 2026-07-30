@@ -281,12 +281,11 @@ export default function PricingPage() {
           <div className="max-w-3xl">
             <Kicker>PRICING</Kicker>
             <h1 className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
-              Custom business management systems{" "}
+              How much does a custom management system cost? Custom business management systems{" "}
               <em className="font-serif-20 italic">start at ₹15,000.</em>
             </h1>
             <p className="mt-6 text-base md:text-lg text-ink-muted leading-relaxed max-w-xl">
-              Final pricing depends on your industry, the features you need, and whether you want a
-              website included. Use the selector below to get a realistic range for your business
+              What affects the final price? Your industry type, required features, and whether you need a website included. Use the selector below to get a realistic range for your business
               type.
             </p>
             <p className="mt-3 text-sm text-ink-muted/70 leading-relaxed max-w-xl">
