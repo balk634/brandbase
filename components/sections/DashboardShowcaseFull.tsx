@@ -31,21 +31,21 @@ type DashboardModule = {
 };
 
 const BOOKING_MODULES: DashboardModule[] = [
-    { id: "calendar", label: "Calendar View", Icon: IconCalendar, src: "/dashboard/booking.jpg", alt: "Appointment booking calendar view" },
-    { id: "list", label: "Booking List", Icon: IconClipboardList, src: "/dashboard/booking2.jpg", alt: "All bookings filterable list" },
-    { id: "new", label: "Direct Meet Sync", Icon: IconBrandGoogleFilled, src: "/dashboard/booking3.jpg", alt: "New appointment sync with Google Meet" },
+    { id: "calendar", label: "Calendar View", Icon: IconCalendar, src: "/dashboard/medbase.jpg", alt: "Appointment booking calendar view" },
+    { id: "list", label: "Booking List", Icon: IconClipboardList, src: "/dashboard/med base.jpg", alt: "All bookings filterable list" },
+    { id: "new", label: "Direct Meet Sync", Icon: IconBrandGoogleFilled, src: "/dashboard/medbase.jpg", alt: "New appointment sync with Google Meet" },
 ];
 
 const RESTAURANT_MODULES: DashboardModule[] = [
-    { id: "orders", label: "Live Queue", Icon: IconChefHat, src: "/dashboard/table-order.jpg", alt: "Live order receipt and management queue" },
-    { id: "reservations", label: "Reservations", Icon: IconCalendar, src: "/dashboard/table-reservation.jpg", alt: "Table reservation management calendar" },
-    { id: "menu", label: "Menu Editor", Icon: IconClipboardList, src: "/dashboard/table-menu.jpg", alt: "Menu pricing and availability panel" },
+    { id: "orders", label: "Live Queue", Icon: IconChefHat, src: "/dashboard/table-reservation.jpg", alt: "Live order receipt and management queue" },
+    { id: "reservations", label: "Reservations", Icon: IconCalendar, src: "/dashboard/table-menu.jpg", alt: "Table reservation management calendar" },
+    { id: "menu", label: "Menu Editor", Icon: IconClipboardList, src: "/dashboard/table-reservation.jpg", alt: "Menu pricing and availability panel" },
 ];
 
 const SCHOOL_MODULES: DashboardModule[] = [
-    { id: "overview", label: "Admin Overview", Icon: IconSchool, src: "/dashboard/school-dashboard.jpg", alt: "School administration panel key stats" },
-    { id: "gallery", label: "Media Gallery", Icon: IconPhoto, src: "/dashboard/school-gallery.jpg", alt: "Media gallery management console" },
-    { id: "news", label: "News & Events", Icon: IconNews, src: "/dashboard/school-news.jpg", alt: "News and calendar update console" },
+    { id: "overview", label: "Admin Overview", Icon: IconSchool, src: "/dashboard/edu dashboard 1.jpg", alt: "School administration panel key stats" },
+    { id: "gallery", label: "Media Gallery", Icon: IconPhoto, src: "/dashboard/edu dashboard 2.jpg", alt: "Media gallery management console" },
+    { id: "news", label: "News & Events", Icon: IconNews, src: "/dashboard/edu dashboard 1.jpg", alt: "News and calendar update console" },
 ];
 
 /* ────────────────────────────────────────────────────────────
