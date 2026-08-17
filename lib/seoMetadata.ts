@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { masterConfig } from "@/config/master";
 
-export const NON_INDEXABLE_ROUTES = [] as const;
+export const NON_INDEXABLE_ROUTES = ["/calc"] as const;
 const nonIndexablePathSet = new Set<string>(NON_INDEXABLE_ROUTES);
 
 type PageMetadataInput = {

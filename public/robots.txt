@@ -2,41 +2,49 @@ User-agent: *
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: GPTBot
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: anthropic-ai
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: Bingbot
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /calc
 
 User-agent: CCBot
 Disallow: /
