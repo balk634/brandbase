@@ -1,46 +1,54 @@
 User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
 
 User-agent: GPTBot
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
 
 User-agent: ChatGPT-User
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
 
 User-agent: PerplexityBot
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
 
 User-agent: ClaudeBot
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
 
 User-agent: anthropic-ai
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
 
 User-agent: Google-Extended
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
 
 User-agent: Bingbot
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Disallow: /private/
 Disallow: /admin/

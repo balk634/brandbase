@@ -20,7 +20,7 @@ const nextConfig = {
   reactCompiler: true,
   poweredByHeader: false,
   experimental: {
-    optimizePackageImports: ["@tabler/icons-react", "@calcom/embed-react"],
+    optimizePackageImports: ["@tabler/icons-react"],
     scrollRestoration: true,
     optimizeCss: true,
     optimizeServerReact: true,
@@ -130,8 +130,25 @@ const nextConfig = {
     return [
       ...staticAssetHeaders,
       {
+        source: "/.well-known/api-catalog",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/linkset+json; charset=utf-8",
+          },
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*",
+          },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
+          {
+            key: "Link",
+            value: '</.well-known/api-catalog>; rel="api-catalog", </.well-known/llms.txt>; rel="describedby"; type="text/markdown", </pricing.md>; rel="service-doc"; type="text/markdown"',
+          },
           {
             key: "Content-Security-Policy",
             value: contentSecurityPolicy,

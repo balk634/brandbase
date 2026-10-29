@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://brandbase.in",
+      "describedby": [
+        {
+          "href": "https://brandbase.in/.well-known/llms.txt",
+          "type": "text/markdown"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://brandbase.in/pricing.md",
+          "type": "text/markdown"
+        }
+      ]
+    }
+  ]
+}
