@@ -30,7 +30,6 @@ import {
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { motion } from "@/components/ui/motion-lite";
-import { CalButton } from "@/components/ui/CalBooking";
 
 export const metadata = buildPageMetadata({
   title: "Clinic Management System | Patient Records, Queue & Billing",
@@ -169,11 +168,13 @@ export default function HealthBasePage() {
                   Every patient gets a digital record, a queue token, and an automatic WhatsApp reminder when their follow-up is due — so no one falls through the cracks, and your clinic runs itself between appointments.
                 </motion.p>
                 <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
-                  <CalButton variant="primary" size="lg">
-                    See it built for your clinic
-                  </CalButton>
+                  <Button asChild variant="primary" size="lg">
+                    <Link href="https://clinic.brandbase.in" target="_blank" rel="noopener noreferrer">
+                      Access now
+                    </Link>
+                  </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link href="#deliverables">Explore Deliverables</Link>
+                    <Link href="/contact">Contact us</Link>
                   </Button>
                 </motion.div>
               </div>
@@ -363,11 +364,13 @@ export default function HealthBasePage() {
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to digitize patient records and automate <em className="font-serif-10 italic">recalls?</em></h2>
                     <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your clinic layout, practitioner count, and specific charts. We will get back to you with a clear roadmap within 24 hours.</p>
                     <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">
-                      <CalButton variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
-                        Book a call
-                      </CalButton>
+                      <Button asChild variant="primary" size="lg" className="NC-CTA-Action-Primary w-full sm:w-auto sm:min-w-[220px]">
+                        <Link href="https://clinic.brandbase.in" target="_blank" rel="noopener noreferrer">
+                          Access now
+                        </Link>
+                      </Button>
                       <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
-                        <Link href="/pricing">View Pricing</Link>
+                        <Link href="/contact">Contact us</Link>
                       </Button>
                     </motion.div>
                   </motion.div>
