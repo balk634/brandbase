@@ -1,7 +1,6 @@
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Kicker } from "@/components/ui/Kicker";
 import { CalInline } from "@/components/ui/CalInline";
 import { IconMail, IconPhone, IconMapPin, IconBrandWhatsapp } from "@tabler/icons-react";
 import { masterConfig } from "@/config/master";
@@ -21,9 +20,7 @@ export default function ContactPage() {
         <Container>
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
-              <div className="text-center">
-                <Kicker className="mx-auto"> CONTACT </Kicker>
-              </div>
+              
 
               <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                 Let&apos;s build your <em className="font-serif-20 italic">engine.</em>
@@ -80,7 +77,7 @@ export default function ContactPage() {
             {/* Left: Cal.com Embed */}
             <div className="p-6 sm:p-8 md:p-10 bg-paper/5 flex flex-col">
               <div className="mb-6">
-                <Kicker className="mx-[5px]">Book a Strategic consultation</Kicker>
+                
               </div>
               <div className="flex-1 min-h-[450px] md:min-h-[500px] lg:min-h-[580px] border border-grid/10 bg-white shadow-sm overflow-hidden ring-1 ring-grid/5">
                 <CalInline className="w-full h-full" />
@@ -90,7 +87,7 @@ export default function ContactPage() {
             {/* Right: Lead Form */}
             <div className="p-6 sm:p-8 md:p-10 flex flex-col">
               <div className="mb-6">
-                <Kicker className="mx-[5px]">Send a Brief Message</Kicker>
+                
               </div>
               <div className="flex-1 flex flex-col h-full">
                 <ContactForm variant="page" hideHeader={true} />

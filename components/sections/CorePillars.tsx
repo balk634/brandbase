@@ -1,7 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Kicker } from "@/components/ui/Kicker";
 import Link from "next/link";
 import { motion } from "@/components/ui/motion-lite";
 import React from "react";
@@ -172,7 +171,6 @@ function ServiceRow({ item, index, isDark, startIndex = 1 }: { item: ServiceItem
 }
 
 type PillarCardProps = {
-    kicker: string;
     titleLine1: string;
     titleLine2: string;
     ctaLabel?: string;
@@ -186,7 +184,6 @@ type PillarCardProps = {
 };
 
 function PillarCard({
-    kicker,
     titleLine1,
     titleLine2,
     ctaLabel,
@@ -233,9 +230,7 @@ function PillarCard({
                                     isImageLeft ? "md:order-last" : isImageRight ? "md:order-first" : ""
                                 }`}
                             >
-                                <div className="mb-4 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.35em] text-ink-muted">
-                                    {kicker}
-                                </div>
+                                
 
                                 <h3 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-ink/90">
                                     {titleLine1}<br />
@@ -310,7 +305,7 @@ export function CorePillars() {
                         variants={stagger}
                         className="text-left flex flex-col items-start"
                     >
-                        <Kicker>WHAT WE BUILD</Kicker>
+                        
                         <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-2xl">
                             Custom systems that run your business.{" "}
                             <em className="font-serif-10 italic">Websites that bring in business.</em>
@@ -319,7 +314,6 @@ export function CorePillars() {
 
                     {/* ── Pillar 1: Management Solutions ── */}
                     <PillarCard
-                        kicker="Pillar 01: The Operations Backbone"
                         titleLine1="Management"
                         titleLine2="Solutions"
                         imageSrc="/home/jpg/BMS.jpg"
@@ -332,7 +326,6 @@ export function CorePillars() {
 
                     {/* ── Pillar 2: Website Solutions ── */}
                     <PillarCard
-                        kicker="Pillar 02: Digital Real Estate"
                         titleLine1="Website"
                         titleLine2="Solutions"
                         imageSrc="/home/jpg/Website build.jpg"

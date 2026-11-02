@@ -252,12 +252,7 @@ export const masterConfig = {
         "BrandBase builds custom industry management systems integrated directly with high-performance frontend websites. Manage patient records, live queues, batch schedules, job cards, billing, and inventory — without paper registers or rigid, generic CRMs.",
       imageSrc: "hero1.jpg?v=20260307-2",
       grayscale: false,
-      stats: [
-        { label: "CLIENTS SERVED", value: "40+" },
-        { label: "MANUAL WORK CUT", value: "80%" },
-        { label: "RETENTION", value: "94%" },
-      ],
-    },
+          },
     testimonials: [
       {
         quote: "The Pay-Monthly website took all the stress off my plate. No upfront cost, no tech headaches, and my bookings tripled in six weeks.",

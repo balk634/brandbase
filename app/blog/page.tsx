@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { blogPosts } from "@/lib/blogPosts";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
@@ -97,9 +96,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <Container>
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="p-10 md:p-14 lg:p-16">
-              <div className="text-center">
-                <Kicker className="mx-auto">NEWSROOM & INSIGHTS</Kicker>
-              </div>
+              
 
               <h1 className="mt-8 text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif-20 leading-[0.95] tracking-tighter text-ink max-w-4xl mx-auto">
                 Practical guides that <em className="font-serif-10 italic">scale brands.</em>

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { motion, AnimatePresence } from "@/components/ui/motion-lite";
 import {
     IconCalendar,
@@ -156,9 +155,7 @@ export function DashboardShowcaseFull() {
                             viewport={{ once: true, margin: "-60px" }}
                             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <Kicker className="border-white/15 bg-white/8 text-white/80">
-                                CUSTOM ADMIN DASHBOARD
-                            </Kicker>
+                            
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-white leading-[1.05]">
                                 Custom dashboard management
                                 <br />

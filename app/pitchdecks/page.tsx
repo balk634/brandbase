@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import PitchDecksWrapper from '@/components/sections/PitchDecksWrapper';
 import { buildPageMetadata } from "@/lib/seoMetadata";
 
@@ -15,7 +14,7 @@ export default function PitchDecksPage() {
         <main className="min-h-screen min-h-[100svh] pt-16 md:pt-24 pb-20">
             <Container>
                 <div className="mb-16">
-                    <Kicker>PRESENTATIONS</Kicker>
+                    
  <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-serif-20 tracking-tight text-ink">
                         Investor Pitch Decks
                     </h1>

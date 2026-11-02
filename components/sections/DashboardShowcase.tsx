@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
 import { motion, AnimatePresence } from "@/components/ui/motion-lite";
 
@@ -112,9 +111,7 @@ export function DashboardShowcase() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 max-w-3xl"
         >
-          <Kicker className="border-white/15 bg-white/8 text-white/80">
-            WHAT YOUR SYSTEM LOOKS LIKE
-          </Kicker>
+          
           <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-white leading-[1.05]">
             A complete business system,{" "}
             <em className="font-serif-10 italic text-white/50">not just another pretty dashboard.</em>

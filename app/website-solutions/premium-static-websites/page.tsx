@@ -4,7 +4,6 @@ import { HeroImage } from "@/components/ui/HeroImage";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
@@ -156,9 +155,7 @@ export default function PremiumStaticPage() {
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                             {/* Left: Copy */}
                             <div>
-                                <motion.div variants={fadeInLeft}>
-                                    <Kicker>PREMIUM STATIC</Kicker>
-                                </motion.div>
+                                
                                 <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Premium Websites. <em className="font-serif-20 italic">Zero Upfront Cost.</em>
                                 </motion.h1>
@@ -201,7 +198,7 @@ export default function PremiumStaticPage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
                         <div className="mb-16 md:mb-20 text-left">
-                            <Kicker>DELIVERABLES</Kicker>
+                            
  <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                                 Everything you get. No hidden <em className="font-serif-10 italic">extras.</em>
                             </h2>
@@ -251,7 +248,7 @@ export default function PremiumStaticPage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <Kicker className="mb-6">IS THIS FOR YOU?</Kicker>
+                                        
  <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -278,7 +275,7 @@ export default function PremiumStaticPage() {
                                 </div>
                                 <div className="p-7 md:p-10 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <Kicker className="mb-6">WHY BRANDBASE</Kicker>
+                                        
  <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why small businesses love this <em className="font-serif-10 italic">model.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -306,9 +303,7 @@ export default function PremiumStaticPage() {
                 <Container>
                     {/* Header Row */}
                     <div className="mb-16 max-w-3xl">
-                        <Kicker className="border-white/15 bg-white/8 text-white/80">
-                            STRATEGIC FOUNDATION
-                        </Kicker>
+                        
                         <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-white leading-[1.05]">
                             Your website is either a revenue asset{" "}
                             <em className="font-serif-10 italic text-white/50">or a silent liability.</em>
@@ -448,7 +443,7 @@ export default function PremiumStaticPage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
                         <div className="mb-14">
-                            <Kicker>DELIVERY MODEL</Kicker>
+                            
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                                 Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
                             </h2>
@@ -516,7 +511,7 @@ export default function PremiumStaticPage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
-                                        <Kicker className="mb-6">NEXT STEP</Kicker>
+                                        
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                                             Get online without the upfront <em className="font-serif-10 italic">bill.</em>
                                         </h2>

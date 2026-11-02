@@ -4,7 +4,6 @@ import { HeroImage } from "@/components/ui/HeroImage";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
@@ -130,9 +129,7 @@ export default function CustomEnterprisePage() {
                     <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                             <div>
-                                <motion.div variants={fadeInLeft}>
-                                    <Kicker>CUSTOM WEBSITES</Kicker>
-                                </motion.div>
+                                
                                 <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                                     Custom Websites <em className="font-serif-20 italic">Built to Scale.</em>
                                 </motion.h1>
@@ -174,7 +171,7 @@ export default function CustomEnterprisePage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
                         <div className="mb-16 md:mb-20">
-                            <Kicker>DELIVERABLES</Kicker>
+                            
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">Everything included in your custom <em className="font-serif-10 italic">build.</em></h2>
                         </div>
                         <div className="border border-grid/15 bg-white">
@@ -222,7 +219,7 @@ export default function CustomEnterprisePage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <Kicker className="mb-6">IS THIS FOR YOU?</Kicker>
+                                        
                                         <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -247,7 +244,7 @@ export default function CustomEnterprisePage() {
                                 </div>
                                 <div className="p-7 md:p-10 flex flex-col">
                                     <motion.div variants={fadeInUp}>
-                                        <Kicker className="mb-6">WHY BRANDBASE</Kicker>
+                                        
                                         <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why growing businesses choose <em className="font-serif-10 italic">us.</em></h3>
                                     </motion.div>
                                     <div className="flex-1 divide-y divide-grid/10">
@@ -273,9 +270,7 @@ export default function CustomEnterprisePage() {
                 <Container>
                     {/* Header Row */}
                     <div className="mb-16 max-w-3xl">
-                        <Kicker className="border-white/15 bg-white/8 text-white/80">
-                            STRATEGIC FOUNDATION
-                        </Kicker>
+                        
                         <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-white leading-[1.05]">
                             Your website is either a revenue asset{" "}
                             <em className="font-serif-10 italic text-white/50">or a silent liability.</em>
@@ -418,7 +413,7 @@ export default function CustomEnterprisePage() {
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
                         <div className="mb-16">
-                            <Kicker>OUR PROCESS</Kicker>
+                            
                             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">From brief to live <em className="font-serif-10 italic">website.</em></h2>
                             <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">A transparent, 4-step workflow designed to eliminate surprises and deliver on time, every time.</p>
                         </div>
@@ -485,7 +480,7 @@ export default function CustomEnterprisePage() {
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                                     <motion.div variants={fadeInUp}>
-                                        <Kicker className="mb-6">NEXT STEP</Kicker>
+                                        
                                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to build something that actually <em className="font-serif-10 italic">works?</em></h2>
                                         <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your project. We&apos;ll get back to you within 24 hours with a clear scope and honest quote.</p>
                                         <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">

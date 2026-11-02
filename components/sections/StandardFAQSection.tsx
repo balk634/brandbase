@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { Section } from "@/components/ui/Section";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +10,6 @@ type FAQItem = {
 type StandardFAQSectionProps = {
   items: readonly FAQItem[];
   title?: string;
-  kicker?: string;
   className?: string;
   withBottomBorder?: boolean;
 };
@@ -19,7 +17,6 @@ type StandardFAQSectionProps = {
 export function StandardFAQSection({
   items,
   title = "Common Questions.",
-  kicker = "FAQ",
   className,
   withBottomBorder = false,
 }: StandardFAQSectionProps) {
@@ -56,7 +53,7 @@ export function StandardFAQSection({
       <Container>
         <div className="border border-grid/15 bg-white">
           <div className="p-5 sm:p-6 md:p-8 border-b border-grid/15">
-            <Kicker>{kicker}</Kicker>
+            
  <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-serif tracking-tight">
               {(() => {
                 const lines = title.split("\n");

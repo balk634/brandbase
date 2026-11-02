@@ -2,7 +2,6 @@
 
 
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { motion } from "@/components/ui/motion-lite";
 import {
   IconUsers,
@@ -78,9 +77,7 @@ export function WhyNotGenericCRM() {
             className="mb-16 grid md:grid-cols-2 gap-10 md:gap-16 items-end"
           >
             <div>
-              <motion.div variants={fadeUp}>
-                <Kicker>WHY NOT A GENERIC CRM</Kicker>
-              </motion.div>
+              
               <motion.h2
                 variants={fadeUp}
                 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink leading-[1.05]"

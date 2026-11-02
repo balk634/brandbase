@@ -3,7 +3,6 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { SquareTickIcon } from "@/components/icons/StatusIcons";
 import { cn } from "@/lib/utils";
-import { Kicker } from "@/components/ui/Kicker";
 import { IconStack2, IconRocket, IconTrendingUp, type IconProps } from "@tabler/icons-react";
 
 type UpgradeKind = "build" | "launch" | "scale";
@@ -275,9 +274,7 @@ export function ServicesUpgrades() {
     <Section className="bg-transparent">
       <Container>
         <div className="mb-12 max-w-4xl">
-          <Kicker className="mb-6">
-            BUSINESS UPGRADES
-          </Kicker>
+          
  <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight">
             Three upgrades. Three <em className="font-serif-10 italic">outcomes.</em>
           </h2>

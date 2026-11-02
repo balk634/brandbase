@@ -5,7 +5,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { LoadingButton } from "@/components/ui/LoadingButton";
 import { masterConfig } from "@/config/master";
-import { Kicker } from "@/components/ui/Kicker";
 import { useState } from "react";
 import { sendEmail } from "@/app/actions";
 
@@ -176,7 +175,7 @@ export function ContactForm({ variant = "section", hideHeader = false }: { varia
       <Container className="grid md:grid-cols-12 gap-10 items-start">
         {!hideHeader && (
           <div className="md:col-span-5">
-            <Kicker>Let&apos;s talk.</Kicker>
+            
             <h2 className="mt-6 text-3xl md:text-5xl font-serif tracking-tight mb-4">
               Get in Touch and get <em className="font-serif-10 italic">clarity.</em>
             </h2>

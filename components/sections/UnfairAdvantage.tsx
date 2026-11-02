@@ -2,7 +2,6 @@ import { motion } from "@/components/ui/motion-lite";
 import { IconScale, IconInfinity, IconShieldCheck, IconTrendingUp, type IconProps } from "@tabler/icons-react";
 import type { ComponentType } from "react";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { Section } from "@/components/ui/Section";
 import { masterConfig } from "@/config/master";
 
@@ -63,7 +62,7 @@ export function UnfairAdvantage() {
           variants={stagger}
         >
           <motion.div variants={fadeInUp} className="mb-14 max-w-3xl">
-            <Kicker>THE UNFAIR ADVANTAGE</Kicker>
+            
             <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
               Built for Business Owners,
               <br className="hidden sm:block" /> The BrandBase <em className="font-serif-10 italic">Way.</em>

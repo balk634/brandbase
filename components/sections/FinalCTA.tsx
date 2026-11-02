@@ -1,6 +1,5 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { CalButton } from "@/components/ui/CalBooking";
 import { IconClock } from "@tabler/icons-react";
 
@@ -10,7 +9,7 @@ export function FinalCTA() {
       <Container>
         <div className="border border-white/10 bg-white/5 overflow-hidden">
           <div className="p-8 md:p-12 lg:p-14 flex flex-col items-center text-center">
-            <Kicker className="border-white/20 bg-white/10 text-white/90">READY TO START?</Kicker>
+            
             
             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter text-white">
               Tell us how your business runs.<br />

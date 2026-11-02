@@ -11,7 +11,7 @@ BrandBase avoids the "bubbly" SaaS aesthetic. We prioritize **Journalistic Autho
 
 - **Strictly Rectangular**: Zero rounded corners (`borderRadius: 0px`) everywhere.
 - **Paper & Ink**: We use a "bone" off-white background and an "ink" slate-dark text to reduce strain and feel authoritative.
-- **Editorial Typography**: Mix of high-contrast serifs (Redaction) and functional primitives (Geist).
+- **Editorial Typography**: Mix of high-contrast serifs (Redaction) and functional primitives (TASA Orbiter).
 
 ---
 
@@ -30,8 +30,8 @@ BrandBase avoids the "bubbly" SaaS aesthetic. We prioritize **Journalistic Autho
 - **Headlines**: `Redaction` family.
     - **The Italic Rule**: Always italicize the *last word* of a major headline using the `serif-20` (pixelated) variant.
     - **Heading Scale**: H1: `leading-[0.9]`, `tracking-tighter`.
-- **Body & Labels**: `Geist Sans`.
-- **Measurement/Metadata**: `Geist Mono`.
+- **Body & Labels**: `TASA Orbiter`.
+- **Measurement/Metadata**: `TASA Orbiter`.
     - **Kickers**: Uppercase, `tracking-[0.35em]`, `text-[10px]`.
 
 ---

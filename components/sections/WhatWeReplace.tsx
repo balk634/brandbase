@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { motion } from "@/components/ui/motion-lite";
 import {
   IconClipboard,
@@ -136,11 +135,7 @@ export function WhatWeReplace() {
             variants={stagger}
             className="mb-16 max-w-2xl"
           >
-            <motion.div variants={fadeUp}>
-              <Kicker>
-                WHAT WE REPLACE
-              </Kicker>
-            </motion.div>
+            
             <motion.h2
               variants={fadeUp}
               className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink leading-[1.05]"

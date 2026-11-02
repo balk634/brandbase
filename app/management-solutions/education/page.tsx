@@ -4,7 +4,6 @@ import { HeroImage } from "@/components/ui/HeroImage";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
@@ -154,9 +153,7 @@ export default function EducationBasePage() {
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <motion.div variants={fadeInLeft}>
-                  <Kicker>EDUCATION BASE</Kicker>
-                </motion.div>
+                
                 <motion.h1 variants={fadeInLeft} className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
                   Stop Losing Students to <em className="font-serif-20 italic">Fee Chaos & Forgetfulness.</em>
                 </motion.h1>
@@ -201,7 +198,7 @@ export default function EducationBasePage() {
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
             <div className="mb-16 md:mb-20">
-              <Kicker>DELIVERABLES</Kicker>
+              
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">Operations software configured for your <em className="font-serif-10 italic">academy.</em></h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-grid/15 border border-grid/15">
@@ -249,7 +246,7 @@ export default function EducationBasePage() {
               <div className="grid lg:grid-cols-2">
                 <div className="p-7 md:p-10 border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
                   <motion.div variants={fadeInUp}>
-                    <Kicker className="mb-6">IS THIS FOR YOU?</Kicker>
+                    
                     <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">The right <em className="font-serif-10 italic">fit.</em></h3>
                   </motion.div>
                   <div className="flex-1 divide-y divide-grid/10">
@@ -274,7 +271,7 @@ export default function EducationBasePage() {
                 </div>
                 <div className="p-7 md:p-10 flex flex-col">
                   <motion.div variants={fadeInUp}>
-                    <Kicker className="mb-6">WHY BRANDBASE</Kicker>
+                    
                     <h3 className="h3 text-2xl md:text-3xl font-serif tracking-tight text-ink mb-8">Why educators choose <em className="font-serif-10 italic">us.</em></h3>
                   </motion.div>
                   <div className="flex-1 divide-y divide-grid/10">
@@ -300,7 +297,7 @@ export default function EducationBasePage() {
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
             <div className="mb-16">
-              <Kicker>OUR PROCESS</Kicker>
+              
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">From enrollment workflows to course <em className="font-serif-10 italic">sales.</em></h2>
               <p className="mt-4 text-ink-muted max-w-2xl leading-relaxed">A transparent, 4-step workflow designed to customize your database and train your administrative staff on time.</p>
             </div>
@@ -357,7 +354,7 @@ export default function EducationBasePage() {
               <div className="grid lg:grid-cols-2">
                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
                   <motion.div variants={fadeInUp}>
-                    <Kicker className="mb-6">NEXT STEP</Kicker>
+                    
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">Ready to digitize batch logs and automate fee <em className="font-serif-10 italic">collection?</em></h2>
                     <p className="text-ink-muted text-lg leading-relaxed mb-10 max-w-lg">Tell us about your student counts, class batches, and billing requirements. We will get back to you with a clear roadmap within 24 hours.</p>
                     <motion.div variants={fadeInUp} className="NC-CTA-Action-Group mt-10 flex flex-wrap gap-4">

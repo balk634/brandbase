@@ -66,7 +66,8 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [
-					'var(--font-geist-sans)',
+					'var(--font-tasa-orbiter)',
+					'TASA Orbiter',
 					'sans-serif'
 				],
 				serif: [
@@ -82,11 +83,13 @@ const config: Config = {
 					'serif'
 				],
 				body: [
-					'var(--font-geist-sans)',
+					'var(--font-tasa-orbiter)',
+					'TASA Orbiter',
 					'sans-serif'
 				],
 				mono: [
-					'var(--font-geist-mono)',
+					'var(--font-tasa-orbiter)',
+					'ui-monospace',
 					'monospace'
 				]
 			},

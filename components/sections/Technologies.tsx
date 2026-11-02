@@ -2,7 +2,6 @@
 
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { masterConfig } from "@/config/master";
 
 interface TechItem {
@@ -64,7 +63,7 @@ export function Technologies() {
         <Section className="bg-transparent pt-12 pb-24 md:pt-20 md:pb-40 overflow-hidden relative">
             <Container>
                 <div className="mb-14 max-w-3xl">
-                    <Kicker>INFRASTRUCTURE</Kicker>
+                    
                     <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
                         Private databases. WhatsApp API.{" "}
                         <em className="font-serif-10 italic">Payment gateways.</em>

@@ -1,6 +1,5 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { CalButton } from "@/components/ui/CalBooking";
 import { motion } from "@/components/ui/motion-lite";
 import type { ComponentType } from "react";
@@ -78,7 +77,7 @@ export function OurProcess() {
           variants={stagger}
         >
           <motion.div variants={fadeInUp} className="mb-14 max-w-3xl">
-            <Kicker>HOW WE BUILD IT</Kicker>
+            
             <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
               From a 15-minute call to a{" "}
               <em className="font-serif-10 italic">live, working system.</em>

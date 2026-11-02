@@ -1,6 +1,5 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import Image from "next/image";
 import { masterConfig } from "@/config/master";
 import { buildPageMetadata } from "@/lib/seoMetadata";
@@ -21,9 +20,7 @@ export default function AboutPage() {
         <Container>
           <div className="border border-grid/15 bg-white">
             <div className="p-4 sm:p-8 md:p-12">
-              <div className="text-center">
-                <Kicker className="mx-auto"> ABOUT BRANDBASE </Kicker>
-              </div>
+              
 
               <h1 className="mt-8 text-center text-2xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink break-words">
                 What does BrandBase do? We build systems that run your operations, and websites that <em className="font-serif-20 italic">convert.</em>
@@ -42,9 +39,7 @@ export default function AboutPage() {
             <div className="p-4 sm:p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start lg:items-center">
                 <div className="lg:col-span-7 min-w-0">
-                  <Kicker className="mb-4">
-                    ORIGIN
-                  </Kicker>
+                  
                   <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight text-ink break-words">
                     The &quot;Goldilocks&quot; <em className="font-serif-10 italic">Problem.</em>
                   </h2>
@@ -107,9 +102,7 @@ export default function AboutPage() {
             {masterConfig.about.showTeam && (
               <div className="p-4 sm:p-8 md:p-12">
                 <div className="max-w-3xl min-w-0">
-                  <Kicker className="mb-4">
-                    LEADERSHIP & EXPERTISE
-                  </Kicker>
+                  
                   <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
                     Built by <em className="font-serif-10 italic">practitioners.</em>
                   </h2>
@@ -154,9 +147,7 @@ export default function AboutPage() {
             {masterConfig.about.showPhilosophy && (
               <div className="p-4 sm:p-8 md:p-12 animate-fade-in">
                 <div className="max-w-3xl min-w-0">
-                  <Kicker className="mb-4">
-                    OUR PHILOSOPHY
-                  </Kicker>
+                  
                   <h2 className="mt-4 font-serif text-3xl md:text-4xl tracking-tight text-ink">
                     Built for <em className="font-serif-10 italic">operations.</em>
                   </h2>

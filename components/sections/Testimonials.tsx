@@ -1,6 +1,5 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { AutoScrollScroller } from "@/components/ui/AutoScrollScroller";
 import { masterConfig } from "@/config/master";
 import { IconQuote } from "@tabler/icons-react";
@@ -26,7 +25,7 @@ export function Testimonials() {
     <Section className="bg-transparent">
       <Container>
         <div className="mb-10 max-w-3xl">
-          <Kicker>SOCIAL PROOF</Kicker>
+          
           <h2 className="mt-6 text-3xl sm:text-4xl md:text-6xl font-serif tracking-tighter">
             Trusted by founders and operational leaders <em className="font-serif-10 italic">worldwide.</em>
           </h2>

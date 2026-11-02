@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
 import { LoadingButton } from "@/components/ui/LoadingButton";
 import { cn } from "@/lib/utils";
@@ -279,7 +278,7 @@ export default function PricingPage() {
       <Section className="bg-transparent pt-6 md:pt-10 lg:pt-14 pb-14 md:pb-20 relative z-10 border-b border-grid/10">
         <Container>
           <div className="max-w-3xl">
-            <Kicker>PRICING</Kicker>
+            
             <h1 className="mt-8 text-3xl sm:text-4xl md:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
               How much does a custom management system cost? Custom business management systems{" "}
               <em className="font-serif-20 italic">start at ₹15,000.</em>
@@ -301,7 +300,7 @@ export default function PricingPage() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
-              <Kicker className="mb-6">WHAT&apos;S TYPICALLY INCLUDED</Kicker>
+              
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink mb-8">
                 Every system ships with these{" "}
                 <em className="font-serif-10 italic">core capabilities.</em>
@@ -322,7 +321,7 @@ export default function PricingPage() {
             </div>
 
             <div>
-              <Kicker className="mb-6">OPTIONAL ADD-ONS</Kicker>
+              
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif tracking-tight text-ink mb-8">
                 Flexible extras,{" "}
                 <em className="font-serif-10 italic">scoped to your needs.</em>
@@ -364,7 +363,7 @@ export default function PricingPage() {
 
             {/* Left: Selector */}
             <div>
-              <Kicker className="mb-6">SELECT YOUR BUSINESS TYPE</Kicker>
+              
               <h2 className="text-2xl sm:text-3xl font-serif tracking-tight text-ink mb-3">
                 What kind of business are{" "}
                 <em className="font-serif-10 italic">you running?</em>
@@ -603,7 +602,7 @@ export default function PricingPage() {
           <div className="border border-grid/15 bg-white overflow-hidden">
             <div className="grid lg:grid-cols-2">
               <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15">
-                <Kicker className="mb-6">ONE CALL IS ALL IT TAKES</Kicker>
+                
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                   Get your exact quote{" "}
                   <em className="font-serif-10 italic">in one call.</em>

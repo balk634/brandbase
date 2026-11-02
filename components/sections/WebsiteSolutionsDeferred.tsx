@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Kicker } from "@/components/ui/Kicker";
 import { StandardFAQSection } from "@/components/sections/StandardFAQSection";
 import {
   IconArrowsSplit,
@@ -166,7 +165,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
             <div className="mb-14">
-              <Kicker>STRATEGIC FOUNDATION</Kicker>
+              
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 Your website is either a revenue asset or a silent <em className="font-serif-10 italic">liability.</em>
               </h2>
@@ -231,7 +230,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
         <Container>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>
             <div className="mb-14">
-              <Kicker>DELIVERY MODEL</Kicker>
+              
               <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-3xl">
                 Four sprint layers that keep execution fast and <em className="font-serif-10 italic">accountable.</em>
               </h2>
@@ -298,7 +297,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
               <div className="grid lg:grid-cols-2">
                 <div className={`p-8 md:p-12 lg:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-grid/15 ${imagePosition === "left" ? "lg:order-last border-r-0 lg:border-l" : ""}`}>
                   <motion.div variants={fadeInUp}>
-                    <Kicker className="mb-6">NEXT STEP</Kicker>
+                    
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tighter mb-6">
                       Want us to map your exact website <em className="font-serif-10 italic">track?</em>
                     </h2>

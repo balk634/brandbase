@@ -1,6 +1,5 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import type { ComponentType, ReactNode } from "react";
 import { IconStack2, IconRocket, IconTrendingUp, type IconProps } from "@tabler/icons-react";
 
@@ -236,7 +235,7 @@ export function ServicesManifest() {
         <Section id="approach" className="bg-transparent">
             <Container>
                 <div className="mb-12 max-w-3xl">
-                    <Kicker>THE BRANDBASE METHOD</Kicker>
+                    
  <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl tracking-tight mb-4 scroll-mt-20">
                         Three phases. One outcome: <em className="font-serif-10 italic">growth.</em>
                     </h2>
@@ -255,9 +254,7 @@ export function ServicesManifest() {
                                 {service.id}.
                             </div>
                             <div className="md:col-span-4">
-                                <Kicker className="mb-4">
-                                    {service.label}
-                                </Kicker>
+                                
                                 <div className="font-serif text-xl uppercase tracking-tight">
                                     <em className="font-serif-10 italic">{service.category}</em>
                                 </div>

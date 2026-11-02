@@ -2,7 +2,6 @@
 
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { CalButton } from "@/components/ui/CalBooking";
 import { motion } from "@/components/ui/motion-lite";
 import {
@@ -60,7 +59,7 @@ export function AISearchBanner() {
                     {/* Header */}
                     <div className="mb-14 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
                         <div>
-                            <Kicker>AI Search Optimization</Kicker>
+                            
                             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink leading-[1.1]">
                                 Google Search is now <em className="font-serif-20 italic">AI Search.</em>
                                 <br />

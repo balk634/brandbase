@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -292,7 +291,7 @@ export default function CalcPage() {
       <Section className="bg-transparent pt-6 md:pt-10 lg:pt-14 pb-4 md:pb-6 lg:pb-8 relative z-10 border-b border-grid/10">
         <Container>
           <div className="max-w-3xl">
-            <Kicker>MEDBASE</Kicker>
+            
             <h1 className="mt-6 sm:mt-8 text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-serif leading-[0.95] tracking-tighter text-ink">
               Pricing,{" "}
               <em className="font-serif-20 italic">plainly.</em>

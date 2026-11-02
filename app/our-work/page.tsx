@@ -2,7 +2,6 @@
 
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Kicker } from "@/components/ui/Kicker";
 import { Button } from "@/components/ui/Button";
 import { motion, AnimatePresence } from "@/components/ui/motion-lite";
 import { DashboardShowcaseFull } from "@/components/sections/DashboardShowcaseFull";
@@ -264,7 +263,7 @@ export default function OurWorkPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <Kicker>OUR WORK</Kicker>
+                        
 
                         <h1 className="mt-8 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif leading-[0.9] tracking-tighter text-ink max-w-3xl">
                             Work we&apos;re{" "}
@@ -280,7 +279,6 @@ export default function OurWorkPage() {
                         </p>
 
                         <div className="mt-10 flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-[0.1em] text-ink-muted">
-                            <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">35+ Projects Delivered</span>
                             <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">10+ Industries</span>
                             <span className="border border-grid/10 px-2.5 py-1 bg-paper/40">Custom Dashboard on Every Build</span>
                         </div>
@@ -312,7 +310,7 @@ export default function OurWorkPage() {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="mb-14 max-w-3xl">
-                            <Kicker>INDUSTRIES WE SERVE</Kicker>
+                            
                             <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink">
                                 Built for every business,{" "}
                                 <em className="font-serif-10 italic">tailored for yours.</em>
@@ -348,7 +346,7 @@ export default function OurWorkPage() {
                         transition={{ duration: 0.5 }}
                         className="border border-grid/15 bg-white p-8 md:p-14 flex flex-col items-center text-center"
                     >
-                        <Kicker>YOUR PROJECT COULD BE HERE</Kicker>
+                        
 
                         <h2 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-serif tracking-tight text-ink max-w-2xl">
                             Let&apos;s build something{" "}
