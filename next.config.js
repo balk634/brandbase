@@ -24,6 +24,7 @@ const nextConfig = {
     scrollRestoration: true,
     optimizeCss: true,
     optimizeServerReact: true,
+    agentUpgrade: "security",
   },
   turbopack: {
     root: process.cwd(),
