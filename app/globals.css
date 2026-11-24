@@ -68,8 +68,8 @@ html {
   :root {
     --font-ibm-plex-sans: var(--font-ibm-plex-sans);
     --font-geist-sans: var(--font-ibm-plex-sans);
-    --font-ibm-plex-mono: var(--font-ibm-plex-mono);
-    --font-geist-mono: var(--font-ibm-plex-mono);
+    --font-ibm-plex-mono: var(--font-ibm-plex-sans);
+    --font-geist-mono: var(--font-ibm-plex-sans);
     color-scheme: light;
   }
 
@@ -966,5 +966,5 @@ a.card-hover {
 
 
 code, kbd, pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-ibm-plex-sans), sans-serif;
 }

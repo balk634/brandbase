@@ -31,7 +31,7 @@ BrandBase avoids the "bubbly" SaaS aesthetic. We prioritize **Journalistic Autho
     - **The Italic Rule**: Always italicize the *last word* of a major headline using the `serif-20` (pixelated) variant.
     - **Heading Scale**: H1: `leading-[0.9]`, `tracking-tighter`.
 - **Body & Labels**: `IBM Plex Sans`.
-- **Measurement/Metadata**: `IBM Plex Mono`.
+- **Measurement/Metadata**: `IBM Plex Sans`.
     - **Kickers**: Uppercase, `tracking-[0.35em]`, `text-[10px]`.
 
 ---

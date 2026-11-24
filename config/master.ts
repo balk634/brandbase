@@ -186,6 +186,7 @@ export const masterConfig = {
       websiteSolutionsPremiumStatic: "hero/premium-static-hero.webp",
       websiteSolutionsCustomEnterprise: "hero/custom-enterprise-hero.webp",
       websiteSolutionsEcommerce: "hero/ecommerce-hero.webp",
+      brandManagement: "hero/social-management-hero.webp",
       operatingSystems: "hero/website-solutions-hero.webp",
       operatingSystemsHealth: "health/jpg/hero.jpg",
       operatingSystemsEducation: "education/jpg/edu hero.jpg",

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { masterConfig } from "@/config/master";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -19,14 +19,6 @@ const ibmPlexSans = IBM_Plex_Sans({
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   preload: true,
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -81,7 +73,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} font-sans antialiased bg-paper text-ink w-full`}
+        className={`${ibmPlexSans.variable} font-sans antialiased bg-paper text-ink w-full`}
         style={
           {
             "--pattern-opacity": String(masterConfig.ui.pattern.opacity),

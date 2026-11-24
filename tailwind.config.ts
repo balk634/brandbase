@@ -88,10 +88,9 @@ const config: Config = {
 					'sans-serif'
 				],
 				mono: [
-					'var(--font-ibm-plex-mono)',
-					'IBM Plex Mono',
-					'ui-monospace',
-					'monospace'
+					'var(--font-ibm-plex-sans)',
+					'IBM Plex Sans',
+					'sans-serif'
 				]
 			},
 			borderRadius: {
