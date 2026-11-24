@@ -69,8 +69,28 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/growth-solutions",
+        destination: "/growth-solutions/brand-management",
+        permanent: true,
+      },
+      {
+        source: "/social-media",
+        destination: "/growth-solutions/brand-management",
+        permanent: true,
+      },
+      {
+        source: "/brand-management",
+        destination: "/growth-solutions/brand-management",
+        permanent: true,
+      },
+      {
+        source: "/growth-solutions/social-media",
+        destination: "/growth-solutions/brand-management",
+        permanent: true,
+      },
+      {
         source: "/social-media-growth/:path*",
-        destination: "/",
+        destination: "/growth-solutions/brand-management",
         permanent: true,
       },
       {

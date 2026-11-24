@@ -523,7 +523,7 @@ export default function PremiumStaticPage() {
                                                 Book a call
                                             </CalButton>
                                             <Button asChild variant="outline" size="lg">
-                                                <Link href="/pricing">View Pricing</Link>
+                                                <Link href="/contact">Get in Touch</Link>
                                             </Button>
                                         </motion.div>
                                     </motion.div>

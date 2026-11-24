@@ -364,8 +364,8 @@ export default function OurWorkPage() {
                                 Start a Project
                             </CalButton>
                             <Button asChild variant="outline" size="lg" className="sm:min-w-[200px]">
-                                <Link href="/pricing">
-                                    View Pricing
+                                <Link href="/contact">
+                                    Get in Touch
                                 </Link>
                             </Button>
                         </div>

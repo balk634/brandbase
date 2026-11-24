@@ -362,7 +362,7 @@ export default function EducationBasePage() {
                         Book a call
                       </CalButton>
                       <Button asChild variant="outline" size="lg" className="NC-CTA-Action-Secondary">
-                        <Link href="/pricing">View Pricing</Link>
+                        <Link href="/contact">Get in Touch</Link>
                       </Button>
                     </motion.div>
                   </motion.div>

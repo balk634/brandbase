@@ -13,6 +13,7 @@ import {
     IconHeartbeat,
     IconSchool,
     IconChefHat,
+    IconSpeakerphone,
     type IconProps
 } from "@tabler/icons-react";
 
@@ -34,13 +35,20 @@ type ServiceItem = {
     pills: string[];
 };
 
-const websiteServices: ServiceItem[] = [
+const growthServices: ServiceItem[] = [
+    {
+        Icon: IconSpeakerphone,
+        title: "Brand Management",
+        description: "Complete stewardship of your brand presence. We turn channels into a reliable engine for trust, authority, and reach through high-retention video, visual design kits, and storytelling.",
+        href: "/growth-solutions/brand-management",
+        pills: ["Visual Identity", "Short-Form Video", "Channel Stewardship"],
+    },
     {
         Icon: IconReceipt2,
         title: "Premium Static Websites",
-        description: "Risk-free \"Pay Monthly\" sites with zero upfront cost. Perfect for clinics, salons, and local businesses that need a professional web presence fast.",
+        description: "High-speed, beautifully engineered websites built for speed, clean aesthetics, and sub-second loading that turn first visits into booked consultations.",
         href: "/website-solutions/premium-static-websites",
-        pills: ["Zero Upfront", "14-Day Launch", "Fully Managed"],
+        pills: ["Zero Bloat", "Sub-Second Speed", "Fully Managed"],
     },
     {
         Icon: IconSparkles,
@@ -307,8 +315,8 @@ export function CorePillars() {
                     >
                         
                         <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-ink max-w-2xl">
-                            Custom systems that run your business.{" "}
-                            <em className="font-serif-10 italic">Websites that bring in business.</em>
+                            Custom systems that run your operations.{" "}
+                            <em className="font-serif-10 italic">Growth that builds authority.</em>
                         </h2>
                     </motion.div>
 
@@ -324,15 +332,15 @@ export function CorePillars() {
                         tiltClass="animate-tilt-p2"
                     />
 
-                    {/* ── Pillar 2: Website Solutions ── */}
+                    {/* ── Pillar 2: Growth Solutions ── */}
                     <PillarCard
-                        titleLine1="Website"
+                        titleLine1="Growth"
                         titleLine2="Solutions"
                         imageSrc="/home/jpg/Website build.jpg"
-                        imageAlt="Website Solutions"
+                        imageAlt="Growth Solutions: Brand Management and Websites"
                         imagePosition="left"
-                        services={websiteServices}
-                        startIndex={5}
+                        services={growthServices}
+                        startIndex={4}
                         tiltClass="animate-tilt-p1"
                     />
                 </div>

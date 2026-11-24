@@ -309,7 +309,7 @@ export function WebsiteSolutionsDeferred({ imagePosition = "right" }: { imagePos
                         Get in Touch
                       </CalButton>
                       <Button asChild variant="outline" size="lg" className="w-full sm:w-auto sm:min-w-[220px]">
-                        <Link href="/pricing">View pricing models</Link>
+                        <Link href="/contact">Get in Touch</Link>
                       </Button>
                     </motion.div>
                   </motion.div>
