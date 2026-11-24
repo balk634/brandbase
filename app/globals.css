@@ -82,8 +82,10 @@ html {
 
 @layer base {
   :root {
-    --font-geist-sans: var(--font-tasa-orbiter);
-    --font-geist-mono: var(--font-tasa-orbiter);
+    --font-ibm-plex-sans: var(--font-ibm-plex-sans);
+    --font-geist-sans: var(--font-ibm-plex-sans);
+    --font-ibm-plex-mono: var(--font-ibm-plex-mono);
+    --font-geist-mono: var(--font-ibm-plex-mono);
     color-scheme: light;
   }
 

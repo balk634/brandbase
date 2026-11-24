@@ -66,8 +66,8 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [
-					'var(--font-tasa-orbiter)',
-					'TASA Orbiter',
+					'var(--font-ibm-plex-sans)',
+					'IBM Plex Sans',
 					'sans-serif'
 				],
 				serif: [
@@ -83,12 +83,13 @@ const config: Config = {
 					'serif'
 				],
 				body: [
-					'var(--font-tasa-orbiter)',
-					'TASA Orbiter',
+					'var(--font-ibm-plex-sans)',
+					'IBM Plex Sans',
 					'sans-serif'
 				],
 				mono: [
-					'var(--font-tasa-orbiter)',
+					'var(--font-ibm-plex-mono)',
+					'IBM Plex Mono',
 					'ui-monospace',
 					'monospace'
 				]
