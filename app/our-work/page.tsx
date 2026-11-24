@@ -160,7 +160,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     src={project.screenshot}
                     alt={`${project.name} website`}
                     fill
-                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-[600ms] ease-out"
+                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     quality={55}
                 />
