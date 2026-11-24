@@ -246,10 +246,10 @@ export const masterConfig = {
   // Granular content for specific landing page and service sections.
   sections: {
     hero: {
-      tag: "MANAGEMENT SYSTEMS + WEBSITES",
-      headline: "Systems that run your operations. Websites that convert.",
+      tag: "MANAGEMENT SYSTEMS + GROWTH SOLUTIONS",
+      headline: "Custom systems that run your operations. Brand and web presence that command attention.",
       subheadline:
-        "BrandBase builds custom industry management systems integrated directly with high-performance frontend websites. Manage patient records, live queues, batch schedules, job cards, billing, and inventory — without paper registers or rigid, generic CRMs.",
+        "BrandBase builds custom industry management systems to streamline operations, paired with bespoke websites and full-scale brand management that turn market attention into compounding revenue.",
       imageSrc: "hero1.jpg?v=20260307-2",
       grayscale: false,
           },
@@ -287,8 +287,8 @@ export const masterConfig = {
     ],
     faq: [
       {
-        q: "How does your pricing work?",
-        a: "We offer flexible models. Choose our \u201cPay Monthly\u201d subscription for zero upfront cost, or our \u201cCustom Enterprise\u201d model for bespoke, complex builds. You only pay for what you need.",
+        q: "How do your engagements work?",
+        a: "We work on tailored monthly retainers for brand management and growth, and milestone-based deliverables for custom websites and management systems. Everything is scoped transparently around your exact operational goals before we start.",
       },
       {
         q: "How fast can we launch?",

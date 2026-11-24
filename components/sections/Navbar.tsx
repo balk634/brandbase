@@ -115,8 +115,8 @@ export function Navbar() {
                         src={isScrolled ? "/brand/logo-light.svg" : "/brand/logo-dark.svg"}
                         alt="BrandBase"
                         width={160}
-                        height={40}
-                        style={{ height: "auto" }}
+                        height={32}
+                        className="w-auto h-8"
                         priority
                     />
                 </Link>
