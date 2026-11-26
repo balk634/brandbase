@@ -227,7 +227,7 @@ export default function CalcPage() {
       "MEDBASE QUOTE",
       `Branches: ${state.branches}`,
       `Duration: ${DURATION_LABELS[state.duration]}`,
-      "—",
+      "---",
     ];
 
     if (state.software) {
@@ -248,7 +248,7 @@ export default function CalcPage() {
         )}`
       );
     }
-    lines.push("—");
+    lines.push("---");
     lines.push(
       `TOTAL: ${currency(quote.total)} (≈${currency(
         Math.round(quote.rounded / state.duration)
@@ -297,7 +297,7 @@ export default function CalcPage() {
               <em className="font-serif-20 italic">plainly.</em>
             </h1>
             <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-ink-muted leading-relaxed max-w-xl">
-              Every tier includes the full software — unlimited, no feature caps.
+              Every tier includes the full software with unlimited access and no feature caps.
               The only thing that changes between tiers is what else comes bundled
               with it.
             </p>
@@ -465,7 +465,7 @@ export default function CalcPage() {
                       <div className="flex justify-between items-baseline py-2 sm:py-3 border-b border-dashed border-grid/15 text-xs sm:text-sm">
                         <div className="flex-1 min-w-0 mr-2">
                           <span className="text-ink block truncate">
-                            Social media — {state.social} posts/mo
+                            Social media: {state.social} posts/mo
                           </span>
                           <span className="block text-[10px] sm:text-xs text-ink-muted/70 mt-1 truncate">
                             {DURATION_LABELS[state.duration]}

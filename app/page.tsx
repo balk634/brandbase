@@ -20,31 +20,31 @@ export const metadata = buildPageMetadata({
 export default function Home() {
   return (
     <main className="relative">
-      {/* 1. Hero — Systems first, Websites second */}
+      {/* 1. Hero: Systems first, Websites second */}
       <Hero />
 
-      {/* 2. Trust strip — operational outcome facts */}
+      {/* 2. Trust strip: operational outcome facts */}
       <TrustStrip />
 
-      {/* 3. What we replace — before-state pain section (dark) */}
+      {/* 3. What we replace: before-state pain section (dark) */}
       <WhatWeReplace />
 
-      {/* 4. Core Pillars — Management Solutions (01), Website Solutions (02) */}
+      {/* 4. Core Pillars: Management Solutions (01), Website Solutions (02) */}
       <CorePillars />
 
-      {/* 5. Dashboard Showcase — tabbed preview: Clinic / Coaching / Restaurant (dark) */}
+      {/* 5. Dashboard Showcase: tabbed preview - Clinic / Coaching / Restaurant (dark) */}
       <DashboardShowcase />
 
-      {/* 6. Why Not a Generic CRM — comparison table (light) */}
+      {/* 6. Why Not a Generic CRM: comparison table (light) */}
       <WhyNotGenericCRM />
 
       {/* 8. Testimonials */}
       <Testimonials />
 
-      {/* 9. Infrastructure / Technologies — scrolling tech marquee */}
+      {/* 9. Infrastructure / Technologies: scrolling tech marquee */}
       <Technologies />
 
-      {/* 10. Final CTA — scoping call framing */}
+      {/* 10. Final CTA: scoping call framing */}
       <FinalCTA />
     </main>
   );

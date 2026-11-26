@@ -102,7 +102,7 @@ export function Navbar() {
         <header
             ref={headerRef}
             className={[
-                "fixed top-0 left-0 right-0 z-50 w-full border-b transition-all duration-300",
+                "fixed top-0 left-0 right-0 z-50 w-full border-b transition-colors duration-200",
                 isScrolled
                     ? "bg-primary border-white/10 shadow-[0_4px_24px_0_rgba(52,54,198,0.25)]"
                     : "bg-paper border-grid/10 shadow-none",
@@ -115,8 +115,9 @@ export function Navbar() {
                         src={isScrolled ? "/brand/logo-light.svg" : "/brand/logo-dark.svg"}
                         alt="BrandBase"
                         width={160}
-                        height={32}
-                        className="w-auto h-8"
+                        height={24}
+                        style={{ width: "auto", height: "24px" }}
+                        className="w-auto h-6"
                         priority
                     />
                 </Link>
@@ -145,7 +146,7 @@ export function Navbar() {
                                     >
                                         <button
                                             className={[
-                                                "mi-nav-link relative flex items-center gap-1.5 px-4 xl:px-5 py-2 text-xs font-mono uppercase whitespace-nowrap transition-colors duration-300",
+                                                "mi-nav-link relative flex items-center gap-1.5 px-4 xl:px-5 py-2 text-sm font-sans font-medium whitespace-nowrap transition-colors duration-300",
                                                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
                                                 "bg-transparent border-none cursor-pointer",
                                                 isScrolled
@@ -208,7 +209,7 @@ export function Navbar() {
                                                             ].join(" ")}
                                                             onClick={() => setOpenDesktopDropdown(null)}
                                                         >
-                                                            <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-ink-muted group-hover/sub:text-primary transition-colors duration-200 z-10">
+                                                            <span className="text-sm font-sans text-ink-muted group-hover/sub:text-primary transition-colors duration-200 z-10">
                                                                 {sub.name}
                                                             </span>
                                                             <motion.div
@@ -230,7 +231,7 @@ export function Navbar() {
                                     <Link
                                         href={item.href}
                                         className={[
-                                            "mi-nav-link relative flex items-center px-4 xl:px-5 py-2 text-xs font-mono uppercase whitespace-nowrap transition-colors duration-300",
+                                            "mi-nav-link relative flex items-center px-4 xl:px-5 py-2 text-sm font-sans font-medium whitespace-nowrap transition-colors duration-300",
                                             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
                                             isScrolled
                                                 ? (isMainActive ? "text-white" : "text-white/90 hover:text-white")
@@ -260,7 +261,7 @@ export function Navbar() {
                     <CalButton
                         variant={isScrolled ? "ghost" : "primary"}
                         size="sm"
-                        className={`hidden sm:inline-flex transition-all duration-300 ${
+                        className={`hidden sm:inline-flex transition-colors duration-200 ${
                             isScrolled ? "border border-white/40 text-white hover:!bg-white hover:!text-primary hover:!border-white" : ""
                         }`}
                     >
@@ -320,7 +321,7 @@ export function Navbar() {
                                             <>
                                                 <div className="flex items-center justify-between px-4 py-4">
                                                     <button
-                                                        className="mi-nav-item flex items-center gap-3 text-xs font-mono uppercase text-ink flex-1 min-w-0 bg-transparent border-none cursor-pointer text-left"
+                                                        className="mi-nav-item flex items-center gap-3 text-sm font-sans font-medium text-ink flex-1 min-w-0 bg-transparent border-none cursor-pointer text-left"
                                                         onClick={() => toggleMobileDropdown(item.name)}
                                                     >
                                                         <span className="truncate">{item.name}</span>
@@ -369,7 +370,7 @@ export function Navbar() {
                                         ) : (
                                             <Link
                                                 href={item.href}
-                                                className="mi-nav-item px-4 py-4 flex items-center gap-3 text-xs font-mono uppercase text-ink hover:bg-grid/5 transition-colors"
+                                                className="mi-nav-item px-4 py-4 flex items-center gap-3 text-sm font-sans font-medium text-ink hover:bg-grid/5 transition-colors"
                                                 onClick={closeMobileMenu}
                                             >
                                                 {item.name}

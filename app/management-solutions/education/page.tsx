@@ -32,7 +32,7 @@ import { CalButton } from "@/components/ui/CalBooking";
 export const metadata = buildPageMetadata({
   title: "Coaching Management System | Batches, Fees & Attendance",
   description:
-    "Stop chasing fee dues and losing admissions to WhatsApp chaos. Our Coaching Management System manages batches, video courses, attendance, and automated parent reminders — built for coaching centers.",
+    "Stop chasing fee dues and losing admissions to WhatsApp chaos. Our Coaching Management System manages batches, video courses, attendance, and automated parent reminders, built specifically for coaching centers.",
   path: "/management-solutions/education",
 });
 
@@ -111,7 +111,7 @@ const fitItems: { text: string; fit: boolean; Icon: ComponentType<{ className?: 
 const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
   { Icon: IconSettings, title: "Simple Enough for Any Staff Member", copy: "Massive LMS tools like Moodle are confusing even for educators. We build student records, batch lists, and fee logs that any receptionist can use without training videos." },
   { Icon: IconMessage2, title: "Fee Reminders That Actually Get Paid", copy: "A WhatsApp message to a parent's phone is opened within minutes. An email reminder gets ignored for days. We send dues directly where parents actually respond." },
-  { Icon: IconShieldCheck, title: "Your Video Courses, Fully Protected", copy: "Students who share your recording links cost you future sales. We host your videos behind payment gates — only students who paid can stream, and unauthorized sharing is blocked." },
+  { Icon: IconShieldCheck, title: "Your Video Courses, Fully Protected", copy: "Students who share your recording links cost you future sales. We host your videos behind payment gates so only students who paid can stream, and unauthorized sharing is blocked." },
   { Icon: IconClock, title: "Instant Admin Handoff", copy: "Your receptionist marks attendance in two clicks, logs a fee payment in three, and tracks new admissions without touching a spreadsheet. Daily admin takes minutes, not an hour." },
 ];
 
@@ -133,8 +133,8 @@ export default function EducationBasePage() {
   return (
     <main className="relative text-ink pb-20">
       <ServiceSchema
-        name="Coaching Management System — Education Base"
-        description="Stop chasing fee dues and losing admissions to WhatsApp chaos. Our Coaching Management System manages batches, video courses, attendance, and automated parent fee reminders — built for coaching centers and independent tutors."
+        name="Coaching Management System: Education Base"
+        description="Stop chasing fee dues and losing admissions to WhatsApp chaos. Our Coaching Management System manages batches, video courses, attendance, and automated parent fee reminders, built for coaching centers and independent tutors."
         path="/management-solutions/education"
         offers={[
           {
@@ -161,7 +161,7 @@ export default function EducationBasePage() {
                   Right now, fee reminders go out on a WhatsApp group that everyone mutes. Attendance is marked on a register no one reviews. Admissions inquiries come in through five different channels and fall through the cracks.
                 </motion.p>
                 <motion.p variants={fadeInLeft} className="mt-5 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg">
-                  Every batch, student, and fee due date lives in one place. Reminders go directly to the parent&apos;s WhatsApp. Video courses are gated and paid automatically — no chasing, no manual invoicing.
+                  Every batch, student, and fee due date lives in one place. Reminders go directly to the parent&apos;s WhatsApp. Video courses are gated and paid automatically, with no chasing and no manual invoicing.
                 </motion.p>
                 <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
                   <CalButton variant="primary" size="lg">

@@ -37,7 +37,7 @@ const THEM_VS_US = [
   {
     Icon: IconCoins,
     them: "Charges ₹1,500–₹8,000 per user, per month",
-    us: "Flat infrastructure hosting — no per-seat fees, ever",
+    us: "Flat infrastructure hosting with no per-seat fees, ever",
   },
   {
     Icon: IconUserCheck,
@@ -52,7 +52,7 @@ const THEM_VS_US = [
   {
     Icon: IconDatabase,
     them: "Your data stored on their servers, subject to their terms",
-    us: "Your data lives on your private, secured database — it's yours",
+    us: "Your data lives on your private, secured database: it's yours",
   },
   {
     Icon: IconAdjustments,

@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     slug: "reduce-no-show-appointments-clinic",
     title: "How to Reduce No-Show Appointments in a Clinic Without Hiring More Staff",
     description:
-      "Practical strategies for small Indian clinics to cut missed visits using smart reminders, queue discipline, and follow-up timing — no extra headcount needed.",
+      "Practical strategies for small Indian clinics to cut missed visits using smart reminders, queue discipline, and follow-up timing, with no extra headcount needed.",
     date: "2026-07-10",
     category: "Clinic Operations",
     readingTimeMinutes: 12,
@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
 <div class="callout callout--good">
   <div class="callout__kicker">Quick wins that work today</div>
   <ul>
-    <li>Send one reminder at 48 hours, another at 2 hours before the slot — not just a single SMS the night before.</li>
+    <li>Send one reminder at 48 hours, another at 2 hours before the slot, not just a single SMS the night before.</li>
     <li>Build a standby list from regular patients who live nearby and can fill a vacant slot in 30 minutes.</li>
     <li>Set a 15-minute grace period, then mark the slot as available for walk-ins or standby patients.</li>
   </ul>
@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>No-shows are a silent revenue leak for most Indian clinics. When a patient misses an appointment, you lose more than the consultation fee: you lose the time slot that could have gone to another patient, the front desk time spent scheduling it, and the momentum of a full day.</p>
 
-<p>The common response is "we need more staff to call and remind". But staffing is expensive and hard to manage in a small clinic. The real fix is a system that does the work for you — and a few operational changes that cost nothing.</p>
+<p>The common response is "we need more staff to call and remind". But staffing is expensive and hard to manage in a small clinic. The real fix is a system that does the work for you, alongside a few operational changes that cost nothing.</p>
 
 <div class="table-wrap">
   <table>
@@ -50,22 +50,22 @@ export const blogPosts: BlogPost[] = [
     <tbody>
       <tr>
         <td><strong>Single SMS the night before</strong></td>
-        <td>Automated — low effort</td>
+        <td>Automated (low effort)</td>
         <td>10–15% reduction</td>
       </tr>
       <tr>
         <td><strong>Two-step reminder (48h + 2h before)</strong></td>
-        <td>Automated — low effort</td>
+        <td>Automated (low effort)</td>
         <td>25–35% reduction</td>
       </tr>
       <tr>
         <td><strong>Two-step + WhatsApp confirmation button</strong></td>
-        <td>Automated — medium setup</td>
+        <td>Automated (medium setup)</td>
         <td>35–50% reduction</td>
       </tr>
       <tr>
         <td><strong>Manual call from front desk</strong></td>
-        <td>High — 5–10 min per call</td>
+        <td>High (5–10 min per call)</td>
         <td>40–55% reduction</td>
       </tr>
     </tbody>
@@ -79,18 +79,18 @@ export const blogPosts: BlogPost[] = [
 <h2>The standby list: your safety net</h2>
 <p>Every clinic has regular patients who say "call me if something opens up". Instead of relying on memory, keep a simple standby list with three details:</p>
 <ul>
-  <li><strong>Name and contact</strong> — WhatsApp number works best</li>
-  <li><strong>Preferred time window</strong> — morning, afternoon, or evening</li>
-  <li><strong>How much notice they need</strong> — 15 minutes, 30 minutes, or 1 hour</li>
+  <li><strong>Name and contact:</strong> WhatsApp number works best</li>
+  <li><strong>Preferred time window:</strong> morning, afternoon, or evening</li>
+  <li><strong>How much notice they need:</strong> 15 minutes, 30 minutes, or 1 hour</li>
 </ul>
 
 <div class="callout callout--tip">
   <div class="callout__kicker">How to build a standby list without being pushy</div>
-  <p>When a patient confirms their appointment, ask: "If we have a last-minute opening, would you like us to call you? We'll only reach out if it matches your preferred time." Most regulars say yes. This is not pressure — it is convenience for them and protection for you.</p>
+  <p>When a patient confirms their appointment, ask: "If we have a last-minute opening, would you like us to call you? We'll only reach out if it matches your preferred time." Most regulars say yes. This is not pressure; it is convenience for them and protection for you.</p>
 </div>
 
 <h2>The grace period rule</h2>
-<p>A common Indian clinic problem: a patient books 10 AM, arrives at 10:25 AM, and expects to be seen immediately — while the next patient is already waiting. This snowballs into a delayed schedule and frustrated patients all day.</p>
+<p>A common Indian clinic problem: a patient books 10 AM, arrives at 10:25 AM, and expects to be seen immediately, even while the next patient is already waiting. This snowballs into a delayed schedule and frustrated patients all day.</p>
 
 <div class="table-wrap">
   <table>
@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
 
 <div class="callout callout--warn">
   <div class="callout__kicker">What not to do</div>
-  <p>Don't punish patients for no-shows with fines or blacklisting — it creates negative word-of-mouth. Instead, make it easier to cancel early. A patient who cancels is better than a patient who doesn't show, and a patient who feels respected will come back.</p>
+  <p>Don't punish patients for no-shows with fines or blacklisting, as it creates negative word-of-mouth. Instead, make it easier to cancel early. A patient who cancels is better than a patient who doesn't show, and a patient who feels respected will come back.</p>
 </div>
 
 <h2>Actionable takeaways</h2>
@@ -184,14 +184,14 @@ export const blogPosts: BlogPost[] = [
     <li>Implement a 15-minute grace policy and communicate it clearly at booking.</li>
   </ol>
 </div>
-<p>No-shows will never go to zero (life happens). But cutting them from 25% to 10% is realistic with the right process — and that alone can save a small clinic over a lakh rupees per year without a single extra hire.</p>
+<p>No-shows will never go to zero (life happens). But cutting them from 25% to 10% is realistic with the right process. That alone can save a small clinic over a lakh rupees per year without a single extra hire.</p>
     `,
   },
   {
     slug: "small-clinic-management-system-features",
     title: "What a Small Clinic Actually Needs in a Clinic Management System",
     description:
-      "A no-nonsense breakdown of the features that matter most for small Indian clinics — and the ones you can safely ignore.",
+      "A no-nonsense breakdown of the features that matter most for small Indian clinics, and the ones you can safely ignore.",
     date: "2026-06-28",
     category: "Clinic Operations",
     readingTimeMinutes: 11,
@@ -289,10 +289,10 @@ export const blogPosts: BlogPost[] = [
 <div class="callout callout--warn">
   <div class="callout__kicker">Features to be suspicious of</div>
   <ul>
-    <li><strong>"AI-powered" anything</strong> — most small clinics don't need AI diagnosis. You need a system that books, bills, and reminds reliably.</li>
-    <li><strong>"Enterprise-grade" security certifications</strong> — relevant for large hospitals; for a small clinic, basic data backup and access control are enough.</li>
-    <li><strong>"Unlimited everything"</strong> — usually means there are hidden limits on storage, users, or support response times.</li>
-    <li><strong>"Customizable dashboards"</strong> — most clinic owners never look at dashboards. They need reports they can print or email, not interactive charts.</li>
+    <li><strong>"AI-powered" anything:</strong> most small clinics don't need AI diagnosis. You need a system that books, bills, and reminds reliably.</li>
+    <li><strong>"Enterprise-grade" security certifications:</strong> relevant for large hospitals; for a small clinic, basic data backup and access control are enough.</li>
+    <li><strong>"Unlimited everything":</strong> usually means there are hidden limits on storage, users, or support response times.</li>
+    <li><strong>"Customizable dashboards":</strong> most clinic owners never look at dashboards. They need reports they can print or email, not interactive charts.</li>
   </ul>
 </div>
 
@@ -302,16 +302,16 @@ export const blogPosts: BlogPost[] = [
 <h3>1) Ease of use for your staff</h3>
 <p>The best system in the world is useless if your receptionist can't navigate it during a busy morning. Look for:</p>
 <ul>
-  <li>A clear daily schedule view — not buried in menus</li>
-  <li>Quick patient search — typing 2–3 letters should pull up the record</li>
-  <li>One-click billing — no more than 2 screen transitions from seeing the patient to printing the bill</li>
+  <li>A clear daily schedule view, not buried in menus</li>
+  <li>Quick patient search: typing 2–3 letters should pull up the record</li>
+  <li>One-click billing: no more than 2 screen transitions from seeing the patient to printing the bill</li>
 </ul>
 
 <h3>2) Data portability</h3>
 <p>Can you export your patient data? Can you print a summary of all visits for a given patient? If the system locks your data in a format you can't read, you are creating a future problem.</p>
 
 <h3>3) Support quality</h3>
-<p>When scheduling breaks on a Monday morning, how fast can you get help? Indian clinics need support that speaks plain Hindi or English, understands clinic workflows, and responds within hours — not days.</p>
+<p>When scheduling breaks on a Monday morning, how fast can you get help? Indian clinics need support that speaks plain Hindi or English, understands clinic workflows, and responds within hours, not days.</p>
 
 <h2>What a typical small clinic pays for a good system</h2>
 
@@ -347,7 +347,7 @@ export const blogPosts: BlogPost[] = [
 <p>If a vendor quotes substantially higher for a single-clinic setup, ask what justifies the premium. In most cases, a well-designed system in the ₹2,000–₹5,000 range covers everything a small clinic needs.</p>
 
 <h2>The feature you will actually use every day</h2>
-<p>Across hundreds of small clinics, one feature consistently gets the most daily use: a simple, fast scheduling screen with patient history visible on the same page. Not AI. Not analytics. Not patient portals. A screen where the receptionist can see who is coming in, who is waiting, and what the previous visit notes say — without clicking through four menus.</p>
+<p>Across hundreds of small clinics, one feature consistently gets the most daily use: a simple, fast scheduling screen with patient history visible on the same page. Not AI. Not analytics. Not patient portals. A screen where the receptionist can see who is coming in, who is waiting, and what the previous visit notes say, without clicking through four menus.</p>
 
 <h2>Actionable takeaways</h2>
 <div class="callout callout--good">
@@ -376,10 +376,10 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--good">
   <div class="callout__kicker">The core problem in one line</div>
-  <p>When before/after photos live in a phone gallery and session notes are in a register, you cannot quickly show a patient their progress — and that slows down trust and repeat bookings.</p>
+  <p>When before/after photos live in a phone gallery and session notes are in a register, you cannot quickly show a patient their progress, and that slows down trust and repeat bookings.</p>
 </div>
 
-<p>Skin and hair clinics run on results. A patient walks in with a concern, you treat it over multiple sessions, and the visible change is what keeps them coming back — and referring others.</p>
+<p>Skin and hair clinics run on results. A patient walks in with a concern, you treat it over multiple sessions, and the visible change is what keeps them coming back and referring others.</p>
 
 <p>But most small clinics manage this critical workflow with a messy mix: phone photos with inconsistent lighting, WhatsApp chat histories for session notes, and paper cards for treatment plans. That breaks down as soon as a patient asks "how does this compare to last month?" or "can you show me my before photo?"</p>
 
@@ -423,7 +423,7 @@ export const blogPosts: BlogPost[] = [
 <div class="callout callout--tip">
   <div class="callout__kicker">Photo best practices for skin clinics</div>
   <ul>
-    <li>Use consistent lighting for every session — a fixed station with the same light source.</li>
+    <li>Use consistent lighting for every session: a fixed station with the same light source.</li>
     <li>Take photos from the same distance and angle each time.</li>
     <li>Store photos directly in the patient's record, not in your camera roll.</li>
     <li>Label each photo with the session number and date automatically.</li>
@@ -433,9 +433,9 @@ export const blogPosts: BlogPost[] = [
 <h2>Session notes that are actually useful</h2>
 <p>A session note does not need to be long. It needs to answer three questions for the next practitioner (or for you, next month):</p>
 <ul>
-  <li><strong>What was done?</strong> — treatment type, device settings, products used, areas treated</li>
-  <li><strong>How did the patient respond?</strong> — immediate reaction, pain level, any adverse effects</li>
-  <li><strong>What is the plan for next time?</strong> — adjustments needed, products to continue, interval to next session</li>
+  <li><strong>What was done?</strong> Treatment type, device settings, products used, areas treated</li>
+  <li><strong>How did the patient respond?</strong> Immediate reaction, pain level, any adverse effects</li>
+  <li><strong>What is the plan for next time?</strong> Adjustments needed, products to continue, interval to next session</li>
 </ul>
 
 <div class="table-wrap">
@@ -452,26 +452,26 @@ export const blogPosts: BlogPost[] = [
       <tr>
         <td><strong>Paper register</strong></td>
         <td>2–3 minutes</td>
-        <td>No — you must flip through pages manually</td>
-        <td>High — water damage, misplacement, fading ink</td>
+        <td>No: you must flip through pages manually</td>
+        <td>High: water damage, misplacement, fading ink</td>
       </tr>
       <tr>
         <td><strong>Excel spreadsheet</strong></td>
         <td>3–5 minutes</td>
-        <td>Partially — if you remember to fill columns correctly</td>
-        <td>Medium — accidental deletion, formatting errors</td>
+        <td>Partially: if you remember to fill columns correctly</td>
+        <td>Medium: accidental deletion, formatting errors</td>
       </tr>
       <tr>
         <td><strong>WhatsApp chat logs</strong></td>
         <td>1–2 minutes</td>
-        <td>No — unstructured text, easy to scroll past</td>
-        <td>High — phone lost, chat deleted, backup failure</td>
+        <td>No: unstructured text, easy to scroll past</td>
+        <td>High: phone lost, chat deleted, backup failure</td>
       </tr>
       <tr>
         <td><strong>Clinic management system</strong></td>
         <td>30–60 seconds</td>
-        <td>Yes — side-by-side view with one click</td>
-        <td>Low — cloud backup, encrypted, structured</td>
+        <td>Yes: side-by-side view with one click</td>
+        <td>Low: cloud backup, encrypted, structured</td>
       </tr>
     </tbody>
   </table>
@@ -497,9 +497,9 @@ export const blogPosts: BlogPost[] = [
 <h2>The result: better retention, better revenue</h2>
 <p>When a skin clinic moves from Excel and phone photos to a proper system, three things typically happen:</p>
 <ul>
-  <li><strong>Package completion rate rises</strong> — because the system reminds patients when sessions are due</li>
-  <li><strong>Average order value per patient rises</strong> — because you can show results and recommend the next package with evidence</li>
-  <li><strong>Referrals increase</strong> — because patients share their before/after photos (with consent) with friends</li>
+  <li><strong>Package completion rate rises:</strong> because the system reminds patients when sessions are due</li>
+  <li><strong>Average order value per patient rises:</strong> because you can show results and recommend the next package with evidence</li>
+  <li><strong>Referrals increase:</strong> because patients share their before/after photos (with consent) with friends</li>
 </ul>
 
 <h2>Actionable takeaways</h2>
@@ -529,7 +529,7 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--tip">
   <div class="callout__kicker">Before you evaluate any system</div>
-  <p>Write down your top three daily frustrations. If a system claims to solve all of them in the first demo, it is probably over-promising. Good systems solve 80% of the daily pain — and that is enough to justify the switch.</p>
+  <p>Write down your top three daily frustrations. If a system claims to solve all of them in the first demo, it is probably over-promising. Good systems solve 80% of the daily pain, which is enough to justify the switch.</p>
 </div>
 
 <p>Skin and hair clinics in India operate differently from general medical clinics. You sell packages, not just consultations. You track sessions, not just visits. Your revenue depends on repeat treatments and product sales as much as on the initial consultation. And the visual record of progress is central to patient trust.</p>
@@ -573,7 +573,7 @@ export const blogPosts: BlogPost[] = [
 </div>
 
 <h2>Feature 2: Session-linked treatment notes</h2>
-<p>Each session needs structured notes that are connected to the patient's overall treatment plan — not a general consultation note that repeats the same information every time.</p>
+<p>Each session needs structured notes that are connected to the patient's overall treatment plan, rather than a general consultation note that repeats the same information every time.</p>
 
 <p>A good session note template for aesthetic clinics includes:</p>
 <ul>
@@ -606,7 +606,7 @@ export const blogPosts: BlogPost[] = [
       <tr>
         <td><strong>Side-by-side view (session 1 vs session 4)</strong></td>
         <td></td>
-        <td>Yes — this is the core feature for patient reviews</td>
+        <td>Yes: this is the core feature for patient reviews</td>
       </tr>
       <tr>
         <td><strong>Zoom and annotate</strong></td>
@@ -621,7 +621,7 @@ export const blogPosts: BlogPost[] = [
       <tr>
         <td><strong>Consent management for photo use</strong></td>
         <td></td>
-        <td>Yes — you need documented consent for marketing use</td>
+        <td>Yes: you need documented consent for marketing use</td>
       </tr>
     </tbody>
   </table>
@@ -651,7 +651,7 @@ export const blogPosts: BlogPost[] = [
 <h2>What you really need: a complete workflow view</h2>
 <p>The best feature is not any single module. It is how these modules connect:</p>
 <ul>
-  <li>When a patient books for session 4 of their laser package, the system should show you: past treatment notes, progress photos, remaining sessions, and products previously recommended — all on one screen.</li>
+  <li>When a patient books for session 4 of their laser package, the system should show you: past treatment notes, progress photos, remaining sessions, and products previously recommended, all on one screen.</li>
   <li>When the session is done, billing should auto-populate with the package deduction, and a follow-up should be scheduled automatically.</li>
   <li>When inventory runs low on the numbing cream used in that treatment, you should get an alert.</li>
 </ul>
@@ -678,7 +678,7 @@ export const blogPosts: BlogPost[] = [
     slug: "coaching-centres-track-batches-fees-followups",
     title: "How Coaching Centres Can Track Batches, Fees, and Follow-Ups in One Place",
     description:
-      "Why scattered spreadsheets and WhatsApp groups cost coaching businesses time and money — and how to centralize everything without a big IT budget.",
+      "Why scattered spreadsheets and WhatsApp groups cost coaching businesses time and money, and how to centralize everything without a big IT budget.",
     date: "2026-05-20",
     category: "Education",
     readingTimeMinutes: 11,
@@ -689,14 +689,14 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--warn">
   <div class="callout__kicker">The spreadsheets trap</div>
-  <p>When batch schedules live in one file, fee records in another, and follow-up notes in a third — plus WhatsApp messages for daily coordination — you are not managing your coaching centre. You are managing eight different places to look for information that should be in one.</p>
+  <p>When batch schedules live in one file, fee records in another, and follow-up notes in a third (plus WhatsApp messages for daily coordination), you are not managing your coaching centre. You are managing eight different places to look for information that should be in one.</p>
 </div>
 
-<p>Running a coaching centre in India means juggling multiple batches, multiple subjects, multiple teachers, and multiple fee structures — all at the same time. Most small and mid-sized centres manage this with a combination of Excel files, paper registers, and WhatsApp groups.</p>
+<p>Running a coaching centre in India means juggling multiple batches, multiple subjects, multiple teachers, and multiple fee structures, all at the same time. Most small and mid-sized centres manage this with a combination of Excel files, paper registers, and WhatsApp groups.</p>
 
 <p>That works when you have 30 students. It breaks when you have 100 students across 8 batches with 4 teachers and monthly fee collections.</p>
 
-<h2>The three biggest pain points — and what they cost you</h2>
+<h2>The three biggest pain points, and what they cost you</h2>
 
 <div class="table-wrap">
   <table>
@@ -733,7 +733,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li><strong>Batch creation:</strong> Set up batches by subject, class, timings, and teacher assignment in under 2 minutes.</li>
   <li><strong>Attendance tracking:</strong> Teachers mark attendance on their phone during class. It syncs instantly. Parents can see it (if you choose to share).</li>
-  <li><strong>Automated fee reminders:</strong> The system sends fee due reminders 7 days, 3 days, and 1 day before the due date — via WhatsApp or SMS. Late fees are calculated automatically.</li>
+  <li><strong>Automated fee reminders:</strong> The system sends fee due reminders 7 days, 3 days, and 1 day before the due date via WhatsApp or SMS. Late fees are calculated automatically.</li>
   <li><strong>Student follow-up triggers:</strong> If a student misses 3 consecutive classes, the system flags them for follow-up. If a student's performance drops, same thing.</li>
 </ul>
 
@@ -760,26 +760,26 @@ export const blogPosts: BlogPost[] = [
         <td><strong>Paper register only</strong></td>
         <td>70–80%</td>
         <td>20–30 hours</td>
-        <td>Frequent — "I paid but you didn't note it"</td>
+        <td>Frequent: "I paid but you didn't note it"</td>
       </tr>
       <tr>
         <td><strong>Excel spreadsheet</strong></td>
         <td>80–90%</td>
         <td>10–15 hours</td>
-        <td>Occasional — data entry errors</td>
+        <td>Occasional: data entry errors</td>
       </tr>
       <tr>
         <td><strong>Centralised system with auto-reminders</strong></td>
         <td>92–98%</td>
         <td>2–4 hours</td>
-        <td>Rare — digital record is the source of truth</td>
+        <td>Rare: digital record is the source of truth</td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <h2>Follow-ups that actually happen</h2>
-<p>In most coaching centres, follow-ups are reactive: a parent calls to complain, or a student misses an exam, and then someone reaches out. Proactive follow-ups — checking in on a student who is slipping, reminding a parent that re-enrolment is open, or asking about a tuition plan upgrade — are rare because there is no system to trigger them.</p>
+<p>In most coaching centres, follow-ups are reactive: a parent calls to complain, or a student misses an exam, and then someone reaches out. Proactive follow-ups (such as checking in on a student who is slipping, reminding a parent that re-enrolment is open, or asking about a tuition plan upgrade) are rare because there is no system to trigger them.</p>
 
 <p>A centralised system makes follow-ups automatic:</p>
 <ul>
@@ -802,7 +802,7 @@ export const blogPosts: BlogPost[] = [
     <li>Define attendance and performance rules that trigger staff action proactively.</li>
   </ol>
 </div>
-<p>The goal is not to replace your teachers with software. The goal is to free up admin time so your team can focus on teaching and student relationships — which is what actually grows a coaching centre.</p>
+<p>The goal is not to replace your teachers with software. The goal is to free up admin time so your team can focus on teaching and student relationships, which is what actually grows a coaching centre.</p>
     `,
   },
   {
@@ -820,7 +820,7 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--tip">
   <div class="callout__kicker">The distinction that changes how you spend</div>
-  <p>A website is a marketing tool. A management system is an operations tool. Confusing the two leads to spending ₹50,000 on a website that doesn't help with attendance, fees, or follow-ups — and ₹0 on the backend that actually runs your institution.</p>
+  <p>A website is a marketing tool. A management system is an operations tool. Confusing the two leads to spending ₹50,000 on a website that doesn't help with attendance, fees, or follow-ups, and ₹0 on the backend that actually runs your institution.</p>
 </div>
 
 <p>Most small schools and coaching classes in India have a website. Some spent ₹20,000 on a basic brochure site. Others invested ₹1,00,000 in a custom design. And in almost every case, the website handles one job: telling prospective parents what the institution is about and giving them a way to contact you.</p>
@@ -940,7 +940,7 @@ export const blogPosts: BlogPost[] = [
 
 <div class="callout callout--warn">
   <div class="callout__kicker">What to avoid</div>
-  <p>Do not buy a management system that forces you to rebuild your website from scratch. Look for one that integrates with your existing site or lets you embed a parent portal without re-platforming. The website and the system are separate tools that should talk to each other — not the same tool that does both jobs poorly.</p>
+  <p>Do not buy a management system that forces you to rebuild your website from scratch. Look for one that integrates with your existing site or lets you embed a parent portal without re-platforming. The website and the system are separate tools that should talk to each other, not the same tool that does both jobs poorly.</p>
 </div>
 
 <h2>How to think about the budget</h2>
@@ -956,12 +956,12 @@ export const blogPosts: BlogPost[] = [
     </thead>
     <tbody>
       <tr>
-        <td><strong>40% — Website</strong></td>
+        <td><strong>40%: Website</strong></td>
         <td>Clean, mobile-friendly site with course pages, contact flow, and parent portal integration point</td>
       </tr>
       <tr>
-        <td><strong>60% — Management system</strong></td>
-        <td>Attendance, fees, batches, follow-ups, reports — the system that runs your daily operations</td>
+        <td><strong>60%: Management system</strong></td>
+        <td>Attendance, fees, batches, follow-ups, reports: the system that runs your daily operations</td>
       </tr>
     </tbody>
   </table>
@@ -975,10 +975,10 @@ export const blogPosts: BlogPost[] = [
   <ol>
     <li>List the top 5 operational tasks that take up most of your admin time each week.</li>
     <li>Ask: "Will a new website help with any of these?" If the answer is no, your priority should be a management system, not a website redesign.</li>
-    <li>Look for a system that can integrate a parent portal into your existing website — so you get the best of both without rebuilding.</li>
+    <li>Look for a system that can integrate a parent portal into your existing website, so you get the best of both without rebuilding.</li>
   </ol>
 </div>
-<p>A website brings people in. A management system keeps them happy, enrolled, and paying on time. Most small institutions focus on the first and neglect the second — and that is exactly where the opportunity is.</p>
+<p>A website brings people in. A management system keeps them happy, enrolled, and paying on time. Most small institutions focus on the first and neglect the second, which is exactly where the opportunity is.</p>
     `,
   },
 
@@ -986,7 +986,7 @@ export const blogPosts: BlogPost[] = [
     slug: "website-into-real-business-system",
     title: "How to Turn a Website Into a Real Business System for Local Customers",
     description:
-      "The difference between a static brochure site and a website that connects to bookings, records, inventory, and follow-ups — and why that matters for local businesses.",
+      "The difference between a static brochure site and a website that connects to bookings, records, inventory, and follow-ups, and why that matters for local businesses.",
     date: "2026-03-25",
     category: "Business Systems",
     readingTimeMinutes: 11,
@@ -1000,9 +1000,9 @@ export const blogPosts: BlogPost[] = [
   <p>A website that only "looks good" is a digital brochure. A website connected to your backend system is a 24-hour receptionist, salesperson, and operations manager.</p>
 </div>
 
-<p>Most local businesses in India — clinics, salons, coaching centres, garages, and service businesses — treat their website as a standalone project. They pay for design, launch it, and then wonder why it does not "do" anything except sit there.</p>
+<p>Most local businesses in India (clinics, salons, coaching centres, garages, and service businesses) treat their website as a standalone project. They pay for design, launch it, and then wonder why it does not "do" anything except sit there.</p>
 
-<p>The problem is not the design. The problem is that the website is disconnected from how the business actually runs. When a customer fills a form on the website, it should not just land in an email inbox. It should create a lead in your system, trigger a follow-up task, and become part of the customer's history — all without manual work.</p>
+<p>The problem is not the design. The problem is that the website is disconnected from how the business actually runs. When a customer fills a form on the website, it should not just land in an email inbox. It should create a lead in your system, trigger a follow-up task, and become part of the customer's history, all without manual work.</p>
 
 <h2>The three layers every local business website needs</h2>
 
@@ -1032,7 +1032,7 @@ export const blogPosts: BlogPost[] = [
       <tr>
         <td><strong>Operations layer</strong></td>
         <td>Connects enquiries to your actual business workflows</td>
-        <td>Nothing — manual entry into Excel or register</td>
+        <td>Nothing: manual entry into Excel or register</td>
         <td>Lead → patient/customer record → appointment → billing → follow-up in one system</td>
       </tr>
     </tbody>
@@ -1088,27 +1088,27 @@ export const blogPosts: BlogPost[] = [
     <tbody>
       <tr>
         <td><strong>Enquiry forms</strong></td>
-        <td>Email notification — manually entered into records</td>
+        <td>Email notification: manually entered into records</td>
         <td>Directly creates a lead in the management system</td>
       </tr>
       <tr>
         <td><strong>Booking</strong></td>
-        <td>"Call to book" — phone tag with customers</td>
+        <td>"Call to book": phone tag with customers</td>
         <td>Self-service booking with live availability and auto-confirmation</td>
       </tr>
       <tr>
         <td><strong>Customer records</strong></td>
-        <td>Not connected — separate paper or Excel files</td>
-        <td>Centralised — every interaction logged against the customer</td>
+        <td>Not connected: separate paper or Excel files</td>
+        <td>Centralised: every interaction logged against the customer</td>
       </tr>
       <tr>
         <td><strong>Billing</strong></td>
-        <td>Manual — handwritten or separate billing app</td>
+        <td>Manual: handwritten or separate billing app</td>
         <td>Auto-generated from services booked + products used</td>
       </tr>
       <tr>
         <td><strong>Follow-ups</strong></td>
-        <td>Manual — staff must remember and call</td>
+        <td>Manual: staff must remember and call</td>
         <td>Auto-triggered based on treatment plan, last visit, or package status</td>
       </tr>
     </tbody>
@@ -1119,7 +1119,7 @@ export const blogPosts: BlogPost[] = [
 <p>There are two main reasons:</p>
 <ol>
   <li><strong>They do not know it is possible.</strong> Most web designers build static websites. They do not build business systems. So the business owner never sees the option presented.</li>
-  <li><strong>They think it is expensive.</strong> In reality, a connected system often replaces ₹15,000–₹30,000 per month in manual admin work — which means it pays for itself in the first month or two.</li>
+  <li><strong>They think it is expensive.</strong> In reality, a connected system often replaces ₹15,000–₹30,000 per month in manual admin work, which means it pays for itself in the first month or two.</li>
 </ol>
 
 <div class="callout callout--warn">
@@ -1133,7 +1133,7 @@ export const blogPosts: BlogPost[] = [
   <ol>
     <li>Trace the journey of a customer from your website to your bank account. How many manual steps are involved? Each manual step is a leak.</li>
     <li>Ask your web team: "Can the website connect to a backend management system?" If they say no, you are being sold a brochure, not a business tool.</li>
-    <li>Look for a combined approach: one partner who can build the website AND the backend system — so they integrate from day one instead of being bolted together later.</li>
+    <li>Look for a combined approach: one partner who can build the website AND the backend system, ensuring they integrate from day one instead of being bolted together later.</li>
   </ol>
 </div>
 <p>A website is not a project you finish. It is a channel that feeds your business system. When they are designed to work together, your website stops being a cost and starts being one of the most efficient members of your team.</p>
@@ -1143,7 +1143,7 @@ export const blogPosts: BlogPost[] = [
     slug: "clinic-owners-lose-whatsapp-excel",
     title: "What Clinic Owners Lose When They Rely Only on WhatsApp and Excel",
     description:
-      "A honest look at the hidden costs of manual clinic management — in missed revenue, data loss, slow follow-ups, and preventable errors.",
+      "A honest look at the hidden costs of manual clinic management: missed revenue, data loss, slow follow-ups, and preventable errors.",
     date: "2026-03-10",
     category: "Clinic Operations",
     readingTimeMinutes: 11,
@@ -1154,7 +1154,7 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--warn">
   <div class="callout__kicker">The honest starting point</div>
-  <p>WhatsApp and Excel are not free. They cost you in time, errors, and missed revenue — but the cost is invisible because it is spread across a dozen small leaks that you have learned to live with.</p>
+  <p>WhatsApp and Excel are not free. They cost you in time, errors, and missed revenue, but the cost is invisible because it is spread across a dozen small leaks that you have learned to live with.</p>
 </div>
 
 <p>If you run a small clinic in India, chances are your daily workflow looks something like this: patients book via phone or WhatsApp, you write appointments in a register or a free Google Calendar, patient records are in an Excel file or a stack of paper files, billing is done on a simple billing app or by hand, and follow-ups happen when someone remembers to check who is overdue.</p>
@@ -1162,7 +1162,7 @@ export const blogPosts: BlogPost[] = [
 <p>This setup feels workable because it is familiar. But it leaks money in ways that are hard to see when you are in the middle of it every day. Here is what you are actually losing.</p>
 
 <h2>1. Lost revenue from no-shows that could have been prevented</h2>
-<p>As covered in an earlier article, a 25% no-show rate on 8 slots per day at ₹500 per consultation means a loss of ₹1,44,000–₹2,40,000 per year. WhatsApp reminders are better than nothing, but they require manual effort: you or your staff must copy the patient list, paste numbers into WhatsApp, and send messages one by one — or use broadcast lists that may not reach everyone.</p>
+<p>As covered in an earlier article, a 25% no-show rate on 8 slots per day at ₹500 per consultation means a loss of ₹1,44,000–₹2,40,000 per year. WhatsApp reminders are better than nothing, but they require manual effort: you or your staff must copy the patient list, paste numbers into WhatsApp, and send messages one by one, or use broadcast lists that may not reach everyone.</p>
 
 <div class="table-wrap">
   <table>
@@ -1194,13 +1194,13 @@ export const blogPosts: BlogPost[] = [
 </div>
 
 <h2>2. The revenue you leave behind on follow-ups</h2>
-<p>In most small clinics, 40–60% of patients never return for a recommended follow-up. Not because they did not need it — because nobody reminded them at the right time.</p>
+<p>In most small clinics, 40–60% of patients never return for a recommended follow-up. Not because they did not need it, but because nobody reminded them at the right time.</p>
 
 <p>With WhatsApp and Excel, follow-ups work like this: the doctor tells the patient "come back in 2 weeks", and either the patient remembers or they don't. Some clinics maintain an Excel column for "next visit date", but checking it requires someone to open the file, sort by date, and manually send messages. In practice, this happens rarely.</p>
 
 <div class="callout callout--tip">
   <div class="callout__kicker">The math on missed follow-ups</div>
-  <p>If you see 30 patients per day and 50% need a follow-up, that is 15 follow-ups per day. If only 40% actually return (6 patients), you are losing 9 follow-up visits per day. At ₹500 per visit, that is ₹4,500 per day — ₹1,17,000 per month — in revenue that never materialises because nobody sent a timely reminder.</p>
+  <p>If you see 30 patients per day and 50% need a follow-up, that is 15 follow-ups per day. If only 40% actually return (6 patients), you are losing 9 follow-up visits per day. At ₹500 per visit, that is ₹4,500 per day (₹1,17,000 per month) in revenue that never materialises because nobody sent a timely reminder.</p>
 </div>
 
 <h2>3. Data loss and the "phone died" problem</h2>
@@ -1214,7 +1214,7 @@ export const blogPosts: BlogPost[] = [
 
 <div class="callout callout--warn">
   <div class="callout__kicker">The cost of losing patient history</div>
-  <p>When a patient returns after 6 months and you cannot find their previous records, they lose confidence. When a new patient asks for a reference from "Dr Sharma's clinic" and you cannot find the record, you lose credibility. The cost of data loss is not just the time to re-enter it — it is the trust you cannot rebuild.</p>
+  <p>When a patient returns after 6 months and you cannot find their previous records, they lose confidence. When a new patient asks for a reference from "Dr Sharma's clinic" and you cannot find the record, you lose credibility. The cost of data loss is not just the time to re-enter it; it is the trust you cannot rebuild.</p>
 </div>
 
 <h2>4. Billing errors and reconciliation headaches</h2>
@@ -1222,7 +1222,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li>Formulas break and totals become wrong</li>
   <li>Multiple people edit the same file and overwrite each other's entries</li>
-  <li>There is no audit trail — you cannot see who changed what and when</li>
+  <li>There is no audit trail: you cannot see who changed what and when</li>
   <li>Tax calculations are done manually and mistakes happen</li>
   <li>End-of-month reconciliation takes hours of cross-checking</li>
 </ul>
@@ -1262,12 +1262,12 @@ export const blogPosts: BlogPost[] = [
 </div>
 
 <h2>5. The opportunity cost of your own time</h2>
-<p>As a clinic owner, your time is your most valuable resource. Every minute you spend managing Excel sheets, sending WhatsApp reminders, or reconciling bills is a minute you are not spending on patient care, business development, or — most importantly — rest.</p>
+<p>As a clinic owner, your time is your most valuable resource. Every minute you spend managing Excel sheets, sending WhatsApp reminders, or reconciling bills is a minute you are not spending on patient care, business development, or, most importantly, rest.</p>
 
-<p>Running a clinic is exhausting. Adding 5–10 hours of manual admin per week to an already full schedule is a recipe for burnout. The cost of sticking with WhatsApp and Excel is not just financial — it is the energy you could be putting into growing your practice or improving patient care.</p>
+<p>Running a clinic is exhausting. Adding 5–10 hours of manual admin per week to an already full schedule is a recipe for burnout. The cost of sticking with WhatsApp and Excel is not just financial; it is the energy you could be putting into growing your practice or improving patient care.</p>
 
-<h2>WhatsApp and Excel are not the enemy — but they have limits</h2>
-<p>The point is not that WhatsApp and Excel are bad tools. They are great for what they were designed for: messaging and spreadsheets. The problem is that a clinic is neither a chat conversation nor a table of numbers. It is a business with scheduling, billing, records, follow-ups, and inventory — all of which need to work together.</p>
+<h2>WhatsApp and Excel are not the enemy, but they have limits</h2>
+<p>The point is not that WhatsApp and Excel are bad tools. They are great for what they were designed for: messaging and spreadsheets. The problem is that a clinic is neither a chat conversation nor a table of numbers. It is a business with scheduling, billing, records, follow-ups, and inventory, all of which need to work together.</p>
 
 <div class="callout callout--good">
   <div class="callout__kicker">The right way to think about this</div>
@@ -1278,19 +1278,19 @@ export const blogPosts: BlogPost[] = [
 <div class="callout callout--good">
   <div class="callout__kicker">Three numbers to calculate for your clinic</div>
   <ol>
-    <li><strong>No-show loss:</strong> (daily slots × no-show% × avg consultation fee) × 26 days — this is what you lose to missed appointments.</li>
-    <li><strong>Follow-up gap:</strong> (daily follow-ups needed × % not returning × avg fee) × 26 days — this is what you lose to unreminded patients.</li>
-    <li><strong>Admin time cost:</strong> (weekly hours on admin × your hourly rate) × 52 weeks — this is what your time is worth.</li>
+    <li><strong>No-show loss:</strong> (daily slots × no-show% × avg consultation fee) × 26 days. This is what you lose to missed appointments.</li>
+    <li><strong>Follow-up gap:</strong> (daily follow-ups needed × % not returning × avg fee) × 26 days. This is what you lose to unreminded patients.</li>
+    <li><strong>Admin time cost:</strong> (weekly hours on admin × your hourly rate) × 52 weeks. This is what your time is worth.</li>
   </ol>
 </div>
-<p>If the total of those three numbers exceeds the cost of a clinic management system (typically ₹2,000–₹5,000/month), the system is not an expense — it is a profitable investment. Run the numbers for your clinic. You might be surprised at what you find.</p>
+<p>If the total of those three numbers exceeds the cost of a clinic management system (typically ₹2,000–₹5,000/month), the system is not an expense; it is a profitable investment. Run the numbers for your clinic. You might be surprised at what you find.</p>
     `,
   },
   {
     slug: "google-maps-backend-system-local-leads",
     title: "How Google Maps and Your Backend System Work Together to Bring In Better Leads",
     description:
-      "Why your Google Business Profile and management system should talk to each other — and how to turn local discovery into tracked, qualified leads.",
+      "Why your Google Business Profile and management system should talk to each other, and how to turn local discovery into tracked, qualified leads.",
     date: "2026-02-28",
     category: "Local Discovery",
     readingTimeMinutes: 10,
@@ -1301,10 +1301,10 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--tip">
   <div class="callout__kicker">The disconnect that costs you leads</div>
-  <p>Most local businesses have a Google Business Profile that brings in traffic — and a backend system that runs their operations. They are not connected. So a lot of the traffic from Maps becomes untracked phone calls and walk-ins that never enter your CRM or follow-up system.</p>
+  <p>Most local businesses have a Google Business Profile that brings in traffic, and a backend system that runs their operations. They are not connected. So a lot of the traffic from Maps becomes untracked phone calls and walk-ins that never enter your CRM or follow-up system.</p>
 </div>
 
-<p>For a local business in India — whether it is a clinic, a coaching centre, a garage, or a salon — Google Maps is often the single biggest source of new customer enquiries. People search "dentist near me" or "best coaching class in [area]" and call the number on your Maps listing.</p>
+<p>For a local business in India, whether it is a clinic, a coaching centre, a garage, or a salon, Google Maps is often the single biggest source of new customer enquiries. People search "dentist near me" or "best coaching class in [area]" and call the number on your Maps listing.</p>
 
 <p>The problem is: what happens after that call? In most businesses, the answer is "nothing systematic". The call gets answered, maybe an appointment is made, and the customer's details are scribbled on a notepad or lost in the receptionist's memory. Two weeks later, if that customer needs a follow-up, there is no record.</p>
 
@@ -1338,13 +1338,13 @@ export const blogPosts: BlogPost[] = [
       </tr>
       <tr>
         <td><strong>Follow-up</strong></td>
-        <td>Depends on memory — most leads are never followed up</td>
+        <td>Depends on memory: most leads are never followed up</td>
         <td>Auto-scheduled follow-up based on the service they enquired about</td>
       </tr>
       <tr>
         <td><strong>Tracking</strong></td>
         <td>No way to know which leads came from Maps</td>
-        <td>Maps source tagged on every lead — you know your best channel</td>
+        <td>Maps source tagged on every lead: you know your best channel</td>
       </tr>
     </tbody>
   </table>
@@ -1362,11 +1362,11 @@ export const blogPosts: BlogPost[] = [
 
 <div class="callout callout--good">
   <div class="callout__kicker">The booking link advantage</div>
-  <p>A Maps listing with a booking link converts at roughly 2x the rate of a listing with just a phone number. The reason is simple: many customers prefer to book without a phone conversation. They want to see available slots, pick a time, and get a confirmation — all without the friction of a call.</p>
+  <p>A Maps listing with a booking link converts at roughly 2x the rate of a listing with just a phone number. The reason is simple: many customers prefer to book without a phone conversation. They want to see available slots, pick a time, and get a confirmation, all without the friction of a call.</p>
 </div>
 
 <h3>3. WhatsApp click-to-chat</h3>
-<p>If your Maps profile includes a WhatsApp number, customers will message you directly. A backend system can capture these messages as leads automatically, log the enquiry, and trigger a response sequence — instead of leaving the conversation in one staff member's personal WhatsApp inbox.</p>
+<p>If your Maps profile includes a WhatsApp number, customers will message you directly. A backend system can capture these messages as leads automatically, log the enquiry, and trigger a response sequence, instead of leaving the conversation in one staff member's personal WhatsApp inbox.</p>
 
 <h3>4. Review management linked to CRM</h3>
 <p>Reviews on Google Maps are one of the strongest trust signals for local businesses. When a customer leaves a review, your system should:</p>
@@ -1408,7 +1408,7 @@ export const blogPosts: BlogPost[] = [
       <tr>
         <td><strong>How many Maps leads were followed up?</strong></td>
         <td>"We try to call everyone back"</td>
-        <td>% followed up within 24 hours — tracked</td>
+        <td>% followed up within 24 hours (tracked)</td>
       </tr>
       <tr>
         <td><strong>What is the ROI of your Maps presence?</strong></td>
@@ -1423,14 +1423,14 @@ export const blogPosts: BlogPost[] = [
 <p>You do not need a complex integration to start. Here is a simple three-step setup:</p>
 
 <ol>
-  <li><strong>Add UTM tags to your Maps website link</strong> — takes 10 minutes. This alone tells you which traffic comes from Maps vs other channels.</li>
-  <li><strong>Replace your phone number (partially) with a trackable number or booking link</strong> — Google lets you add both a phone number and an appointment link. Use the appointment link for the booking action and keep the phone for people who prefer to call.</li>
-  <li><strong>Set up a lead capture flow in your system</strong> — link your booking page or WhatsApp number so that every Maps enquiry becomes a lead record automatically.</li>
+  <li><strong>Add UTM tags to your Maps website link:</strong> takes 10 minutes. This alone tells you which traffic comes from Maps vs other channels.</li>
+  <li><strong>Replace your phone number (partially) with a trackable number or booking link:</strong> Google lets you add both a phone number and an appointment link. Use the appointment link for the booking action and keep the phone for people who prefer to call.</li>
+  <li><strong>Set up a lead capture flow in your system:</strong> link your booking page or WhatsApp number so that every Maps enquiry becomes a lead record automatically.</li>
 </ol>
 
 <div class="callout callout--warn">
   <div class="callout__kicker">The most common mistake</div>
-  <p>Businesses spend weeks optimising their Google Maps profile to rank higher — then link it to a generic homepage with no tracking and no booking path. All that ranking effort produces untracked, unfollowed-up leads. The Maps optimisation is wasted because the connection to the backend is missing.</p>
+  <p>Businesses spend weeks optimising their Google Maps profile to rank higher, then link it to a generic homepage with no tracking and no booking path. All that ranking effort produces untracked, unfollowed-up leads. The Maps optimisation is wasted because the connection to the backend is missing.</p>
 </div>
 
 <h2>What happens in month one after the connection</h2>
@@ -1450,14 +1450,14 @@ export const blogPosts: BlogPost[] = [
     <li>Set up automatic follow-up triggers in your backend system for Maps-sourced leads.</li>
   </ol>
 </div>
-<p>Google Maps is the highest-intent traffic source most local businesses have. But traffic without tracking and follow-up is just noise. Connect the two, and your Maps presence becomes a measurable, optimisable lead generation channel — not just a listing you hope works.</p>
+<p>Google Maps is the highest-intent traffic source most local businesses have. But traffic without tracking and follow-up is just noise. Connect the two, and your Maps presence becomes a measurable, optimisable lead generation channel, not just a listing you hope works.</p>
     `,
   },
   {
     slug: "cloud-kitchen-track-recipe-costs-wastage-vendor-orders",
     title: "How Cloud Kitchens and Restaurants Can Track Recipe Costs, Wastage, and Vendor Orders",
     description:
-      "Why most small food businesses lose money on ingredient costs — and a practical system to track recipes, reduce wastage, and automate reordering.",
+      "Why most small food businesses lose money on ingredient costs, and a practical system to track recipes, reduce wastage, and automate reordering.",
     date: "2026-07-17",
     category: "Food & Hospitality",
     readingTimeMinutes: 11,
@@ -1468,7 +1468,7 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--warn">
   <div class="callout__kicker">The number most kitchen owners don't know</div>
-  <p>Most small cloud kitchens and restaurants in India operate with 8–15% hidden wastage — ingredients that spoil, get over-ordered, or are used inconsistently. That is not a cost of doing business. That is money you are throwing away because you are not measuring it.</p>
+  <p>Most small cloud kitchens and restaurants in India operate with 8–15% hidden wastage from ingredients that spoil, get over-ordered, or are used inconsistently. That is not a cost of doing business. That is money you are throwing away because you are not measuring it.</p>
 </div>
 
 <p>If you run a cloud kitchen, a small restaurant, or a catering business, your ingredient costs are probably your biggest expense after rent and labour. Yet most operators track them with a mix of memory, notebook entries, and the occasional Excel sheet.</p>
@@ -1499,7 +1499,7 @@ export const blogPosts: BlogPost[] = [
       </tr>
       <tr>
         <td><strong>Reactive ordering</strong></td>
-        <td>You order when you run out — no minimum stock levels, no lead time planning, no price comparison across vendors.</td>
+        <td>You order when you run out: no minimum stock levels, no lead time planning, no price comparison across vendors.</td>
         <td>₹30,000–₹80,000 in expedited orders and stockouts</td>
       </tr>
     </tbody>
@@ -1542,7 +1542,7 @@ export const blogPosts: BlogPost[] = [
         <td><strong>Kitchen management system</strong></td>
         <td>30 seconds to check; zero to update (auto)</td>
         <td>±1%</td>
-        <td>Yes — price changes flow through automatically</td>
+        <td>Yes: price changes flow through automatically</td>
       </tr>
     </tbody>
   </table>
@@ -1558,7 +1558,7 @@ export const blogPosts: BlogPost[] = [
 
 <div class="callout callout--tip">
   <div class="callout__kicker">One kitchen's wastage win</div>
-  <p>A cloud kitchen in Bangalore started tracking wastage daily. In week one, they discovered 12 kg of paneer was being thrown away weekly because the supplier delivered in 5 kg blocks but the recipe called for 1.2 kg per batch. They switched to a supplier who cut blocks to size. Monthly savings: ₹8,400 — from a single ingredient.</p>
+  <p>A cloud kitchen in Bangalore started tracking wastage daily. In week one, they discovered 12 kg of paneer was being thrown away weekly because the supplier delivered in 5 kg blocks but the recipe called for 1.2 kg per batch. They switched to a supplier who cut blocks to size. Monthly savings: ₹8,400 from a single ingredient alone.</p>
 </div>
 
 <h2>Vendor order automation: stop buying when you run out</h2>
@@ -1628,7 +1628,7 @@ export const blogPosts: BlogPost[] = [
     slug: "physiotherapy-clinic-patient-progress-exercise-plans",
     title: "How Physiotherapy Clinics Can Manage Patient Progress, Exercise Plans, and Recurring Appointments",
     description:
-      "Why physiotherapy clinics need different workflows from general practice — and how to track progress, assign exercises, and retain patients longer.",
+      "Why physiotherapy clinics need different workflows from general practice, and how to track progress, assign exercises, and retain patients longer.",
     date: "2026-07-14",
     category: "Clinic Operations",
     readingTimeMinutes: 10,
@@ -1639,7 +1639,7 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--tip">
   <div class="callout__kicker">The difference that matters</div>
-  <p>A physiotherapy clinic does not just diagnose and prescribe — it guides patients through a recovery journey over weeks or months. The system that supports that journey needs to track progress, not just visits.</p>
+  <p>A physiotherapy clinic does not just diagnose and prescribe; it guides patients through a recovery journey over weeks or months. The system that supports that journey needs to track progress, not just visits.</p>
 </div>
 
 <p>General clinic management systems work well for GPs and specialists who see a patient once or twice. But physiotherapy is different. A typical patient might visit 8–12 times over 6–8 weeks. Each session builds on the last. The exercises change as the patient improves. Missed appointments set the recovery back. And the patient's commitment to showing up is what determines the outcome.</p>
@@ -1675,8 +1675,8 @@ export const blogPosts: BlogPost[] = [
       </tr>
       <tr>
         <td><strong>Patient adherence</strong></td>
-        <td>"Take this medicine" — binary compliance</td>
-        <td>"Did you do your exercises?" — adherence directly affects outcomes</td>
+        <td>"Take this medicine" (binary compliance)</td>
+        <td>"Did you do your exercises?" (adherence directly affects outcomes)</td>
       </tr>
       <tr>
         <td><strong>Billing model</strong></td>
@@ -1700,7 +1700,7 @@ export const blogPosts: BlogPost[] = [
 
 <div class="callout callout--good">
   <div class="callout__kicker">Why progress tracking prevents drop-offs</div>
-  <p>When a patient sees a graph of their pain decreasing from 8/10 to 3/10 over 4 weeks, or watches their range of motion increase on a chart, they gain confidence in the treatment. That confidence is what keeps them coming back for sessions 7 through 12 — which is when the real functional improvement happens.</p>
+  <p>When a patient sees a graph of their pain decreasing from 8/10 to 3/10 over 4 weeks, or watches their range of motion increase on a chart, they gain confidence in the treatment. That confidence is what keeps them coming back for sessions 7 through 12, which is when the real functional improvement happens.</p>
 </div>
 
 <h2>Exercise plan management</h2>
@@ -1711,7 +1711,7 @@ export const blogPosts: BlogPost[] = [
   <li>Create a library of exercise templates with descriptions, images, and short video links</li>
   <li>Assign exercises to a patient with specific sets, reps, and frequency</li>
   <li>Send the exercise plan to the patient via WhatsApp or a patient portal</li>
-  <li>Track adherence — did the patient mark the exercises as done?</li>
+  <li>Track adherence: did the patient mark the exercises as done?</li>
   <li>Progress the exercise (increase reps, add resistance) and update the plan in one click</li>
 </ul>
 
@@ -1761,18 +1761,18 @@ export const blogPosts: BlogPost[] = [
   <div class="callout__kicker">Three changes for better physio outcomes</div>
   <ol>
     <li>Replace "general notes" with structured session tracking: pain scale, ROM, strength, treatment given, and next plan.</li>
-    <li>Build an exercise library with videos — assign exercises with one click instead of re-explaining every session.</li>
+    <li>Build an exercise library with videos to assign exercises with one click instead of re-explaining every session.</li>
     <li>Set up recurring appointment series for each patient so the schedule fills automatically and reminders go out without manual work.</li>
   </ol>
 </div>
-<p>Physiotherapy is a relationship business. The more you can track progress, communicate plans, and reduce admin friction, the better your outcomes — and the more your clinic grows through referrals from satisfied patients.</p>
+<p>Physiotherapy is a relationship business. The more you can track progress, communicate plans, and reduce admin friction, the better your outcomes, and the more your clinic grows through referrals from satisfied patients.</p>
     `,
   },
   {
     slug: "automate-fee-reminders-coaching-centre",
     title: "How to Automate Fee Reminders and Late Payment Follow-Ups for Your Coaching Centre",
     description:
-      'A practical guide to eliminating the awkward "sir, fees pending" conversation — with automated reminders, late fee logic, and digital receipts.',
+      'A practical guide to eliminating the awkward "sir, fees pending" conversation, using automated reminders, late fee logic, and digital receipts.',
     date: "2026-07-08",
     category: "Education",
     readingTimeMinutes: 10,
@@ -1783,7 +1783,7 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--warn">
   <div class="callout__kicker">The hidden cost of manual fee collection</div>
-  <p>If your staff spends 10–15 hours per month on fee follow-ups — calls, WhatsApp messages, reminders, reconciliation — that is ₹3,000–₹5,000 of labour cost per month that does nothing but collect money you have already earned.</p>
+  <p>If your staff spends 10–15 hours per month on fee follow-ups (calls, WhatsApp messages, reminders, reconciliation), that is ₹3,000–₹5,000 of labour cost per month that does nothing but collect money you have already earned.</p>
 </div>
 
 <p>Fee collection is one of the most awkward and time-consuming tasks for any coaching centre owner. You want to be firm about payments without damaging relationships with parents and students. You want to track who has paid and who has not without chasing paper receipts and bank SMSs.</p>
@@ -1814,7 +1814,7 @@ export const blogPosts: BlogPost[] = [
       </tr>
       <tr>
         <td><strong>Overdue follow-up</strong></td>
-        <td>Owner or staff calls parents individually — awkward and inconsistent</td>
+        <td>Owner or staff calls parents individually: awkward and inconsistent</td>
         <td>System flags overdue accounts; sends polite escalation messages; staff intervenes only at final stage</td>
       </tr>
       <tr>
@@ -1830,16 +1830,16 @@ export const blogPosts: BlogPost[] = [
 <p>The key to automated reminders is timing and tone. Too many reminders feel harassing. Too few, and fees slip. A good sequence works like this:</p>
 
 <ol>
-  <li><strong>7 days before due date</strong> — Friendly reminder: "Dear parent, the fee for [student name] for [month] is due on [date]. Please find the details below." Include the exact amount and payment methods.</li>
-  <li><strong>3 days before due date</strong> — Gentle nudge: "This is a reminder that the fee for [month] is due in 3 days. You can pay via UPI/Cash/Card at the centre or online."</li>
-  <li><strong>Due date</strong> — Final auto-reminder: "The fee for [month] is due today. Please ensure payment at your earliest convenience."</li>
-  <li><strong>3 days overdue</strong> — Flag for staff: The system marks the account as overdue. The staff makes a personalised WhatsApp or phone call.</li>
-  <li><strong>7 days overdue</strong> — Escalation: The owner gets a notification to intervene personally if needed.</li>
+  <li><strong>7 days before due date:</strong> Friendly reminder: "Dear parent, the fee for [student name] for [month] is due on [date]. Please find the details below." Include the exact amount and payment methods.</li>
+  <li><strong>3 days before due date:</strong> Gentle nudge: "This is a reminder that the fee for [month] is due in 3 days. You can pay via UPI/Cash/Card at the centre or online."</li>
+  <li><strong>Due date:</strong> Final auto-reminder: "The fee for [month] is due today. Please ensure payment at your earliest convenience."</li>
+  <li><strong>3 days overdue:</strong> Flag for staff: The system marks the account as overdue. The staff makes a personalised WhatsApp or phone call.</li>
+  <li><strong>7 days overdue:</strong> Escalation: The owner gets a notification to intervene personally if needed.</li>
 </ol>
 
 <div class="callout callout--tip">
   <div class="callout__kicker">Why automated reminders work better than manual ones</div>
-  <p>Parents receive the reminder via the system, not from a specific staff member's number. There is no personal awkwardness. The message is consistent, professional, and reaches every defaulter — not just the ones the staff remembers to message. Collection rates typically improve from 80–85% to 92–97% within two months of switching.</p>
+  <p>Parents receive the reminder via the system, not from a specific staff member's number. There is no personal awkwardness. The message is consistent, professional, and reaches every defaulter, not just the ones the staff remembers to message. Collection rates typically improve from 80–85% to 92–97% within two months of switching.</p>
 </div>
 
 <h2>Late fee logic and partial payment tracking</h2>
@@ -1847,7 +1847,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li>Define rules: "X% late fee after 5 days grace period, max Y% late fee"</li>
   <li>The system calculates the late fee automatically when payment is received after the grace period</li>
-  <li>Partial payments are recorded with a running balance — the system knows exactly how much is still due</li>
+  <li>Partial payments are recorded with a running balance, so the system knows exactly how much is still due</li>
 </ul>
 
 <div class="table-wrap">
@@ -1880,12 +1880,12 @@ export const blogPosts: BlogPost[] = [
 </div>
 
 <h2>Digital receipts that reduce disputes</h2>
-<p>Every payment — whether cash, UPI, or card — should generate a digital receipt that is sent to the parent and stored in the student's record. The receipt includes: student name, month, amount paid, balance (if any), date, payment method, and receipt number.</p>
+<p>Every payment, whether cash, UPI, or card, should generate a digital receipt that is sent to the parent and stored in the student's record. The receipt includes: student name, month, amount paid, balance (if any), date, payment method, and receipt number.</p>
 
 <p>This eliminates the two most common disputes:</p>
 <ul>
-  <li>"I paid but you did not note it" — The receipt proves the payment was recorded.</li>
-  <li>"You said I owe ₹4,500 but my calculation says ₹3,000" — The running balance shows every transaction.</li>
+  <li>"I paid but you did not note it": the receipt proves the payment was recorded.</li>
+  <li>"You said I owe ₹4,500 but my calculation says ₹3,000": the running balance shows every transaction.</li>
 </ul>
 
 <h2>The financial impact of automated fee collection</h2>
@@ -1930,10 +1930,10 @@ export const blogPosts: BlogPost[] = [
   <ol>
     <li>Define your fee reminder sequence (timing, channels, message templates) and set it up in your system.</li>
     <li>Switch from paper receipts to digital receipts that are sent automatically on payment.</li>
-    <li>Create a weekly overdue report — review it every Monday and intervene only on accounts that need personal follow-up.</li>
+    <li>Create a weekly overdue report, review it every Monday, and intervene only on accounts that need personal follow-up.</li>
   </ol>
 </div>
-<p>Fee collection is not just about getting paid on time. It is about removing a source of daily stress for your staff and awkwardness in your parent relationships. A good system does not replace the human touch — it saves it for the conversations that actually need it.</p>
+<p>Fee collection is not just about getting paid on time. It is about removing a source of daily stress for your staff and awkwardness in your parent relationships. A good system does not replace the human touch; it saves it for the conversations that actually need it.</p>
     `,
   },
 
@@ -1941,7 +1941,7 @@ export const blogPosts: BlogPost[] = [
     slug: "local-business-customer-data-management",
     title: "What Local Business Owners Get Wrong About Customer Data (And How to Fix It)",
     description:
-      "Why scattered customer information across WhatsApp, notebooks, and Excel files is costing you repeat business — and how to build a simple, usable customer database.",
+      "Why scattered customer information across WhatsApp, notebooks, and Excel files is costing you repeat business, and how to build a simple, usable customer database.",
     date: "2026-07-01",
     category: "Business Systems",
     readingTimeMinutes: 10,
@@ -1952,10 +1952,10 @@ export const blogPosts: BlogPost[] = [
     contentHtml: `
 <div class="callout callout--tip">
   <div class="callout__kicker">The one question that reveals the problem</div>
-  <p>Ask any local business owner: "Show me a list of every customer who visited you last month, what they bought, and whether they are due for a follow-up." If the answer takes more than 5 minutes to produce, you have a customer data problem — and it is costing you money.</p>
+  <p>Ask any local business owner: "Show me a list of every customer who visited you last month, what they bought, and whether they are due for a follow-up." If the answer takes more than 5 minutes to produce, you have a customer data problem, and it is costing you money.</p>
 </div>
 
-<p>Most local businesses in India — clinics, salons, coaching centres, garages, service professionals — collect customer data every single day. But they store it in ways that make it nearly impossible to use:</p>
+<p>Most local businesses in India (clinics, salons, coaching centres, garages, service professionals) collect customer data every single day. But they store it in ways that make it nearly impossible to use:</p>
 
 <ul>
   <li>Patient names in a paper appointment register</li>
@@ -2021,7 +2021,7 @@ export const blogPosts: BlogPost[] = [
       <tr>
         <td><strong>History</strong></td>
         <td>Every visit/service/appointment with date, amount, and notes</td>
-        <td>Context for every interaction — the customer does not have to repeat themselves</td>
+        <td>Context for every interaction so the customer does not have to repeat themselves</td>
       </tr>
       <tr>
         <td><strong>Preferences</strong></td>
@@ -2036,7 +2036,7 @@ export const blogPosts: BlogPost[] = [
       <tr>
         <td><strong>Communication log</strong></td>
         <td>Reminders sent, messages replied, calls made, feedback received</td>
-        <td>Audit trail — you know what was said and when</td>
+        <td>Audit trail: you know what was said and when</td>
       </tr>
     </tbody>
   </table>
@@ -2061,7 +2061,7 @@ export const blogPosts: BlogPost[] = [
 
 <div class="callout callout--good">
   <div class="callout__kicker">The database that works while you sleep</div>
-  <p>A well-structured customer database is not a static record. It is a system that generates actions. Every customer in your database should have a "next action" associated with them — a follow-up, a reminder, a check-in, or a re-engagement. If your database does not tell you what to do next, it is just a list.</p>
+  <p>A well-structured customer database is not a static record. It is a system that generates actions. Every customer in your database should have a "next action" associated with them: a follow-up, a reminder, a check-in, or a re-engagement. If your database does not tell you what to do next, it is just a list.</p>
 </div>
 
 <h2>The cost of not having a usable database</h2>
@@ -2088,7 +2088,7 @@ export const blogPosts: BlogPost[] = [
       </tr>
       <tr>
         <td><strong>Handling a customer enquiry</strong></td>
-        <td>Staff asks "when did you last visit?" — customer has to remember or guess.</td>
+        <td>Staff asks "when did you last visit?": customer has to remember or guess.</td>
         <td>Staff pulls up the record in seconds: "I see you visited on 12 March and had a full service. How can I help?"</td>
       </tr>
       <tr>
@@ -2115,11 +2115,11 @@ export const blogPosts: BlogPost[] = [
   <div class="callout__kicker">Start fixing your data this week</div>
   <ol>
     <li>Identify all the places where you currently store customer information (register, Excel, WhatsApp, billing app, memory).</li>
-    <li>Choose one system to be the single source of truth — and commit to entering every new customer there.</li>
+    <li>Choose one system to be the single source of truth, and commit to entering every new customer there.</li>
     <li>Set up one automated customer action this month: a follow-up reminder for inactive customers or a birthday offer.</li>
   </ol>
 </div>
-<p>Your customer data is the most valuable asset in your business after your team. Treat it like one. A clean, usable database does not just make your life easier — it directly increases repeat business, referrals, and revenue per customer.</p>
+<p>Your customer data is the most valuable asset in your business after your team. Treat it like one. A clean, usable database does not just make your life easier; it directly increases repeat business, referrals, and revenue per customer.</p>
     `,
   },
 ];

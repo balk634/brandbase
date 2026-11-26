@@ -111,7 +111,7 @@ const VERTICALS: {
 
 const INCLUDED_ALWAYS = [
   {
-    text: "Custom backend system built for your business type — not a generic template",
+    text: "Custom backend system built for your business type, not a generic template",
     Icon: IconServer,
   },
   {
@@ -289,7 +289,7 @@ export default function PricingPage() {
             </p>
             <p className="mt-3 text-sm text-ink-muted/70 leading-relaxed max-w-xl">
               There are no published tier packages here on purpose. Every system is scoped around
-              how your business actually works — not a fixed feature list you have to fit into.
+              how your business actually works, not a fixed feature list you have to fit into.
             </p>
           </div>
         </Container>
@@ -349,7 +349,7 @@ export default function PricingPage() {
                 ))}
               </div>
               <p className="mt-4 text-xs text-ink-muted/60 leading-relaxed">
-                Add-on pricing is always discussed during your scoping call — no surprises.
+                Add-on pricing is always discussed during your scoping call, with no surprises.
               </p>
             </div>
           </div>
@@ -586,7 +586,7 @@ export default function PricingPage() {
                     </LoadingButton>
                     <p className="mt-3 text-xs text-ink-muted leading-relaxed">
                       We reply within 24 hours with a clear scope and honest price. No automated
-                      pitches — a real person reviews every enquiry.
+                      pitches; a real person reviews every enquiry.
                     </p>
                   </div>
                 </form>
@@ -609,7 +609,7 @@ export default function PricingPage() {
                 </h2>
                 <p className="text-ink-muted text-base leading-relaxed mb-4 max-w-lg">
                   In 15 minutes, we&apos;ll understand exactly how your business runs and give you a
-                  clear number — not a range, not a guess. A real quote built around your specific
+                  clear number, not a range or a guess. A real quote built around your specific
                   workflow.
                 </p>
                 <p className="text-ink-muted/70 text-sm leading-relaxed mb-10 max-w-lg">

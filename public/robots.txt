@@ -4,6 +4,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: GPTBot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
@@ -11,6 +13,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: ChatGPT-User
 Content-Signal: ai-train=no, search=yes, ai-input=yes
@@ -18,6 +22,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: PerplexityBot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
@@ -25,6 +31,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: ClaudeBot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
@@ -32,6 +40,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: anthropic-ai
 Content-Signal: ai-train=no, search=yes, ai-input=yes
@@ -39,6 +49,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: Google-Extended
 Content-Signal: ai-train=no, search=yes, ai-input=yes
@@ -46,6 +58,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: Bingbot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
@@ -53,6 +67,8 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /calc
+Disallow: /pricing
+Disallow: /pricing.md
 
 User-agent: CCBot
 Disallow: /

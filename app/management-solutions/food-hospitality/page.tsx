@@ -30,7 +30,7 @@ import { CalButton } from "@/components/ui/CalBooking";
 export const metadata = buildPageMetadata({
   title: "Restaurant Management System | Orders, Kitchen & Menu Control",
   description:
-    "Stop losing orders to paper tickets and manual errors. Our Restaurant Management System handles live orders, kitchen display, dynamic menus, and table reservations — built for independent cafés and restaurants.",
+    "Stop losing orders to paper tickets and manual errors. Our Restaurant Management System handles live orders, kitchen display, dynamic menus, and table reservations, built for independent cafés and restaurants.",
   path: "/management-solutions/food-hospitality",
 });
 
@@ -107,9 +107,9 @@ const fitItems: { text: string; fit: boolean; Icon: ComponentType<{ className?: 
 ];
 
 const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
-  { Icon: IconChefHat, title: "Sold-Out Updates in Under 2 Seconds", copy: "When an item sells out, every waiter on the floor still selling it costs you an awkward conversation and a lost table impression. We let your chef mark it unavailable instantly — across QR menus and the dashboard simultaneously." },
+  { Icon: IconChefHat, title: "Sold-Out Updates in Under 2 Seconds", copy: "When an item sells out, every waiter on the floor still selling it costs you an awkward conversation and a lost table impression. We let your chef mark it unavailable instantly across QR menus and the dashboard simultaneously." },
   { Icon: IconMessage2, title: "Direct Table Confirmations, No Phone Calls", copy: "Manual reservation calls take time your staff doesn't have. Send booking confirmations and invoice receipts straight to the guest's WhatsApp in one tap." },
-  { Icon: IconDatabase, title: "Only the Features You Actually Use", copy: "Most POS platforms charge you for loyalty programs, payroll, and analytics dashboards you never open. We build only what your restaurant runs on — nothing you'll need to train staff to avoid." },
+  { Icon: IconDatabase, title: "Only the Features You Actually Use", copy: "Most POS platforms charge you for loyalty programs, payroll, and analytics dashboards you never open. We build only what your restaurant runs on, with nothing you'll need to train staff to avoid." },
   { Icon: IconClock, title: "Kitchen and Front-of-House in Sync", copy: "Wrong orders and delayed tables happen when the kitchen doesn't know what was promised. Connect your front desk and kitchen display so both sides work from the same live information." },
 ];
 
@@ -131,8 +131,8 @@ export default function FoodHospitalityBasePage() {
   return (
     <main className="relative text-ink pb-20">
       <ServiceSchema
-        name="Restaurant Management System — Food & Hospitality Base"
-        description="Stop losing orders to paper tickets and manual errors. Our Restaurant Management System handles live orders, kitchen display, dynamic menus, and table reservations — built for independent cafés, restaurants, and cloud kitchens."
+        name="Restaurant Management System: Food & Hospitality Base"
+        description="Stop losing orders to paper tickets and manual errors. Our Restaurant Management System handles live orders, kitchen display, dynamic menus, and table reservations, built for independent cafés, restaurants, and cloud kitchens."
         path="/management-solutions/food-hospitality"
         offers={[
           {
@@ -159,7 +159,7 @@ export default function FoodHospitalityBasePage() {
                   Right now, kitchen orders get lost between the waiter and the cook. Menu prices go out of date because no one updated the printed board. Stock runs out because no one counted what was sold last night.
                 </motion.p>
                 <motion.p variants={fadeInLeft} className="mt-5 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg">
-                  Every order goes straight to the kitchen display the moment it&apos;s placed. Menu updates take one tap. Stock deducts automatically when an item is served — so your kitchen runs on facts, not guesswork.
+                  Every order goes straight to the kitchen display the moment it&apos;s placed. Menu updates take one tap. Stock deducts automatically when an item is served, so your kitchen runs on facts, not guesswork.
                 </motion.p>
                 <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
                   <CalButton variant="primary" size="lg">

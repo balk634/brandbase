@@ -4,21 +4,22 @@ import { Section } from "@/components/ui/Section";
 import { useEffect, useRef } from "react";
 
 const ITEMS = [
-  "80% Admin Time Cut",
+  "High-Retention Reels",
   "Paper Register → Digital",
+  "Visual Brand Kits in Figma",
   "Auto WhatsApp Recalls",
-  "GST in One Click",
-  "Patient Queue Tracking",
+  "Conversion-First Websites",
+  "Live Patient Queue Tracker",
+  "In-App Search & SEO",
   "Batch Fee Reminders",
-  "Digital Job Cards",
-  "Stock Alerts",
-  "No Per-Seat Fees",
-  "Live Kitchen Display",
-  "Staff Role Access",
-  "Your Data, Your Server",
-  "14-Day Launch",
-  "Zero Upfront Websites",
-  "WhatsApp API Built-in",
+  "100% Pre-Approved Content",
+  "Live Kitchen Display (KDS)",
+  "Sub-Second Page Speeds",
+  "GST in One Click",
+  "Executive Personal Branding",
+  "No Per-Seat Licensing Fees",
+  "Permanent Client Asset Vault",
+  "Real-Time Stock Alerts",
 ];
 
 const CLONE_COUNT = 8;

@@ -56,7 +56,7 @@ export function WhatsAppButton({ phoneNumber = "9939146979" }: { phoneNumber?: s
         );
     }
 
-    // Hide on mobile — users can use the inline CTA buttons instead
+    // Hide on mobile (users can use the inline CTA buttons instead)
     if (isMobile) return null;
 
     return (

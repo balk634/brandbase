@@ -33,7 +33,7 @@ import { motion } from "@/components/ui/motion-lite";
 export const metadata = buildPageMetadata({
   title: "Clinic Management System | Patient Records, Queue & Billing",
   description:
-    "Stop losing patients who simply forget to come back. Our Clinic Management System handles patient records, live queues, billing, and automatic WhatsApp recalls — built specifically for your specialty clinic.",
+    "Stop losing patients who simply forget to come back. Our Clinic Management System handles patient records, live queues, billing, and automatic WhatsApp recalls, built specifically for your specialty clinic.",
   path: "/management-solutions/health",
 });
 
@@ -110,8 +110,8 @@ const fitItems: { text: string; fit: boolean; Icon: ComponentType<{ className?: 
 ];
 
 const whyUsItems: { Icon: ComponentType<{ className?: string }>; title: string; copy: string }[] = [
-  { Icon: IconSettings, title: "Built Around Your Speciality", copy: "Dental clinics need tooth maps; dermatologists need skin chart uploads. We configure the exact database fields your clinical workflow requires — not a generic form template you bend your practice around." },
-  { Icon: IconMessage2, title: "Native WhatsApp Recalls — Not Email", copy: "Patients ignore email. We send recall reminders, invoices, and booking confirmations directly to their WhatsApp number — the channel they actually check." },
+  { Icon: IconSettings, title: "Built Around Your Speciality", copy: "Dental clinics need tooth maps; dermatologists need skin chart uploads. We configure the exact database fields your clinical workflow requires, not a generic form template you bend your practice around." },
+  { Icon: IconMessage2, title: "Native WhatsApp Recalls, Not Email", copy: "Patients ignore email. We send recall reminders, invoices, and booking confirmations directly to their WhatsApp number, the channel they actually check." },
   { Icon: IconShieldCheck, title: "Your Data, Fully Private", copy: "Your clinical records live in an isolated, encrypted database. You own every patient record completely. No seat licensing, no data hostage situations, no third-party access." },
   { Icon: IconClock, title: "Faster Than Excel for Busy Staff", copy: "If your assistant has to click more than three times to log a patient visit, they&apos;ll fall back to the paper register. We build interfaces that are genuinely faster than the old way." },
 ];
@@ -134,8 +134,8 @@ export default function HealthBasePage() {
   return (
     <main className="relative text-ink pb-20">
       <ServiceSchema
-        name="Clinic Management System — Health Base"
-        description="Stop losing patients who forget to follow up. Our Clinic Management System handles patient records, live queues, GST billing, and automatic WhatsApp recalls — built specifically for your specialty clinic."
+        name="Clinic Management System: Health Base"
+        description="Stop losing patients who forget to follow up. Our Clinic Management System handles patient records, live queues, GST billing, and automatic WhatsApp recalls, built specifically for your specialty clinic."
         path="/management-solutions/health"
         offers={[
           {
@@ -162,7 +162,7 @@ export default function HealthBasePage() {
                   Right now, if a patient doesn&apos;t book their follow-up before leaving, no one follows up. Paper registers don&apos;t send reminders. Spreadsheets don&apos;t refill your medicines before they run out.
                 </motion.p>
                 <motion.p variants={fadeInLeft} className="mt-5 text-sm md:text-base text-ink-muted leading-relaxed max-w-lg">
-                  Every patient gets a digital record, a queue token, and an automatic WhatsApp reminder when their follow-up is due — so no one falls through the cracks, and your clinic runs itself between appointments.
+                  Every patient gets a digital record, a queue token, and an automatic WhatsApp reminder when their follow-up is due, so no one falls through the cracks and your clinic runs itself between appointments.
                 </motion.p>
                 <motion.div variants={fadeInLeft} className="mt-10 flex flex-wrap gap-4">
                   <Button asChild variant="primary" size="lg">

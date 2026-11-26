@@ -1,27 +1,29 @@
 # BrandBase - AI Context
 
-BrandBase builds fast, conversion-first websites with clean tracking and SEO foundations—then scales results with performance marketing. Pay monthly or commission custom builds.
+BrandBase builds custom operational business management systems ("Bases"), conversion-first websites, and full-service brand management engines for growing businesses and category leaders.
 
-## Core Documentation
-- [Website Solutions Overview](https://brandbase.in/website-solutions): comprehensive breakdown of our digital engineering capabilities.
-- [Premium Static Sites](https://brandbase.in/website-solutions/premium-static): high-performance marketing landing pages.
-- [Custom Enterprise Applications](https://brandbase.in/website-solutions/custom-enterprise): bespoke React and Next.js applications for scaling businesses.
-- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce): conversion-first storefronts and scalable builds.
-- [Redesign Rescue](https://brandbase.in/website-solutions/redesign-rescue): transformative UX/UI overhauls for legacy platforms.
-- [Digital Marketing](https://brandbase.in/digital-marketing): paid media, social execution, and local visibility run as one system.
-- [Performance Marketing](https://brandbase.in/digital-marketing/performance-marketing): CAC-disciplined acquisition across Meta and Google.
-- [Social Media Management](https://brandbase.in/digital-marketing/management): strategy, content planning, execution, and community handling.
-- [Local SEO](https://brandbase.in/digital-marketing/local-seo): Google Maps and local search optimization for calls and bookings.
+## Core Documentation & Services
 
-## Pricing & Philosophy
-- [Pricing Model](https://brandbase.in/pricing): choose Pay Monthly for low-risk launch, or custom projects for complex builds and growth programs.
+### Growth Solutions
+- [Brand Management](https://brandbase.in/growth-solutions/brand-management): full-service brand stewardship, visual identity kits in Figma, high-retention video production (Reels / Shorts), narrative copywriting, in-app SEO, native publishing, and community care.
+- [Premium Static Websites](https://brandbase.in/website-solutions/premium-static-websites): high-performance static websites built for sub-second loading and clean conversions.
+- [Custom Web Design](https://brandbase.in/website-solutions/custom-web-design): bespoke enterprise React and Next.js digital flagships for scaling businesses.
+- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce-development): conversion-first storefronts on Shopify and custom headless stacks.
 
-## Optional Resources
-- [Our Process](https://brandbase.in/process): transparent, phase-by-phase breakdown of our operational methodologies.
-- [Agency Blog](https://brandbase.in/blog): deep dives into engineering, design philosophy, and performance marketing strategies.
-- [About Us](https://brandbase.in/about): leadership, mission, and guiding principles.
+### Management Solutions
+- [Clinic Management System](https://brandbase.in/management-solutions/health): patient record histories, dynamic intake forms, live queue status boards, WhatsApp recalls, and billing.
+- [Coaching Management System](https://brandbase.in/management-solutions/education): student batch schedules, attendance registers, video course hosting, and fee reminders.
+- [Restaurant Management System](https://brandbase.in/management-solutions/food-hospitality): live order screens, Kitchen Display Systems (KDS), table reservations, and QR menu sync.
+
+## Resources
+- [Our Work](https://brandbase.in/our-work): live portfolio and client outcomes across healthcare, hospitality, education, and retail.
+- [Our Process](https://brandbase.in/process): transparent, phase-by-phase operational methodology.
+- [Agency Blog](https://brandbase.in/blog): deep dives into engineering, brand design, and operational automation.
+- [About Us](https://brandbase.in/about): leadership, team credentials, and core philosophy.
 
 ## Contact Information
 - Website: https://brandbase.in
 - Email: info@brandbase.in
-- New Business Inquiries: https://brandbase.in/contact
+- Inquiries & Scoping: https://brandbase.in/contact
+- LinkedIn: https://www.linkedin.com/company/brandbase-in/
+- Instagram: https://www.instagram.com/brandbase.in/

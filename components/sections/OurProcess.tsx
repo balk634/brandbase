@@ -37,7 +37,7 @@ const steps: Step[] = [
     Icon: IconSearch,
     title: "We map how your business runs",
     description:
-      "A 15-minute scoping call where we learn your exact workflow — how staff take records, how you track payments, where follow-ups fall through the cracks. You get a clear scope, not a generic pitch.",
+      "A 15-minute scoping call where we learn your exact workflow: how staff take records, how you track payments, and where follow-ups fall through the cracks. You get a clear scope, not a generic pitch.",
     image: "/01.jpg",
   },
   {
@@ -45,7 +45,7 @@ const steps: Step[] = [
     Icon: IconLayoutDashboard,
     title: "We design your system, field by field",
     description:
-      "We configure your database tables, dashboard screens, staff access roles, and WhatsApp message templates around your exact process. Every decision is built around how your team works — not a template.",
+      "We configure your database tables, dashboard screens, staff access roles, and WhatsApp message templates around your exact process. Every decision is built around how your team works, never a template.",
     image: "/02.jpg",
   },
   {
@@ -53,7 +53,7 @@ const steps: Step[] = [
     Icon: IconRocket,
     title: "We go live and train your team",
     description:
-      "Your system deploys to a private database. If you have a website, we connect it directly. Your staff gets a guided walkthrough — most are fully independent within a day.",
+      "Your system deploys to a private database. If you have a website, we connect it directly. Your staff gets a guided walkthrough, and most are fully independent within a day.",
     image: "/03.jpg",
   },
   {
@@ -61,7 +61,7 @@ const steps: Step[] = [
     Icon: IconRefresh,
     title: "We refine as your operation grows",
     description:
-      "Add a new doctor, a new batch, a new service bay? We update your system within hours. Ongoing hosting, WhatsApp API support, and feature additions — we stay involved as your operations scale.",
+      "Add a new doctor, a new batch, a new service bay? We update your system within hours. With ongoing hosting, WhatsApp API support, and feature additions, we stay involved as your operations scale.",
     image: "/04.jpg",
   },
 ];
@@ -84,7 +84,7 @@ export function OurProcess() {
             </h2>
             <p className="mt-4 text-ink-muted text-sm max-w-2xl leading-relaxed">
               No requirements documents, no months of back-and-forth. We move fast because
-              we&apos;ve built for clinics, coaching centers, and garages before — we know what needs
+              we&apos;ve built for clinics, coaching centers, and garages before, so we know what needs
               to be built before you finish describing the problem.
             </p>
           </motion.div>

@@ -28,7 +28,7 @@ const SYSTEM_TYPES = [
     label: "CLINIC",
     Icon: IconHeartbeat,
     heading: "CLINIC MANAGEMENT SYSTEM",
-    copy: "Patient records, live queue tracker, WhatsApp recalls, and billing — all in one unified screen.",
+    copy: "Patient records, live queue tracker, WhatsApp recalls, and billing, all in one unified screen.",
     href: "/management-solutions/health",
     activeBorder: "border-rose-500/50",
     activeBg: "bg-rose-500/10",
@@ -78,7 +78,7 @@ const SYSTEM_FEATURES = [
   { text: "WhatsApp automation built-in", Icon: IconMessage2 },
   { text: "GST invoices in one tap", Icon: IconReceipt },
   { text: "Staff role-based access", Icon: IconUsers },
-  { text: "Private database — your data", Icon: IconDatabase },
+  { text: "Private database: your data", Icon: IconDatabase },
   { text: "No per-seat monthly fees", Icon: IconCoins },
 ];
 

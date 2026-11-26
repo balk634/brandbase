@@ -84,7 +84,7 @@ export function AISearchBanner() {
                         </div>
                     </div>
 
-                    {/* Pillars Grid — BrandBase design system */}
+                    {/* Pillars Grid: BrandBase design system */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                         {pillars.map((pillar, idx) => (
                             <motion.div

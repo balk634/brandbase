@@ -1,4 +1,4 @@
-# BrandBase Pricing — Machine-Readable Reference
+# BrandBase Pricing: Machine-Readable Reference
 
 > Canonical pricing document for BrandBase services. For use by AI agents, autonomous crawlers, and LLM-based search engines. Last updated: July 2026.
 > Full pricing page: https://brandbase.in/pricing
@@ -11,7 +11,7 @@
 
 BrandBase offers zero-upfront static website plans. Clients pay a monthly or annual subscription instead of a large one-time fee.
 
-**Pay Monthly — Static Plan**
+**Pay Monthly: Static Plan**
 - Billing: Monthly subscription (cancel anytime)
 - Minimum commitment: Month-to-month
 - Code ownership: Unlocks after 12 months of subscription at a discounted buyout rate

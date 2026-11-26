@@ -144,7 +144,7 @@ export function WhatWeReplace() {
               <em className="font-serif-10 italic text-ink/75">things that break.</em>
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-sm text-ink-muted leading-relaxed max-w-xl">
-              Not because the owners aren&apos;t capable — but because no one built the right tool for
+              Not because the owners aren&apos;t capable, but because no one built the right tool for
               a 3-doctor clinic or a 200-student coaching center. Generic CRMs are built for
               SaaS companies. We build for the businesses that make cities work.
             </motion.p>
@@ -157,7 +157,7 @@ export function WhatWeReplace() {
             <div className="border-b lg:border-b-0 lg:border-r border-grid/15 flex flex-col">
               <div className="p-6 md:p-8 border-b border-grid/15 bg-red-500/[0.04]">
                 <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-red-700 font-semibold">
-                  Before — The daily reality
+                  Before: The daily reality
                 </span>
               </div>
               <motion.ul
@@ -189,7 +189,7 @@ export function WhatWeReplace() {
             <div className="flex flex-col">
               <div className="p-6 md:p-8 border-b border-grid/15 bg-emerald-500/[0.04]">
                 <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-emerald-700 font-semibold">
-                  After — With a custom system
+                  After: With a custom system
                 </span>
               </div>
               <div className="relative w-full aspect-[16/9] md:aspect-[2.5/1] border-b border-grid/15 overflow-hidden">

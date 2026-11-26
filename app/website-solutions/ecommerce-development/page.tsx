@@ -122,7 +122,7 @@ export default function EcommercePage() {
                     }
                 ]}
             />
-            {/* ── 1. HERO — Split Two-Column ── */}
+            {/* ── 1. HERO: Split Two-Column ── */}
             <Section className="bg-transparent pt-4 md:pt-8 lg:pt-12 pb-16 md:pb-24 relative z-10 border-b border-grid/10">
                 <Container>
                     <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
@@ -165,7 +165,7 @@ export default function EcommercePage() {
                 </Container>
             </Section>
 
-            {/* ── 2. WHAT WE DELIVER — 3×2 Grid ── */}
+            {/* ── 2. WHAT WE DELIVER: 3×2 Grid ── */}
             <Section id="deliverables" className="bg-transparent relative z-10 py-16 md:py-24 border-b border-grid/10">
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
@@ -407,7 +407,7 @@ export default function EcommercePage() {
                 </Container>
             </Section>
 
-            {/* ── 4. OUR PROCESS — Boxes with Animated Dashed Connectors ── */}
+            {/* ── 4. OUR PROCESS: Boxes with Animated Dashed Connectors ── */}
             <Section className="bg-transparent border-b border-grid/10 py-16 md:py-24 relative z-10">
                 <Container>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerSlow}>

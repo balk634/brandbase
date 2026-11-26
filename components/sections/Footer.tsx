@@ -32,7 +32,7 @@ export function Footer() {
                             width={1200}
                             height={300}
                             className="w-full h-auto"
-                            style={{ padding: '0px 30px' }}
+                            style={{ padding: '0px 30px', height: 'auto' }}
                         />
                     </Link>
                 </div>

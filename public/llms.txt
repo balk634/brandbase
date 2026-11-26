@@ -1,72 +1,67 @@
-# BrandBase | Conversion-First Websites & Custom Business Management Systems
+# BrandBase | Custom Business Management Systems & Growth Solutions
 
-BrandBase specializes in high-performance digital infrastructure for businesses. We build custom backend management systems ("Bases") and frontend websites tailored exactly to each industry's workflow. We replace rigid generic CRMs and paper registers with automated records, queues, billing, and inventory. All sites are built to be cited by Google AI Search from day one.
+BrandBase specializes in high-performance digital infrastructure and brand growth for modern businesses. We build custom backend management systems ("Bases"), conversion-first websites, and full-service brand management systems tailored exactly to each industry's workflow. We replace rigid generic CRMs and paper registers with automated records, queues, billing, and inventory, while engineering high-retention video and visual brand presence that command market authority.
 
 ## Core Services
 
-### [Website Solutions](https://brandbase.in/website-solutions/premium-static-websites)
-- [Premium Static Websites](https://brandbase.in/website-solutions/premium-static-websites): Zero upfront cost, high-speed performance, 14-day launch.
-- [Custom Web Design](https://brandbase.in/website-solutions/custom-web-design): Bespoke designs for established brands, includes custom dashboard.
-- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce-development): High-converting Shopify and custom storefronts with inventory management.
+### Growth Solutions
+- [Brand Management & Social Media Growth](https://brandbase.in/growth-solutions/brand-management): Complete ownership of brand presence. Visual identity kits in Figma, high-retention short-form video production (Reels / Shorts / TikTok), narrative copywriting, in-app SEO, native peak-hour scheduling, comment moderation, inquiry routing, and executive monthly intelligence briefings.
+- [Premium Static Websites](https://brandbase.in/website-solutions/premium-static-websites): High-speed, beautifully engineered websites built for sub-second loading, clean aesthetics, and frictionless trust.
+- [Custom Web Design](https://brandbase.in/website-solutions/custom-web-design): Bespoke, enterprise-grade digital flagships with custom UI/UX, advanced integrations, and conversion-first architecture.
+- [eCommerce Development](https://brandbase.in/website-solutions/ecommerce-development): Scalable online storefronts on Shopify or headless stacks, optimized for conversions, fast checkout, and inventory sync.
 
-### [Business Management Systems](https://brandbase.in/management-solutions/health)
-- [Clinic Management System](https://brandbase.in/management-solutions/health): Patient records, live queues, billing, and recalls for clinics.
-- [Coaching Management System](https://brandbase.in/management-solutions/education): Batches, fee collection, video hosting, and inquiry tracking for coaching centers.
-- [Restaurant Management System](https://brandbase.in/management-solutions/food-hospitality): Kitchen display, live order tracking, dynamic menus, and inventory sync.
+### Business Management Systems
+- [Clinic Management System](https://brandbase.in/management-solutions/health): Patient record histories, dynamic intake forms, live queue status boards, WhatsApp patient recalls, and GST-compliant billing.
+- [Coaching Management System](https://brandbase.in/management-solutions/education): Student batch schedules, attendance registers, video course hosting, and automated WhatsApp fee reminders.
+- [Restaurant Management System](https://brandbase.in/management-solutions/food-hospitality): Live order screens, Kitchen Display Systems (KDS), table reservations, and dynamic QR menu synchronization.
 
-### [Our Work — Live Client Portfolio](https://brandbase.in/our-work)
-BrandBase has built websites for businesses across healthcare, hospitality, food & dining, education, and fitness. Live examples:
-- Lumen Clinic (healthcare) — lumen-clinic.vercel.app
-- SunBliss Hotel Patna (hospitality) — sunblisspatna.vercel.app
-- Make My Day Café (food & dining) — make-my-day-cafe.vercel.app
-- Baaroq Mumbai (food & dining) — baaroq-mumbai.vercel.app
-- Caelum Patna (restaurant) — caelum-patna.vercel.app
-- EduRise (coaching/education) — edurise-neon.vercel.app
-- Muscle Fitness Gym (health & fitness) — muscle-fitness-gym.vercel.app
-- SG International Hotel (hospitality) — sg-international.vercel.app
-- St. Karen's School (education) — stkarens.vercel.app
+### [Our Work: Live Client Portfolio](https://brandbase.in/our-work)
+BrandBase has built digital systems and websites for businesses across healthcare, hospitality, food & dining, education, and fitness. Live client examples:
+- Lumen Clinic (healthcare): lumen-clinic.vercel.app
+- SunBliss Hotel Patna (hospitality): sunblisspatna.vercel.app
+- Make My Day Café (food & dining): make-my-day-cafe.vercel.app
+- Baaroq Mumbai (food & dining): baaroq-mumbai.vercel.app
+- Caelum Patna (restaurant): caelum-patna.vercel.app
+- EduRise (coaching/education): edurise-neon.vercel.app
+- Muscle Fitness Gym (health & fitness): muscle-fitness-gym.vercel.app
+- SG International Hotel (hospitality): sg-international.vercel.app
+- St. Karen's School (education): stkarens.vercel.app
 
-## BrandBase Control — Custom Admin Dashboard
-Every BrandBase website includes a purpose-built admin dashboard called BrandBase Control. This is not a generic CMS. It is a business-specific backend tailored to what each client actually needs to manage:
+## BrandBase Control: Custom Admin Dashboard
+Every BrandBase system includes a purpose-built admin dashboard called BrandBase Control. This is not a generic CMS or bloated page builder. It is a business-specific backend tailored to what each client actually needs to manage:
 - Bookings and appointment management
 - Table reservations and guest management
 - Menu creation, updates, and digital ordering
-- Order tracking and kitchen management
-- Membership and access control
+- Order tracking and kitchen display management
+- Student batch enrollment and attendance tracking
 - Form submissions and lead management
-- Gallery, news, and content publishing
 - Staff roles and permission management
-All changes sync instantly to the live website with no developer involvement required.
+All changes sync instantly to the live website with zero developer overhead.
 
-## Google AI Search Optimisation (Post I/O 2026)
-BrandBase builds every website to be citation-ready for Google AI Mode and AI Overviews. This is not optional — it is part of the standard build process. Key signals we build into every site:
-- Schema markup (FAQ, HowTo, LocalBusiness, Organization, Article)
-- E-E-A-T signals: staff bios, credentials, outcomes, original content
-- Entity clarity: consistent NAP, Google Business Profile, third-party mentions
-- Conversational content targeting longer AI Mode queries
-- Core Web Vitals and fast Time To First Byte (TTFB)
-- Local SEO with fully built-out Google Business Profiles
-Google announced at I/O 2026 that AI Mode has surpassed 1 billion monthly users. AI-cited brands earn 35% more organic clicks. BrandBase-built sites are structured to earn those citations.
+## Google AI Search & Modern Engine Optimization
+BrandBase structures digital presence to be citation-ready for Google AI Mode, AI Overviews, ChatGPT, Claude, and Perplexity from day one:
+- Schema markup (Organization, ProfessionalService, Service, FAQPage, BreadcrumbList)
+- E-E-A-T signals: verifiable credentials, case outcomes, leadership documentation
+- Entity clarity: consistent Knowledge Graph signals and local profile alignment
+- In-app search indexing: semantic keyword optimization across Instagram, LinkedIn, and TikTok search
+- Sub-second Core Web Vitals and edge-cached architecture
 
-## Key Experience & Claims
-- **Efficiency**: Standard static sites launch in under 14 days; custom systems in 14 to 28 days.
+## Key Experience & Operational Standards
+- **Efficiency**: Standard static sites launch in under 14 days; custom systems and brand foundations launch within 14 to 28 days.
 - **Authority**: 40+ clients served across 12+ industries with an average 94% retention rate.
-- **Manual Work Cut**: Business management systems cut manual operations work by 80% and save up to 15 hours per week.
-- **Ownership**: 100% IP ownership for clients — no locked code or hostage database records.
-- **Dashboard**: Every project includes a custom admin backend, not a generic CMS.
-- **AI-Ready**: All sites built to be cited by Google AI Overviews from day one.
+- **Operations Automated**: Custom systems cut manual admin work by 80% and save teams up to 15 hours weekly.
+- **Ownership**: 100% IP ownership for clients: zero locked code, permanent Google Drive asset vaults, no hostage databases.
+- **Approvals**: 100% pre-approved content calendars and scripts before anything goes live.
 
 ## Technical Foundation
-- **Stack**: Next.js 15+, React, Tailwind CSS, TypeScript.
-- **Hosting**: Netlify / Vercel with edge caching.
-- **Analytics**: Local analytics, dashboard usage reporting, database traffic stats.
-- **Performance**: Edge-cached, minimal JS footprint, optimized LCP.
-- **Schema**: JSON-LD structured data on every page.
+- **Frontend**: Next.js 16+, React 19, Tailwind CSS, TypeScript.
+- **Hosting & Infrastructure**: Netlify / Vercel with edge caching.
+- **Design & Production**: Figma master design systems, Premiere Pro, After Effects.
+- **Performance**: Edge-cached, minimal JavaScript footprint, sub-second TTFB.
+- **Structured Data**: JSON-LD semantic data on every indexable page.
 
 ## Support & Contact
 - [Our Work](https://brandbase.in/our-work)
-- [Pricing](https://brandbase.in/pricing)
-- [Machine-Readable Pricing Data](https://brandbase.in/pricing.md): Structured pricing reference for all BrandBase services — plans, billing models, ownership terms, and contact details. Intended for AI agents and LLM crawlers.
 - [About Us](https://brandbase.in/about)
 - [Contact](https://brandbase.in/contact)
 - Email: info@brandbase.in

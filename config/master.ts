@@ -7,12 +7,17 @@ export const masterConfig = {
   // ==========================================
   // Controls how the site appears in search engines and social media shares.
   metadata: {
-    title: "BrandBase | Custom Business Management Systems & Websites",
+    title: "BrandBase | Custom Business Management Systems & Growth Solutions",
     description:
-      "BrandBase builds custom industry business management systems and conversion-first websites to replace rigid generic CRMs and paper registers. Track client records, bookings, inventory, and GST billing.",
+      "BrandBase builds custom business management systems to streamline operations, paired with conversion-first websites and full-service brand management to turn attention into compounding revenue.",
     baseUrl: "https://brandbase.in",
     keywords: [
-      "next.js development agency",
+      "brand management agency india",
+      "social media growth agency",
+      "short-form video production reels",
+      "visual identity and brand design",
+      "b2b content marketing strategy",
+      "executive personal branding linkedin",
       "conversion-first websites",
       "custom backend systems india",
       "custom crm systems india",
@@ -21,7 +26,7 @@ export const masterConfig = {
       "restaurant management system india",
       "custom management software",
       "ecommerce website development india",
-      "pay monthly website plans",
+      "next.js development agency",
       "business workflow automation",
     ],
     authors: [{ name: "BrandBase", url: "https://brandbase.in" }],
@@ -36,7 +41,7 @@ export const masterConfig = {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "BrandBase: Custom industry business management systems and conversion-first websites",
+          alt: "BrandBase: Custom business management systems, conversion-first websites, and brand management",
         },
       ],
     },
@@ -248,7 +253,7 @@ export const masterConfig = {
   sections: {
     hero: {
       tag: "MANAGEMENT SYSTEMS + GROWTH SOLUTIONS",
-      headline: "Custom systems that run your operations. Brand and web presence that command attention.",
+      headline: "Engineered for the back office. Designed for the front line.",
       subheadline:
         "BrandBase builds custom industry management systems to streamline operations, paired with bespoke websites and full-scale brand management that turn market attention into compounding revenue.",
       imageSrc: "hero1.jpg?v=20260307-2",

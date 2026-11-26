@@ -3,7 +3,7 @@ import { masterConfig } from '@/config/master'
 
 export default function robots(): MetadataRoute.Robots {
     const baseUrl = masterConfig.metadata.baseUrl.replace(/\/+$/, '')
-    const protectedPaths = ['/private/', '/admin/']
+    const protectedPaths = ['/private/', '/admin/', '/calc', '/pricing', '/pricing.md']
     const aiUserAgents = [
         'GPTBot',
         'ChatGPT-User',

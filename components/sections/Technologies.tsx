@@ -70,8 +70,8 @@ export function Technologies() {
                     </h2>
                     <p className="mt-5 text-sm md:text-base text-ink-muted leading-relaxed max-w-2xl">
                         We don&apos;t hand you a login to someone else&apos;s platform. Your system runs on
-                        private, secured infrastructure — PostgreSQL databases, Appwrite backends,
-                        WhatsApp Business API, and Razorpay/Paytm billing — all fully managed with
+                        private, secured infrastructure including PostgreSQL databases, Appwrite backends,
+                        WhatsApp Business API, and Razorpay/Paytm billing, all fully managed with
                         zero per-user licensing fees.
                     </p>
                 </div>
